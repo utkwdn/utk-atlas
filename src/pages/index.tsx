@@ -50,10 +50,7 @@ export default function Page() {
               headless packages
             </a>
             , and <a href="https://developers.wpengine.com/">tutorials</a> to
-            make building headless WordPress sites fast and fun.
-          </p>
-          <p>
-            Look, it's the development branch!
+            make building headless WordPress sites fast and fun. Look, it's the development branch!
           </p>
         </Hero>
         <section className={styles.explore}>
