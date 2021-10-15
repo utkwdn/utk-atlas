@@ -12,7 +12,7 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
   
   const { pages } = client.useQuery();
-  const allPages = pages.edges.node {
+  const allPages = pages().nodes {
   	isFrontPage
     pageId
   };
