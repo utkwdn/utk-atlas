@@ -2,7 +2,6 @@ import 'faust.config';
 import { HeadlessProvider } from '@faustjs/next';
 import 'normalize.css/normalize.css';
 import React from 'react';
-import 'scss/main.scss';
 import { client } from 'client';
 import type { AppProps } from 'next/app';
 
