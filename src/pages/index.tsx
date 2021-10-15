@@ -42,6 +42,19 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
+			<div className="entry-content container-xxl">
+
+				<p>Sint in cum totam. Officiis nihil aut voluptatem maiores. Aperiam repellendus provident sint aut. Culpa illo beatae earum alias. Quae deleniti at omnis dicta nobis et sint. Provident sint et fugiat sequi quis et.</p>
+
+				<p> Molestiae dolores natus ut. Corporis consequatur assumenda nobis dicta mollitia repellendus consequuntur eligendi. Animi ducimus ea et consequatur ut. Delectus dolor quis similique maxime officiis tempore consequatur. Ea et est tenetur voluptas. Quia sunt dolores ipsam quasi et.</p>
+
+				<p> Dolorem sapiente repellat quo. Totam veritatis magni qui facere labore quidem non. Non iure dolores quia voluptatum ducimus animi. Dolores quaerat maiores totam beatae consequuntur qui aperiam.</p>
+
+				<p> Qui autem dolore ipsam hic ut velit id. At atque quod est et iure rerum minima sunt. Sunt consequatur eum consequatur. Consectetur eligendi facilis aliquam ad cum. Provident et culpa itaque perferendis dolores. Sapiente neque omnis ab esse dolore vel voluptatum dignissimos.</p>
+
+				<p> Repellat iure omnis et officiis. Numquam aut dicta eum. Aliquam labore dolores velit enim placeat. Minima ut delectus cumque tempore architecto ab ab quisquam. Ducimus quod inventore eum est recusandae.</p>
+
+      		</div>
 		</article>
         <section className={styles.explore}>
           <div className="wrap">
