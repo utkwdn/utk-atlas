@@ -30,6 +30,7 @@ export default function Page() {
         </title>
       </Head>
 
+	<div id="page">
       <main className="content">
         <article 
 			id="post-41" 
@@ -133,6 +134,7 @@ export default function Page() {
           </p>
         </CTA>
       </main>
+	  </div>
       <Footer copyrightHolder={generalSettings.title} />
     </>
   );
