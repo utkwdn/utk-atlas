@@ -12,7 +12,7 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
   
   const { pages } = client.useQuery();
-  const allPages = pages().nodes, 'isFrontPage', 'pageId', 'id';
+  const allPages = pages().nodes;
   
   console.log(allPages);
 
