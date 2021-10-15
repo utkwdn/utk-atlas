@@ -13,7 +13,7 @@ export default function Page() {
   
   const { pages } = client.useQuery();
   const allPages = pages().nodes {
-  	isFrontPage
+  	isFrontPage,
     pageId
   };
   
