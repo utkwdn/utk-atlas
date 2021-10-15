@@ -13,7 +13,7 @@ export default function Page() {
   
   const allPages = useQuery().pages;
   
-  console.log(allPages);
+  console.log(allPages.nodes.map(({ isFrontPage, id })));
 
   return (
     <>
