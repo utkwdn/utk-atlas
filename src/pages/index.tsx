@@ -8,14 +8,18 @@ import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
 
 export default function Page() {
-  const { usePosts, useQuery } = client;
+  const { pages, useQuery } = client;
   const generalSettings = useQuery().generalSettings;
-  const posts = usePosts({
-    first: 6,
-    where: {
-      categoryName: 'uncategorized',
-    },
-  });
+  const allPages = pages {
+    edges {
+      node {
+        isFrontPage
+        pageId
+      }
+    }
+  };
+  
+  console.log(allPages);
 
   return (
     <>
@@ -112,14 +116,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <Posts
-          posts={posts.nodes}
-          heading="Latest Posts"
-          intro="The Posts component in src/pages/index.tsx shows the latest six posts from the connected WordPress site."
-          headingLevel="h2"
-          postTitleLevel="h3"
-          id={styles.post_list}
-        />
         <CTA
           title="Questions or comments?"
           buttonText="Join the discussion on GitHub"
