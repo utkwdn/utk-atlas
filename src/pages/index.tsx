@@ -11,10 +11,9 @@ export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const { pages } = client.useQuery();
-  const allPages = pages().nodes;
+  const allPages = useQuery().pages;
   
-  console.log(allPages?);
+  console.log(allPages);
 
   return (
     <>
