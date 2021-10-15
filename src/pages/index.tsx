@@ -31,28 +31,18 @@ export default function Page() {
       </Head>
 
       <main className="content">
-        <Hero
-          title="Get Started with Headless"
-          buttonText="Developer Docs"
-          buttonURL="https://developers.wpengine.com/"
-          button2Text="Headless on GitHub"
-          button2URL="https://github.com/wpengine/faustjs"
-          bgImage="/images/headless_hero_background.jpg"
-          id={styles.home_hero}>
-          <p>
-            WP&nbsp;Engine’s Headless WordPress Framework includes this example
-            project, the{' '}
-            <a href="https://github.com/wpengine/faustjs#plugin-features">
-              headless WordPress plugin
-            </a>
-            ,{' '}
-            <a href="https://github.com/wpengine/faustjs">
-              headless packages
-            </a>
-            , and <a href="https://developers.wpengine.com/">tutorials</a> to
-            make building headless WordPress sites fast and fun.
-          </p>
-        </Hero>
+        <article 
+			id="post-41" 
+			className="post-41 page type-page status-publish hentry"
+		>
+			<div className="bg-light pt-5 alignfull">
+			  <div className="container-xxl">
+			    <div className="row no-gutters mb-3 pb-3">
+			      <header className="entry-header col-12"><h1 className="entry-title">Home</h1></header>
+					</div>
+				</div>
+			</div>
+		</article>
         <section className={styles.explore}>
           <div className="wrap">
             <h2>Explore this Example Project</h2>
