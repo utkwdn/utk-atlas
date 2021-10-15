@@ -8,8 +8,10 @@ import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
 
 export default function Page() {
-  const { pages, useQuery } = client;
+  const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
+  
+  const { pages } = client.useQuery();
   const allPages = pages {
     edges {
       node {
