@@ -11,9 +11,9 @@ export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = useQuery().pages;
+  const allPages = useQuery().pages().nodes;
   
-  console.log(allPages.nodes.map(({ isFrontPage, id })));
+  console.log(allPages.map(({ isFrontPage, id })));
 
   return (
     <>
