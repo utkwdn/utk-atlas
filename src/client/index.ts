@@ -18,10 +18,7 @@ export const client = getClient<
 >({
   schema: generatedSchema,
   scalarsEnumsHash,
-  queryFetcher,
 });
-
-export const { query, mutation, mutate, subscription, resolved, refetch } = client;
 
 export function serverClient(req: IncomingMessage) {
   return getClient<GeneratedSchema, SchemaObjectTypesNames, SchemaObjectTypes>({
