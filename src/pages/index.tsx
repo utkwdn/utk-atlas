@@ -13,7 +13,7 @@ export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const frontPageInfo = await Resolved(() => {
+  const frontPageInfo = Resolved(() => {
   	const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
   	const frontPage = allPages.find(x => x.isFrontPage === true);
 	
