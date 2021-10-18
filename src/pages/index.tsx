@@ -6,12 +6,14 @@ import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
+import { getArrayFields, query} from 'gqty';
+
 
 export default function Page() {
-  const { getArrayFields, useQuery } = client;
+  const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = getArrayFields(useQuery().pages, 'isFrontPage', 'id') ;
+  const allPages = getArrayFields(query.pages, 'isFrontPage', 'id') ;
   
   console.log(allPages);
 
