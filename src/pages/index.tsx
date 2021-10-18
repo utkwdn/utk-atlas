@@ -6,11 +6,11 @@ import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
-import { getArrayFields } from 'gqty';
+import { getArrayFields, castNotSkeleton } from 'gqty';
 
 
 export default function Page() {
-  const { useQuery } = client;
+  const { useQuery, resolved } = client;
   const generalSettings = useQuery().generalSettings;
   
   const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
