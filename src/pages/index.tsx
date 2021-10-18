@@ -7,18 +7,17 @@ import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
 import { getArrayFields, castNotSkeleton } from 'gqty';
-import { resolved } from '../client';
 
 
 export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
-  const cleanAllPages = castNotSkeleton({ allPages });
-  //const frontPage = cleanAllPages.find(x => x.isFrontPage === true);
+  const allPages = await getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
+  //const cleanAllPages = castNotSkeleton({ allPages });
+  const frontPage = allPages.find(x => x.isFrontPage === true);
   
-  console.log(cleanAllPages);
+  console.log(frontPage);
 
   return (
     <>
