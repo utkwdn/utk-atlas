@@ -13,7 +13,7 @@ export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = getArrayFields(useQuery().pages, 'isFrontPage', 'id') ;
+  const allPages = getArrayFields(useQuery().pages(), 'isFrontPage', 'id') ;
   
   console.log(allPages);
 
