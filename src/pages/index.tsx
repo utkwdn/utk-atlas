@@ -14,7 +14,7 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
   
   const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
-  const cleanAllPages = allPages.map(({ Page[] }));
+  const cleanAllPages = allPages.map(({ Page }));
   //const frontPage = allPages.find(x => x.isFrontPage === true);
   
   console.log(cleanAllPages);
