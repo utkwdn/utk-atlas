@@ -20,6 +20,8 @@ export const client = getClient<
   scalarsEnumsHash,
 });
 
+export const { query, mutation, mutate, subscription, resolved, refetch } = client;
+
 export function serverClient(req: IncomingMessage) {
   return getClient<GeneratedSchema, SchemaObjectTypesNames, SchemaObjectTypes>({
     schema: generatedSchema,
