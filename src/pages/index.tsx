@@ -7,6 +7,7 @@ import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
 import { getArrayFields, castNotSkeleton } from 'gqty';
+import { resolved } from '../node_modules/gqty';
 
 
 export default function Page() {
