@@ -8,12 +8,12 @@ import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
 
 export default function Page() {
-  const { useQuery } = client;
+  const { getArrayFields, useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = useQuery().pages().nodes;
+  const allPages = getArrayFields(useQuery().pages, 'isFrontPage', 'id') ;
   
-  console.log(allPages.map(({ isFrontPage, id })));
+  console.log(allPages);
 
   return (
     <>
