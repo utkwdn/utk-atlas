@@ -13,10 +13,14 @@ export default function Page() {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
-  const frontPage = allPages.find(x => x.isFrontPage === true);
+  const frontPageInfo = await resolved(() => {
+  	const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
+  	const frontPage = allPages.find(x => x.isFrontPage === true);
+	
+	return castNotSkeleton({ frontPage });
+  } );
   
-  console.log(frontPage);
+  console.log(frontPageInfo);
 
   return (
     <>
