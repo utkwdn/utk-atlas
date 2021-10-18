@@ -6,7 +6,7 @@ import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client } from 'client';
-import { getArrayFields, castNotSkeleton, resolved } from 'gqty';
+import { getArrayFields, castNotSkeleton, Resolved } from 'gqty';
 
 
 export default function Page() {
