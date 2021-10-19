@@ -14,11 +14,11 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
   
   const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
-  //const frontPage = allPages.find(x => x.isFrontPage === true);
+  const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   
   console.log(allPages.findIndex(x => x.isFrontPage === true));
 
-  console.log(allPages[5].id);
+  console.log(allPages[frontPage].id);
 
   return (
     <>
