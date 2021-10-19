@@ -10,13 +10,13 @@ import { getArrayFields, castNotSkeleton } from 'gqty';
 
 
 export default function Page() {
-  const { useQuery } = client;
+  const { useQuery, usePage } = client;
   const generalSettings = useQuery().generalSettings;
   
   const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
   //const frontPage = allPages.find(x => x.isFrontPage === true);
   
-  console.log(allPages[0]);
+  console.log(usePage);
 
   return (
     <>
