@@ -13,12 +13,12 @@ export default function Page() {
   const { useQuery, usePage } = client;
   const generalSettings = useQuery().generalSettings;
   
-  const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id', 'slug');
+  const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id', 'slug', 'pageId');
   const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   //const frontPageID = allPages[frontPage].slug;
 
   const frontPageContent = usePage({
-    id: allPages[frontPage].id,
+    id: allPages[frontPage].pageId,
     idType: PageIdType.ID,
   });
 
