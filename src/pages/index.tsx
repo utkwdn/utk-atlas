@@ -21,7 +21,7 @@ export default function Page() {
 	let frontPageClean = Object.fromEntries(frontPageParts);
 
   const frontPageContent = usePage({
-    id: frontPageClean.pageId.toString(),
+    id: frontPageClean.pageId,
     idType: PageIdType.ID,
   });
 
