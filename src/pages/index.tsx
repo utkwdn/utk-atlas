@@ -25,7 +25,7 @@ export default function Page() {
     idType: PageIdType.URI,
   });
 
-  console.log(frontPageContent);
+  console.log(frontPageContent?.title);
 
   return (
     <>
