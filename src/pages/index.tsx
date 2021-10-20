@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
-import { client } from 'client';
+import { client, PostIdType } from 'client';
 import { getArrayFields, castNotSkeleton } from 'gqty';
 
 
@@ -18,13 +18,13 @@ export default function Page() {
   const frontPageID = allPages[frontPage].id;
 
   //const frontPageContent = usePage({
-    //id: castNotSkeleton(allPages[frontPage].id),
+    //id: allPages[frontPage].id,
   //});
   
   console.log(allPages.findIndex(x => x.isFrontPage === true));
 
   console.log(typeof allPages[frontPage].id);
-  console.log(typeof allPages[frontPage]);
+  console.log(PostIdType);
 
   return (
     <>
