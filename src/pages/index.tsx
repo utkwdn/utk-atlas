@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
-import { client, PostIdType } from 'client';
+import { client, PageIdType } from 'client';
 import { getArrayFields, castNotSkeleton } from 'gqty';
 
 
@@ -19,7 +19,7 @@ export default function Page() {
 
   const frontPageContent = usePage({
     id: allPages[frontPage].slug,
-    idType: PostIdType.SLUG,
+    idType: PageIdType.SLUG,
   });
 
   console.log(frontPageContent);
