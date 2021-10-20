@@ -17,12 +17,12 @@ export default function Page() {
   const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   //const frontPageID = allPages[frontPage].slug;
 
-  //const frontPageContent = usePage({
-    //id: allPages[frontPage].slug,
-    //idType: PageIdType.SLUG,
-  //});
+  const frontPageContent = usePage({
+    id: allPages[frontPage].id,
+    idType: PageIdType.ID,
+  });
 
-  console.log(PageIdType);
+  console.log(frontPageContent);
 
   return (
     <>
