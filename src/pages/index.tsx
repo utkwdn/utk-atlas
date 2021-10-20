@@ -25,7 +25,7 @@ export default function Page() {
     idType: PageIdType.URI,
   });
 
-  console.log(frontPageContent?.title);
+  console.log(frontPageContent?.content());
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function Page() {
 			<div className="bg-light pt-5 alignfull">
 			  <div className="container-xxl">
 			    <div className="row no-gutters mb-3 pb-3">
-			      <header className="entry-header col-12"><h1 className="entry-title">Home</h1></header>
+			      <header className="entry-header col-12"><h1 className="entry-title">{frontPageContent?.title()}</h1></header>
 					</div>
 				</div>
 			</div>
