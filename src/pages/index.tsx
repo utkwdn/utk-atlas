@@ -17,12 +17,15 @@ export default function Page() {
   const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   //const frontPageID = allPages[frontPage].slug;
 
-  const frontPageContent = usePage({
-    id: allPages[frontPage].uri,
-    idType: PageIdType.URI,
-  });
+  var frontPageParts = Object.entries(allPages[frontPage]);
+	frontPageClean.push(Object.fromEntries(frontPageParts));
 
-  console.log(frontPageContent);
+  //const frontPageContent = usePage({
+    //id: allPages[frontPage].uri,
+    //idType: PageIdType.URI,
+  //});
+
+  console.log(frontPageClean);
 
   return (
     <>
