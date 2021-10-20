@@ -15,14 +15,16 @@ export default function Page() {
   
   const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id');
   const frontPage = allPages.findIndex(x => x.isFrontPage === true);
+  const frontPageID = allPages[frontPage].id;
 
-  const frontPageContent = usePage({
-    id: castNotSkeleton(allPages[frontPage].id),
-  });
+  //const frontPageContent = usePage({
+    //id: castNotSkeleton(allPages[frontPage].id),
+  //});
   
   console.log(allPages.findIndex(x => x.isFrontPage === true));
 
-  console.log(castNotSkeleton(frontPageContent));
+  console.log(typeof allPages[frontPage].id);
+  console.log(typeof allPages[frontPage]);
 
   return (
     <>
