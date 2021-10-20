@@ -17,8 +17,8 @@ export default function Page() {
   const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   //const frontPageID = allPages[frontPage].slug;
 
-  var frontPageParts = Object.entries(allPages[frontPage]);
-	frontPageClean.push(Object.fromEntries(frontPageParts));
+  let frontPageParts = Object.entries(allPages[frontPage]);
+	let frontPageClean = Object.fromEntries(frontPageParts);
 
   //const frontPageContent = usePage({
     //id: allPages[frontPage].uri,
