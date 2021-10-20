@@ -18,7 +18,7 @@ export default function Page() {
   //const frontPageID = allPages[frontPage].slug;
 
   const frontPageContent = usePage({
-    id: allPages[frontPage].pageId,
+    id: allPages[frontPage].pageId.toString(),
     idType: PageIdType.ID,
   });
 
