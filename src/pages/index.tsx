@@ -53,9 +53,7 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-			<div className="entry-content container-xxl">
-        {frontPageContent?.content()}
-      </div>
+			<div className="entry-content container-xxl" dangerouslySetInnerHTML={{ __html: frontPageContent?.content() }} />
 		</article>
         <section className={styles.explore}>
           <div className="wrap">
