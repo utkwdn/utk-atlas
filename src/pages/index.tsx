@@ -7,6 +7,7 @@ import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client, PageIdType } from 'client';
 import { getArrayFields, castNotSkeleton } from 'gqty';
+import TimelineEvent from '../components/timelineEvent';
 
 
 export default function Page() {
@@ -24,6 +25,8 @@ export default function Page() {
     id: "/",
     idType: PageIdType.URI,
   });
+
+  const timelineEvents = useQuery().timelineEvents()?.nodes;
 
   //console.log(frontPageContent?.content());
 
@@ -85,27 +88,11 @@ export default function Page() {
               </div>
 
               <div className={styles.feature}>
-                <h3>Components</h3>
-                <p>
-                  Add or edit components in the <code>src/components</code>{' '}
-                  folder. Find component styles at{' '}
-                  <code>src/scss/components</code>, which use{' '}
-                  <a href="https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css">
-                    CSS modules
-                  </a>{' '}
-                  to scope CSS to each component.
-                </p>
-              </div>
+              <h2>Timeline Events</h2>
 
-              <div className={styles.feature}>
-                <h3>Hooks</h3>
-                <p>
-                  Fetch data from WordPress with <code>usePost</code>,{' '}
-                  <code>usePosts</code>, <code>useGeneralSettings</code> and
-                  other custom hooks. Use these hooks in your page templates to
-                  pass data to custom components. See{' '}
-                  <code>src/pages/index.tsx</code> for examples.
-                </p>
+              {timelineEvents.map((timelineEvent) => (
+                <timelineEvent key={timelineEvent.id} timelineEvent={timelineEvent} />
+              ))}
               </div>
             </div>
           </div>
