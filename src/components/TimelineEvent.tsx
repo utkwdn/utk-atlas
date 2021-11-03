@@ -1,4 +1,4 @@
-import { TimelineEvent as TimelineEventType } from 'client';
+import { timelineEvent as TimelineEventType } from 'client';
 
 interface TimelineEventProps {
     timelineEvent: TimelineEventType;
