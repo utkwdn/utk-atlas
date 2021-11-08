@@ -6,8 +6,8 @@ import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client, PageIdType } from 'client';
-import { getArrayFields, castNotSkeleton } from 'gqty';
-import TimelineEvent from '../components/timelineEvent';
+//import { getArrayFields, castNotSkeleton } from 'gqty';
+import TimelineEvent from '../components/TimelineEvent';
 
 
 export default function Page() {
@@ -28,7 +28,7 @@ export default function Page() {
 
   const timelineEvents = useQuery().timelineEvents()?.nodes;
 
-  //console.log(frontPageContent?.content());
+  console.log(timelineEvents);
 
   return (
     <>
@@ -73,25 +73,12 @@ export default function Page() {
               <code>src/pages/index.tsx</code> or discover more below.
             </p>
             <div className={styles.features}>
-              <div className={styles.feature}>
-                <h3>Global Styles and Fonts</h3>
-                <p>
-                  Add styles to load on every page, such as typography and
-                  layout rules, in <code>src/scss/main.scss</code>. The project
-                  adds{' '}
-                  <a href="https://necolas.github.io/normalize.css/">
-                    normalize.css
-                  </a>{' '}
-                  in <code>src/pages/_app.tsx</code>. Google Fonts are enqueued
-                  in <code>src/pages/_document.tsx</code>.
-                </p>
-              </div>
 
               <div className={styles.feature}>
               <h2>Timeline Events</h2>
 
               {timelineEvents.map((timelineEvent) => (
-                <timelineEvent key={timelineEvent.id} timelineEvent={timelineEvent} />
+                <TimelineEvent key={timelineEvent.id} timelineEvent={timelineEvent} />
               ))}
               </div>
             </div>

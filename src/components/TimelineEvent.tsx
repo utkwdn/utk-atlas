@@ -1,16 +1,22 @@
-import { timelineEvent as TimelineEventType } from 'client';
+import React from 'react';
+import { client, TimelineEvent as TimelineEventType } from 'client';
 
 interface TimelineEventProps {
     timelineEvent: TimelineEventType;
+    //key?: string;
 }
 
-export default function TimelineEvent({ timelineEvent }: TimelineEventProps) {
+export default function TimelineEvent({ timelineEvent }: TimelineEventProps): JSX.Element {
+    const { useQuery } = client;
+    const theEvent = useQuery().timelineEvent({id: timelineEvent?.id});
+
+    console.log(theEvent);
+
   return (
     <div>
-      <h2>{timelineEvent?.title}</h2>
-      <h3>{timelineEvent?.start_year}</h3>
+      <h2>{theEvent?.title}</h2>
       <div
-        dangerouslySetInnerHTML={{ __html: timelineEvent?.content }}
+        dangerouslySetInnerHTML={{ __html: theEvent?.uri }}
       />
     </div>
   );
