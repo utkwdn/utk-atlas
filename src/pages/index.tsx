@@ -26,9 +26,9 @@ export default function Page() {
     idType: PageIdType.URI,
   });
 
-  const timelineEvents = useQuery().timelineEvents()?.nodes;
+  const timelineEvents = useQuery().timelineEvents().nodes;
 
-  console.log(timelineEvents);
+  //console.log(timelineEvents[0].slug);
 
   return (
     <>
@@ -78,8 +78,9 @@ export default function Page() {
               <h2>Timeline Events</h2>
 
               {timelineEvents.map((timelineEvent) => (
-                <TimelineEvent key={timelineEvent.id} timelineEvent={timelineEvent} />
-              ))}
+                <TimelineEvent key={timelineEvent?.id} timelineEvent={timelineEvent} />
+              ))
+              }
               </div>
             </div>
           </div>

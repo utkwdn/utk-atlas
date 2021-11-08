@@ -7,7 +7,7 @@ const config = {
   react: false,
   scalarTypes: { DateTime: 'string' },
   introspection: {
-    endpoint: `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/graphql`,
+    endpoint: `https://utkdigitalcomm.wpengine.com/graphql`,
     headers: {},
   },
   destination: './src/client/index.ts',
