@@ -5,9 +5,10 @@ import Head from 'next/head';
 import React from 'react';
 import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
-import { client, PageIdType } from 'client';
+import { client, PageIdType, TagIdType } from 'client';
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 import TimelineEvent from '../components/TimelineEvent';
+import TaggedPage from '../components/TaggedPage';
 
 
 export default function Page() {
@@ -27,8 +28,9 @@ export default function Page() {
   });
 
   const timelineEvents = useQuery().timelineEvents().nodes;
+  const pagesTagged = useQuery().tag( {id: 'test-tag', idType: TagIdType.SLUG} ).contentNodes;
 
-  //console.log(timelineEvents[0].slug);
+  console.log(pagesTagged()?.nodes);
 
   return (
     <>
@@ -79,6 +81,16 @@ export default function Page() {
 
               {timelineEvents.map((timelineEvent) => (
                 <TimelineEvent key={timelineEvent?.id} timelineEvent={timelineEvent} />
+              ))
+              }
+              </div>
+            </div>
+            <div className={styles.features}>
+
+              <div className={styles.feature}>
+              <h2>Test Tag</h2>
+              {pagesTagged().nodes.map((thing) => (
+                <TaggedPage typeName={thing.__typename} contentType={thing.contentType.node.graphqlSingleName} id={thing.id} key={thing.id} />
               ))
               }
               </div>
