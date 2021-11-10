@@ -9,6 +9,7 @@ import { client, PageIdType, TagIdType } from 'client';
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 import TimelineEvent from '../components/TimelineEvent';
 import TaggedPage from '../components/TaggedPage';
+import calEvent from '../components/calEvent';
 
 
 export default function Page() {
@@ -30,7 +31,19 @@ export default function Page() {
   const timelineEvents = useQuery().timelineEvents().nodes;
   const pagesTagged = useQuery().tag( {id: 'test-tag', idType: TagIdType.SLUG} ).contentNodes;
 
-  //console.log(pagesTagged()?.nodes);
+  const calEvents = fetch('https://calendar.utk.edu/api/2/events?page=1&pp=5')
+    .then((response) => response.json())
+    .then((responseJSON) => {
+       return responseJSON;
+       //console.log(responseJSON);
+    });
+
+  async function fetchEvents() {
+    const eventsJson = await fetch('https://calendar.utk.edu/api/2/events?page=1&pp=5');
+    return await eventsJson.json();
+  };
+
+  console.log(fetchEvents());
 
   return (
     <>
@@ -95,6 +108,19 @@ export default function Page() {
               }
               </div>
             </div>
+          </div>
+        </section>
+        <section className={styles.explore}>
+          <div className="wrap">
+              {
+                fetch('https://calendar.utk.edu/api/2/events?page=1&pp=5')
+                .then((response) => response.json())
+                .then((responseJSON) => {
+                   responseJSON.events.map((thisEvent) => (
+                      <calEvent title={thisEvent.title} key={thisEvent.id} />
+                   ))
+                })
+              }
           </div>
         </section>
         <CTA
