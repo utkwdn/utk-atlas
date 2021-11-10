@@ -30,7 +30,7 @@ export default function Page() {
   const timelineEvents = useQuery().timelineEvents().nodes;
   const pagesTagged = useQuery().tag( {id: 'test-tag', idType: TagIdType.SLUG} ).contentNodes;
 
-  console.log(pagesTagged()?.nodes);
+  //console.log(pagesTagged()?.nodes);
 
   return (
     <>
