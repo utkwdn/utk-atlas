@@ -2,15 +2,15 @@ import React from 'react';
 
 const CalEvent = props => {
 
-  const [fetchedEvents, setEvents] = React.useState( {} );
+  const [fetchedEvents, setEvents] = React.useState( { events: [] } );
 
   React.useEffect(() => {
-    const fetchUserEmail = async () => {
+    const fetchCalEvents = async () => {
       const response = await fetch("https://calendar.utk.edu/api/2/events?page=1&pp=5");
       const fetchedEvents = await response.json();
       setEvents(fetchedEvents);
     };
-    fetchUserEmail();
+    fetchCalEvents();
   }, []);
 
   fetchedEvents?.events?.map((event) => (
@@ -20,11 +20,13 @@ const CalEvent = props => {
   return (
     <div>
       <h1>Event Titles</h1>
+      <ul>
       {
       fetchedEvents?.events?.map((event) => (
-        <h4 key={event?.event.id}>{event?.event.title}</h4>
+        <li key={event?.event.id}>{event?.event.title}</li>
       ))
       }
+      </ul>
     </div>
   );
 };
