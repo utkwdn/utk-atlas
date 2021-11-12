@@ -11,9 +11,13 @@ import TimelineEvent from '../components/TimelineEvent';
 
 
 export default function Page() {
-  const { useQuery, usePage } = client;
+  const { useQuery, usePage, usePosts } = client;
   const generalSettings = useQuery().generalSettings;
-  
+
+
+
+
+
   //const allPages = getArrayFields(useQuery().pages().nodes, 'isFrontPage', 'id', 'slug', 'pageId', 'uri');
   //const frontPage = allPages.findIndex(x => x.isFrontPage === true);
   //const frontPageID = allPages[frontPage].slug;
@@ -28,6 +32,12 @@ export default function Page() {
 
   const timelineEvents = useQuery().timelineEvents().nodes;
 
+  const posts = usePosts({
+    first: 6,
+    where: {
+      categoryName: 'uncategorized',
+    },
+  });
   //console.log(timelineEvents[0].slug);
 
   return (
@@ -45,8 +55,8 @@ export default function Page() {
 
 	<div id="page">
       <main className="content">
-        <article 
-			id="post-41" 
+        <article
+			id="post-41"
 			className="post-41 page type-page status-publish hentry"
 		>
 			<div className="bg-light pt-5 alignfull">
@@ -58,48 +68,32 @@ export default function Page() {
 			</div>
 			<div className="entry-content container-xxl" dangerouslySetInnerHTML={{ __html: frontPageContent?.content() }} />
 		</article>
-        <section className={styles.explore}>
-          <div className="wrap">
-            <h2>Explore this Example Project</h2>
-            <p>
-              This headless example project uses{' '}
-              <a href="https://nextjs.org/">Next.js</a>,{' '}
-              <a href="https://graphql.org/">GraphQL</a>,{' '}
-              <a href="https://gqty.dev">GQty</a> and the{' '}
-              <a href="https://github.com/wpengine/faustjs">
-                WP&nbsp;Engine headless packages
-              </a>{' '}
-              for WordPress integration. Dive in and edit this template at{' '}
-              <code>src/pages/index.tsx</code> or discover more below.
-            </p>
-            <div className={styles.features}>
+    <section className={styles.explore}>
+      <div className="container-xxl">
+          <h2 className="display-3">Timeline Events <small className="text-muted">(some custom post types)</small></h2>
 
-              <div className={styles.feature}>
-              <h2>Timeline Events</h2>
+          <hr className="orange-hash" />
+          <div className="row">
+            {timelineEvents.map((timelineEvent) => (
+              <TimelineEvent key={timelineEvent?.id} timelineEvent={timelineEvent} />
+            ))
+            }
+        </div>
+      </div>
+    </section>
 
-              {timelineEvents.map((timelineEvent) => (
-                <TimelineEvent key={timelineEvent?.id} timelineEvent={timelineEvent} />
-              ))
-              }
-              </div>
-            </div>
-          </div>
-        </section>
-        <CTA
-          title="Questions or comments?"
-          buttonText="Join the discussion on GitHub"
-          buttonURL="https://github.com/wpengine/faustjs/discussions"
-          headingLevel="h2">
-          <p>
-            We welcome feature requests, bug reports and questions in the{' '}
-            <a href="https://github.com/wpengine/faustjs">
-              Headless Framework GitHub repository
-            </a>
-            .
-          </p>
-        </CTA>
-      </main>
-	  </div>
+
+    <Posts
+      posts={posts.nodes}
+      heading="Latest Posts"
+      intro="The Posts component in src/pages/index.tsx shows the latest six posts from the connected WordPress site."
+      headingLevel="h2"
+      postTitleLevel="h3"
+      id={styles.post_list}
+    />
+
+    </main>
+	 </div>
       <Footer copyrightHolder={generalSettings.title} />
     </>
   );

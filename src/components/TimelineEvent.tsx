@@ -8,10 +8,10 @@ interface TimelineEventProps {
 
 export default function TimelineEvent({ timelineEvent }: TimelineEventProps): JSX.Element {
   return (
-    <div>
-      <h2>{timelineEvent.title()}</h2>
-      <div 
-        dangerouslySetInnerHTML={{ __html: timelineEvent.content() }} 
+    <div class="col">
+      <h3>{timelineEvent.title()}</h3>
+      <div
+        dangerouslySetInnerHTML={{ __html: timelineEvent.content() }}
       />
     </div>
   );
