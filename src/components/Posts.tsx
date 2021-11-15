@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Post } from 'client';
 import styles from 'scss/components/Posts.module.scss';
 import Heading, { HeadingProps } from './Heading';
+import ImageCap from './ImageCap';
 
 interface Props {
   posts: Post[] | undefined;
@@ -26,35 +27,35 @@ function Posts({
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <section className={styles['posts-block']} {...(id && { id })}>
-      <div className="wrap">
+      <div className="container-xxl">
         {heading && (
           <Heading level={headingLevel} className={styles.heading}>
             {heading}
           </Heading>
         )}
         {intro && <p className={styles.intro}>{intro}</p>}
-        <div className="posts">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3  row-cols-xl-4 g-4">
           {posts.map((post) => (
-            <div
-              className={styles.single}
-              key={post.id ?? ''}
-              id={`post-${post.id}`}>
-              <div>
-                <Heading level={postTitleLevel} className={styles.title}>
-                  <Link href={`/posts/${post.slug}`}>
-                    <a>{post.title()}</a>
-                  </Link>
-                </Heading>
-                <div
-                  className={styles.excerpt}
-                  // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={{ __html: post.excerpt() ?? '' }}
+            <div className="col">
+              <div
+                className="card card-body"
+                key={post.id ?? ''}
+                id={`post-${post.id}`}>
+                <div>
+                <ImageCap
+                bgImage={post?.featuredImage?.node?.sourceUrl()}
                 />
-                <Link href={`/posts/${post.slug}`}>
-                  <a aria-label={`Read more about ${post.title || 'the post'}`}>
-                    {readMoreText}
-                  </a>
-                </Link>
+                  <Heading level={postTitleLevel} className={styles.title}>
+                    <Link href={`/posts/${post.slug}`}>
+                      <a className="stretched-link">{post.title()}</a>
+                    </Link>
+                  </Heading>
+                  <div
+                    className={styles.excerpt}
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{ __html: post.excerpt() ?? '' }}
+                  />
+                </div>
               </div>
             </div>
           ))}

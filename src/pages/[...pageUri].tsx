@@ -31,7 +31,7 @@ export function PageComponent({ page }: PageProps) {
       />
 
       <main className="content content-single">
-        <div className="wrap">
+        <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
         </div>
       </main>
