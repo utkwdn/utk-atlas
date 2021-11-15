@@ -12,6 +12,7 @@ interface Props {
   heading?: string;
   headingLevel?: HeadingProps['level'];
   postTitleLevel?: HeadingProps['level'];
+  bgImage?: string;
   readMoreText?: string;
 }
 
@@ -19,6 +20,7 @@ function Posts({
   posts,
   intro,
   heading,
+  bgImage,
   id,
   headingLevel = 'h1',
   postTitleLevel = 'h2',
@@ -42,6 +44,7 @@ function Posts({
                 key={post.id ?? ''}
                 id={`post-${post.id}`}>
                 <div>
+
                 <ImageCap
                 bgImage={post?.featuredImage?.node?.sourceUrl()}
                 />
