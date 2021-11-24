@@ -5,14 +5,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-		  <link
-		  	rel="dns-prefetch"
-			href="//images.utk.edu"
-		  />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public%20Sans%3Aital%2Cwght%400%2C100..900%3B1%2C100..900&amp;subset=latin%2Clatin-ext"
+          />
           <link
             rel="stylesheet"
-			id="utk-bootstrap-designsytemstyles-css"
-            href="https://images.utk.edu/designsystem/v1/latest/assets/css/style.css?ver=0.0.16"
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public%20Sans%3Aital%2Cwght%400%2C100..900%3B1%2C100..900&amp;subset=latin%2Clatin-ext"
             type="text/css"
             media="all"
           />

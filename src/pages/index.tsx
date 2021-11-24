@@ -31,6 +31,10 @@ export default function Page() {
   const timelineEvents = useQuery().timelineEvents().nodes;
   const pagesTagged = useQuery().tag( {id: 'test-tag', idType: TagIdType.SLUG} ).contentNodes;
 
+  const taggedPosts = useQuery()
+    .tag({ id: "test-tag", idType: TagIdType.SLUG })
+    .contentNodes().nodes;
+
   const calEvents = fetch('https://calendar.utk.edu/api/2/events?page=1&pp=5')
     .then((response) => response.json())
     .then((responseJSON) => {
@@ -42,7 +46,7 @@ export default function Page() {
     return await eventsJson.json();
   };
 
-  //console.log(fetchEvents());
+  console.log(taggedPosts);
 
   return (
     <>
@@ -101,6 +105,21 @@ export default function Page() {
 
               <div className={styles.feature}>
               <h2>Test Tag</h2>
+              <ul>
+              {taggedPosts.map((taggedPost) => {
+                const postType = taggedPost?.__typename;
+                const timelineevent = taggedPost?.$on?.TimelineEvent;
+                const post = taggedPost?.$on?.Post;
+
+                switch (postType) {
+                  case "TimelineEvent":
+                    return <li>{timelineevent?.title()}</li>;
+                  case "Post":
+                    return <li>{post?.title()}</li>;
+                }
+              })}
+              </ul>
+
               {pagesTagged().nodes.map((thing) => (
                 <TaggedPage typeName={thing.__typename} contentType={thing.contentType.node.graphqlSingleName} id={thing.id} key={thing.id} />
               ))
