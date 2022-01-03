@@ -38,7 +38,7 @@ function Posts({
         {intro && <p className={styles.intro}>{intro}</p>}
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3  row-cols-xl-4 g-4">
           {posts.map((post) => (
-            <div className="col">
+            <div className="col" key={post.id ?? ''}>
               <div
                 className="card card-body"
                 key={post.id ?? ''}
