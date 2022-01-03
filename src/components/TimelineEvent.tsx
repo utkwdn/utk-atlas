@@ -8,7 +8,7 @@ interface TimelineEventProps {
 
 export default function TimelineEvent({ timelineEvent }: TimelineEventProps): JSX.Element {
   return (
-    <div class="col">
+    <div className="col">
       <h3>{timelineEvent.title()}</h3>
       <div
         dangerouslySetInnerHTML={{ __html: timelineEvent.content() }}
