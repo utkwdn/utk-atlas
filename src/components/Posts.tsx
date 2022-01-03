@@ -46,6 +46,7 @@ function Posts({
                 <div>
 
                 <ImageCap
+                title={post?.featuredImage?.node?.title()}
                 bgImage={post?.featuredImage?.node?.sourceUrl()}
                 />
                   <Heading level={postTitleLevel} className={styles.title}>
