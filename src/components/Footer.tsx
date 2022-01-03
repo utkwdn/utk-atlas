@@ -345,7 +345,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
     <path className="st0_white" d="M66.7,9.6v19.3h-7.1c0-3.5-3.5-6.4-7.8-6.4c-3.2,0-5.9,1.5-7.1,3.7v24.1c0,5.1,4,9.3,8.9,9.3h0v7.1H22.8v-7.1h0
     	c4.9,0,8.9-4.2,8.9-9.3V26.2c-1.2-2.2-4-3.7-7.1-3.7c-4.3,0-7.8,2.9-7.8,6.4H9.6V9.6H66.7L66.7,9.6z"></path>
     </svg></a>      <p className="text-white small">The University of Tennessee<br />Knoxville, Tennessee 37996<br />865-974-1000</p>
-          <p className="text-white small">The flagship campus of the <a href="https://tennessee.edu/" target="_blank" className="text-white footer-links">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org/" target="_blank" className="text-white footer-links">Tennessee Transfer Pathway</a>.</p>
+          <p className="text-white small">The flagship campus of the <a href="https://tennessee.edu/" target="_blank" rel="noreferrer" className="text-white footer-links">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org/" target="_blank" rel="noreferrer" className="text-white footer-links">Tennessee Transfer Pathway</a>.</p>
           <p className="text-white small"><a className="text-white me-3 footer-links" href="https://oed.utk.edu/ada/">ADA</a> <a className="text-white me-3 footer-links" href="https://www.utk.edu/aboutut/privacy/">Privacy</a> <a className="text-white me-3 footer-links" href="https://safety.utk.edu/">Safety</a> <a className="text-white footer-links" href="https://titleix.utk.edu/">Title&nbsp;IX</a>  </p>
         </div>
         </div>
