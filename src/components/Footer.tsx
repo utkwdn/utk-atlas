@@ -355,7 +355,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
 
 
 
-      <script src="https://images.utk.edu/designsystem/www2021/v1/assets/utk20210820.min.js?ver=20210816" id="utk-bootstrap-designsytemscripts-js"></script>
+      <script src="//images.utk.edu/designsystem/v1/0.0.9/assets/js/utk.js" id="utk-bootstrap-designsytemscripts-js"></script>
     </footer>
 
   );

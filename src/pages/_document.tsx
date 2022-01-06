@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <link
             rel="stylesheet"
 			id="utk-bootstrap-designsytemstyles-css"
-            href="https://images.utk.edu/designsystem/v1/latest/assets/css/style.css?ver=0.0.16"
+            href="https://images.utk.edu/designsystem/v1/0.0.9/assets/css/style.css"
             type="text/css"
             media="all"
           />

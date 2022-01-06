@@ -59,7 +59,7 @@ export default function Page() {
 </div>
 
 
-<div className="container">
+<div className="container-fluid">
 <ul className="nav nav-fill internal-links py-4 row">
 <li className="nav-item col-md-4">
 <a className="btn btn-internal text-utlink" href="#academics">Areas of Study</a>
@@ -74,12 +74,14 @@ export default function Page() {
 </div>
 
 
-<div className="container">
+<div className="container-fluid">
 
 
 
 
 <main id="content">
+<div className="container-xxl">
+
 <div className="strip strip-light strip-positioning bg-dark" style={{backgroundImage: 'url(http://images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif)' }}>
 
 <div className="container-xxl">
@@ -132,7 +134,9 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 </div>
 </div>
 </div>
+</div>
 
+<div className="container-xxl">
 
 <div className="strip bg-white py-0 pb-sm-4 pb-md-0" id="academics">
 
@@ -167,7 +171,7 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 
 </div>
 </div>
-
+</div>
 <div className="strip strip-support position-relative">
 <video autoPlay muted loop id="textvideo">
     <source src="https://images.utk.edu/designsystem/www2021/i/TextureClip4.mp4" type="video/mp4" />
@@ -187,10 +191,12 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
       </div>
     </div>
   </div>
-
+  <div className="container-xxl">
 <div className="strip strip-dots p-5">
 </div>
+</div>
 
+<div className="container-xxl">
 <div className="strip position-relative lazyload bg-transparent" id="experience" style={{ backgroundImage: "url('https://www.utk.edu/images/i/warmers/campus_aerial_sky_bg.jpg')" }}>
 <div className="container-xxl py-xl-5">
 <div className="row justify-content-center strip-row" >
@@ -204,8 +210,9 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 </div>
 </div>
 </div>
+</div>
 
-
+<div className="container-xxl">
 <div className="strip strip-dots strip-gallery pb-0">
 <div className="container-xxl">
 <div className="row g-0 fit-gallery">
@@ -219,7 +226,7 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
       </div>
     </div>
 
-    <div className="card position-relative border-0 ratio"  
+    <div className="card position-relative border-0 ratio"
     //@ts-ignore
     style={{ "--bs-aspect-ratio": "50%" }}
     >
@@ -258,7 +265,7 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 </div>
 <div className="col-12 col-lg-6 mt-lg-n2">
 
-  <div className="card position-relative border-0 ratio"  
+  <div className="card position-relative border-0 ratio"
   //@ts-ignore
   style={{ "--bs-aspect-ratio": "50%" }}
   >
@@ -314,7 +321,7 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 
 </div>
 </div>
-
+</div>
 <div className="strip strip-value lazyload"  data-bg="https://www.utk.edu/images/i/warmers/strip-nurse.jpg">
 <div className="container-xxl">
 <div className="row justify-content-end">
@@ -326,6 +333,9 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 </div>
 </div>
 </div>
+
+
+<div className="container-xxl">
 <div className="strip bg-light pb-md-0" id="value" >
 <div className="container">
 
@@ -362,16 +372,17 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
     </div>
   </div>
 </div>
+</div>
 
 
-
+<div className="container">
 
 <div className="card card-secondary card-body col-12 col-md-8 col-lg-5 col-xl-4 my-4 mb-md-n5 border-0 card-cta p-4 d-block">
    <h3 className="text-uppercase h5">Become a Volunteer</h3>
      <a href="https://admissions.utk.edu/apply/" className="btn btn-chevron text-uppercase home-cta" id="cta-apply">Start your application</a>
 </div>
 </div>
-
+</div>
 
 </div>
 
