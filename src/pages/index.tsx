@@ -87,7 +87,10 @@ export default function Page() {
 <div className="row justify-content-center">
  <div className="col-3 col-md-2 col-lg-1">
 <svg version="1.1" fill="#ff8200" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-viewBox="0 0 75.5 77.6" style={{ "enable-background": "new 0 0 75.5 77.6" }}>
+viewBox="0 0 75.5 77.6"
+//@ts-ignore
+style={{ "enable-background": "new 0 0 75.5 77.6" }}
+>
 <g id="Group_2862" transform="translate(27.376 0.421)">
 <path id="Path_2062" d="M36.8,14.7c-2.4,0-4.8-0.5-7.1-1.4c2.7-2.1,3.4-5.8,3.8-8.9l0.4-3.5l-2.6,2.4c-3.2,3-4.2,3.4-6.2,3.4
 c-1,0-2.2-0.1-3.8-0.3l-1.1-0.1C12.8,5.6,7,7.4,3.5,11.5c-1.6,1.9-2.7,4.2-3.2,6.7l2.4,1.4c0.3-2.3,1.2-4.5,2.7-6.4
@@ -216,7 +219,10 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
       </div>
     </div>
 
-    <div className="card position-relative border-0 ratio"  style={{ "--bs-aspect-ratio": "50%" }}>
+    <div className="card position-relative border-0 ratio"  
+    //@ts-ignore
+    style={{ "--bs-aspect-ratio": "50%" }}
+    >
 
         <img data-src="https://www.utk.edu/images/i/warmers/mountains_mosaic_142517_dreamstimemaximum_28574749edit_lg.jpg" className="card-img lazyload" alt="Beautiful Smokey Mountains." width="940" height="470"/>
 
@@ -252,7 +258,10 @@ C30.2,46.9,29.6,47.8,29.1,48.6"/>
 </div>
 <div className="col-12 col-lg-6 mt-lg-n2">
 
-  <div className="card position-relative border-0 ratio"  style={{ "--bs-aspect-ratio": "50%" }}>
+  <div className="card position-relative border-0 ratio"  
+  //@ts-ignore
+  style={{ "--bs-aspect-ratio": "50%" }}
+  >
     <img data-src="https://www.utk.edu/images/i/warmers/gal-sunsphere.jpg" className="card-img lazyload" alt="Downtown Knoxville." width="1000" height="500"/>
   </div>
 
