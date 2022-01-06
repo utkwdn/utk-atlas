@@ -16,6 +16,13 @@ class MyDocument extends Document {
             type="text/css"
             media="all"
           />
+          <link
+            rel="stylesheet"
+			      id="utk-www-css"
+            href="/public/css/styles.css"
+            type="text/css"
+            media="all"
+          />
         </Head>
         <body>
           <Main />
