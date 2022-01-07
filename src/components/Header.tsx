@@ -70,7 +70,7 @@ function Header({
           </svg></span></a>
           </div>
           </div>
-          <div className="modal fade" id="searchModal" tabindex="-1"  aria-hidden="true">
+          <div className="modal fade" id="searchModal" tabIndex={-1}  aria-hidden="true">
             <div className="modal-dialog modal-fullscreen modal-dialog-scrollable modal-dialog-centered">
               <div className="modal-content">
 
@@ -130,7 +130,7 @@ function Header({
 
                             <form className="form-inline hidden-print mt-4" id="cse-searchbox-form">
                               <div className="mb-3 input-group">
-                                <label className="sr-only visually-hidden" for="q">Search</label>
+                                <label className="sr-only visually-hidden" htmlFor="q">Search</label>
                                 <input type="search" className="form-control" title="Search utk.edu" placeholder="Example: Apply, Payroll, Provost, English Department"  name="q" id="q" />
                                 <button type="submit" name="btnG" className="btn btn-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" aria-hidden="true" viewBox="0 0 16 16">
@@ -145,7 +145,7 @@ function Header({
 
                             <form className="form-inline hidden-print mt-4" id="events-searchbox-form">
                               <div className="mb-3 input-group">
-                                <label className="sr-only visually-hidden" for="q-events">Search</label>
+                                <label className="sr-only visually-hidden" htmlFor="q-events">Search</label>
                                 <input type="search" className="form-control" title="Search events"  placeholder="Example: Orientation, Art Show, Yoga Session"  name="q-events" id="q-events" />
                                 <button type="submit" name="btnG" className="btn btn-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" aria-hidden="true" viewBox="0 0 16 16">
@@ -160,7 +160,7 @@ function Header({
 
                             <form className="form-inline hidden-print mt-4" id="news-searchbox-form">
                               <div className="mb-3 input-group">
-                                <label className="sr-only visually-hidden" for="q-news">Search</label>
+                                <label className="sr-only visually-hidden" htmlFor="q-news">Search</label>
                                 <input type="search" className="form-control" title="Search news" placeholder="Example: Dean's List, ORNL, Capstone Project" name="q-news" id="q-news" />
                                 <button type="submit" name="btnG" className="btn btn-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
@@ -177,7 +177,7 @@ function Header({
 
                             <form className="form-inline hidden-print mt-4" id="dir-searchbox-form" method="post" action="https://directory.utk.edu/search">
                               <div className="mb-3 input-group">
-                                <label className="sr-only visually-hidden" for="query">Search</label>
+                                <label className="sr-only visually-hidden" htmlFor="query">Search</label>
                                 <input type="search" className="form-control" title="Search directory" placeholder="Example: Jane Doe, NetID, email@utk.edu" name="query" id="search-bar" />
                                 <button type="submit" name="btnG" className="btn btn-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
