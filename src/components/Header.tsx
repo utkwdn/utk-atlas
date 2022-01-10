@@ -47,16 +47,19 @@ function Header({
         <button className="navbar-toggler" type="button" id="mobile-menu-close" data-toggle="collapse" data-target="#site-navigation" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg><span className="visually-hidden">Close Menu</span>
         </button>
+
         <div className="menu-main-site-container">
           <ul id="primary-menu" className="list-unstyled">
-            <li><a className="main-navigation" href="/aboutut/">About UT</a></li>
-            <li><a className="main-navigation" href="/academics/">Academics</a></li>
-            <li><a className="main-navigation" href="/admissions/">Admissions</a></li>
-            <li><a className="main-navigation" href="/">Diversity</a></li>
-            <li><a className="main-navigation" href="/outreach/">Outreach</a></li>
-            <li ><a className="main-navigation" href="/research/">Research</a></li>
+            {links?.map((link) => (
+              <li key={`${link.label}$-menu`}>
+                <Link href={link.url ?? ''}>
+                  <a className="main-navigation" href={link.url}>{link.label}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
+
       </nav>
       </div></div></header>
 
