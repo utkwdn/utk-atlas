@@ -7,7 +7,7 @@ import { CTA, Footer, Header, Hero, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client, PageIdType } from 'client';
 //import { getArrayFields, castNotSkeleton } from 'gqty';
-import TimelineEvent from '../components/TimelineEvent';
+//import TimelineEvent from '../components/TimelineEvent';
 
 
 export default function Page() {
@@ -25,12 +25,12 @@ export default function Page() {
   //let frontPageParts = Object.entries(allPages[frontPage]);
 	//let frontPageClean = Object.fromEntries(frontPageParts);
 
-  const frontPageContent = usePage({
-    id: "/",
-    idType: PageIdType.URI,
-  });
+  //const frontPageContent = usePage({
+    //id: "/",
+    //idType: PageIdType.URI,
+  //});
 
-  const timelineEvents = useQuery().timelineEvents().nodes;
+  //const timelineEvents = useQuery().timelineEvents().nodes;
 
   const posts = usePosts({
     first: 6,

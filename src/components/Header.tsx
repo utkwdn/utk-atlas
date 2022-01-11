@@ -142,7 +142,12 @@ function Header({
                               </div>
                             </form>
 
-                            <div className="gcse-searchresults-only" data-gname="this-site-results" data-enableImageSearch="false" data-enableOrderBy="false"></div>
+                            <div className="gcse-searchresults-only" data-gname="this-site-results" 
+                            //@ts-ignore
+                            data-enableImageSearch="false" 
+                            //@ts-ignore
+                            data-enableOrderBy="false"
+                            ></div>
                           </div>
                           <div className="tab-pane" id="events" role="tabpanel" aria-labelledby="events-tab">
 
