@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-		  <link
+        <link
 		  	rel="dns-prefetch"
 			href="//images.utk.edu"
 		  />
