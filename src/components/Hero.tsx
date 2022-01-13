@@ -28,8 +28,8 @@ function Hero({
       {...(id && { id })}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
       className={styles.hero}>
-      <div className={styles.wrap}>
-        <h1>{title}</h1>
+      <div className="container-xxl">
+        <h1 className="text-white">{title}</h1>
         <div className={styles.intro}>
           <div className={styles.children}>{children}</div>
           {buttonText && buttonURL && (

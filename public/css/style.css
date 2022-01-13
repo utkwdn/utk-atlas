@@ -1,0 +1,26 @@
+.utsmokey{fill:#58595B;}
+.utorange{fill:#FF8200;}
+.utwhite{fill:#FFFFFF;}
+.st0_white{fill:#FFFFFF;}
+.st1_headerwhite{fill:#FF8200;}
+#textvideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: 0;
+}
+.strip-support {
+  padding-top: 14rem;
+}
+@media screen and (min-width: 1200px) {
+  .strip-support {
+    padding-top: 25rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .strip-support {
+    padding-top: 35rem;
+  }
+}

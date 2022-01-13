@@ -378,8 +378,6 @@ export enum ContentTypeEnum {
   PAGE = "PAGE",
   /** The Type of Content object */
   POST = "POST",
-  /** The Type of Content object */
-  TIMELINE_EVENTS = "TIMELINE_EVENTS",
 }
 
 /** The Type of Identifier used to fetch a single Content Type node. To be used along with the "id" field. Default is "ID". */
@@ -446,14 +444,6 @@ export enum ContentTypesOfPostFormatEnum {
 export enum ContentTypesOfTagEnum {
   /** The Type of Content object */
   POST = "POST",
-  /** The Type of Content object */
-  TIMELINE_EVENTS = "TIMELINE_EVENTS",
-}
-
-/** Allowed Content Types of the TimelineEra taxonomy. */
-export enum ContentTypesOfTimelineEraEnum {
-  /** The Type of Content object */
-  TIMELINE_EVENTS = "TIMELINE_EVENTS",
 }
 
 /** Input for the createCategory mutation */
@@ -622,46 +612,6 @@ export interface CreateTagInput {
   slug?: InputMaybe<Scalars["String"]>;
 }
 
-/** Input for the createTimelineEra mutation */
-export interface CreateTimelineEraInput {
-  /** The slug that the timeline_era will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The description of the timeline_era object */
-  description?: InputMaybe<Scalars["String"]>;
-  /** The name of the timeline_era object to mutate */
-  name: Scalars["String"];
-  /** The ID of the timeline_era that should be set as the parent */
-  parentId?: InputMaybe<Scalars["ID"]>;
-  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
-}
-
-/** Input for the createTimelineEvent mutation */
-export interface CreateTimelineEventInput {
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
-  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
-  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
-  /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
-  /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
-  /** The status of the object */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Set connections between the TimelineEvent and tags */
-  tags?: InputMaybe<TimelineEventTagsInput>;
-  /** Set connections between the TimelineEvent and TimelineEras */
-  timelineEras?: InputMaybe<TimelineEventTimelineErasInput>;
-  /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
-}
-
 /** Input for the createUser mutation */
 export interface CreateUserInput {
   /** User's AOL IM account. */
@@ -806,24 +756,6 @@ export interface DeleteTagInput {
   id: Scalars["ID"];
 }
 
-/** Input for the deleteTimelineEra mutation */
-export interface DeleteTimelineEraInput {
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The ID of the TimelineEra to delete */
-  id: Scalars["ID"];
-}
-
-/** Input for the deleteTimelineEvent mutation */
-export interface DeleteTimelineEventInput {
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** Whether the object should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
-  /** The ID of the TimelineEvent to delete */
-  id: Scalars["ID"];
-}
-
 /** Input for the deleteUser mutation */
 export interface DeleteUserInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -948,8 +880,6 @@ export enum MediaItemSizeEnum {
   MEDIUM = "MEDIUM",
   /** MediaItem with the medium_large size */
   MEDIUM_LARGE = "MEDIUM_LARGE",
-  /** MediaItem with the post-thumbnail size */
-  POST_THUMBNAIL = "POST_THUMBNAIL",
   /** MediaItem with the thumbnail size */
   THUMBNAIL = "THUMBNAIL",
   /** MediaItem with the 1536x1536 size */
@@ -1054,10 +984,12 @@ export interface MenuItemToMenuItemConnectionWhereArgs {
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
-  /** Put the menu in the footer location */
-  FOOTER = "FOOTER",
+  /** Put the menu in the links location */
+  LINKS = "LINKS",
   /** Put the menu in the primary location */
   PRIMARY = "PRIMARY",
+  /** Put the menu in the tools location */
+  TOOLS = "TOOLS",
 }
 
 /** The Type of Identifier used to fetch a single node. Default is "ID". To be used along with the "id" field. */
@@ -2420,100 +2352,6 @@ export interface RootQueryToTermNodeConnectionWhereArgs {
   updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
 }
 
-/** Arguments for filtering the RootQueryToTimelineEraConnection connection */
-export interface RootQueryToTimelineEraConnectionWhereArgs {
-  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
-  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
-  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
-  /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
-  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
-  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
-  /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
-  /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Direction the connection should be ordered in */
-  order?: InputMaybe<OrderEnum>;
-  /** Field(s) to order terms by. Defaults to 'name'. */
-  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
-  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
-  /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
-  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
-}
-
-/** Arguments for filtering the RootQueryToTimelineEventConnection connection */
-export interface RootQueryToTimelineEventConnectionWhereArgs {
-  /** Filter the connection based on dates */
-  dateQuery?: InputMaybe<DateQueryInput>;
-  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
-  /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
-  /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Get objects with a specific mimeType property */
-  mimeType?: InputMaybe<MimeTypeEnum>;
-  /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
-  /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** What paramater to use to order the objects by. */
-  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
-  /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
-  /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
-  /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Retrieve posts where post status is in an array. */
-  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
-  /** Show posts with a specific status. */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
-  /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
-}
-
 /** Arguments for filtering the RootQueryToUserConnection connection */
 export interface RootQueryToUserConnectionWhereArgs {
   /** Array of userIds to exclude. */
@@ -2678,56 +2516,6 @@ export interface TagToPostConnectionWhereArgs {
   title?: InputMaybe<Scalars["String"]>;
 }
 
-/** Arguments for filtering the TagToTimelineEventConnection connection */
-export interface TagToTimelineEventConnectionWhereArgs {
-  /** Filter the connection based on dates */
-  dateQuery?: InputMaybe<DateQueryInput>;
-  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
-  /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
-  /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Get objects with a specific mimeType property */
-  mimeType?: InputMaybe<MimeTypeEnum>;
-  /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
-  /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** What paramater to use to order the objects by. */
-  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
-  /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
-  /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
-  /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Retrieve posts where post status is in an array. */
-  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
-  /** Show posts with a specific status. */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
-  /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
-}
-
 /** Allowed taxonomies */
 export enum TaxonomyEnum {
   /** Taxonomy enum category */
@@ -2736,8 +2524,6 @@ export enum TaxonomyEnum {
   POSTFORMAT = "POSTFORMAT",
   /** Taxonomy enum post_tag */
   TAG = "TAG",
-  /** Taxonomy enum timeline_era */
-  TIMELINEERA = "TIMELINEERA",
 }
 
 /** The Type of Identifier used to fetch a single Taxonomy node. To be used along with the "id" field. Default is "ID". */
@@ -2778,340 +2564,6 @@ export enum TermObjectsConnectionOrderbyEnum {
   TERM_ID = "TERM_ID",
   /** Order the connection by term order. */
   TERM_ORDER = "TERM_ORDER",
-}
-
-/** The Type of Identifier used to fetch a single resource. Default is ID. */
-export enum TimelineEraIdType {
-  /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
-  /** The hashed Global ID */
-  ID = "ID",
-  /** The name of the node */
-  NAME = "NAME",
-  /** Url friendly name of the node */
-  SLUG = "SLUG",
-  /** The URI for the node */
-  URI = "URI",
-}
-
-/** Arguments for filtering the TimelineEraToContentNodeConnection connection */
-export interface TimelineEraToContentNodeConnectionWhereArgs {
-  /** The Types of content to filter */
-  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfTimelineEraEnum>>>;
-  /** Filter the connection based on dates */
-  dateQuery?: InputMaybe<DateQueryInput>;
-  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
-  /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
-  /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Get objects with a specific mimeType property */
-  mimeType?: InputMaybe<MimeTypeEnum>;
-  /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
-  /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** What paramater to use to order the objects by. */
-  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
-  /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
-  /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
-  /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Retrieve posts where post status is in an array. */
-  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
-  /** Show posts with a specific status. */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
-}
-
-/** Arguments for filtering the TimelineEraToTimelineEraConnection connection */
-export interface TimelineEraToTimelineEraConnectionWhereArgs {
-  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
-  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
-  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
-  /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
-  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
-  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
-  /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
-  /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Direction the connection should be ordered in */
-  order?: InputMaybe<OrderEnum>;
-  /** Field(s) to order terms by. Defaults to 'name'. */
-  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
-  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
-  /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
-  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
-}
-
-/** Arguments for filtering the TimelineEraToTimelineEventConnection connection */
-export interface TimelineEraToTimelineEventConnectionWhereArgs {
-  /** Filter the connection based on dates */
-  dateQuery?: InputMaybe<DateQueryInput>;
-  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
-  /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
-  /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Get objects with a specific mimeType property */
-  mimeType?: InputMaybe<MimeTypeEnum>;
-  /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
-  /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** What paramater to use to order the objects by. */
-  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
-  /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
-  /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
-  /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Retrieve posts where post status is in an array. */
-  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
-  /** Show posts with a specific status. */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
-  /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
-}
-
-/** The Type of Identifier used to fetch a single resource. Default is ID. */
-export enum TimelineEventIdType {
-  /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
-  /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
-  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
-  SLUG = "SLUG",
-  /** Identify a resource by the URI. */
-  URI = "URI",
-}
-
-/** Set relationships between the TimelineEvent to tags */
-export interface TimelineEventTagsInput {
-  /** If true, this will append the tag to existing related tags. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
-  /** The input list of items to set. */
-  nodes?: InputMaybe<Array<InputMaybe<TimelineEventTagsNodeInput>>>;
-}
-
-/** List of tags to connect the TimelineEvent to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
-export interface TimelineEventTagsNodeInput {
-  /** The description of the tag. This field is used to set a description of the tag if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
-  /** The ID of the tag. If present, this will be used to connect to the TimelineEvent. If no existing tag exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
-  /** The name of the tag. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
-  /** The slug of the tag. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
-}
-
-/** Set relationships between the TimelineEvent to TimelineEras */
-export interface TimelineEventTimelineErasInput {
-  /** If true, this will append the TimelineEra to existing related TimelineEras. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
-  /** The input list of items to set. */
-  nodes?: InputMaybe<Array<InputMaybe<TimelineEventTimelineErasNodeInput>>>;
-}
-
-/** List of TimelineEras to connect the TimelineEvent to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
-export interface TimelineEventTimelineErasNodeInput {
-  /** The description of the TimelineEra. This field is used to set a description of the TimelineEra if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
-  /** The ID of the TimelineEra. If present, this will be used to connect to the TimelineEvent. If no existing TimelineEra exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
-  /** The name of the TimelineEra. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
-  /** The slug of the TimelineEra. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
-}
-
-/** Arguments for filtering the TimelineEventToTagConnection connection */
-export interface TimelineEventToTagConnectionWhereArgs {
-  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
-  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
-  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
-  /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
-  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
-  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
-  /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
-  /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Direction the connection should be ordered in */
-  order?: InputMaybe<OrderEnum>;
-  /** Field(s) to order terms by. Defaults to 'name'. */
-  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
-  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
-  /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
-  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
-}
-
-/** Arguments for filtering the TimelineEventToTermNodeConnection connection */
-export interface TimelineEventToTermNodeConnectionWhereArgs {
-  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
-  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
-  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
-  /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
-  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
-  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
-  /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
-  /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Direction the connection should be ordered in */
-  order?: InputMaybe<OrderEnum>;
-  /** Field(s) to order terms by. Defaults to 'name'. */
-  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
-  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
-  /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
-  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** The Taxonomy to filter terms by */
-  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
-}
-
-/** Arguments for filtering the TimelineEventToTimelineEraConnection connection */
-export interface TimelineEventToTimelineEraConnectionWhereArgs {
-  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
-  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
-  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
-  /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
-  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
-  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
-  /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
-  /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Direction the connection should be ordered in */
-  order?: InputMaybe<OrderEnum>;
-  /** Field(s) to order terms by. Defaults to 'name'. */
-  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
-  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
-  /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
-  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
-  /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
 }
 
 /** Input for the UpdateCategory mutation */
@@ -3324,50 +2776,6 @@ export interface UpdateTagInput {
   name?: InputMaybe<Scalars["String"]>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
   slug?: InputMaybe<Scalars["String"]>;
-}
-
-/** Input for the UpdateTimelineEra mutation */
-export interface UpdateTimelineEraInput {
-  /** The slug that the timeline_era will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The description of the timeline_era object */
-  description?: InputMaybe<Scalars["String"]>;
-  /** The ID of the TimelineEra object to update */
-  id: Scalars["ID"];
-  /** The name of the timeline_era object to mutate */
-  name?: InputMaybe<Scalars["String"]>;
-  /** The ID of the timeline_era that should be set as the parent */
-  parentId?: InputMaybe<Scalars["ID"]>;
-  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
-}
-
-/** Input for the updateTimelineEvent mutation */
-export interface UpdateTimelineEventInput {
-  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
-  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
-  /** The ID of the TimelineEvent object */
-  id: Scalars["ID"];
-  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
-  /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
-  /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
-  /** The status of the object */
-  status?: InputMaybe<PostStatusEnum>;
-  /** Set connections between the TimelineEvent and tags */
-  tags?: InputMaybe<TimelineEventTagsInput>;
-  /** Set connections between the TimelineEvent and TimelineEras */
-  timelineEras?: InputMaybe<TimelineEventTimelineErasInput>;
-  /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
 }
 
 /** Input for the updateUser mutation */
@@ -3753,7 +3161,6 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   ContentTypesOfCategoryEnum: true,
   ContentTypesOfPostFormatEnum: true,
   ContentTypesOfTagEnum: true,
-  ContentTypesOfTimelineEraEnum: true,
   Float: true,
   ID: true,
   Int: true,
@@ -3779,8 +3186,6 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   TaxonomyIdTypeEnum: true,
   TermNodeIdTypeEnum: true,
   TermObjectsConnectionOrderbyEnum: true,
-  TimelineEraIdType: true,
-  TimelineEventIdType: true,
   UserNodeIdTypeEnum: true,
   UserRoleEnum: true,
   UsersConnectionOrderbyEnum: true,
@@ -3861,6 +3266,7 @@ export const generatedSchema = {
     },
     slug: { __type: "String" },
     taxonomy: { __type: "CategoryToTaxonomyConnectionEdge" },
+    taxonomyName: { __type: "String" },
     templates: { __type: "[String]" },
     termGroupId: { __type: "Int" },
     termTaxonomyId: { __type: "Int" },
@@ -4449,36 +3855,6 @@ export const generatedSchema = {
     clientMutationId: { __type: "String" },
     tag: { __type: "Tag" },
   },
-  CreateTimelineEraInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    name: { __type: "String!" },
-    parentId: { __type: "ID" },
-    slug: { __type: "String" },
-  },
-  CreateTimelineEraPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    timelineEra: { __type: "TimelineEra" },
-  },
-  CreateTimelineEventInput: {
-    clientMutationId: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    tags: { __type: "TimelineEventTagsInput" },
-    timelineEras: { __type: "TimelineEventTimelineErasInput" },
-    title: { __type: "String" },
-  },
-  CreateTimelineEventPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    timelineEvent: { __type: "TimelineEvent" },
-  },
   CreateUserInput: {
     aim: { __type: "String" },
     clientMutationId: { __type: "String" },
@@ -4606,27 +3982,6 @@ export const generatedSchema = {
     clientMutationId: { __type: "String" },
     deletedId: { __type: "ID" },
     tag: { __type: "Tag" },
-  },
-  DeleteTimelineEraInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
-  },
-  DeleteTimelineEraPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    timelineEra: { __type: "TimelineEra" },
-  },
-  DeleteTimelineEventInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
-  },
-  DeleteTimelineEventPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    timelineEvent: { __type: "TimelineEvent" },
   },
   DeleteUserInput: {
     clientMutationId: { __type: "String" },
@@ -5579,6 +4934,7 @@ export const generatedSchema = {
     },
     slug: { __type: "String" },
     taxonomy: { __type: "PostFormatToTaxonomyConnectionEdge" },
+    taxonomyName: { __type: "String" },
     templates: { __type: "[String]" },
     termGroupId: { __type: "Int" },
     termTaxonomyId: { __type: "Int" },
@@ -6435,75 +5791,6 @@ export const generatedSchema = {
     cursor: { __type: "String" },
     node: { __type: "Theme" },
   },
-  RootQueryToTimelineEraConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToTimelineEraConnectionEdge]" },
-    nodes: { __type: "[TimelineEra]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  RootQueryToTimelineEraConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEra" },
-  },
-  RootQueryToTimelineEraConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
-  },
-  RootQueryToTimelineEventConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToTimelineEventConnectionEdge]" },
-    nodes: { __type: "[TimelineEvent]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  RootQueryToTimelineEventConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEvent" },
-  },
-  RootQueryToTimelineEventConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
-  },
   RootQueryToUserConnection: {
     __typename: { __type: "String!" },
     edges: { __type: "[RootQueryToUserConnectionEdge]" },
@@ -6611,19 +5898,10 @@ export const generatedSchema = {
     slug: { __type: "String" },
     tagId: { __type: "Int" },
     taxonomy: { __type: "TagToTaxonomyConnectionEdge" },
+    taxonomyName: { __type: "String" },
     templates: { __type: "[String]" },
     termGroupId: { __type: "Int" },
     termTaxonomyId: { __type: "Int" },
-    timelineEvents: {
-      __type: "TagToTimelineEventConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TagToTimelineEventConnectionWhereArgs",
-      },
-    },
     uri: { __type: "String" },
   },
   TagToContentNodeConnection: {
@@ -6705,42 +5983,6 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     node: { __type: "Taxonomy" },
   },
-  TagToTimelineEventConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TagToTimelineEventConnectionEdge]" },
-    nodes: { __type: "[TimelineEvent]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TagToTimelineEventConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEvent" },
-  },
-  TagToTimelineEventConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
-  },
   Taxonomy: {
     __typename: { __type: "String!" },
     connectedContentTypes: {
@@ -6778,6 +6020,14 @@ export const generatedSchema = {
     cursor: { __type: "String" },
     node: { __type: "ContentType" },
   },
+  Template_Blank: {
+    __typename: { __type: "String!" },
+    templateName: { __type: "String" },
+  },
+  Template_WithSidebar: {
+    __typename: { __type: "String!" },
+    templateName: { __type: "String" },
+  },
   TermNode: {
     __typename: { __type: "String!" },
     conditionalTags: { __type: "ConditionalTags" },
@@ -6799,6 +6049,7 @@ export const generatedSchema = {
     link: { __type: "String" },
     name: { __type: "String" },
     slug: { __type: "String" },
+    taxonomyName: { __type: "String" },
     templates: { __type: "[String]" },
     termGroupId: { __type: "Int" },
     termTaxonomyId: { __type: "Int" },
@@ -6840,393 +6091,6 @@ export const generatedSchema = {
     tags: { __type: "[String]" },
     themeUri: { __type: "String" },
     version: { __type: "String" },
-  },
-  TimelineEra: {
-    __typename: { __type: "String!" },
-    ancestors: {
-      __type: "TimelineEraToAncestorsTimelineEraConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
-    },
-    children: {
-      __type: "TimelineEraToTimelineEraConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEraToTimelineEraConnectionWhereArgs",
-      },
-    },
-    conditionalTags: { __type: "ConditionalTags" },
-    contentNodes: {
-      __type: "TimelineEraToContentNodeConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEraToContentNodeConnectionWhereArgs",
-      },
-    },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
-    enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
-    },
-    enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
-    },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
-    parent: { __type: "TimelineEraToParentTimelineEraConnectionEdge" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    slug: { __type: "String" },
-    taxonomy: { __type: "TimelineEraToTaxonomyConnectionEdge" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    timelineEraId: { __type: "Int" },
-    timelineEvents: {
-      __type: "TimelineEraToTimelineEventConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEraToTimelineEventConnectionWhereArgs",
-      },
-    },
-    uri: { __type: "String" },
-  },
-  TimelineEraToAncestorsTimelineEraConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEraToAncestorsTimelineEraConnectionEdge]" },
-    nodes: { __type: "[TimelineEra]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEraToAncestorsTimelineEraConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEra" },
-  },
-  TimelineEraToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEraToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEraToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
-  },
-  TimelineEraToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypesOfTimelineEraEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
-  },
-  TimelineEraToParentTimelineEraConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "TimelineEra" },
-  },
-  TimelineEraToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Taxonomy" },
-  },
-  TimelineEraToTimelineEraConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEraToTimelineEraConnectionEdge]" },
-    nodes: { __type: "[TimelineEra]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEraToTimelineEraConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEra" },
-  },
-  TimelineEraToTimelineEraConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
-  },
-  TimelineEraToTimelineEventConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEraToTimelineEventConnectionEdge]" },
-    nodes: { __type: "[TimelineEvent]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEraToTimelineEventConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEvent" },
-  },
-  TimelineEraToTimelineEventConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
-  },
-  TimelineEvent: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
-    },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
-    enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
-    },
-    enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
-    },
-    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
-    featuredImageDatabaseId: { __type: "Int" },
-    featuredImageId: { __type: "ID" },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    preview: { __type: "TimelineEventToPreviewConnectionEdge" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    tags: {
-      __type: "TimelineEventToTagConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEventToTagConnectionWhereArgs",
-      },
-    },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
-    terms: {
-      __type: "TimelineEventToTermNodeConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEventToTermNodeConnectionWhereArgs",
-      },
-    },
-    timelineEras: {
-      __type: "TimelineEventToTimelineEraConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TimelineEventToTimelineEraConnectionWhereArgs",
-      },
-    },
-    timelineEventId: { __type: "Int!" },
-    title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
-    },
-    uri: { __type: "String" },
-  },
-  TimelineEventTagsInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[TimelineEventTagsNodeInput]" },
-  },
-  TimelineEventTagsNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
-  },
-  TimelineEventTimelineErasInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[TimelineEventTimelineErasNodeInput]" },
-  },
-  TimelineEventTimelineErasNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
-  },
-  TimelineEventToPreviewConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "TimelineEvent" },
-  },
-  TimelineEventToTagConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEventToTagConnectionEdge]" },
-    nodes: { __type: "[Tag]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEventToTagConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Tag" },
-  },
-  TimelineEventToTagConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
-  },
-  TimelineEventToTermNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEventToTermNodeConnectionEdge]" },
-    nodes: { __type: "[TermNode]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEventToTermNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TermNode" },
-  },
-  TimelineEventToTermNodeConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    taxonomies: { __type: "[TaxonomyEnum]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
-  },
-  TimelineEventToTimelineEraConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TimelineEventToTimelineEraConnectionEdge]" },
-    nodes: { __type: "[TimelineEra]" },
-    pageInfo: { __type: "WPPageInfo" },
-  },
-  TimelineEventToTimelineEraConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TimelineEra" },
-  },
-  TimelineEventToTimelineEraConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
   },
   UniformResourceIdentifiable: {
     __typename: { __type: "String!" },
@@ -7388,38 +6252,6 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     clientMutationId: { __type: "String" },
     tag: { __type: "Tag" },
-  },
-  UpdateTimelineEraInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    name: { __type: "String" },
-    parentId: { __type: "ID" },
-    slug: { __type: "String" },
-  },
-  UpdateTimelineEraPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    timelineEra: { __type: "TimelineEra" },
-  },
-  UpdateTimelineEventInput: {
-    clientMutationId: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    id: { __type: "ID!" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    tags: { __type: "TimelineEventTagsInput" },
-    timelineEras: { __type: "TimelineEventTimelineErasInput" },
-    title: { __type: "String" },
-  },
-  UpdateTimelineEventPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    timelineEvent: { __type: "TimelineEvent" },
   },
   UpdateUserInput: {
     aim: { __type: "String" },
@@ -7816,14 +6648,6 @@ export const generatedSchema = {
       __type: "CreateTagPayload",
       __args: { input: "CreateTagInput!" },
     },
-    createTimelineEra: {
-      __type: "CreateTimelineEraPayload",
-      __args: { input: "CreateTimelineEraInput!" },
-    },
-    createTimelineEvent: {
-      __type: "CreateTimelineEventPayload",
-      __args: { input: "CreateTimelineEventInput!" },
-    },
     createUser: {
       __type: "CreateUserPayload",
       __args: { input: "CreateUserInput!" },
@@ -7855,14 +6679,6 @@ export const generatedSchema = {
     deleteTag: {
       __type: "DeleteTagPayload",
       __args: { input: "DeleteTagInput!" },
-    },
-    deleteTimelineEra: {
-      __type: "DeleteTimelineEraPayload",
-      __args: { input: "DeleteTimelineEraInput!" },
-    },
-    deleteTimelineEvent: {
-      __type: "DeleteTimelineEventPayload",
-      __args: { input: "DeleteTimelineEventInput!" },
     },
     deleteUser: {
       __type: "DeleteUserPayload",
@@ -7920,14 +6736,6 @@ export const generatedSchema = {
     updateTag: {
       __type: "UpdateTagPayload",
       __args: { input: "UpdateTagInput!" },
-    },
-    updateTimelineEra: {
-      __type: "UpdateTimelineEraPayload",
-      __args: { input: "UpdateTimelineEraInput!" },
-    },
-    updateTimelineEvent: {
-      __type: "UpdateTimelineEventPayload",
-      __args: { input: "UpdateTimelineEventInput!" },
     },
     updateUser: {
       __type: "UpdateUserPayload",
@@ -8158,47 +6966,6 @@ export const generatedSchema = {
       __type: "RootQueryToThemeConnection",
       __args: { after: "String", before: "String", first: "Int", last: "Int" },
     },
-    timelineEra: {
-      __type: "TimelineEra",
-      __args: { id: "ID!", idType: "TimelineEraIdType" },
-    },
-    timelineEras: {
-      __type: "RootQueryToTimelineEraConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToTimelineEraConnectionWhereArgs",
-      },
-    },
-    timelineEvent: {
-      __type: "TimelineEvent",
-      __args: {
-        asPreview: "Boolean",
-        id: "ID!",
-        idType: "TimelineEventIdType",
-      },
-    },
-    timelineEventBy: {
-      __type: "TimelineEvent",
-      __args: {
-        id: "ID",
-        slug: "String",
-        timelineEventId: "Int",
-        uri: "String",
-      },
-    },
-    timelineEvents: {
-      __type: "RootQueryToTimelineEventConnection",
-      __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToTimelineEventConnectionWhereArgs",
-      },
-    },
     user: {
       __type: "User",
       __args: { id: "ID!", idType: "UserNodeIdTypeEnum" },
@@ -8233,20 +7000,10 @@ export const generatedSchema = {
       "Post",
       "PostFormat",
       "Tag",
-      "TimelineEra",
-      "TimelineEvent",
       "User",
     ],
-    HierarchicalTermNode: ["Category", "TimelineEra"],
-    MenuItemLinkable: [
-      "Category",
-      "Page",
-      "Post",
-      "PostFormat",
-      "Tag",
-      "TimelineEra",
-      "TimelineEvent",
-    ],
+    HierarchicalTermNode: ["Category"],
+    MenuItemLinkable: ["Category", "Page", "Post", "Tag"],
     Node: [
       "Category",
       "Comment",
@@ -8264,12 +7021,10 @@ export const generatedSchema = {
       "Tag",
       "Taxonomy",
       "Theme",
-      "TimelineEra",
-      "TimelineEvent",
       "User",
       "UserRole",
     ],
-    TermNode: ["Category", "PostFormat", "Tag", "TimelineEra"],
+    TermNode: ["Category", "PostFormat", "Tag"],
     UniformResourceIdentifiable: [
       "Category",
       "ContentType",
@@ -8278,31 +7033,25 @@ export const generatedSchema = {
       "Post",
       "PostFormat",
       "Tag",
-      "TimelineEra",
-      "TimelineEvent",
       "User",
     ],
     Commenter: ["CommentAuthor", "User"],
     ContentRevisionUnion: ["Page", "Post"],
-    ContentTemplate: ["DefaultTemplate"],
+    ContentTemplate: [
+      "DefaultTemplate",
+      "Template_Blank",
+      "Template_WithSidebar",
+    ],
     EnqueuedAsset: ["EnqueuedScript", "EnqueuedStylesheet"],
-    ContentNode: ["MediaItem", "Page", "Post", "TimelineEvent"],
+    ContentNode: ["MediaItem", "Page", "Post"],
     HierarchicalContentNode: ["MediaItem", "Page"],
     NodeWithAuthor: ["MediaItem", "Page", "Post"],
     NodeWithComments: ["MediaItem", "Page", "Post"],
-    NodeWithTemplate: ["MediaItem", "Page", "Post", "TimelineEvent"],
-    NodeWithTitle: ["MediaItem", "Page", "Post", "TimelineEvent"],
-    MenuItemObjectUnion: [
-      "Category",
-      "Page",
-      "Post",
-      "PostFormat",
-      "Tag",
-      "TimelineEra",
-      "TimelineEvent",
-    ],
-    NodeWithContentEditor: ["Page", "Post", "TimelineEvent"],
-    NodeWithFeaturedImage: ["Page", "Post", "TimelineEvent"],
+    NodeWithTemplate: ["MediaItem", "Page", "Post"],
+    NodeWithTitle: ["MediaItem", "Page", "Post"],
+    MenuItemObjectUnion: ["Category", "Page", "Post", "Tag"],
+    NodeWithContentEditor: ["Page", "Post"],
+    NodeWithFeaturedImage: ["Page", "Post"],
     NodeWithPageAttributes: ["Page"],
     NodeWithRevisions: ["Page", "Post"],
     NodeWithExcerpt: ["Post"],
@@ -8566,6 +7315,10 @@ export interface Category {
    * Connection between the category type and the Taxonomy type
    */
   taxonomy?: Maybe<CategoryToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums["String"]>;
   templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
   /**
    * The ID of the term group that this term object belongs to
@@ -9079,7 +7832,7 @@ export interface ConditionalTags {
  * Nodes used to manage content
  */
 export interface ContentNode {
-  __typename?: "MediaItem" | "Page" | "Post" | "TimelineEvent";
+  __typename?: "MediaItem" | "Page" | "Post";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
@@ -9336,7 +8089,7 @@ export interface ContentRevisionUnion {
  * The template assigned to a node of content
  */
 export interface ContentTemplate {
-  __typename?: "DefaultTemplate";
+  __typename?: "DefaultTemplate" | "Template_Blank" | "Template_WithSidebar";
   /**
    * The name of the template
    */
@@ -9697,36 +8450,6 @@ export interface CreateTagPayload {
 }
 
 /**
- * The payload for the createTimelineEra mutation
- */
-export interface CreateTimelineEraPayload {
-  __typename?: "CreateTimelineEraPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The created timeline_era
-   */
-  timelineEra?: Maybe<TimelineEra>;
-}
-
-/**
- * The payload for the createTimelineEvent mutation
- */
-export interface CreateTimelineEventPayload {
-  __typename?: "CreateTimelineEventPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The Post object mutation type.
-   */
-  timelineEvent?: Maybe<TimelineEvent>;
-}
-
-/**
  * The payload for the createUser mutation
  */
 export interface CreateUserPayload {
@@ -9755,8 +8478,6 @@ export interface DatabaseIdentifier {
     | "Post"
     | "PostFormat"
     | "Tag"
-    | "TimelineEra"
-    | "TimelineEvent"
     | "User";
   /**
    * The unique identifier stored in the database
@@ -9907,44 +8628,6 @@ export interface DeleteTagPayload {
    * The deteted term object
    */
   tag?: Maybe<Tag>;
-}
-
-/**
- * The payload for the deleteTimelineEra mutation
- */
-export interface DeleteTimelineEraPayload {
-  __typename?: "DeleteTimelineEraPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The ID of the deleted object
-   */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
-  /**
-   * The deteted term object
-   */
-  timelineEra?: Maybe<TimelineEra>;
-}
-
-/**
- * The payload for the deleteTimelineEvent mutation
- */
-export interface DeleteTimelineEventPayload {
-  __typename?: "DeleteTimelineEventPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The ID of the deleted object
-   */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
-  /**
-   * The object before it was deleted
-   */
-  timelineEvent?: Maybe<TimelineEvent>;
 }
 
 /**
@@ -10302,7 +8985,7 @@ export interface HierarchicalContentNodeToParentContentNodeConnectionEdge {
  * Term node with hierarchical (parent/child) relationships
  */
 export interface HierarchicalTermNode {
-  __typename?: "Category" | "TimelineEra";
+  __typename?: "Category";
   /**
    * Database id of the parent node
    */
@@ -10982,14 +9665,7 @@ export interface MenuItem {
  * Nodes that can be linked to as Menu Items
  */
 export interface MenuItemLinkable {
-  __typename?:
-    | "Category"
-    | "Page"
-    | "Post"
-    | "PostFormat"
-    | "Tag"
-    | "TimelineEra"
-    | "TimelineEvent";
+  __typename?: "Category" | "Page" | "Post" | "Tag";
   /**
    * The unique resource identifier path
    */
@@ -11009,14 +9685,7 @@ export interface MenuItemLinkable {
  * Deprecated in favor of MenuItemLinkeable Interface
  */
 export interface MenuItemObjectUnion {
-  __typename?:
-    | "Category"
-    | "Page"
-    | "Post"
-    | "PostFormat"
-    | "Tag"
-    | "TimelineEra"
-    | "TimelineEvent";
+  __typename?: "Category" | "Page" | "Post" | "Tag";
   $on: $MenuItemObjectUnion;
 }
 
@@ -11131,8 +9800,6 @@ export interface Node {
     | "Tag"
     | "Taxonomy"
     | "Theme"
-    | "TimelineEra"
-    | "TimelineEvent"
     | "User"
     | "UserRole";
   /**
@@ -11193,7 +9860,7 @@ export interface NodeWithComments {
  * A node that supports the content editor
  */
 export interface NodeWithContentEditor {
-  __typename?: "Page" | "Post" | "TimelineEvent";
+  __typename?: "Page" | "Post";
   /**
    * The content of the post.
    */
@@ -11227,7 +9894,7 @@ export interface NodeWithExcerpt {
  * A node that can have a featured image set
  */
 export interface NodeWithFeaturedImage {
-  __typename?: "Page" | "Post" | "TimelineEvent";
+  __typename?: "Page" | "Post";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
@@ -11433,7 +10100,7 @@ export interface NodeWithRevisionsToContentNodeConnectionEdge {
  * A node that can have a template associated with it
  */
 export interface NodeWithTemplate {
-  __typename?: "MediaItem" | "Page" | "Post" | "TimelineEvent";
+  __typename?: "MediaItem" | "Page" | "Post";
   /**
    * The template assigned to the node
    */
@@ -11445,7 +10112,7 @@ export interface NodeWithTemplate {
  * A node that NodeWith a title
  */
 export interface NodeWithTitle {
-  __typename?: "MediaItem" | "Page" | "Post" | "TimelineEvent";
+  __typename?: "MediaItem" | "Page" | "Post";
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -12359,7 +11026,7 @@ export interface PostFormat {
    */
   count?: Maybe<ScalarsEnums["Int"]>;
   /**
-   * The unique resource identifier path
+   * The unique identifier stored in the database
    */
   databaseId: ScalarsEnums["Int"];
   /**
@@ -12470,6 +11137,10 @@ export interface PostFormat {
    * Connection between the postFormat type and the Taxonomy type
    */
   taxonomy?: Maybe<PostFormatToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums["String"]>;
   templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
   /**
    * The ID of the term group that this term object belongs to
@@ -13559,74 +12230,6 @@ export interface RootQueryToThemeConnectionEdge {
 }
 
 /**
- * Connection between the RootQuery type and the TimelineEra type
- */
-export interface RootQueryToTimelineEraConnection {
-  __typename?: "RootQueryToTimelineEraConnection";
-  /**
-   * Edges for the RootQueryToTimelineEraConnection connection
-   */
-  edges?: Maybe<Array<Maybe<RootQueryToTimelineEraConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEra>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface RootQueryToTimelineEraConnectionEdge {
-  __typename?: "RootQueryToTimelineEraConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEra>;
-}
-
-/**
- * Connection between the RootQuery type and the TimelineEvent type
- */
-export interface RootQueryToTimelineEventConnection {
-  __typename?: "RootQueryToTimelineEventConnection";
-  /**
-   * Edges for the RootQueryToTimelineEventConnection connection
-   */
-  edges?: Maybe<Array<Maybe<RootQueryToTimelineEventConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEvent>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface RootQueryToTimelineEventConnectionEdge {
-  __typename?: "RootQueryToTimelineEventConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEvent>;
-}
-
-/**
  * Connection between the RootQuery type and the User type
  */
 export interface RootQueryToUserConnection {
@@ -13915,6 +12518,10 @@ export interface Tag {
    * Connection between the tag type and the Taxonomy type
    */
   taxonomy?: Maybe<TagToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums["String"]>;
   templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
   /**
    * The ID of the term group that this term object belongs to
@@ -13924,31 +12531,6 @@ export interface Tag {
    * The taxonomy ID that the object is associated with
    */
   termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * Connection between the tag type and the TimelineEvent type
-   */
-  timelineEvents: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TagToTimelineEventConnectionWhereArgs>;
-  }) => Maybe<TagToTimelineEventConnection>;
   /**
    * The unique resource identifier path
    */
@@ -14032,40 +12614,6 @@ export interface TagToTaxonomyConnectionEdge {
    * The node of the connection, without the edges
    */
   node?: Maybe<Taxonomy>;
-}
-
-/**
- * Connection between the tag type and the TimelineEvent type
- */
-export interface TagToTimelineEventConnection {
-  __typename?: "TagToTimelineEventConnection";
-  /**
-   * Edges for the TagToTimelineEventConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TagToTimelineEventConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEvent>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TagToTimelineEventConnectionEdge {
-  __typename?: "TagToTimelineEventConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEvent>;
 }
 
 /**
@@ -14207,10 +12755,32 @@ export interface TaxonomyToContentTypeConnectionEdge {
 }
 
 /**
+ * The template assigned to the node
+ */
+export interface Template_Blank {
+  __typename?: "Template_Blank";
+  /**
+   * The name of the template
+   */
+  templateName?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The template assigned to the node
+ */
+export interface Template_WithSidebar {
+  __typename?: "Template_WithSidebar";
+  /**
+   * The name of the template
+   */
+  templateName?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
  * Terms are nodes within a Taxonomy, used to group and relate other nodes.
  */
 export interface TermNode {
-  __typename?: "Category" | "PostFormat" | "Tag" | "TimelineEra";
+  __typename?: "Category" | "PostFormat" | "Tag";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The number of objects connected to the object
@@ -14294,6 +12864,10 @@ export interface TermNode {
    * An alphanumeric identifier for the object unique to its type.
    */
   slug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums["String"]>;
   templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
   /**
    * The ID of the term group that this term object belongs to
@@ -14430,754 +13004,6 @@ export interface Theme {
 }
 
 /**
- * The TimelineEra type
- */
-export interface TimelineEra {
-  __typename?: "TimelineEra";
-  /**
-   * The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
-   */
-  ancestors: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-  }) => Maybe<TimelineEraToAncestorsTimelineEraConnection>;
-  /**
-   * Connection between the TimelineEra type and the TimelineEra type
-   */
-  children: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEraToTimelineEraConnectionWhereArgs>;
-  }) => Maybe<TimelineEraToTimelineEraConnection>;
-  conditionalTags?: Maybe<ConditionalTags>;
-  /**
-   * Connection between the TimelineEra type and the ContentNode type
-   */
-  contentNodes: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEraToContentNodeConnectionWhereArgs>;
-  }) => Maybe<TimelineEraToContentNodeConnection>;
-  /**
-   * The number of objects connected to the object
-   */
-  count?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * The unique resource identifier path
-   */
-  databaseId: ScalarsEnums["Int"];
-  /**
-   * The description of the object
-   */
-  description?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the TermNode type and the EnqueuedScript type
-   */
-  enqueuedScripts: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the TermNode type and the EnqueuedStylesheet type
-   */
-  enqueuedStylesheets: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The unique resource identifier path
-   */
-  id: ScalarsEnums["ID"];
-  /**
-   * Whether the node is a Content Node
-   */
-  isContentNode: ScalarsEnums["Boolean"];
-  /**
-   * Whether the object is restricted from the current viewer
-   */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
-  /**
-   * Whether the node is a Term
-   */
-  isTermNode: ScalarsEnums["Boolean"];
-  /**
-   * The link to the term
-   */
-  link?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The human friendly name of the object.
-   */
-  name?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the TimelineEra type and the TimelineEra type
-   */
-  parent?: Maybe<TimelineEraToParentTimelineEraConnectionEdge>;
-  /**
-   * Database id of the parent node
-   */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * The globally unique identifier of the parent node.
-   */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
-  /**
-   * An alphanumeric identifier for the object unique to its type.
-   */
-  slug?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the TimelineEra type and the Taxonomy type
-   */
-  taxonomy?: Maybe<TimelineEraToTaxonomyConnectionEdge>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
-  /**
-   * The ID of the term group that this term object belongs to
-   */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * The taxonomy ID that the object is associated with
-   */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * The id field matches the WP_Post-&gt;ID field.
-   * @deprecated Deprecated in favor of databaseId
-   */
-  timelineEraId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * Connection between the TimelineEra type and the TimelineEvent type
-   */
-  timelineEvents: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEraToTimelineEventConnectionWhereArgs>;
-  }) => Maybe<TimelineEraToTimelineEventConnection>;
-  /**
-   * The unique resource identifier path
-   */
-  uri?: Maybe<ScalarsEnums["String"]>;
-}
-
-/**
- * Connection between the TimelineEra type and the TimelineEra type
- */
-export interface TimelineEraToAncestorsTimelineEraConnection {
-  __typename?: "TimelineEraToAncestorsTimelineEraConnection";
-  /**
-   * Edges for the TimelineEraToAncestorsTimelineEraConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEraToAncestorsTimelineEraConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEra>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEraToAncestorsTimelineEraConnectionEdge {
-  __typename?: "TimelineEraToAncestorsTimelineEraConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEra>;
-}
-
-/**
- * Connection between the TimelineEra type and the ContentNode type
- */
-export interface TimelineEraToContentNodeConnection {
-  __typename?: "TimelineEraToContentNodeConnection";
-  /**
-   * Edges for the TimelineEraToContentNodeConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEraToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEraToContentNodeConnectionEdge {
-  __typename?: "TimelineEraToContentNodeConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<ContentNode>;
-}
-
-/**
- * Connection between the TimelineEra type and the TimelineEra type
- */
-export interface TimelineEraToParentTimelineEraConnectionEdge {
-  __typename?: "TimelineEraToParentTimelineEraConnectionEdge";
-  /**
-   * The node of the connection, without the edges
-   */
-  node?: Maybe<TimelineEra>;
-}
-
-/**
- * Connection between the TimelineEra type and the Taxonomy type
- */
-export interface TimelineEraToTaxonomyConnectionEdge {
-  __typename?: "TimelineEraToTaxonomyConnectionEdge";
-  /**
-   * The node of the connection, without the edges
-   */
-  node?: Maybe<Taxonomy>;
-}
-
-/**
- * Connection between the TimelineEra type and the TimelineEra type
- */
-export interface TimelineEraToTimelineEraConnection {
-  __typename?: "TimelineEraToTimelineEraConnection";
-  /**
-   * Edges for the TimelineEraToTimelineEraConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEraToTimelineEraConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEra>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEraToTimelineEraConnectionEdge {
-  __typename?: "TimelineEraToTimelineEraConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEra>;
-}
-
-/**
- * Connection between the TimelineEra type and the TimelineEvent type
- */
-export interface TimelineEraToTimelineEventConnection {
-  __typename?: "TimelineEraToTimelineEventConnection";
-  /**
-   * Edges for the TimelineEraToTimelineEventConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEraToTimelineEventConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEvent>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEraToTimelineEventConnectionEdge {
-  __typename?: "TimelineEraToTimelineEventConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEvent>;
-}
-
-/**
- * The TimelineEvent type
- */
-export interface TimelineEvent {
-  __typename?: "TimelineEvent";
-  conditionalTags?: Maybe<ConditionalTags>;
-  /**
-   * The content of the post.
-   */
-  content: (args?: {
-    /**
-     * Format of the field output
-     */
-    format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the ContentNode type and the ContentType type
-   */
-  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
-  /**
-   * The unique resource identifier path
-   */
-  databaseId: ScalarsEnums["Int"];
-  /**
-   * Post publishing date.
-   */
-  date?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The publishing date set in GMT.
-   */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The desired slug of the post
-   */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
-   */
-  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
-  /**
-   * The RSS enclosure for the object
-   */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedScript type
-   */
-  enqueuedScripts: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedStylesheet type
-   */
-  enqueuedStylesheets: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
-  /**
-   * Connection between the NodeWithFeaturedImage type and the MediaItem type
-   */
-  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
-  /**
-   * The database identifier for the featured image node assigned to the content node
-   */
-  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * Globally unique ID of the featured image assigned to the node
-   */
-  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
-  /**
-   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
-   */
-  guid?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The globally unique identifier of the timeline-events object.
-   */
-  id: ScalarsEnums["ID"];
-  /**
-   * Whether the node is a Content Node
-   */
-  isContentNode: ScalarsEnums["Boolean"];
-  /**
-   * Whether the object is a node in the preview state
-   */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
-  /**
-   * Whether the object is restricted from the current viewer
-   */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
-  /**
-   * Whether the node is a Term
-   */
-  isTermNode: ScalarsEnums["Boolean"];
-  /**
-   * The user that most recently edited the node
-   */
-  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
-  /**
-   * The permalink of the post
-   */
-  link?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
-   */
-  modified?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
-   */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the TimelineEvent type and the TimelineEvent type
-   */
-  preview?: Maybe<TimelineEventToPreviewConnectionEdge>;
-  /**
-   * The database id of the preview node
-   */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
-  /**
-   * Whether the object is a node in the preview state
-   */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
-  /**
-   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
-   */
-  slug?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The current status of the object
-   */
-  status?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * Connection between the TimelineEvent type and the tag type
-   */
-  tags: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEventToTagConnectionWhereArgs>;
-  }) => Maybe<TimelineEventToTagConnection>;
-  /**
-   * The template assigned to a node of content
-   */
-  template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
-  /**
-   * Connection between the TimelineEvent type and the TermNode type
-   */
-  terms: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEventToTermNodeConnectionWhereArgs>;
-  }) => Maybe<TimelineEventToTermNodeConnection>;
-  /**
-   * Connection between the TimelineEvent type and the TimelineEra type
-   */
-  timelineEras: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars["String"]>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars["String"]>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars["Int"]>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars["Int"]>;
-    /**
-     * Arguments for filtering the connection
-     */
-    where?: Maybe<TimelineEventToTimelineEraConnectionWhereArgs>;
-  }) => Maybe<TimelineEventToTimelineEraConnection>;
-  /**
-   * The id field matches the WP_Post-&gt;ID field.
-   * @deprecated Deprecated in favor of the databaseId field
-   */
-  timelineEventId: ScalarsEnums["Int"];
-  /**
-   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
-   */
-  title: (args?: {
-    /**
-     * Format of the field output
-     */
-    format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
-  /**
-   * The unique resource identifier path
-   */
-  uri?: Maybe<ScalarsEnums["String"]>;
-}
-
-/**
- * Connection between the TimelineEvent type and the TimelineEvent type
- */
-export interface TimelineEventToPreviewConnectionEdge {
-  __typename?: "TimelineEventToPreviewConnectionEdge";
-  /**
-   * The node of the connection, without the edges
-   */
-  node?: Maybe<TimelineEvent>;
-}
-
-/**
- * Connection between the TimelineEvent type and the tag type
- */
-export interface TimelineEventToTagConnection {
-  __typename?: "TimelineEventToTagConnection";
-  /**
-   * Edges for the TimelineEventToTagConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEventToTagConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<Tag>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEventToTagConnectionEdge {
-  __typename?: "TimelineEventToTagConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<Tag>;
-}
-
-/**
- * Connection between the TimelineEvent type and the TermNode type
- */
-export interface TimelineEventToTermNodeConnection {
-  __typename?: "TimelineEventToTermNodeConnection";
-  /**
-   * Edges for the TimelineEventToTermNodeConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEventToTermNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TermNode>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEventToTermNodeConnectionEdge {
-  __typename?: "TimelineEventToTermNodeConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TermNode>;
-}
-
-/**
- * Connection between the TimelineEvent type and the TimelineEra type
- */
-export interface TimelineEventToTimelineEraConnection {
-  __typename?: "TimelineEventToTimelineEraConnection";
-  /**
-   * Edges for the TimelineEventToTimelineEraConnection connection
-   */
-  edges?: Maybe<Array<Maybe<TimelineEventToTimelineEraConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   */
-  nodes?: Maybe<Array<Maybe<TimelineEra>>>;
-  /**
-   * Information about pagination in a connection.
-   */
-  pageInfo?: Maybe<WPPageInfo>;
-}
-
-/**
- * An edge in a connection
- */
-export interface TimelineEventToTimelineEraConnectionEdge {
-  __typename?: "TimelineEventToTimelineEraConnectionEdge";
-  /**
-   * A cursor for use in pagination
-   */
-  cursor?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The item at the end of the edge
-   */
-  node?: Maybe<TimelineEra>;
-}
-
-/**
  * Any node that has a URI
  */
 export interface UniformResourceIdentifiable {
@@ -15189,8 +13015,6 @@ export interface UniformResourceIdentifiable {
     | "Post"
     | "PostFormat"
     | "Tag"
-    | "TimelineEra"
-    | "TimelineEvent"
     | "User";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
@@ -15351,36 +13175,6 @@ export interface UpdateTagPayload {
    * The created post_tag
    */
   tag?: Maybe<Tag>;
-}
-
-/**
- * The payload for the UpdateTimelineEra mutation
- */
-export interface UpdateTimelineEraPayload {
-  __typename?: "UpdateTimelineEraPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The created timeline_era
-   */
-  timelineEra?: Maybe<TimelineEra>;
-}
-
-/**
- * The payload for the updateTimelineEvent mutation
- */
-export interface UpdateTimelineEventPayload {
-  __typename?: "UpdateTimelineEventPayload";
-  /**
-   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
-   */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
-  /**
-   * The Post object mutation type.
-   */
-  timelineEvent?: Maybe<TimelineEvent>;
 }
 
 /**
@@ -16060,12 +13854,6 @@ export interface Mutation {
     input: CreatePostFormatInput;
   }) => Maybe<CreatePostFormatPayload>;
   createTag: (args: { input: CreateTagInput }) => Maybe<CreateTagPayload>;
-  createTimelineEra: (args: {
-    input: CreateTimelineEraInput;
-  }) => Maybe<CreateTimelineEraPayload>;
-  createTimelineEvent: (args: {
-    input: CreateTimelineEventInput;
-  }) => Maybe<CreateTimelineEventPayload>;
   createUser: (args: { input: CreateUserInput }) => Maybe<CreateUserPayload>;
   deleteCategory: (args: {
     input: DeleteCategoryInput;
@@ -16082,12 +13870,6 @@ export interface Mutation {
     input: DeletePostFormatInput;
   }) => Maybe<DeletePostFormatPayload>;
   deleteTag: (args: { input: DeleteTagInput }) => Maybe<DeleteTagPayload>;
-  deleteTimelineEra: (args: {
-    input: DeleteTimelineEraInput;
-  }) => Maybe<DeleteTimelineEraPayload>;
-  deleteTimelineEvent: (args: {
-    input: DeleteTimelineEventInput;
-  }) => Maybe<DeleteTimelineEventPayload>;
   deleteUser: (args: { input: DeleteUserInput }) => Maybe<DeleteUserPayload>;
   generateAuthorizationCode: (args: {
     input: GenerateAuthorizationCodeInput;
@@ -16125,12 +13907,6 @@ export interface Mutation {
     input: UpdateSettingsInput;
   }) => Maybe<UpdateSettingsPayload>;
   updateTag: (args: { input: UpdateTagInput }) => Maybe<UpdateTagPayload>;
-  updateTimelineEra: (args: {
-    input: UpdateTimelineEraInput;
-  }) => Maybe<UpdateTimelineEraPayload>;
-  updateTimelineEvent: (args: {
-    input: UpdateTimelineEventInput;
-  }) => Maybe<UpdateTimelineEventPayload>;
   updateUser: (args: { input: UpdateUserInput }) => Maybe<UpdateUserPayload>;
 }
 
@@ -16335,35 +14111,6 @@ export interface Query {
     first?: Maybe<Scalars["Int"]>;
     last?: Maybe<Scalars["Int"]>;
   }) => Maybe<RootQueryToThemeConnection>;
-  timelineEra: (args: {
-    id: Scalars["ID"];
-    idType?: Maybe<TimelineEraIdType>;
-  }) => Maybe<TimelineEra>;
-  timelineEras: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
-    where?: Maybe<RootQueryToTimelineEraConnectionWhereArgs>;
-  }) => Maybe<RootQueryToTimelineEraConnection>;
-  timelineEvent: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
-    idType?: Maybe<TimelineEventIdType>;
-  }) => Maybe<TimelineEvent>;
-  timelineEventBy: (args?: {
-    id?: Maybe<Scalars["ID"]>;
-    slug?: Maybe<Scalars["String"]>;
-    timelineEventId?: Maybe<Scalars["Int"]>;
-    uri?: Maybe<Scalars["String"]>;
-  }) => Maybe<TimelineEvent>;
-  timelineEvents: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
-    where?: Maybe<RootQueryToTimelineEventConnectionWhereArgs>;
-  }) => Maybe<RootQueryToTimelineEventConnection>;
   user: (args: {
     id: Scalars["ID"];
     idType?: Maybe<UserNodeIdTypeEnum>;
@@ -16430,8 +14177,6 @@ export interface SchemaObjectTypes {
   CreatePostFormatPayload: CreatePostFormatPayload;
   CreatePostPayload: CreatePostPayload;
   CreateTagPayload: CreateTagPayload;
-  CreateTimelineEraPayload: CreateTimelineEraPayload;
-  CreateTimelineEventPayload: CreateTimelineEventPayload;
   CreateUserPayload: CreateUserPayload;
   DefaultTemplate: DefaultTemplate;
   DeleteCategoryPayload: DeleteCategoryPayload;
@@ -16441,8 +14186,6 @@ export interface SchemaObjectTypes {
   DeletePostFormatPayload: DeletePostFormatPayload;
   DeletePostPayload: DeletePostPayload;
   DeleteTagPayload: DeleteTagPayload;
-  DeleteTimelineEraPayload: DeleteTimelineEraPayload;
-  DeleteTimelineEventPayload: DeleteTimelineEventPayload;
   DeleteUserPayload: DeleteUserPayload;
   DiscussionSettings: DiscussionSettings;
   EnqueuedScript: EnqueuedScript;
@@ -16541,10 +14284,6 @@ export interface SchemaObjectTypes {
   RootQueryToTermNodeConnectionEdge: RootQueryToTermNodeConnectionEdge;
   RootQueryToThemeConnection: RootQueryToThemeConnection;
   RootQueryToThemeConnectionEdge: RootQueryToThemeConnectionEdge;
-  RootQueryToTimelineEraConnection: RootQueryToTimelineEraConnection;
-  RootQueryToTimelineEraConnectionEdge: RootQueryToTimelineEraConnectionEdge;
-  RootQueryToTimelineEventConnection: RootQueryToTimelineEventConnection;
-  RootQueryToTimelineEventConnectionEdge: RootQueryToTimelineEventConnectionEdge;
   RootQueryToUserConnection: RootQueryToUserConnection;
   RootQueryToUserConnectionEdge: RootQueryToUserConnectionEdge;
   RootQueryToUserRoleConnection: RootQueryToUserRoleConnection;
@@ -16558,35 +14297,16 @@ export interface SchemaObjectTypes {
   TagToPostConnection: TagToPostConnection;
   TagToPostConnectionEdge: TagToPostConnectionEdge;
   TagToTaxonomyConnectionEdge: TagToTaxonomyConnectionEdge;
-  TagToTimelineEventConnection: TagToTimelineEventConnection;
-  TagToTimelineEventConnectionEdge: TagToTimelineEventConnectionEdge;
   Taxonomy: Taxonomy;
   TaxonomyToContentTypeConnection: TaxonomyToContentTypeConnection;
   TaxonomyToContentTypeConnectionEdge: TaxonomyToContentTypeConnectionEdge;
+  Template_Blank: Template_Blank;
+  Template_WithSidebar: Template_WithSidebar;
   TermNodeToEnqueuedScriptConnection: TermNodeToEnqueuedScriptConnection;
   TermNodeToEnqueuedScriptConnectionEdge: TermNodeToEnqueuedScriptConnectionEdge;
   TermNodeToEnqueuedStylesheetConnection: TermNodeToEnqueuedStylesheetConnection;
   TermNodeToEnqueuedStylesheetConnectionEdge: TermNodeToEnqueuedStylesheetConnectionEdge;
   Theme: Theme;
-  TimelineEra: TimelineEra;
-  TimelineEraToAncestorsTimelineEraConnection: TimelineEraToAncestorsTimelineEraConnection;
-  TimelineEraToAncestorsTimelineEraConnectionEdge: TimelineEraToAncestorsTimelineEraConnectionEdge;
-  TimelineEraToContentNodeConnection: TimelineEraToContentNodeConnection;
-  TimelineEraToContentNodeConnectionEdge: TimelineEraToContentNodeConnectionEdge;
-  TimelineEraToParentTimelineEraConnectionEdge: TimelineEraToParentTimelineEraConnectionEdge;
-  TimelineEraToTaxonomyConnectionEdge: TimelineEraToTaxonomyConnectionEdge;
-  TimelineEraToTimelineEraConnection: TimelineEraToTimelineEraConnection;
-  TimelineEraToTimelineEraConnectionEdge: TimelineEraToTimelineEraConnectionEdge;
-  TimelineEraToTimelineEventConnection: TimelineEraToTimelineEventConnection;
-  TimelineEraToTimelineEventConnectionEdge: TimelineEraToTimelineEventConnectionEdge;
-  TimelineEvent: TimelineEvent;
-  TimelineEventToPreviewConnectionEdge: TimelineEventToPreviewConnectionEdge;
-  TimelineEventToTagConnection: TimelineEventToTagConnection;
-  TimelineEventToTagConnectionEdge: TimelineEventToTagConnectionEdge;
-  TimelineEventToTermNodeConnection: TimelineEventToTermNodeConnection;
-  TimelineEventToTermNodeConnectionEdge: TimelineEventToTermNodeConnectionEdge;
-  TimelineEventToTimelineEraConnection: TimelineEventToTimelineEraConnection;
-  TimelineEventToTimelineEraConnectionEdge: TimelineEventToTimelineEraConnectionEdge;
   UpdateCategoryPayload: UpdateCategoryPayload;
   UpdateCommentPayload: UpdateCommentPayload;
   UpdateMediaItemPayload: UpdateMediaItemPayload;
@@ -16595,8 +14315,6 @@ export interface SchemaObjectTypes {
   UpdatePostPayload: UpdatePostPayload;
   UpdateSettingsPayload: UpdateSettingsPayload;
   UpdateTagPayload: UpdateTagPayload;
-  UpdateTimelineEraPayload: UpdateTimelineEraPayload;
-  UpdateTimelineEventPayload: UpdateTimelineEventPayload;
   UpdateUserPayload: UpdateUserPayload;
   User: User;
   UserRole: UserRole;
@@ -16659,8 +14377,6 @@ export type SchemaObjectTypesNames =
   | "CreatePostFormatPayload"
   | "CreatePostPayload"
   | "CreateTagPayload"
-  | "CreateTimelineEraPayload"
-  | "CreateTimelineEventPayload"
   | "CreateUserPayload"
   | "DefaultTemplate"
   | "DeleteCategoryPayload"
@@ -16670,8 +14386,6 @@ export type SchemaObjectTypesNames =
   | "DeletePostFormatPayload"
   | "DeletePostPayload"
   | "DeleteTagPayload"
-  | "DeleteTimelineEraPayload"
-  | "DeleteTimelineEventPayload"
   | "DeleteUserPayload"
   | "DiscussionSettings"
   | "EnqueuedScript"
@@ -16770,10 +14484,6 @@ export type SchemaObjectTypesNames =
   | "RootQueryToTermNodeConnectionEdge"
   | "RootQueryToThemeConnection"
   | "RootQueryToThemeConnectionEdge"
-  | "RootQueryToTimelineEraConnection"
-  | "RootQueryToTimelineEraConnectionEdge"
-  | "RootQueryToTimelineEventConnection"
-  | "RootQueryToTimelineEventConnectionEdge"
   | "RootQueryToUserConnection"
   | "RootQueryToUserConnectionEdge"
   | "RootQueryToUserRoleConnection"
@@ -16787,35 +14497,16 @@ export type SchemaObjectTypesNames =
   | "TagToPostConnection"
   | "TagToPostConnectionEdge"
   | "TagToTaxonomyConnectionEdge"
-  | "TagToTimelineEventConnection"
-  | "TagToTimelineEventConnectionEdge"
   | "Taxonomy"
   | "TaxonomyToContentTypeConnection"
   | "TaxonomyToContentTypeConnectionEdge"
+  | "Template_Blank"
+  | "Template_WithSidebar"
   | "TermNodeToEnqueuedScriptConnection"
   | "TermNodeToEnqueuedScriptConnectionEdge"
   | "TermNodeToEnqueuedStylesheetConnection"
   | "TermNodeToEnqueuedStylesheetConnectionEdge"
   | "Theme"
-  | "TimelineEra"
-  | "TimelineEraToAncestorsTimelineEraConnection"
-  | "TimelineEraToAncestorsTimelineEraConnectionEdge"
-  | "TimelineEraToContentNodeConnection"
-  | "TimelineEraToContentNodeConnectionEdge"
-  | "TimelineEraToParentTimelineEraConnectionEdge"
-  | "TimelineEraToTaxonomyConnectionEdge"
-  | "TimelineEraToTimelineEraConnection"
-  | "TimelineEraToTimelineEraConnectionEdge"
-  | "TimelineEraToTimelineEventConnection"
-  | "TimelineEraToTimelineEventConnectionEdge"
-  | "TimelineEvent"
-  | "TimelineEventToPreviewConnectionEdge"
-  | "TimelineEventToTagConnection"
-  | "TimelineEventToTagConnectionEdge"
-  | "TimelineEventToTermNodeConnection"
-  | "TimelineEventToTermNodeConnectionEdge"
-  | "TimelineEventToTimelineEraConnection"
-  | "TimelineEventToTimelineEraConnectionEdge"
   | "UpdateCategoryPayload"
   | "UpdateCommentPayload"
   | "UpdateMediaItemPayload"
@@ -16824,8 +14515,6 @@ export type SchemaObjectTypesNames =
   | "UpdatePostPayload"
   | "UpdateSettingsPayload"
   | "UpdateTagPayload"
-  | "UpdateTimelineEraPayload"
-  | "UpdateTimelineEventPayload"
   | "UpdateUserPayload"
   | "User"
   | "UserRole"
@@ -16857,7 +14546,6 @@ export interface $ContentNode {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $ContentRevisionUnion {
@@ -16867,6 +14555,8 @@ export interface $ContentRevisionUnion {
 
 export interface $ContentTemplate {
   DefaultTemplate?: DefaultTemplate;
+  Template_Blank?: Template_Blank;
+  Template_WithSidebar?: Template_WithSidebar;
 }
 
 export interface $DatabaseIdentifier {
@@ -16879,8 +14569,6 @@ export interface $DatabaseIdentifier {
   Post?: Post;
   PostFormat?: PostFormat;
   Tag?: Tag;
-  TimelineEra?: TimelineEra;
-  TimelineEvent?: TimelineEvent;
   User?: User;
 }
 
@@ -16896,27 +14584,20 @@ export interface $HierarchicalContentNode {
 
 export interface $HierarchicalTermNode {
   Category?: Category;
-  TimelineEra?: TimelineEra;
 }
 
 export interface $MenuItemLinkable {
   Category?: Category;
   Page?: Page;
   Post?: Post;
-  PostFormat?: PostFormat;
   Tag?: Tag;
-  TimelineEra?: TimelineEra;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $MenuItemObjectUnion {
   Category?: Category;
   Page?: Page;
   Post?: Post;
-  PostFormat?: PostFormat;
   Tag?: Tag;
-  TimelineEra?: TimelineEra;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $Node {
@@ -16936,8 +14617,6 @@ export interface $Node {
   Tag?: Tag;
   Taxonomy?: Taxonomy;
   Theme?: Theme;
-  TimelineEra?: TimelineEra;
-  TimelineEvent?: TimelineEvent;
   User?: User;
   UserRole?: UserRole;
 }
@@ -16957,7 +14636,6 @@ export interface $NodeWithComments {
 export interface $NodeWithContentEditor {
   Page?: Page;
   Post?: Post;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $NodeWithExcerpt {
@@ -16967,7 +14645,6 @@ export interface $NodeWithExcerpt {
 export interface $NodeWithFeaturedImage {
   Page?: Page;
   Post?: Post;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $NodeWithPageAttributes {
@@ -16983,14 +14660,12 @@ export interface $NodeWithTemplate {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $NodeWithTitle {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
-  TimelineEvent?: TimelineEvent;
 }
 
 export interface $NodeWithTrackbacks {
@@ -17001,7 +14676,6 @@ export interface $TermNode {
   Category?: Category;
   PostFormat?: PostFormat;
   Tag?: Tag;
-  TimelineEra?: TimelineEra;
 }
 
 export interface $UniformResourceIdentifiable {
@@ -17012,8 +14686,6 @@ export interface $UniformResourceIdentifiable {
   Post?: Post;
   PostFormat?: PostFormat;
   Tag?: Tag;
-  TimelineEra?: TimelineEra;
-  TimelineEvent?: TimelineEvent;
   User?: User;
 }
 
@@ -17037,7 +14709,6 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
   ContentTypesOfCategoryEnum: ContentTypesOfCategoryEnum | undefined;
   ContentTypesOfPostFormatEnum: ContentTypesOfPostFormatEnum | undefined;
   ContentTypesOfTagEnum: ContentTypesOfTagEnum | undefined;
-  ContentTypesOfTimelineEraEnum: ContentTypesOfTimelineEraEnum | undefined;
   MediaItemIdType: MediaItemIdType | undefined;
   MediaItemSizeEnum: MediaItemSizeEnum | undefined;
   MediaItemStatusEnum: MediaItemStatusEnum | undefined;
@@ -17065,8 +14736,6 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
   TermObjectsConnectionOrderbyEnum:
     | TermObjectsConnectionOrderbyEnum
     | undefined;
-  TimelineEraIdType: TimelineEraIdType | undefined;
-  TimelineEventIdType: TimelineEventIdType | undefined;
   UserNodeIdTypeEnum: UserNodeIdTypeEnum | undefined;
   UserRoleEnum: UserRoleEnum | undefined;
   UsersConnectionOrderbyEnum: UsersConnectionOrderbyEnum | undefined;
