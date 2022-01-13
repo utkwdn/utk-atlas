@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from 'scss/components/Footer.module.scss';
+import Link from 'next/link';
+import { client, MenuLocationEnum } from 'client';
 
 interface Props {
   copyrightHolder?: string;
@@ -7,6 +9,14 @@ interface Props {
 
 function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
   const year = new Date().getFullYear();
+
+  const { menuItems } = client.useQuery()
+  const tools = menuItems({
+    where: { location: MenuLocationEnum.TOOLS },
+  }).nodes;
+  const links = menuItems({
+    where: { location: MenuLocationEnum.LINKS },
+  }).nodes;
 
   return (
 
@@ -19,33 +29,26 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                 <div className="row">
                       <div className="col-6">
           <h4 className="text-white">Tools</h4>
-            <ul className="list-unstyled">
-              <li><a className="text-white footer-links" href="https://my.utk.edu/"><small>MyUTK</small></a></li>
-              <li><a className="text-white footer-links" href="https://online.utk.edu/"><small>Online@UT</small></a></li>
-              <li><a className="text-white footer-links" href="https://oit.utk.edu/email"><small>Email</small></a></li>
-              <li><a className="text-white footer-links" href="https://calendar.utk.edu/"><small>Event Calendar</small></a></li>
-              <li><a className="text-white footer-links" href="https://maps.utk.edu/"><small>Map</small></a></li>
-              <li><a className="text-white footer-links" href="https://directory.utk.edu/"><small>Directory</small></a></li>
-              <li><a className="text-white footer-links" href="/contact/"><small>Contact Us</small></a></li>
-              <li><a className="text-white footer-links" href="https://events.utk.edu/"><small>Event Scheduling</small></a></li>
-              <li><a className="text-white footer-links" href="https://irisweb.tennessee.edu/"><small>IRIS Web Portal</small></a></li>
-              <li><a className="text-white footer-links" href="https://office365.utk.edu/"><small>Office 365</small></a></li>
-            </ul>
+			<ul id="list-unstyled" className="list-unstyled">
+            {tools?.map((tool) => (
+              <li key={`${tool.label}$-menu`}>
+                <Link href={tool.url ?? ''}>
+                  <a className="text-white footer-links" href={tool.url}>{tool.label}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
           </div>
           <div className="col-6">
           <h4 className="text-white">Campus Links</h4>
             <ul className="list-unstyled">
-              <li><a className="text-white footer-links" href="https://alumni.utk.edu/"><small>Alumni and Friends</small></a></li>
-              <li><a className="text-white footer-links" href="https://utsports.com/"><small>Athletics</small></a></li>
-              <li><a className="text-white footer-links" href="https://hr.utk.edu/"><small>Employment</small></a></li>
-              <li><a className="text-white footer-links" href="https://cge.utk.edu/"><small>Global Engagement</small></a></li>
-              <li><a className="text-white footer-links" href="https://chancellor.utk.edu/"><small>Leadership</small></a></li>
-              <li><a className="text-white footer-links" href="https://lib.utk.edu/"><small>Libraries</small></a></li>
-              <li><a className="text-white footer-links" href="https://news.utk.edu/"><small>News</small></a></li>
-              <li><a className="text-white footer-links" href="https://onestop.utk.edu/"><small>One Stop Student Services</small></a></li>
-              <li><a className="text-white footer-links" href="https://family.utk.edu/"><small>Parents and Families</small></a></li>
-              <li><a className="text-white footer-links" href="https://www.utvolshop.com/"><small>VolShop</small></a></li>
-
+			{links?.map((link) => (
+              <li key={`${link.label}$-menu`}>
+                <Link href={link.url ?? ''}>
+                  <a className="text-white footer-links" href={link.url}>{link.label}</a>
+                </Link>
+              </li>
+            ))}
             </ul>
           </div>
 
@@ -355,7 +358,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
 
 
 
-      <script src="https://images.utk.edu/designsystem/www2021/v1/assets/utk20210820.min.js?ver=20210816" id="utk-bootstrap-designsytemscripts-js"></script>
+      <script src="//images.utk.edu/designsystem/v1/0.0.9/assets/js/utk.js" id="utk-bootstrap-designsytemscripts-js"></script>
     </footer>
 
   );
