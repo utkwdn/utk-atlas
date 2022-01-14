@@ -12,11 +12,14 @@ export function PageComponent({ page }: PageProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
+  console.log(page?.uri);
+
   return (
     <>
       <Header
         title={generalSettings.title}
         description={generalSettings.description}
+        uri={page?.uri}
       />
 
       <Head>

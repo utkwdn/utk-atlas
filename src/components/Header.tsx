@@ -6,16 +6,20 @@ import { client, MenuLocationEnum } from 'client';
 interface Props {
   title?: string;
   description?: string;
+  uri?: string;
 }
 
 function Header({
   title = 'Headless by WP Engine',
   description,
+  uri,
 }: Props): JSX.Element {
   const { menuItems } = client.useQuery()
   const links = menuItems({
     where: { location: MenuLocationEnum.PRIMARY },
   }).nodes;
+
+  console.log(uri);
 
   return (
     <>
@@ -74,6 +78,23 @@ function Header({
 
       </nav>
       </div></div></header>
+
+      { uri !== undefined &&
+        <nav className="navbar-horizontal col-auto">
+          {links?.map((link) => (
+            uri.includes(link.url) && link.childItems().nodes[0] &&
+            <ul id="secondary-menu" className="nav justify-content-center">
+              {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+            </ul>
+          ))}
+        </nav>
+      }
 
           <div className="container-fluid mb-0 px-0">
           <div className="alert bg-gray2 text-center p-1 mb-0 border-0" role="alert">
