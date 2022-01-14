@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styles from 'scss/components/Header.module.scss';
 import Link from 'next/link';
 import { client, MenuLocationEnum } from 'client';
@@ -51,10 +51,22 @@ function Header({
         <div className="menu-main-site-container">
           <ul id="primary-menu" className="list-unstyled">
             {links?.map((link) => (
+              link.parentId === null &&
               <li key={`${link.label}$-menu`}>
                 <Link href={link.url ?? ''}>
                   <a className="main-navigation" href={link.url}>{link.label}</a>
                 </Link>
+                {link.childItems().nodes[0] &&
+                <ul className="sub-menu">
+                  {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                }
               </li>
             ))}
           </ul>
