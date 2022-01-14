@@ -55,7 +55,25 @@ function Header({
         <div className="menu-main-site-container">
           <ul id="primary-menu" className="list-unstyled">
             {links?.map((link) => (
-              link.parentId === null &&
+              <span>
+              {link.parentId === null && uri !== undefined && uri.includes(link.url) && link.url !== "/" &&
+              <li key={`${link.label}$-menu`} className="current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children ">
+                <Link href={link.url ?? ''}>
+                  <a className="main-navigation" href={link.url}>{link.label}</a>
+                </Link>
+                {link.childItems().nodes[0] &&
+                <ul className="sub-menu">
+                  {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                }
+              </li>
+              || link.parentId === null &&
               <li key={`${link.label}$-menu`}>
                 <Link href={link.url ?? ''}>
                   <a className="main-navigation" href={link.url}>{link.label}</a>
@@ -72,6 +90,8 @@ function Header({
                 </ul>
                 }
               </li>
+              }
+              </span>
             ))}
           </ul>
         </div>
