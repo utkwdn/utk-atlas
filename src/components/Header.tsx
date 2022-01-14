@@ -55,7 +55,7 @@ function Header({
         <div className="menu-main-site-container">
           <ul id="primary-menu" className="list-unstyled">
             {links?.map((link) => (
-              <span>
+              <span key={link.id}>
               {link.parentId === null && uri !== undefined && uri.includes(link.url) && link.url !== "/" &&
               <li key={`${link.label}$-menu`} className="current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children ">
                 <Link href={link.url ?? ''}>
