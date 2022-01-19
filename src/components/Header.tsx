@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styles from 'scss/components/Header.module.scss';
 import Link from 'next/link';
 import { client, MenuLocationEnum } from 'client';
@@ -6,16 +6,20 @@ import { client, MenuLocationEnum } from 'client';
 interface Props {
   title?: string;
   description?: string;
+  uri?: string;
 }
 
 function Header({
   title = 'Headless by WP Engine',
   description,
+  uri,
 }: Props): JSX.Element {
   const { menuItems } = client.useQuery()
   const links = menuItems({
     where: { location: MenuLocationEnum.PRIMARY },
   }).nodes;
+
+  console.log(uri);
 
   return (
     <>
@@ -51,17 +55,66 @@ function Header({
         <div className="menu-main-site-container">
           <ul id="primary-menu" className="list-unstyled">
             {links?.map((link) => (
+              <span key={link.id}>
+              {link.parentId === null && uri !== undefined && uri.includes(link.url) && link.url !== "/" &&
+              <li key={`${link.label}$-menu`} className="current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children ">
+                <Link href={link.url ?? ''}>
+                  <a className="main-navigation" href={link.url}>{link.label}</a>
+                </Link>
+                {link.childItems().nodes[0] &&
+                <ul className="sub-menu">
+                  {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                }
+              </li>
+              || link.parentId === null &&
               <li key={`${link.label}$-menu`}>
                 <Link href={link.url ?? ''}>
                   <a className="main-navigation" href={link.url}>{link.label}</a>
                 </Link>
+                {link.childItems().nodes[0] &&
+                <ul className="sub-menu">
+                  {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                }
               </li>
+              }
+              </span>
             ))}
           </ul>
         </div>
 
       </nav>
       </div></div></header>
+
+      { uri !== undefined &&
+        <nav className="navbar-horizontal col-auto">
+          {links?.map((link) => (
+            uri.includes(link.url) && link.childItems().nodes[0] &&
+            <ul id="secondary-menu" className="nav justify-content-center">
+              {link.childItems().nodes.map((child) => (
+                    <li key={`${child.label}$-menu`}>
+                      <Link href={child.url ?? ''}>
+                        <a href={child.url}>{child.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+            </ul>
+          ))}
+        </nav>
+      }
 
           <div className="container-fluid mb-0 px-0">
           <div className="alert bg-gray2 text-center p-1 mb-0 border-0" role="alert">
