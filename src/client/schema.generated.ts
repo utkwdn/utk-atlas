@@ -24,6 +24,18 @@ export interface Scalars {
   Float: number;
 }
 
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AcalogProgramIdType {
+  /** Identify a resource by the Database ID. */
+  DATABASE_ID = "DATABASE_ID",
+  /** Identify a resource by the (hashed) Global ID. */
+  ID = "ID",
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  SLUG = "SLUG",
+  /** Identify a resource by the URI. */
+  URI = "URI",
+}
+
 /** What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option */
 export enum AvatarRatingEnum {
   /** Indicates a G level avatar rating level. */
@@ -373,6 +385,8 @@ export enum ContentNodeIdTypeEnum {
 /** Allowed Content Types */
 export enum ContentTypeEnum {
   /** The Type of Content object */
+  ACALOG_PROGRAM = "ACALOG_PROGRAM",
+  /** The Type of Content object */
   ATTACHMENT = "ATTACHMENT",
   /** The Type of Content object */
   PAGE = "PAGE",
@@ -444,6 +458,26 @@ export enum ContentTypesOfPostFormatEnum {
 export enum ContentTypesOfTagEnum {
   /** The Type of Content object */
   POST = "POST",
+}
+
+/** Input for the createAcalogProgram mutation */
+export interface CreateAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
 }
 
 /** Input for the createCategory mutation */
@@ -690,6 +724,16 @@ export interface DateQueryInput {
   week?: InputMaybe<Scalars["Int"]>;
   /** 4 digit year (e.g. 2017) */
   year?: InputMaybe<Scalars["Int"]>;
+}
+
+/** Input for the deleteAcalogProgram mutation */
+export interface DeleteAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  /** The ID of the AcalogProgram to delete */
+  id: Scalars["ID"];
 }
 
 /** Input for the deleteCategory mutation */
@@ -1852,6 +1896,44 @@ export interface RestoreCommentInput {
   id: Scalars["ID"];
 }
 
+/** Arguments for filtering the RootQueryToAcalogProgramConnection connection */
+export interface RootQueryToAcalogProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars["Int"]>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars["String"]>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars["ID"]>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars["String"]>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
 /** Arguments for filtering the RootQueryToCategoryConnection connection */
 export interface RootQueryToCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
@@ -2566,6 +2648,28 @@ export enum TermObjectsConnectionOrderbyEnum {
   TERM_ORDER = "TERM_ORDER",
 }
 
+/** Input for the updateAcalogProgram mutation */
+export interface UpdateAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AcalogProgram object */
+  id: Scalars["ID"];
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
 /** Input for the UpdateCategory mutation */
 export interface UpdateCategoryInput {
   /** The slug that the category will be an alias of */
@@ -3151,6 +3255,7 @@ export enum UsersConnectionSearchColumnEnum {
 }
 
 export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
+  AcalogProgramIdType: true,
   AvatarRatingEnum: true,
   Boolean: true,
   CategoryIdType: true,
@@ -3192,6 +3297,77 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   UsersConnectionSearchColumnEnum: true,
 };
 export const generatedSchema = {
+  AcalogProgram: {
+    __typename: { __type: "String!" },
+    acalogDepartmentFields: { __type: "AcalogProgram_Acalogdepartmentfields" },
+    acalogProgramId: { __type: "Int!" },
+    conditionalTags: { __type: "ConditionalTags" },
+    content: {
+      __type: "String",
+      __args: { format: "PostObjectFieldFormatEnum" },
+    },
+    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
+    databaseId: { __type: "Int!" },
+    date: { __type: "String" },
+    dateGmt: { __type: "String" },
+    desiredSlug: { __type: "String" },
+    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
+    enclosure: { __type: "String" },
+    enqueuedScripts: {
+      __type: "ContentNodeToEnqueuedScriptConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    enqueuedStylesheets: {
+      __type: "ContentNodeToEnqueuedStylesheetConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
+    featuredImageDatabaseId: { __type: "Int" },
+    featuredImageId: { __type: "ID" },
+    guid: { __type: "String" },
+    id: { __type: "ID!" },
+    isContentNode: { __type: "Boolean!" },
+    isPreview: { __type: "Boolean" },
+    isRestricted: { __type: "Boolean" },
+    isTermNode: { __type: "Boolean!" },
+    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
+    link: { __type: "String" },
+    modified: { __type: "String" },
+    modifiedGmt: { __type: "String" },
+    preview: { __type: "AcalogProgramToPreviewConnectionEdge" },
+    previewRevisionDatabaseId: { __type: "Int" },
+    previewRevisionId: { __type: "ID" },
+    slug: { __type: "String" },
+    status: { __type: "String" },
+    template: { __type: "ContentTemplate" },
+    templates: { __type: "[String]" },
+    title: {
+      __type: "String",
+      __args: { format: "PostObjectFieldFormatEnum" },
+    },
+    uri: { __type: "String" },
+  },
+  AcalogProgramToPreviewConnectionEdge: {
+    __typename: { __type: "String!" },
+    node: { __type: "AcalogProgram" },
+  },
+  AcalogProgram_Acalogdepartmentfields: {
+    __typename: { __type: "String!" },
+    catoid: { __type: "String" },
+    core: { __type: "String" },
+    courseDepartment: { __type: "String" },
+    degreeType: { __type: "String" },
+    fieldGroupName: { __type: "String" },
+    poid: { __type: "String" },
+    programContent: { __type: "String" },
+    programType: { __type: "String" },
+  },
+  AcfFieldGroup: {
+    __typename: { __type: "String!" },
+    fieldGroupName: { __type: "String" },
+    $on: { __type: "$AcfFieldGroup!" },
+  },
   Avatar: {
     __typename: { __type: "String!" },
     default: { __type: "String" },
@@ -3568,6 +3744,7 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -3735,6 +3912,21 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     cursor: { __type: "String" },
     node: { __type: "Taxonomy" },
+  },
+  CreateAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    content: { __type: "String" },
+    date: { __type: "String" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  CreateAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
   },
   CreateCategoryInput: {
     aliasOf: { __type: "String" },
@@ -3908,6 +4100,17 @@ export const generatedSchema = {
   DefaultTemplate: {
     __typename: { __type: "String!" },
     templateName: { __type: "String" },
+  },
+  DeleteAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    forceDelete: { __type: "Boolean" },
+    id: { __type: "ID!" },
+  },
+  DeleteAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
+    deletedId: { __type: "ID" },
   },
   DeleteCategoryInput: {
     clientMutationId: { __type: "String" },
@@ -4214,6 +4417,7 @@ export const generatedSchema = {
     },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4483,6 +4687,7 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4603,6 +4808,7 @@ export const generatedSchema = {
       __args: { format: "PostObjectFieldFormatEnum" },
     },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4790,6 +4996,7 @@ export const generatedSchema = {
       __args: { format: "PostObjectFieldFormatEnum" },
     },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -5342,6 +5549,36 @@ export const generatedSchema = {
     clientMutationId: { __type: "String" },
     comment: { __type: "Comment" },
     restoredId: { __type: "ID" },
+  },
+  RootQueryToAcalogProgramConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[RootQueryToAcalogProgramConnectionEdge]" },
+    nodes: { __type: "[AcalogProgram]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  RootQueryToAcalogProgramConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AcalogProgram" },
+  },
+  RootQueryToAcalogProgramConnectionWhereArgs: {
+    dateQuery: { __type: "DateQueryInput" },
+    hasPassword: { __type: "Boolean" },
+    id: { __type: "Int" },
+    in: { __type: "[ID]" },
+    mimeType: { __type: "MimeTypeEnum" },
+    name: { __type: "String" },
+    nameIn: { __type: "[String]" },
+    notIn: { __type: "[ID]" },
+    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
+    parent: { __type: "ID" },
+    parentIn: { __type: "[ID]" },
+    parentNotIn: { __type: "[ID]" },
+    password: { __type: "String" },
+    search: { __type: "String" },
+    stati: { __type: "[PostStatusEnum]" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
   },
   RootQueryToCategoryConnection: {
     __typename: { __type: "String!" },
@@ -6102,6 +6339,22 @@ export const generatedSchema = {
     uri: { __type: "String" },
     $on: { __type: "$UniformResourceIdentifiable!" },
   },
+  UpdateAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    content: { __type: "String" },
+    date: { __type: "String" },
+    id: { __type: "ID!" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  UpdateAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
+  },
   UpdateCategoryInput: {
     aliasOf: { __type: "String" },
     clientMutationId: { __type: "String" },
@@ -6620,6 +6873,10 @@ export const generatedSchema = {
   },
   mutation: {
     __typename: { __type: "String!" },
+    createAcalogProgram: {
+      __type: "CreateAcalogProgramPayload",
+      __args: { input: "CreateAcalogProgramInput!" },
+    },
     createCategory: {
       __type: "CreateCategoryPayload",
       __args: { input: "CreateCategoryInput!" },
@@ -6651,6 +6908,10 @@ export const generatedSchema = {
     createUser: {
       __type: "CreateUserPayload",
       __args: { input: "CreateUserInput!" },
+    },
+    deleteAcalogProgram: {
+      __type: "DeleteAcalogProgramPayload",
+      __args: { input: "DeleteAcalogProgramInput!" },
     },
     deleteCategory: {
       __type: "DeleteCategoryPayload",
@@ -6705,6 +6966,10 @@ export const generatedSchema = {
       __type: "SendPasswordResetEmailPayload",
       __args: { input: "SendPasswordResetEmailInput!" },
     },
+    updateAcalogProgram: {
+      __type: "UpdateAcalogProgramPayload",
+      __args: { input: "UpdateAcalogProgramInput!" },
+    },
     updateCategory: {
       __type: "UpdateCategoryPayload",
       __args: { input: "UpdateCategoryInput!" },
@@ -6744,6 +7009,33 @@ export const generatedSchema = {
   },
   query: {
     __typename: { __type: "String!" },
+    acalogProgram: {
+      __type: "AcalogProgram",
+      __args: {
+        asPreview: "Boolean",
+        id: "ID!",
+        idType: "AcalogProgramIdType",
+      },
+    },
+    acalogProgramBy: {
+      __type: "AcalogProgram",
+      __args: {
+        acalogProgramId: "Int",
+        id: "ID",
+        slug: "String",
+        uri: "String",
+      },
+    },
+    acalogPrograms: {
+      __type: "RootQueryToAcalogProgramConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "RootQueryToAcalogProgramConnectionWhereArgs",
+      },
+    },
     allSettings: { __type: "Settings" },
     categories: {
       __type: "RootQueryToCategoryConnection",
@@ -6990,7 +7282,9 @@ export const generatedSchema = {
   },
   subscription: {},
   [SchemaUnionsKey]: {
+    ContentNode: ["AcalogProgram", "MediaItem", "Page", "Post"],
     DatabaseIdentifier: [
+      "AcalogProgram",
       "Category",
       "Comment",
       "MediaItem",
@@ -7002,9 +7296,9 @@ export const generatedSchema = {
       "Tag",
       "User",
     ],
-    HierarchicalTermNode: ["Category"],
-    MenuItemLinkable: ["Category", "Page", "Post", "Tag"],
+    MenuItemLinkable: ["AcalogProgram", "Category", "Page", "Post", "Tag"],
     Node: [
+      "AcalogProgram",
       "Category",
       "Comment",
       "CommentAuthor",
@@ -7024,8 +7318,12 @@ export const generatedSchema = {
       "User",
       "UserRole",
     ],
-    TermNode: ["Category", "PostFormat", "Tag"],
+    NodeWithContentEditor: ["AcalogProgram", "Page", "Post"],
+    NodeWithFeaturedImage: ["AcalogProgram", "Page", "Post"],
+    NodeWithTemplate: ["AcalogProgram", "MediaItem", "Page", "Post"],
+    NodeWithTitle: ["AcalogProgram", "MediaItem", "Page", "Post"],
     UniformResourceIdentifiable: [
+      "AcalogProgram",
       "Category",
       "ContentType",
       "MediaItem",
@@ -7035,6 +7333,9 @@ export const generatedSchema = {
       "Tag",
       "User",
     ],
+    AcfFieldGroup: ["AcalogProgram_Acalogdepartmentfields"],
+    HierarchicalTermNode: ["Category"],
+    TermNode: ["Category", "PostFormat", "Tag"],
     Commenter: ["CommentAuthor", "User"],
     ContentRevisionUnion: ["Page", "Post"],
     ContentTemplate: [
@@ -7043,21 +7344,247 @@ export const generatedSchema = {
       "Template_WithSidebar",
     ],
     EnqueuedAsset: ["EnqueuedScript", "EnqueuedStylesheet"],
-    ContentNode: ["MediaItem", "Page", "Post"],
     HierarchicalContentNode: ["MediaItem", "Page"],
     NodeWithAuthor: ["MediaItem", "Page", "Post"],
     NodeWithComments: ["MediaItem", "Page", "Post"],
-    NodeWithTemplate: ["MediaItem", "Page", "Post"],
-    NodeWithTitle: ["MediaItem", "Page", "Post"],
-    MenuItemObjectUnion: ["Category", "Page", "Post", "Tag"],
-    NodeWithContentEditor: ["Page", "Post"],
-    NodeWithFeaturedImage: ["Page", "Post"],
+    MenuItemObjectUnion: ["AcalogProgram", "Category", "Page", "Post", "Tag"],
     NodeWithPageAttributes: ["Page"],
     NodeWithRevisions: ["Page", "Post"],
     NodeWithExcerpt: ["Post"],
     NodeWithTrackbacks: ["Post"],
   },
 } as const;
+
+/**
+ * The AcalogProgram type
+ */
+export interface AcalogProgram {
+  __typename?: "AcalogProgram";
+  /**
+   * Added to the GraphQL Schema because the ACF Field Group &quot;Acalog Department Fields&quot; was set to Show in GraphQL.
+   */
+  acalogDepartmentFields?: Maybe<AcalogProgram_Acalogdepartmentfields>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  acalogProgramId: ScalarsEnums["Int"];
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * The content of the post.
+   */
+  content: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the ContentNode type and the ContentType type
+   */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums["Int"];
+  /**
+   * Post publishing date.
+   */
+  date?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The publishing date set in GMT.
+   */
+  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The desired slug of the post
+   */
+  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
+   */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /**
+   * The RSS enclosure for the object
+   */
+  enclosure?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /**
+   * Connection between the NodeWithFeaturedImage type and the MediaItem type
+   */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /**
+   * The database identifier for the featured image node assigned to the content node
+   */
+  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * Globally unique ID of the featured image assigned to the node
+   */
+  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  /**
+   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
+   */
+  guid?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The globally unique identifier of the acalog_program object.
+   */
+  id: ScalarsEnums["ID"];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums["Boolean"];
+  /**
+   * Whether the object is a node in the preview state
+   */
+  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums["Boolean"];
+  /**
+   * The user that most recently edited the node
+   */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /**
+   * The permalink of the post
+   */
+  link?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
+   */
+  modified?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
+   */
+  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the AcalogProgram type and the AcalogProgram type
+   */
+  preview?: Maybe<AcalogProgramToPreviewConnectionEdge>;
+  /**
+   * The database id of the preview node
+   */
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * Whether the object is a node in the preview state
+   */
+  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  /**
+   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
+   */
+  slug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The current status of the object
+   */
+  status?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The template assigned to a node of content
+   */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  /**
+   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
+   */
+  title: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums["String"]>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * Connection between the AcalogProgram type and the AcalogProgram type
+ */
+export interface AcalogProgramToPreviewConnectionEdge {
+  __typename?: "AcalogProgramToPreviewConnectionEdge";
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<AcalogProgram>;
+}
+
+/**
+ * Field Group
+ */
+export interface AcalogProgram_Acalogdepartmentfields {
+  __typename?: "AcalogProgram_Acalogdepartmentfields";
+  catoid?: Maybe<ScalarsEnums["String"]>;
+  core?: Maybe<ScalarsEnums["String"]>;
+  courseDepartment?: Maybe<ScalarsEnums["String"]>;
+  degreeType?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  poid?: Maybe<ScalarsEnums["String"]>;
+  programContent?: Maybe<ScalarsEnums["String"]>;
+  programType?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * A Field Group registered by ACF
+ */
+export interface AcfFieldGroup {
+  __typename?: "AcalogProgram_Acalogdepartmentfields";
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  $on: $AcfFieldGroup;
+}
 
 /**
  * Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from.
@@ -7832,12 +8359,16 @@ export interface ConditionalTags {
  * Nodes used to manage content
  */
 export interface ContentNode {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AcalogProgram" | "MediaItem" | "Page" | "Post";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The ID of the node in the database.
    */
@@ -8341,6 +8872,21 @@ export interface ContentTypeToTaxonomyConnectionEdge {
 }
 
 /**
+ * The payload for the createAcalogProgram mutation
+ */
+export interface CreateAcalogProgramPayload {
+  __typename?: "CreateAcalogProgramPayload";
+  /**
+   * The Post object mutation type.
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
  * The payload for the createCategory mutation
  */
 export interface CreateCategoryPayload {
@@ -8469,6 +9015,7 @@ export interface CreateUserPayload {
  */
 export interface DatabaseIdentifier {
   __typename?:
+    | "AcalogProgram"
     | "Category"
     | "Comment"
     | "MediaItem"
@@ -8495,6 +9042,25 @@ export interface DefaultTemplate {
    * The name of the template
    */
   templateName?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the deleteAcalogProgram mutation
+ */
+export interface DeleteAcalogProgramPayload {
+  __typename?: "DeleteAcalogProgramPayload";
+  /**
+   * The object before it was deleted
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums["ID"]>;
 }
 
 /**
@@ -9143,6 +9709,10 @@ export interface MediaItem {
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
   /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
+  /**
    * The unique identifier stored in the database
    */
   databaseId: ScalarsEnums["Int"];
@@ -9665,7 +10235,7 @@ export interface MenuItem {
  * Nodes that can be linked to as Menu Items
  */
 export interface MenuItemLinkable {
-  __typename?: "Category" | "Page" | "Post" | "Tag";
+  __typename?: "AcalogProgram" | "Category" | "Page" | "Post" | "Tag";
   /**
    * The unique resource identifier path
    */
@@ -9685,7 +10255,7 @@ export interface MenuItemLinkable {
  * Deprecated in favor of MenuItemLinkeable Interface
  */
 export interface MenuItemObjectUnion {
-  __typename?: "Category" | "Page" | "Post" | "Tag";
+  __typename?: "AcalogProgram" | "Category" | "Page" | "Post" | "Tag";
   $on: $MenuItemObjectUnion;
 }
 
@@ -9784,6 +10354,7 @@ export interface MenuToMenuItemConnectionEdge {
  */
 export interface Node {
   __typename?:
+    | "AcalogProgram"
     | "Category"
     | "Comment"
     | "CommentAuthor"
@@ -9860,7 +10431,7 @@ export interface NodeWithComments {
  * A node that supports the content editor
  */
 export interface NodeWithContentEditor {
-  __typename?: "Page" | "Post";
+  __typename?: "AcalogProgram" | "Page" | "Post";
   /**
    * The content of the post.
    */
@@ -9894,12 +10465,16 @@ export interface NodeWithExcerpt {
  * A node that can have a featured image set
  */
 export interface NodeWithFeaturedImage {
-  __typename?: "Page" | "Post";
+  __typename?: "AcalogProgram" | "Page" | "Post";
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique identifier stored in the database
    */
@@ -10100,7 +10675,7 @@ export interface NodeWithRevisionsToContentNodeConnectionEdge {
  * A node that can have a template associated with it
  */
 export interface NodeWithTemplate {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AcalogProgram" | "MediaItem" | "Page" | "Post";
   /**
    * The template assigned to the node
    */
@@ -10112,7 +10687,7 @@ export interface NodeWithTemplate {
  * A node that NodeWith a title
  */
 export interface NodeWithTitle {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AcalogProgram" | "MediaItem" | "Page" | "Post";
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -10259,6 +10834,10 @@ export interface Page {
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique resource identifier path
    */
@@ -10694,6 +11273,10 @@ export interface Post {
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique resource identifier path
    */
@@ -11615,6 +12198,40 @@ export interface RestoreCommentPayload {
    * The ID of the restored comment
    */
   restoredId?: Maybe<ScalarsEnums["ID"]>;
+}
+
+/**
+ * Connection between the RootQuery type and the AcalogProgram type
+ */
+export interface RootQueryToAcalogProgramConnection {
+  __typename?: "RootQueryToAcalogProgramConnection";
+  /**
+   * Edges for the RootQueryToAcalogProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToAcalogProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AcalogProgram>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToAcalogProgramConnectionEdge {
+  __typename?: "RootQueryToAcalogProgramConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AcalogProgram>;
 }
 
 /**
@@ -13008,6 +13625,7 @@ export interface Theme {
  */
 export interface UniformResourceIdentifiable {
   __typename?:
+    | "AcalogProgram"
     | "Category"
     | "ContentType"
     | "MediaItem"
@@ -13035,6 +13653,21 @@ export interface UniformResourceIdentifiable {
    */
   uri?: Maybe<ScalarsEnums["String"]>;
   $on: $UniformResourceIdentifiable;
+}
+
+/**
+ * The payload for the updateAcalogProgram mutation
+ */
+export interface UpdateAcalogProgramPayload {
+  __typename?: "UpdateAcalogProgramPayload";
+  /**
+   * The Post object mutation type.
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
 }
 
 /**
@@ -13839,6 +14472,9 @@ export interface WritingSettings {
 
 export interface Mutation {
   __typename?: "Mutation";
+  createAcalogProgram: (args: {
+    input: CreateAcalogProgramInput;
+  }) => Maybe<CreateAcalogProgramPayload>;
   createCategory: (args: {
     input: CreateCategoryInput;
   }) => Maybe<CreateCategoryPayload>;
@@ -13855,6 +14491,9 @@ export interface Mutation {
   }) => Maybe<CreatePostFormatPayload>;
   createTag: (args: { input: CreateTagInput }) => Maybe<CreateTagPayload>;
   createUser: (args: { input: CreateUserInput }) => Maybe<CreateUserPayload>;
+  deleteAcalogProgram: (args: {
+    input: DeleteAcalogProgramInput;
+  }) => Maybe<DeleteAcalogProgramPayload>;
   deleteCategory: (args: {
     input: DeleteCategoryInput;
   }) => Maybe<DeleteCategoryPayload>;
@@ -13889,6 +14528,9 @@ export interface Mutation {
   sendPasswordResetEmail: (args: {
     input: SendPasswordResetEmailInput;
   }) => Maybe<SendPasswordResetEmailPayload>;
+  updateAcalogProgram: (args: {
+    input: UpdateAcalogProgramInput;
+  }) => Maybe<UpdateAcalogProgramPayload>;
   updateCategory: (args: {
     input: UpdateCategoryInput;
   }) => Maybe<UpdateCategoryPayload>;
@@ -13912,6 +14554,24 @@ export interface Mutation {
 
 export interface Query {
   __typename?: "Query";
+  acalogProgram: (args: {
+    asPreview?: Maybe<Scalars["Boolean"]>;
+    id: Scalars["ID"];
+    idType?: Maybe<AcalogProgramIdType>;
+  }) => Maybe<AcalogProgram>;
+  acalogProgramBy: (args?: {
+    acalogProgramId?: Maybe<Scalars["Int"]>;
+    id?: Maybe<Scalars["ID"]>;
+    slug?: Maybe<Scalars["String"]>;
+    uri?: Maybe<Scalars["String"]>;
+  }) => Maybe<AcalogProgram>;
+  acalogPrograms: (args?: {
+    after?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars["String"]>;
+    first?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars["Int"]>;
+    where?: Maybe<RootQueryToAcalogProgramConnectionWhereArgs>;
+  }) => Maybe<RootQueryToAcalogProgramConnection>;
   allSettings?: Maybe<Settings>;
   categories: (args?: {
     after?: Maybe<Scalars["String"]>;
@@ -14138,6 +14798,9 @@ export interface Subscription {
 }
 
 export interface SchemaObjectTypes {
+  AcalogProgram: AcalogProgram;
+  AcalogProgramToPreviewConnectionEdge: AcalogProgramToPreviewConnectionEdge;
+  AcalogProgram_Acalogdepartmentfields: AcalogProgram_Acalogdepartmentfields;
   Avatar: Avatar;
   Category: Category;
   CategoryToAncestorsCategoryConnection: CategoryToAncestorsCategoryConnection;
@@ -14170,6 +14833,7 @@ export interface SchemaObjectTypes {
   ContentTypeToContentNodeConnectionEdge: ContentTypeToContentNodeConnectionEdge;
   ContentTypeToTaxonomyConnection: ContentTypeToTaxonomyConnection;
   ContentTypeToTaxonomyConnectionEdge: ContentTypeToTaxonomyConnectionEdge;
+  CreateAcalogProgramPayload: CreateAcalogProgramPayload;
   CreateCategoryPayload: CreateCategoryPayload;
   CreateCommentPayload: CreateCommentPayload;
   CreateMediaItemPayload: CreateMediaItemPayload;
@@ -14179,6 +14843,7 @@ export interface SchemaObjectTypes {
   CreateTagPayload: CreateTagPayload;
   CreateUserPayload: CreateUserPayload;
   DefaultTemplate: DefaultTemplate;
+  DeleteAcalogProgramPayload: DeleteAcalogProgramPayload;
   DeleteCategoryPayload: DeleteCategoryPayload;
   DeleteCommentPayload: DeleteCommentPayload;
   DeleteMediaItemPayload: DeleteMediaItemPayload;
@@ -14248,6 +14913,8 @@ export interface SchemaObjectTypes {
   RegisterUserPayload: RegisterUserPayload;
   ResetUserPasswordPayload: ResetUserPasswordPayload;
   RestoreCommentPayload: RestoreCommentPayload;
+  RootQueryToAcalogProgramConnection: RootQueryToAcalogProgramConnection;
+  RootQueryToAcalogProgramConnectionEdge: RootQueryToAcalogProgramConnectionEdge;
   RootQueryToCategoryConnection: RootQueryToCategoryConnection;
   RootQueryToCategoryConnectionEdge: RootQueryToCategoryConnectionEdge;
   RootQueryToCommentConnection: RootQueryToCommentConnection;
@@ -14307,6 +14974,7 @@ export interface SchemaObjectTypes {
   TermNodeToEnqueuedStylesheetConnection: TermNodeToEnqueuedStylesheetConnection;
   TermNodeToEnqueuedStylesheetConnectionEdge: TermNodeToEnqueuedStylesheetConnectionEdge;
   Theme: Theme;
+  UpdateAcalogProgramPayload: UpdateAcalogProgramPayload;
   UpdateCategoryPayload: UpdateCategoryPayload;
   UpdateCommentPayload: UpdateCommentPayload;
   UpdateMediaItemPayload: UpdateMediaItemPayload;
@@ -14338,6 +15006,9 @@ export interface SchemaObjectTypes {
   WritingSettings: WritingSettings;
 }
 export type SchemaObjectTypesNames =
+  | "AcalogProgram"
+  | "AcalogProgramToPreviewConnectionEdge"
+  | "AcalogProgram_Acalogdepartmentfields"
   | "Avatar"
   | "Category"
   | "CategoryToAncestorsCategoryConnection"
@@ -14370,6 +15041,7 @@ export type SchemaObjectTypesNames =
   | "ContentTypeToContentNodeConnectionEdge"
   | "ContentTypeToTaxonomyConnection"
   | "ContentTypeToTaxonomyConnectionEdge"
+  | "CreateAcalogProgramPayload"
   | "CreateCategoryPayload"
   | "CreateCommentPayload"
   | "CreateMediaItemPayload"
@@ -14379,6 +15051,7 @@ export type SchemaObjectTypesNames =
   | "CreateTagPayload"
   | "CreateUserPayload"
   | "DefaultTemplate"
+  | "DeleteAcalogProgramPayload"
   | "DeleteCategoryPayload"
   | "DeleteCommentPayload"
   | "DeleteMediaItemPayload"
@@ -14448,6 +15121,8 @@ export type SchemaObjectTypesNames =
   | "RegisterUserPayload"
   | "ResetUserPasswordPayload"
   | "RestoreCommentPayload"
+  | "RootQueryToAcalogProgramConnection"
+  | "RootQueryToAcalogProgramConnectionEdge"
   | "RootQueryToCategoryConnection"
   | "RootQueryToCategoryConnectionEdge"
   | "RootQueryToCommentConnection"
@@ -14507,6 +15182,7 @@ export type SchemaObjectTypesNames =
   | "TermNodeToEnqueuedStylesheetConnection"
   | "TermNodeToEnqueuedStylesheetConnectionEdge"
   | "Theme"
+  | "UpdateAcalogProgramPayload"
   | "UpdateCategoryPayload"
   | "UpdateCommentPayload"
   | "UpdateMediaItemPayload"
@@ -14537,12 +15213,17 @@ export type SchemaObjectTypesNames =
   | "WPPageInfo"
   | "WritingSettings";
 
+export interface $AcfFieldGroup {
+  AcalogProgram_Acalogdepartmentfields?: AcalogProgram_Acalogdepartmentfields;
+}
+
 export interface $Commenter {
   CommentAuthor?: CommentAuthor;
   User?: User;
 }
 
 export interface $ContentNode {
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
@@ -14560,6 +15241,7 @@ export interface $ContentTemplate {
 }
 
 export interface $DatabaseIdentifier {
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Comment?: Comment;
   MediaItem?: MediaItem;
@@ -14587,6 +15269,7 @@ export interface $HierarchicalTermNode {
 }
 
 export interface $MenuItemLinkable {
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Page?: Page;
   Post?: Post;
@@ -14594,6 +15277,7 @@ export interface $MenuItemLinkable {
 }
 
 export interface $MenuItemObjectUnion {
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Page?: Page;
   Post?: Post;
@@ -14601,6 +15285,7 @@ export interface $MenuItemObjectUnion {
 }
 
 export interface $Node {
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Comment?: Comment;
   CommentAuthor?: CommentAuthor;
@@ -14634,6 +15319,7 @@ export interface $NodeWithComments {
 }
 
 export interface $NodeWithContentEditor {
+  AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
 }
@@ -14643,6 +15329,7 @@ export interface $NodeWithExcerpt {
 }
 
 export interface $NodeWithFeaturedImage {
+  AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
 }
@@ -14657,12 +15344,14 @@ export interface $NodeWithRevisions {
 }
 
 export interface $NodeWithTemplate {
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
 }
 
 export interface $NodeWithTitle {
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
@@ -14679,6 +15368,7 @@ export interface $TermNode {
 }
 
 export interface $UniformResourceIdentifiable {
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   ContentType?: ContentType;
   MediaItem?: MediaItem;
@@ -14700,6 +15390,7 @@ export type MakeNullable<T> = {
 };
 
 export interface ScalarsEnums extends MakeNullable<Scalars> {
+  AcalogProgramIdType: AcalogProgramIdType | undefined;
   AvatarRatingEnum: AvatarRatingEnum | undefined;
   CategoryIdType: CategoryIdType | undefined;
   CommentsConnectionOrderbyEnum: CommentsConnectionOrderbyEnum | undefined;
