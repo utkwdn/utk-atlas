@@ -29,7 +29,7 @@ function Hero({
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
       className={styles.hero}>
       <div className="container-xxl">
-        <h1 className="text-white">{title}</h1>
+        <h1 className="display-4">{title}</h1>
         <div className={styles.intro}>
           <div className={styles.children}>{children}</div>
           {buttonText && buttonURL && (
