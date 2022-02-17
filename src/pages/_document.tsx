@@ -11,15 +11,8 @@ class MyDocument extends Document {
 		  />
           <link
             rel="stylesheet"
-			id="utk-bootstrap-designsytemstyles-css"
-            href="https://images.utk.edu/designsystem/v1/0.0.9/assets/css/style.css"
-            type="text/css"
-            media="all"
-          />
-          <link
-            rel="stylesheet"
-			      id="utk-www-css"
-            href="/public/css/styles.css"
+       			id="utk-bootstrap-designsytemstyles-css"
+            href="https://images.utk.edu/designsystem/v1/0.1.0/assets/css/style.css"
             type="text/css"
             media="all"
           />
