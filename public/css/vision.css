@@ -1,0 +1,829 @@
+.angleBracket {
+  content: "";
+  width: 6rem;
+  height: auto;
+  border-bottom: 6px solid #ff8200;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1rem;
+  left: -1.5rem;
+  top: -1.5rem;
+}
+.angleBracket:before {
+  content: "";
+  width: 3rem;
+  height: auto;
+  border-left: 6px solid #ff8200;
+  padding: 1.5rem;
+  margin: -1rem;
+}
+html {
+  font-size: 100%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.hero {
+  background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") -10vh -30vw
+    no-repeat;
+  background-size: contain;
+  padding: 4vw;
+  position: relative;
+}
+.titleBlock {
+  position: relative;
+  height: 81vh;
+  height: calc(100vh - (8.5rem + 2vh));
+  height: calc(100vh - (10.9rem + 2vh));
+  width: 90vw;
+  display: block;
+  margin: 0;
+  padding: 3vh 5vw 0 5vw;
+}
+.fake-big-head {
+  font-size: calc(1.1rem + 6.2vw);
+  color: #ff8200;
+  color: #58595b;
+  font-family: "Gotham A", "Gotham B", Helvetica, Arial;
+  font-weight: 200;
+}
+.itav {
+  color: #737778;
+  font-size: calc(0.8rem + 1.2vw);
+  font-weight: 400;
+  margin: 0.3rem 0 3rem 0;
+  margin: 2rem 0 3rem 0;
+  display: block;
+}
+.vision {
+  background-color: #f7f7f7;
+  margin: 0 -4vw 2vw -4vw;
+  padding: 12vw 12vw 0 12vw;
+  border-top: 2vh solid #ff8200;
+  position: relative;
+  border-bottom: 2vh solid #ff8200;
+}
+.whitePages {
+  padding: 3vh;
+  display: block;
+  font-size: 70%;
+  bottom: 0;
+  right: 0;
+}
+.videoContainer {
+  margin: 9vh auto 12vh auto;
+  margin: 9vh -12vw 12vh -12vw;
+  margin: 8vh -12vw 10vh -12vw;
+}
+.strip.strip-dots,
+.strip-fluid.strip-dots {
+  background-image: url("http://images.utk.edu/designsystem/www2021/v1/i/strip_dots.gif");
+  background-position: left;
+  margin-left: 0;
+}
+.popColor {
+  color: #d5431a;
+}
+.angleContainerSurround {
+  background-color: #ff8200;
+  margin-right: -2vw;
+}
+.angleContainer,
+.angleContainer02 {
+  background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") 0 0
+    no-repeat;
+  background-color: #fff;
+  background-size: 50%;
+  background-position: top right;
+  margin-top: 6vh;
+  margin-left: -12vw;
+  margin-right: -12vw;
+  margin-right: 5vw;
+  display: block;
+  width: 90vw;
+  margin-bottom: -10vh;
+  --notchSize: 10vw;
+  clip-path: polygon(
+    0% 0%,
+    var(--notchSize) 0%,
+    calc(100% - var(--notchSize)) 0%,
+    100% var(--notchSize),
+    100% 100%,
+    100% 100%,
+    0% 100%,
+    0% 0%
+  );
+}
+.angleContainer p,
+.angleContainer02 p {
+  padding: 0;
+}
+.angleContainer p.angleIntro,
+.angleContainer02 p.angleIntro {
+  padding: 7vw 2vw 4vw 12vw;
+  max-width: 80vw;
+}
+.angleContainer02 {
+  background-color: #f7f7f7;
+  background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
+  background-position: top left;
+  background-size: 50%;
+  width: 90vw;
+  padding-right: 2vw;
+}
+.angleContainer02 .angleOutro {
+  padding: 7vw 12vw 2rem 12vw;
+  max-width: 80vw;
+}
+@-webkit-keyframes stepSlide {
+  from {
+    margin-left: -10vw;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+@keyframes stepSlide {
+  from {
+    margin-left: -10vw;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .stepsAnimate {
+    animation-name: stepSlide;
+    animation-duration: 2s;
+  }
+}
+.angleCallout {
+  width: 0;
+  height: 100%;
+  border-bottom: 20vw solid #ff8200;
+  border-right: 20vw solid transparent;
+  border-left: 25vw solid #ff8200;
+  z-index: 2;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: -16vw;
+  display: inline-block;
+  float: left;
+  shape-outside: polygon(0 0, 100% 0%, 53% 100%, 0% 100%);
+  shape-outside: polygon(0 0, 36% 0, 100% 100%, 0% 100%);
+  margin-right: 15vw;
+}
+.angleContainer:after,
+.angleContainer02:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.angleMatch {
+  background-color: #ff8200;
+  transform: skewX(-10deg);
+  display: inline-block;
+  height: 50vh;
+}
+.angleBracket {
+  content: "";
+  width: 6rem;
+  height: auto;
+  border-bottom: 6px solid #ff8200;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1rem;
+  left: -1.5rem;
+  top: -1.5rem;
+}
+.angleBracket:before {
+  content: "";
+  width: 3rem;
+  height: auto;
+  border-left: 6px solid #ff8200;
+  padding: 1.5rem;
+  margin: -1rem;
+}
+.angleBracketDown {
+  content: "";
+  width: 6rem;
+  height: auto;
+  border-top: 6px solid #ff8200;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1rem;
+  left: -1.5rem;
+  top: 1.5rem;
+}
+.angleBracketDown:before {
+  content: "";
+  width: 3rem;
+  height: auto;
+  border-left: 6px solid #ff8200;
+  padding: 1.5rem;
+  margin: -1rem;
+}
+.reflectY {
+  transform: scaleX(-1);
+  float: right;
+  margin-top: -3rem;
+  margin-right: -3rem;
+}
+.reflectX {
+  transform: scaleX(-1);
+  float: right;
+  margin-top: -3rem;
+  margin-right: -3rem;
+}
+.mission {
+  padding: 12vw 12vw 15vw 12vw;
+  margin: -2vw 0;
+  padding-top: 20vh;
+}
+.mission ul {
+  list-style: none;
+}
+.explore {
+  padding: 0 12vw 0 12vw;
+}
+.missionBlock ul {
+  padding: 0;
+  margin: 0;
+  font-weight: 200;
+}
+.cardIntro {
+  font-weight: 400;
+}
+.missionTorchContainer {
+  background: #ff8200;
+  height: 20vh;
+}
+.missionTorch {
+  height: 20vh;
+  z-index: 5;
+  background: url("https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg")
+    0 0 no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: left;
+  border: 1px solid red;
+}
+.skinnyLongImg {
+  background-image: url("https://www.utk.edu/images/i/warmers/torch-pattern-on-orange-03.jpg");
+  height: 25vh;
+  width: auto;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+.visionFooter {
+  height: 20vh;
+  background-position: bottom right;
+  padding: 0;
+  margin-top: 10vh;
+  margin-bottom: -0.45rem;
+  z-index: 1;
+}
+.heroImg {
+  width: 100%;
+  height: auto;
+}
+.bringForward {
+  position: relative;
+  z-index: 10;
+}
+.vision .lead {
+  font-size: 150%;
+  font-size: calc(1.1rem + 0.7vw);
+}
+.mission .lead {
+  font-size: 150%;
+  font-size: calc(1.1rem + 0.7vw);
+}
+.nod {
+  font-size: 70%;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  margin-bottom: 1.7vh;
+}
+.textPop {
+  font-size: 120%;
+  font-weight: 800;
+  color: #58595b;
+}
+.textPopLight {
+  color: #4b4b4b;
+  font-size: 105%;
+  font-weight: 600;
+}
+.boldPunch {
+  font-weight: 900;
+  letter-spacing: 0.7vw;
+}
+.textSteps {
+  letter-spacing: 0.7vw;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.offset {
+  margin: 4vh 0 0 7vw;
+}
+.goalsContainer {
+  padding-top: 12vh;
+  position: relative;
+}
+.goalsContainer h2 {
+  margin-left: 12vw;
+  z-index: 1;
+  position: relative;
+}
+.goalsArticleContainer {
+  position: relative;
+}
+.margin-fix {
+  margin: 0 -12vw;
+}
+.cardIntro {
+  margin-top: 6vh;
+  font-size: 80%;
+  margin-left: 0;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: -9vh auto 5vh auto;
+}
+.greyBkg {
+  background-color: #f7f7f7;
+  background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
+}
+.article {
+  margin: -4vw;
+}
+.printLineHeader {
+  display: none;
+}
+.printLineHeader:before {
+  content: "";
+  width: 60vw;
+  height: 0;
+  border: 1px solid #ff8200;
+  transform: rotate(-40deg);
+  display: block;
+  left: 0;
+  margin-left: -25.8vw;
+  margin-top: -5vh;
+}
+.goalsObj {
+  margin: 0 auto;
+  padding: 12vh 2vw;
+  position: relative;
+}
+.goalsObj .objLeft,
+.goalsObj .objRight {
+  margin-right: 20vw;
+  width: 70vw;
+  margin-left: 10vw;
+  position: relative;
+}
+.goalsObj:first-child {
+  margin-top: -12vh;
+}
+.goalsObj h3 {
+  display: block;
+  font-weight: 400;
+  letter-spacing: 0.3vw;
+  padding-top: 2vh;
+  position: relative;
+  z-index: 4;
+}
+.goalsObj ul {
+  list-style: none;
+  margin: 0 14vw;
+  margin: 0 0 0 7vw;
+  padding: 0;
+  position: relative;
+  z-index: 4;
+}
+.goalsObj p {
+  position: relative;
+  z-index: 4;
+}
+@-webkit-keyframes objTitleSlide {
+  0% {
+    right: -24px;
+  }
+  25% {
+    right: -16px;
+  }
+  75% {
+    right: -8px;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes objTitleSlide {
+  from {
+    right: -40px;
+    right: -25px;
+  }
+  to {
+    right: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .objTitleAnimate {
+    animation-name: objTitleSlide;
+    animation-duration: 2s;
+  }
+}
+@-webkit-keyframes objTitleSlideR {
+  0% {
+    left: -24px;
+  }
+  25% {
+    left: -16px;
+  }
+  75% {
+    left: -8px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes objTitleSlideR {
+  from {
+    left: -40px;
+    left: -25px;
+  }
+  to {
+    left: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .objTitleAnimateRight {
+    animation-name: objTitleSlideR;
+    animation-duration: 2s;
+  }
+}
+span.objTitleR01,
+span.objTitleR02 {
+  display: block;
+  position: relative;
+}
+.visionLink,
+.exploreLink {
+  font-family: "Gotham A", "Gotham B", Helvetica, Arial;
+  color: #1a73c5;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: bottom;
+  margin-top: 5vh;
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.2rem;
+  margin-left: -0.2rem;
+  font-size: calc(1rem + 0.5vw);
+}
+.visionLink:hover,
+.exploreLink:hover {
+  background-color: #dfeefa;
+  text-decoration: none;
+  padding: 0.2rem;
+}
+.exploreLink {
+  display: inline;
+  max-width: 40vw;
+}
+.downloadIcon {
+  display: inline-block;
+  content: "";
+  color: #ff8200;
+  margin-left: 0.5rem;
+}
+.visionGroupLinks {
+  margin: 0 12vw;
+}
+.printLineLeft:after {
+  content: "";
+  width: 70vw;
+  height: 0;
+  border: 1px solid #ff8200;
+  background-color: #ff8200;
+  transform: rotate(-35deg);
+  transform-origin: top right;
+  position: absolute;
+  display: block;
+  left: 0;
+  margin-left: -70vw;
+  margin-top: 10vh;
+  z-index: 0;
+}
+.printLineComplex {
+  content: "";
+  width: 80vw;
+  height: 0;
+  border: 1px solid #ff8200;
+  background-color: #ff8200;
+  transform: rotate(35deg);
+  transform-origin: bottom left;
+  position: relative;
+  display: block;
+  margin-left: 60vw;
+  top: 0;
+  z-index: 2;
+}
+.printLineComplex .printLinePattern {
+  background-image: url("https://www.utk.edu/images/i/warmers/rotated-torch35deg.svg");
+  opacity: 100;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 300px;
+  width: 600px;
+  z-index: 1;
+  margin-top: -245px;
+}
+@-webkit-keyframes torchSlide {
+  0% {
+    margin-top: -240px;
+    transform: rotate(-1deg);
+  }
+  50% {
+    margin-top: -233px;
+    transform: rotate(-0.5deg);
+  }
+  100% {
+    margin-top: -245px;
+    transform: rotate(0deg);
+  }
+}
+@keyframes torchSlide {
+  from {
+    margin-top: -240px;
+    transform: rotate(-1deg);
+  }
+  to {
+    margin-top: -245px;
+    transform: rotate(0deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .torchCamoAnimate {
+    animation-name: torchSlide;
+    animation-duration: 3s;
+  }
+}
+ul.ObjList {
+  padding-top: 3vh;
+}
+ul.ObjList li {
+  margin: calc(2rem + 0.1vw) 0;
+  font-size: 1rem;
+  font-size: calc(1rem + 0.1vw);
+}
+.fatten {
+  padding: 6vw;
+}
+.triangleContainer {
+  max-width: 50vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  right: -6vw;
+  padding: 0;
+  margin: 0;
+}
+.flagshipTorch {
+  z-index: 5;
+  background: url("https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg")
+    0 0 no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: right;
+  margin-top: 20vw;
+  margin-right: 14vw;
+  margin-bottom: -2vh;
+}
+.triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-bottom: 60vw solid #ff8200;
+  border-left: 60vw solid transparent;
+  z-index: 2;
+  position: relative;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 40em) {
+  .hero {
+    background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") -30vh -30vw
+      no-repeat;
+    background-size: contain;
+    padding: 4vw;
+  }
+  .titleBlock {
+    height: calc(100vh - (11.5rem + 2vh));
+    height: calc(100vh - (13.9rem + 2vh));
+  }
+  .itav {
+    margin: 2rem 0 3rem 0;
+    display: block;
+    font-size: calc(0.8rem + 1.8vw);
+  }
+  .vision .lead {
+    font-size: 150%;
+    font-size: calc(2rem + 1vw);
+    font-size: calc(1.1rem + 1.2vw);
+  }
+  .mission .lead {
+    font-size: calc(1.1rem + 1vw);
+  }
+  .videoContainer {
+    margin: 9vh auto 12vh auto;
+  }
+  .textSteps {
+    font-size: 2.3vw;
+    padding-left: 6vw;
+    padding: 0;
+    margin: 0;
+  }
+  .skinnyLongImg {
+    height: 20vh;
+    background-position: top left;
+  }
+  .visionFooter {
+    height: 20vh;
+    background-position: bottom right;
+  }
+  article .lead {
+    margin-right: 10vw;
+    max-width: 35vw;
+  }
+  .goalsObj .objLeft {
+    margin-right: 40vw;
+    width: 50vw;
+    margin-left: 10vw;
+  }
+  .goalsObj .objRight {
+    margin-right: 10vw;
+    width: 50vw;
+    margin-left: 40vw;
+  }
+  .ObjList {
+    max-width: 55vw;
+    max-width: 35vw;
+  }
+  .goalsArticleContainer h2 {
+    color: #ff8200;
+    color: #58595b;
+  }
+  .flagshipTorch {
+    margin-top: 12vw;
+    margin-right: 10vw;
+    margin-bottom: -6px;
+    margin-bottom: -2vh;
+  }
+  .triangle-bottomright {
+    border-bottom: 45vw solid #ff8200;
+    border-left: 45vw solid transparent;
+  }
+  .angleContainer,
+  .angleContainer02 {
+    margin-top: 12vh;
+  }
+  .angleContainer p.angleIntro,
+  .angleContainer02 p.angleIntro {
+    font-size: calc(1.25rem + 0.2vh);
+    padding: 7vw 0 5vw 12vw;
+    max-width: 70vw;
+  }
+  .angleCallout {
+    border-left: 40vw solid #ff8200;
+    margin-right: 30vw;
+  }
+  .printLineComplex {
+    margin-left: 42vw;
+    top: 5vh;
+  }
+}
+@media screen and (min-width: 52em) {
+  .bracketHeroAdjustment {
+    margin-left: -2rem;
+    margin-top: -2rem;
+  }
+  .flagshipTorch {
+    margin-top: 12vw;
+    margin-right: 10vw;
+  }
+  .triangle-bottomright {
+    border-bottom: 32vw solid #ff8200;
+    border-left: 32vw solid transparent;
+  }
+  .fatten {
+    padding: 2vw;
+  }
+  .vision .lead {
+    font-size: calc(1.1rem + 2vw);
+  }
+  .angleContainer p.angleIntro {
+    font-size: calc(1.25rem + 0.4vh);
+  }
+  .angleContainer {
+    width: 90vw;
+  }
+  .cardIntro {
+    padding: 0;
+    margin: 0;
+  }
+  .missionList li {
+    padding: 2vh 0;
+  }
+}
+@supports (grid-area: auto) {
+  .goals {
+    display: grid;
+    grid-column: 0/4;
+  }
+  .triangleContainer {
+    display: grid;
+  }
+  .triangleContainer > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  @media screen and (min-width: 52em) {
+    .mission {
+      display: grid;
+      grid-template-columns: 12vw 30vw 1fr 20vw 20vw 2fr;
+      padding: 0;
+      margin: 10vh 0 10vh 0;
+      padding-top: 5vh;
+      position: relative;
+    }
+    .missionHeader {
+      grid-column: 2/5;
+      grid-row: 1;
+    }
+    .missionCore {
+      grid-column: 2/3;
+      grid-row: 2;
+      display: block;
+      position: relative;
+    }
+    .missionBlock {
+      grid-column: 4/6;
+      grid-row: 1/5;
+      position: relative;
+    }
+  }
+}
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+} /*# sourceMappingURL=stylesVision.css.map */
