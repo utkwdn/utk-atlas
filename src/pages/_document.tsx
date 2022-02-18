@@ -5,17 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <link
-		  	rel="dns-prefetch"
-			href="//images.utk.edu"
-		  />
-          <link
-            rel="stylesheet"
-       			id="utk-bootstrap-designsytemstyles-css"
-            href="https://images.utk.edu/designsystem/v1/0.1.0/assets/css/style.css"
-            type="text/css"
-            media="all"
-          />
+
+
         </Head>
         <body>
           <Main />
