@@ -31,7 +31,7 @@ export function PostComponent({ post }: PostProps) {
       />
 
       <main className="content content-single">
-        <div className="wrap">
+        <div className="container-xxl py-5">
           <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
         </div>
       </main>

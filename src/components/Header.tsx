@@ -39,8 +39,10 @@ function Header({
       <header id="masthead" className="site-header">
         <div className="container-xxl">
           <div className="row justify-content-between py-3 py-md-4 py-lg-0">
-      <div className="col-5 col-sm-7 col-md-8 col-lg-2 col-xl-3">
-          <a href="/" className="d-grid h-100">logo</a>
+      <div className="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-3 align-items-center">
+          <a href="/" className="d-grid h-100 mt-lg-2">
+            <img src="/images/chrome/logo-horizontal-left-smokey.svg" alt="University of Tennessee, Knoxville" />
+          </a>
       </div>
 
       <button className="navbar-toggler col-auto mr-auto" type="button" id="mobile-menu-open" data-toggle="#site-navigation"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path></svg><span className="visually-hidden">Menu</span></button>
@@ -195,9 +197,9 @@ function Header({
                               </div>
                             </form>
 
-                            <div className="gcse-searchresults-only" data-gname="this-site-results" 
+                            <div className="gcse-searchresults-only" data-gname="this-site-results"
                             //@ts-ignore
-                            data-enableImageSearch="false" 
+                            data-enableImageSearch="false"
                             //@ts-ignore
                             data-enableOrderBy="false"
                             ></div>
