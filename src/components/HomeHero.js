@@ -1,4 +1,5 @@
 import styles from "scss/components/homeHero.module.scss";
+import Script from "next/script";
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(" ");
@@ -73,9 +74,23 @@ const HomeHero = () => {
           </div>
         </div>
         <div className={styles.dotSquareHolder}></div>
-        <div className="ctaHolder">
-          <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-            <span className="text-condensed text-letterspaced fst-italic fs-2">
+        <div className={styles.ctaHolder}>
+          <h2
+            className={cx(
+              styles.textUppercase,
+              styles.display3,
+              styles.mtMd3,
+              styles.mtLg0
+            )}
+          >
+            <span
+              className={cx(
+                styles.textCondensed,
+                styles.textLetterspaced,
+                styles.fstItalic,
+                styles.fs2
+              )}
+            >
               Discover
             </span>
             <br />
