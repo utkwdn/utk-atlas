@@ -8,7 +8,7 @@ import styles from "scss/pages/home.module.scss";
 import { client, PageIdType } from "client";
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
-import HomeHero from "../components/HomeHero.js";
+import HomeHero from "components/HomeHero.js";
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;

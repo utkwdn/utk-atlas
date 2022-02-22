@@ -1,12 +1,15 @@
 import styles from "scss/components/homeHero.module.scss";
 
+// create a joiner to use for classNames
+const cx = (...classNames) => classNames.join(" ");
+
 const HomeHero = () => {
   return (
-    <div className="hero202112Container">
-      <div className="hero202112A ">
-        <div className="heroHolderA layoutA ">
-          <div className="angleBracketDown "></div>
-          <div className="heroSquareA">
+    <div className={styles.hero202112Container}>
+      <div className={styles.hero202112A}>
+        <div className={cx(styles.heroHolderA, styles.layoutA)}>
+          <div className={styles.angleBracketDown}></div>
+          <div className={styles.heroSquareA}>
             <picture>
               <source
                 srcset="//images.utk.edu/images/www/hero202112/vols-group-hero-a4.webp"
@@ -23,7 +26,7 @@ const HomeHero = () => {
             </picture>
           </div>
         </div>
-        <div className="heroRainHolderA layoutA ">
+        <div className={cx(styles.heroRainHolderA, styles.layoutA)}>
           <picture>
             <source
               media="(max-width:767px)"
@@ -39,7 +42,7 @@ const HomeHero = () => {
             />
           </picture>
         </div>
-        <div className="heroRectangleHolderA layoutA ">
+        <div className={cx(styles.heroRectangleHolderA, styles.layoutA)}>
           <div className="heroRectangleA ">
             <picture>
               <source
@@ -69,7 +72,7 @@ const HomeHero = () => {
             </picture>
           </div>
         </div>
-        <div className="dotSquareHolder"></div>
+        <div className={styles.dotSquareHolder}></div>
         <div className="ctaHolder">
           <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
             <span className="text-condensed text-letterspaced fst-italic fs-2">
@@ -78,10 +81,16 @@ const HomeHero = () => {
             <br />
             Rocky Top
           </h2>
-          <ul className="list-unstyled">
+          <ul className={styles.listUnstyled}>
             <li>
               <a
-                className="btn btn-chevron text-uppercase mb-3 hero-cta"
+                className={cx(
+                  styles.btn,
+                  styles.btnChevron,
+                  styles.textUppercase,
+                  styles.mb3,
+                  styles.heroCta
+                )}
                 href="https://admissions.utk.edu/visit/"
               >
                 explore campus
@@ -94,7 +103,7 @@ const HomeHero = () => {
           </p>
         </div>
 
-        <div className="heroRainHolderTripleA layoutA ">
+        <div className={cx(styles.heroRainHolderTripleA, styles.layoutA)}>
           <picture>
             <source
               media="(min-width:828px)"
@@ -106,12 +115,14 @@ const HomeHero = () => {
             />
           </picture>
         </div>
-        <div className="orangeBarHolderA layoutA ">
-          <div className="ginghamChunkA"></div>
-          <div className="orangeBarChunkA"></div>
+        <div className={cx(styles.orangeBarHolderA, styles.layoutA)}>
+          <div className={styles.ginghamChunkA}></div>
+          <div className={styles.orangeBarChunkA}></div>
         </div>
-        <div className="riverAerialHolder layoutB test">
-          <div className="riverAerial">
+        <div
+          className={cx(styles.riverAerialHolder, styles.layoutB, styles.test)}
+        >
+          <div className={styles.riverAerial}>
             <picture>
               <source
                 media="(max-width:767px)"
@@ -139,11 +150,17 @@ const HomeHero = () => {
               />
             </picture>
           </div>
-          <div className="angleBracketUp"></div>
+          <div className={styles.angleBracketUp}></div>
         </div>
-        <div className="heroHolderB layoutB">
-          <div className="angleBracketDown angleSpaceMatchB softAppearItem"></div>
-          <div className="heroSquareB layoutB">
+        <div className={cx(styles.heroHolderB, styles.layoutB)}>
+          <div
+            className={cx(
+              styles.angleBracketDown,
+              styles.angleSpaceMatchB,
+              styles.softAppearItem
+            )}
+          ></div>
+          <div className={cx(styles.heroSquareB, styles.layoutB)}>
             <picture>
               <source
                 srcset="//images.utk.edu/images/www/hero202112/student-working-hero-b.webp"
@@ -160,14 +177,14 @@ const HomeHero = () => {
             </picture>
           </div>
         </div>
-        <div className="heroRainHolderB layoutB ">
+        <div className={cx(styles.heroRainHolderB, styles.layoutB)}>
           <img
             src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
             alt=""
           />
         </div>
-        <div className="heroRectangleHolderB layoutB ">
-          <div className="heroRectangleB layoutB">
+        <div className={cx(styles.heroRectangleHolderB, styles.layoutB)}>
+          <div className={cx(styles.heroRectangleB, styles.layoutB)}>
             <picture>
               <source
                 media="(max-width:767px)"
@@ -196,9 +213,9 @@ const HomeHero = () => {
             </picture>
           </div>
         </div>
-        <div className="orangeBarHolderB layoutB ">
-          <div className="orangeBarChunkB layoutB "></div>
-          <div className="ginghamChunkB layoutB"></div>
+        <div className={cx(styles.orangeBarHolderB, styles.layoutB)}>
+          <div className={cx(styles.orangeBarChunkB, styles.layoutB)}></div>
+          <div className={cx(styles.ginghamChunkB, styles.layoutB)}></div>
         </div>
       </div>
     </div>
