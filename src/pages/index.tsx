@@ -49,12 +49,13 @@ export default function Page() {
         </title>
       </Head>
       <HomeHero />
-      <div
+      {/*  <div
         className="bg-summitt d-flex align-items-center"
         style={{ height: "60vh" }}
       >
         <h1 className="text-center">Hero Area Here</h1>
       </div>
+      */}
 
       <div className="container-fluid">
         <main id="content">
