@@ -8,7 +8,7 @@ import styles from "scss/pages/home.module.scss";
 import { client, PageIdType } from "client";
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
-import HomeHero from "components/HomeHero.js";
+import Hero from "components/Hero.js";
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
@@ -48,7 +48,7 @@ export default function Page() {
           {generalSettings.title} - {generalSettings.description}
         </title>
       </Head>
-      <HomeHero />
+      <Hero />
       {/*  <div
         className="bg-summitt d-flex align-items-center"
         style={{ height: "60vh" }}

@@ -1,4 +1,4 @@
-import styles from "scss/components/homeHero.module.scss";
+import styles from "scss/components/Hero.module.scss";
 import Head from "next/head";
 // import Script from "next/script";
 // need to pull scripts for animation:
@@ -11,7 +11,7 @@ const cx = (...classNames) => classNames.join(" ");
 
 // HomeHero is a section added to index.tx
 
-const HomeHero = () => {
+const Hero = () => {
   return (
     <>
       <Head>
@@ -264,4 +264,4 @@ const HomeHero = () => {
   );
 };
 
-export default HomeHero;
+export default Hero;
