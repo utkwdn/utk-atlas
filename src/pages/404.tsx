@@ -1,6 +1,6 @@
 import React from 'react';
 import { client } from 'client';
-import { Header, Hero, Footer } from '../components';
+import { Header, PageTitle, Footer } from '../components';
 
 export default function Page(): JSX.Element {
   const { useQuery } = client;
@@ -13,7 +13,7 @@ export default function Page(): JSX.Element {
         description={generalSettings?.description}
       />
       <main className="content content-page">
-        <Hero title={`Oops! That page can’t be found.`} />
+        <PageTitle title={`Oops! That page can’t be found.`} />
         <div className="wrap">
           <div>
             <div>
