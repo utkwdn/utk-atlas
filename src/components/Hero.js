@@ -35,11 +35,11 @@ const Hero = () => {
             <div className={styles.heroSquareA}>
               <picture>
                 <source
-                  srcset="//images.utk.edu/images/www/hero202112/vols-group-hero-a4.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/vols-group-hero-a4.webp"
                   type="image/webp"
                 />
                 <source
-                  srcset="//images.utk.edu/images/www/hero202112/vols-group-hero-a4.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/vols-group-hero-a4.jpg"
                   type="image/jpeg"
                 />
                 <img
@@ -53,11 +53,11 @@ const Hero = () => {
             <picture>
               <source
                 media="(max-width:767px)"
-                srcset="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
+                srcSet="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
               />
               <source
                 media="(min-width:768px)"
-                srcset="//images.utk.edu/images/www/hero202112/rain-single-01.svg"
+                srcSet="//images.utk.edu/images/www/hero202112/rain-single-01.svg"
               />
               <img
                 src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
@@ -70,22 +70,22 @@ const Hero = () => {
               <picture>
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.jpg"
                   type="image/jpeg"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.jpg"
                   type="image/jpeg"
                 />
                 <img
@@ -144,7 +144,7 @@ const Hero = () => {
             <picture>
               <source
                 media="(min-width:828px)"
-                srcset="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
+                srcSet="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
               />
               <img
                 src="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
@@ -167,22 +167,22 @@ const Hero = () => {
               <picture>
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
                   type="image/jpeg"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
                   type="image/jpeg"
                 />
                 <img
@@ -204,11 +204,11 @@ const Hero = () => {
             <div className={cx(styles.heroSquareB, styles.layoutB)}>
               <picture>
                 <source
-                  srcset="//images.utk.edu/images/www/hero202112/student-working-hero-b.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/student-working-hero-b.webp"
                   type="image/webp"
                 />
                 <source
-                  srcset="//images.utk.edu/images/www/hero202112/student-working-hero-b.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/student-working-hero-b.jpg"
                   type="image/jpeg"
                 />
                 <img
@@ -229,22 +229,22 @@ const Hero = () => {
               <picture>
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/bench-students-mobile-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/bench-students-mobile-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(max-width:767px)"
-                  srcset="//images.utk.edu/images/www/hero202112/bench-students-mobile-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/bench-students-mobile-02.jpg"
                   type="image/jpeg"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/bench-students-02.webp"
+                  srcSet="//images.utk.edu/images/www/hero202112/bench-students-02.webp"
                   type="image/webp"
                 />
                 <source
                   media="(min-width:768px)"
-                  srcset="//images.utk.edu/images/www/hero202112/bench-students-02.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202112/bench-students-02.jpg"
                   type="image/jpeg"
                 />
                 <img
