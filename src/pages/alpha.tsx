@@ -11,10 +11,10 @@ export default function Page() {
     const alphaIndex = useQuery().allAToZ({
       first: 10000,
       where:{
-        orderby:{
+        orderby:[ {
           field: PostObjectsConnectionOrderbyEnum.TITLE,
           order: OrderEnum.ASC
-        }
+        } ]
       }
     });
 
