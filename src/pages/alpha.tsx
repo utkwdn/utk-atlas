@@ -1,15 +1,18 @@
 import { getNextStaticProps } from '@faustjs/next';
 import { client, OrderEnum, PostObjectsConnectionOrderbyEnum } from 'client';
-import { Footer, Header, Hero } from 'components';
+import { Footer, Header, Hero, Pagination } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+const POSTS_PER_PAGE = 100;
 
 export default function Page() {
-  const { useQuery } = client;
+  const { useQuery, usePaginatedQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
     const alphaIndex = useQuery().allAToZ({
-      first: 10000,
+      first: 1000,
       where:{
         orderby:[ {
           field: PostObjectsConnectionOrderbyEnum.TITLE,
@@ -18,7 +21,7 @@ export default function Page() {
       }
     });
 
-   console.log(alphaIndex.nodes[0].aToZFields.url);
+   console.log(alphaIndex?.pageInfo);
 
   return (
     <>

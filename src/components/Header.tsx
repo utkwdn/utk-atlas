@@ -56,7 +56,7 @@ function Header({
           <ul id="primary-menu" className="list-unstyled">
             {links?.map((link) => (
               <span key={link.id}>
-              {link.parentId === null && uri !== undefined && uri.includes(link.url) && link.url !== "/" &&
+              {link.parentId === null && uri !== undefined && uri?.includes(link.url) && link.url !== "/" &&
               <li key={`${link.label}$-menu`} className="current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children ">
                 <Link href={link.url ?? ''}>
                   <a className="main-navigation" href={link.url}>{link.label}</a>
@@ -102,7 +102,7 @@ function Header({
       { uri !== undefined &&
         <nav className="navbar-horizontal col-auto">
           {links?.map((link) => (
-            uri.includes(link.url) && link.childItems().nodes[0] &&
+            uri?.includes(link.url) && link.childItems().nodes[0] &&
             <ul id="secondary-menu" className="nav justify-content-center">
               {link.childItems().nodes.map((child) => (
                     <li key={`${child.label}$-menu`}>
