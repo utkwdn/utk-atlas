@@ -13,7 +13,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const url = req.nextUrl.clone();
+  //const url = req.nextUrl.clone();
+  const url = req.nextUrl;
   const normalizedHost = new URL(process.env.PRIMARY_DOMAIN);
   const host = req.headers.get("host");
 
