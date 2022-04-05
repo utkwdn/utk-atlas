@@ -177,3 +177,21 @@ Buttons with Chevrons – pulled from ExpressionEngine
     }
   }
 }
+
+.flexVideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: 0;
+}
+
+.orange-dot-strip > div {
+  /* fixes the background applied in Wordpress */
+  /* orange stripe with dot pattern aligned left */
+  background-position: left;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: $utorange;
+}
