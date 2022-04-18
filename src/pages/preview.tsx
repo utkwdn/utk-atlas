@@ -1,14 +1,13 @@
+import { PageComponent } from 'pages/[...pageUri]';
+import { PostComponent } from 'pages/posts/[postSlug]';
 import type { Page, Post } from 'client';
 import { client } from 'client';
-import { PostComponent } from './posts/[postSlug]';
-import { PageComponent } from './[...pageUri]';
 
 export default function Preview() {
-  const isLoading = client.useIsLoading();
   const { typeName, node } = client.auth.usePreviewNode();
 
-  if (isLoading || node === undefined) {
-    return <p>Loading...</p>;
+  if (client.useIsLoading() || node === undefined) {
+    return <p>loading...</p>;
   }
 
   if (node === null) {
@@ -17,12 +16,10 @@ export default function Preview() {
 
   switch (typeName) {
     case 'Page': {
-      const page = node as Page;
-      return <PageComponent page={page} />;
+      return <PageComponent page={node as Page} />
     }
     case 'Post': {
-      const post = node as Post;
-      return <PostComponent post={post} />;
+      return <PostComponent post={node as Post} />
     }
     // Add custom post types here as needed
     default: {
