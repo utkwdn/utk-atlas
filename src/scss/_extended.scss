@@ -7,6 +7,11 @@
   margin-bottom: 300px;
 }
 
+.cta-offset {
+  margin-bottom: -8rem !important;
+  background-color: white !important;
+}
+
 // ––––––––––––
 
 .campus-gallery > div {
@@ -157,29 +162,42 @@ Buttons with Chevrons – pulled from ExpressionEngine
       align-content: center;
       flex-direction: row;
       width: 100%;
+      &:hover:first-child:after {
+        // color: blue;
+        // background-color: blue;
+        right: 0;
+      }
       &.btn {
         padding: 0 0;
+        border: none;
       }
       &.mb-3 {
         margin-bottom: 0 !important;
         // need to just remove this bootstrap class if we make a new button of CTA styling
       }
       &:first-child {
-        padding: 0.375rem 0 0.375rem 0.75rem;
+        padding: 0.25rem 0 0.25rem 0.75rem;
         display: inline-block;
         flex-basis: 70%;
         display: flex;
+        width: fit-content;
+        content-wrap: no-wrap;
         &:after {
           // content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='30' width='20' fill='%23ff8200' viewBox='0 0 25 23'><path d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /></svg>");
-          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='30' fill='%23ffffff' viewBox='0 0 30 23' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='30' fill='%23ffffff' viewBox='0 0 30 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+          // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20' fill='%23ff8200' viewBox='0 0 25 23' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
           // align-self: flex-end;
-
+          transition: all 0.6s ease-out;
           display: inline-block !important;
           position: absolute;
           background-color: $utorange;
           padding: 1rem;
           position: relative;
-          margin: -0.375rem 0 -0.375rem 1.2rem;
+          margin: -0.375rem -0.125rem -0.375rem 1.2rem;
+        }
+
+        &:hover:after {
+          margin-left: 1.9rem;
         }
       }
 
@@ -197,6 +215,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
         .bi-chevron-right {
           display: none;
           background-color: $utorange;
+          border: none;
           padding: 4rem;
           margin: 0;
           color: #fff !important;
@@ -207,6 +226,18 @@ Buttons with Chevrons – pulled from ExpressionEngine
         }
       }
     }
+  }
+}
+
+@keyframes chevronSlide {
+  0% {
+    margin-left: 1.4rem;
+  }
+  50% {
+    margin-left: 2rem;
+  }
+  100% {
+    margin-left: 1.9rem;
   }
 }
 
@@ -252,7 +283,8 @@ Buttons with Chevrons – pulled from ExpressionEngine
   height: 100%;
   background-position: center;
 }
-.orangeFramedCard {
+.card-oa-frame
+/* orangeFramedCard */ {
   /* Used on Home to add angle to card */
   position: relative;
   display: inline-block;
@@ -275,6 +307,14 @@ Buttons with Chevrons – pulled from ExpressionEngine
     @include media-breakpoint-up(md) {
       bottom: -1.25rem;
       left: -1.25rem;
+    }
+  }
+  .card-img-top {
+    width: auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
   &.card {
@@ -337,5 +377,88 @@ Buttons with Chevrons – pulled from ExpressionEngine
       font-size: calc(2rem + 2.25vw);
       text-align: center;
     }
+  }
+}
+
+/* - - - - - - - - - - - - */
+/* profileCard */
+/* - - - - - - - - - - - - */
+.profileCardContainer {
+  position: relative;
+  width: 100%;
+}
+.profileCardContainer > div[class$="__inner-container"] {
+  display: flex;
+  align-items: stretch;
+  align-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 3rem;
+  position: relative;
+}
+.profileCardContainer > div[class$="__inner-container"] > * {
+  flex-basis: 100%;
+}
+
+.profileCard {
+  /* border:1px solid #707070; */
+}
+
+.profileCard div[class$="__inner-container"] {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: #fafafa;
+  border-radius: 0 30px 30px 0;
+}
+
+.profileCard div[class$="__inner-container"] > * {
+  flex-basis: 50%;
+}
+
+.profileHeadshot div[class$="__inner-container"] {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+}
+.profileHeadshot div[class$="__inner-container"] figure {
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.profileInfo div[class$="__inner-container"] {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+.profileTitle {
+  font-style: italic;
+}
+
+.profileName {
+  font-size: 1.75rem;
+  width: auto;
+  box-shadow: inset 0 -1px #ff8200;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+.profilePhone {
+  font-size: 1.75rem;
+}
+.profileIntro {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+@media (min-width: 900px) {
+  .profileCardContainer > div[class$="__inner-container"] > * {
+    flex-basis: 49%;
   }
 }
