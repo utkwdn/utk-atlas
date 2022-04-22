@@ -9,6 +9,9 @@ import { client, PageIdType } from "client";
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
 
+import Hero from "components/Hero.js";
+
+
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
   const generalSettings = useQuery().generalSettings;
@@ -47,13 +50,13 @@ export default function Page() {
           {generalSettings.title} - {generalSettings.description}
         </title>
       </Head>
-
       <div
         className="bg-summitt d-flex align-items-center"
         style={{ height: "60vh" }}
       >
         <h1 className="text-center">Hero Area Here</h1>
       </div>
+
 
       <div className="container-fluid">
         <main id="content">
