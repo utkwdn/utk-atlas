@@ -12,6 +12,17 @@
   background-color: white !important;
 }
 
+/* Class to pull in max width of group */
+.inset-container > div[class$="__inner-container"] {
+  width: 85vw;
+  margin: 0 auto;
+}
+.container-fluid {
+  // fixes random white space on left at smaller sizes
+  // might look at updating the mixin container in framework. Need to experiment more.
+  padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2);
+}
+
 // ––––––––––––
 
 .campus-gallery > div {
