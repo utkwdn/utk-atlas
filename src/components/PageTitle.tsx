@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'scss/components/Hero.module.scss';
+import styles from 'scss/components/PageTitle.module.scss';
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-function Hero({
+function PageTitle({
   title = 'Hero Title',
   id,
   bgImage,
@@ -52,4 +52,4 @@ function Hero({
   );
 }
 
-export default Hero;
+export default PageTitle;

@@ -1,5 +1,5 @@
 import { getNextStaticProps, is404 } from '@faustjs/next';
-import { Footer, Header, Hero } from 'components';
+import { Footer, Header, PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
@@ -28,7 +28,7 @@ export function PageComponent({ page }: PageProps) {
         </title>
       </Head>
 
-      <Hero
+      <PageTitle
         title={page?.title()}
         bgImage={page?.featuredImage?.node.sourceUrl()}
       />
