@@ -3,14 +3,13 @@ import { getNextStaticProps } from "@faustjs/next";
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import React from "react";
-import { CTA, Footer, Header, Hero, Posts } from "components";
+import { CTA, Footer, Header, PageTitle, Posts } from "components";
 import styles from "scss/pages/home.module.scss";
 import { client, PageIdType } from "client";
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
 
 import Hero from "components/Hero.js";
-
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
@@ -50,13 +49,14 @@ export default function Page() {
           {generalSettings.title} - {generalSettings.description}
         </title>
       </Head>
-      <div
-        className="bg-summitt d-flex align-items-center"
-        style={{ height: "60vh" }}
-      >
-        <h1 className="text-center">Hero Area Here</h1>
-      </div>
-
+      <Hero />
+      {/*  <div
+    className="bg-summitt d-flex align-items-center"
+    style={{ height: "60vh" }}
+  >
+    <h1 className="text-center">Hero Area Here</h1>
+  </div>
+  */}
 
       <div className="container-fluid">
         <main id="content">
