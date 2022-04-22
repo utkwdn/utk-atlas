@@ -71,36 +71,40 @@
     }
   }
 }
-.btn-group-vertical {
-  .wp-block-utksds-button {
-    border: 2px solid red;
-    flex: 0 1 100%;
+/* In process Link Group */
 
-    .btn-utlink {
-      color: $link-color;
-      background-color: none !important;
-      padding: 0.5rem 1rem;
-      &:hover {
-        color: blue;
-      }
-    }
-  }
-}
-
-.wp-block-utksds-button {
-  &.newOutline {
-    a {
-      color: blue;
-      svg {
-        color: $utorange;
-      }
-      &:hover {
-        border: 3px solid $utorange;
-        background-color: white;
-      }
-    }
-  }
-}
+// .btn-group-vertical {
+//   width: 100%;
+//   .wp-block-utksds-button {
+//     border: none;
+//     border-bottom: 1px solid red;
+//     flex: 0 1 100%;
+//
+//     .btn-utlink {
+//       color: $link-color;
+//       background-color: none !important;
+//       padding: 0.5rem 1rem;
+//       &:hover {
+//         color: blue;
+//       }
+//     }
+//   }
+// }
+//
+// .wp-block-utksds-button {
+//   &.newOutline {
+//     a {
+//       color: blue;
+//       svg {
+//         color: $utorange;
+//       }
+//       &:hover {
+//         border: 3px solid $utorange;
+//         background-color: white;
+//       }
+//     }
+//   }
+// }
 /*
 
 Buttons with Chevrons – pulled from ExpressionEngine
