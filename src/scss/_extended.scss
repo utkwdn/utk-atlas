@@ -462,3 +462,50 @@ Buttons with Chevrons – pulled from ExpressionEngine
     flex-basis: 49%;
   }
 }
+
+/* ––––––––––––––––––––––––––––––––––––– */
+/* Flex Video HOME */
+/* –––––––––––––––––––––––––––– */
+
+.flex-video-container .strip {
+  position: relative;
+  width: 100vw;
+  // margin-left: calc(-50vw + 748px);
+  display: block;
+  left: 0;
+}
+
+.z-index-10 {
+  z-index: 10;
+  position: relative;
+}
+.video-flex {
+  width: 100%;
+  height: 100%;
+  padding-top: 14rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#textvideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .flex-video-container .strip {
+    position: relative;
+    width: 100vw;
+    display: block;
+    padding-top: 25rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .flex-video-container .strip {
+    padding-top: 35rem;
+  }
+}
