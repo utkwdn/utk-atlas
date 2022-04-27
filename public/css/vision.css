@@ -1,3 +1,8 @@
+.utk-identifier {
+  /* hack to make identity block higher in the z */
+  z-index: 10 !important;
+}
+
 .angleBracket {
   content: "";
   width: 6rem;
@@ -299,8 +304,10 @@ body {
   background-position: bottom right;
   padding: 0;
   margin-top: 10vh;
-  margin-bottom: -0.45rem;
+  /* margin-bottom: -0.45rem; */
+  margin-bottom: -1.3rem; //hack for atlas
   z-index: 1;
+  position: relative;
 }
 .heroImg {
   width: 100%;
