@@ -1,6 +1,6 @@
 import { getNextStaticProps, is404 } from '@faustjs/next';
 import { client, Post } from 'client';
-import { Footer, Header, Hero } from 'components';
+import { Footer, Header, PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
@@ -25,13 +25,13 @@ export function PostComponent({ post }: PostProps) {
         </title>
       </Head>
 
-      <Hero
+      <PageTitle
         title={post?.title()}
         bgImage={post?.featuredImage?.node?.sourceUrl()}
       />
 
       <main className="content content-single">
-        <div className="wrap">
+        <div className="container-xxl py-5">
           <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
         </div>
       </main>

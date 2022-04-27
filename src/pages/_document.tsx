@@ -6,23 +6,28 @@ class MyDocument extends Document {
       <Html>
         <Head>
         <link
-		  	rel="dns-prefetch"
-			href="//images.utk.edu"
-		  />
-          <link
-            rel="stylesheet"
-			id="utk-bootstrap-designsytemstyles-css"
-            href="https://images.utk.edu/designsystem/v1/0.0.9/assets/css/style.css"
-            type="text/css"
-            media="all"
-          />
-          <link
-            rel="stylesheet"
-			      id="utk-www-css"
-            href="/public/css/styles.css"
-            type="text/css"
-            media="all"
-          />
+          rel="icon"
+          href="/images/favicons/favicon.ico"
+          sizes="any"
+        />
+        <link
+          rel="icon"
+          href="/images/favicons/icon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="manifest"
+          href="/manifest.json"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cloud.typography.com/6831932/6125612/css/fonts.css"
+        />
         </Head>
         <body>
           <Main />
