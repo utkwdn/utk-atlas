@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Head from "next/head";
-// import styles from "scss/vision.scss";
+import styles from "scss/pages/Vision.module.scss";
 function Vision() {
   return (
     <Layout>
