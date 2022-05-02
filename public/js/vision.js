@@ -1,66 +1,66 @@
 // Remove the transition class
-const torchSlide = document.querySelector(".torchCamo01");
-torchSlide.classList.remove("torchCamoAnimate");
+const torchSlide = document.querySelector(".Vision_torchCamoAA");
+torchSlide.classList.remove("Vision_torchCamoAnimate");
 
 // Create the observer, same as before:
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      torchSlide.classList.add("torchCamoAnimate");
+      torchSlide.classList.add("Vision_torchCamoAnimate");
       return;
     }
 
-    torchSlide.classList.remove("torchCamoAnimate");
+    torchSlide.classList.remove("Vision_torchCamoAnimate");
   });
 });
 
-observer.observe(document.querySelector(".camo01Container"));
+observer.observe(document.querySelector(".Vision_camoAAContainer"));
 
-// End TorchCamo01
+// End TorchCamoAA
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin TorchCamo02
+// Begin TorchCamoBB
 // Remove the transition class
-const torchSlide02 = document.querySelector(".torchCamo02");
-torchSlide02.classList.remove("torchCamoAnimate");
+const torchSlideBB = document.querySelector(".torchCamoBB");
+torchSlideBB.classList.remove("torchCamoAnimate");
 
 // Create the observer, same as before:
-const observer02 = new IntersectionObserver((entries) => {
+const observerBB = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      torchSlide02.classList.add("torchCamoAnimate");
+      torchSlideBB.classList.add("torchCamoAnimate");
       return;
     }
 
-    torchSlide02.classList.remove("torchCamoAnimate");
+    torchSlideBB.classList.remove("torchCamoAnimate");
   });
 });
 
-observer02.observe(document.querySelector(".camo02Container"));
+observerBB.observe(document.querySelector(".camoBBContainer"));
 
-// End TorchCamo02
+// End TorchCamoBB
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin TorchCamo03
+// Begin TorchCamoCC
 // Remove the transition class
-const torchSlide03 = document.querySelector(".torchCamo03");
-torchSlide03.classList.remove("torchCamoAnimate");
+const torchSlideCC = document.querySelector(".torchCamoCC");
+torchSlideCC.classList.remove("torchCamoAnimate");
 
 // Create the observer, same as before:
-const observer03 = new IntersectionObserver((entries) => {
+const observerCC = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      torchSlide03.classList.add("torchCamoAnimate");
+      torchSlideCC.classList.add("torchCamoAnimate");
       return;
     }
 
-    torchSlide03.classList.remove("torchCamoAnimate");
+    torchSlideCC.classList.remove("torchCamoAnimate");
   });
 });
 
-observer03.observe(document.querySelector(".camo03Container"));
+observerCC.observe(document.querySelector(".camoCCContainer"));
 
-// End TorchCamo03
+// End TorchCamoCC
 // ---------------------------------------------------------
 // ---------------------------------------------------------
 // Begin stepSlide
@@ -85,119 +85,119 @@ observer04.observe(document.querySelector(".stepsSlide"));
 // End stepsSlide
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin stepSlide02
+// Begin stepSlideBB
 // Remove the transition class
 
 // End stepsSlide
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin ObjTitleSlideL01 Left
+// Begin ObjTitleSlideLAA Left
 // Remove the transition class
-const objTitleSlide01 = document.querySelector(".objTitleL01");
-objTitleSlide01.classList.remove("objTitleAnimate");
+const objTitleSlideAA = document.querySelector(".objTitleLAA");
+objTitleSlideAA.classList.remove("objTitleAnimate");
 
 // Create the observer, same as before:
-const observerTitle01 = new IntersectionObserver((entries) => {
+const observerTitleAA = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      objTitleSlide01.classList.add("objTitleAnimate");
+      objTitleSlideAA.classList.add("objTitleAnimate");
       return;
     }
 
-    objTitleSlide01.classList.remove("objTitleAnimate");
+    objTitleSlideAA.classList.remove("objTitleAnimate");
   });
 });
 
-observerTitle01.observe(document.querySelector(".objTitleL01"));
+observerTitleAA.observe(document.querySelector(".objTitleLAA"));
 
-// End ObjTitleSlide01
+// End ObjTitleSlideAA
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin ObjTitleSlideL02 Left
+// Begin ObjTitleSlideLBB Left
 // Remove the transition class
-const objTitleSlide02 = document.querySelector(".objTitleL02");
-objTitleSlide02.classList.remove("objTitleAnimate");
+const objTitleSlideBB = document.querySelector(".objTitleLBB");
+objTitleSlideBB.classList.remove("objTitleAnimate");
 
 // Create the observer, same as before:
-const observerTitle02 = new IntersectionObserver((entries) => {
+const observerTitleBB = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      objTitleSlide02.classList.add("objTitleAnimate");
+      objTitleSlideBB.classList.add("objTitleAnimate");
       return;
     }
 
-    objTitleSlide02.classList.remove("objTitleAnimate");
+    objTitleSlideBB.classList.remove("objTitleAnimate");
   });
 });
 
-observerTitle02.observe(document.querySelector(".objTitleL02"));
+observerTitleBB.observe(document.querySelector(".objTitleLBB"));
 
-// End ObjTitleSlide02
+// End ObjTitleSlideBB
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin ObjTitleSlideL03 Left
+// Begin ObjTitleSlideLCC Left
 // Remove the transition class
-const objTitleSlide03 = document.querySelector(".objTitleL03");
-objTitleSlide02.classList.remove("objTitleAnimate");
+const objTitleSlideCC = document.querySelector(".objTitleLCC");
+objTitleSlideBB.classList.remove("objTitleAnimate");
 
 // Create the observer, same as before:
-const observerTitle03 = new IntersectionObserver((entries) => {
+const observerTitleCC = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      objTitleSlide03.classList.add("objTitleAnimate");
+      objTitleSlideCC.classList.add("objTitleAnimate");
       return;
     }
 
-    objTitleSlide03.classList.remove("objTitleAnimate");
+    objTitleSlideCC.classList.remove("objTitleAnimate");
   });
 });
 
-observerTitle03.observe(document.querySelector(".objTitleL03"));
+observerTitleCC.observe(document.querySelector(".objTitleLCC"));
 
-// End ObjTitleSlide03
+// End ObjTitleSlideCC
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin ObjTitleSlideR01 Right
+// Begin ObjTitleSlideRAA Right
 // Remove the transition class
-const objTitleSlideR01 = document.querySelector(".objTitleR01");
-objTitleSlide02.classList.remove("objTitleAnimateRight");
+const objTitleSlideRAA = document.querySelector(".objTitleRAA");
+objTitleSlideBB.classList.remove("objTitleAnimateRight");
 
 // Create the observer, same as before:
-const observerTitleR01 = new IntersectionObserver((entries) => {
+const observerTitleRAA = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      objTitleSlideR01.classList.add("objTitleAnimateRight");
+      objTitleSlideRAA.classList.add("objTitleAnimateRight");
       return;
     }
 
-    objTitleSlideR01.classList.remove("objTitleAnimateRight");
+    objTitleSlideRAA.classList.remove("objTitleAnimateRight");
   });
 });
 
-observerTitleR01.observe(document.querySelector(".objTitleR01"));
+observerTitleRAA.observe(document.querySelector(".objTitleRAA"));
 
-// End ObjTitleSlideR01
+// End ObjTitleSlideRAA
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// Begin ObjTitleSlideR02 Right
+// Begin ObjTitleSlideRBB Right
 // Remove the transition class
-const objTitleSlideR02 = document.querySelector(".objTitleR02");
-objTitleSlideR02.classList.remove("objTitleAnimateRight");
+const objTitleSlideRBB = document.querySelector(".objTitleRBB");
+objTitleSlideRBB.classList.remove("objTitleAnimateRight");
 
 // Create the observer, same as before:
-const observerTitleR02 = new IntersectionObserver((entries) => {
+const observerTitleRBB = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      objTitleSlideR02.classList.add("objTitleAnimateRight");
+      objTitleSlideRBB.classList.add("objTitleAnimateRight");
       return;
     }
 
-    objTitleSlideR02.classList.remove("objTitleAnimateRight");
+    objTitleSlideRBB.classList.remove("objTitleAnimateRight");
   });
 });
 
-observerTitleR02.observe(document.querySelector(".objTitleR02"));
+observerTitleRBB.observe(document.querySelector(".objTitleRBB"));
 
-// End ObjTitleSlideR01
+// End ObjTitleSlideRAA
 // ---------------------------------------------------------
 // ---------------------------------------------------------

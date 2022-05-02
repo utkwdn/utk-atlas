@@ -1,26 +1,24 @@
 @import "./src/scss/common";
-$utorange: #ff8200;
-$utgray1: #f6f6f6;
-$utgray2: #e0e0e0;
-$utgray3: #cacaca;
-$utgray4: #b6b6b6;
-
-$utsmokeytext: #4b4b4b;
-$uttorch: rgb(230, 89, 51);
-$uttorchweb: #d5431a;
-
+// $utorange: #ff8200;
+// $utgray1: #f6f6f6;
+// $utgray2: #e0e0e0;
+// $utgray3: #cacaca;
+// $utgray4: #b6b6b6;
+//
+// $utsmokeytext: #4b4b4b;
+// $uttorch: rgb(230, 89, 51);
+// $uttorchweb: #d5431a;
 $dotgrey: #f7f7f7;
-$utsmokey: #58595b;
+// $utsmokey: #58595b;
 $utsmokeyfade: #696b6d;
 $utsmokeyfademore: #737778;
 $utsmokeytext: #4b4b4b;
-
 $darkorange: #e07400;
-
 $font-stack-light: "Gotham A", "Gotham B", Helvetica, Arial;
+$font-size-base: 100% !important;
+// $orangeCreamsicle: #ffd4a7;
 
-$orangeCreamsicle: #ffd4a7;
-//
+// Need to figure out how to do a class reset of the page – for font size. Can't use html or body selectors within modules of next.js
 // html {
 //   font-size: 100%;
 //   /*16px*/
@@ -34,6 +32,7 @@ $orangeCreamsicle: #ffd4a7;
 //   width: 100%;
 //   position: relative;
 // }
+
 .hero {
   background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") -10vh -30vw
     no-repeat;
@@ -41,6 +40,10 @@ $orangeCreamsicle: #ffd4a7;
   padding: 4vw;
   position: relative;
 }
+.textUppercase {
+  text-transform: uppercase;
+}
+
 .titleBlock {
   position: relative;
   height: 81vh;
@@ -123,7 +126,7 @@ $orangeCreamsicle: #ffd4a7;
 }
 
 .angleContainer,
-.angleContainer02 {
+.angleContainerBB {
   // special callout
   background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") 0 0
     no-repeat;
@@ -163,7 +166,7 @@ $orangeCreamsicle: #ffd4a7;
   }
 }
 
-.angleContainer02 {
+.angleContainerBB {
   background-color: $dotgrey;
   background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
   background-position: top left;
@@ -192,7 +195,7 @@ $orangeCreamsicle: #ffd4a7;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .stepsAnimate {
+  .Vision_stepsAnimate {
     animation-name: stepSlide;
     animation-duration: 2s;
   }
@@ -217,7 +220,7 @@ $orangeCreamsicle: #ffd4a7;
 }
 
 .angleContainer:after,
-.angleContainer02:after {
+.angleContainerBB:after {
   content: "";
   display: block;
   clear: both;
@@ -374,6 +377,9 @@ $orangeCreamsicle: #ffd4a7;
   position: relative;
   z-index: 10;
 }
+.lead {
+  font-weight: 200; // had to define here
+}
 .vision .lead {
   font-size: 150%;
   font-size: calc(1.1rem + 0.7vw);
@@ -420,6 +426,7 @@ Treatments
   font-size: 1.1rem; // size that looks good at mobile width
   //font-size: 2.3vw;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 .offset {
@@ -577,8 +584,8 @@ Treatments
     animation-duration: 2s;
   }
 }
-span.objTitleR01,
-span.objTitleR02 {
+span.objTitleRAA,
+span.objTitleRBB {
   display: block;
   position: relative;
 }
@@ -945,7 +952,7 @@ ul.ObjList {
     border-left: 45vw solid transparent;
   }
   .angleContainer,
-  .angleContainer02 {
+  .angleContainerBB {
     // special callout
     margin-top: 12vh;
     p.angleIntro {
@@ -1010,7 +1017,7 @@ ul.ObjList {
   }
 
   .missionList li {
-    padding: 2vh 0;
+    padding: 2vh 0 !important;
     //    font-size: 90%;
   }
 }

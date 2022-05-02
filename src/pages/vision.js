@@ -1,45 +1,58 @@
 import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/Vision.module.scss";
+import Script from "next/script";
+
+// create a joiner to use for classNames
+const cx = (...classNames) => classNames.join(" ");
+// example use of local styles and joiner class
+// <div className={styles.hero202112A}>
+// <div className={cx(styles.heroHolderA, styles.layoutA)}>
+
 function Vision() {
   return (
     <Layout>
       <Head>
         // <link rel="stylesheet" href="css/vision.css" />
-        // <script defer type="text/javascript" src="/js/vision.js"></script>
+        <script defer type="text/javascript" src="/js/vision.js"></script>
       </Head>
-
-      <section className="hero">
-        <div className="titleBlock ">
-          <div className="angleBracketDown bracketHeroAdjustment"></div>
-          <h1 className="text-uppercase">
-            <span className="fake-big-head">
+      <section className={styles.hero}>
+        <div className={styles.titleBlock}>
+          <div
+            className={cx(
+              styles.angleBracketDown,
+              styles.bracketHeroAdjustment
+            )}
+          ></div>
+          <h1 className={styles.textUppercase}>
+            <span className={styles["fake-big-head"]}>
               Strategic
               <br />
               Vision
             </span>
             <br />
-            <span className="itav">It takes a Volunteer</span>
+            <span className={styles.itav}>It takes a Volunteer</span>
           </h1>
-          <div className="triangleContainer">
-            <div className="flagshipTorch"></div>
-            <div className="triangle-bottomright"></div>
+          <div className={styles.triangleContainer}>
+            <div className={styles.flagshipTorch}></div>
+            <div className={styles["triangle-bottomright"]}></div>
           </div>
         </div>
-        <section className="vision">
-          <h2 className="nod">Our Vision</h2>
-          <p className="lead">
-            A world enriched by our <span className="textPop">ideas</span>,
-            improved through our <span className="textPop">action</span>, and
-            inspired by the <span className="textPop">Volunteer spirit</span> of
-            service and leadership
+        <section className={styles.vision}>
+          <h2 className={styles.nod}>Our Vision</h2>
+          <p className={styles.lead}>
+            A world enriched by our{" "}
+            <span className={styles.textPop}>ideas</span>, improved through our{" "}
+            <span className={styles.textPop}>action</span>, and inspired by the{" "}
+            <span className={styles.textPop}>Volunteer spirit</span> of service
+            and leadership
           </p>
           <a
             href="https://www.utk.edu/images/i/warmers/strategic-vision-2021.pdf"
-            className="visionLink"
+            className={styles.visionLink}
           >
             <span>Read the full Strategic Vision document</span>
-            <span className="downloadIcon">
+            <span className={styles.downloadIcon}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -53,7 +66,7 @@ function Vision() {
             </span>
           </a>
 
-          <div className=" videoContainer">
+          <div className={styles.videoContainer}>
             <div className="container-fluid py-xl-5">
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
@@ -77,126 +90,136 @@ function Vision() {
             </div>
           </div>
 
-          <div className="angleContainer stepsSlide">
-            <p className="angleIntro">
+          <div className={cx(styles.angleContainer, styles.stepsSlide)}>
+            <p className={styles.angleIntro}>
               We know how much is possible when we unite our individual talents
               and aspirations, put compassion front and center, and
             </p>
 
-            <p className="textSteps text-uppercase stepsSlide">
-              <span className="angleCallout"></span>step forward
+            <p className={cx(styles.textSteps, styles.stepsSlide)}>
+              <span className={styles.angleCallout}></span>step forward
               <br />
               together as <br /> Volunteers.
             </p>
           </div>
         </section>
-        <section className="mission">
-          <h2 className="nod missionHeader">Our Mission</h2>
-          <div className="missionCore">
-            <p className="lead">
+        <section className={styles.mission}>
+          <h2 className={cx(styles.nod, styles.missionHeader)}>Our Mission</h2>
+          <div className={styles.missionCore}>
+            <p className={styles.lead}>
               We are a diverse community with a shared commitment to discovery,
               creativity, learning, and engagement.
             </p>
           </div>
-          <div className="missionBlock">
-            <ul className="missionList">
-              <p className="cardIntro">At UT Knoxville we:</p>
+          <div className={styles.missionBlock}>
+            <ul className={styles.missionList}>
+              <p className={styles.cardIntro}>At UT Knoxville we:</p>
               <li>
-                <span className="textPopLight">Empower</span> learners of all
-                ages and backgrounds to achieve their dreams through accessible
-                and affordable education and state-of-the-art research training
-                opportunities
+                <span className={styles.textPopLight}>Empower</span> learners of
+                all ages and backgrounds to achieve their dreams through
+                accessible and affordable education and state-of-the-art
+                research training opportunities
               </li>
               <li>
-                <span className="textPopLight">Advance</span> the prosperity,
-                well-being, and vitality of communities across Tennessee and
-                around the world through our research, teaching, service, and
-                engagement
+                <span className={styles.textPopLight}>Advance</span> the
+                prosperity, well-being, and vitality of communities across
+                Tennessee and around the world through our research, teaching,
+                service, and engagement
               </li>
               <li>
-                <span className="textPopLight">Commit</span> to excellence,
-                equity, and inclusion within the university, across the state,
-                and in all our global activities
+                <span className={styles.textPopLight}>Commit</span> to
+                excellence, equity, and inclusion within the university, across
+                the state, and in all our global activities
               </li>
             </ul>
           </div>
         </section>
       </section>
-      <div className="skinnyLongImg"></div>
-
-      <section className="goalsContainer">
-        <h2 className="nod">
-          <span className="printLineHeader"></span>
-          <span className="bringForward">Our Goals and Objectives</span>
+      <div className={styles.skinnyLongImg}></div>
+      <section className={styles.goalsContainer}>
+        <h2 className={styles.nod}>
+          <span className={styles.printLineHeader}></span>
+          <span className={styles.bringForward}>Our Goals and Objectives</span>
         </h2>
 
-        <div className="goalsArticleContainer">
-          <article className="goalsObj">
-            <div className="objLeft ">
-              <h3 className="text-uppercase objTitleL01">
+        <div className={styles.goalsArticleContainer}>
+          <article className={styles.goalsObj}>
+            <div className={styles.objLeft}>
+              <h3 className={cx(styles.objTitleLAA, styles.textUppercase)}>
                 Cultivating the{" "}
-                <span className="boldPunch">Volunteer Experience</span>
+                <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
-              <div className="printLineComplex camo01Container">
-                <div className="printLinePattern torchCamo01"></div>
+              <div
+                className={cx(styles.printLineComplex, styles.camoAAContainer)}
+              >
+                <div
+                  className={cx(styles.printLinePattern, styles.torchCamoAA)}
+                ></div>
               </div>
-              <p className="lead offset">
+              <p className={cx(styles.lead, styles.offset)}>
                 Demonstrate leadership in providing high-quality educational
                 opportunities for people at every stage of life, whenever and
                 wherever they seek to learn
               </p>
-              <ul className="ObjList">
+              <ul className={styles.ObjList}>
                 <li>
-                  <span className="textPopLight">Provide</span> learners at all
-                  levels with opportunities to engage in rich learning and in
-                  scholarship that is collaborative, inquiry-based,
+                  <span className={styles.textPopLight}>Provide</span> learners
+                  at all levels with opportunities to engage in rich learning
+                  and in scholarship that is collaborative, inquiry-based,
                   experiential, affordable, and relevant
                 </li>
                 <li>
-                  <span className="textPopLight">Deliver</span> educational
-                  opportunities that are responsive to the needs of learners
+                  <span className={styles.textPopLight}>Deliver</span>{" "}
+                  educational opportunities that are responsive to the needs of
+                  learners
                 </li>
                 <li>
-                  <span className="textPopLight">Support</span> curricular
-                  innovations that align with 21st-century workforce needs and
-                  our research strengths and priorities
+                  <span className={styles.textPopLight}>Support</span>{" "}
+                  curricular innovations that align with 21st-century workforce
+                  needs and our research strengths and priorities
                 </li>
                 <li>
-                  <span className="textPopLight">Ensure</span> that the programs
-                  we offer are accessible to communities across Tennessee and
-                  beyond
+                  <span className={styles.textPopLight}>Ensure</span> that the
+                  programs we offer are accessible to communities across
+                  Tennessee and beyond
                 </li>
               </ul>
             </div>
           </article>
-          <article className="goalsObj greyBkg">
-            <div className="objRight">
-              <h3 className="text-uppercase printLineLeft objTitleContainerR01">
-                <span className="objTitleR01">
+          <article className={cx(styles.goalsObj, styles.greyBkg)}>
+            <div className={styles.objRight}>
+              <h3
+                className={cx(
+                  styles.textUppercase,
+                  styles.printLineLeft,
+                  styles.objTitleContainerRAA
+                )}
+              >
+                <span className={styles.objTitleRAA}>
                   Conducting Research{" "}
-                  <span className="boldPunch">
+                  <span className={styles.boldPunch}>
                     That Makes Life and Lives Better
                   </span>
                 </span>
               </h3>
-              <p className="lead offset">
+              <p className={cx(styles.lead, styles.offset)}>
                 Advance the frontiers of knowledge to create a more just,
                 prosperous, and sustainable future through world-class research,
                 scholarship, and creative work
               </p>
-              <ul className="ObjList">
+              <ul className={styles.ObjList}>
                 <li>
-                  <span className="textPopLight">Strengthen</span> the impact
-                  and reputation of our research, scholarship, and creative
-                  activities
+                  <span className={styles.textPopLight}>Strengthen</span> the
+                  impact and reputation of our research, scholarship, and
+                  creative activities
                 </li>
                 <li>
-                  <span className="textPopLight">Ensure</span> that the research
-                  outcomes we generate lead to the creation of a more just,
-                  prosperous, and sustainable future
+                  <span className={styles.textPopLight}>Ensure</span> that the
+                  research outcomes we generate lead to the creation of a more
+                  just, prosperous, and sustainable future
                 </li>
                 <li>
-                  <span className="textPopLight">Invest</span> in
+                  <span className={styles.textPopLight}>Invest</span> in
                   state-of-the-art research infrastructure and frameworks to
                   ensure that our researchers, scholars, and creatives continue
                   to work at the knowledge frontier
@@ -204,92 +227,107 @@ function Vision() {
               </ul>
             </div>
           </article>
-          <article className="goalsObj ">
-            <div className="objLeft">
-              <h3 className="text-uppercase objTitleL02">
+          <article className={styles.goalsObj}>
+            <div className={styles.objLeft}>
+              <h3 className={cx(styles.textUppercase, styles.objTitleLBB)}>
                 Ensuring a Culture Where{" "}
-                <span className="boldPunch">Vol is a Verb</span>
+                <span className={styles.boldPunch}>Vol is a Verb</span>
               </h3>
-              <div className="printLineComplex camo02Container">
-                <div className="printLinePattern torchCamo02"></div>
+              <div
+                className={cx(styles.printLineComplex, styles.camoBBContainer)}
+              >
+                <div
+                  className={cx(styles.printLinePattern, styles.torchCamoBB)}
+                ></div>
               </div>
-              <p className="lead offset">
+              <p className={cx(styles.lead, styles.offset)}>
                 Develop and sustain a nurturing university culture where
                 diversity and community are enduring sources of strength
               </p>
-              <ul className="ObjList">
+              <ul className={styles.ObjList}>
                 <li>
-                  <span className="textPopLight">Implement</span> structures and
-                  practices that attract and retain a diverse community of
-                  faculty, staff, and students and that support a culture where
-                  everyone matters and belongs
+                  <span className={styles.textPopLight}>Implement</span>{" "}
+                  structures and practices that attract and retain a diverse
+                  community of faculty, staff, and students and that support a
+                  culture where everyone matters and belongs
                 </li>
                 <li>
-                  <span className="textPopLight">Challenge</span> students to
-                  examine their understandings of the world and their capacity
-                  to act as members of an inclusive community
+                  <span className={styles.textPopLight}>Challenge</span>{" "}
+                  students to examine their understandings of the world and
+                  their capacity to act as members of an inclusive community
                 </li>
                 <li>
-                  <span className="textPopLight">Nurture</span> change that
-                  supports inclusive behaviors and a culture of respectful
+                  <span className={styles.textPopLight}>Nurture</span> change
+                  that supports inclusive behaviors and a culture of respectful
                   dialogue to create greater understanding of difference,
                   starting with our administration, faculty, and staff
                 </li>
               </ul>
             </div>
           </article>
-          <article className="goalsObj greyBkg">
-            <div className="objRight">
-              <h3 className="text-uppercase objTitleContainerR01 printLineLeft">
-                <span className="objTitleR02">
+          <article className={cx(styles.goalsObj, styles.greyBkg)}>
+            <div className={styles.objRight}>
+              <h3
+                className={cx(
+                  styles.textUppercase,
+                  styles.objTitleContainerRAA,
+                  styles.printLineLeft
+                )}
+              >
+                <span className={styles.objTitleRBB}>
                   Making Ourselves{" "}
-                  <span className="boldPunch">Nimble and Adaptable</span>
+                  <span className={styles.boldPunch}>Nimble and Adaptable</span>
                 </span>
               </h3>
-              <p className="lead offset">
+              <p className={cx(styles.lead, styles.offset)}>
                 Empower and sustain a culture of collaboration, adaptability,
                 and innovation
               </p>
-              <ul className="ObjList">
+              <ul className={styles.ObjList}>
                 <li>
-                  <span className="textPopLight">Enhance</span> a campus-wide
-                  culture of innovation and collaboration at all levels
+                  <span className={styles.textPopLight}>Enhance</span> a
+                  campus-wide culture of innovation and collaboration at all
+                  levels
                 </li>
                 <li>
-                  <span className="textPopLight">Adapt</span> current structures
-                  and systems to foster identity and collaboration while
-                  supporting innovation
+                  <span className={styles.textPopLight}>Adapt</span> current
+                  structures and systems to foster identity and collaboration
+                  while supporting innovation
                 </li>
                 <li>
-                  <span className="textPopLight">Foster</span> organizational
-                  agility and innovation by developing incentives for innovative
-                  and transformational work that also breaks or blurs the lines
-                  of organizational silos
+                  <span className={styles.textPopLight}>Foster</span>{" "}
+                  organizational agility and innovation by developing incentives
+                  for innovative and transformational work that also breaks or
+                  blurs the lines of organizational silos
                 </li>
               </ul>
             </div>
           </article>
-          <article className="goalsObj ">
-            <div className="objLeft">
-              <h3 className="text-uppercase objTitleL03">
+          <article className={styles.goalsObj}>
+            <div className={styles.objLeft}>
+              <h3 className={cx(styles.textUppercase, styles.objTitleLCC)}>
                 Embodying the Modern R1,{" "}
-                <span className="boldPunch">Land-Grant University</span>
+                <span className={styles.boldPunch}>Land-Grant University</span>
               </h3>
-              <div className="printLineComplex camo03Container">
-                <div className="printLinePattern torchCamo03"></div>
+              <div
+                className={cx(styles.printLineComplex, styles.camoCCContainer)}
+              >
+                <div
+                  className={cx(styles.printLinePattern, styles.torchCamoCC)}
+                ></div>
               </div>
-              <p className="lead offset">
+              <p className={cx(styles.lead, styles.offset)}>
                 Connect with every Tennessean and with communities around the
                 world, inspiring future Volunteers to join our diverse community
               </p>
-              <ul className="ObjList">
+              <ul className={styles.ObjList}>
                 <li>
-                  <span className="textPopLight">Deepen</span> and extend the
-                  university’s ability to connect with Tennesseans
+                  <span className={styles.textPopLight}>Deepen</span> and extend
+                  the university’s ability to connect with Tennesseans
                 </li>
                 <li>
-                  <span className="textPopLight">Establish</span>, build upon,
-                  and streamline processes to identify community needs and
+                  <span className={styles.textPopLight}>Establish</span>, build
+                  upon, and streamline processes to identify community needs and
                   activate university resources to meet those needs
                 </li>
               </ul>
@@ -297,9 +335,9 @@ function Vision() {
           </article>
         </div>
       </section>
-      <section className="explore">
-        <div className="angleContainer02">
-          <div className="angleOutro">
+      <section className={styles.explore}>
+        <div className={styles.angleContainerBB}>
+          <div className={styles.angleOutro}>
             <p>
               We examined the changing landscape of higher education and
               analyzed the university’s prospects for the future.
@@ -309,7 +347,7 @@ function Vision() {
                 href="https://chancellor.utk.edu/vision/envisioning-the-future-of-ut-knoxville/"
                 className="exploreLink"
               >
-                <span aria-hidden="true">Explore Our Vision Process</span>{" "}
+                <span aria-hidden="true">Explore Our Vision Process</span>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -326,8 +364,7 @@ function Vision() {
           </div>
         </div>
       </section>
-
-      <div className="skinnyLongImg visionFooter"></div>
+      <div className={cx(styles.skinnyLongImg, styles.visionFooter)}></div>
     </Layout>
   );
 }

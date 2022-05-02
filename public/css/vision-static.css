@@ -285,7 +285,6 @@ body {
   background-size: contain;
   position: relative;
   background-position: left;
-  border: 1px solid red;
 }
 .skinnyLongImg {
   background-image: url("https://www.utk.edu/images/i/warmers/torch-pattern-on-orange-03.jpg");
