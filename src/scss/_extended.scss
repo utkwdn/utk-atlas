@@ -524,3 +524,108 @@ Buttons with Chevrons – pulled from ExpressionEngine
     padding-top: 35rem;
   }
 }
+
+/* ––––– Academics –––––– */
+h1 {
+  // border:1px solid red;
+  // position:absolute;
+  // top:0;
+  // left:0;
+}
+body.academics {
+  section[class^="PageTitle_hero"] {
+    position: relative;
+    h1 {
+      display: none;
+    }
+  }
+  // .wp-block-strip-main,
+  // .wp-block-strip-main > div.strip,
+  // .wp-block-strip-main > div.strip > div.container {
+  //   position: relative;
+  // }
+  .card {
+    &.page-intro {
+      overflow: visible;
+      width: 30vw;
+      right: 0;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: -3rem;
+        border-right: 3rem solid $utorange;
+        height: 100%;
+      }
+
+      &.bg-light {
+        // background-color: rgba(255, 255, 255, 0.85) !important;
+      }
+      > div.card-body {
+        padding: 2rem 2rem !important;
+        p {
+          font-weight: 400 !important;
+        }
+      }
+    }
+  }
+}
+.page-title-group > div[class$="__inner-container"] {
+  margin: 2rem 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  h1.page-area {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+    display: block;
+    width: fit-content;
+    color: $white;
+    margin: 0 0 0 3rem; // padding from title-group + border thickness no longer need border thickness added – made it a before element
+    text-shadow: 0.1rem 0.1rem 0.1rem #707070, -0.1rem -0.1rem 0.1rem #707070;
+    text-shadow: 0.1rem 0.1rem 0.3rem $utsmokeytext;
+  }
+  .page-title-group > div[class$="__inner-container"] {
+    background-color: rgba(255, 255, 255, 0.85);
+
+    &:before {
+      left: -1.5rem; // equals border width
+      top: 0;
+      height: 105%;
+      border-left: 1.5rem solid $utorange;
+      position: absolute;
+      content: "";
+    }
+    // border-left: 2rem solid $utorange;
+    margin: 0 0;
+    padding: 1.25rem 1rem 1.5rem 3rem;
+    width: fit-content;
+
+    p.page-title {
+      font-size: 6.5rem;
+      line-height: 5rem;
+      color: #333;
+      font-weight: 800;
+      margin: 0;
+      width: auto;
+      padding-right: 3rem;
+
+      &:after {
+        content: url("//content.cms.utk.edu/wp-content/uploads/2022/05/tn-checkers.png");
+        display: block;
+        width: 4rem;
+        height: 2rem;
+        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.8' height='14.8' fill='%23ff8200' viewBox="00133.144.6" %3E%3Crect id="c" class="o" x="118.3" width="14.8" height="14.8"/%3E%3C/svg%3E");
+        /* <svg xmlns="https://www.w3.org/2000/svg" width="30" height="22" fill="#ff8200" viewBox="0 0 25 26"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path></svg> */
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+        display: inline-block;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        // <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.1 44.6"><defs><style>.o{fill:#ff8200;}</style></defs><g id="b"><rect id="c" class="o" x="118.3" width="14.8" height="14.8"/><rect id="d" class="o" x="88.7" width="14.8" height="14.8"/><rect id="e" class="o" x="59.2" width="14.8" height="14.8"/><rect id="f" class="o" x="29.6" width="14.8" height="14.8"/><rect id="g" class="o" x="88.7" y="29.7" width="14.8" height="14.9"/><rect id="h" class="o" x="103.5" y="14.8" width="14.8" height="14.9"/><rect id="i" class="o" x="73.9" y="14.8" width="14.8" height="14.9"/><rect id="j" class="o" x="59.2" y="29.7" width="14.8" height="14.9"/><rect id="k" class="o" x="29.6" y="29.7" width="14.8" height="14.9"/><path id="l" class="o" d="M0,29.7h0v14.9H14.8v-14.9H0Z"/><rect id="m" class="o" x="44.4" y="14.8" width="14.8" height="14.9"/><rect id="n" class="o" x="14.8" y="14.8" width="14.8" height="14.9"/></g></svg>
+      }
+    }
+  }
+}
