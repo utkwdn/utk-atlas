@@ -59,11 +59,11 @@ function Vision() {
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
                   <div
                     className="ratio ratio-16x9 yt-container"
-                    data-yt-url="https://www.youtube.com/embed/I3H4Po3dFwc?modestbranding=1&showinfo=0&showsearch=0&rel=0&autoplay=1"
+                    data-yt-url="//www.youtube.com/embed/I3H4Po3dFwc?modestbranding=1&showinfo=0&showsearch=0&rel=0&autoplay=1"
                   >
-                    <button className="btn border-0 yt-play">
+                    <button className="btn border-0 yt-play" >
                       <img
-                        data-src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
+                        data-src="//www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
                         async
                         className="lazyload"
                         alt="Play strategic vision video."
