@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/meet.module.scss";
 import Script from "next/script";
-import styles from "../components/MeetStyles";
+// import styles from "../components/MeetStyles";
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(" ");
@@ -149,7 +149,7 @@ function Vision() {
           <div className="container">
             <div className="row align-items-center mt-5">
               <div className="col-12 col-lg-6 order-lg-2 mb-5">
-                <div className="framed">
+                <div className={styles.framed}>
                   <div className="embed-responsive embed-responsive-16by9 mb-md-0">
                   <iframe width="560" height="315" className="embed-responsive-item" src="https://www.youtube.com/embed/QAS8yNqJj9M"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                 </div>
