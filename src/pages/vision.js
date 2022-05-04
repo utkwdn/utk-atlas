@@ -18,14 +18,20 @@ function Vision() {
   const myRef = useRef();
   useEffect(() => {
     console.log('myRef', myRef.current);
-  }, []);
+    const observer = new IntersectionObserver((entries, observer) => {
+  const entry = entries[0];
+  console.log('entry', entry);
+  console.log('entry.isIntersecting', entry.isIntersecting);
+      })
+      observer.observe(myRef.current);
+  }, [])
   return (
     <Layout>
       <Head>
         // <script strategy="beforeInteractive" type="text/javascript" src="js/Vision.module.js"></script>
       </Head>
       <section className={styles.hero}>
-        <div ref={myRef} className={styles.titleBlock}>
+        <div className={styles.titleBlock}>
           <div
             className={cx(styles.angleBracketDown, styles.bracketHeroAdjustment)}
           />
@@ -102,7 +108,7 @@ function Vision() {
               and aspirations, put compassion front and center, and
             </p>
 
-            <p className={cx(styles.textSteps, styles.stepsSlide)}>
+            <p ref={myRef}  className={cx(styles.textSteps, styles.stepsSlide)}>
               <span className={styles.angleCallout}></span>step forward
               <br />
               together as <br /> Volunteers.
