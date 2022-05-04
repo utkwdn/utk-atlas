@@ -1,16 +1,18 @@
 // Remove the transition class
-const torchSlide = document.querySelector(".Vision_torchCamoAA");
-torchSlide.classList.remove("Vision_torchCamoAnimate");
+
+console.log ("hi – the javascript is firing");
+const torchSlide = document.querySelectorAll('[class^="Vision_torchCamoAA"]');
+torchSlide.classList.remove("torchCamoAnimate");
 
 // Create the observer, same as before:
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      torchSlide.classList.add("Vision_torchCamoAnimate");
+      torchSlide.classList.add("torchCamoAnimate");
       return;
     }
 
-    torchSlide.classList.remove("Vision_torchCamoAnimate");
+    torchSlide.classList.remove("torchCamoAnimate");
   });
 });
 

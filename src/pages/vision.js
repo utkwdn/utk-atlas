@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/Vision.module.scss";
@@ -9,21 +10,25 @@ const cx = (...classNames) => classNames.join(" ");
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
+
+
+
+
 function Vision() {
+  const myRef = useRef();
+  useEffect(() => {
+    console.log('myRef', myRef.current);
+  }, []);
   return (
     <Layout>
       <Head>
-        // <link rel="stylesheet" href="css/vision.css" />
-        <script defer type="text/javascript" src="/js/vision.js"></script>
+        // <script strategy="beforeInteractive" type="text/javascript" src="js/Vision.module.js"></script>
       </Head>
       <section className={styles.hero}>
-        <div className={styles.titleBlock}>
+        <div ref={myRef} className={styles.titleBlock}>
           <div
-            className={cx(
-              styles.angleBracketDown,
-              styles.bracketHeroAdjustment
-            )}
-          ></div>
+            className={cx(styles.angleBracketDown, styles.bracketHeroAdjustment)}
+          />
           <h1 className={styles.textUppercase}>
             <span className={styles["fake-big-head"]}>
               Strategic
@@ -66,7 +71,7 @@ function Vision() {
             </span>
           </a>
 
-          <div className={styles.videoContainer}>
+          {/*    <div className={styles.videoContainer}>
             <div className="container-fluid py-xl-5">
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
@@ -89,6 +94,7 @@ function Vision() {
               </div>
             </div>
           </div>
+        */}
 
           <div className={cx(styles.angleContainer, styles.stepsSlide)}>
             <p className={styles.angleIntro}>
@@ -150,7 +156,7 @@ function Vision() {
                 <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
               <div
-                className={cx(styles.printLineComplex, styles.camoAAContainer)}
+                className={[styles.printLineComplex, styles.camoAAContainer]}
               >
                 <div
                   className={cx(styles.printLinePattern, styles.torchCamoAA)}
