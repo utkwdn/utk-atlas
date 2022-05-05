@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/Vision.module.scss";
@@ -16,12 +16,14 @@ const cx = (...classNames) => classNames.join(" ");
 
 function Vision() {
   const myRef = useRef();
+  const [myElementIsVisible, updateMyElementIsVisible] = useState();
   useEffect(() => {
-    console.log('myRef', myRef.current);
+    // console.log('myRef', myRef.current);
     const observer = new IntersectionObserver((entries, observer) => {
   const entry = entries[0];
-  console.log('entry', entry);
-  console.log('entry.isIntersecting', entry.isIntersecting);
+  // updateMyElementIsVisible(entry.isIntersecting);
+  // console.log('entry', entry);
+  // console.log('entry.isIntersecting', entry.isIntersecting);
       })
       observer.observe(myRef.current);
   }, [])
@@ -102,7 +104,7 @@ function Vision() {
           </div>
         */}
 
-          <div className={cx(styles.angleContainer, styles.stepsSlide)}>
+          <div ref={myElementIsVisible }className={cx(styles.angleContainer, styles.stepsSlide)}>
             <p className={styles.angleIntro}>
               We know how much is possible when we unite our individual talents
               and aspirations, put compassion front and center, and
