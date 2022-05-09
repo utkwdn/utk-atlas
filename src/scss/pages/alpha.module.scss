@@ -1,0 +1,197 @@
+@import "scss/common";
+
+.intro-container {
+  // border: 2px solid blue;
+  padding: 2rem 2rem 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 3rem 0;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    width: 80vw;
+    margin: 0 auto 3rem auto;
+    align-items: flex-end;
+  }
+}
+.page-title-group {
+  width: 80vw;
+  // border: 2px solid purple;
+  margin: 0 auto;
+  @media screen and (min-width: 800px) {
+    // width: 40vw;
+    // max-width: 500px;
+    flex-basis: 30vw;
+    // flex-grow: 1;
+  }
+}
+
+h1.area {
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #9d9d9d;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  &:before {
+    content: "";
+    position: absolute;
+    color: $utorange;
+  }
+}
+
+hr.oa-thick-bar {
+  width: 80%;
+  height: 1.75rem;
+  background-color: $utorange;
+  opacity: 1;
+  margin: 4rem 0;
+
+  margin-left: -4rem !important;
+  @media screen and (min-width: 800px) {
+    width: 70%;
+  }
+}
+.title-container {
+}
+
+p.title {
+  font-size: 4.7rem;
+  font-weight: 600;
+
+  max-width: 10ch;
+  line-height: 4.6rem;
+}
+
+.intro {
+  width: 80vw;
+  margin: 2rem auto;
+  // border: 2px solid red;
+  @media screen and (min-width: 800px) {
+    margin: 2rem 0.5rem;
+    max-width: 60ch;
+    // background-color: green;
+  }
+  p {
+    font-weight: 600;
+    color: #707070;
+    font-size: 1.35rem;
+  }
+}
+
+.alpha-container {
+  background-color: #f6f6f6;
+  display: block;
+
+  padding: 3rem 0;
+  position: relative;
+  border-top: 0.6rem solid $utorange;
+  border-bottom: 0.6rem solid $utorange;
+  margin: 2rem 0;
+  // Playing with having the alpha stick too
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 0;
+}
+
+.alpha {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0.5rem 2rem;
+  margin: 0 auto;
+  // border: 2px solid green;
+  width: 90vw;
+
+  > a {
+    padding: 0;
+    color: #454647;
+    text-align: center;
+    flex: 0 27%;
+    display: inline-block;
+    // border: 2px solid red;
+    font-size: 3.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      // background-color: green;
+      color: $utlinkriver;
+    }
+    @media screen and (min-width: 800px) {
+      font-size: 4.7rem;
+      flex: 0 1 5vw;
+    }
+  }
+}
+.results {
+  width: 90vw;
+  margin: 8rem auto;
+  @media screen and (min-width: 800px) {
+    width: 70vw;
+  }
+}
+.letter-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem 0 4rem 0;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+  .letter-container {
+    text-align: center;
+    width: 100vw;
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    background-color: white;
+    top: -1px;
+    text-align: left;
+    @media screen and (min-width: 800px) {
+      width: 10vw;
+      text-align: right;
+      margin-right: 2rem;
+    }
+
+    h2.letter {
+      font-size: 4rem;
+      font-weight: 600;
+      @media screen and (min-width: 800px) {
+        width: auto;
+        font-size: 6.8rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+  ul {
+    padding: 0;
+    @media screen and (min-width: 800px) {
+      border-left: 1px solid $utorange;
+      padding: 1.5rem 2rem;
+    }
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 2rem 0;
+    }
+    .result-title a {
+      text-decoration: none;
+      box-shadow: inset 0px -1px $utorange;
+      padding: 0 0.5rem 0.2rem 0;
+      margin-bottom: 0.1rem;
+      display: inline-block;
+      font-weight: 600;
+      .result-search-term {
+        font-weight: 800;
+      }
+    }
+    .result-url {
+      font-size: 0.9rem;
+    }
+  }
+}
