@@ -30,7 +30,7 @@ function Vision() {
   const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
-    console.log( YoutubeEmbed );
+    console.log( playVideo );
   });
 
   return (
@@ -111,7 +111,7 @@ function Vision() {
                       alt="Play strategic vision video."
                       width="1386"
                       height="780"
-                    /> <YoutubeEmbed embedId="I3H4Po3dFwc" />
+                    />
                   </button>
                   ) }
                   { playVideo === true && (
