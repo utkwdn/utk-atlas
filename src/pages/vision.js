@@ -13,30 +13,24 @@ const cx = (...classNames) => classNames.join(" ");
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
-const YoutubeEmbed = ({ embedId }) => (
-    <iframe
+function YoutubeEmbed( embedId ){
+    return( <iframe
       width="100%"
       height="100%"
-      src={`https://www.youtube.com/embed/${embedId}`}
+      src={"https://www.youtube.com/embed/" + embedId }
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title="Play strategic vision video."
-    />
-);
-
-
-
-YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired,
+    /> );
 };
 
 function Vision() {
 
-  const [playVideo, setPlayVideo] = useState("true");
+  const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
-    console.log('The state of the playVideo is ${playVideo}');
+    console.log( YoutubeEmbed );
   });
 
   return (
@@ -105,9 +99,9 @@ function Vision() {
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
                   <div className="ratio ratio-16x9 yt-container">
-                  {playVideo}
+                  { playVideo === false && (
                   <button
-                    onClick={() => setPlayVideo(YoutubeEmbed) }
+                    onClick={() => setPlayVideo( true ) }
                     className="btn border-0 yt-play"
                   >
                     <img
@@ -119,7 +113,10 @@ function Vision() {
                       height="780"
                     /> <YoutubeEmbed embedId="I3H4Po3dFwc" />
                   </button>
-
+                  ) }
+                  { playVideo === true && (
+                    YoutubeEmbed("I3H4Po3dFwc")
+                  ) }
                   </div>
                 </div>
               </div>
