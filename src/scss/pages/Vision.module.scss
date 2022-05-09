@@ -126,7 +126,7 @@ $font-size-base: 100% !important;
 }
 
 .angleContainer,
-.angleContainerBB {
+.angleContainer02 {
   // special callout
   background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") 0 0
     no-repeat;
@@ -166,7 +166,7 @@ $font-size-base: 100% !important;
   }
 }
 
-.angleContainerBB {
+.angleContainer02 {
   background-color: $dotgrey;
   background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
   background-position: top left;
@@ -220,7 +220,7 @@ $font-size-base: 100% !important;
 }
 
 .angleContainer:after,
-.angleContainerBB:after {
+.angleContainer02:after {
   content: "";
   display: block;
   clear: both;
@@ -365,7 +365,7 @@ $font-size-base: 100% !important;
   background-position: bottom right;
   padding: 0;
   margin-top: 10vh;
-  margin-bottom: -0.45rem; //shifts over the default orange footer top-border
+  margin-bottom: -1rem; //shifts over the default orange footer top-border
   z-index: 1;
 }
 .heroImg {
@@ -584,8 +584,8 @@ Treatments
     animation-duration: 2s;
   }
 }
-span.objTitleRAA,
-span.objTitleRBB {
+span.objTitleR01,
+span.objTitleR02 {
   display: block;
   position: relative;
 }
@@ -952,7 +952,7 @@ ul.ObjList {
     border-left: 45vw solid transparent;
   }
   .angleContainer,
-  .angleContainerBB {
+  .angleContainer02 {
     // special callout
     margin-top: 12vh;
     p.angleIntro {

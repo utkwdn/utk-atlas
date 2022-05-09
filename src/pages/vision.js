@@ -1,41 +1,60 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/Vision.module.scss";
 import Script from "next/script";
+// import ReactPlayer from 'react-player' //maybe we try this
+import PropTypes from "prop-types";
 
+// import cx from 'classnames';
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(" ");
 // example use of local styles and joiner class
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
+const YoutubeEmbed = ({ embedId }) => (
+    <iframe
+      width="100%"
+      height="100%"
+      src={`https://www.youtube.com/embed/${embedId}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Play strategic vision video."
+    />
+);
 
 
 
+YoutubeEmbed.propTypes = {
+  embedId: PropTypes.string.isRequired,
+};
 
 function Vision() {
-  const myRef = useRef();
-  const [myElementIsVisible, updateMyElementIsVisible] = useState();
+
+  const [playVideo, setPlayVideo] = useState("true");
+
   useEffect(() => {
-    // console.log('myRef', myRef.current);
-    const observer = new IntersectionObserver((entries, observer) => {
-  const entry = entries[0];
-  // updateMyElementIsVisible(entry.isIntersecting);
-  // console.log('entry', entry);
-  // console.log('entry.isIntersecting', entry.isIntersecting);
-      })
-      observer.observe(myRef.current);
-  }, [])
+    console.log('The state of the playVideo is ${playVideo}');
+  });
+
   return (
     <Layout>
       <Head>
-        // <script strategy="beforeInteractive" type="text/javascript" src="js/Vision.module.js"></script>
+        <script
+          strategy="beforeInteractive"
+          type="text/javascript"
+          src="js/vision.js"
+        ></script>
       </Head>
       <section className={styles.hero}>
         <div className={styles.titleBlock}>
           <div
-            className={cx(styles.angleBracketDown, styles.bracketHeroAdjustment)}
+            className={[
+              styles.angleBracketDown,
+              styles.bracketHeroAdjustment,
+            ].join(" ")}
           />
           <h1 className={styles.textUppercase}>
             <span className={styles["fake-big-head"]}>
@@ -46,6 +65,8 @@ function Vision() {
             <br />
             <span className={styles.itav}>It takes a Volunteer</span>
           </h1>
+
+
           <div className={styles.triangleContainer}>
             <div className={styles.flagshipTorch}></div>
             <div className={styles["triangle-bottomright"]}></div>
@@ -78,39 +99,41 @@ function Vision() {
               </svg>
             </span>
           </a>
-
-          {/*    <div className={styles.videoContainer}>
+          <p>{playVideo}</p>
+          <div className={styles.videoContainer}>
             <div className="container-fluid py-xl-5">
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
-                  <div
-                    className="ratio ratio-16x9 yt-container"
-                    data-yt-url="https://www.youtube.com/embed/I3H4Po3dFwc?modestbranding=1&showinfo=0&showsearch=0&rel=0&autoplay=1"
+                  <div className="ratio ratio-16x9 yt-container">
+                  {playVideo}
+                  <button
+                    onClick={() => setPlayVideo(YoutubeEmbed) }
+                    className="btn border-0 yt-play"
                   >
-                    <button className="btn border-0 yt-play">
-                      <img
-                        data-src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
-                        async
-                        className="lazyload"
-                        alt="Play strategic vision video."
-                        width="1386"
-                        height="780"
-                      />
-                    </button>
+                    <img
+                    src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
+                      async
+                      className="lazyload"
+                      alt="Play strategic vision video."
+                      width="1386"
+                      height="780"
+                    /> <YoutubeEmbed embedId="I3H4Po3dFwc" />
+                  </button>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        */}
 
-          <div ref={myElementIsVisible }className={cx(styles.angleContainer, styles.stepsSlide)}>
+
+          <div className={styles.angleContainer}>
             <p className={styles.angleIntro}>
               We know how much is possible when we unite our individual talents
               and aspirations, put compassion front and center, and
             </p>
 
-            <p ref={myRef}  className={cx(styles.textSteps, styles.stepsSlide)}>
+            <p className={cx(styles.textSteps, styles.textUppercase)}>
               <span className={styles.angleCallout}></span>step forward
               <br />
               together as <br /> Volunteers.
@@ -159,15 +182,15 @@ function Vision() {
         <div className={styles.goalsArticleContainer}>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.objTitleLAA, styles.textUppercase)}>
+              <h3 className={cx(styles.objTitleL01, styles.textUppercase)}>
                 Cultivating the{" "}
                 <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
               <div
-                className={[styles.printLineComplex, styles.camoAAContainer]}
+                className={[styles.printLineComplex, styles.camo01Container]}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamoAA)}
+                  className={cx(styles.printLinePattern, styles.torchCamo01)}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
@@ -206,17 +229,17 @@ function Vision() {
                 className={cx(
                   styles.textUppercase,
                   styles.printLineLeft,
-                  styles.objTitleContainerRAA
+                  styles.objTitleContainerR01
                 )}
               >
-                <span className={styles.objTitleRAA}>
+                <span className={styles.objTitleR01}>
                   Conducting Research{" "}
                   <span className={styles.boldPunch}>
                     That Makes Life and Lives Better
                   </span>
                 </span>
               </h3>
-              <p className={cx(styles.lead, styles.offset)}>
+              <p className={[styles.lead, styles.offset].join(" ")}>
                 Advance the frontiers of knowledge to create a more just,
                 prosperous, and sustainable future through world-class research,
                 scholarship, and creative work
@@ -243,15 +266,22 @@ function Vision() {
           </article>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.textUppercase, styles.objTitleLBB)}>
+              <h3
+                className={[styles.textUppercase, styles.objTitleL02].join("")}
+              >
                 Ensuring a Culture Where{" "}
                 <span className={styles.boldPunch}>Vol is a Verb</span>
               </h3>
               <div
-                className={cx(styles.printLineComplex, styles.camoBBContainer)}
+                className={[
+                  styles.printLineComplex,
+                  styles.camo02Container,
+                ].join(" ")}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamoBB)}
+                  className={[styles.printLinePattern, styles.torchCamo02].join(
+                    " "
+                  )}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
@@ -284,11 +314,11 @@ function Vision() {
               <h3
                 className={cx(
                   styles.textUppercase,
-                  styles.objTitleContainerRAA,
+                  styles.objTitleContainerR01,
                   styles.printLineLeft
                 )}
               >
-                <span className={styles.objTitleRBB}>
+                <span className={styles.objTitleR02}>
                   Making Ourselves{" "}
                   <span className={styles.boldPunch}>Nimble and Adaptable</span>
                 </span>
@@ -319,15 +349,15 @@ function Vision() {
           </article>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.textUppercase, styles.objTitleLCC)}>
+              <h3 className={cx(styles.textUppercase, styles.objTitleL03)}>
                 Embodying the Modern R1,{" "}
                 <span className={styles.boldPunch}>Land-Grant University</span>
               </h3>
               <div
-                className={cx(styles.printLineComplex, styles.camoCCContainer)}
+                className={cx(styles.printLineComplex, styles.camo03Container)}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamoCC)}
+                  className={cx(styles.printLinePattern, styles.torchCamo03)}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
@@ -350,7 +380,7 @@ function Vision() {
         </div>
       </section>
       <section className={styles.explore}>
-        <div className={styles.angleContainerBB}>
+        <div className={styles.angleContainer02}>
           <div className={styles.angleOutro}>
             <p>
               We examined the changing landscape of higher education and
@@ -378,7 +408,9 @@ function Vision() {
           </div>
         </div>
       </section>
-      <div className={cx(styles.skinnyLongImg, styles.visionFooter)}></div>
+      <div
+        className={[styles.skinnyLongImg, styles.visionFooter].join(" ")}
+      ></div>
     </Layout>
   );
 }
