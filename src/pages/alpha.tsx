@@ -3,7 +3,8 @@ import Head from "next/head";
 import styles from "scss/pages/alpha.module.scss";
 import Script from "next/script";
 
-function Pagename() {
+function Alpha() {
+  const Search = console.log("Search button will eventually do something");
   return (
     <Layout>
       <Head>
@@ -23,8 +24,29 @@ function Pagename() {
           <p>
             This tool will help you locate the sites you’re looking for and
             more. If you find a broken link or would like to add or update an
-            existing link, please let us know.
+            existing link,{" "}
+            <a href="https://communications.utk.edu/a-z-index-update-request/">
+              please let us know
+            </a>
+            .
           </p>
+          <div className={styles["input-wrapper"]}>
+            <input
+              className={styles["form-control"]}
+              type="text"
+              list="alphaDataList"
+              placeholder="Type to search..."
+            />
+            <button onClick={Search}> Search </button>
+
+            <datalist
+              id="alphaDataList"
+              hasLabel="true"
+              htmlFor="datalist"
+              label="Datalist"
+              required="true"
+            />
+          </div>
         </div>
       </section>
       <section className={styles["alpha-container"]}>
@@ -307,4 +329,4 @@ function Pagename() {
   );
 }
 
-export default Pagename;
+export default Alpha;
