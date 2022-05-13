@@ -525,7 +525,9 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-/* ––––– Academics –––––– */
+/* ––––––––––––––––––––––––––––––––––––– */
+/* ACADEMICS */
+/* –––––––––––––––––––––––––––– */
 h1 {
   // border:1px solid red;
   // position:absolute;
@@ -571,65 +573,106 @@ body.academics {
   }
 }
 
-/* PAGE TITLE */
+.fake-d-flex > div[class$="__inner-container"] {
+  // temporary fix until we have the framework in place
+  //parent flexbox group for .page-title-group and .hero-img-group
+  display: flex;
+  display: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  // border: 2px solid red;
+  position: relative;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
 
-/* First Design with Chunky Bar */
-// .page-title-group > div[class$="__inner-container"] {
-//   margin: 2rem 0;
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   h1.page-area {
-//     font-size: 2.8rem;
-//     text-transform: uppercase;
-//     font-weight: 600;
-//     margin: 0;
-//     display: block;
-//     width: fit-content;
-//     color: $white;
-//     margin: 0 0 0 3rem; // padding from title-group + border thickness no longer need border thickness added – made it a before element
-//     text-shadow: 0.1rem 0.1rem 0.1rem #707070, -0.1rem -0.1rem 0.1rem #707070;
-//     text-shadow: 0.1rem 0.1rem 0.3rem $utsmokeytext;
-//   }
-//   .page-title-group > div[class$="__inner-container"] {
-//     background-color: rgba(255, 255, 255, 0.85);
-//
-//     &:before {
-//       left: -1.5rem; // equals border width
-//       top: 0;
-//       height: 105%;
-//       border-left: 1.5rem solid $utorange;
-//       position: absolute;
-//       content: "";
-//     }
-//     // border-left: 2rem solid $utorange;
-//     margin: 0 0;
-//     padding: 1.25rem 1rem 1.5rem 3rem;
-//     width: fit-content;
-//
-//     p.page-title {
-//       font-size: 6.5rem;
-//       line-height: 5rem;
-//       color: #333;
-//       font-weight: 800;
-//       margin: 0;
-//       width: auto;
-//       padding-right: 3rem;
-//
-//       &:after {
-//         content: url("//content.cms.utk.edu/wp-content/uploads/2022/05/tn-checkers.png");
-//         display: block;
-//         width: 4rem;
-//         height: 2rem;
-//         // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.8' height='14.8' fill='%23ff8200' viewBox="00133.144.6" %3E%3Crect id="c" class="o" x="118.3" width="14.8" height="14.8"/%3E%3C/svg%3E");
-//         /* <svg xmlns="https://www.w3.org/2000/svg" width="30" height="22" fill="#ff8200" viewBox="0 0 25 26"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path></svg> */
-//         margin-left: 0.5rem;
-//         margin-top: 1rem;
-//         display: inline-block;
-//         position: absolute;
-//         transition: all 0.2s ease-out;
-//         // <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.1 44.6"><defs><style>.o{fill:#ff8200;}</style></defs><g id="b"><rect id="c" class="o" x="118.3" width="14.8" height="14.8"/><rect id="d" class="o" x="88.7" width="14.8" height="14.8"/><rect id="e" class="o" x="59.2" width="14.8" height="14.8"/><rect id="f" class="o" x="29.6" width="14.8" height="14.8"/><rect id="g" class="o" x="88.7" y="29.7" width="14.8" height="14.9"/><rect id="h" class="o" x="103.5" y="14.8" width="14.8" height="14.9"/><rect id="i" class="o" x="73.9" y="14.8" width="14.8" height="14.9"/><rect id="j" class="o" x="59.2" y="29.7" width="14.8" height="14.9"/><rect id="k" class="o" x="29.6" y="29.7" width="14.8" height="14.9"/><path id="l" class="o" d="M0,29.7h0v14.9H14.8v-14.9H0Z"/><rect id="m" class="o" x="44.4" y="14.8" width="14.8" height="14.9"/><rect id="n" class="o" x="14.8" y="14.8" width="14.8" height="14.9"/></g></svg>
-//       }
-//     }
-//   }
-// }
+/* ACADEMICS PAGE TITLE TREATMENT, based on A-Z index module */
+
+.page-title-group {
+  width: 80vw;
+  // border: 2px solid purple;
+  margin: 0 auto 2rem auto;
+
+  @media screen and (min-width: 1200px) {
+    // width: 40vw;
+    // max-width: 500px;
+    flex-basis: 32vw;
+    margin-bottom: 4rem;
+    // flex-grow: 1;
+  }
+}
+.hero-img-group > div[class$="__inner-container"] {
+  flex-basis: 50vw;
+  // border: 2px solid red;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    justify-content: center;
+  }
+}
+.hero-img-group {
+  width: 80vw;
+  // justify-content: flex-end;
+  margin: 0 auto 4rem auto;
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    max-width: 40vw;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: 50vw;
+    max-width: none;
+    position: relative;
+    // border: 6px solid green;
+    margin-left: 2rem;
+  }
+  .img {
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 803px;
+  }
+}
+
+h1.area {
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #9d9d9d;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  &:before {
+    content: "";
+    position: absolute;
+    color: $utorange;
+  }
+}
+
+hr.oa-thick-bar {
+  width: 80%;
+  height: 1.75rem;
+  background-color: $utorange;
+  opacity: 1;
+  margin: 4rem 0;
+
+  margin-left: -4rem !important;
+  @media screen and (min-width: 800px) {
+    width: 70%;
+    width: 24rem;
+  }
+}
+.title-container {
+}
+
+p.title {
+  font-size: 4.7rem;
+  font-weight: 600;
+
+  max-width: 10ch;
+  line-height: 4.6rem;
+  margin-bottom: 2rem;
+}
