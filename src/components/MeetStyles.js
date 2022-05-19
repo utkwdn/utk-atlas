@@ -10,7 +10,8 @@ const MeetStyles = () => {
       <Head>
 
           <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6831932/7665612/css/fonts.css" />
-          <link rel="stylesheet" href="//images.utk.edu/designsystem/meet/style20201118.css">
+          <link rel="stylesheet" href="//images.utk.edu/designsystem/meet/style20201118.css" />
+
 
       </Head>
       <div>
