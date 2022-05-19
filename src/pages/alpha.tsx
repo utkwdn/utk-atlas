@@ -37,7 +37,7 @@ function Alpha() {
               list="alphaDataList"
               placeholder="Type to search..."
             />
-            <button onClick={Search}> Search </button>
+            <button > Search </button>
 
             <datalist
               id="alphaDataList"
