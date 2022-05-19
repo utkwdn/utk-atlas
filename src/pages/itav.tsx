@@ -24,14 +24,14 @@ YoutubeEmbed.propTypes = {
 function ItTakesAVolunteer() {
   return (
     <Layout>
-      <Head></Head>
+      <Head>{}</Head>
       <div className="fullscreen-bg">
         <video
           loop
           autoPlay
           muted
           poster="//images.utk.edu/designsystem/itav/assets/i/itav_header_bg_1.jpg"
-          class="fullscreen-bg__video"
+          className="fullscreen-bg__video"
         >
           <source
             src="//images.utk.edu/designsystem/itav/assets/bg_texture_4.mp4"
@@ -48,9 +48,9 @@ function ItTakesAVolunteer() {
           ></a>
         </div>
       </div>
-      <div className={["container-fluid hero align-items-center"]}>
+      <div className={"container-fluid hero align-items-center"}>
         <div
-          className={["row justify-content-center h-100 align-items-center"]}
+          className={"row justify-content-center h-100 align-items-center"}
         >
           <div
             className={

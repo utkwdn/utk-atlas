@@ -8,10 +8,10 @@ function Pagename() {
   return (
     <Layout>
       <Head>
-        // <script></script>
+
       </Head>
 
-  // Enter Content Here
+
   <h2>Starter Page Using Layout</h2>
     </Layout>
   );
