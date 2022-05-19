@@ -8,7 +8,7 @@ function Alpha() {
   return (
     <Layout>
       <Head>
-        // <script></script>
+
       </Head>
       <section className={styles["intro-container"]}>
         <div className={styles["page-title-group"]}>
@@ -37,14 +37,10 @@ function Alpha() {
               list="alphaDataList"
               placeholder="Type to search..."
             />
-            <button onClick={Search}> Search </button>
+            <button > Search </button>
 
             <datalist
               id="alphaDataList"
-              hasLabel="true"
-              htmlFor="datalist"
-              label="Datalist"
-              required="true"
             />
           </div>
         </div>
@@ -80,7 +76,7 @@ function Alpha() {
         </div>
       </section>
       <section className={styles.results}>
-        {/*
+        {[[/*
    //Basic Pattern for data use
 
       <div className={styles["letter-group"]}>
@@ -104,7 +100,7 @@ function Alpha() {
         </ul>
           </div>
 
-          */}
+          */]]}
 
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
