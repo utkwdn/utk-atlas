@@ -71,7 +71,8 @@ function Vision() {
       <div
         className="row bg-light align-items-end mb-md-5 mb-lg-0 align-items-lg-center bg-img-header no-gutters"
         style={{
-          backgroundImage: 'url(https://www.utk.edu/images/i/warmers/2021-smokey_header.jpg)'
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)'
+
         }}
 
         >
@@ -83,7 +84,9 @@ function Vision() {
               <div className="p-4 bg-white">
                 <h1
                   className="text-uppercase text-stroke text-hide"
-
+                  style={{
+                    backgroundImage: 'url(https://images.utk.edu/designsystem/meet/welcometout.svg)',
+                  }}
                   >Meet UT</h1>
                 <p className="lead">UT is a place to learn and a place to grow. We hope you'll call it your home, sweet home.</p>
               </div>
@@ -99,7 +102,8 @@ function Vision() {
           <div className="col-12 col-md-10 offset-md-1 mt-n5   bg-homesweet"
 
             style={{
-              backgroundImage: 'url(https://www.utk.edu/images/i/warmers/campusview_1.jpg)'
+              backgroundImage: 'url(//images.utk.edu/designsystem/meet/campusview_1.jpg)'
+
             }}
           >
             <div className="row align-items-end">
@@ -118,14 +122,16 @@ function Vision() {
 
       <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
       style={{
-        backgroundImage: 'url(https://www.utk.edu/images/i/warmers/meet_web_ayres_gray_bg_1.jpg)'
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/meet_web_ayres_gray_bg_1.jpg)',
+
+        backgroundSize: 'cover',
       }}
       >
         <div className="col-12 col-md-6 mx-auto">
           <svg
             version="1.1"
             className="icon-tn"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
+            xmlnsXlink="//www.w3.org/1999/xlink"
             x="0px"
             y="0px"
             viewBox="0 0 103 25"
@@ -143,7 +149,8 @@ function Vision() {
 
         <div className="container-fluid bg-light   pb-4 py-md-5"
         style={{
-          backgroundImage: 'url(https://www.utk.edu/images/i/warmers/meet_web_mtn_bg_1.jpg)'
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/meet_web_mtn_bg_1.jpg)'
+
         }}
         >
           <div className="container">
@@ -157,7 +164,8 @@ function Vision() {
             </div>
             <div className="col-12 col-lg-6 col-xl-4 offset-xl-1 mb-4 mb-lg-0">
                 <img
-                  src="https://www.utk.edu/images/i/warmers/arrow_1.svg"
+                  src="//images.utk.edu/designsystem/meet/arrow_1.svg"
+
                   className="img-arrow"
                   alt=""
                 />
@@ -176,14 +184,15 @@ function Vision() {
           <div className="row no-gutters">
               <div className="col-12 col-md-10 offset-md-1  mt-md-n5">
                 <picture className=" ">
-                  <source media="(min-width: 1400px)" srcset="https://www.utk.edu/images/i/warmers/girlengineer_xl.jpg" />
-                  <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/girlengineer_lg.jpg" />
-                  <source media="(min-width: 768px)" srcset="https://www.utk.edu/images/i/warmers/girlengineer_md.jpg" />
-                  <source media="(min-width: 600px)" srcset="https://www.utk.edu/images/i/warmers/girlengineer_sm.jpg" />
-                  <source media="(min-width: 576px)" srcset="https://www.utk.edu/images/i/warmers/girlengineer_xs.jpg" />
-                  <source srcset="https://www.utk.edu/images/i/warmers/girlengineer_xl.jpg" />
+
+                  <source media="(min-width: 1400px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
+                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_lg.jpg" />
+                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_md.jpg" />
+                  <source media="(min-width: 600px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_sm.jpg" />
+                  <source media="(min-width: 576px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_xs.jpg" />
+                  <source srcset="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
                   <img
-                    src="https://www.utk.edu/images/i/warmers/girlengineer_xl.jpg"
+                    src="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg"
                     alt="" />
                 </picture>
               </div>
@@ -191,28 +200,35 @@ function Vision() {
 
             <div className="col-12 col-md-4 col-lg-5 offset-md-1">
                 <picture className=" ">
-                  <source media="(min-width: 1000px)" srcset="https://www.utk.edu/images/i/warmers/2021-Lab_900x1100.jpg" />
-                  <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/2021-Lab_900x1100.jpg" />
-                  <source media="(min-width: 768px)" srcset="https://www.utk.edu/images/i/warmers/sciencesat_300x750.jpg" />
-                  <source media="(min-width: 576px)" srcset="https://www.utk.edu/images/i/warmers/sciencesat_300x75dd0.jpg" />
-                  <source srcset="https://www.utk.edu/images/i/warmers/2021-Lab_900x800.jpg" />
-                  <img src="https://www.utk.edu/images/i/warmers/2021-Lab_900x800.jpg" alt="" />
+
+                  <source media="(min-width: 1000px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
+                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
+                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_300x750.jpg" />
+                  <source media="(min-width: 576px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_300x75dd0.jpg" />
+                  <source srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x800.jpg" />
+                  <img src="//images.utk.edu/designsystem/meet/2021-Lab_900x800.jpg" alt="" />
                 </picture>
             </div>
             <div className="col-12 col-md-7 col-lg-6 bg-white">
-              <div className="p-3 p-md-5 bg-white mt-n5   bg-illustration" >
+              <div className="p-3 p-md-5 bg-white mt-n5   bg-illustration"
+              style={{
+                backgroundImage: 'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_ayres_1.svg)'
+              }}
+              >
                 <h2 className="text-condensed">Follow Your Passion</h2>
                 <p>Want to become a teacher, an engineer, or have a vision for a job that is yet to exist? With <a className="info-link" href="https://admissions.utk.edu/study/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=degree-options" target="_blank">360+ undergraduate degree options</a>, honors programs, and an emphasis on research and service-learning, UT will prepare you for what comes after college. We may look like a large university, but our caring faculty and staff will make your time here personal and welcoming.</p>
               </div>
             </div>
           <div className="col-12 col-md-10 offset-md-1">
                 <picture className=" ">
-                  <source media="(min-width: 1400px)" srcset="https://www.utk.edu/images/i/warmers/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 1200px)" srcset="https://www.utk.edu/images/i/warmers/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 768px)" srcset="https://www.utk.edu/images/i/warmers/2021-Lab_1200x600.jpg" />
-                  <source srcset="https://www.utk.edu/images/i/warmers/sciencesat_xs.jpg" />
-                  <img src="https://www.utk.edu/images/i/warmers/sciencesat_xl.jpg" alt="" />
+
+                  <source media="(min-width: 1400px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_1200x600.jpg" />
+                  <source srcset="//images.utk.edu/designsystem/meet/sciencesat_xs.jpg" />
+                  <img src="//images.utk.edu/designsystem/meet/sciencesat_xl.jpg" alt="" />
+
                 </picture>
            </div>
 
@@ -224,12 +240,20 @@ function Vision() {
 
 
       <div>
-      <div className="container-fluid bg-light pb-4 py-md-5 no-gutters  " >
+      <div className="container-fluid bg-light pb-4 py-md-5 no-gutters"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)'
+
+      }}
+      >
         <div className="container">
           <div className="row  align-items-center mt-5">
             <div className="col-12 col-md-5 col-lg-6 col-xl-5 order-md-2 mb-5">
               <div className="framed">
-                <img className=" " src="https://www.utk.edu/images/i/warmers/2021-research.jpg" width="900" height="900" alt="Graduates." />
+
+                <img className=" " src="//images.utk.edu/designsystem/meet/2021-research.jpg" width="900" height="900" alt="Graduates." />
+
               </div>
             </div>
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 offset-xl-1">
@@ -245,7 +269,13 @@ function Vision() {
 
 
 
-      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center">
+      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+      style={{
+
+        backgroundImage: 'url(://images.utk.edu/designsystem/meet/experiencecampus_1.svg)'
+
+      }}
+      >
         <div className="col-12 col-md-6 mx-auto">
           <svg
             version="1.1"
@@ -273,12 +303,18 @@ function Vision() {
         <div className="container">
           <div className="row no-gutters">
             <div className="col-12 col-lg-10 offset-lg-1 mt-md-n5">
-              <img className=" " src="https://www.utk.edu/images/i/warmers/knox_skyline.jpg" width="1800" height="600" alt="Knoxville Skyline" />
+
+              <img className=" " src="//images.utk.edu/designsystem/meet/knox_skyline.jpg" width="1800" height="600" alt="Knoxville Skyline" />
+
             </div>
             <div className="row no-gutters">
 
 
-              <div className="col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1   bg-illustration">
+              <div className="col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1 bg-illustration"
+              style={{
+                backgroundImage: 'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_boat_1.svg)'
+              }}
+              >
                 <div className="p-3 p-md-5">
                   <h2>Knoxville and Beyond</h2>
                   <p>In <a className="info-link" href="https://admissions.utk.edu/visit/knoxville-and-east-tennessee/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=big-orange-country" target="_blank">Big Orange Country</a>, mountains, rivers, and trails come together to connect the urban and the wild. Close to campus is downtown Knoxville with shops. restaurants, theaters, and more. Nearby is Knoxville's renowned Urban Wilderness, and the Great Smoky Mountains National Park, with 800+ miles of trails, is just down the road.</p>
@@ -288,20 +324,24 @@ function Vision() {
                 <div className="row no-gutters">
                   <div className="col-6 col-md-12">
                     <picture className=" ">
-                      <source media="(min-width: 1200px)" srcset="https://www.utk.edu/images/i/warmers/wakeboard_lg-1.jpg" />
-                      <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/wakeboard_md.jpg" />
-                      <source media="(min-width: 768px)" srcset="https://www.utk.edu/images/i/warmers/wakeboard_sm.jpg" />
-                      <source srcset="https://www.utk.edu/images/i/warmers/wakeboard_xs.jpg" />
-                      <img src="https://www.utk.edu/images/i/warmers/wakeboard_xs.jpg" width="600" height="900" alt="Wake Board" />
+
+                      <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_lg-1.jpg" />
+                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_md.jpg" />
+                      <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_sm.jpg" />
+                      <source srcset="//images.utk.edu/designsystem/meet/wakeboard_xs.jpg" />
+                      <img src="//images.utk.edu/designsystem/meet/wakeboard_xs.jpg" width="600" height="900" alt="Wake Board" />
+
                     </picture>
                   </div>
                   <div className="col-6 col-md-12">
                     <picture className=" ">
-                      <source media="(min-width: 1200px)" srcset="https://www.utk.edu/images/i/warmers/bike_lg-1.jpg" />
-                      <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/bike_md.jpg" />
-                      <source media="(min-width: 768px)" srcset="https://www.utk.edu/images/i/warmers/bike_sm.jpg" />
-                      <source srcset="https://www.utk.edu/images/i/warmers/bike_xs.jpg" />
-                      <img src="https://www.utk.edu/images/i/warmers/bike_xl.jpg" width="600" height="900" alt="Mountain biking." />
+
+                      <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/bike_lg-1.jpg" />
+                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/bike_md.jpg" />
+                      <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/bike_sm.jpg" />
+                      <source srcset="//images.utk.edu/designsystem/meet/bike_xs.jpg" />
+                      <img src="//images.utk.edu/designsystem/meet/bike_xl.jpg" width="600" height="900" alt="Mountain biking." />
+
                     </picture>
                   </div>
                 </div>
@@ -310,13 +350,14 @@ function Vision() {
 
               <div className="row no-gutters order-md-3">
                 <div className="col-5  col-lg-4 offset-lg-1">
-                  <img className=" " src="https://www.utk.edu/images/i/warmers/2021-marketsquare.jpg" width="1200" height="1000" alt="Market Square" />
+
+                  <img className=" " src="//images.utk.edu/designsystem/meet/2021-marketsquare.jpg" width="1200" height="1000" alt="Market Square" />
                 </div>
                 <div className="col-7  col-lg-6 offset-lg-0 order-4">
                    <picture className=" ">
-                      <source media="(min-width: 992px)" srcset="https://www.utk.edu/images/i/warmers/2021-smokies.jpg" />
-                      <source srcset="https://www.utk.edu/images/i/warmers/2021-marketsquare_xs.jpg" />
-                      <img src="https://www.utk.edu/images/i/warmers/2021-smokies.jpg" width="600" height="900" alt="The Smokies." />
+                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/2021-smokies.jpg" />
+                      <source srcset="//images.utk.edu/designsystem/meet/2021-marketsquare_xs.jpg" />
+                      <img src="//images.utk.edu/designsystem/meet/2021-smokies.jpg" width="600" height="900" alt="The Smokies." />
                     </picture>
 
                 </div>
@@ -333,12 +374,20 @@ function Vision() {
 
       </div>
       <div id="afford">
-      <div className="container-fluid bg-light pb-4 py-md-5 no-gutters  ">
+      <div className="container-fluid bg-light pb-4 py-md-5 no-gutters"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/texture_2.jpg)'
+
+      }}
+      >
         <div className="container">
           <div className="row  align-items-center mt-5">
             <div className="col-12 col-md-5 col-lg-6 col-xl-5 order-md-2 mb-5">
               <div className="framed">
-                <img className=" " src="https://www.utk.edu/images/i/warmers/2021-graduates.jpg" width="900" height="900" alt="Graduates." />
+
+                <img className=" " src="//images.utk.edu/designsystem/meet/2021-graduates.jpg" width="900" height="900" alt="Graduates." />
+
               </div>
             </div>
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 offset-xl-1">
@@ -353,7 +402,13 @@ function Vision() {
 
 
 
-      <div className="container-fluid bg-img-fixed-medium   bg-bench">
+      <div className="container-fluid bg-img-fixed-medium bg-bench"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/pedwalkway_1.jpg)'
+
+      }}
+      >
           <div className="row align-items-end align-items-md-center module">
             <div className="col-12 col-md-10 mx-auto ml-lg-4 col-lg-5 bg-white mb-lg-5 offset-lg-0 pt-5 p-2 p-md-5">
               <blockquote className="blockquote">
@@ -365,7 +420,13 @@ function Vision() {
       </div>
 
 
-      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center">
+      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/texture_rowing.jpg)'
+
+      }}
+      >
         <div className="col-12 col-md-6 mx-auto">
           <svg version="1.1" className="icon-tn" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103 25" xmlSpace="preserve">
       <path  className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
@@ -380,9 +441,19 @@ function Vision() {
 
 
       <div className="container-fluid bg-orange  pt-lg-1 pb-5">
-        <div className="col-12 col-md-10 offset-md-1 mt-lg-n5 bg-img-scroll   bg-community">
+        <div className="col-12 col-md-10 offset-md-1 mt-lg-n5 bg-img-scroll   bg-community"
+        style={{
+
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-community_service.jpg)'
+
+        }}
+        >
           <div className="row align-items-end">
-            <div className="col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5   bg-illustration">
+            <div className="col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5 bg-illustration"
+            style={{
+              backgroundImage: 'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)'
+            }}
+            >
               <blockquote className="blockquote">
                 <p className="mb-0">To me, being a Volunteer means giving yourself to others and also trying to help the community.”</p>
                 <footer className="blockquote-footer"><cite title="Source Title">Elizabeth // Neuroscience // Oak Ridge, TN</cite></footer>
@@ -399,11 +470,22 @@ function Vision() {
 
 
 
-        <div className="container-fluid bg-light bg-img-fixed p-0 no-gutters module-50 bg-campus">
+        <div className="container-fluid bg-light bg-img-fixed p-0 no-gutters module-50 bg-campus"
+        style={{
+
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/studentsoncampus_1.jpg)'
+
+        }}
+        >
         </div>
 
+      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+      style={{
 
-      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center">
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-becomeavol_1.svg)'
+
+      }}
+      >
         <div className="col-12 col-md-6 mx-auto">
           <svg version="1.1" className="icon-tn" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103 25"  xmlSpace="preserve">
       <path  className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
@@ -417,9 +499,19 @@ function Vision() {
       </div>
       <div id="traditions">
       <div className="container-fluid bg-orange  py-3 py-md-5">
-        <div className="col-12 col-md-10 offset-md-1 bg-img-scroll   bg-traditions">
+        <div className="col-12 col-md-10 offset-md-1 bg-img-scroll   bg-traditions"
+        style={{
+
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-smokey_photoop2.jpg)'
+
+        }}
+        >
           <div className="row align-items-end">
-            <div className="col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5   bg-illustration">
+            <div className="col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5   bg-illustration"
+            style={{
+              backgroundImage: 'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_pennant_1.svg)'
+            }}
+            >
               <h2>Living the Vol Life</h2>
               <p>We sing &ldquo;Rocky Top&rdquo; loudly and often, and everyone wants to pet our campus celebrity&mdash;a bluetick coonhound named Smokey. Outside the classroom, you'll have plenty of opportunities to make friends and memories through on-campus events and more than 400 student organizations.</p>
             </div>
@@ -428,7 +520,13 @@ function Vision() {
       </div>
 
 
-      <div className="container-fluid bg-img-fixed-medium   bg-football">
+      <div className="container-fluid bg-img-fixed-medium bg-football"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/mae_confirmation_1.jpg)'
+
+      }}
+      >
           <div className="row align-items-end align-items-md-center module">
             <div className="col-12 col-md-10 mx-auto ml-lg-4 col-lg-5 bg-white mb-lg-5 offset-lg-0 pt-5 p-2 p-md-5">
                 <blockquote className="blockquote">
@@ -440,7 +538,13 @@ function Vision() {
       </div>
 
 
-      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center" >
+      <div className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+      style={{
+
+        backgroundImage: 'url(//images.utk.edu/designsystem/meet/repeatingpattern_gray_1.jpg)'
+
+      }}
+       >
         <div className="col-12 col-md-6 mx-auto">
           <svg version="1.1" className="icon-tn" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103 25" xmlSpace="preserve">
       <path className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />

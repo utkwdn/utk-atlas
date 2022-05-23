@@ -524,3 +524,155 @@ Buttons with Chevrons – pulled from ExpressionEngine
     padding-top: 35rem;
   }
 }
+
+/* ––––––––––––––––––––––––––––––––––––– */
+/* ACADEMICS */
+/* –––––––––––––––––––––––––––– */
+h1 {
+  // border:1px solid red;
+  // position:absolute;
+  // top:0;
+  // left:0;
+}
+body.academics {
+  section[class^="PageTitle_hero"] {
+    position: relative;
+    h1 {
+      display: none;
+    }
+  }
+  // .wp-block-strip-main,
+  // .wp-block-strip-main > div.strip,
+  // .wp-block-strip-main > div.strip > div.container {
+  //   position: relative;
+  // }
+  .card {
+    &.page-intro {
+      overflow: visible;
+      width: 30vw;
+      right: 0;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: -3rem;
+        border-right: 3rem solid $utorange;
+        height: 100%;
+      }
+
+      &.bg-light {
+        // background-color: rgba(255, 255, 255, 0.85) !important;
+      }
+      > div.card-body {
+        padding: 2rem 2rem !important;
+        p {
+          font-weight: 400 !important;
+        }
+      }
+    }
+  }
+}
+
+.fake-d-flex > div[class$="__inner-container"] {
+  // temporary fix until we have the framework in place
+  //parent flexbox group for .page-title-group and .hero-img-group
+  display: flex;
+  display: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  // border: 2px solid red;
+  position: relative;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+/* ACADEMICS PAGE TITLE TREATMENT, based on A-Z index module */
+
+.page-title-group {
+  width: 80vw;
+  // border: 2px solid purple;
+  margin: 0 auto 2rem auto;
+
+  @media screen and (min-width: 1200px) {
+    // width: 40vw;
+    // max-width: 500px;
+    flex-basis: 32vw;
+    margin-bottom: 4rem;
+    // flex-grow: 1;
+  }
+}
+.hero-img-group > div[class$="__inner-container"] {
+  flex-basis: 50vw;
+  // border: 2px solid red;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    justify-content: center;
+  }
+}
+.hero-img-group {
+  width: 80vw;
+  // justify-content: flex-end;
+  margin: 0 auto 4rem auto;
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    max-width: 40vw;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: 50vw;
+    max-width: none;
+    position: relative;
+    // border: 6px solid green;
+    margin-left: 2rem;
+  }
+  .img {
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 803px;
+  }
+}
+
+h1.area {
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #9d9d9d;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  &:before {
+    content: "";
+    position: absolute;
+    color: $utorange;
+  }
+}
+
+hr.oa-thick-bar {
+  width: 80%;
+  height: 1.75rem;
+  background-color: $utorange;
+  opacity: 1;
+  margin: 4rem 0;
+
+  margin-left: -4rem !important;
+  @media screen and (min-width: 800px) {
+    width: 70%;
+    width: 24rem;
+  }
+}
+.title-container {
+}
+
+p.title {
+  font-size: 4.7rem;
+  font-weight: 600;
+
+  max-width: 10ch;
+  line-height: 4.6rem;
+  margin-bottom: 2rem;
+}
