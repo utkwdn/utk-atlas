@@ -10,11 +10,10 @@ const cx = (...classNames) => classNames.join(" ");
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
-function Vision() {
+function Meet() {
   return (
     <Layout>
       <Head>
-        <script defer type="text/javascript" src="/js/vision.js"></script>
 
 
                 <link
@@ -47,8 +46,6 @@ function Vision() {
         </ul>
       </div>
 
-
-      <main id="content">
       <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  displayed="false">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -71,10 +68,7 @@ function Vision() {
       <div
         className="row bg-light align-items-end mb-md-5 mb-lg-0 align-items-lg-center bg-img-header no-gutters"
         style={{
-          backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)'
-
-        }}
-
+          backgroundImage: 'url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)'}}
         >
 
         <div className="container-top">
@@ -85,7 +79,7 @@ function Vision() {
                 <h1
                   className="text-uppercase text-stroke text-hide"
                   style={{
-                    backgroundImage: 'url(https://images.utk.edu/designsystem/meet/welcometout.svg)',
+                    backgroundImage: 'url(//images.utk.edu/designsystem/meet/welcometout.svg)'
                   }}
                   >Meet UT</h1>
                 <p className="lead">UT is a place to learn and a place to grow. We hope you'll call it your home, sweet home.</p>
@@ -107,9 +101,9 @@ function Vision() {
             }}
           >
             <div className="row align-items-end">
-              <div className="col-12 col-xl-6 bg-white mb-xl-5  offset-xl-7 pt-5 p-2 p-md-5   bg-illustration"
+              <div className="col-12 col-xl-6 bg-white mb-xl-5  offset-xl-7 pt-5 p-2 p-md-5 bg-illustration"
               style={{
-                backgroundImage: 'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)'
+                backgroundImage: 'url(//images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)'
               }}
               >
                 <h2>Our Home Sweet Home</h2>
@@ -242,8 +236,7 @@ function Vision() {
       <div>
       <div className="container-fluid bg-light pb-4 py-md-5 no-gutters"
       style={{
-
-        backgroundImage: 'url(//images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)'
+        backgroundImage:'url(//images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)'
 
       }}
       >
@@ -562,10 +555,9 @@ function Vision() {
       </div>
       </div>
       </div>
-      </main>
 
     </Layout>
   );
 }
 
-export default Vision;
+export default Meet;
