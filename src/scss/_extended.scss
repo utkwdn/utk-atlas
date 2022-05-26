@@ -34,7 +34,10 @@
 .cta-offset {
   // used on white CTA home cards to overlap next item
   margin-bottom: -8rem !important;
-  background-color: white !important;
+  h3 {
+    margin-top: calc($spacer * 1.25);
+  }
+  // background-color: white !important;
 }
 
 .home-card {
@@ -43,8 +46,16 @@
   color: $utsmokeytext;
   background: RGB(49, 62, 72) !important;
   background: RGBA(49, 62, 72, 0.9) !important;
+  padding: calc($spacer * 2);
   //  $utcoolsmokey: #313e48;
   //  $utcoolrock: #d9dfe3;
+  .lead {
+    font-weight: 400;
+    strong {
+      font-weight: 900;
+    }
+  }
+
   img {
     transition: all 0.4s ease-out;
   }
@@ -517,6 +528,9 @@ Buttons with Chevrons – pulled from ExpressionEngine
   // margin-left: calc(-50vw + 748px);
   display: block;
   left: 0;
+  @media (min-width: 500px) {
+    padding-top: 25rem;
+  }
 }
 
 .z-index-10 {
@@ -551,6 +565,24 @@ Buttons with Chevrons – pulled from ExpressionEngine
 @media screen and (min-width: 2000px) {
   .flex-video-container .strip {
     padding-top: 35rem;
+  }
+}
+.home-alumni-strip {
+  .strip {
+    @media (max-width: 600px) {
+      background-size: cover;
+      padding-top: 5rem;
+      background-position: -20rem 0;
+    }
+    .home-card {
+      margin-top: 20rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 800px) {
+      background-size: cover;
+      padding-top: 5rem;
+      background-position: center;
+    }
   }
 }
 
