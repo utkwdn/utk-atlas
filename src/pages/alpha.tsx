@@ -2,9 +2,32 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/alpha.module.scss";
 import Script from "next/script";
+import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
 
 function Alpha() {
   const Search = console.log("Search button will eventually do something");
+
+  const { useQuery } = client;
+
+  const alphaIndex = useQuery().allAToZ({
+    first: 1000,
+    where: {
+      orderby:[ {
+        field: PostObjectsConnectionOrderbyEnum.TITLE,
+        order: OrderEnum.ASC
+      } ]
+    }
+  });
+
+  //alphaIndex.nodes.map((this_alpha) => {
+
+    //if( this_alpha.title()?.toString()?.toLowerCase()?.startsWith("a") ){
+      //console.log(this_alpha.title())
+      //console.log(this_alpha.aToZFields.url)
+    //}
+
+  // } );
+
   return (
     <Layout>
       <Head>
@@ -109,87 +132,21 @@ function Alpha() {
             </h2>
           </div>
           <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <span>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("a") && (
             <li className={styles["result-title"]}>
-              <a href="#">
-                Academic Success{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url}
+            </span>
+          </li>
+              ) }
               </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Advanced Microscopy and Imaging{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Anderson{" "}
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">Academic Success Center</a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Advanced Microscopy and Imaging{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Anderson{" "}
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">Academic Success Center</a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Advanced Microscopy and Imaging{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Anderson{" "}
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
+             ) ) }
           </ul>
         </div>
         <div className={styles["letter-group"]}>
