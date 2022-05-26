@@ -156,87 +156,21 @@ function Alpha() {
             </h2>
           </div>
           <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("b") && (
             <li className={styles["result-title"]}>
-              <a href="#">
-                Bcademic Success{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bdvanced Microscopy and Imaging
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bnderson
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">Bcademic Success Center</a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bdvanced Microscopy and Imaging
-                <span className={styles["result-search-term"]}> Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bnderson
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">Bcademic Success Center</a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bdvanced Microscopy and Imaging
-                <span className={styles["result-search-term"]}> Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>microscopy.utk.edu/</span>
-            </li>
-            <li className={styles["result-title"]}>
-              <a href="#">
-                Bnderson
-                <span className={styles["result-search-term"]}>Center</span> for
-                Entrepreneurship and Innovation
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                haslam.utk.edu/anderson-center
-              </span>
-            </li>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
           </ul>
         </div>
         <div className={styles["letter-group"]}>
@@ -246,16 +180,21 @@ function Alpha() {
             </h2>
           </div>
           <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("c") && (
             <li className={styles["result-title"]}>
-              <a href="#">
-                Ccademic Success{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
           </ul>
         </div>
         <div className={styles["letter-group"]}>
@@ -265,16 +204,549 @@ function Alpha() {
             </h2>
           </div>
           <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("d") && (
             <li className={styles["result-title"]}>
-              <a href="#">
-                Dcademic Success{" "}
-                <span className={styles["result-search-term"]}>Center</span>
-              </a>
-              <br />
-              <span className={styles["result-url"]}>
-                studentsuccess.utk.edu/academicsuccess/
-              </span>
-            </li>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="e" className={styles.letter}>
+              E
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("e") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="f" className={styles.letter}>
+              F
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("f") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="g" className={styles.letter}>
+              G
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("g") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="h" className={styles.letter}>
+              H
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("h") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="i" className={styles.letter}>
+              I
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("i") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="j" className={styles.letter}>
+              J
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("j") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="k" className={styles.letter}>
+              K
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("k") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="l" className={styles.letter}>
+              L
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("l") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="m" className={styles.letter}>
+              M
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("m") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="n" className={styles.letter}>
+              N
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("n") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="o" className={styles.letter}>
+              O
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("o") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="p" className={styles.letter}>
+              P
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("p") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="q" className={styles.letter}>
+              Q
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("q") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="r" className={styles.letter}>
+              R
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("r") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="s" className={styles.letter}>
+              S
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("s") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="t" className={styles.letter}>
+              T
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("t") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="u" className={styles.letter}>
+              U
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("u") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="v" className={styles.letter}>
+              V
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("v") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="w" className={styles.letter}>
+              W
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("w") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="x" className={styles.letter}>
+              X
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("x") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="y" className={styles.letter}>
+              Y
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("y") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="z" className={styles.letter}>
+              Z
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("z") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
           </ul>
         </div>
       </section>
