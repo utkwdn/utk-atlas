@@ -141,7 +141,7 @@ function Alpha() {
             </a>
             <br />
             <span className={styles["result-url"]}>
-              {this_alpha.aToZFields.url}
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
             </span>
           </li>
               ) }
