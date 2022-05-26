@@ -133,7 +133,7 @@ function Alpha() {
           </div>
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
-              <span>
+              <>
               { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("a") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
@@ -145,7 +145,7 @@ function Alpha() {
             </span>
           </li>
               ) }
-              </span>
+              </>
              ) ) }
           </ul>
         </div>
