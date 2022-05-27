@@ -23,7 +23,7 @@ function Alpha() {
   function isLetter(this_letter){
     let aLetter = alphaIndex.nodes.map((this_alpha) => {
       //console.log(this_letter);
-      if( this_alpha.title()?.toString()?.toLowerCase()?.startsWith(this_letter) ){
+      if( this_alpha.title()?.toString()?.toLowerCase()?.match("^" + this_letter) ){
         return true;
       }
     } );
@@ -35,7 +35,9 @@ function Alpha() {
 
   //alphaIndex.nodes.map((this_alpha) => {
 
-    //if( this_alpha.title()?.toString()?.toLowerCase()?.match(/^\d/) ){
+    //let a_letter = "[0-9]";
+
+    //if( this_alpha.title()?.toString()?.toLowerCase()?.match("^" + a_letter) ){
       //console.log(this_alpha.title())
       //console.log(this_alpha.aToZFields.url)
     //}
@@ -84,6 +86,7 @@ function Alpha() {
       </section>
       <section className={styles["alpha-container"]}>
         <div className={styles.alpha}>
+        { isLetter("[0-9]") === true && ( <a href="#num">#</a> ) }
         { isLetter("a") === true && ( <a href="#a">A</a> ) }
         { isLetter("b") === true && ( <a href="#b">B</a> ) }
         { isLetter("c") === true && ( <a href="#c">C</a> ) }
@@ -138,6 +141,32 @@ function Alpha() {
           </div>
 
           */]]}
+        { isLetter("[0-9]") === true && (
+        <div className={styles["letter-group"]}>
+          <div className={styles["letter-container"]}>
+            <h2 id="num" className={styles.letter}>
+              #
+            </h2>
+          </div>
+          <ul>
+            { alphaIndex.nodes.map((this_alpha) => (
+              <>
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^[0-9]") && (
+            <li className={styles["result-title"]}>
+            <a href={this_alpha.aToZFields.url}>
+              { this_alpha.title() }
+            </a>
+            <br />
+            <span className={styles["result-url"]}>
+              {this_alpha.aToZFields.url?.replace(/^https?:\/\//, "")}
+            </span>
+          </li>
+              ) }
+              </>
+             ) ) }
+          </ul>
+        </div>
+        ) }
         { isLetter("a") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
@@ -148,7 +177,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("a") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^a") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -174,7 +203,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("b") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^b") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -200,7 +229,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("c") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^c") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -226,7 +255,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("d") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^d") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -252,7 +281,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("e") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^e") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -278,7 +307,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("f") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^f") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -304,7 +333,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("g") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^g") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -330,7 +359,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("h") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^h") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -356,7 +385,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("i") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^i") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -382,7 +411,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("j") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^j") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -408,7 +437,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("k") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^k") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -434,7 +463,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("l") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^l") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -460,7 +489,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("m") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^m") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -486,7 +515,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("n") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^n") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -512,7 +541,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("o") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^o") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -538,7 +567,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("p") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^p") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -564,7 +593,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("q") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^q") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -590,7 +619,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("r") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^r") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -616,7 +645,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("s") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^s") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -642,7 +671,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("t") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^t") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -668,7 +697,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("u") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^u") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -694,7 +723,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("v") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^v") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -720,7 +749,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("w") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^w") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -746,7 +775,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("x") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^x") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -772,7 +801,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("y") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^y") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
@@ -798,7 +827,7 @@ function Alpha() {
           <ul>
             { alphaIndex.nodes.map((this_alpha) => (
               <>
-              { this_alpha?.title()?.toString()?.toLowerCase()?.startsWith("z") && (
+              { this_alpha?.title()?.toString()?.toLowerCase()?.match("^z") && (
             <li className={styles["result-title"]}>
             <a href={this_alpha.aToZFields.url}>
               { this_alpha.title() }
