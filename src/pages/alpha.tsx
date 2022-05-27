@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "scss/pages/alpha.module.scss";
 import Script from "next/script";
 import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
+import { TRUE } from "sass";
 
 function Alpha() {
   const Search = console.log("Search button will eventually do something");
@@ -18,6 +19,19 @@ function Alpha() {
       } ]
     }
   });
+
+  function isLetter(this_letter){
+    let aLetter = alphaIndex.nodes.map((this_alpha) => {
+      //console.log(this_letter);
+      if( this_alpha.title()?.toString()?.toLowerCase()?.startsWith(this_letter) ){
+        return true;
+      }
+    } );
+
+    return aLetter.includes(true);
+  };
+
+  console.log(isLetter("z"));
 
   //alphaIndex.nodes.map((this_alpha) => {
 
@@ -124,7 +138,7 @@ function Alpha() {
           </div>
 
           */]]}
-
+        { isLetter("a") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="a" className={styles.letter}>
@@ -149,6 +163,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("b") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="b" className={styles.letter}>
@@ -173,6 +189,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("c") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="c" className={styles.letter}>
@@ -197,6 +215,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("d") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="d" className={styles.letter}>
@@ -221,6 +241,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("e") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="e" className={styles.letter}>
@@ -245,6 +267,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("f") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="f" className={styles.letter}>
@@ -269,6 +293,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("g") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="g" className={styles.letter}>
@@ -293,6 +319,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("h") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="h" className={styles.letter}>
@@ -317,6 +345,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("i") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="i" className={styles.letter}>
@@ -341,6 +371,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("j") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="j" className={styles.letter}>
@@ -365,6 +397,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("k") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="k" className={styles.letter}>
@@ -389,6 +423,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("l") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="l" className={styles.letter}>
@@ -413,6 +449,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("m") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="m" className={styles.letter}>
@@ -437,6 +475,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("n") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="n" className={styles.letter}>
@@ -461,6 +501,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("o") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="o" className={styles.letter}>
@@ -485,6 +527,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("p") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="p" className={styles.letter}>
@@ -509,6 +553,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("q") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="q" className={styles.letter}>
@@ -533,6 +579,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("r") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="r" className={styles.letter}>
@@ -557,6 +605,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("s") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="s" className={styles.letter}>
@@ -581,6 +631,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("t") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="t" className={styles.letter}>
@@ -605,6 +657,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("u") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="u" className={styles.letter}>
@@ -629,6 +683,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("v") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="v" className={styles.letter}>
@@ -653,6 +709,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("w") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="w" className={styles.letter}>
@@ -677,6 +735,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("x") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="x" className={styles.letter}>
@@ -701,6 +761,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("y") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="y" className={styles.letter}>
@@ -725,6 +787,8 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
+        { isLetter("z") === true && (
         <div className={styles["letter-group"]}>
           <div className={styles["letter-container"]}>
             <h2 id="z" className={styles.letter}>
@@ -749,6 +813,7 @@ function Alpha() {
              ) ) }
           </ul>
         </div>
+        ) }
       </section>
     </Layout>
   );
