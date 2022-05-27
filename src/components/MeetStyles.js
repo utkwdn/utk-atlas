@@ -1,3 +1,4 @@
+import Head from "next/head";
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(" ");

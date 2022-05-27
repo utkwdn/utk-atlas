@@ -2,13 +2,10 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 import styles from "scss/pages/meet.module.scss";
 import Script from "next/script";
-// import styles from "../components/MeetStyles";
+import styles2 from "../components/MeetStyles";
 
-// create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(" ");
-// example use of local styles and joiner class
-// <div className={styles.hero202112A}>
-// <div className={cx(styles.heroHolderA, styles.layoutA)}>
+
 
 function Meet() {
   return (
@@ -46,23 +43,26 @@ function Meet() {
         </ul>
       </div>
 
-      <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  displayed="false">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Tell Us a Little About You!</h5>
-              <button type="button" className="btn close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              <div id="form_37fdc06c-875e-4e16-b7ba-f74b4c074deb">Loading...</div>
-               // reinsert form here
-            </div>
-          </div>
-        </div>
-      </div>
 
+      <main id="content">
+      {[[
+      // <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true"  displayed="false">
+      //   <div className="modal-dialog">
+      //     <div className="modal-content">
+      //       <div className="modal-header">
+      //         <h5 className="modal-title" id="exampleModalLabel">Tell Us a Little About You!</h5>
+      //         <button type="button" className="btn close" data-dismiss="modal" aria-label="Close">
+      //           <span aria-hidden="true">&times;</span>
+      //         </button>
+      //       </div>
+      //       <div className="modal-body">
+      //         <div id="form_37fdc06c-875e-4e16-b7ba-f74b4c074deb">Loading...</div>
+      //          // reinsert form here
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
+      ]]}
 
 
       <div
@@ -82,7 +82,7 @@ function Meet() {
                     backgroundImage: 'url(//images.utk.edu/designsystem/meet/welcometout.svg)'
                   }}
                   >Meet UT</h1>
-                <p className="lead">UT is a place to learn and a place to grow. We hope you'll call it your home, sweet home.</p>
+                <p className="lead">UT is a place to learn and a place to grow. We hope you&lsquo;ll call it your home, sweet home.</p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ function Meet() {
               }}
               >
                 <h2>Our Home Sweet Home</h2>
-                <p className="mb-0">The moment you set foot on Rocky Top (our affectionate name for campus), you'll find a place that feels like home. Our 910-acre campus is filled with energy and tradition. This is a place where you can learn and grow with the support of a Volunteer family.</p>
+                <p className="mb-0">The moment you set foot on Rocky Top (our affectionate name for campus), you&lsquo;ll find a place that feels like home. Our 910-acre campus is filled with energy and tradition. This is a place where you can learn and grow with the support of a Volunteer family.</p>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ function Meet() {
               <div className="col-12 col-lg-6 order-lg-2 mb-5">
                 <div className={styles.framed}>
                   <div className="embed-responsive embed-responsive-16by9 mb-md-0">
-                  <iframe width="560" height="315" className="embed-responsive-item" src="https://www.youtube.com/embed/QAS8yNqJj9M"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                  <iframe width="560" height="315" className="embed-responsive-item" src="https://www.youtube.com/embed/QAS8yNqJj9M"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                 </div>
               </div>
             </div>
@@ -179,12 +179,12 @@ function Meet() {
               <div className="col-12 col-md-10 offset-md-1  mt-md-n5">
                 <picture className=" ">
 
-                  <source media="(min-width: 1400px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
-                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_lg.jpg" />
-                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_md.jpg" />
-                  <source media="(min-width: 600px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_sm.jpg" />
-                  <source media="(min-width: 576px)" srcset="//images.utk.edu/designsystem/meet/girlengineer_xs.jpg" />
-                  <source srcset="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
+                  <source media="(min-width: 1400px)" srcSet="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
+                  <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/girlengineer_lg.jpg" />
+                  <source media="(min-width: 768px)" srcSet="//images.utk.edu/designsystem/meet/girlengineer_md.jpg" />
+                  <source media="(min-width: 600px)" srcSet="//images.utk.edu/designsystem/meet/girlengineer_sm.jpg" />
+                  <source media="(min-width: 576px)" srcSet="//images.utk.edu/designsystem/meet/girlengineer_xs.jpg" />
+                  <source srcSet="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg" />
                   <img
                     src="//images.utk.edu/designsystem/meet/girlengineer_xl.jpg"
                     alt="" />
@@ -195,11 +195,11 @@ function Meet() {
             <div className="col-12 col-md-4 col-lg-5 offset-md-1">
                 <picture className=" ">
 
-                  <source media="(min-width: 1000px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
-                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
-                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_300x750.jpg" />
-                  <source media="(min-width: 576px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_300x75dd0.jpg" />
-                  <source srcset="//images.utk.edu/designsystem/meet/2021-Lab_900x800.jpg" />
+                  <source media="(min-width: 1000px)" srcSet="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
+                  <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/2021-Lab_900x1100.jpg" />
+                  <source media="(min-width: 768px)" srcSet="//images.utk.edu/designsystem/meet/sciencesat_300x750.jpg" />
+                  <source media="(min-width: 576px)" srcSet="//images.utk.edu/designsystem/meet/sciencesat_300x75dd0.jpg" />
+                  <source srcSet="//images.utk.edu/designsystem/meet/2021-Lab_900x800.jpg" />
                   <img src="//images.utk.edu/designsystem/meet/2021-Lab_900x800.jpg" alt="" />
                 </picture>
             </div>
@@ -210,17 +210,17 @@ function Meet() {
               }}
               >
                 <h2 className="text-condensed">Follow Your Passion</h2>
-                <p>Want to become a teacher, an engineer, or have a vision for a job that is yet to exist? With <a className="info-link" href="https://admissions.utk.edu/study/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=degree-options" target="_blank">360+ undergraduate degree options</a>, honors programs, and an emphasis on research and service-learning, UT will prepare you for what comes after college. We may look like a large university, but our caring faculty and staff will make your time here personal and welcoming.</p>
+                <p>Want to become a teacher, an engineer, or have a vision for a job that is yet to exist? With <a className="info-link" href="https://admissions.utk.edu/study/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=degree-options" target="_blank" rel="noreferrer">360+ undergraduate degree options</a>, honors programs, and an emphasis on research and service-learning, UT will prepare you for what comes after college. We may look like a large university, but our caring faculty and staff will make your time here personal and welcoming.</p>
               </div>
             </div>
           <div className="col-12 col-md-10 offset-md-1">
                 <picture className=" ">
 
-                  <source media="(min-width: 1400px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
-                  <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/2021-Lab_1200x600.jpg" />
-                  <source srcset="//images.utk.edu/designsystem/meet/sciencesat_xs.jpg" />
+                  <source media="(min-width: 1400px)" srcSet="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 1200px)" srcSet="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/sciencesat_1200x600.jpg" />
+                  <source media="(min-width: 768px)" srcSet="//images.utk.edu/designsystem/meet/2021-Lab_1200x600.jpg" />
+                  <source srcSet="//images.utk.edu/designsystem/meet/sciencesat_xs.jpg" />
                   <img src="//images.utk.edu/designsystem/meet/sciencesat_xl.jpg" alt="" />
 
                 </picture>
@@ -252,8 +252,8 @@ function Meet() {
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 offset-xl-1">
               <div className="border-orange-highlight text-left">
                 <h2>Opportunities Made for You</h2>
-                <p>With the support of our expert faculty, students <a className="info-link" href="https://admissions.utk.edu/study/undergraduate-research/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=research" target="_blank">engage in research and creative endeavors</a>, pursing career opportunites, and discovering answers to challenging questions.</p>
-                <p>Our region is home to major businesses and innovators that partner with the university and offer internships and careers, including Oak Ridge National Laboratory, the US Department of Energy's largest science and energy laboratory.</p>
+                <p>With the support of our expert faculty, students <a className="info-link" href="https://admissions.utk.edu/study/undergraduate-research/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=research" target="_blank" rel="noreferrer">engage in research and creative endeavors</a>, pursing career opportunites, and discovering answers to challenging questions.</p>
+                <p>Our region is home to major businesses and innovators that partner with the university and offer internships and careers, including Oak Ridge National Laboratory, the US Department of Energy&apos;s largest science and energy laboratory.</p>
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@ function Meet() {
       <path className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
       </svg>
           <h2 className="text-white my-5 text-uppercase">We Can&rsquo;t Wait To Show You Around Rocky Top</h2>
-          <a className="btn btn-light btn-chevron mb-5 text-uppercase" href="https://admissions.utk.edu/visit/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=visit" target="_blank">Visit Campus</a>
+          <a className="btn btn-light btn-chevron mb-5 text-uppercase" href="https://admissions.utk.edu/visit/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=visit" target="_blank" rel="noreferrer">Visit Campus</a>
         </div>
       </div>
 
@@ -310,7 +310,7 @@ function Meet() {
               >
                 <div className="p-3 p-md-5">
                   <h2>Knoxville and Beyond</h2>
-                  <p>In <a className="info-link" href="https://admissions.utk.edu/visit/knoxville-and-east-tennessee/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=big-orange-country" target="_blank">Big Orange Country</a>, mountains, rivers, and trails come together to connect the urban and the wild. Close to campus is downtown Knoxville with shops. restaurants, theaters, and more. Nearby is Knoxville's renowned Urban Wilderness, and the Great Smoky Mountains National Park, with 800+ miles of trails, is just down the road.</p>
+                  <p>In <a className="info-link" href="https://admissions.utk.edu/visit/knoxville-and-east-tennessee/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=big-orange-country" target="_blank" rel="noreferrer">Big Orange Country</a>, mountains, rivers, and trails come together to connect the urban and the wild. Close to campus is downtown Knoxville with shops. restaurants, theaters, and more. Nearby is Knoxville&apos;s renowned Urban Wilderness, and the Great Smoky Mountains National Park, with 800+ miles of trails, is just down the road.</p>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-5 order-md-1">
@@ -318,10 +318,10 @@ function Meet() {
                   <div className="col-6 col-md-12">
                     <picture className=" ">
 
-                      <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_lg-1.jpg" />
-                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_md.jpg" />
-                      <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/wakeboard_sm.jpg" />
-                      <source srcset="//images.utk.edu/designsystem/meet/wakeboard_xs.jpg" />
+                      <source media="(min-width: 1200px)" srcSet="//images.utk.edu/designsystem/meet/wakeboard_lg-1.jpg" />
+                      <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/wakeboard_md.jpg" />
+                      <source media="(min-width: 768px)" srcSet="//images.utk.edu/designsystem/meet/wakeboard_sm.jpg" />
+                      <source srcSet="//images.utk.edu/designsystem/meet/wakeboard_xs.jpg" />
                       <img src="//images.utk.edu/designsystem/meet/wakeboard_xs.jpg" width="600" height="900" alt="Wake Board" />
 
                     </picture>
@@ -329,10 +329,10 @@ function Meet() {
                   <div className="col-6 col-md-12">
                     <picture className=" ">
 
-                      <source media="(min-width: 1200px)" srcset="//images.utk.edu/designsystem/meet/bike_lg-1.jpg" />
-                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/bike_md.jpg" />
-                      <source media="(min-width: 768px)" srcset="//images.utk.edu/designsystem/meet/bike_sm.jpg" />
-                      <source srcset="//images.utk.edu/designsystem/meet/bike_xs.jpg" />
+                      <source media="(min-width: 1200px)" srcSet="//images.utk.edu/designsystem/meet/bike_lg-1.jpg" />
+                      <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/bike_md.jpg" />
+                      <source media="(min-width: 768px)" srcSet="//images.utk.edu/designsystem/meet/bike_sm.jpg" />
+                      <source srcSet="//images.utk.edu/designsystem/meet/bike_xs.jpg" />
                       <img src="//images.utk.edu/designsystem/meet/bike_xl.jpg" width="600" height="900" alt="Mountain biking." />
 
                     </picture>
@@ -348,8 +348,8 @@ function Meet() {
                 </div>
                 <div className="col-7  col-lg-6 offset-lg-0 order-4">
                    <picture className=" ">
-                      <source media="(min-width: 992px)" srcset="//images.utk.edu/designsystem/meet/2021-smokies.jpg" />
-                      <source srcset="//images.utk.edu/designsystem/meet/2021-marketsquare_xs.jpg" />
+                      <source media="(min-width: 992px)" srcSet="//images.utk.edu/designsystem/meet/2021-smokies.jpg" />
+                      <source srcSet="//images.utk.edu/designsystem/meet/2021-marketsquare_xs.jpg" />
                       <img src="//images.utk.edu/designsystem/meet/2021-smokies.jpg" width="600" height="900" alt="The Smokies." />
                     </picture>
 
@@ -425,7 +425,7 @@ function Meet() {
       <path  className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
       </svg>
           <h2 className="text-white  my-5 text-uppercase">Find out what makes UT such a good investment</h2>
-          <a className="btn btn-light btn-chevron mb-5  text-uppercase" href="https://admissions.utk.edu/afford/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=value" target="_blank">Learn More about Our Value</a>
+          <a className="btn btn-light btn-chevron mb-5  text-uppercase" href="https://admissions.utk.edu/afford/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=value" target="_blank" rel="noreferrer">Learn More about Our Value</a>
         </div>
       </div>
 
@@ -484,7 +484,7 @@ function Meet() {
       <path  className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
       </svg>
           <h2 className="text-white  my-5 text-uppercase">Ready to Join Us?</h2>
-          <a className="btn btn-light btn-chevron mb-5 text-uppercase" href="https://admissions.utk.edu/apply/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=apply" target="_blank">Learn How to Apply</a>
+          <a className="btn btn-light btn-chevron mb-5 text-uppercase" href="https://admissions.utk.edu/apply/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=apply" target="_blank" rel="noreferrer">Learn How to Apply</a>
         </div>
       </div>
 
@@ -506,7 +506,7 @@ function Meet() {
             }}
             >
               <h2>Living the Vol Life</h2>
-              <p>We sing &ldquo;Rocky Top&rdquo; loudly and often, and everyone wants to pet our campus celebrity&mdash;a bluetick coonhound named Smokey. Outside the classroom, you'll have plenty of opportunities to make friends and memories through on-campus events and more than 400 student organizations.</p>
+              <p>We sing &ldquo;Rocky Top&rdquo; loudly and often, and everyone wants to pet our campus celebrity&mdash;a bluetick coonhound named Smokey. Outside the classroom, you&lsquo;ll have plenty of opportunities to make friends and memories through on-campus events and more than 400 student organizations.</p>
             </div>
           </div>
         </div>
@@ -542,7 +542,7 @@ function Meet() {
           <svg version="1.1" className="icon-tn" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103 25" xmlSpace="preserve">
       <path className="st0" d="M13.2,2.8l-11,20.7l69,0.2l6.5-7.5l5.6,0l17.4-15.9l-70,0.2L28.4,3L13.2,2.8z" />
       </svg>
-          <h2 className="text-white mt-5 text-uppercase">That's a little about us. We can't wait to meet you!</h2>
+          <h2 className="text-white mt-5 text-uppercase">That&lsquo;s a little about us. We can&lsquo;t wait to meet you!</h2>
           <p className="text-white mb-5">Tell us about you and get a free sticker!</p>
           <button type="button" className="btn btn-light btn-chevron mb-5 text-uppercase" data-toggle="modal" data-target="#exampleModal">Sign up for our mailing list</button>
         </div>
