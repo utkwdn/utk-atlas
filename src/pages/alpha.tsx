@@ -31,16 +31,16 @@ function Alpha() {
     return aLetter.includes(true);
   };
 
-  console.log(isLetter("z"));
+  //console.log(isLetter([0-9]));
 
   //alphaIndex.nodes.map((this_alpha) => {
 
-    //if( this_alpha.title()?.toString()?.toLowerCase()?.startsWith("a") ){
+    //if( this_alpha.title()?.toString()?.toLowerCase()?.match(/^\d/) ){
       //console.log(this_alpha.title())
       //console.log(this_alpha.aToZFields.url)
     //}
 
-  // } );
+  //} );
 
   return (
     <Layout>
@@ -84,32 +84,32 @@ function Alpha() {
       </section>
       <section className={styles["alpha-container"]}>
         <div className={styles.alpha}>
-          <a href="#a">A</a>
-          <a href="#b">B</a>
-          <a href="#c">C</a>
-          <a href="#d">D</a>
-          <a href="#e">E</a>
-          <a href="#f">F</a>
-          <a href="#g">G</a>
-          <a href="#h">H</a>
-          <a href="#i">I</a>
-          <a href="#j">J</a>
-          <a href="#k">K</a>
-          <a href="#l">L</a>
-          <a href="#m">M</a>
-          <a href="#n">N</a>
-          <a href="#o">O</a>
-          <a href="#p">P</a>
-          <a href="#q">Q</a>
-          <a href="#r">R</a>
-          <a href="#s">S</a>
-          <a href="#t">T</a>
-          <a href="#u">U</a>
-          <a href="#v">V</a>
-          <a href="#w">W</a>
-          <a href="#x">X</a>
-          <a href="#y">Y</a>
-          <a href="#z">Z</a>
+        { isLetter("a") === true && ( <a href="#a">A</a> ) }
+        { isLetter("b") === true && ( <a href="#b">B</a> ) }
+        { isLetter("c") === true && ( <a href="#c">C</a> ) }
+        { isLetter("d") === true && ( <a href="#d">D</a> ) }
+        { isLetter("e") === true && ( <a href="#e">E</a> ) }
+        { isLetter("f") === true && ( <a href="#f">F</a> ) }
+        { isLetter("g") === true && ( <a href="#g">G</a> ) }
+        { isLetter("h") === true && ( <a href="#h">H</a> ) }
+        { isLetter("i") === true && ( <a href="#i">I</a> ) }
+        { isLetter("j") === true && ( <a href="#j">J</a> ) }
+        { isLetter("k") === true && ( <a href="#k">K</a> ) }
+        { isLetter("l") === true && ( <a href="#l">L</a> ) }
+        { isLetter("m") === true && ( <a href="#m">M</a> ) }
+        { isLetter("n") === true && ( <a href="#n">N</a> ) }
+        { isLetter("o") === true && ( <a href="#o">O</a> ) }
+        { isLetter("p") === true && ( <a href="#p">P</a> ) }
+        { isLetter("q") === true && ( <a href="#q">Q</a> ) }
+        { isLetter("r") === true && ( <a href="#r">R</a> ) }
+        { isLetter("s") === true && ( <a href="#s">S</a> ) }
+        { isLetter("t") === true && ( <a href="#t">T</a> ) }
+        { isLetter("u") === true && ( <a href="#u">U</a> ) }
+        { isLetter("v") === true && ( <a href="#v">V</a> ) }
+        { isLetter("w") === true && ( <a href="#w">W</a> ) }
+        { isLetter("x") === true && ( <a href="#x">X</a> ) }
+        { isLetter("y") === true && ( <a href="#y">Y</a> ) }
+        { isLetter("z") === true && ( <a href="#z">Z</a> ) }
         </div>
       </section>
       <section className={styles.results}>
