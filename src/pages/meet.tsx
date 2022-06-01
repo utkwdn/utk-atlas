@@ -3,8 +3,7 @@ import Head from "next/head";
 import styles from "scss/pages/meet.module.scss";
 import Script from "next/script";
 // import styles2 from "../components/MeetStyles";
-
-const cx = (...classNames) => classNames.join(" ");
+import Image from "next/image";
 
 function Meet() {
   return (
@@ -78,12 +77,17 @@ function Meet() {
             "url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)",
         }}
       >
-        <div className="container-top">
+        <div className={styles["container-top"]}>
           <div className="row no-gutters">
             <div className="col-12 col-lg-5  py-3">
               <div className="p-4 bg-white">
                 <h1
-                  className="text-uppercase text-stroke text-hide"
+                  className={[
+                    styles.meeth1,
+                    "text-uppercase",
+                    "text-stroke",
+                    "text-hide",
+                  ].join(" ")}
                   style={{
                     backgroundImage:
                       "url(//images.utk.edu/designsystem/meet/welcometout.svg)",
@@ -91,7 +95,7 @@ function Meet() {
                 >
                   Meet UT
                 </h1>
-                <p className="lead">
+                <p className={styles.lead}>
                   UT is a place to learn and a place to grow. We hope
                   you&lsquo;ll call it your home, sweet home.
                 </p>
@@ -104,7 +108,10 @@ function Meet() {
       <div id="experience">
         <div className="container-fluid bg-orange  pt-lg-1 pb-5">
           <div
-            className="col-12 col-md-10 offset-md-1 mt-n5   bg-homesweet"
+            className={[
+              "col-12 col-md-10 offset-md-1 mt-n5",
+              styles["bg-homesweet"],
+            ].join(" ")}
             style={{
               backgroundImage:
                 "url(//images.utk.edu/designsystem/meet/campusview_1.jpg)",
@@ -112,7 +119,17 @@ function Meet() {
           >
             <div className="row align-items-end">
               <div
-                className="col-12 col-xl-6 bg-white mb-xl-5  offset-xl-7 pt-5 p-2 p-md-5 bg-illustration"
+                className={[
+                  "col-12",
+                  "col-xl-6",
+                  "bg-white",
+                  "mb-xl-5",
+                  "offset-xl-7",
+                  "pt-5",
+                  "p-2",
+                  "p-md-5",
+                  styles["bg-illustration"],
+                ].join(" ")}
                 style={{
                   backgroundImage:
                     "url(//images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)",
@@ -132,7 +149,7 @@ function Meet() {
         </div>
 
         <div
-          className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+          className="container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center"
           style={{
             backgroundImage:
               "url(//images.utk.edu/designsystem/meet/meet_web_ayres_gray_bg_1.jpg)",
@@ -140,10 +157,10 @@ function Meet() {
             backgroundSize: "cover",
           }}
         >
-          <div className="col-12 col-md-6 mx-auto">
+          <div className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}>
             <svg
               version="1.1"
-              className="icon-tn"
+              className={styles["icon-tn"]}
               xmlnsXlink="//www.w3.org/1999/xlink"
               x="0px"
               y="0px"
@@ -171,7 +188,7 @@ function Meet() {
         </div>
 
         <div
-          className="container-fluid bg-light   pb-4 py-md-5"
+          className="container-fluid bg-light pb-4 py-md-5"
           style={{
             backgroundImage:
               "url(//images.utk.edu/designsystem/meet/meet_web_mtn_bg_1.jpg)",
@@ -192,12 +209,18 @@ function Meet() {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-6 col-xl-4 offset-xl-1 mb-4 mb-lg-0">
+              <div
+                className={[
+                  styles.min3,
+                  "col-12 col-lg-6 col-xl-4 offset-xl-1 mb-4 mb-lg-0",
+                ].join(" ")}
+              >
                 <img
-                  src="//images.utk.edu/designsystem/meet/arrow_1.svg"
+                  src="images/svg/arrow_1.svg"
                   className="img-arrow"
                   alt=""
                 />
+
                 <h2>Everything you need to know about UT in three minutes!</h2>
               </div>
             </div>
@@ -266,13 +289,16 @@ function Meet() {
                 </div>
                 <div className="col-12 col-md-7 col-lg-6 bg-white">
                   <div
-                    className="p-3 p-md-5 bg-white mt-n5   bg-illustration"
+                    className={[
+                      styles["bg-illustration"],
+                      "p-3 p-md-5 bg-white mt-n5",
+                    ].join(" ")}
                     style={{
                       backgroundImage:
                         "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_ayres_1.svg)",
                     }}
                   >
-                    <h2 className="text-condensed">Follow Your Passion</h2>
+                    <h2>Follow Your Passion</h2>
                     <p>
                       Want to become a teacher, an engineer, or have a vision
                       for a job that is yet to exist? With{" "}
@@ -326,24 +352,29 @@ function Meet() {
               className="container-fluid bg-light pb-4 py-md-5 no-gutters"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)",
+                  "url(https://images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)",
               }}
             >
               <div className="container">
                 <div className="row  align-items-center mt-5">
                   <div className="col-12 col-md-5 col-lg-6 col-xl-5 order-md-2 mb-5">
-                    <div className="framed">
-                      <img
+                    <div className={styles.framed}>
+                      <Image
                         className=" "
-                        src="//images.utk.edu/designsystem/meet/2021-research.jpg"
-                        width="900"
-                        height="900"
+                        src="https://images.utk.edu/designsystem/meet/2021-research.jpg"
+                        width="1000"
+                        height="750"
                         alt="Graduates."
                       />
                     </div>
                   </div>
                   <div className="col-12 col-md-7 col-lg-6 col-xl-5 offset-xl-1">
-                    <div className="border-orange-highlight text-left">
+                    <div
+                      className={[
+                        styles.meeth2,
+                        "border-orange-highlight text-left",
+                      ].join(" ")}
+                    >
                       <h2>Opportunities Made for You</h2>
                       <p>
                         With the support of our expert faculty, students{" "}
@@ -375,10 +406,12 @@ function Meet() {
               className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
               style={{
                 backgroundImage:
-                  "url(://images.utk.edu/designsystem/meet/experiencecampus_1.svg)",
+                  "url(//images.utk.edu/designsystem/meet/experiencecampus_1.svg)",
               }}
             >
-              <div className="col-12 col-md-6 mx-auto">
+              <div
+                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+              >
                 <svg
                   version="1.1"
                   className="icon-tn"
@@ -423,7 +456,10 @@ function Meet() {
                   </div>
                   <div className="row no-gutters">
                     <div
-                      className="col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1 bg-illustration"
+                      className={[
+                        styles["bg-illustration"],
+                        "col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1",
+                      ].join(" ")}
                       style={{
                         backgroundImage:
                           "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_boat_1.svg)",
@@ -544,7 +580,7 @@ function Meet() {
               <div className="container">
                 <div className="row  align-items-center mt-5">
                   <div className="col-12 col-md-5 col-lg-6 col-xl-5 order-md-2 mb-5">
-                    <div className="framed">
+                    <div className={styles.framed}>
                       <img
                         className=" "
                         src="//images.utk.edu/designsystem/meet/2021-graduates.jpg"
@@ -555,7 +591,12 @@ function Meet() {
                     </div>
                   </div>
                   <div className="col-12 col-md-7 col-lg-6 col-xl-5 offset-xl-1">
-                    <div className="border-orange-highlight">
+                    <div
+                      className={[
+                        styles.meeth2,
+                        "border-orange-highlight",
+                      ].join(" ")}
+                    >
                       <h2>We Want to Invest in You</h2>
                       <p>
                         Nearly half of our students graduate with no debt thanks
@@ -581,13 +622,13 @@ function Meet() {
             >
               <div className="row align-items-end align-items-md-center module">
                 <div className="col-12 col-md-10 mx-auto ml-lg-4 col-lg-5 bg-white mb-lg-5 offset-lg-0 pt-5 p-2 p-md-5">
-                  <blockquote className="blockquote">
+                  <blockquote className={styles.blockquote}>
                     <p className="mb-0">
                       People underestimate the connections you make in college.
                       I wouldn’t be here in my career at all if it wasn’t for
                       the friends I met in class or the professors I met.”
                     </p>
-                    <footer className="blockquote-footer">
+                    <footer className={styles["blockquote-footer"]}>
                       <cite title="Source Title">
                         Andy // young alumnus // Knoxville, TN
                       </cite>
@@ -604,7 +645,9 @@ function Meet() {
                   "url(//images.utk.edu/designsystem/meet/texture_rowing.jpg)",
               }}
             >
-              <div className="col-12 col-md-6 mx-auto">
+              <div
+                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+              >
                 <svg
                   version="1.1"
                   className="icon-tn"
@@ -640,23 +683,26 @@ function Meet() {
                 className="col-12 col-md-10 offset-md-1 mt-lg-n5 bg-img-scroll   bg-community"
                 style={{
                   backgroundImage:
-                    "url(//images.utk.edu/designsystem/meet/2021-community_service.jpg)",
+                    "url(https://images.utk.edu/designsystem/meet/2021-community_service.jpg)",
                 }}
               >
                 <div className="row align-items-end">
                   <div
-                    className="col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5 bg-illustration"
+                    className={[
+                      styles["bg-illustration"],
+                      "col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5",
+                    ].join(" ")}
                     style={{
                       backgroundImage:
                         "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)",
                     }}
                   >
-                    <blockquote className="blockquote">
+                    <blockquote className={styles.blockquote}>
                       <p className="mb-0">
                         To me, being a Volunteer means giving yourself to others
                         and also trying to help the community.”
                       </p>
-                      <footer className="blockquote-footer">
+                      <footer className={styles["blockquote-footer"]}>
                         <cite title="Source Title">
                           Elizabeth // Neuroscience // Oak Ridge, TN
                         </cite>
@@ -682,13 +728,15 @@ function Meet() {
             ></div>
 
             <div
-              className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+              className="container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center"
               style={{
                 backgroundImage:
                   "url(//images.utk.edu/designsystem/meet/2021-becomeavol_1.svg)",
               }}
             >
-              <div className="col-12 col-md-6 mx-auto">
+              <div
+                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+              >
                 <svg
                   version="1.1"
                   className="icon-tn"
@@ -729,7 +777,11 @@ function Meet() {
               >
                 <div className="row align-items-end">
                   <div
-                    className="col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5   bg-illustration"
+                    className={[
+                      styles.meeth2,
+                      styles["bg-illustration"],
+                      "col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5",
+                    ].join(" ")}
                     style={{
                       backgroundImage:
                         "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_pennant_1.svg)",
@@ -758,13 +810,13 @@ function Meet() {
             >
               <div className="row align-items-end align-items-md-center module">
                 <div className="col-12 col-md-10 mx-auto ml-lg-4 col-lg-5 bg-white mb-lg-5 offset-lg-0 pt-5 p-2 p-md-5">
-                  <blockquote className="blockquote">
+                  <blockquote className={styles.blockquote}>
                     <p className="mb-0">
                       As soon as you become a UT student, it doesn’t matter if
                       you are from out of state or someone who grew up in
                       Knoxville, you are a Volunteer.”
                     </p>
-                    <footer className="blockquote-footer">
+                    <footer className={styles["blockquote-footer"]}>
                       <cite title="Source Title">
                         Emma // Deaf Education // San Diego, CA
                       </cite>
@@ -775,13 +827,18 @@ function Meet() {
             </div>
 
             <div
-              className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
+              className={[
+                styles["last-section"],
+                "container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center",
+              ].join(" ")}
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/repeatingpattern_gray_1.jpg)",
+                  "url(https://images.utk.edu/designsystem/meet/repeatingpattern_gray_1.jpg)",
               }}
             >
-              <div className="col-12 col-md-6 mx-auto">
+              <div
+                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+              >
                 <svg
                   version="1.1"
                   className="icon-tn"
