@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'scss/components/Hero.module.scss';
+import styles from 'scss/components/PageTitle.module.scss';
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-function Hero({
+function PageTitle({
   title = 'Hero Title',
   id,
   bgImage,
@@ -28,8 +28,8 @@ function Hero({
       {...(id && { id })}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
       className={styles.hero}>
-      <div className={styles.wrap}>
-        <h1>{title}</h1>
+      <div className="container-xxl">
+        <h1 className="display-4">{title}</h1>
         <div className={styles.intro}>
           <div className={styles.children}>{children}</div>
           {buttonText && buttonURL && (
@@ -52,4 +52,4 @@ function Hero({
   );
 }
 
-export default Hero;
+export default PageTitle;

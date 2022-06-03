@@ -1,5 +1,5 @@
 import { getNextStaticProps, is404 } from '@faustjs/next';
-import { Footer, Header, Hero } from 'components';
+import { Footer, Header, PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
@@ -12,11 +12,15 @@ export function PageComponent({ page }: PageProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
+  const pageSlug = (page.slug);
+  console.log("My custom identifier class is based on slug: " + pageSlug);
+
   return (
     <>
       <Header
         title={generalSettings.title}
         description={generalSettings.description}
+        uri={page?.uri}
       />
 
       <Head>
@@ -25,18 +29,19 @@ export function PageComponent({ page }: PageProps) {
         </title>
       </Head>
 
-      <Hero
+      <PageTitle
         title={page?.title()}
         bgImage={page?.featuredImage?.node.sourceUrl()}
       />
-
-      <main className="content content-single">
-        <div className="wrap">
+<body className={pageSlug}/>
+      <main className={'content content-single ' + pageSlug}>
+        <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
         </div>
       </main>
 
       <Footer copyrightHolder={generalSettings.title} />
+
     </>
   );
 }
