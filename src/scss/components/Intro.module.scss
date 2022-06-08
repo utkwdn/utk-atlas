@@ -1,0 +1,125 @@
+@import "scss/common";
+
+.intro-container {
+  // border: 2px solid blue;
+  padding: 2rem 2rem 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 3rem 0;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    width: 80vw;
+    margin: 0 auto 3rem auto;
+    align-items: flex-end;
+  }
+}
+.page-title-group {
+  width: 80vw;
+  // border: 2px solid purple;
+  margin: 0 auto;
+  @media screen and (min-width: 800px) {
+    // width: 40vw;
+    // max-width: 500px;
+    flex-basis: 30vw;
+    // flex-grow: 1;
+  }
+}
+
+h1.area {
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #9d9d9d;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  &:before {
+    content: "";
+    position: absolute;
+    color: $utorange;
+  }
+}
+
+hr.oa-thick-bar {
+  width: 80%;
+  height: 1.75rem;
+  background-color: $utorange;
+  opacity: 1;
+  margin: 4rem 0;
+
+  margin-left: -4rem !important;
+  @media screen and (min-width: 800px) {
+    width: 70%;
+  }
+}
+.title-container {
+}
+
+p.title {
+  font-size: 4.7rem;
+  font-weight: 600;
+
+  max-width: 10ch;
+  line-height: 4.6rem;
+}
+
+.intro {
+  width: 80vw;
+  margin: 2rem auto;
+  // border: 2px solid red;
+  @media screen and (min-width: 800px) {
+    margin: 2rem 0.5rem;
+    max-width: 60ch;
+    // background-color: green;
+  }
+  p {
+    font-weight: 600;
+    color: #707070;
+    font-size: 1.35rem;
+  }
+}
+
+.input-wrapper {
+  margin: 2rem 0;
+  border-left: 0.6rem solid $utorange;
+  // margin-left: -0.25rem;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  &:focus {
+  }
+  .form-control {
+    width: 80%;
+    border-radius: 0;
+    border: none;
+    padding: 0.25rem 1rem;
+    border-top: 1px solid $utgray4;
+    border-bottom: 1px solid $utgray4;
+    border-left: none;
+    color: $utsmokey;
+    &:focus {
+      outline: none !important;
+      border: 2px solid $utlinkriver;
+    }
+  }
+  button {
+    color: #707070;
+    background-color: #f1f1f1;
+    padding: 0.8rem 1rem;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $utgray4;
+    border-bottom: 1px solid $utgray4;
+    border-right: 1px solid $utgray4;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    &:hover {
+      background-color: $utsmokey;
+      color: white;
+    }
+  }
+}
