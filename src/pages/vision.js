@@ -5,8 +5,8 @@ function Vision() {
   return (
     <Layout>
       <Head>
-        // <link rel="stylesheet" href="css/vision.css" />
-        // <script defer type="text/javascript" src="/js/vision.js"></script>
+        <link rel="stylesheet" href="css/vision.css" />
+        <script defer type="text/javascript" src="/js/vision.js"></script>
       </Head>
 
       <section className="hero">
@@ -61,7 +61,7 @@ function Vision() {
                     className="ratio ratio-16x9 yt-container"
                     data-yt-url="//www.youtube.com/embed/I3H4Po3dFwc?modestbranding=1&showinfo=0&showsearch=0&rel=0&autoplay=1"
                   >
-                    <button className="btn border-0 yt-play" >
+                    <button className="btn border-0 yt-play">
                       <img
                         data-src="//www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
                         async
