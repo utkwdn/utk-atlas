@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Head from "next/head";
-import styles from "scss/pages/ittakesavolunteer.module.scss";
+import styles from "scss/pages/itav.module.scss";
 import Script from "next/script";
 import PropTypes from "prop-types";
 import { useRef, useEffect, useState } from "react";
