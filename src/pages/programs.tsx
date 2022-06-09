@@ -10,8 +10,11 @@ function Programs() {
       <Intro
         title={"Programs"}
         theme={"Find Your Passion"}
-        introText={
-          "So many options and paths to choose from. Find what makes you happy and live a great life."
+        intro={
+          <p>
+            "So many options and paths to choose from. Find what makes you happy
+            and live a great life."
+          </p>
         }
       />
       <section className={styles.areasContainer}>
@@ -35,7 +38,7 @@ function Programs() {
               aesthetics to change cities or shape the understanding of print
               and digital landscapes.
             </p>
-            <a class={[styles.btnTweak, "btn-link"].join(" ")} href="#">
+            <a className={[styles.btnTweak, "btn-link"].join(" ")} href="#">
               Request Information
             </a>
           </div>
@@ -125,7 +128,7 @@ function Programs() {
               aesthetics to change cities or shape the understanding of print
               and digital landscapes.
             </p>
-            <a class={[styles.btnTweak, "btn-link"].join(" ")} href="#">
+            <a className={[styles.btnTweak, "btn-link"].join(" ")} href="#">
               Request Information
             </a>
           </div>
@@ -215,7 +218,7 @@ function Programs() {
               aesthetics to change cities or shape the understanding of print
               and digital landscapes.
             </p>
-            <a class={[styles.btnTweak, "btn-link"].join(" ")} href="#">
+            <a className={[styles.btnTweak, "btn-link"].join(" ")} href="#">
               Request Information
             </a>
           </div>
@@ -305,7 +308,7 @@ function Programs() {
               aesthetics to change cities or shape the understanding of print
               and digital landscapes.
             </p>
-            <a class={[styles.btnTweak, "btn-link"].join(" ")} href="#">
+            <a className={[styles.btnTweak, "btn-link"].join(" ")} href="#">
               Request Information
             </a>
           </div>
