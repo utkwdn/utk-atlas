@@ -67,7 +67,10 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
 
           <p className="text-white small">The University of Tennessee<br />Knoxville, Tennessee 37996<br />865-974-1000</p>
           <p className="text-white small">The flagship campus of the <a href="https://tennessee.edu/" target="_blank" rel="noreferrer" className="text-white footer-links">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org/" target="_blank" rel="noreferrer" className="text-white footer-links">Tennessee Transfer Pathway</a>.</p>
-          <p className="text-white small"><a className="text-white me-3 footer-links" href="https://oed.utk.edu/ada/">ADA</a> <a className="text-white me-3 footer-links" href="/about/privacy/">Privacy</a> <a className="text-white me-3 footer-links" href="https://safety.utk.edu/">Safety</a> <a className="text-white footer-links" href="https://titleix.utk.edu/">Title&nbsp;IX</a>  </p>
+          <p className="text-white small"><a className="text-white me-3 footer-links" href="https://oed.utk.edu/ada/">ADA</a> 
+          <Link href="/about/privacy/">
+          <a className="text-white me-3 footer-links" >Privacy</a>
+          </Link> <a className="text-white me-3 footer-links" href="https://safety.utk.edu/">Safety</a> <a className="text-white footer-links" href="https://titleix.utk.edu/">Title&nbsp;IX</a>  </p>
         </div>
         </div>
       </div>
