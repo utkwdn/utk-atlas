@@ -24,6 +24,232 @@ export interface Scalars {
   Float: number;
 }
 
+/** Set relationships between the AToZ to AToZCategories */
+export interface AToZAToZCategoriesInput {
+  /** If true, this will append the AToZCategory to existing related AToZCategories. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars["Boolean"]>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<AToZAToZCategoriesNodeInput>>>;
+}
+
+/** List of AToZCategories to connect the AToZ to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export interface AToZAToZCategoriesNodeInput {
+  /** The description of the AToZCategory. This field is used to set a description of the AToZCategory if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AToZCategory. If present, this will be used to connect to the AToZ. If no existing AToZCategory exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars["ID"]>;
+  /** The name of the AToZCategory. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars["String"]>;
+  /** The slug of the AToZCategory. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars["String"]>;
+}
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AToZCategoryIdType {
+  /** The Database ID for the node */
+  DATABASE_ID = "DATABASE_ID",
+  /** The hashed Global ID */
+  ID = "ID",
+  /** The name of the node */
+  NAME = "NAME",
+  /** Url friendly name of the node */
+  SLUG = "SLUG",
+  /** The URI for the node */
+  URI = "URI",
+}
+
+/** Arguments for filtering the AToZCategoryToAToZConnection connection */
+export interface AToZCategoryToAToZConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars["Int"]>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars["String"]>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars["ID"]>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars["String"]>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
+/** Arguments for filtering the AToZCategoryToContentNodeConnection connection */
+export interface AToZCategoryToContentNodeConnectionWhereArgs {
+  /** The Types of content to filter */
+  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfAToZCategoryEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars["Int"]>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars["String"]>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars["ID"]>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars["String"]>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AToZIdType {
+  /** Identify a resource by the Database ID. */
+  DATABASE_ID = "DATABASE_ID",
+  /** Identify a resource by the (hashed) Global ID. */
+  ID = "ID",
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  SLUG = "SLUG",
+  /** Identify a resource by the URI. */
+  URI = "URI",
+}
+
+/** Arguments for filtering the AToZToAToZCategoryConnection connection */
+export interface AToZToAToZCategoryConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars["String"]>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars["Int"]>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars["Boolean"]>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars["String"]>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars["String"]>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars["Int"]>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+}
+
+/** Arguments for filtering the AToZToTermNodeConnection connection */
+export interface AToZToTermNodeConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars["String"]>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars["Int"]>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars["Boolean"]>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars["String"]>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars["String"]>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars["Int"]>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+}
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AcalogProgramIdType {
+  /** Identify a resource by the Database ID. */
+  DATABASE_ID = "DATABASE_ID",
+  /** Identify a resource by the (hashed) Global ID. */
+  ID = "ID",
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  SLUG = "SLUG",
+  /** Identify a resource by the URI. */
+  URI = "URI",
+}
+
 /** What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option */
 export enum AvatarRatingEnum {
   /** Indicates a G level avatar rating level. */
@@ -373,7 +599,11 @@ export enum ContentNodeIdTypeEnum {
 /** Allowed Content Types */
 export enum ContentTypeEnum {
   /** The Type of Content object */
+  ACALOG_PROGRAM = "ACALOG_PROGRAM",
+  /** The Type of Content object */
   ATTACHMENT = "ATTACHMENT",
+  /** The Type of Content object */
+  A_TO_Z = "A_TO_Z",
   /** The Type of Content object */
   PAGE = "PAGE",
   /** The Type of Content object */
@@ -428,6 +658,12 @@ export interface ContentTypeToContentNodeConnectionWhereArgs {
   title?: InputMaybe<Scalars["String"]>;
 }
 
+/** Allowed Content Types of the AToZCategory taxonomy. */
+export enum ContentTypesOfAToZCategoryEnum {
+  /** The Type of Content object */
+  A_TO_Z = "A_TO_Z",
+}
+
 /** Allowed Content Types of the Category taxonomy. */
 export enum ContentTypesOfCategoryEnum {
   /** The Type of Content object */
@@ -444,6 +680,60 @@ export enum ContentTypesOfPostFormatEnum {
 export enum ContentTypesOfTagEnum {
   /** The Type of Content object */
   POST = "POST",
+}
+
+/** Input for the createAToZCategory mutation */
+export interface CreateAToZCategoryInput {
+  /** The slug that the a_to_z_categories will be an alias of */
+  aliasOf?: InputMaybe<Scalars["String"]>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The description of the a_to_z_categories object */
+  description?: InputMaybe<Scalars["String"]>;
+  /** The name of the a_to_z_categories object to mutate */
+  name: Scalars["String"];
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars["String"]>;
+}
+
+/** Input for the createAToZ mutation */
+export interface CreateAToZInput {
+  /** Set connections between the AToZ and AToZCategories */
+  aToZCategories?: InputMaybe<AToZAToZCategoriesInput>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
+/** Input for the createAcalogProgram mutation */
+export interface CreateAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
 }
 
 /** Input for the createCategory mutation */
@@ -690,6 +980,34 @@ export interface DateQueryInput {
   week?: InputMaybe<Scalars["Int"]>;
   /** 4 digit year (e.g. 2017) */
   year?: InputMaybe<Scalars["Int"]>;
+}
+
+/** Input for the deleteAToZCategory mutation */
+export interface DeleteAToZCategoryInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AToZCategory to delete */
+  id: Scalars["ID"];
+}
+
+/** Input for the deleteAToZ mutation */
+export interface DeleteAToZInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  /** The ID of the AToZ to delete */
+  id: Scalars["ID"];
+}
+
+/** Input for the deleteAcalogProgram mutation */
+export interface DeleteAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  /** The ID of the AcalogProgram to delete */
+  id: Scalars["ID"];
 }
 
 /** Input for the deleteCategory mutation */
@@ -1852,6 +2170,126 @@ export interface RestoreCommentInput {
   id: Scalars["ID"];
 }
 
+/** Arguments for filtering the RootQueryToAToZCategoryConnection connection */
+export interface RootQueryToAToZCategoryConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars["String"]>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars["Int"]>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars["Boolean"]>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars["String"]>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars["String"]>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars["Int"]>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+}
+
+/** Arguments for filtering the RootQueryToAToZConnection connection */
+export interface RootQueryToAToZConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars["Int"]>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars["String"]>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars["ID"]>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars["String"]>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
+/** Arguments for filtering the RootQueryToAcalogProgramConnection connection */
+export interface RootQueryToAcalogProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars["Int"]>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars["String"]>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars["ID"]>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars["String"]>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars["String"]>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
 /** Arguments for filtering the RootQueryToCategoryConnection connection */
 export interface RootQueryToCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
@@ -2518,6 +2956,8 @@ export interface TagToPostConnectionWhereArgs {
 
 /** Allowed taxonomies */
 export enum TaxonomyEnum {
+  /** Taxonomy enum a_to_z_categories */
+  ATOZCATEGORY = "ATOZCATEGORY",
   /** Taxonomy enum category */
   CATEGORY = "CATEGORY",
   /** Taxonomy enum post_format */
@@ -2564,6 +3004,66 @@ export enum TermObjectsConnectionOrderbyEnum {
   TERM_ID = "TERM_ID",
   /** Order the connection by term order. */
   TERM_ORDER = "TERM_ORDER",
+}
+
+/** Input for the UpdateAToZCategory mutation */
+export interface UpdateAToZCategoryInput {
+  /** The slug that the a_to_z_categories will be an alias of */
+  aliasOf?: InputMaybe<Scalars["String"]>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The description of the a_to_z_categories object */
+  description?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AToZCategory object to update */
+  id: Scalars["ID"];
+  /** The name of the a_to_z_categories object to mutate */
+  name?: InputMaybe<Scalars["String"]>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars["String"]>;
+}
+
+/** Input for the updateAToZ mutation */
+export interface UpdateAToZInput {
+  /** Set connections between the AToZ and AToZCategories */
+  aToZCategories?: InputMaybe<AToZAToZCategoriesInput>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AToZ object */
+  id: Scalars["ID"];
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
+}
+
+/** Input for the updateAcalogProgram mutation */
+export interface UpdateAcalogProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars["String"]>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars["String"]>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars["String"]>;
+  /** The ID of the AcalogProgram object */
+  id: Scalars["ID"];
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars["Int"]>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars["String"]>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars["String"]>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars["String"]>;
 }
 
 /** Input for the UpdateCategory mutation */
@@ -2732,6 +3232,9 @@ export interface UpdatePostInput {
 
 /** Input for the updateSettings mutation */
 export interface UpdateSettingsInput {
+  atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: InputMaybe<
+    Scalars["String"]
+  >;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: InputMaybe<Scalars["String"]>;
   /** Allow people to submit comments on new posts. */
@@ -3151,6 +3654,9 @@ export enum UsersConnectionSearchColumnEnum {
 }
 
 export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
+  AToZCategoryIdType: true,
+  AToZIdType: true,
+  AcalogProgramIdType: true,
   AvatarRatingEnum: true,
   Boolean: true,
   CategoryIdType: true,
@@ -3158,6 +3664,7 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   ContentNodeIdTypeEnum: true,
   ContentTypeEnum: true,
   ContentTypeIdTypeEnum: true,
+  ContentTypesOfAToZCategoryEnum: true,
   ContentTypesOfCategoryEnum: true,
   ContentTypesOfPostFormatEnum: true,
   ContentTypesOfTagEnum: true,
@@ -3192,6 +3699,345 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   UsersConnectionSearchColumnEnum: true,
 };
 export const generatedSchema = {
+  AToZ: {
+    __typename: { __type: "String!" },
+    aToZCategories: {
+      __type: "AToZToAToZCategoryConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "AToZToAToZCategoryConnectionWhereArgs",
+      },
+    },
+    aToZFields: { __type: "AToZ_Atozfields" },
+    aToZId: { __type: "Int!" },
+    conditionalTags: { __type: "ConditionalTags" },
+    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
+    databaseId: { __type: "Int!" },
+    date: { __type: "String" },
+    dateGmt: { __type: "String" },
+    desiredSlug: { __type: "String" },
+    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
+    enclosure: { __type: "String" },
+    enqueuedScripts: {
+      __type: "ContentNodeToEnqueuedScriptConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    enqueuedStylesheets: {
+      __type: "ContentNodeToEnqueuedStylesheetConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    guid: { __type: "String" },
+    id: { __type: "ID!" },
+    isContentNode: { __type: "Boolean!" },
+    isPreview: { __type: "Boolean" },
+    isRestricted: { __type: "Boolean" },
+    isTermNode: { __type: "Boolean!" },
+    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
+    link: { __type: "String" },
+    modified: { __type: "String" },
+    modifiedGmt: { __type: "String" },
+    preview: { __type: "AToZToPreviewConnectionEdge" },
+    previewRevisionDatabaseId: { __type: "Int" },
+    previewRevisionId: { __type: "ID" },
+    slug: { __type: "String" },
+    status: { __type: "String" },
+    template: { __type: "ContentTemplate" },
+    templates: { __type: "[String]" },
+    terms: {
+      __type: "AToZToTermNodeConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "AToZToTermNodeConnectionWhereArgs",
+      },
+    },
+    title: {
+      __type: "String",
+      __args: { format: "PostObjectFieldFormatEnum" },
+    },
+    uri: { __type: "String" },
+  },
+  AToZAToZCategoriesInput: {
+    append: { __type: "Boolean" },
+    nodes: { __type: "[AToZAToZCategoriesNodeInput]" },
+  },
+  AToZAToZCategoriesNodeInput: {
+    description: { __type: "String" },
+    id: { __type: "ID" },
+    name: { __type: "String" },
+    slug: { __type: "String" },
+  },
+  AToZCategory: {
+    __typename: { __type: "String!" },
+    aToZ: {
+      __type: "AToZCategoryToAToZConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "AToZCategoryToAToZConnectionWhereArgs",
+      },
+    },
+    aToZCategoryId: { __type: "Int" },
+    conditionalTags: { __type: "ConditionalTags" },
+    contentNodes: {
+      __type: "AToZCategoryToContentNodeConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "AToZCategoryToContentNodeConnectionWhereArgs",
+      },
+    },
+    count: { __type: "Int" },
+    databaseId: { __type: "Int!" },
+    description: { __type: "String" },
+    enqueuedScripts: {
+      __type: "TermNodeToEnqueuedScriptConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    enqueuedStylesheets: {
+      __type: "TermNodeToEnqueuedStylesheetConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    id: { __type: "ID!" },
+    isContentNode: { __type: "Boolean!" },
+    isRestricted: { __type: "Boolean" },
+    isTermNode: { __type: "Boolean!" },
+    link: { __type: "String" },
+    name: { __type: "String" },
+    slug: { __type: "String" },
+    taxonomy: { __type: "AToZCategoryToTaxonomyConnectionEdge" },
+    taxonomyName: { __type: "String" },
+    templates: { __type: "[String]" },
+    termGroupId: { __type: "Int" },
+    termTaxonomyId: { __type: "Int" },
+    uri: { __type: "String" },
+  },
+  AToZCategoryToAToZConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[AToZCategoryToAToZConnectionEdge]" },
+    nodes: { __type: "[AToZ]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  AToZCategoryToAToZConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AToZ" },
+  },
+  AToZCategoryToAToZConnectionWhereArgs: {
+    dateQuery: { __type: "DateQueryInput" },
+    hasPassword: { __type: "Boolean" },
+    id: { __type: "Int" },
+    in: { __type: "[ID]" },
+    mimeType: { __type: "MimeTypeEnum" },
+    name: { __type: "String" },
+    nameIn: { __type: "[String]" },
+    notIn: { __type: "[ID]" },
+    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
+    parent: { __type: "ID" },
+    parentIn: { __type: "[ID]" },
+    parentNotIn: { __type: "[ID]" },
+    password: { __type: "String" },
+    search: { __type: "String" },
+    stati: { __type: "[PostStatusEnum]" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  AToZCategoryToContentNodeConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[AToZCategoryToContentNodeConnectionEdge]" },
+    nodes: { __type: "[ContentNode]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  AToZCategoryToContentNodeConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "ContentNode" },
+  },
+  AToZCategoryToContentNodeConnectionWhereArgs: {
+    contentTypes: { __type: "[ContentTypesOfAToZCategoryEnum]" },
+    dateQuery: { __type: "DateQueryInput" },
+    hasPassword: { __type: "Boolean" },
+    id: { __type: "Int" },
+    in: { __type: "[ID]" },
+    mimeType: { __type: "MimeTypeEnum" },
+    name: { __type: "String" },
+    nameIn: { __type: "[String]" },
+    notIn: { __type: "[ID]" },
+    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
+    parent: { __type: "ID" },
+    parentIn: { __type: "[ID]" },
+    parentNotIn: { __type: "[ID]" },
+    password: { __type: "String" },
+    search: { __type: "String" },
+    stati: { __type: "[PostStatusEnum]" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  AToZCategoryToTaxonomyConnectionEdge: {
+    __typename: { __type: "String!" },
+    node: { __type: "Taxonomy" },
+  },
+  AToZToAToZCategoryConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[AToZToAToZCategoryConnectionEdge]" },
+    nodes: { __type: "[AToZCategory]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  AToZToAToZCategoryConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AToZCategory" },
+  },
+  AToZToAToZCategoryConnectionWhereArgs: {
+    cacheDomain: { __type: "String" },
+    childOf: { __type: "Int" },
+    childless: { __type: "Boolean" },
+    descriptionLike: { __type: "String" },
+    exclude: { __type: "[ID]" },
+    excludeTree: { __type: "[ID]" },
+    hideEmpty: { __type: "Boolean" },
+    hierarchical: { __type: "Boolean" },
+    include: { __type: "[ID]" },
+    name: { __type: "[String]" },
+    nameLike: { __type: "String" },
+    objectIds: { __type: "[ID]" },
+    order: { __type: "OrderEnum" },
+    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
+    padCounts: { __type: "Boolean" },
+    parent: { __type: "Int" },
+    search: { __type: "String" },
+    slug: { __type: "[String]" },
+    termTaxonomId: { __type: "[ID]" },
+    updateTermMetaCache: { __type: "Boolean" },
+  },
+  AToZToPreviewConnectionEdge: {
+    __typename: { __type: "String!" },
+    node: { __type: "AToZ" },
+  },
+  AToZToTermNodeConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[AToZToTermNodeConnectionEdge]" },
+    nodes: { __type: "[TermNode]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  AToZToTermNodeConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "TermNode" },
+  },
+  AToZToTermNodeConnectionWhereArgs: {
+    cacheDomain: { __type: "String" },
+    childOf: { __type: "Int" },
+    childless: { __type: "Boolean" },
+    descriptionLike: { __type: "String" },
+    exclude: { __type: "[ID]" },
+    excludeTree: { __type: "[ID]" },
+    hideEmpty: { __type: "Boolean" },
+    hierarchical: { __type: "Boolean" },
+    include: { __type: "[ID]" },
+    name: { __type: "[String]" },
+    nameLike: { __type: "String" },
+    objectIds: { __type: "[ID]" },
+    order: { __type: "OrderEnum" },
+    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
+    padCounts: { __type: "Boolean" },
+    parent: { __type: "Int" },
+    search: { __type: "String" },
+    slug: { __type: "[String]" },
+    taxonomies: { __type: "[TaxonomyEnum]" },
+    termTaxonomId: { __type: "[ID]" },
+    updateTermMetaCache: { __type: "Boolean" },
+  },
+  AToZ_Atozfields: {
+    __typename: { __type: "String!" },
+    fieldGroupName: { __type: "String" },
+    url: { __type: "String" },
+  },
+  AcalogProgram: {
+    __typename: { __type: "String!" },
+    acalogDepartmentFields: { __type: "AcalogProgram_Acalogdepartmentfields" },
+    acalogProgramId: { __type: "Int!" },
+    conditionalTags: { __type: "ConditionalTags" },
+    content: {
+      __type: "String",
+      __args: { format: "PostObjectFieldFormatEnum" },
+    },
+    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
+    databaseId: { __type: "Int!" },
+    date: { __type: "String" },
+    dateGmt: { __type: "String" },
+    desiredSlug: { __type: "String" },
+    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
+    enclosure: { __type: "String" },
+    enqueuedScripts: {
+      __type: "ContentNodeToEnqueuedScriptConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    enqueuedStylesheets: {
+      __type: "ContentNodeToEnqueuedStylesheetConnection",
+      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+    },
+    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
+    featuredImageDatabaseId: { __type: "Int" },
+    featuredImageId: { __type: "ID" },
+    guid: { __type: "String" },
+    id: { __type: "ID!" },
+    isContentNode: { __type: "Boolean!" },
+    isPreview: { __type: "Boolean" },
+    isRestricted: { __type: "Boolean" },
+    isTermNode: { __type: "Boolean!" },
+    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
+    link: { __type: "String" },
+    modified: { __type: "String" },
+    modifiedGmt: { __type: "String" },
+    preview: { __type: "AcalogProgramToPreviewConnectionEdge" },
+    previewRevisionDatabaseId: { __type: "Int" },
+    previewRevisionId: { __type: "ID" },
+    slug: { __type: "String" },
+    status: { __type: "String" },
+    template: { __type: "ContentTemplate" },
+    templates: { __type: "[String]" },
+    title: {
+      __type: "String",
+      __args: { format: "PostObjectFieldFormatEnum" },
+    },
+    uri: { __type: "String" },
+  },
+  AcalogProgramToPreviewConnectionEdge: {
+    __typename: { __type: "String!" },
+    node: { __type: "AcalogProgram" },
+  },
+  AcalogProgram_Acalogdepartmentfields: {
+    __typename: { __type: "String!" },
+    catoid: { __type: "String" },
+    core: { __type: "String" },
+    courseDepartment: { __type: "String" },
+    degreeType: { __type: "String" },
+    fieldGroupName: { __type: "String" },
+    poid: { __type: "String" },
+    programContent: { __type: "String" },
+    programType: { __type: "String" },
+  },
+  AcfFieldGroup: {
+    __typename: { __type: "String!" },
+    fieldGroupName: { __type: "String" },
+    $on: { __type: "$AcfFieldGroup!" },
+  },
+  AtlasContentModelerSettingsSettings: {
+    __typename: { __type: "String!" },
+    atlasContentModelerUsageTracking: { __type: "String" },
+  },
   Avatar: {
     __typename: { __type: "String!" },
     default: { __type: "String" },
@@ -3568,6 +4414,7 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -3735,6 +4582,48 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     cursor: { __type: "String" },
     node: { __type: "Taxonomy" },
+  },
+  CreateAToZCategoryInput: {
+    aliasOf: { __type: "String" },
+    clientMutationId: { __type: "String" },
+    description: { __type: "String" },
+    name: { __type: "String!" },
+    slug: { __type: "String" },
+  },
+  CreateAToZCategoryPayload: {
+    __typename: { __type: "String!" },
+    aToZCategory: { __type: "AToZCategory" },
+    clientMutationId: { __type: "String" },
+  },
+  CreateAToZInput: {
+    aToZCategories: { __type: "AToZAToZCategoriesInput" },
+    clientMutationId: { __type: "String" },
+    date: { __type: "String" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  CreateAToZPayload: {
+    __typename: { __type: "String!" },
+    aToZ: { __type: "AToZ" },
+    clientMutationId: { __type: "String" },
+  },
+  CreateAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    content: { __type: "String" },
+    date: { __type: "String" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  CreateAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
   },
   CreateCategoryInput: {
     aliasOf: { __type: "String" },
@@ -3908,6 +4797,38 @@ export const generatedSchema = {
   DefaultTemplate: {
     __typename: { __type: "String!" },
     templateName: { __type: "String" },
+  },
+  DeleteAToZCategoryInput: {
+    clientMutationId: { __type: "String" },
+    id: { __type: "ID!" },
+  },
+  DeleteAToZCategoryPayload: {
+    __typename: { __type: "String!" },
+    aToZCategory: { __type: "AToZCategory" },
+    clientMutationId: { __type: "String" },
+    deletedId: { __type: "ID" },
+  },
+  DeleteAToZInput: {
+    clientMutationId: { __type: "String" },
+    forceDelete: { __type: "Boolean" },
+    id: { __type: "ID!" },
+  },
+  DeleteAToZPayload: {
+    __typename: { __type: "String!" },
+    aToZ: { __type: "AToZ" },
+    clientMutationId: { __type: "String" },
+    deletedId: { __type: "ID" },
+  },
+  DeleteAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    forceDelete: { __type: "Boolean" },
+    id: { __type: "ID!" },
+  },
+  DeleteAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
+    deletedId: { __type: "ID" },
   },
   DeleteCategoryInput: {
     clientMutationId: { __type: "String" },
@@ -4214,6 +5135,7 @@ export const generatedSchema = {
     },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4483,6 +5405,7 @@ export const generatedSchema = {
     __typename: { __type: "String!" },
     conditionalTags: { __type: "ConditionalTags" },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4603,6 +5526,7 @@ export const generatedSchema = {
       __args: { format: "PostObjectFieldFormatEnum" },
     },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -4790,6 +5714,7 @@ export const generatedSchema = {
       __args: { format: "PostObjectFieldFormatEnum" },
     },
     contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
+    contentTypeName: { __type: "String!" },
     databaseId: { __type: "Int!" },
     date: { __type: "String" },
     dateGmt: { __type: "String" },
@@ -5343,6 +6268,99 @@ export const generatedSchema = {
     comment: { __type: "Comment" },
     restoredId: { __type: "ID" },
   },
+  RootQueryToAToZCategoryConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[RootQueryToAToZCategoryConnectionEdge]" },
+    nodes: { __type: "[AToZCategory]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  RootQueryToAToZCategoryConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AToZCategory" },
+  },
+  RootQueryToAToZCategoryConnectionWhereArgs: {
+    cacheDomain: { __type: "String" },
+    childOf: { __type: "Int" },
+    childless: { __type: "Boolean" },
+    descriptionLike: { __type: "String" },
+    exclude: { __type: "[ID]" },
+    excludeTree: { __type: "[ID]" },
+    hideEmpty: { __type: "Boolean" },
+    hierarchical: { __type: "Boolean" },
+    include: { __type: "[ID]" },
+    name: { __type: "[String]" },
+    nameLike: { __type: "String" },
+    objectIds: { __type: "[ID]" },
+    order: { __type: "OrderEnum" },
+    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
+    padCounts: { __type: "Boolean" },
+    parent: { __type: "Int" },
+    search: { __type: "String" },
+    slug: { __type: "[String]" },
+    termTaxonomId: { __type: "[ID]" },
+    updateTermMetaCache: { __type: "Boolean" },
+  },
+  RootQueryToAToZConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[RootQueryToAToZConnectionEdge]" },
+    nodes: { __type: "[AToZ]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  RootQueryToAToZConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AToZ" },
+  },
+  RootQueryToAToZConnectionWhereArgs: {
+    dateQuery: { __type: "DateQueryInput" },
+    hasPassword: { __type: "Boolean" },
+    id: { __type: "Int" },
+    in: { __type: "[ID]" },
+    mimeType: { __type: "MimeTypeEnum" },
+    name: { __type: "String" },
+    nameIn: { __type: "[String]" },
+    notIn: { __type: "[ID]" },
+    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
+    parent: { __type: "ID" },
+    parentIn: { __type: "[ID]" },
+    parentNotIn: { __type: "[ID]" },
+    password: { __type: "String" },
+    search: { __type: "String" },
+    stati: { __type: "[PostStatusEnum]" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  RootQueryToAcalogProgramConnection: {
+    __typename: { __type: "String!" },
+    edges: { __type: "[RootQueryToAcalogProgramConnectionEdge]" },
+    nodes: { __type: "[AcalogProgram]" },
+    pageInfo: { __type: "WPPageInfo" },
+  },
+  RootQueryToAcalogProgramConnectionEdge: {
+    __typename: { __type: "String!" },
+    cursor: { __type: "String" },
+    node: { __type: "AcalogProgram" },
+  },
+  RootQueryToAcalogProgramConnectionWhereArgs: {
+    dateQuery: { __type: "DateQueryInput" },
+    hasPassword: { __type: "Boolean" },
+    id: { __type: "Int" },
+    in: { __type: "[ID]" },
+    mimeType: { __type: "MimeTypeEnum" },
+    name: { __type: "String" },
+    nameIn: { __type: "[String]" },
+    notIn: { __type: "[ID]" },
+    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
+    parent: { __type: "ID" },
+    parentIn: { __type: "[ID]" },
+    parentNotIn: { __type: "[ID]" },
+    password: { __type: "String" },
+    search: { __type: "String" },
+    stati: { __type: "[PostStatusEnum]" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
   RootQueryToCategoryConnection: {
     __typename: { __type: "String!" },
     edges: { __type: "[RootQueryToCategoryConnectionEdge]" },
@@ -5841,6 +6859,9 @@ export const generatedSchema = {
   },
   Settings: {
     __typename: { __type: "String!" },
+    atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
+      __type: "String",
+    },
     discussionSettingsDefaultCommentStatus: { __type: "String" },
     discussionSettingsDefaultPingStatus: { __type: "String" },
     generalSettingsDateFormat: { __type: "String" },
@@ -6102,6 +7123,51 @@ export const generatedSchema = {
     uri: { __type: "String" },
     $on: { __type: "$UniformResourceIdentifiable!" },
   },
+  UpdateAToZCategoryInput: {
+    aliasOf: { __type: "String" },
+    clientMutationId: { __type: "String" },
+    description: { __type: "String" },
+    id: { __type: "ID!" },
+    name: { __type: "String" },
+    slug: { __type: "String" },
+  },
+  UpdateAToZCategoryPayload: {
+    __typename: { __type: "String!" },
+    aToZCategory: { __type: "AToZCategory" },
+    clientMutationId: { __type: "String" },
+  },
+  UpdateAToZInput: {
+    aToZCategories: { __type: "AToZAToZCategoriesInput" },
+    clientMutationId: { __type: "String" },
+    date: { __type: "String" },
+    id: { __type: "ID!" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  UpdateAToZPayload: {
+    __typename: { __type: "String!" },
+    aToZ: { __type: "AToZ" },
+    clientMutationId: { __type: "String" },
+  },
+  UpdateAcalogProgramInput: {
+    clientMutationId: { __type: "String" },
+    content: { __type: "String" },
+    date: { __type: "String" },
+    id: { __type: "ID!" },
+    menuOrder: { __type: "Int" },
+    password: { __type: "String" },
+    slug: { __type: "String" },
+    status: { __type: "PostStatusEnum" },
+    title: { __type: "String" },
+  },
+  UpdateAcalogProgramPayload: {
+    __typename: { __type: "String!" },
+    acalogProgram: { __type: "AcalogProgram" },
+    clientMutationId: { __type: "String" },
+  },
   UpdateCategoryInput: {
     aliasOf: { __type: "String" },
     clientMutationId: { __type: "String" },
@@ -6216,6 +7282,9 @@ export const generatedSchema = {
     post: { __type: "Post" },
   },
   UpdateSettingsInput: {
+    atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
+      __type: "String",
+    },
     clientMutationId: { __type: "String" },
     discussionSettingsDefaultCommentStatus: { __type: "String" },
     discussionSettingsDefaultPingStatus: { __type: "String" },
@@ -6234,6 +7303,9 @@ export const generatedSchema = {
   UpdateSettingsPayload: {
     __typename: { __type: "String!" },
     allSettings: { __type: "Settings" },
+    atlasContentModelerSettingsSettings: {
+      __type: "AtlasContentModelerSettingsSettings",
+    },
     clientMutationId: { __type: "String" },
     discussionSettings: { __type: "DiscussionSettings" },
     generalSettings: { __type: "GeneralSettings" },
@@ -6620,6 +7692,18 @@ export const generatedSchema = {
   },
   mutation: {
     __typename: { __type: "String!" },
+    createAToZ: {
+      __type: "CreateAToZPayload",
+      __args: { input: "CreateAToZInput!" },
+    },
+    createAToZCategory: {
+      __type: "CreateAToZCategoryPayload",
+      __args: { input: "CreateAToZCategoryInput!" },
+    },
+    createAcalogProgram: {
+      __type: "CreateAcalogProgramPayload",
+      __args: { input: "CreateAcalogProgramInput!" },
+    },
     createCategory: {
       __type: "CreateCategoryPayload",
       __args: { input: "CreateCategoryInput!" },
@@ -6651,6 +7735,18 @@ export const generatedSchema = {
     createUser: {
       __type: "CreateUserPayload",
       __args: { input: "CreateUserInput!" },
+    },
+    deleteAToZ: {
+      __type: "DeleteAToZPayload",
+      __args: { input: "DeleteAToZInput!" },
+    },
+    deleteAToZCategory: {
+      __type: "DeleteAToZCategoryPayload",
+      __args: { input: "DeleteAToZCategoryInput!" },
+    },
+    deleteAcalogProgram: {
+      __type: "DeleteAcalogProgramPayload",
+      __args: { input: "DeleteAcalogProgramInput!" },
     },
     deleteCategory: {
       __type: "DeleteCategoryPayload",
@@ -6705,6 +7801,18 @@ export const generatedSchema = {
       __type: "SendPasswordResetEmailPayload",
       __args: { input: "SendPasswordResetEmailInput!" },
     },
+    updateAToZ: {
+      __type: "UpdateAToZPayload",
+      __args: { input: "UpdateAToZInput!" },
+    },
+    updateAToZCategory: {
+      __type: "UpdateAToZCategoryPayload",
+      __args: { input: "UpdateAToZCategoryInput!" },
+    },
+    updateAcalogProgram: {
+      __type: "UpdateAcalogProgramPayload",
+      __args: { input: "UpdateAcalogProgramInput!" },
+    },
     updateCategory: {
       __type: "UpdateCategoryPayload",
       __args: { input: "UpdateCategoryInput!" },
@@ -6744,7 +7852,69 @@ export const generatedSchema = {
   },
   query: {
     __typename: { __type: "String!" },
+    aToZ: {
+      __type: "AToZ",
+      __args: { asPreview: "Boolean", id: "ID!", idType: "AToZIdType" },
+    },
+    aToZBy: {
+      __type: "AToZ",
+      __args: { aToZId: "Int", id: "ID", slug: "String", uri: "String" },
+    },
+    aToZCategories: {
+      __type: "RootQueryToAToZCategoryConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "RootQueryToAToZCategoryConnectionWhereArgs",
+      },
+    },
+    aToZCategory: {
+      __type: "AToZCategory",
+      __args: { id: "ID!", idType: "AToZCategoryIdType" },
+    },
+    acalogProgram: {
+      __type: "AcalogProgram",
+      __args: {
+        asPreview: "Boolean",
+        id: "ID!",
+        idType: "AcalogProgramIdType",
+      },
+    },
+    acalogProgramBy: {
+      __type: "AcalogProgram",
+      __args: {
+        acalogProgramId: "Int",
+        id: "ID",
+        slug: "String",
+        uri: "String",
+      },
+    },
+    acalogPrograms: {
+      __type: "RootQueryToAcalogProgramConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "RootQueryToAcalogProgramConnectionWhereArgs",
+      },
+    },
+    allAToZ: {
+      __type: "RootQueryToAToZConnection",
+      __args: {
+        after: "String",
+        before: "String",
+        first: "Int",
+        last: "Int",
+        where: "RootQueryToAToZConnectionWhereArgs",
+      },
+    },
     allSettings: { __type: "Settings" },
+    atlasContentModelerSettingsSettings: {
+      __type: "AtlasContentModelerSettingsSettings",
+    },
     categories: {
       __type: "RootQueryToCategoryConnection",
       __args: {
@@ -6990,7 +8160,11 @@ export const generatedSchema = {
   },
   subscription: {},
   [SchemaUnionsKey]: {
+    ContentNode: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
     DatabaseIdentifier: [
+      "AToZ",
+      "AToZCategory",
+      "AcalogProgram",
       "Category",
       "Comment",
       "MediaItem",
@@ -7002,9 +8176,19 @@ export const generatedSchema = {
       "Tag",
       "User",
     ],
-    HierarchicalTermNode: ["Category"],
-    MenuItemLinkable: ["Category", "Page", "Post", "Tag"],
+    MenuItemLinkable: [
+      "AToZ",
+      "AToZCategory",
+      "AcalogProgram",
+      "Category",
+      "Page",
+      "Post",
+      "Tag",
+    ],
     Node: [
+      "AToZ",
+      "AToZCategory",
+      "AcalogProgram",
       "Category",
       "Comment",
       "CommentAuthor",
@@ -7024,8 +8208,12 @@ export const generatedSchema = {
       "User",
       "UserRole",
     ],
-    TermNode: ["Category", "PostFormat", "Tag"],
+    NodeWithTemplate: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
+    NodeWithTitle: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
     UniformResourceIdentifiable: [
+      "AToZ",
+      "AToZCategory",
+      "AcalogProgram",
       "Category",
       "ContentType",
       "MediaItem",
@@ -7035,6 +8223,11 @@ export const generatedSchema = {
       "Tag",
       "User",
     ],
+    TermNode: ["AToZCategory", "Category", "PostFormat", "Tag"],
+    AcfFieldGroup: ["AToZ_Atozfields", "AcalogProgram_Acalogdepartmentfields"],
+    NodeWithContentEditor: ["AcalogProgram", "Page", "Post"],
+    NodeWithFeaturedImage: ["AcalogProgram", "Page", "Post"],
+    HierarchicalTermNode: ["Category"],
     Commenter: ["CommentAuthor", "User"],
     ContentRevisionUnion: ["Page", "Post"],
     ContentTemplate: [
@@ -7043,21 +8236,830 @@ export const generatedSchema = {
       "Template_WithSidebar",
     ],
     EnqueuedAsset: ["EnqueuedScript", "EnqueuedStylesheet"],
-    ContentNode: ["MediaItem", "Page", "Post"],
     HierarchicalContentNode: ["MediaItem", "Page"],
     NodeWithAuthor: ["MediaItem", "Page", "Post"],
     NodeWithComments: ["MediaItem", "Page", "Post"],
-    NodeWithTemplate: ["MediaItem", "Page", "Post"],
-    NodeWithTitle: ["MediaItem", "Page", "Post"],
-    MenuItemObjectUnion: ["Category", "Page", "Post", "Tag"],
-    NodeWithContentEditor: ["Page", "Post"],
-    NodeWithFeaturedImage: ["Page", "Post"],
+    MenuItemObjectUnion: [
+      "AToZ",
+      "AToZCategory",
+      "AcalogProgram",
+      "Category",
+      "Page",
+      "Post",
+      "Tag",
+    ],
     NodeWithPageAttributes: ["Page"],
     NodeWithRevisions: ["Page", "Post"],
     NodeWithExcerpt: ["Post"],
     NodeWithTrackbacks: ["Post"],
   },
 } as const;
+
+/**
+ * The AToZ type
+ */
+export interface AToZ {
+  __typename?: "AToZ";
+  /**
+   * Connection between the AToZ type and the AToZCategory type
+   */
+  aToZCategories: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AToZToAToZCategoryConnectionWhereArgs>;
+  }) => Maybe<AToZToAToZCategoryConnection>;
+  /**
+   * Added to the GraphQL Schema because the ACF Field Group &quot;A to Z Fields&quot; was set to Show in GraphQL.
+   */
+  aToZFields?: Maybe<AToZ_Atozfields>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  aToZId: ScalarsEnums["Int"];
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the ContentNode type and the ContentType type
+   */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums["Int"];
+  /**
+   * Post publishing date.
+   */
+  date?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The publishing date set in GMT.
+   */
+  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The desired slug of the post
+   */
+  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
+   */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /**
+   * The RSS enclosure for the object
+   */
+  enclosure?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
+   */
+  guid?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The globally unique identifier of the a_to_z object.
+   */
+  id: ScalarsEnums["ID"];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums["Boolean"];
+  /**
+   * Whether the object is a node in the preview state
+   */
+  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums["Boolean"];
+  /**
+   * The user that most recently edited the node
+   */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /**
+   * The permalink of the post
+   */
+  link?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
+   */
+  modified?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
+   */
+  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the AToZ type and the AToZ type
+   */
+  preview?: Maybe<AToZToPreviewConnectionEdge>;
+  /**
+   * The database id of the preview node
+   */
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * Whether the object is a node in the preview state
+   */
+  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  /**
+   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
+   */
+  slug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The current status of the object
+   */
+  status?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The template assigned to the node
+   */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  /**
+   * Connection between the AToZ type and the TermNode type
+   */
+  terms: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AToZToTermNodeConnectionWhereArgs>;
+  }) => Maybe<AToZToTermNodeConnection>;
+  /**
+   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
+   */
+  title: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums["String"]>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The AToZCategory type
+ */
+export interface AToZCategory {
+  __typename?: "AToZCategory";
+  /**
+   * Connection between the AToZCategory type and the AToZ type
+   */
+  aToZ: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AToZCategoryToAToZConnectionWhereArgs>;
+  }) => Maybe<AToZCategoryToAToZConnection>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of databaseId
+   */
+  aToZCategoryId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the AToZCategory type and the ContentNode type
+   */
+  contentNodes: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AToZCategoryToContentNodeConnectionWhereArgs>;
+  }) => Maybe<AToZCategoryToContentNodeConnection>;
+  /**
+   * The number of objects connected to the object
+   */
+  count?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums["Int"];
+  /**
+   * The description of the object
+   */
+  description?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the TermNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the TermNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The unique resource identifier path
+   */
+  id: ScalarsEnums["ID"];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums["Boolean"];
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums["Boolean"];
+  /**
+   * The link to the term
+   */
+  link?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The human friendly name of the object.
+   */
+  name?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * An alphanumeric identifier for the object unique to its type.
+   */
+  slug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the AToZCategory type and the Taxonomy type
+   */
+  taxonomy?: Maybe<AToZCategoryToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums["String"]>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  /**
+   * The ID of the term group that this term object belongs to
+   */
+  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * The taxonomy ID that the object is associated with
+   */
+  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * Connection between the AToZCategory type and the AToZ type
+ */
+export interface AToZCategoryToAToZConnection {
+  __typename?: "AToZCategoryToAToZConnection";
+  /**
+   * Edges for the AToZCategoryToAToZConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AToZCategoryToAToZConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AToZ>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AToZCategoryToAToZConnectionEdge {
+  __typename?: "AToZCategoryToAToZConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AToZ>;
+}
+
+/**
+ * Connection between the AToZCategory type and the ContentNode type
+ */
+export interface AToZCategoryToContentNodeConnection {
+  __typename?: "AToZCategoryToContentNodeConnection";
+  /**
+   * Edges for the AToZCategoryToContentNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AToZCategoryToContentNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<ContentNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AToZCategoryToContentNodeConnectionEdge {
+  __typename?: "AToZCategoryToContentNodeConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<ContentNode>;
+}
+
+/**
+ * Connection between the AToZCategory type and the Taxonomy type
+ */
+export interface AToZCategoryToTaxonomyConnectionEdge {
+  __typename?: "AToZCategoryToTaxonomyConnectionEdge";
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Taxonomy>;
+}
+
+/**
+ * Connection between the AToZ type and the AToZCategory type
+ */
+export interface AToZToAToZCategoryConnection {
+  __typename?: "AToZToAToZCategoryConnection";
+  /**
+   * Edges for the AToZToAToZCategoryConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AToZToAToZCategoryConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AToZCategory>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AToZToAToZCategoryConnectionEdge {
+  __typename?: "AToZToAToZCategoryConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AToZCategory>;
+}
+
+/**
+ * Connection between the AToZ type and the AToZ type
+ */
+export interface AToZToPreviewConnectionEdge {
+  __typename?: "AToZToPreviewConnectionEdge";
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<AToZ>;
+}
+
+/**
+ * Connection between the AToZ type and the TermNode type
+ */
+export interface AToZToTermNodeConnection {
+  __typename?: "AToZToTermNodeConnection";
+  /**
+   * Edges for the AToZToTermNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AToZToTermNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<TermNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AToZToTermNodeConnectionEdge {
+  __typename?: "AToZToTermNodeConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<TermNode>;
+}
+
+/**
+ * Field Group
+ */
+export interface AToZ_Atozfields {
+  __typename?: "AToZ_Atozfields";
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The AcalogProgram type
+ */
+export interface AcalogProgram {
+  __typename?: "AcalogProgram";
+  /**
+   * Added to the GraphQL Schema because the ACF Field Group &quot;Acalog Department Fields&quot; was set to Show in GraphQL.
+   */
+  acalogDepartmentFields?: Maybe<AcalogProgram_Acalogdepartmentfields>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  acalogProgramId: ScalarsEnums["Int"];
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * The content of the post.
+   */
+  content: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the ContentNode type and the ContentType type
+   */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums["Int"];
+  /**
+   * Post publishing date.
+   */
+  date?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The publishing date set in GMT.
+   */
+  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The desired slug of the post
+   */
+  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
+   */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /**
+   * The RSS enclosure for the object
+   */
+  enclosure?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars["String"]>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars["String"]>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars["Int"]>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars["Int"]>;
+  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /**
+   * Connection between the NodeWithFeaturedImage type and the MediaItem type
+   */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /**
+   * The database identifier for the featured image node assigned to the content node
+   */
+  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * Globally unique ID of the featured image assigned to the node
+   */
+  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  /**
+   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
+   */
+  guid?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The globally unique identifier of the acalog_program object.
+   */
+  id: ScalarsEnums["ID"];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums["Boolean"];
+  /**
+   * Whether the object is a node in the preview state
+   */
+  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums["Boolean"];
+  /**
+   * The user that most recently edited the node
+   */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /**
+   * The permalink of the post
+   */
+  link?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
+   */
+  modified?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
+   */
+  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * Connection between the AcalogProgram type and the AcalogProgram type
+   */
+  preview?: Maybe<AcalogProgramToPreviewConnectionEdge>;
+  /**
+   * The database id of the preview node
+   */
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  /**
+   * Whether the object is a node in the preview state
+   */
+  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  /**
+   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
+   */
+  slug?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The current status of the object
+   */
+  status?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The template assigned to a node of content
+   */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  /**
+   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
+   */
+  title: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums["String"]>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * Connection between the AcalogProgram type and the AcalogProgram type
+ */
+export interface AcalogProgramToPreviewConnectionEdge {
+  __typename?: "AcalogProgramToPreviewConnectionEdge";
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<AcalogProgram>;
+}
+
+/**
+ * Field Group
+ */
+export interface AcalogProgram_Acalogdepartmentfields {
+  __typename?: "AcalogProgram_Acalogdepartmentfields";
+  catoid?: Maybe<ScalarsEnums["String"]>;
+  core?: Maybe<ScalarsEnums["String"]>;
+  courseDepartment?: Maybe<ScalarsEnums["String"]>;
+  degreeType?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  poid?: Maybe<ScalarsEnums["String"]>;
+  programContent?: Maybe<ScalarsEnums["String"]>;
+  programType?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * A Field Group registered by ACF
+ */
+export interface AcfFieldGroup {
+  __typename?: "AToZ_Atozfields" | "AcalogProgram_Acalogdepartmentfields";
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  $on: $AcfFieldGroup;
+}
+
+/**
+ * The atlasContentModelerSettings setting type
+ */
+export interface AtlasContentModelerSettingsSettings {
+  __typename?: "AtlasContentModelerSettingsSettings";
+  /**
+   * The string Settings Group
+   */
+  atlasContentModelerUsageTracking?: Maybe<ScalarsEnums["String"]>;
+}
 
 /**
  * Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from.
@@ -7166,6 +9168,9 @@ export interface Category {
      */
     where?: Maybe<CategoryToCategoryConnectionWhereArgs>;
   }) => Maybe<CategoryToCategoryConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the category type and the ContentNode type
@@ -7740,90 +9745,112 @@ export interface ConditionalTags {
   __typename?: "ConditionalTags";
   /**
    * Determines whether the query is for an existing archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isArchive?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing attachment page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isAttachment?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing author archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isAuthor?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing category archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isCategory?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing date archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isDate?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing day archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isDay?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the front page of the site.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isFrontPage?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the blog homepage.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isHome?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing month archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isMonth?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether this site has more than one author.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isMultiAuthor?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPage?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether currently in a page template.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPageTemplate?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing post type archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPostTypeArchive?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for a post or page preview.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPreview?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the Privacy Policy page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPrivacyPolicy?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for a search.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSearch?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single post.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSingle?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSingular?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether a post is sticky.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSticky?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing tag archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isTag?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing custom taxonomy archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isTax?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing year archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isYear?: Maybe<ScalarsEnums["Boolean"]>;
 }
@@ -7832,12 +9859,19 @@ export interface ConditionalTags {
  * Nodes used to manage content
  */
 export interface ContentNode {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The ID of the node in the database.
    */
@@ -8106,6 +10140,9 @@ export interface ContentType {
    * Whether this content type should can be exported.
    */
   canExport?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentType type and the Taxonomy type
@@ -8341,6 +10378,51 @@ export interface ContentTypeToTaxonomyConnectionEdge {
 }
 
 /**
+ * The payload for the createAToZCategory mutation
+ */
+export interface CreateAToZCategoryPayload {
+  __typename?: "CreateAToZCategoryPayload";
+  /**
+   * The created a_to_z_categories
+   */
+  aToZCategory?: Maybe<AToZCategory>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the createAToZ mutation
+ */
+export interface CreateAToZPayload {
+  __typename?: "CreateAToZPayload";
+  /**
+   * The Post object mutation type.
+   */
+  aToZ?: Maybe<AToZ>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the createAcalogProgram mutation
+ */
+export interface CreateAcalogProgramPayload {
+  __typename?: "CreateAcalogProgramPayload";
+  /**
+   * The Post object mutation type.
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
  * The payload for the createCategory mutation
  */
 export interface CreateCategoryPayload {
@@ -8469,6 +10551,9 @@ export interface CreateUserPayload {
  */
 export interface DatabaseIdentifier {
   __typename?:
+    | "AToZ"
+    | "AToZCategory"
+    | "AcalogProgram"
     | "Category"
     | "Comment"
     | "MediaItem"
@@ -8495,6 +10580,63 @@ export interface DefaultTemplate {
    * The name of the template
    */
   templateName?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the deleteAToZCategory mutation
+ */
+export interface DeleteAToZCategoryPayload {
+  __typename?: "DeleteAToZCategoryPayload";
+  /**
+   * The deteted term object
+   */
+  aToZCategory?: Maybe<AToZCategory>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums["ID"]>;
+}
+
+/**
+ * The payload for the deleteAToZ mutation
+ */
+export interface DeleteAToZPayload {
+  __typename?: "DeleteAToZPayload";
+  /**
+   * The object before it was deleted
+   */
+  aToZ?: Maybe<AToZ>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums["ID"]>;
+}
+
+/**
+ * The payload for the deleteAcalogProgram mutation
+ */
+export interface DeleteAcalogProgramPayload {
+  __typename?: "DeleteAcalogProgramPayload";
+  /**
+   * The object before it was deleted
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums["ID"]>;
 }
 
 /**
@@ -9137,11 +11279,18 @@ export interface MediaItem {
      */
     where?: Maybe<MediaItemToCommentConnectionWhereArgs>;
   }) => Maybe<MediaItemToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique identifier stored in the database
    */
@@ -9665,7 +11814,14 @@ export interface MenuItem {
  * Nodes that can be linked to as Menu Items
  */
 export interface MenuItemLinkable {
-  __typename?: "Category" | "Page" | "Post" | "Tag";
+  __typename?:
+    | "AToZ"
+    | "AToZCategory"
+    | "AcalogProgram"
+    | "Category"
+    | "Page"
+    | "Post"
+    | "Tag";
   /**
    * The unique resource identifier path
    */
@@ -9685,7 +11841,14 @@ export interface MenuItemLinkable {
  * Deprecated in favor of MenuItemLinkeable Interface
  */
 export interface MenuItemObjectUnion {
-  __typename?: "Category" | "Page" | "Post" | "Tag";
+  __typename?:
+    | "AToZ"
+    | "AToZCategory"
+    | "AcalogProgram"
+    | "Category"
+    | "Page"
+    | "Post"
+    | "Tag";
   $on: $MenuItemObjectUnion;
 }
 
@@ -9784,6 +11947,9 @@ export interface MenuToMenuItemConnectionEdge {
  */
 export interface Node {
   __typename?:
+    | "AToZ"
+    | "AToZCategory"
+    | "AcalogProgram"
     | "Category"
     | "Comment"
     | "CommentAuthor"
@@ -9860,7 +12026,7 @@ export interface NodeWithComments {
  * A node that supports the content editor
  */
 export interface NodeWithContentEditor {
-  __typename?: "Page" | "Post";
+  __typename?: "AcalogProgram" | "Page" | "Post";
   /**
    * The content of the post.
    */
@@ -9894,12 +12060,19 @@ export interface NodeWithExcerpt {
  * A node that can have a featured image set
  */
 export interface NodeWithFeaturedImage {
-  __typename?: "Page" | "Post";
+  __typename?: "AcalogProgram" | "Page" | "Post";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique identifier stored in the database
    */
@@ -10100,7 +12273,7 @@ export interface NodeWithRevisionsToContentNodeConnectionEdge {
  * A node that can have a template associated with it
  */
 export interface NodeWithTemplate {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
   /**
    * The template assigned to the node
    */
@@ -10112,7 +12285,7 @@ export interface NodeWithTemplate {
  * A node that NodeWith a title
  */
 export interface NodeWithTitle {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -10245,6 +12418,9 @@ export interface Page {
      */
     where?: Maybe<PageToCommentConnectionWhereArgs>;
   }) => Maybe<PageToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The content of the post.
@@ -10259,6 +12435,10 @@ export interface Page {
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique resource identifier path
    */
@@ -10680,6 +12860,9 @@ export interface Post {
      */
     where?: Maybe<PostToCommentConnectionWhereArgs>;
   }) => Maybe<PostToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The content of the post.
@@ -10694,6 +12877,10 @@ export interface Post {
    * Connection between the ContentNode type and the ContentType type
    */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums["String"];
   /**
    * The unique resource identifier path
    */
@@ -10995,6 +13182,9 @@ export interface Post {
  */
 export interface PostFormat {
   __typename?: "PostFormat";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the postFormat type and the ContentNode type
@@ -11615,6 +13805,108 @@ export interface RestoreCommentPayload {
    * The ID of the restored comment
    */
   restoredId?: Maybe<ScalarsEnums["ID"]>;
+}
+
+/**
+ * Connection between the RootQuery type and the AToZCategory type
+ */
+export interface RootQueryToAToZCategoryConnection {
+  __typename?: "RootQueryToAToZCategoryConnection";
+  /**
+   * Edges for the RootQueryToAToZCategoryConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToAToZCategoryConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AToZCategory>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToAToZCategoryConnectionEdge {
+  __typename?: "RootQueryToAToZCategoryConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AToZCategory>;
+}
+
+/**
+ * Connection between the RootQuery type and the AToZ type
+ */
+export interface RootQueryToAToZConnection {
+  __typename?: "RootQueryToAToZConnection";
+  /**
+   * Edges for the RootQueryToAToZConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToAToZConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AToZ>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToAToZConnectionEdge {
+  __typename?: "RootQueryToAToZConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AToZ>;
+}
+
+/**
+ * Connection between the RootQuery type and the AcalogProgram type
+ */
+export interface RootQueryToAcalogProgramConnection {
+  __typename?: "RootQueryToAcalogProgramConnection";
+  /**
+   * Edges for the RootQueryToAcalogProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToAcalogProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AcalogProgram>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToAcalogProgramConnectionEdge {
+  __typename?: "RootQueryToAcalogProgramConnectionEdge";
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums["String"]>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AcalogProgram>;
 }
 
 /**
@@ -12320,6 +14612,12 @@ export interface Settings {
   /**
    * Settings of the the string Settings Group
    */
+  atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: Maybe<
+    ScalarsEnums["String"]
+  >;
+  /**
+   * Settings of the the string Settings Group
+   */
   discussionSettingsDefaultCommentStatus?: Maybe<ScalarsEnums["String"]>;
   /**
    * Settings of the the string Settings Group
@@ -12376,6 +14674,9 @@ export interface Settings {
  */
 export interface Tag {
   __typename?: "Tag";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the tag type and the ContentNode type
@@ -12780,7 +15081,10 @@ export interface Template_WithSidebar {
  * Terms are nodes within a Taxonomy, used to group and relate other nodes.
  */
 export interface TermNode {
-  __typename?: "Category" | "PostFormat" | "Tag";
+  __typename?: "AToZCategory" | "Category" | "PostFormat" | "Tag";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The number of objects connected to the object
@@ -13008,6 +15312,9 @@ export interface Theme {
  */
 export interface UniformResourceIdentifiable {
   __typename?:
+    | "AToZ"
+    | "AToZCategory"
+    | "AcalogProgram"
     | "Category"
     | "ContentType"
     | "MediaItem"
@@ -13016,6 +15323,9 @@ export interface UniformResourceIdentifiable {
     | "PostFormat"
     | "Tag"
     | "User";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The unique resource identifier path
@@ -13035,6 +15345,51 @@ export interface UniformResourceIdentifiable {
    */
   uri?: Maybe<ScalarsEnums["String"]>;
   $on: $UniformResourceIdentifiable;
+}
+
+/**
+ * The payload for the UpdateAToZCategory mutation
+ */
+export interface UpdateAToZCategoryPayload {
+  __typename?: "UpdateAToZCategoryPayload";
+  /**
+   * The created a_to_z_categories
+   */
+  aToZCategory?: Maybe<AToZCategory>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the updateAToZ mutation
+ */
+export interface UpdateAToZPayload {
+  __typename?: "UpdateAToZPayload";
+  /**
+   * The Post object mutation type.
+   */
+  aToZ?: Maybe<AToZ>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
+ * The payload for the updateAcalogProgram mutation
+ */
+export interface UpdateAcalogProgramPayload {
+  __typename?: "UpdateAcalogProgramPayload";
+  /**
+   * The Post object mutation type.
+   */
+  acalogProgram?: Maybe<AcalogProgram>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums["String"]>;
 }
 
 /**
@@ -13140,6 +15495,10 @@ export interface UpdateSettingsPayload {
    * Update all settings.
    */
   allSettings?: Maybe<Settings>;
+  /**
+   * Update the atlasContentModelerSettings setting.
+   */
+  atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
@@ -13248,6 +15607,9 @@ export interface User {
      */
     where?: Maybe<UserToCommentConnectionWhereArgs>;
   }) => Maybe<UserToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Identifies the primary key from the database.
@@ -13839,6 +16201,13 @@ export interface WritingSettings {
 
 export interface Mutation {
   __typename?: "Mutation";
+  createAToZ: (args: { input: CreateAToZInput }) => Maybe<CreateAToZPayload>;
+  createAToZCategory: (args: {
+    input: CreateAToZCategoryInput;
+  }) => Maybe<CreateAToZCategoryPayload>;
+  createAcalogProgram: (args: {
+    input: CreateAcalogProgramInput;
+  }) => Maybe<CreateAcalogProgramPayload>;
   createCategory: (args: {
     input: CreateCategoryInput;
   }) => Maybe<CreateCategoryPayload>;
@@ -13855,6 +16224,13 @@ export interface Mutation {
   }) => Maybe<CreatePostFormatPayload>;
   createTag: (args: { input: CreateTagInput }) => Maybe<CreateTagPayload>;
   createUser: (args: { input: CreateUserInput }) => Maybe<CreateUserPayload>;
+  deleteAToZ: (args: { input: DeleteAToZInput }) => Maybe<DeleteAToZPayload>;
+  deleteAToZCategory: (args: {
+    input: DeleteAToZCategoryInput;
+  }) => Maybe<DeleteAToZCategoryPayload>;
+  deleteAcalogProgram: (args: {
+    input: DeleteAcalogProgramInput;
+  }) => Maybe<DeleteAcalogProgramPayload>;
   deleteCategory: (args: {
     input: DeleteCategoryInput;
   }) => Maybe<DeleteCategoryPayload>;
@@ -13889,6 +16265,13 @@ export interface Mutation {
   sendPasswordResetEmail: (args: {
     input: SendPasswordResetEmailInput;
   }) => Maybe<SendPasswordResetEmailPayload>;
+  updateAToZ: (args: { input: UpdateAToZInput }) => Maybe<UpdateAToZPayload>;
+  updateAToZCategory: (args: {
+    input: UpdateAToZCategoryInput;
+  }) => Maybe<UpdateAToZCategoryPayload>;
+  updateAcalogProgram: (args: {
+    input: UpdateAcalogProgramInput;
+  }) => Maybe<UpdateAcalogProgramPayload>;
   updateCategory: (args: {
     input: UpdateCategoryInput;
   }) => Maybe<UpdateCategoryPayload>;
@@ -13912,7 +16295,55 @@ export interface Mutation {
 
 export interface Query {
   __typename?: "Query";
+  aToZ: (args: {
+    asPreview?: Maybe<Scalars["Boolean"]>;
+    id: Scalars["ID"];
+    idType?: Maybe<AToZIdType>;
+  }) => Maybe<AToZ>;
+  aToZBy: (args?: {
+    aToZId?: Maybe<Scalars["Int"]>;
+    id?: Maybe<Scalars["ID"]>;
+    slug?: Maybe<Scalars["String"]>;
+    uri?: Maybe<Scalars["String"]>;
+  }) => Maybe<AToZ>;
+  aToZCategories: (args?: {
+    after?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars["String"]>;
+    first?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars["Int"]>;
+    where?: Maybe<RootQueryToAToZCategoryConnectionWhereArgs>;
+  }) => Maybe<RootQueryToAToZCategoryConnection>;
+  aToZCategory: (args: {
+    id: Scalars["ID"];
+    idType?: Maybe<AToZCategoryIdType>;
+  }) => Maybe<AToZCategory>;
+  acalogProgram: (args: {
+    asPreview?: Maybe<Scalars["Boolean"]>;
+    id: Scalars["ID"];
+    idType?: Maybe<AcalogProgramIdType>;
+  }) => Maybe<AcalogProgram>;
+  acalogProgramBy: (args?: {
+    acalogProgramId?: Maybe<Scalars["Int"]>;
+    id?: Maybe<Scalars["ID"]>;
+    slug?: Maybe<Scalars["String"]>;
+    uri?: Maybe<Scalars["String"]>;
+  }) => Maybe<AcalogProgram>;
+  acalogPrograms: (args?: {
+    after?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars["String"]>;
+    first?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars["Int"]>;
+    where?: Maybe<RootQueryToAcalogProgramConnectionWhereArgs>;
+  }) => Maybe<RootQueryToAcalogProgramConnection>;
+  allAToZ: (args?: {
+    after?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars["String"]>;
+    first?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars["Int"]>;
+    where?: Maybe<RootQueryToAToZConnectionWhereArgs>;
+  }) => Maybe<RootQueryToAToZConnection>;
   allSettings?: Maybe<Settings>;
+  atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   categories: (args?: {
     after?: Maybe<Scalars["String"]>;
     before?: Maybe<Scalars["String"]>;
@@ -14138,6 +16569,23 @@ export interface Subscription {
 }
 
 export interface SchemaObjectTypes {
+  AToZ: AToZ;
+  AToZCategory: AToZCategory;
+  AToZCategoryToAToZConnection: AToZCategoryToAToZConnection;
+  AToZCategoryToAToZConnectionEdge: AToZCategoryToAToZConnectionEdge;
+  AToZCategoryToContentNodeConnection: AToZCategoryToContentNodeConnection;
+  AToZCategoryToContentNodeConnectionEdge: AToZCategoryToContentNodeConnectionEdge;
+  AToZCategoryToTaxonomyConnectionEdge: AToZCategoryToTaxonomyConnectionEdge;
+  AToZToAToZCategoryConnection: AToZToAToZCategoryConnection;
+  AToZToAToZCategoryConnectionEdge: AToZToAToZCategoryConnectionEdge;
+  AToZToPreviewConnectionEdge: AToZToPreviewConnectionEdge;
+  AToZToTermNodeConnection: AToZToTermNodeConnection;
+  AToZToTermNodeConnectionEdge: AToZToTermNodeConnectionEdge;
+  AToZ_Atozfields: AToZ_Atozfields;
+  AcalogProgram: AcalogProgram;
+  AcalogProgramToPreviewConnectionEdge: AcalogProgramToPreviewConnectionEdge;
+  AcalogProgram_Acalogdepartmentfields: AcalogProgram_Acalogdepartmentfields;
+  AtlasContentModelerSettingsSettings: AtlasContentModelerSettingsSettings;
   Avatar: Avatar;
   Category: Category;
   CategoryToAncestorsCategoryConnection: CategoryToAncestorsCategoryConnection;
@@ -14170,6 +16618,9 @@ export interface SchemaObjectTypes {
   ContentTypeToContentNodeConnectionEdge: ContentTypeToContentNodeConnectionEdge;
   ContentTypeToTaxonomyConnection: ContentTypeToTaxonomyConnection;
   ContentTypeToTaxonomyConnectionEdge: ContentTypeToTaxonomyConnectionEdge;
+  CreateAToZCategoryPayload: CreateAToZCategoryPayload;
+  CreateAToZPayload: CreateAToZPayload;
+  CreateAcalogProgramPayload: CreateAcalogProgramPayload;
   CreateCategoryPayload: CreateCategoryPayload;
   CreateCommentPayload: CreateCommentPayload;
   CreateMediaItemPayload: CreateMediaItemPayload;
@@ -14179,6 +16630,9 @@ export interface SchemaObjectTypes {
   CreateTagPayload: CreateTagPayload;
   CreateUserPayload: CreateUserPayload;
   DefaultTemplate: DefaultTemplate;
+  DeleteAToZCategoryPayload: DeleteAToZCategoryPayload;
+  DeleteAToZPayload: DeleteAToZPayload;
+  DeleteAcalogProgramPayload: DeleteAcalogProgramPayload;
   DeleteCategoryPayload: DeleteCategoryPayload;
   DeleteCommentPayload: DeleteCommentPayload;
   DeleteMediaItemPayload: DeleteMediaItemPayload;
@@ -14248,6 +16702,12 @@ export interface SchemaObjectTypes {
   RegisterUserPayload: RegisterUserPayload;
   ResetUserPasswordPayload: ResetUserPasswordPayload;
   RestoreCommentPayload: RestoreCommentPayload;
+  RootQueryToAToZCategoryConnection: RootQueryToAToZCategoryConnection;
+  RootQueryToAToZCategoryConnectionEdge: RootQueryToAToZCategoryConnectionEdge;
+  RootQueryToAToZConnection: RootQueryToAToZConnection;
+  RootQueryToAToZConnectionEdge: RootQueryToAToZConnectionEdge;
+  RootQueryToAcalogProgramConnection: RootQueryToAcalogProgramConnection;
+  RootQueryToAcalogProgramConnectionEdge: RootQueryToAcalogProgramConnectionEdge;
   RootQueryToCategoryConnection: RootQueryToCategoryConnection;
   RootQueryToCategoryConnectionEdge: RootQueryToCategoryConnectionEdge;
   RootQueryToCommentConnection: RootQueryToCommentConnection;
@@ -14307,6 +16767,9 @@ export interface SchemaObjectTypes {
   TermNodeToEnqueuedStylesheetConnection: TermNodeToEnqueuedStylesheetConnection;
   TermNodeToEnqueuedStylesheetConnectionEdge: TermNodeToEnqueuedStylesheetConnectionEdge;
   Theme: Theme;
+  UpdateAToZCategoryPayload: UpdateAToZCategoryPayload;
+  UpdateAToZPayload: UpdateAToZPayload;
+  UpdateAcalogProgramPayload: UpdateAcalogProgramPayload;
   UpdateCategoryPayload: UpdateCategoryPayload;
   UpdateCommentPayload: UpdateCommentPayload;
   UpdateMediaItemPayload: UpdateMediaItemPayload;
@@ -14338,6 +16801,23 @@ export interface SchemaObjectTypes {
   WritingSettings: WritingSettings;
 }
 export type SchemaObjectTypesNames =
+  | "AToZ"
+  | "AToZCategory"
+  | "AToZCategoryToAToZConnection"
+  | "AToZCategoryToAToZConnectionEdge"
+  | "AToZCategoryToContentNodeConnection"
+  | "AToZCategoryToContentNodeConnectionEdge"
+  | "AToZCategoryToTaxonomyConnectionEdge"
+  | "AToZToAToZCategoryConnection"
+  | "AToZToAToZCategoryConnectionEdge"
+  | "AToZToPreviewConnectionEdge"
+  | "AToZToTermNodeConnection"
+  | "AToZToTermNodeConnectionEdge"
+  | "AToZ_Atozfields"
+  | "AcalogProgram"
+  | "AcalogProgramToPreviewConnectionEdge"
+  | "AcalogProgram_Acalogdepartmentfields"
+  | "AtlasContentModelerSettingsSettings"
   | "Avatar"
   | "Category"
   | "CategoryToAncestorsCategoryConnection"
@@ -14370,6 +16850,9 @@ export type SchemaObjectTypesNames =
   | "ContentTypeToContentNodeConnectionEdge"
   | "ContentTypeToTaxonomyConnection"
   | "ContentTypeToTaxonomyConnectionEdge"
+  | "CreateAToZCategoryPayload"
+  | "CreateAToZPayload"
+  | "CreateAcalogProgramPayload"
   | "CreateCategoryPayload"
   | "CreateCommentPayload"
   | "CreateMediaItemPayload"
@@ -14379,6 +16862,9 @@ export type SchemaObjectTypesNames =
   | "CreateTagPayload"
   | "CreateUserPayload"
   | "DefaultTemplate"
+  | "DeleteAToZCategoryPayload"
+  | "DeleteAToZPayload"
+  | "DeleteAcalogProgramPayload"
   | "DeleteCategoryPayload"
   | "DeleteCommentPayload"
   | "DeleteMediaItemPayload"
@@ -14448,6 +16934,12 @@ export type SchemaObjectTypesNames =
   | "RegisterUserPayload"
   | "ResetUserPasswordPayload"
   | "RestoreCommentPayload"
+  | "RootQueryToAToZCategoryConnection"
+  | "RootQueryToAToZCategoryConnectionEdge"
+  | "RootQueryToAToZConnection"
+  | "RootQueryToAToZConnectionEdge"
+  | "RootQueryToAcalogProgramConnection"
+  | "RootQueryToAcalogProgramConnectionEdge"
   | "RootQueryToCategoryConnection"
   | "RootQueryToCategoryConnectionEdge"
   | "RootQueryToCommentConnection"
@@ -14507,6 +16999,9 @@ export type SchemaObjectTypesNames =
   | "TermNodeToEnqueuedStylesheetConnection"
   | "TermNodeToEnqueuedStylesheetConnectionEdge"
   | "Theme"
+  | "UpdateAToZCategoryPayload"
+  | "UpdateAToZPayload"
+  | "UpdateAcalogProgramPayload"
   | "UpdateCategoryPayload"
   | "UpdateCommentPayload"
   | "UpdateMediaItemPayload"
@@ -14537,12 +17032,19 @@ export type SchemaObjectTypesNames =
   | "WPPageInfo"
   | "WritingSettings";
 
+export interface $AcfFieldGroup {
+  AToZ_Atozfields?: AToZ_Atozfields;
+  AcalogProgram_Acalogdepartmentfields?: AcalogProgram_Acalogdepartmentfields;
+}
+
 export interface $Commenter {
   CommentAuthor?: CommentAuthor;
   User?: User;
 }
 
 export interface $ContentNode {
+  AToZ?: AToZ;
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
@@ -14560,6 +17062,9 @@ export interface $ContentTemplate {
 }
 
 export interface $DatabaseIdentifier {
+  AToZ?: AToZ;
+  AToZCategory?: AToZCategory;
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Comment?: Comment;
   MediaItem?: MediaItem;
@@ -14587,6 +17092,9 @@ export interface $HierarchicalTermNode {
 }
 
 export interface $MenuItemLinkable {
+  AToZ?: AToZ;
+  AToZCategory?: AToZCategory;
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Page?: Page;
   Post?: Post;
@@ -14594,6 +17102,9 @@ export interface $MenuItemLinkable {
 }
 
 export interface $MenuItemObjectUnion {
+  AToZ?: AToZ;
+  AToZCategory?: AToZCategory;
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Page?: Page;
   Post?: Post;
@@ -14601,6 +17112,9 @@ export interface $MenuItemObjectUnion {
 }
 
 export interface $Node {
+  AToZ?: AToZ;
+  AToZCategory?: AToZCategory;
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   Comment?: Comment;
   CommentAuthor?: CommentAuthor;
@@ -14634,6 +17148,7 @@ export interface $NodeWithComments {
 }
 
 export interface $NodeWithContentEditor {
+  AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
 }
@@ -14643,6 +17158,7 @@ export interface $NodeWithExcerpt {
 }
 
 export interface $NodeWithFeaturedImage {
+  AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
 }
@@ -14657,12 +17173,16 @@ export interface $NodeWithRevisions {
 }
 
 export interface $NodeWithTemplate {
+  AToZ?: AToZ;
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
 }
 
 export interface $NodeWithTitle {
+  AToZ?: AToZ;
+  AcalogProgram?: AcalogProgram;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
@@ -14673,12 +17193,16 @@ export interface $NodeWithTrackbacks {
 }
 
 export interface $TermNode {
+  AToZCategory?: AToZCategory;
   Category?: Category;
   PostFormat?: PostFormat;
   Tag?: Tag;
 }
 
 export interface $UniformResourceIdentifiable {
+  AToZ?: AToZ;
+  AToZCategory?: AToZCategory;
+  AcalogProgram?: AcalogProgram;
   Category?: Category;
   ContentType?: ContentType;
   MediaItem?: MediaItem;
@@ -14700,12 +17224,16 @@ export type MakeNullable<T> = {
 };
 
 export interface ScalarsEnums extends MakeNullable<Scalars> {
+  AToZCategoryIdType: AToZCategoryIdType | undefined;
+  AToZIdType: AToZIdType | undefined;
+  AcalogProgramIdType: AcalogProgramIdType | undefined;
   AvatarRatingEnum: AvatarRatingEnum | undefined;
   CategoryIdType: CategoryIdType | undefined;
   CommentsConnectionOrderbyEnum: CommentsConnectionOrderbyEnum | undefined;
   ContentNodeIdTypeEnum: ContentNodeIdTypeEnum | undefined;
   ContentTypeEnum: ContentTypeEnum | undefined;
   ContentTypeIdTypeEnum: ContentTypeIdTypeEnum | undefined;
+  ContentTypesOfAToZCategoryEnum: ContentTypesOfAToZCategoryEnum | undefined;
   ContentTypesOfCategoryEnum: ContentTypesOfCategoryEnum | undefined;
   ContentTypesOfPostFormatEnum: ContentTypesOfPostFormatEnum | undefined;
   ContentTypesOfTagEnum: ContentTypesOfTagEnum | undefined;

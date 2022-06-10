@@ -12,7 +12,8 @@ export function PageComponent({ page }: PageProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
-  console.log(page?.uri);
+  const pageSlug = (page.slug);
+  console.log("My custom identifier class is based on slug: " + pageSlug);
 
   return (
     <>
@@ -32,14 +33,15 @@ export function PageComponent({ page }: PageProps) {
         title={page?.title()}
         bgImage={page?.featuredImage?.node.sourceUrl()}
       />
-
-      <main className="content content-single">
+<body className={pageSlug}/>
+      <main className={'content content-single ' + pageSlug}>
         <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
         </div>
       </main>
 
       <Footer copyrightHolder={generalSettings.title} />
+
     </>
   );
 }
