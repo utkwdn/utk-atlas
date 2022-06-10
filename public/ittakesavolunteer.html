@@ -20,8 +20,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="//images.utk.edu/designsystem/itav/assets/css/style.css?v24"> 
+  <!--      <link rel="stylesheet" href="//images.utk.edu/designsystem/itav/assets/css/style.css?v24">  -->
 <!--     <link rel="stylesheet" href="//images.utk.edu/designsystem/itav/asetss/css/style.css"> -->
+<link rel="stylesheet" href="/css/ittakesavolunteer.css">
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6831932/7800832/css/fonts.css" />
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -36,7 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3DCCCT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-{lhitav_universal}{lhitav_facebook}
 <a class="sr-only sr-only-focusable" href="#block-intro">Skip to main content</a>
 
 
@@ -51,11 +51,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div class="container-fluid" id="ut_identifier">
+    <div class="container-fluid" id="ut_identifier" >
     <div class="row justify-content-between py-2 align-items-center">
       <a href="https://www.utk.edu" class="home_link col-2 col-md-5 pb-3 itav-top-logo">
-        {ut_logo_white}
-        {utk_logo_powert}
+      
+        <img
+          src="images/svg/ut-logo-white-nb.svg"
+          alt="The University of Tennesseee Logo"
+          id="utk_logo_header"
+        />
+        <img
+          src="images/svg/ut-powert-nb.svg"
+          alt="The University of Tennesseee Logo"
+          id="utk_logo_powert"
+          />
       </a>
     </div>
 </div>
@@ -554,7 +563,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container-fluid">
     <div class="row  justify-content-center align-items-center">
       <div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center">
-        <a href="https://www.utk.edu/" class="itav-footer-logo">{ut_logo_centered}</a>
+        <a href="https://www.utk.edu/" class="itav-footer-logo">
+   <img
+              src="images/svg/ut-logo-centered.svg"
+              alt="The University of Tennesseee Logo"
+              id="utk_logo_centered"
+            />
+         
+        
+        </a>
         <address class="mt-5">
           <p>865-974-1000</p>
         </address>
