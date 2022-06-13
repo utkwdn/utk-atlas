@@ -10,4 +10,13 @@ module.exports = withFaust({
 
     domains: ["images.utk.edu"],
   },
+    /** allowing static public file to render without having to add the .html **/
+    rewrites: async () => {
+        return [
+          {
+            source: "/ittakesavolunteer",
+            destination: "/ittakesavolunteer.html",
+          },
+        ];
+    },
 });
