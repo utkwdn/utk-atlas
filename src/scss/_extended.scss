@@ -145,6 +145,18 @@ body {
   }
 }
 
+/* Add to card container group to allow for a more random pattern of big/little cards
+used on Traditions */
+.card-variety-A > div[class$="__inner-container"] {
+  :nth-child(3n) {
+    flex-basis: 50%;
+  }
+}
+.card-variety-B > div[class$="__inner-container"] {
+  :nth-child(3n) {
+    flex-basis: 60%;
+  }
+}
 /* In process Link Group */
 
 // .btn-group-vertical {
