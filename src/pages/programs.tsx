@@ -3,9 +3,15 @@ import Head from "next/head";
 import Intro from "../components/Intro";
 import styles from "scss/pages/Programs.module.scss";
 import Script from "next/script";
+import { prependOnceListener } from "process";
+import content from "/src/_data/programs.json";
 
 function Programs() {
+
+console.log(content)
+
   return (
+
     <Layout>
       <Intro
         title={"Programs"}
@@ -17,6 +23,8 @@ function Programs() {
           </p>
         }
       />
+
+  
       <section className={styles.areasContainer}>
         {/* CONTENT HOLDER FOR CARDS */}
         <div className={styles.areaCard}>
@@ -47,7 +55,7 @@ function Programs() {
             <ul>
               <li>
                 <a href="#">
-                  <span className={styles.programName}>Art History</span>
+                  <span className={styles.programName}>{content.categoryA}</span>
                 </a>
                 <br />
                 <span className={styles.programCollege}>
