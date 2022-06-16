@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import Head from "next/head";
-import Intro from "../components/Intro";
+import Intro from "../../components/Intro";
 import styles from "scss/pages/Programs.module.scss";
 import Script from "next/script";
 import { prependOnceListener } from "process";
