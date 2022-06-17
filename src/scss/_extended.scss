@@ -825,6 +825,7 @@ p.title {
   display: inline-block;
   z-index: 20;
   background-color: $white;
+  border-bottom-left-radius: 3rem 3rem;
   padding: 2.5rem;
   margin: 4rem auto -9rem;
   @media screen and (min-width: 800px) {
