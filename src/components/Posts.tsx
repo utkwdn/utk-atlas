@@ -42,13 +42,13 @@ function Posts({
               <div
                 className="card card-body"
                 key={post.id ?? ''}
-                id={`post-${post.id}`}>
+                id={`post-${post.id}`}
+              >
                 <div>
-
-                <ImageCap
-                title={post?.featuredImage?.node?.title()}
-                bgImage={post?.featuredImage?.node?.sourceUrl()}
-                />
+                  <ImageCap
+                    title={post?.featuredImage?.node?.title()}
+                    bgImage={post?.featuredImage?.node?.sourceUrl()}
+                  />
                   <Heading level={postTitleLevel} className={styles.title}>
                     <Link href={`/posts/${post.slug}`}>
                       <a className="stretched-link">{post.title()}</a>

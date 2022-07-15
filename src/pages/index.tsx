@@ -1,15 +1,15 @@
-import { getNextStaticProps } from "@faustjs/next";
+import { getNextStaticProps } from '@faustjs/next';
 
-import { GetStaticPropsContext } from "next";
-import Head from "next/head";
-import React from "react";
-import { CTA, Footer, Header, PageTitle, Posts } from "components";
-import styles from "scss/pages/home.module.scss";
-import { client, PageIdType } from "client";
+import { GetStaticPropsContext } from 'next';
+import Head from 'next/head';
+import React from 'react';
+import { CTA, Footer, Header, PageTitle, Posts } from 'components';
+import styles from 'scss/pages/home.module.scss';
+import { client, PageIdType } from 'client';
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
 
-import Hero from "components/Hero.js";
+import Hero from 'components/Hero.js';
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
@@ -23,7 +23,7 @@ export default function Page() {
   //let frontPageClean = Object.fromEntries(frontPageParts);
 
   const frontPageContent = usePage({
-    id: "/",
+    id: '/',
     idType: PageIdType.URI,
   });
 
@@ -32,7 +32,7 @@ export default function Page() {
   const posts = usePosts({
     first: 6,
     where: {
-      categoryName: "uncategorized",
+      categoryName: 'uncategorized',
     },
   });
   //console.log(timelineEvents[0].slug);

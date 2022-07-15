@@ -36,3 +36,8 @@ yarn-error.log*
 
 # gqty generated types
 **/client/schema.generated.ts
+
+# some minimized files
+/public/js/meet.js
+/public/css/style.css
+/public/style.css

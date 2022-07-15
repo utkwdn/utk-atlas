@@ -1,9 +1,9 @@
-import Layout from "../components/Layout";
-import Head from "next/head";
-import styles from "scss/pages/meet.module.scss";
-import Script from "next/script";
+import Layout from '../components/Layout';
+import Head from 'next/head';
+import styles from 'scss/pages/meet.module.scss';
+import Script from 'next/script';
 // import styles2 from "../components/MeetStyles";
-import Image from "next/image";
+import Image from 'next/image';
 
 function Meet() {
   return (
@@ -74,23 +74,23 @@ function Meet() {
         className="row bg-light align-items-end mb-md-5 mb-lg-0 align-items-lg-center bg-img-header no-gutters"
         style={{
           backgroundImage:
-            "url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)",
+            'url(//images.utk.edu/designsystem/meet/2021-smokey_header.jpg)',
         }}
       >
-        <div className={styles["container-top"]}>
+        <div className={styles['container-top']}>
           <div className="row no-gutters">
             <div className="col-12 col-lg-5  py-3">
               <div className="p-4 bg-white">
                 <h1
                   className={[
                     styles.meeth1,
-                    "text-uppercase",
-                    "text-stroke",
-                    "text-hide",
-                  ].join(" ")}
+                    'text-uppercase',
+                    'text-stroke',
+                    'text-hide',
+                  ].join(' ')}
                   style={{
                     backgroundImage:
-                      "url(//images.utk.edu/designsystem/meet/welcometout.svg)",
+                      'url(//images.utk.edu/designsystem/meet/welcometout.svg)',
                   }}
                 >
                   Meet UT
@@ -109,30 +109,30 @@ function Meet() {
         <div className="container-fluid bg-orange  pt-lg-1 pb-5">
           <div
             className={[
-              "col-12 col-md-10 offset-md-1 mt-n5",
-              styles["bg-homesweet"],
-            ].join(" ")}
+              'col-12 col-md-10 offset-md-1 mt-n5',
+              styles['bg-homesweet'],
+            ].join(' ')}
             style={{
               backgroundImage:
-                "url(//images.utk.edu/designsystem/meet/campusview_1.jpg)",
+                'url(//images.utk.edu/designsystem/meet/campusview_1.jpg)',
             }}
           >
             <div className="row align-items-end">
               <div
                 className={[
-                  "col-12",
-                  "col-xl-6",
-                  "bg-white",
-                  "mb-xl-5",
-                  "offset-xl-7",
-                  "pt-5",
-                  "p-2",
-                  "p-md-5",
-                  styles["bg-illustration"],
-                ].join(" ")}
+                  'col-12',
+                  'col-xl-6',
+                  'bg-white',
+                  'mb-xl-5',
+                  'offset-xl-7',
+                  'pt-5',
+                  'p-2',
+                  'p-md-5',
+                  styles['bg-illustration'],
+                ].join(' ')}
                 style={{
                   backgroundImage:
-                    "url(//images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)",
+                    'url(//images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)',
                 }}
               >
                 <h2>Our Home Sweet Home</h2>
@@ -152,15 +152,15 @@ function Meet() {
           className="container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center"
           style={{
             backgroundImage:
-              "url(//images.utk.edu/designsystem/meet/meet_web_ayres_gray_bg_1.jpg)",
+              'url(//images.utk.edu/designsystem/meet/meet_web_ayres_gray_bg_1.jpg)',
 
-            backgroundSize: "cover",
+            backgroundSize: 'cover',
           }}
         >
-          <div className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}>
+          <div className={[styles.meeth2, 'col-12 col-md-6 mx-auto'].join(' ')}>
             <svg
               version="1.1"
-              className={styles["icon-tn"]}
+              className={styles['icon-tn']}
               xmlnsXlink="//www.w3.org/1999/xlink"
               x="0px"
               y="0px"
@@ -191,7 +191,7 @@ function Meet() {
           className="container-fluid bg-light pb-4 py-md-5"
           style={{
             backgroundImage:
-              "url(//images.utk.edu/designsystem/meet/meet_web_mtn_bg_1.jpg)",
+              'url(//images.utk.edu/designsystem/meet/meet_web_mtn_bg_1.jpg)',
           }}
         >
           <div className="container">
@@ -212,8 +212,8 @@ function Meet() {
               <div
                 className={[
                   styles.min3,
-                  "col-12 col-lg-6 col-xl-4 offset-xl-1 mb-4 mb-lg-0",
-                ].join(" ")}
+                  'col-12 col-lg-6 col-xl-4 offset-xl-1 mb-4 mb-lg-0',
+                ].join(' ')}
               >
                 <img
                   src="images/svg/arrow_1.svg"
@@ -290,18 +290,18 @@ function Meet() {
                 <div className="col-12 col-md-7 col-lg-6 bg-white">
                   <div
                     className={[
-                      styles["bg-illustration"],
-                      "p-3 p-md-5 bg-white mt-n5",
-                    ].join(" ")}
+                      styles['bg-illustration'],
+                      'p-3 p-md-5 bg-white mt-n5',
+                    ].join(' ')}
                     style={{
                       backgroundImage:
-                        "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_ayres_1.svg)",
+                        'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_ayres_1.svg)',
                     }}
                   >
                     <h2>Follow Your Passion</h2>
                     <p>
                       Want to become a teacher, an engineer, or have a vision
-                      for a job that is yet to exist? With{" "}
+                      for a job that is yet to exist? With{' '}
                       <a
                         className="info-link"
                         href="https://admissions.utk.edu/study/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=degree-options"
@@ -352,7 +352,7 @@ function Meet() {
               className="container-fluid bg-light pb-4 py-md-5 no-gutters"
               style={{
                 backgroundImage:
-                  "url(https://images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)",
+                  'url(https://images.utk.edu/designsystem/meet/repeatingpattern_white_1.jpg)',
               }}
             >
               <div className="container">
@@ -372,12 +372,12 @@ function Meet() {
                     <div
                       className={[
                         styles.meeth2,
-                        "border-orange-highlight text-left",
-                      ].join(" ")}
+                        'border-orange-highlight text-left',
+                      ].join(' ')}
                     >
                       <h2>Opportunities Made for You</h2>
                       <p>
-                        With the support of our expert faculty, students{" "}
+                        With the support of our expert faculty, students{' '}
                         <a
                           className="info-link"
                           href="https://admissions.utk.edu/study/undergraduate-research/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=research"
@@ -406,11 +406,11 @@ function Meet() {
               className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/experiencecampus_1.svg)",
+                  'url(//images.utk.edu/designsystem/meet/experiencecampus_1.svg)',
               }}
             >
               <div
-                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+                className={[styles.meeth2, 'col-12 col-md-6 mx-auto'].join(' ')}
               >
                 <svg
                   version="1.1"
@@ -457,18 +457,18 @@ function Meet() {
                   <div className="row no-gutters">
                     <div
                       className={[
-                        styles["bg-illustration"],
-                        "col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1",
-                      ].join(" ")}
+                        styles['bg-illustration'],
+                        'col-12 col-md-8 col-lg-6 bg-white order-3 order-md-1',
+                      ].join(' ')}
                       style={{
                         backgroundImage:
-                          "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_boat_1.svg)",
+                          'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_boat_1.svg)',
                       }}
                     >
                       <div className="p-3 p-md-5">
                         <h2>Knoxville and Beyond</h2>
                         <p>
-                          In{" "}
+                          In{' '}
                           <a
                             className="info-link"
                             href="https://admissions.utk.edu/visit/knoxville-and-east-tennessee/?utm_source=meet-landing-page-2021&utm_medium=website&utm_campaign=meet-ut-2021&utm_id=0&utm_content=big-orange-country"
@@ -574,7 +574,7 @@ function Meet() {
               className="container-fluid bg-light pb-4 py-md-5 no-gutters"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/texture_2.jpg)",
+                  'url(//images.utk.edu/designsystem/meet/texture_2.jpg)',
               }}
             >
               <div className="container">
@@ -594,8 +594,8 @@ function Meet() {
                     <div
                       className={[
                         styles.meeth2,
-                        "border-orange-highlight",
-                      ].join(" ")}
+                        'border-orange-highlight',
+                      ].join(' ')}
                     >
                       <h2>We Want to Invest in You</h2>
                       <p>
@@ -617,7 +617,7 @@ function Meet() {
               className="container-fluid bg-img-fixed-medium bg-bench"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/pedwalkway_1.jpg)",
+                  'url(//images.utk.edu/designsystem/meet/pedwalkway_1.jpg)',
               }}
             >
               <div className="row align-items-end align-items-md-center module">
@@ -628,7 +628,7 @@ function Meet() {
                       I wouldn’t be here in my career at all if it wasn’t for
                       the friends I met in class or the professors I met.”
                     </p>
-                    <footer className={styles["blockquote-footer"]}>
+                    <footer className={styles['blockquote-footer']}>
                       <cite title="Source Title">
                         Andy // young alumnus // Knoxville, TN
                       </cite>
@@ -642,11 +642,11 @@ function Meet() {
               className="container-fluid bg-smokey text-center py-5 bg-img-cta   row no-gutters align-items-center"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/texture_rowing.jpg)",
+                  'url(//images.utk.edu/designsystem/meet/texture_rowing.jpg)',
               }}
             >
               <div
-                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+                className={[styles.meeth2, 'col-12 col-md-6 mx-auto'].join(' ')}
               >
                 <svg
                   version="1.1"
@@ -683,18 +683,18 @@ function Meet() {
                 className="col-12 col-md-10 offset-md-1 mt-lg-n5 bg-img-scroll   bg-community"
                 style={{
                   backgroundImage:
-                    "url(https://images.utk.edu/designsystem/meet/2021-community_service.jpg)",
+                    'url(https://images.utk.edu/designsystem/meet/2021-community_service.jpg)',
                 }}
               >
                 <div className="row align-items-end">
                   <div
                     className={[
-                      styles["bg-illustration"],
-                      "col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5",
-                    ].join(" ")}
+                      styles['bg-illustration'],
+                      'col-12 col-xl-6 bg-white mb-lg-5 ml-lg-n5 pt-5 p-2 p-md-5',
+                    ].join(' ')}
                     style={{
                       backgroundImage:
-                        "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)",
+                        'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_torch_1.svg)',
                     }}
                   >
                     <blockquote className={styles.blockquote}>
@@ -702,7 +702,7 @@ function Meet() {
                         To me, being a Volunteer means giving yourself to others
                         and also trying to help the community.”
                       </p>
-                      <footer className={styles["blockquote-footer"]}>
+                      <footer className={styles['blockquote-footer']}>
                         <cite title="Source Title">
                           Elizabeth // Neuroscience // Oak Ridge, TN
                         </cite>
@@ -723,7 +723,7 @@ function Meet() {
               className="container-fluid bg-light bg-img-fixed p-0 no-gutters module-50 bg-campus"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/studentsoncampus_1.jpg)",
+                  'url(//images.utk.edu/designsystem/meet/studentsoncampus_1.jpg)',
               }}
             ></div>
 
@@ -731,11 +731,11 @@ function Meet() {
               className="container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/2021-becomeavol_1.svg)",
+                  'url(//images.utk.edu/designsystem/meet/2021-becomeavol_1.svg)',
               }}
             >
               <div
-                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+                className={[styles.meeth2, 'col-12 col-md-6 mx-auto'].join(' ')}
               >
                 <svg
                   version="1.1"
@@ -772,19 +772,19 @@ function Meet() {
                 className="col-12 col-md-10 offset-md-1 bg-img-scroll   bg-traditions"
                 style={{
                   backgroundImage:
-                    "url(//images.utk.edu/designsystem/meet/2021-smokey_photoop2.jpg)",
+                    'url(//images.utk.edu/designsystem/meet/2021-smokey_photoop2.jpg)',
                 }}
               >
                 <div className="row align-items-end">
                   <div
                     className={[
                       styles.meeth2,
-                      styles["bg-illustration"],
-                      "col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5",
-                    ].join(" ")}
+                      styles['bg-illustration'],
+                      'col-12 col-lg-5 bg-white mt-lg-5 mb-lg-5 ml-lg-n5 p-2 p-md-5',
+                    ].join(' ')}
                     style={{
                       backgroundImage:
-                        "url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_pennant_1.svg)",
+                        'url(https://images.utk.edu/designsystem/meet/meet_bg_illustrations_pennant_1.svg)',
                     }}
                   >
                     <h2>Living the Vol Life</h2>
@@ -805,7 +805,7 @@ function Meet() {
               className="container-fluid bg-img-fixed-medium bg-football"
               style={{
                 backgroundImage:
-                  "url(//images.utk.edu/designsystem/meet/mae_confirmation_1.jpg)",
+                  'url(//images.utk.edu/designsystem/meet/mae_confirmation_1.jpg)',
               }}
             >
               <div className="row align-items-end align-items-md-center module">
@@ -816,7 +816,7 @@ function Meet() {
                       you are from out of state or someone who grew up in
                       Knoxville, you are a Volunteer.”
                     </p>
-                    <footer className={styles["blockquote-footer"]}>
+                    <footer className={styles['blockquote-footer']}>
                       <cite title="Source Title">
                         Emma // Deaf Education // San Diego, CA
                       </cite>
@@ -828,16 +828,16 @@ function Meet() {
 
             <div
               className={[
-                styles["last-section"],
-                "container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center",
-              ].join(" ")}
+                styles['last-section'],
+                'container-fluid bg-smokey text-center py-5 bg-img-cta row no-gutters align-items-center',
+              ].join(' ')}
               style={{
                 backgroundImage:
-                  "url(https://images.utk.edu/designsystem/meet/repeatingpattern_gray_1.jpg)",
+                  'url(https://images.utk.edu/designsystem/meet/repeatingpattern_gray_1.jpg)',
               }}
             >
               <div
-                className={[styles.meeth2, "col-12 col-md-6 mx-auto"].join(" ")}
+                className={[styles.meeth2, 'col-12 col-md-6 mx-auto'].join(' ')}
               >
                 <svg
                   version="1.1"

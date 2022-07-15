@@ -12,8 +12,8 @@ export function PageComponent({ page }: PageProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
-  const pageSlug = (page.slug);
-  console.log("My custom identifier class is based on slug: " + pageSlug);
+  const pageSlug = page.slug;
+  console.log('My custom identifier class is based on slug: ' + pageSlug);
 
   return (
     <>
@@ -33,7 +33,7 @@ export function PageComponent({ page }: PageProps) {
         title={page?.title()}
         bgImage={page?.featuredImage?.node.sourceUrl()}
       />
-<body className={pageSlug}/>
+      <body className={pageSlug} />
       <main className={'content content-single ' + pageSlug}>
         <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
@@ -41,7 +41,6 @@ export function PageComponent({ page }: PageProps) {
       </main>
 
       <Footer copyrightHolder={generalSettings.title} />
-
     </>
   );
 }

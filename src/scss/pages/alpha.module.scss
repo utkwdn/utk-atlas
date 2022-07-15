@@ -1,4 +1,4 @@
-@import "scss/common";
+@import 'scss/common';
 
 .intro-container {
   // border: 2px solid blue;
@@ -35,7 +35,7 @@ h1.area {
   letter-spacing: 0.26rem;
   text-transform: uppercase;
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     color: $utorange;
   }
