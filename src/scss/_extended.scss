@@ -705,12 +705,11 @@ body.academics {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
-  display: column;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
-  // border: 2px solid red;
   position: relative;
   @media screen and (min-width: 800px) {
     flex-direction: row;
@@ -722,7 +721,7 @@ body.academics {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
-  display: column;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
@@ -814,12 +813,15 @@ hr.oa-thick-bar {
 }
 
 p.title {
-  font-size: 4.7rem;
-  font-weight: 600;
-
-  max-width: 10ch;
-  line-height: 4.6rem;
+  // font-size: 4.7rem;
+  // font-weight: 600;
+  // line-height: 4.6rem;
+  // max-width: 10ch;
+  font-size: 6.5rem;
+  line-height: 6rem;
+  font-weight: 900;
   margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 .card-quote-offset {
   width: 90%;
@@ -875,6 +877,11 @@ p.title {
         left: -5rem;
         top: -6rem;
       }
+    }
+    &:after {
+      visibility: hidden;
+      content: close-quote;
+      // must close quote or else, netxt instance of quote will use a single quote
     }
     p {
       margin-top: 0;
@@ -975,6 +982,9 @@ p.title {
 .dig-left {
   flex-basis: 40%;
   padding: 2rem;
+  h2 {
+    margin-top: 0;
+  }
 }
 
 .dig-right {
@@ -984,13 +994,13 @@ p.title {
   img {
     object-fit: cover;
     // max-width: 1064px;
-    height: 666px;
+    max-height: 666px;
     position: realtive;
   }
 }
 .card-imagebased-container > div[class$="__inner-container"] {
   display: flex;
-  gap: 1rem 2rem;
+  gap: 2rem 3rem;
   flex-direction: column;
   flex-wrap: wrap;
   @media screen and (min-width: 800px) {
@@ -1000,8 +1010,9 @@ p.title {
 .card-imgbased {
   flex-basis: 100%;
   border: 0.5rem solid white;
+
   @media screen and (min-width: 800px) {
-    flex-basis: calc(50% - 1rem);
+    flex-basis: calc(50% - 2rem);
   }
 }
 .card-imgbased > div[class$="__inner-container"] {
@@ -1012,7 +1023,18 @@ p.title {
   figure {
     margin: 0;
   }
-
+  .link-function-only {
+    color: white;
+    font-size: 0;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
   .card-imgbased-img img {
     object-fit: cover;
     width: 100%;
@@ -1021,7 +1043,6 @@ p.title {
   .card-imgbased-title {
     position: absolute;
     margin: 0;
-    padding: 0;
     width: 100%;
     z-index: 10;
     height: auto;
@@ -1030,32 +1051,85 @@ p.title {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0 1rem 1rem 0;
+  }
 
+  .card-imgbased-title > div[class$="__inner-container"] {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
     h3 {
-      filter: drop-shadow(0 0 3px $utsmokey);
+      filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
       position: relative;
       width: auto;
       color: white;
-      font-size: clamp(3rem, 5vw, 6rem);
+      font-size: clamp(2rem, 5vw, 6rem);
       font-weight: 800;
       margin-bottom: 0;
       margin-top: 0;
+      // text-transform: uppercase;
+      vertical-align: top;
     }
     p {
       color: white;
-      font-weight: 800;
+      font-weight: 700;
       line-height: clamp(1rem, 10vw, 1.3rem);
-      filter: drop-shadow(0 0 3px $utsmokey);
+      margin-top: 0.74rem;
+
+      filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
     }
-    &:before {
-      content: " ";
-      flex-basis: 10%;
-      margin-right: 1rem;
-      display: inline-block;
-      background-color: #ff8200;
-      height: clamp(0.5rem, 10vw, 3.5rem);
-      width: clamp(0.5rem, 10vw, 3.5rem);
-      margin-top: 0.9rem;
-    }
+    // &:before {
+    //   position: relative;
+    //   content: " ";
+    //   flex-basis: 5%;
+    //   margin-right: 0.5rem;
+    //   display: flex;
+
+    //   height: inherit;
+    //   justify-content: flex-start;
+    //   align-items: flex-start;
+    //   align-content: flex-start;
+    //   background-color: #ff8200;
+    //   // height: clamp(0.5rem, 10vw, 3.5rem);
+    //   width: clamp(0.5rem, 10vw, 3.5rem);
+
+    //   content: "\25AA";
+    //   content: "\25FC";
+    //   content: " ";
+    //   // font-size: clamp(1rem, 20vw, 3rem);
+    //   // font-size: clamp(6rem, 30vw, 12rem);
+    //   margin-top: 0;
+    //   margin-bottom: 0;
+    //   text-align: left;
+    //   color: $utorange;
+    //   vertical-align: top;
+    //   margin-top: 1.2rem;
+    // }
   }
+}
+
+.squareBlock {
+  width: clamp(0.5rem, 10vw, 3.5rem);
+  display: flex;
+  flex-basis: 10%;
+  margin-right: 0.5rem;
+  background-color: #ff8200;
+  display: inline-block;
+  margin-top: 0.6rem;
+  margin-left: -1rem;
+  &:after {
+    padding-bottom: 100%;
+    display: block;
+    content: "";
+  }
+}
+
+.push-up {
+  margin-top: -4rem;
+  position: absolute;
 }
