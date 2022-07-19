@@ -1156,9 +1156,11 @@ p.title {
   }
   &:hover {
     // opacity: 0.8;
+    cursor: pointer;
 
     .card-imgbased-title {
       h3 {
+        transition: all 0.2s ease-in;
         color: $utsmokeytext !important;
       }
       &:after {
@@ -1168,6 +1170,7 @@ p.title {
       }
     }
   }
+
   .card-imgbased-img img {
     object-fit: cover;
     width: 100%;
@@ -1193,6 +1196,7 @@ p.title {
       background-color: $utorange;
       background-image: url("//images.utk.edu/designsystem/patterns/gingham40.svg");
 
+      transition: all 0.2s ease-in;
       right: -1rem;
       bottom: -1rem;
       display: block;
@@ -1214,6 +1218,7 @@ p.title {
 
     padding: 1rem 1rem 1rem 0;
     h3 {
+      transition: all 0.2s ease-in;
       // filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
       position: relative;
       width: auto;
