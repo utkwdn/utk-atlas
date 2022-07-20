@@ -1,19 +1,6 @@
 @import "./node_modules/utksds-framework/src/scss/custom_variables";
 @import "./node_modules/bootstrap/scss/variables";
 
-// UT Components
-@import "./framework/accordion_folds";
-@import "./framework/calendars";
-@import "./framework/cards";
-@import "./framework/forms";
-@import "./framework/gallery";
-@import "./framework/jumbotron";
-@import "./framework/latest_posts";
-@import "./framework/profiles";
-@import "./framework/promos";
-@import "./framework/sliders";
-@import "./framework/strip";
-
 // applied just so I can space out some things that were overlapping. Remove later.
 // added to the Home Sweet Home section
 .SSspace {

@@ -87,13 +87,13 @@
   }
   .card-body {
     padding-bottom: 3rem !important; //bootstrap variables only allows top and bottom to be the same. Want more space on bottom.
-    h2.card-title {
+    .card-title {
       // font-weight: $font-weight-normal;
       // font-size: 1.8rem;
       // line-height: 1.95rem;
       margin-top: 0; // override _typography
     }
-    h2.card-title a {
+    .card-title a {
       color: $utlinkriver;
       text-decoration: none;
       &:hover {

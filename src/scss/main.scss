@@ -89,6 +89,19 @@
 @import "./node_modules/utksds-framework/src/scss/styles/logos";
 @import "./node_modules/utksds-framework/src/scss/styles/wp";
 
+// UT Components – LOCAL
+@import "./framework/accordion_folds";
+@import "./framework/calendars";
+@import "./framework/cards";
+@import "./framework/forms";
+@import "./framework/gallery";
+@import "./framework/jumbotron";
+@import "./framework/latest_posts";
+@import "./framework/profiles";
+@import "./framework/promos";
+@import "./framework/sliders";
+@import "./framework/strip";
+
 // body {
 //   min-height: 100vh;
 // }
