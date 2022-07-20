@@ -701,6 +701,10 @@ h2 {
   position: relative;
   z-index: 2;
   font-weight: 800;
+}
+
+// Texture Add on. Works like heading-oa-bar
+.heading-texture-dots {
   &:before {
     content: "";
     width: 75%;
