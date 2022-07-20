@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // keep a list of the icon ids we put in the symbol
-const icons = ["utk-logo-white", "icon-2"];
+const icons = ['utk-logo-white', 'icon-2'];
 
 // then define an Icon component that references the
 function Icon({ id, ...props }) {
@@ -24,5 +24,5 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);

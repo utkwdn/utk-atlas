@@ -1,36 +1,37 @@
-import { useRef, useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import Head from "next/head";
-import styles from "scss/pages/Vision.module.scss";
-import Script from "next/script";
+import { useRef, useEffect, useState } from 'react';
+import Layout from '../components/Layout';
+import Head from 'next/head';
+import styles from 'scss/pages/Vision.module.scss';
+import Script from 'next/script';
 // import ReactPlayer from 'react-player' //maybe we try this
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // import cx from 'classnames';
 // create a joiner to use for classNames
-const cx = (...classNames) => classNames.join(" ");
+const cx = (...classNames) => classNames.join(' ');
 // example use of local styles and joiner class
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
-function YoutubeEmbed( embedId ){
-    return( <iframe
+function YoutubeEmbed(embedId) {
+  return (
+    <iframe
       width="100%"
       height="100%"
-      src={"https://www.youtube.com/embed/" + embedId }
+      src={'https://www.youtube.com/embed/' + embedId}
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title="Play strategic vision video."
-    /> );
-};
+    />
+  );
+}
 
 function Vision() {
-
   const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
-    console.log( playVideo );
+    console.log(playVideo);
   });
 
   return (
@@ -48,10 +49,10 @@ function Vision() {
             className={[
               styles.angleBracketDown,
               styles.bracketHeroAdjustment,
-            ].join(" ")}
+            ].join(' ')}
           />
           <h1 className={styles.textUppercase}>
-            <span className={styles["fake-big-head"]}>
+            <span className={styles['fake-big-head']}>
               Strategic
               <br />
               Vision
@@ -60,18 +61,17 @@ function Vision() {
             <span className={styles.itav}>It takes a Volunteer</span>
           </h1>
 
-
           <div className={styles.triangleContainer}>
             <div className={styles.flagshipTorch}></div>
-            <div className={styles["triangle-bottomright"]}></div>
+            <div className={styles['triangle-bottomright']}></div>
           </div>
         </div>
         <section className={styles.vision}>
           <h2 className={styles.nod}>Our Vision</h2>
           <p className={styles.lead}>
-            A world enriched by our{" "}
-            <span className={styles.textPop}>ideas</span>, improved through our{" "}
-            <span className={styles.textPop}>action</span>, and inspired by the{" "}
+            A world enriched by our{' '}
+            <span className={styles.textPop}>ideas</span>, improved through our{' '}
+            <span className={styles.textPop}>action</span>, and inspired by the{' '}
             <span className={styles.textPop}>Volunteer spirit</span> of service
             and leadership
           </p>
@@ -99,30 +99,27 @@ function Vision() {
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
                   <div className="ratio ratio-16x9 yt-container">
-                  { playVideo === false && (
-                  <button
-                    onClick={() => setPlayVideo( true ) }
-                    className="btn border-0 yt-play"
-                  >
-                    <img
-                    src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
-                      async
-                      className="lazyload"
-                      alt="Play strategic vision video."
-                      width="1386"
-                      height="780"
-                    />
-                  </button>
-                  ) }
-                  { playVideo === true && (
-                    YoutubeEmbed("I3H4Po3dFwc")
-                  ) }
+                    {playVideo === false && (
+                      <button
+                        onClick={() => setPlayVideo(true)}
+                        className="btn border-0 yt-play"
+                      >
+                        <img
+                          src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
+                          async
+                          className="lazyload"
+                          alt="Play strategic vision video."
+                          width="1386"
+                          height="780"
+                        />
+                      </button>
+                    )}
+                    {playVideo === true && YoutubeEmbed('I3H4Po3dFwc')}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
 
           <div className={styles.angleContainer}>
             <p className={styles.angleIntro}>
@@ -180,7 +177,7 @@ function Vision() {
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
               <h3 className={cx(styles.objTitleL01, styles.textUppercase)}>
-                Cultivating the{" "}
+                Cultivating the{' '}
                 <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
               <div
@@ -203,12 +200,12 @@ function Vision() {
                   experiential, affordable, and relevant
                 </li>
                 <li>
-                  <span className={styles.textPopLight}>Deliver</span>{" "}
+                  <span className={styles.textPopLight}>Deliver</span>{' '}
                   educational opportunities that are responsive to the needs of
                   learners
                 </li>
                 <li>
-                  <span className={styles.textPopLight}>Support</span>{" "}
+                  <span className={styles.textPopLight}>Support</span>{' '}
                   curricular innovations that align with 21st-century workforce
                   needs and our research strengths and priorities
                 </li>
@@ -230,13 +227,13 @@ function Vision() {
                 )}
               >
                 <span className={styles.objTitleR01}>
-                  Conducting Research{" "}
+                  Conducting Research{' '}
                   <span className={styles.boldPunch}>
                     That Makes Life and Lives Better
                   </span>
                 </span>
               </h3>
-              <p className={[styles.lead, styles.offset].join(" ")}>
+              <p className={[styles.lead, styles.offset].join(' ')}>
                 Advance the frontiers of knowledge to create a more just,
                 prosperous, and sustainable future through world-class research,
                 scholarship, and creative work
@@ -264,20 +261,20 @@ function Vision() {
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
               <h3
-                className={[styles.textUppercase, styles.objTitleL02].join("")}
+                className={[styles.textUppercase, styles.objTitleL02].join('')}
               >
-                Ensuring a Culture Where{" "}
+                Ensuring a Culture Where{' '}
                 <span className={styles.boldPunch}>Vol is a Verb</span>
               </h3>
               <div
                 className={[
                   styles.printLineComplex,
                   styles.camo02Container,
-                ].join(" ")}
+                ].join(' ')}
               >
                 <div
                   className={[styles.printLinePattern, styles.torchCamo02].join(
-                    " "
+                    ' '
                   )}
                 ></div>
               </div>
@@ -287,13 +284,13 @@ function Vision() {
               </p>
               <ul className={styles.ObjList}>
                 <li>
-                  <span className={styles.textPopLight}>Implement</span>{" "}
+                  <span className={styles.textPopLight}>Implement</span>{' '}
                   structures and practices that attract and retain a diverse
                   community of faculty, staff, and students and that support a
                   culture where everyone matters and belongs
                 </li>
                 <li>
-                  <span className={styles.textPopLight}>Challenge</span>{" "}
+                  <span className={styles.textPopLight}>Challenge</span>{' '}
                   students to examine their understandings of the world and
                   their capacity to act as members of an inclusive community
                 </li>
@@ -316,7 +313,7 @@ function Vision() {
                 )}
               >
                 <span className={styles.objTitleR02}>
-                  Making Ourselves{" "}
+                  Making Ourselves{' '}
                   <span className={styles.boldPunch}>Nimble and Adaptable</span>
                 </span>
               </h3>
@@ -336,7 +333,7 @@ function Vision() {
                   while supporting innovation
                 </li>
                 <li>
-                  <span className={styles.textPopLight}>Foster</span>{" "}
+                  <span className={styles.textPopLight}>Foster</span>{' '}
                   organizational agility and innovation by developing incentives
                   for innovative and transformational work that also breaks or
                   blurs the lines of organizational silos
@@ -347,7 +344,7 @@ function Vision() {
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
               <h3 className={cx(styles.textUppercase, styles.objTitleL03)}>
-                Embodying the Modern R1,{" "}
+                Embodying the Modern R1,{' '}
                 <span className={styles.boldPunch}>Land-Grant University</span>
               </h3>
               <div
@@ -406,7 +403,7 @@ function Vision() {
         </div>
       </section>
       <div
-        className={[styles.skinnyLongImg, styles.visionFooter].join(" ")}
+        className={[styles.skinnyLongImg, styles.visionFooter].join(' ')}
       ></div>
     </Layout>
   );

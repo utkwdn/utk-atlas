@@ -27,7 +27,8 @@ function PageTitle({
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...(id && { id })}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
-      className={styles.hero}>
+      className={styles.hero}
+    >
       <div className="container-xxl">
         <h1 className="display-4">{title}</h1>
         <div className={styles.intro}>
