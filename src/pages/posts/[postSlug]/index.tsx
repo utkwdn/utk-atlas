@@ -5,7 +5,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 export interface PostProps {
-  post: Post | Post['preview']['node'] | null | undefined;
+  post: Post | null | undefined;
 }
 
 export function PostComponent({ post }: PostProps) {
@@ -15,19 +15,19 @@ export function PostComponent({ post }: PostProps) {
   return (
     <>
       <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
       />
 
       <Head>
         <title>
-          {post?.title()} - {generalSettings.title}
+          {post?.title()} - {generalSettings?.title}
         </title>
       </Head>
 
       <PageTitle
-        title={post?.title()}
-        bgImage={post?.featuredImage?.node?.sourceUrl()}
+        title={post?.title() || ''}
+        bgImage={post?.featuredImage?.node?.sourceUrl() || undefined}
       />
 
       <main className="content content-single">
@@ -36,7 +36,7 @@ export function PostComponent({ post }: PostProps) {
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

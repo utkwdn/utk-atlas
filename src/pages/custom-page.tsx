@@ -11,12 +11,12 @@ export default function Page() {
   return (
     <>
       <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
       />
 
       <Head>
-        <title>Custom Page - {generalSettings.title}</title>
+        <title>Custom Page - {generalSettings?.title}</title>
       </Head>
 
       <PageTitle title="Custom Page" />
@@ -38,7 +38,7 @@ export default function Page() {
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

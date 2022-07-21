@@ -40,13 +40,13 @@ export default function Page() {
   return (
     <>
       <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
       />
 
       <Head>
         <title>
-          {generalSettings.title} - {generalSettings.description}
+          {generalSettings?.title} - {generalSettings?.description}
         </title>
       </Head>
       <Hero />
@@ -62,12 +62,14 @@ export default function Page() {
         <main id="content">
           <div
             className="entry-content container-xxl"
-            dangerouslySetInnerHTML={{ __html: frontPageContent?.content() }}
+            dangerouslySetInnerHTML={{
+              __html: frontPageContent?.content?.() || '',
+            }}
           />
         </main>
       </div>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }
