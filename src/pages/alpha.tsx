@@ -95,9 +95,11 @@ function Alpha() {
           {isLetter('[0-9]') && <a href="#num">#</a>}
           {letters.flatMap((letter) =>
             isLetter(letter) ? (
-              <a href={`#${letter}`}>{letter.toUpperCase()}</a>
+              <a key={letter} href={`#${letter}`}>
+                {letter.toUpperCase()}
+              </a>
             ) : (
-              <></>
+              []
             )
           )}
         </div>
@@ -140,7 +142,7 @@ function Alpha() {
               </h2>
             </div>
             <ul>
-              {alphaIndex?.nodes?.flatMap((this_alpha) => {
+              {alphaIndex?.nodes?.flatMap((this_alpha, i) => {
                 const url = this_alpha?.aToZFields?.url;
                 if (
                   url &&
@@ -151,7 +153,7 @@ function Alpha() {
                     ?.match('^[0-9]')
                 ) {
                   return (
-                    <li className={styles['result-title']}>
+                    <li key={i} className={styles['result-title']}>
                       <a href={url}>{this_alpha.title()}</a>
                       <br />
                       <span className={styles['result-url']}>
@@ -169,14 +171,14 @@ function Alpha() {
         {letters.flatMap((letter) => {
           if (isLetter(letter)) {
             return (
-              <div className={styles['letter-group']}>
+              <div key={letter} className={styles['letter-group']}>
                 <div className={styles['letter-container']}>
                   <h2 id={letter} className={styles.letter}>
                     {letter.toUpperCase()}
                   </h2>
                 </div>
                 <ul>
-                  {alphaIndex?.nodes?.flatMap((this_alpha) => {
+                  {alphaIndex?.nodes?.flatMap((this_alpha, i) => {
                     const url = this_alpha?.aToZFields?.url;
                     if (
                       url &&
@@ -187,7 +189,7 @@ function Alpha() {
                         ?.match(`^${letter}`)
                     ) {
                       return (
-                        <li className={styles['result-title']}>
+                        <li key={i} className={styles['result-title']}>
                           <a href={url}>{this_alpha.title()}</a>
                           <br />
                           <span className={styles['result-url']}>
