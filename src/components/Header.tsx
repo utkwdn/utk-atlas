@@ -1,4 +1,3 @@
-import React, { Children } from 'react';
 import styles from 'scss/components/Header.module.scss';
 import Link from 'next/link';
 import { client, MenuLocationEnum } from 'client';
@@ -9,18 +8,11 @@ interface Props {
   uri?: string;
 }
 
-const isAbsolute = (url: string) => /^(?:\/|[a-z]+:\/\/)/.test(url);
-
-const toPathname = (url: string) =>
-  isAbsolute(url) ? new URL(url).pathname : url;
-
 function Header({
   title = 'Headless by WP Engine',
   description,
   uri,
 }: Props): JSX.Element {
-  const isHome = !uri;
-
   const uriParts = (uri || '').split('/').filter(Boolean);
   const firstUriPartRaw = uriParts[0];
   const secondUriPartRaw = uriParts[1];
@@ -35,6 +27,15 @@ function Header({
       where: { location: MenuLocationEnum.PRIMARY },
     })?.nodes || [];
 
+  const currentTopLevelItem = firstUriPart
+    ? links.find((link) => link?.uri === `${firstUriPart}/`)
+    : null;
+  const currentTopLevelItemId = currentTopLevelItem?.id;
+  const currentSecondLevelItemId = firstTwoUriParts
+    ? links.find((link) => link?.uri === `${firstTwoUriParts}/`)?.id
+    : null;
+
+  /** Primary nav items (desktop and mobile) */
   const primaryNavItems = links.flatMap((link) => {
     // if it has `parentId`, it's not a top-level item, so skip it
     const parentId = link?.parentId;
@@ -42,29 +43,65 @@ function Header({
 
     const id = link?.id;
     const url = link?.url;
+    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
+    const itemUri = link?.uri;
     const label = link?.label;
     const children = link?.childItems()?.nodes || [];
 
-    if (id && url && label) {
-      const pathname = toPathname(url);
+    if (!id || !url || !itemUri || !label) return [];
 
-      /* This will break if one of the external links happens to start with the same pathname! */
-      const isCurrent =
-        !isHome && firstUriPart && pathname.startsWith(firstUriPart);
-      const currentClasses = isCurrent
-        ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
-        : '';
+    const hasChildren = children.length > 0;
 
-      const hasChildren = children.length > 0;
-      const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
+    /** sub-nav, if applicable (only appears in mobile menu) */
+    const subNav = hasChildren ? (
+      <ul className="sub-menu">
+        {children.flatMap((child) => {
+          const childLabel = child?.label;
+          const childUrl = child?.url;
+          /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
+          const childUri = child?.uri;
+          const childId = child?.id;
 
-      return (
-        <li
-          key={id}
-          className={`${currentClasses} ${hasChildrenClasses}`.trim()}
-        >
-          {/* TODO: use `pathname` instead IF it's an internal link */}
-          <Link href={url}>
+          if (!childLabel || !childUrl || !childUri || !childId) return [];
+
+          const childIsInternal = childUrl !== childUri;
+          const childIsCurrent = childId === currentSecondLevelItemId;
+
+          return (
+            <li
+              key={childId}
+              className={childIsCurrent ? 'current-menu-item' : ''}
+            >
+              {childIsInternal ? (
+                <Link href={childUri}>
+                  <a {...(childIsCurrent ? { 'aria-current': 'true' } : {})}>
+                    {childLabel}
+                  </a>
+                </Link>
+              ) : (
+                <a href={childUri}>{childLabel}</a>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    ) : (
+      <></>
+    );
+
+    const isInternal = url !== itemUri;
+
+    const isCurrent = id === currentTopLevelItemId;
+    const currentClasses = isCurrent
+      ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
+      : '';
+
+    const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
+
+    return (
+      <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
+        {isInternal ? (
+          <Link href={itemUri}>
             <a
               className="main-navigation"
               {...(isCurrent ? { 'aria-current': 'true' } : {})}
@@ -72,77 +109,43 @@ function Header({
               {label}
             </a>
           </Link>
-          {children.length > 0 && (
-            <ul className="sub-menu">
-              {children.flatMap((child) => {
-                const childLabel = child?.label;
-                const childUrl = child?.url;
-                const childId = child?.id;
+        ) : (
+          <a href={itemUri} className="main-navigation">
+            {label}
+          </a>
+        )}
 
-                if (childLabel && childUrl && childId) {
-                  const childPathname = toPathname(childUrl);
-                  const isCurrent =
-                    firstTwoUriParts &&
-                    childPathname.startsWith(firstTwoUriParts);
-
-                  return (
-                    <li
-                      key={childId}
-                      className={isCurrent ? 'current-menu-item' : ''}
-                    >
-                      {/* TODO: use `childPathname` instead IF it's an internal link */}
-                      <Link href={childUrl}>
-                        <a {...(isCurrent ? { 'aria-current': 'true' } : {})}>
-                          {childLabel}
-                        </a>
-                      </Link>
-                    </li>
-                  );
-                } else {
-                  return [];
-                }
-              })}
-            </ul>
-          )}
-        </li>
-      );
-    } else {
-      return [];
-    }
+        {subNav}
+      </li>
+    );
   });
 
-  const secondaryNavItems = links?.flatMap((link) => {
-    // if it has no `parentId`, then it's not a secondary item, so skip it.
-    const parentId = link?.parentId;
-    if (!parentId) return [];
-
+  /** Desktop section-nav (if there is one) */
+  const secondaryNavItems = (
+    currentTopLevelItem?.childItems()?.nodes || []
+  ).flatMap((link) => {
     const url = link?.url;
+    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
+    const itemUri = link?.uri;
     const label = link?.label;
     const id = link?.id;
 
-    if (url && label && id && firstUriPart) {
-      const pathname = toPathname(url);
+    if (!url || !itemUri || !label || !id) return [];
 
-      /* This will break if one of the external links happens to start with the same pathname! */
-      if (pathname.startsWith(firstUriPart)) {
-        /* And this can also break for similar reason (though less likely b/c it's 2 layers) */
-        const isCurrent =
-          firstTwoUriParts && pathname.startsWith(firstTwoUriParts);
+    const isInternal = itemUri !== url;
+    const isCurrent = id === currentSecondLevelItemId;
 
-        return (
-          <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
-            {/* TODO: use `pathname` instead IF it's an internal link */}
-            <Link href={url}>
-              <a {...(isCurrent ? { 'aria-current': 'true' } : {})}>{label}</a>
-            </Link>
-          </li>
-        );
-      } else {
-        return [];
-      }
-    } else {
-      return [];
-    }
+    return (
+      <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
+        {isInternal ? (
+          <Link href={itemUri}>
+            <a {...(isCurrent ? { 'aria-current': 'true' } : {})}>{label}</a>
+          </Link>
+        ) : (
+          <a href={itemUri}>{label}</a>
+        )}
+      </li>
+    );
   });
 
   return (
