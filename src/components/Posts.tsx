@@ -37,7 +37,7 @@ function Posts({
         )}
         {intro && <p className={styles.intro}>{intro}</p>}
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3  row-cols-xl-4 g-4">
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <div className="col" key={post.id ?? ''}>
               <div
                 className="card card-body"
@@ -46,8 +46,10 @@ function Posts({
               >
                 <div>
                   <ImageCap
-                    title={post?.featuredImage?.node?.title()}
-                    bgImage={post?.featuredImage?.node?.sourceUrl()}
+                    title={post?.featuredImage?.node?.title() || ''}
+                    bgImage={
+                      post?.featuredImage?.node?.sourceUrl() || undefined
+                    }
                   />
                   <Heading level={postTitleLevel} className={styles.title}>
                     <Link href={`/posts/${post.slug}`}>

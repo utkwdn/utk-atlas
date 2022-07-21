@@ -5,42 +5,42 @@ import Head from 'next/head';
 import { client, Page as PageType } from 'client';
 
 export interface PageProps {
-  page: PageType | PageType['preview']['node'] | null | undefined;
+  page: PageType | null | undefined;
 }
 
 export function PageComponent({ page }: PageProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
-  const pageSlug = page.slug;
+  const pageSlug = page?.slug;
   console.log('My custom identifier class is based on slug: ' + pageSlug);
 
   return (
     <>
       <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-        uri={page?.uri}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
+        uri={page?.uri || undefined}
       />
 
       <Head>
         <title>
-          {page?.title()} - {generalSettings.title}
+          {page?.title()} - {generalSettings?.title}
         </title>
       </Head>
 
       <PageTitle
-        title={page?.title()}
-        bgImage={page?.featuredImage?.node.sourceUrl()}
+        title={page?.title() || ''}
+        bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
       />
-      <body className={pageSlug} />
+      <body className={pageSlug || ''} />
       <main className={'content content-single ' + pageSlug}>
         <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

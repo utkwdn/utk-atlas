@@ -9,17 +9,141 @@ interface Props {
   uri?: string;
 }
 
+const isAbsolute = (url: string) => /^(?:\/|[a-z]+:\/\/)/.test(url);
+
+const toPathname = (url: string) =>
+  isAbsolute(url) ? new URL(url).pathname : url;
+
 function Header({
   title = 'Headless by WP Engine',
   description,
   uri,
 }: Props): JSX.Element {
-  const { menuItems } = client.useQuery();
-  const links = menuItems({
-    where: { location: MenuLocationEnum.PRIMARY },
-  }).nodes;
+  const isHome = !uri;
 
-  console.log(uri);
+  const uriParts = (uri || '').split('/').filter(Boolean);
+  const firstUriPartRaw = uriParts[0];
+  const secondUriPartRaw = uriParts[1];
+  const firstUriPart = uriParts[0] ? `/${firstUriPartRaw}` : null;
+  const secondUriPart = uriParts[1] ? `/${secondUriPartRaw}` : null;
+  const firstTwoUriParts =
+    firstUriPart && secondUriPart ? `${firstUriPart}${secondUriPart}` : null;
+
+  const { menuItems } = client.useQuery();
+  const links =
+    menuItems({
+      where: { location: MenuLocationEnum.PRIMARY },
+    })?.nodes || [];
+
+  const primaryNavItems = links.flatMap((link) => {
+    // if it has `parentId`, it's not a top-level item, so skip it
+    const parentId = link?.parentId;
+    if (parentId) return [];
+
+    const id = link?.id;
+    const url = link?.url;
+    const label = link?.label;
+    const children = link?.childItems()?.nodes || [];
+
+    if (id && url && label) {
+      const pathname = toPathname(url);
+
+      /* This will break if one of the external links happens to start with the same pathname! */
+      const isCurrent =
+        !isHome && firstUriPart && pathname.startsWith(firstUriPart);
+      const currentClasses = isCurrent
+        ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
+        : '';
+
+      const hasChildren = children.length > 0;
+      const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
+
+      return (
+        <li
+          key={id}
+          className={`${currentClasses} ${hasChildrenClasses}`.trim()}
+        >
+          {/* TODO: use `pathname` instead IF it's an internal link */}
+          <Link href={url}>
+            <a
+              className="main-navigation"
+              {...(isCurrent ? { 'aria-current': 'true' } : {})}
+            >
+              {label}
+            </a>
+          </Link>
+          {children.length > 0 && (
+            <ul className="sub-menu">
+              {children.flatMap((child) => {
+                const childLabel = child?.label;
+                const childUrl = child?.url;
+                const childId = child?.id;
+
+                if (childLabel && childUrl && childId) {
+                  const childPathname = toPathname(childUrl);
+                  const isCurrent =
+                    firstTwoUriParts &&
+                    childPathname.startsWith(firstTwoUriParts);
+
+                  return (
+                    <li
+                      key={childId}
+                      className={isCurrent ? 'current-menu-item' : ''}
+                    >
+                      {/* TODO: use `childPathname` instead IF it's an internal link */}
+                      <Link href={childUrl}>
+                        <a {...(isCurrent ? { 'aria-current': 'true' } : {})}>
+                          {childLabel}
+                        </a>
+                      </Link>
+                    </li>
+                  );
+                } else {
+                  return [];
+                }
+              })}
+            </ul>
+          )}
+        </li>
+      );
+    } else {
+      return [];
+    }
+  });
+
+  const secondaryNavItems = links?.flatMap((link) => {
+    // if it has no `parentId`, then it's not a secondary item, so skip it.
+    const parentId = link?.parentId;
+    if (!parentId) return [];
+
+    const url = link?.url;
+    const label = link?.label;
+    const id = link?.id;
+
+    if (url && label && id && firstUriPart) {
+      const pathname = toPathname(url);
+
+      /* This will break if one of the external links happens to start with the same pathname! */
+      if (pathname.startsWith(firstUriPart)) {
+        /* And this can also break for similar reason (though less likely b/c it's 2 layers) */
+        const isCurrent =
+          firstTwoUriParts && pathname.startsWith(firstTwoUriParts);
+
+        return (
+          <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
+            {/* TODO: use `pathname` instead IF it's an internal link */}
+            <Link href={url}>
+              <a {...(isCurrent ? { 'aria-current': 'true' } : {})}>{label}</a>
+            </Link>
+          </li>
+        );
+      } else {
+        return [];
+      }
+    } else {
+      return [];
+    }
+  });
 
   return (
     <>
@@ -150,82 +274,22 @@ function Header({
               </button>
 
               <div className="menu-main-site-container">
-                <ul id="primary-menu" className="list-unstyled">
-                  {links?.map((link) => (
-                    <span key={link.id}>
-                      {(link.parentId === null &&
-                        uri !== undefined &&
-                        uri !== null &&
-                        uri.includes(link.url) &&
-                        link.url !== '/' && (
-                          <li
-                            key={`${link.label}$-menu`}
-                            className="current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children "
-                          >
-                            <Link href={link.url ?? ''}>
-                              <a className="main-navigation" href={link.url}>
-                                {link.label}
-                              </a>
-                            </Link>
-                            {link.childItems().nodes[0] && (
-                              <ul className="sub-menu">
-                                {link.childItems().nodes.map((child) => (
-                                  <li key={`${child.label}$-menu`}>
-                                    <Link href={child.url ?? ''}>
-                                      <a href={child.url}>{child.label}</a>
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        )) ||
-                        (link.parentId === null && (
-                          <li key={`${link.label}$-menu`}>
-                            <Link href={link.url ?? ''}>
-                              <a className="main-navigation" href={link.url}>
-                                {link.label}
-                              </a>
-                            </Link>
-                            {link.childItems().nodes[0] && (
-                              <ul className="sub-menu">
-                                {link.childItems().nodes.map((child) => (
-                                  <li key={`${child.label}$-menu`}>
-                                    <Link href={child.url ?? ''}>
-                                      <a href={child.url}>{child.label}</a>
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        ))}
-                    </span>
-                  ))}
-                </ul>
+                {primaryNavItems.length > 0 && (
+                  <ul id="primary-menu" className="list-unstyled">
+                    {primaryNavItems}
+                  </ul>
+                )}
               </div>
             </nav>
           </div>
         </div>
       </header>
 
-      {uri !== undefined && uri !== null && (
+      {secondaryNavItems.length > 0 && (
         <nav className="navbar-horizontal col-auto">
-          {links?.map(
-            (link) =>
-              uri.includes(link.url) &&
-              link.childItems().nodes[0] && (
-                <ul id="secondary-menu" className="nav justify-content-center">
-                  {link.childItems().nodes.map((child) => (
-                    <li key={`${child.label}$-menu`}>
-                      <Link href={child.url ?? ''}>
-                        <a href={child.url}>{child.label}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )
-          )}
+          <ul id="secondary-menu" className="nav justify-content-center">
+            {secondaryNavItems}
+          </ul>
         </nav>
       )}
 

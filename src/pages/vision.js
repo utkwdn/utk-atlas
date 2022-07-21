@@ -41,6 +41,7 @@ function Vision() {
           strategy="beforeInteractive"
           type="text/javascript"
           src="js/vision.js"
+          defer
         ></script>
       </Head>
       <section className={styles.hero}>

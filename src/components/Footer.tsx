@@ -11,12 +11,14 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
   const year = new Date().getFullYear();
 
   const { menuItems } = client.useQuery();
-  const tools = menuItems({
-    where: { location: MenuLocationEnum.TOOLS },
-  }).nodes;
-  const links = menuItems({
-    where: { location: MenuLocationEnum.LINKS },
-  }).nodes;
+  const tools =
+    menuItems({
+      where: { location: MenuLocationEnum.TOOLS },
+    })?.nodes || [];
+  const links =
+    menuItems({
+      where: { location: MenuLocationEnum.LINKS },
+    })?.nodes || [];
 
   return (
     <footer id="colophon" className="site-footer  mt-auto">
@@ -29,35 +31,45 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                   <div className="col-6">
                     <h4 className="text-white">Tools</h4>
                     <ul id="list-unstyled" className="list-unstyled">
-                      {tools?.map((tool) => (
-                        <li key={`${tool.label}$-menu`}>
-                          <Link href={tool.url ?? ''}>
-                            <a
-                              className="text-white footer-links"
-                              href={tool.url}
-                            >
-                              {tool.label}
-                            </a>
-                          </Link>
-                        </li>
-                      ))}
+                      {tools.flatMap((tool) => {
+                        const label = tool?.label;
+                        const url = tool?.url;
+                        if (label && url) {
+                          return (
+                            <li key={`${label}$-menu`}>
+                              <Link href={url}>
+                                <a className="text-white footer-links">
+                                  {label}
+                                </a>
+                              </Link>
+                            </li>
+                          );
+                        } else {
+                          return [];
+                        }
+                      })}
                     </ul>
                   </div>
                   <div className="col-6">
                     <h4 className="text-white">Campus Links</h4>
                     <ul className="list-unstyled">
-                      {links?.map((link) => (
-                        <li key={`${link.label}$-menu`}>
-                          <Link href={link.url ?? ''}>
-                            <a
-                              className="text-white footer-links"
-                              href={link.url}
-                            >
-                              {link.label}
-                            </a>
-                          </Link>
-                        </li>
-                      ))}
+                      {links.flatMap((link) => {
+                        const label = link?.label;
+                        const url = link?.url;
+                        if (label && url) {
+                          return (
+                            <li key={`${label}$-menu`}>
+                              <Link href={url}>
+                                <a className="text-white footer-links">
+                                  {label}
+                                </a>
+                              </Link>
+                            </li>
+                          );
+                        } else {
+                          return [];
+                        }
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -120,12 +132,14 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
             </div>
 
             <div className="utk-identifier col-12 col-md-5 col-lg-4 ms-lg-auto mt-md-n5 p-4">
-              <a className="mb-4 d-block" href="/">
-                <img
-                  src="/images/chrome/logo-horizontal-left-white.svg"
-                  alt="University of Tennessee, Knoxville"
-                />
-              </a>
+              <Link href="/">
+                <a className="mb-4 d-block">
+                  <img
+                    src="/images/chrome/logo-horizontal-left-white.svg"
+                    alt="University of Tennessee, Knoxville"
+                  />
+                </a>
+              </Link>
 
               <p className="text-white small">
                 The University of Tennessee
@@ -183,9 +197,11 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
         </div>
       </div>
 
+      {/* might just need to nix this script and "redo" functionality in the React way */}
       <script
         src="//images.utk.edu/designsystem/v1/0.0.9/assets/js/utk.js"
         id="utk-bootstrap-designsytemscripts-js"
+        defer
       ></script>
       <script
         async
