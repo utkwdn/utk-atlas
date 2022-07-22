@@ -1,6 +1,8 @@
-import styles from 'scss/components/Header.module.scss';
+// import styles from 'scss/components/Header.module.scss';
 import Link from 'next/link';
 import { client, MenuLocationEnum } from 'client';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 interface Props {
   title?: string;
@@ -221,71 +223,79 @@ function Header({
       </nav>
 
       <header id="masthead" className="site-header">
-        <div className="container-xxl">
-          <div className="row justify-content-between py-3 py-md-4 py-lg-0">
-            <div className="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-3 align-items-center">
-              <Link href="/">
-                <a className="d-grid h-100 mt-lg-2">
-                  <img
-                    src="/images/chrome/logo-horizontal-left-smokey.svg"
-                    alt="University of Tennessee, Knoxville"
-                  />
-                </a>
-              </Link>
-            </div>
+        {/*
+          Note: this NavBar was originally entirely non-React markup that came
+          from the UTK design-system. However, because of the JavaScript needs of
+          that design-system pattern, we had to "Reactify" it here (which we did
+          with React-Bootstrap). But the styling was largely tied to the old markup,
+          so we still had to preserve that old markup (with some modifications).
 
-            <button
-              className="navbar-toggler col-auto mr-auto"
-              type="button"
-              id="mobile-menu-open"
-              data-toggle="#site-navigation"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
-              </svg>
-              <span className="visually-hidden">Menu</span>
-            </button>
+          In short: this piece relies in part on CSS from the UTK design-system. So
+          if the design-system's main-nav is altered in the future, it will be important
+          to check the behavior of this piece.
+        */}
+        <Navbar
+          expand="lg" /* important because it matches the breakpoint used for some styling inside */
+          as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
+          role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
+          className="py-0"
+        >
+          <div className="container-xxl">
+            <div className="row justify-content-between py-3 py-md-4 py-lg-0 w-100">
+              <div className="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-3 align-items-center">
+                <Link href="/">
+                  <a className="d-grid h-100 mt-lg-2">
+                    <img
+                      src="/images/chrome/logo-horizontal-left-smokey.svg"
+                      alt="University of Tennessee, Knoxville"
+                    />
+                  </a>
+                </Link>
+              </div>
 
-            <nav
-              id="site-navigation"
-              className="navbar-horizontal col-auto g-0"
-            >
-              <button
-                className="navbar-toggler"
-                type="button"
-                id="mobile-menu-close"
-                data-toggle="collapse"
-                data-target="#site-navigation"
-                aria-controls="site-navigation"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+              <Navbar.Toggle
+                aria-controls="main-menu"
+                className="navbar-toggler col-auto mr-auto"
+                id="mobile-menu-open"
+                label="Open menu"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  aria-hidden
                 >
-                  <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                  <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
                 </svg>
-                <span className="visually-hidden">Close Menu</span>
-              </button>
+              </Navbar.Toggle>
 
-              <div className="menu-main-site-container">
-                {primaryNavItems.length > 0 && (
-                  <ul id="primary-menu" className="list-unstyled">
-                    {primaryNavItems}
-                  </ul>
-                )}
-              </div>
-            </nav>
+              <Navbar.Offcanvas
+                id="main-menu"
+                placement="start"
+                aria-label="Menu"
+              >
+                <Offcanvas.Header
+                  className="justify-content-end"
+                  closeButton
+                  closeLabel="Close Menu"
+                />
+
+                <Offcanvas.Body className="justify-content-end">
+                  <nav aria-label="Main">
+                    <div className="menu-main-site-container">
+                      {primaryNavItems.length > 0 && (
+                        <ul id="primary-menu" className="list-unstyled mt-0">
+                          {primaryNavItems}
+                        </ul>
+                      )}
+                    </div>
+                  </nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </div>
           </div>
-        </div>
+        </Navbar>
       </header>
 
       {secondaryNavItems.length > 0 && (
