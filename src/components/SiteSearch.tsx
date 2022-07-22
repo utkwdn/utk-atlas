@@ -8,6 +8,7 @@ interface CSEElement {
 const SiteSearch = () => {
   const thisSiteInputRef = useRef<HTMLInputElement | null>(null);
 
+  // need empty dependency array, or is this fine?
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cse.google.com/cse.js?cx=da48cf0836de1c946';
