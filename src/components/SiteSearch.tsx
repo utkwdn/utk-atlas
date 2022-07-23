@@ -1,23 +1,77 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+/*
+  See https://developers.google.com/custom-search/docs/element#cse-element
+  for all this Google CSE stuff. Just typing what we need in a bare-bones way here.
+*/
+
+interface ComponentConfig {
+  div: string | HTMLDivElement;
+  tag: 'search' | 'searchbox' | 'searchbox-only' | 'searchresults-only';
+  gname?: string;
+  attributes?: Record<string, unknown>;
+}
 
 interface CSEElement {
   clearAllResults: () => void;
   execute: (value: string) => void;
 }
 
-const SiteSearch = () => {
-  const thisSiteInputRef = useRef<HTMLInputElement | null>(null);
-
-  // need empty dependency array, or is this fine?
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cse.google.com/cse.js?cx=da48cf0836de1c946';
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
+interface Google {
+  search: {
+    cse: {
+      element: {
+        render: (
+          componentConfig: ComponentConfig,
+          opt_componentConfig?: ComponentConfig
+        ) => void;
+        getElement: (gname: string) => CSEElement;
+      };
     };
-  });
+  };
+}
+
+const GNAME = 'this-site-results';
+
+const SiteSearch = () => {
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const [value, setValue] = useState('');
+
+  /*
+    The relevant `cse.google...` script is loaded in `_app.tsx`, and so
+    all the `window.google` stuff *should* be ready to go.
+    However, we need to manually set it up to work with the empty
+    results `div` at the very bottom of this component (because this
+    component mounts and unmounts with the Search modal, and therefore the
+    3rd-party script won't find it when it initializes on page-load).
+    That manual configuration needs to happen every time this component mounts,
+    so we use an empty dependency array in this `useEffect()`.
+  */
+  useEffect(() => {
+    if (!resultsRef.current) {
+      console.error(
+        '`resultsRef.current` should be assigned to the search-results div but was not.'
+      );
+      return;
+    }
+
+    try {
+      const { google } = window as typeof window & { google?: Google };
+      if (!google) {
+        console.error('`window.google` should exist but does not');
+        return;
+      }
+
+      // this is what sets up the results `div` at the bottom of this component
+      google.search.cse.element.render({
+        div: resultsRef.current,
+        tag: 'searchresults-only',
+        gname: GNAME,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
 
   return (
     <div>
@@ -27,33 +81,28 @@ const SiteSearch = () => {
         onSubmit={(e) => {
           e.preventDefault();
 
-          const input = thisSiteInputRef.current;
-
-          let googleResultsEl: CSEElement;
-
           try {
-            googleResultsEl = (
-              window as any
-            ).google.search.cse.element.getElement(
-              'this-site-results'
-            ) as CSEElement;
+            const { google } = window as typeof window & { google?: Google };
+            if (!google) {
+              console.error('`window.google` should exist but does not');
+              return;
+            }
 
-            if (!googleResultsEl) {
+            const resultsEl = google.search.cse.element.getElement(GNAME);
+
+            if (!resultsEl) {
               console.error(
-                'The Google CSE library could not find the `[data-gname="this-site-results"]` element'
+                `The Google CSE library could not find the element with gname ${GNAME}`
               );
               return;
+            }
+
+            if (value) {
+              resultsEl.execute(value);
             } else {
-              if (input && input.value) {
-                googleResultsEl.execute(input.value);
-              } else {
-                googleResultsEl.clearAllResults();
-              }
+              resultsEl.clearAllResults();
             }
           } catch (err) {
-            console.log(
-              'Problem with `window.google.search.cse.element.getElement()` call:'
-            );
             console.error(err);
           }
         }}
@@ -63,7 +112,7 @@ const SiteSearch = () => {
             Search
           </label>
           <input
-            ref={thisSiteInputRef}
+            onChange={(e) => setValue(e.target.value)}
             type="search"
             className="form-control"
             title="Search utk.edu"
@@ -88,12 +137,7 @@ const SiteSearch = () => {
         </div>
       </form>
 
-      <div
-        className="gcse-searchresults-only"
-        data-gname="this-site-results"
-        data-enableImageSearch="false"
-        data-enableOrderBy="false"
-      ></div>
+      <div ref={resultsRef} />
     </div>
   );
 };
