@@ -196,17 +196,6 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
           </div>
         </div>
       </div>
-
-      {/* might just need to nix this script and "redo" functionality in the React way */}
-      <script
-        src="//images.utk.edu/designsystem/v1/0.0.9/assets/js/utk.js"
-        id="utk-bootstrap-designsytemscripts-js"
-        defer
-      ></script>
-      <script
-        async
-        src="https://cse.google.com/cse.js?cx=da48cf0836de1c946"
-      ></script>
     </footer>
   );
 }
