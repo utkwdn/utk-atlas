@@ -6,6 +6,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 
 interface Props {
+  title?: string;
+  description?: string;
   uri?: string;
 }
 
