@@ -11,12 +11,12 @@ export default function Page() {
   return (
     <>
       <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
       />
 
       <Head>
-        <title>Custom Page - {generalSettings.title}</title>
+        <title>Custom Page - {generalSettings?.title}</title>
       </Head>
 
       <PageTitle title="Custom Page" />
@@ -28,7 +28,8 @@ export default function Page() {
             <a
               href="https://nextjs.org/docs/basic-features/pages"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               Next.js
             </a>
             . Take a look at <code>src/pages/custom-page.tsx</code> for an
@@ -37,7 +38,7 @@ export default function Page() {
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

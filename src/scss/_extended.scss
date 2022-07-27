@@ -1,5 +1,5 @@
-@import "./node_modules/utksds-framework/src/scss/custom_variables";
-@import "./node_modules/bootstrap/scss/variables";
+@import './node_modules/utksds-framework/src/scss/custom_variables';
+@import './node_modules/bootstrap/scss/variables';
 
 // applied just so I can space out some things that were overlapping. Remove later.
 // added to the Home Sweet Home section
@@ -8,7 +8,7 @@
 }
 
 /* Class to pull in max width of group */
-.inset-container > div[class$="__inner-container"] {
+.inset-container > div[class$='__inner-container'] {
   // width: 85vw;
   margin: 0 auto;
 }
@@ -34,7 +34,7 @@ body {
   width: 100vw;
 }
 .campus-gallery > div {
-  background-image: url("https://images.utk.edu/designsystem/www2021/v1/i/knoxville_illustration_3.svg");
+  background-image: url('https://images.utk.edu/designsystem/www2021/v1/i/knoxville_illustration_3.svg');
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 350%;
@@ -53,7 +53,7 @@ body {
   // background-color: white !important;
 }
 
-.cta-card-flex > div[class$="__inner-container"] {
+.cta-card-flex > div[class$='__inner-container'] {
   display: flex;
 }
 .home-card {
@@ -145,6 +145,18 @@ body {
   }
 }
 
+/* Add to card container group to allow for a more random pattern of big/little cards
+used on Traditions */
+.card-variety-A > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 50%;
+  }
+}
+.card-variety-B > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 60%;
+  }
+}
 /* In process Link Group */
 
 // .btn-group-vertical {
@@ -338,7 +350,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
 }
 
 .grey-dot-strip > div {
-  background-image: url("//images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif");
+  background-image: url('//images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif');
   background-position: bottom left;
   background-size: auto;
   background-repeat: repeat-x;
@@ -353,8 +365,8 @@ Buttons with Chevrons – pulled from ExpressionEngine
     width: 10vw;
   }
 }
-.icon-torch > div[class$="__inner-container"] {
-  background-image: url("//images.utk.edu/images/www/home/icon-light-the-way.svg");
+.icon-torch > div[class$='__inner-container'] {
+  background-image: url('//images.utk.edu/images/www/home/icon-light-the-way.svg');
   background-repeat: no-repeat;
   object-fit: cover;
   width: 100%;
@@ -373,7 +385,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   margin-bottom: 2rem;
   &::before {
     position: absolute;
-    content: " ";
+    content: ' ';
     width: 60%;
     height: calc(100% - 2rem);
     bottom: -$container-padding-x;
@@ -411,7 +423,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
 
     &::before {
       position: absolute;
-      content: " ";
+      content: ' ';
       width: 60%;
       height: calc(100% - 2rem);
       // bottom: -$container-padding-x;
@@ -430,11 +442,11 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-.futureStat > div[class$="__inner-container"] {
+.futureStat > div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  .statRow > div[class$="__inner-container"] {
+  .statRow > div[class$='__inner-container'] {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -464,7 +476,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   position: relative;
   width: 100%;
 }
-.profileCardContainer > div[class$="__inner-container"] {
+.profileCardContainer > div[class$='__inner-container'] {
   display: flex;
   align-items: stretch;
   align-content: space-around;
@@ -474,7 +486,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   row-gap: 3rem;
   position: relative;
 }
-.profileCardContainer > div[class$="__inner-container"] > * {
+.profileCardContainer > div[class$='__inner-container'] > * {
   flex-basis: 100%;
 }
 
@@ -482,7 +494,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   /* border:1px solid #707070; */
 }
 
-.profileCard div[class$="__inner-container"] {
+.profileCard div[class$='__inner-container'] {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -491,23 +503,23 @@ Buttons with Chevrons – pulled from ExpressionEngine
   border-radius: 0 30px 30px 0;
 }
 
-.profileCard div[class$="__inner-container"] > * {
+.profileCard div[class$='__inner-container'] > * {
   flex-basis: 50%;
 }
 
-.profileHeadshot div[class$="__inner-container"] {
+.profileHeadshot div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   align-content: stretch;
 }
-.profileHeadshot div[class$="__inner-container"] figure {
+.profileHeadshot div[class$='__inner-container'] figure {
   object-fit: cover;
   padding: 0;
   margin: 0;
 }
 
-.profileInfo div[class$="__inner-container"] {
+.profileInfo div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -535,7 +547,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   line-height: 1.7rem;
 }
 @media (min-width: 900px) {
-  .profileCardContainer > div[class$="__inner-container"] > * {
+  .profileCardContainer > div[class$='__inner-container'] > * {
     flex-basis: 49%;
   }
 }
@@ -618,7 +630,7 @@ h1 {
   // left:0;
 }
 body.academics {
-  section[class^="PageTitle_hero"] {
+  section[class^='PageTitle_hero'] {
     position: relative;
     h1 {
       display: none;
@@ -636,7 +648,7 @@ body.academics {
       right: 0;
       &:after {
         position: absolute;
-        content: "";
+        content: '';
         top: 0;
         right: -3rem;
         border-right: 3rem solid $utorange;
@@ -656,7 +668,7 @@ body.academics {
   }
 }
 
-.fake-d-flex > div[class$="__inner-container"] {
+.fake-d-flex > div[class$='__inner-container'] {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
@@ -688,7 +700,7 @@ body.academics {
     // flex-grow: 1;
   }
 }
-.hero-img-group > div[class$="__inner-container"] {
+.hero-img-group > div[class$='__inner-container'] {
   flex-basis: 50vw;
   // border: 2px solid red;
   display: flex;
@@ -729,7 +741,7 @@ h1.area {
   letter-spacing: 0.26rem;
   text-transform: uppercase;
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     color: $utorange;
   }
