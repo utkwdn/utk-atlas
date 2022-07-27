@@ -1,4 +1,4 @@
-@import "./src/scss/common";
+@import './src/scss/common';
 // $utorange: #ff8200;
 // $utgray1: #f6f6f6;
 // $utgray2: #e0e0e0;
@@ -14,7 +14,7 @@ $utsmokeyfade: #696b6d;
 $utsmokeyfademore: #737778;
 $utsmokeytext: #4b4b4b;
 $darkorange: #e07400;
-$font-stack-light: "Gotham A", "Gotham B", Helvetica, Arial;
+$font-stack-light: 'Gotham A', 'Gotham B', Helvetica, Arial;
 $font-size-base: 100% !important;
 // $orangeCreamsicle: #ffd4a7;
 
@@ -34,7 +34,7 @@ $font-size-base: 100% !important;
 // }
 
 .hero {
-  background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") -10vh -30vw
+  background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') -10vh -30vw
     no-repeat;
   background-size: contain;
   padding: 4vw;
@@ -112,7 +112,7 @@ $font-size-base: 100% !important;
 }
 .strip.strip-dots,
 .strip-fluid.strip-dots {
-  background-image: url("http://images.utk.edu/designsystem/www2021/v1/i/strip_dots.gif");
+  background-image: url('http://images.utk.edu/designsystem/www2021/v1/i/strip_dots.gif');
   background-position: left; //overwriting the position from homepage styles
   margin-left: 0; //overriding the margin from homepage styles
 }
@@ -128,7 +128,7 @@ $font-size-base: 100% !important;
 .angleContainer,
 .angleContainer02 {
   // special callout
-  background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") 0 0
+  background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') 0 0
     no-repeat;
   background-color: white;
   background-size: 50%;
@@ -168,7 +168,7 @@ $font-size-base: 100% !important;
 
 .angleContainer02 {
   background-color: $dotgrey;
-  background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
+  background-image: url('https://www.utk.edu/images/i/warmers/torch-camo-white.png');
   background-position: top left;
   background-size: 50%;
   width: 90vw;
@@ -221,7 +221,7 @@ $font-size-base: 100% !important;
 
 .angleContainer:after,
 .angleContainer02:after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -233,7 +233,7 @@ $font-size-base: 100% !important;
 }
 
 .angleBracket {
-  content: "";
+  content: '';
   width: 6rem;
   height: auto;
   border-bottom: 6px solid $utorange;
@@ -246,7 +246,7 @@ $font-size-base: 100% !important;
   top: -1.5rem;
 
   &:before {
-    content: "";
+    content: '';
     width: 3rem;
     height: auto;
     border-left: 6px solid $utorange;
@@ -256,7 +256,7 @@ $font-size-base: 100% !important;
 }
 
 .angleBracketDown {
-  content: "";
+  content: '';
   width: 6rem;
   height: auto;
   border-top: 6px solid $utorange;
@@ -269,7 +269,7 @@ $font-size-base: 100% !important;
   top: 1.5rem;
 
   &:before {
-    content: "";
+    content: '';
     width: 3rem;
     height: auto;
     border-left: 6px solid $utorange;
@@ -341,7 +341,7 @@ $font-size-base: 100% !important;
 .missionTorch {
   height: 20vh;
   z-index: 5;
-  background: url("https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg")
+  background: url('https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg')
     0 0 no-repeat;
   background-size: contain;
   position: relative;
@@ -349,7 +349,7 @@ $font-size-base: 100% !important;
   border: 1px solid red;
 }
 .skinnyLongImg {
-  background-image: url("https://www.utk.edu/images/i/warmers/torch-pattern-on-orange-03.jpg");
+  background-image: url('https://www.utk.edu/images/i/warmers/torch-pattern-on-orange-03.jpg');
   height: 25vh;
   width: auto;
   background-size: cover;
@@ -465,7 +465,7 @@ Treatments
 }
 .greyBkg {
   background-color: $dotgrey;
-  background-image: url("https://www.utk.edu/images/i/warmers/torch-camo-white.png");
+  background-image: url('https://www.utk.edu/images/i/warmers/torch-camo-white.png');
 }
 
 .article {
@@ -475,7 +475,7 @@ Treatments
   display: none;
   &:before {
     // printLine angled to the side
-    content: "";
+    content: '';
     width: 60vw;
     height: 0;
     border: 1px solid $utorange;
@@ -650,7 +650,7 @@ span.objTitleR02 {
 */
 .downloadIcon {
   display: inline-block;
-  content: "";
+  content: '';
   color: $utorange;
   margin-left: 0.5rem;
 }
@@ -690,7 +690,7 @@ span.objTitleR02 {
 .printLineLeft {
   &:after {
     // printLine angled to the side
-    content: "";
+    content: '';
     width: 70vw;
     height: 0;
     border: 1px solid $utorange;
@@ -743,7 +743,7 @@ span.objTitleR02 {
 
 // Line with torchCamo coming out of it for Right hand Lines!!
 .printLineComplex {
-  content: "";
+  content: '';
   width: 80vw;
   height: 0;
   border: 1px solid $utorange;
@@ -761,7 +761,7 @@ span.objTitleR02 {
   top: 0;
   z-index: 2;
   .printLinePattern {
-    background-image: url("https://www.utk.edu/images/i/warmers/rotated-torch35deg.svg");
+    background-image: url('https://www.utk.edu/images/i/warmers/rotated-torch35deg.svg');
     opacity: 100;
     // pattern was manually rotated to match 35 deg
     background-repeat: no-repeat;
@@ -833,7 +833,7 @@ ul.ObjList {
 .flagshipTorch {
   z-index: 5;
   // background: url("../img/flagship-torch-03.png") 0 0 no-repeat;
-  background: url("https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg")
+  background: url('https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg')
     0 0 no-repeat;
 
   background-size: contain;
@@ -859,7 +859,7 @@ ul.ObjList {
 /* viewports 645px and wider: */
 @media screen and (min-width: 40em) {
   .hero {
-    background: url("https://www.utk.edu/images/i/warmers/vision-dots-01.png") -30vh -30vw
+    background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') -30vh -30vw
       no-repeat;
     background-size: contain;
     padding: 4vw;

@@ -9,8 +9,8 @@ export default function Page(): JSX.Element {
   return (
     <>
       <Header
-        title={generalSettings?.title}
-        description={generalSettings?.description}
+        title={generalSettings?.title || undefined}
+        description={generalSettings?.description || undefined}
       />
       <main className="content content-page">
         <PageTitle title={"Oops! That page can't be found."} />
@@ -25,7 +25,7 @@ export default function Page(): JSX.Element {
           </div>
         </div>
       </main>
-      <Footer copyrightHolder={generalSettings?.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

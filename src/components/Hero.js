@@ -1,5 +1,5 @@
-import styles from "scss/components/Hero.module.scss";
-import Head from "next/head";
+import styles from 'scss/components/Hero.module.scss';
+import Head from 'next/head';
 // import Script from "next/script";
 // need to pull scripts for animation:
 // "js/202112-hero-visit-gsap.min.js"
@@ -7,7 +7,7 @@ import Head from "next/head";
 // "js/202112-hero-visit.js"
 
 // create a joiner to use for classNames
-const cx = (...classNames) => classNames.join(" ");
+const cx = (...classNames) => classNames.join(' ');
 
 // HomeHero is a section added to index.tx
 
