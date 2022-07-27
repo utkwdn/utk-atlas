@@ -12,17 +12,8 @@ interface Props {
   children?: React.ReactNode;
 }
 
-function ImageCap({
-  bgImage
-}: Props): JSX.Element {
-  return (
-    <img
-      src={bgImage}
-      className="card-img-top"
-    />
-
-
-  );
+function ImageCap({ bgImage }: Props): JSX.Element {
+  return <img src={bgImage} className="card-img-top" />;
 }
 
 export default ImageCap;

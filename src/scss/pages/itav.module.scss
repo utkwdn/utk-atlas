@@ -1,4 +1,4 @@
-@import "scss/common";
+@import 'scss/common';
 //custom
 .fullscreen-bg {
   width: 100%;
@@ -115,7 +115,7 @@
   left: 0;
   z-index: 1;
   pointer-events: auto;
-  content: "";
+  content: '';
   background-color: rgba(0, 0, 0, 0);
 }
 

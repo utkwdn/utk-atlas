@@ -2,7 +2,7 @@
  * GQTY AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
  */
 
-import { SchemaUnionsKey } from "gqty";
+import { SchemaUnionsKey } from 'gqty';
 
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -27,7 +27,7 @@ export interface Scalars {
 /** Set relationships between the AToZ to AToZCategories */
 export interface AToZAToZCategoriesInput {
   /** If true, this will append the AToZCategory to existing related AToZCategories. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
+  append?: InputMaybe<Scalars['Boolean']>;
   /** The input list of items to set. */
   nodes?: InputMaybe<Array<InputMaybe<AToZAToZCategoriesNodeInput>>>;
 }
@@ -35,27 +35,27 @@ export interface AToZAToZCategoriesInput {
 /** List of AToZCategories to connect the AToZ to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
 export interface AToZAToZCategoriesNodeInput {
   /** The description of the AToZCategory. This field is used to set a description of the AToZCategory if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the AToZCategory. If present, this will be used to connect to the AToZ. If no existing AToZCategory exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
+  id?: InputMaybe<Scalars['ID']>;
   /** The name of the AToZCategory. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** The slug of the AToZCategory. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum AToZCategoryIdType {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the node */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Url friendly name of the node */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the AToZCategoryToAToZConnection connection */
@@ -63,37 +63,37 @@ export interface AToZCategoryToAToZConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the AToZCategoryToContentNodeConnection connection */
@@ -103,221 +103,221 @@ export interface AToZCategoryToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum AToZIdType {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the AToZToAToZCategoryConnection connection */
 export interface AToZToAToZCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the AToZToTermNodeConnection connection */
 export interface AToZToTermNodeConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** The Taxonomy to filter terms by */
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum AcalogProgramIdType {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option */
 export enum AvatarRatingEnum {
   /** Indicates a G level avatar rating level. */
-  G = "G",
+  G = 'G',
   /** Indicates a PG level avatar rating level. */
-  PG = "PG",
+  PG = 'PG',
   /** Indicates an R level avatar rating level. */
-  R = "R",
+  R = 'R',
   /** Indicates an X level avatar rating level. */
-  X = "X",
+  X = 'X',
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum CategoryIdType {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the node */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Url friendly name of the node */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the CategoryToCategoryConnection connection */
 export interface CategoryToCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the CategoryToContentNodeConnection connection */
@@ -327,295 +327,295 @@ export interface CategoryToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the CategoryToPostConnection connection */
 export interface CategoryToPostConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the CommentToCommentConnection connection */
 export interface CommentToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the CommentToParentCommentConnection connection */
 export interface CommentToParentCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Options for ordering the connection */
 export enum CommentsConnectionOrderbyEnum {
   /** Order by browser user agent of the commenter. */
-  COMMENT_AGENT = "COMMENT_AGENT",
+  COMMENT_AGENT = 'COMMENT_AGENT',
   /** Order by true/false approval of the comment. */
-  COMMENT_APPROVED = "COMMENT_APPROVED",
+  COMMENT_APPROVED = 'COMMENT_APPROVED',
   /** Order by name of the comment author. */
-  COMMENT_AUTHOR = "COMMENT_AUTHOR",
+  COMMENT_AUTHOR = 'COMMENT_AUTHOR',
   /** Order by e-mail of the comment author. */
-  COMMENT_AUTHOR_EMAIL = "COMMENT_AUTHOR_EMAIL",
+  COMMENT_AUTHOR_EMAIL = 'COMMENT_AUTHOR_EMAIL',
   /** Order by IP address of the comment author. */
-  COMMENT_AUTHOR_IP = "COMMENT_AUTHOR_IP",
+  COMMENT_AUTHOR_IP = 'COMMENT_AUTHOR_IP',
   /** Order by URL address of the comment author. */
-  COMMENT_AUTHOR_URL = "COMMENT_AUTHOR_URL",
+  COMMENT_AUTHOR_URL = 'COMMENT_AUTHOR_URL',
   /** Order by the comment contents. */
-  COMMENT_CONTENT = "COMMENT_CONTENT",
+  COMMENT_CONTENT = 'COMMENT_CONTENT',
   /** Order by date/time timestamp of the comment. */
-  COMMENT_DATE = "COMMENT_DATE",
+  COMMENT_DATE = 'COMMENT_DATE',
   /** Order by GMT timezone date/time timestamp of the comment. */
-  COMMENT_DATE_GMT = "COMMENT_DATE_GMT",
+  COMMENT_DATE_GMT = 'COMMENT_DATE_GMT',
   /** Order by the globally unique identifier for the comment object */
-  COMMENT_ID = "COMMENT_ID",
+  COMMENT_ID = 'COMMENT_ID',
   /** Order by the array list of comment IDs listed in the where clause. */
-  COMMENT_IN = "COMMENT_IN",
+  COMMENT_IN = 'COMMENT_IN',
   /** Order by the comment karma score. */
-  COMMENT_KARMA = "COMMENT_KARMA",
+  COMMENT_KARMA = 'COMMENT_KARMA',
   /** Order by the comment parent ID. */
-  COMMENT_PARENT = "COMMENT_PARENT",
+  COMMENT_PARENT = 'COMMENT_PARENT',
   /** Order by the post object ID. */
-  COMMENT_POST_ID = "COMMENT_POST_ID",
+  COMMENT_POST_ID = 'COMMENT_POST_ID',
   /** Order by the the type of comment, such as 'comment', 'pingback', or 'trackback'. */
-  COMMENT_TYPE = "COMMENT_TYPE",
+  COMMENT_TYPE = 'COMMENT_TYPE',
   /** Order by the user ID. */
-  USER_ID = "USER_ID",
+  USER_ID = 'USER_ID',
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum ContentNodeIdTypeEnum {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Allowed Content Types */
 export enum ContentTypeEnum {
   /** The Type of Content object */
-  ACALOG_PROGRAM = "ACALOG_PROGRAM",
+  ACALOG_PROGRAM = 'ACALOG_PROGRAM',
   /** The Type of Content object */
-  ATTACHMENT = "ATTACHMENT",
+  ATTACHMENT = 'ATTACHMENT',
   /** The Type of Content object */
-  A_TO_Z = "A_TO_Z",
+  A_TO_Z = 'A_TO_Z',
   /** The Type of Content object */
-  PAGE = "PAGE",
+  PAGE = 'PAGE',
   /** The Type of Content object */
-  POST = "POST",
+  POST = 'POST',
 }
 
 /** The Type of Identifier used to fetch a single Content Type node. To be used along with the "id" field. Default is "ID". */
 export enum ContentTypeIdTypeEnum {
   /** The globally unique ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the content type. */
-  NAME = "NAME",
+  NAME = 'NAME',
 }
 
 /** Arguments for filtering the ContentTypeToContentNodeConnection connection */
@@ -625,75 +625,75 @@ export interface ContentTypeToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Allowed Content Types of the AToZCategory taxonomy. */
 export enum ContentTypesOfAToZCategoryEnum {
   /** The Type of Content object */
-  A_TO_Z = "A_TO_Z",
+  A_TO_Z = 'A_TO_Z',
 }
 
 /** Allowed Content Types of the Category taxonomy. */
 export enum ContentTypesOfCategoryEnum {
   /** The Type of Content object */
-  POST = "POST",
+  POST = 'POST',
 }
 
 /** Allowed Content Types of the PostFormat taxonomy. */
 export enum ContentTypesOfPostFormatEnum {
   /** The Type of Content object */
-  POST = "POST",
+  POST = 'POST',
 }
 
 /** Allowed Content Types of the Tag taxonomy. */
 export enum ContentTypesOfTagEnum {
   /** The Type of Content object */
-  POST = "POST",
+  POST = 'POST',
 }
 
 /** Input for the createAToZCategory mutation */
 export interface CreateAToZCategoryInput {
   /** The slug that the a_to_z_categories will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the a_to_z_categories object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The name of the a_to_z_categories object to mutate */
-  name: Scalars["String"];
+  name: Scalars['String'];
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createAToZ mutation */
@@ -701,255 +701,255 @@ export interface CreateAToZInput {
   /** Set connections between the AToZ and AToZCategories */
   aToZCategories?: InputMaybe<AToZAToZCategoriesInput>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createAcalogProgram mutation */
 export interface CreateAcalogProgramInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createCategory mutation */
 export interface CreateCategoryInput {
   /** The slug that the category will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the category object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The name of the category object to mutate */
-  name: Scalars["String"];
+  name: Scalars['String'];
   /** The ID of the category that should be set as the parent */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createComment mutation */
 export interface CreateCommentInput {
   /** The approval status of the comment. */
-  approved?: InputMaybe<Scalars["String"]>;
+  approved?: InputMaybe<Scalars['String']>;
   /** The name of the comment's author. */
-  author?: InputMaybe<Scalars["String"]>;
+  author?: InputMaybe<Scalars['String']>;
   /** The email of the comment's author. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** The url of the comment's author. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The ID of the post object the comment belongs to. */
-  commentOn?: InputMaybe<Scalars["Int"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The database ID of the post object the comment belongs to. */
+  commentOn?: InputMaybe<Scalars['Int']>;
   /** Content of the comment. */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day ( e.g. 01/31/2017 ) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
-  /** Parent comment of current comment. */
-  parent?: InputMaybe<Scalars["ID"]>;
+  date?: InputMaybe<Scalars['String']>;
+  /** Parent comment ID of current comment. */
+  parent?: InputMaybe<Scalars['ID']>;
   /** Type of comment. */
-  type?: InputMaybe<Scalars["String"]>;
+  type?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createMediaItem mutation */
 export interface CreateMediaItemInput {
   /** Alternative text to display when mediaItem is not displayed */
-  altText?: InputMaybe<Scalars["String"]>;
+  altText?: InputMaybe<Scalars['String']>;
   /** The userId to assign as the author of the mediaItem */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** The caption for the mediaItem */
-  caption?: InputMaybe<Scalars["String"]>;
+  caption?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the mediaItem */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The date of the mediaItem */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The date (in GMT zone) of the mediaItem */
-  dateGmt?: InputMaybe<Scalars["String"]>;
+  dateGmt?: InputMaybe<Scalars['String']>;
   /** Description of the mediaItem */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The file name of the mediaItem */
-  filePath?: InputMaybe<Scalars["String"]>;
+  filePath?: InputMaybe<Scalars['String']>;
   /** The file type of the mediaItem */
   fileType?: InputMaybe<MimeTypeEnum>;
-  /** The WordPress post ID or the graphQL postId of the parent object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']>;
   /** The ping status for the mediaItem */
-  pingStatus?: InputMaybe<Scalars["String"]>;
+  pingStatus?: InputMaybe<Scalars['String']>;
   /** The slug of the mediaItem */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the mediaItem */
   status?: InputMaybe<MediaItemStatusEnum>;
   /** The title of the mediaItem */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createPage mutation */
 export interface CreatePageInput {
   /** The userId to assign as the author of the object */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the object */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The ID of the parent object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createPostFormat mutation */
 export interface CreatePostFormatInput {
   /** The slug that the post_format will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the post_format object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The name of the post_format object to mutate */
-  name: Scalars["String"];
+  name: Scalars['String'];
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createPost mutation */
 export interface CreatePostInput {
   /** The userId to assign as the author of the object */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** Set connections between the post and categories */
   categories?: InputMaybe<PostCategoriesInput>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the object */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The excerpt of the object */
-  excerpt?: InputMaybe<Scalars["String"]>;
+  excerpt?: InputMaybe<Scalars['String']>;
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The ping status for the object */
-  pingStatus?: InputMaybe<Scalars["String"]>;
+  pingStatus?: InputMaybe<Scalars['String']>;
   /** URLs that have been pinged. */
-  pinged?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Set connections between the post and postFormats */
   postFormats?: InputMaybe<PostPostFormatsInput>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** Set connections between the post and tags */
   tags?: InputMaybe<PostTagsInput>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
   /** URLs queued to be pinged. */
-  toPing?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 }
 
 /** Input for the createTag mutation */
 export interface CreateTagInput {
   /** The slug that the post_tag will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the post_tag object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The name of the post_tag object to mutate */
-  name: Scalars["String"];
+  name: Scalars['String'];
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createUser mutation */
 export interface CreateUserInput {
   /** User's AOL IM account. */
-  aim?: InputMaybe<Scalars["String"]>;
+  aim?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** A string containing content about the user. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through obscurity (that is if you dont use and delete the default admin user). */
-  displayName?: InputMaybe<Scalars["String"]>;
+  displayName?: InputMaybe<Scalars['String']>;
   /** A string containing the user's email address. */
-  email?: InputMaybe<Scalars["String"]>;
+  email?: InputMaybe<Scalars['String']>;
   /** 	The user's first name. */
-  firstName?: InputMaybe<Scalars["String"]>;
+  firstName?: InputMaybe<Scalars['String']>;
   /** User's Jabber account. */
-  jabber?: InputMaybe<Scalars["String"]>;
+  jabber?: InputMaybe<Scalars['String']>;
   /** The user's last name. */
-  lastName?: InputMaybe<Scalars["String"]>;
+  lastName?: InputMaybe<Scalars['String']>;
   /** User's locale. */
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
   /** A string that contains a URL-friendly name for the user. The default is the user's username. */
-  nicename?: InputMaybe<Scalars["String"]>;
+  nicename?: InputMaybe<Scalars['String']>;
   /** The user's nickname, defaults to the user's username. */
-  nickname?: InputMaybe<Scalars["String"]>;
+  nickname?: InputMaybe<Scalars['String']>;
   /** A string that contains the plain text password for the user. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The date the user registered. Format is Y-m-d H:i:s. */
-  registered?: InputMaybe<Scalars["String"]>;
+  registered?: InputMaybe<Scalars['String']>;
   /** A string for whether to enable the rich editor or not. False if not empty. */
-  richEditing?: InputMaybe<Scalars["String"]>;
+  richEditing?: InputMaybe<Scalars['String']>;
   /** An array of roles to be assigned to the user. */
-  roles?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  roles?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** A string that contains the user's username for logging in. */
-  username: Scalars["String"];
+  username: Scalars['String'];
   /** A string containing the user's URL for the user's web site. */
-  websiteUrl?: InputMaybe<Scalars["String"]>;
+  websiteUrl?: InputMaybe<Scalars['String']>;
   /** User's Yahoo IM account. */
-  yim?: InputMaybe<Scalars["String"]>;
+  yim?: InputMaybe<Scalars['String']>;
 }
 
 /** Date values */
 export interface DateInput {
   /** Day of the month (from 1 to 31) */
-  day?: InputMaybe<Scalars["Int"]>;
+  day?: InputMaybe<Scalars['Int']>;
   /** Month number (from 1 to 12) */
-  month?: InputMaybe<Scalars["Int"]>;
+  month?: InputMaybe<Scalars['Int']>;
   /** 4 digit year (e.g. 2017) */
-  year?: InputMaybe<Scalars["Int"]>;
+  year?: InputMaybe<Scalars['Int']>;
 }
 
 /** Filter the connection based on input */
@@ -961,139 +961,139 @@ export interface DateQueryInput {
   /** Column to query against */
   column?: InputMaybe<PostObjectsConnectionDateColumnEnum>;
   /** For after/before, whether exact value should be matched or not */
-  compare?: InputMaybe<Scalars["String"]>;
+  compare?: InputMaybe<Scalars['String']>;
   /** Day of the month (from 1 to 31) */
-  day?: InputMaybe<Scalars["Int"]>;
+  day?: InputMaybe<Scalars['Int']>;
   /** Hour (from 0 to 23) */
-  hour?: InputMaybe<Scalars["Int"]>;
+  hour?: InputMaybe<Scalars['Int']>;
   /** For after/before, whether exact value should be matched or not */
-  inclusive?: InputMaybe<Scalars["Boolean"]>;
+  inclusive?: InputMaybe<Scalars['Boolean']>;
   /** Minute (from 0 to 59) */
-  minute?: InputMaybe<Scalars["Int"]>;
+  minute?: InputMaybe<Scalars['Int']>;
   /** Month number (from 1 to 12) */
-  month?: InputMaybe<Scalars["Int"]>;
+  month?: InputMaybe<Scalars['Int']>;
   /** OR or AND, how the sub-arrays should be compared */
   relation?: InputMaybe<RelationEnum>;
   /** Second (0 to 59) */
-  second?: InputMaybe<Scalars["Int"]>;
+  second?: InputMaybe<Scalars['Int']>;
   /** Week of the year (from 0 to 53) */
-  week?: InputMaybe<Scalars["Int"]>;
+  week?: InputMaybe<Scalars['Int']>;
   /** 4 digit year (e.g. 2017) */
-  year?: InputMaybe<Scalars["Int"]>;
+  year?: InputMaybe<Scalars['Int']>;
 }
 
 /** Input for the deleteAToZCategory mutation */
 export interface DeleteAToZCategoryInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the AToZCategory to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteAToZ mutation */
 export interface DeleteAToZInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the object should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the AToZ to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteAcalogProgram mutation */
 export interface DeleteAcalogProgramInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the object should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the AcalogProgram to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteCategory mutation */
 export interface DeleteCategoryInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the category to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteComment mutation */
 export interface DeleteCommentInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the comment should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The deleted comment ID */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteMediaItem mutation */
 export interface DeleteMediaItemInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the mediaItem should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the mediaItem to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deletePage mutation */
 export interface DeletePageInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the object should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the page to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deletePostFormat mutation */
 export interface DeletePostFormatInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the postFormat to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deletePost mutation */
 export interface DeletePostInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Whether the object should be force deleted instead of being moved to the trash */
-  forceDelete?: InputMaybe<Scalars["Boolean"]>;
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the post to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteTag mutation */
 export interface DeleteTagInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the tag to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Input for the deleteUser mutation */
 export interface DeleteUserInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the user you want to delete */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** Reassign posts and links to new User ID. */
-  reassignId?: InputMaybe<Scalars["ID"]>;
+  reassignId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Input for the generateAuthorizationCode mutation */
 export interface GenerateAuthorizationCodeInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Email for WordPress user */
-  email?: InputMaybe<Scalars["String"]>;
+  email?: InputMaybe<Scalars['String']>;
   /** Password for WordPress user */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Username for WordPress user */
-  username?: InputMaybe<Scalars["String"]>;
+  username?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the HierarchicalContentNodeToContentNodeAncestorsConnection connection */
@@ -1103,37 +1103,37 @@ export interface HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArg
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the HierarchicalContentNodeToContentNodeChildrenConnection connection */
@@ -1143,395 +1143,417 @@ export interface HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum MediaItemIdType {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Identify a media item by its source url */
-  SOURCE_URL = "SOURCE_URL",
+  SOURCE_URL = 'SOURCE_URL',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** The size of the media item object. */
 export enum MediaItemSizeEnum {
   /** MediaItem with the large size */
-  LARGE = "LARGE",
+  LARGE = 'LARGE',
   /** MediaItem with the medium size */
-  MEDIUM = "MEDIUM",
+  MEDIUM = 'MEDIUM',
   /** MediaItem with the medium_large size */
-  MEDIUM_LARGE = "MEDIUM_LARGE",
+  MEDIUM_LARGE = 'MEDIUM_LARGE',
   /** MediaItem with the thumbnail size */
-  THUMBNAIL = "THUMBNAIL",
+  THUMBNAIL = 'THUMBNAIL',
   /** MediaItem with the 1536x1536 size */
-  _1536X1536 = "_1536X1536",
+  _1536X1536 = '_1536X1536',
   /** MediaItem with the 2048x2048 size */
-  _2048X2048 = "_2048X2048",
+  _2048X2048 = '_2048X2048',
 }
 
 /** The status of the media item object. */
 export enum MediaItemStatusEnum {
   /** Objects with the auto-draft status */
-  AUTO_DRAFT = "AUTO_DRAFT",
+  AUTO_DRAFT = 'AUTO_DRAFT',
   /** Objects with the inherit status */
-  INHERIT = "INHERIT",
+  INHERIT = 'INHERIT',
   /** Objects with the private status */
-  PRIVATE = "PRIVATE",
+  PRIVATE = 'PRIVATE',
   /** Objects with the trash status */
-  TRASH = "TRASH",
+  TRASH = 'TRASH',
 }
 
 /** Arguments for filtering the MediaItemToCommentConnection connection */
 export interface MediaItemToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** The Type of Identifier used to fetch a single node. Default is "ID". To be used along with the "id" field. */
 export enum MenuItemNodeIdTypeEnum {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
 }
 
 /** Arguments for filtering the MenuItemToMenuItemConnection connection */
 export interface MenuItemToMenuItemConnectionWhereArgs {
   /** The ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
   /** The database ID of the parent menu object */
-  parentDatabaseId?: InputMaybe<Scalars["Int"]>;
+  parentDatabaseId?: InputMaybe<Scalars['Int']>;
   /** The ID of the parent menu object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
   /** Put the menu in the links location */
-  LINKS = "LINKS",
+  LINKS = 'LINKS',
   /** Put the menu in the primary location */
-  PRIMARY = "PRIMARY",
+  PRIMARY = 'PRIMARY',
   /** Put the menu in the tools location */
-  TOOLS = "TOOLS",
+  TOOLS = 'TOOLS',
 }
 
 /** The Type of Identifier used to fetch a single node. Default is "ID". To be used along with the "id" field. */
 export enum MenuNodeIdTypeEnum {
   /** Identify a menu node by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a menu node by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a menu node by it's name */
-  NAME = "NAME",
+  NAME = 'NAME',
 }
 
 /** Arguments for filtering the MenuToMenuItemConnection connection */
 export interface MenuToMenuItemConnectionWhereArgs {
   /** The ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
   /** The database ID of the parent menu object */
-  parentDatabaseId?: InputMaybe<Scalars["Int"]>;
+  parentDatabaseId?: InputMaybe<Scalars['Int']>;
   /** The ID of the parent menu object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
 }
 
 /** The MimeType of the object */
 export enum MimeTypeEnum {
   /** MimeType application/msword */
-  APPLICATION_MSWORD = "APPLICATION_MSWORD",
+  APPLICATION_MSWORD = 'APPLICATION_MSWORD',
   /** MimeType application/pdf */
-  APPLICATION_PDF = "APPLICATION_PDF",
+  APPLICATION_PDF = 'APPLICATION_PDF',
   /** MimeType application/vnd.apple.keynote */
-  APPLICATION_VND_APPLE_KEYNOTE = "APPLICATION_VND_APPLE_KEYNOTE",
+  APPLICATION_VND_APPLE_KEYNOTE = 'APPLICATION_VND_APPLE_KEYNOTE',
   /** MimeType application/vnd.ms-excel */
-  APPLICATION_VND_MS_EXCEL = "APPLICATION_VND_MS_EXCEL",
+  APPLICATION_VND_MS_EXCEL = 'APPLICATION_VND_MS_EXCEL',
   /** MimeType application/vnd.ms-excel.sheet.binary.macroEnabled.12 */
-  APPLICATION_VND_MS_EXCEL_SHEET_BINARY_MACROENABLED_12 = "APPLICATION_VND_MS_EXCEL_SHEET_BINARY_MACROENABLED_12",
+  APPLICATION_VND_MS_EXCEL_SHEET_BINARY_MACROENABLED_12 = 'APPLICATION_VND_MS_EXCEL_SHEET_BINARY_MACROENABLED_12',
   /** MimeType application/vnd.ms-excel.sheet.macroEnabled.12 */
-  APPLICATION_VND_MS_EXCEL_SHEET_MACROENABLED_12 = "APPLICATION_VND_MS_EXCEL_SHEET_MACROENABLED_12",
+  APPLICATION_VND_MS_EXCEL_SHEET_MACROENABLED_12 = 'APPLICATION_VND_MS_EXCEL_SHEET_MACROENABLED_12',
   /** MimeType application/vnd.ms-powerpoint */
-  APPLICATION_VND_MS_POWERPOINT = "APPLICATION_VND_MS_POWERPOINT",
+  APPLICATION_VND_MS_POWERPOINT = 'APPLICATION_VND_MS_POWERPOINT',
   /** MimeType application/vnd.ms-powerpoint.presentation.macroEnabled.12 */
-  APPLICATION_VND_MS_POWERPOINT_PRESENTATION_MACROENABLED_12 = "APPLICATION_VND_MS_POWERPOINT_PRESENTATION_MACROENABLED_12",
+  APPLICATION_VND_MS_POWERPOINT_PRESENTATION_MACROENABLED_12 = 'APPLICATION_VND_MS_POWERPOINT_PRESENTATION_MACROENABLED_12',
   /** MimeType application/vnd.ms-powerpoint.slideshow.macroEnabled.12 */
-  APPLICATION_VND_MS_POWERPOINT_SLIDESHOW_MACROENABLED_12 = "APPLICATION_VND_MS_POWERPOINT_SLIDESHOW_MACROENABLED_12",
+  APPLICATION_VND_MS_POWERPOINT_SLIDESHOW_MACROENABLED_12 = 'APPLICATION_VND_MS_POWERPOINT_SLIDESHOW_MACROENABLED_12',
   /** MimeType application/vnd.ms-word.document.macroEnabled.12 */
-  APPLICATION_VND_MS_WORD_DOCUMENT_MACROENABLED_12 = "APPLICATION_VND_MS_WORD_DOCUMENT_MACROENABLED_12",
+  APPLICATION_VND_MS_WORD_DOCUMENT_MACROENABLED_12 = 'APPLICATION_VND_MS_WORD_DOCUMENT_MACROENABLED_12',
   /** MimeType application/vnd.oasis.opendocument.text */
-  APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT = "APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT",
+  APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT = 'APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT',
   /** MimeType application/vnd.openxmlformats-officedocument.presentationml.presentation */
-  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_PRESENTATION = "APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_PRESENTATION",
+  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_PRESENTATION = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_PRESENTATION',
   /** MimeType application/vnd.openxmlformats-officedocument.presentationml.slideshow */
-  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW = "APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW",
+  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW',
   /** MimeType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet */
-  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_SPREADSHEETML_SHEET = "APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_SPREADSHEETML_SHEET",
+  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_SPREADSHEETML_SHEET = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_SPREADSHEETML_SHEET',
   /** MimeType application/vnd.openxmlformats-officedocument.wordprocessingml.document */
-  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT = "APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT",
+  APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT',
   /** MimeType audio/midi */
-  AUDIO_MIDI = "AUDIO_MIDI",
+  AUDIO_MIDI = 'AUDIO_MIDI',
   /** MimeType audio/mpeg */
-  AUDIO_MPEG = "AUDIO_MPEG",
+  AUDIO_MPEG = 'AUDIO_MPEG',
   /** MimeType audio/ogg */
-  AUDIO_OGG = "AUDIO_OGG",
+  AUDIO_OGG = 'AUDIO_OGG',
   /** MimeType audio/wav */
-  AUDIO_WAV = "AUDIO_WAV",
+  AUDIO_WAV = 'AUDIO_WAV',
   /** MimeType audio/x-ms-wma */
-  AUDIO_X_MS_WMA = "AUDIO_X_MS_WMA",
+  AUDIO_X_MS_WMA = 'AUDIO_X_MS_WMA',
   /** MimeType image/gif */
-  IMAGE_GIF = "IMAGE_GIF",
+  IMAGE_GIF = 'IMAGE_GIF',
   /** MimeType image/jpeg */
-  IMAGE_JPEG = "IMAGE_JPEG",
+  IMAGE_JPEG = 'IMAGE_JPEG',
   /** MimeType image/png */
-  IMAGE_PNG = "IMAGE_PNG",
+  IMAGE_PNG = 'IMAGE_PNG',
   /** MimeType video/3gpp */
-  VIDEO_3GPP = "VIDEO_3GPP",
+  VIDEO_3GPP = 'VIDEO_3GPP',
   /** MimeType video/3gpp2 */
-  VIDEO_3GPP2 = "VIDEO_3GPP2",
+  VIDEO_3GPP2 = 'VIDEO_3GPP2',
   /** MimeType video/avi */
-  VIDEO_AVI = "VIDEO_AVI",
+  VIDEO_AVI = 'VIDEO_AVI',
   /** MimeType video/mp4 */
-  VIDEO_MP4 = "VIDEO_MP4",
+  VIDEO_MP4 = 'VIDEO_MP4',
   /** MimeType video/mpeg */
-  VIDEO_MPEG = "VIDEO_MPEG",
+  VIDEO_MPEG = 'VIDEO_MPEG',
   /** MimeType video/ogg */
-  VIDEO_OGG = "VIDEO_OGG",
+  VIDEO_OGG = 'VIDEO_OGG',
   /** MimeType video/quicktime */
-  VIDEO_QUICKTIME = "VIDEO_QUICKTIME",
+  VIDEO_QUICKTIME = 'VIDEO_QUICKTIME',
   /** MimeType video/webm */
-  VIDEO_WEBM = "VIDEO_WEBM",
+  VIDEO_WEBM = 'VIDEO_WEBM',
   /** MimeType video/x-flv */
-  VIDEO_X_FLV = "VIDEO_X_FLV",
+  VIDEO_X_FLV = 'VIDEO_X_FLV',
   /** MimeType video/x-ms-wmv */
-  VIDEO_X_MS_WMV = "VIDEO_X_MS_WMV",
+  VIDEO_X_MS_WMV = 'VIDEO_X_MS_WMV',
 }
 
 /** The cardinality of the connection order */
 export enum OrderEnum {
   /** Sort the query result set in an ascending order */
-  ASC = "ASC",
+  ASC = 'ASC',
   /** Sort the query result set in a descending order */
-  DESC = "DESC",
+  DESC = 'DESC',
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum PageIdType {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the PageToCommentConnection connection */
 export interface PageToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the pageToRevisionConnection connection */
 export interface PageToRevisionConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** The status of the WordPress plugin. */
+export enum PluginStatusEnum {
+  /** The plugin is currently active. */
+  ACTIVE = 'ACTIVE',
+  /** The plugin is a drop-in plugin. */
+  DROP_IN = 'DROP_IN',
+  /** The plugin is currently inactive. */
+  INACTIVE = 'INACTIVE',
+  /** The plugin is a must-use plugin. */
+  MUST_USE = 'MUST_USE',
+  /** The plugin is activated on the multisite network. */
+  NETWORK_ACTIVATED = 'NETWORK_ACTIVATED',
+  /** The plugin is installed on the multisite network, but is currently inactive. */
+  NETWORK_INACTIVE = 'NETWORK_INACTIVE',
+  /** The plugin is technically active but was paused while loading. */
+  PAUSED = 'PAUSED',
+  /** The plugin was active recently. */
+  RECENTLY_ACTIVE = 'RECENTLY_ACTIVE',
+  /** The plugin has an upgrade available. */
+  UPGRADE = 'UPGRADE',
 }
 
 /** Set relationships between the post to categories */
 export interface PostCategoriesInput {
   /** If true, this will append the category to existing related categories. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
+  append?: InputMaybe<Scalars['Boolean']>;
   /** The input list of items to set. */
   nodes?: InputMaybe<Array<InputMaybe<PostCategoriesNodeInput>>>;
 }
@@ -1539,27 +1561,27 @@ export interface PostCategoriesInput {
 /** List of categories to connect the post to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
 export interface PostCategoriesNodeInput {
   /** The description of the category. This field is used to set a description of the category if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the category. If present, this will be used to connect to the post. If no existing category exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
+  id?: InputMaybe<Scalars['ID']>;
   /** The name of the category. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** The slug of the category. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum PostFormatIdType {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the node */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Url friendly name of the node */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the PostFormatToContentNodeConnection connection */
@@ -1569,155 +1591,155 @@ export interface PostFormatToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the PostFormatToPostConnection connection */
 export interface PostFormatToPostConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum PostIdType {
   /** Identify a resource by the Database ID. */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** Identify a resource by the (hashed) Global ID. */
-  ID = "ID",
+  ID = 'ID',
   /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Identify a resource by the URI. */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** The format of post field data. */
 export enum PostObjectFieldFormatEnum {
-  /** Provide the field value directly from database */
-  RAW = "RAW",
-  /** Apply the default WordPress rendering */
-  RENDERED = "RENDERED",
+  /** Provide the field value directly from database. Null on unauthenticated requests. */
+  RAW = 'RAW',
+  /** Provide the field value as rendered by WordPress. Default. */
+  RENDERED = 'RENDERED',
 }
 
 /** The column to use when filtering by date */
 export enum PostObjectsConnectionDateColumnEnum {
   /** The date the comment was created in local time. */
-  DATE = "DATE",
+  DATE = 'DATE',
   /** The most recent modification date of the comment. */
-  MODIFIED = "MODIFIED",
+  MODIFIED = 'MODIFIED',
 }
 
 /** Field to order the connection by */
 export enum PostObjectsConnectionOrderbyEnum {
   /** Order by author */
-  AUTHOR = "AUTHOR",
+  AUTHOR = 'AUTHOR',
   /** Order by the number of comments it has acquired */
-  COMMENT_COUNT = "COMMENT_COUNT",
+  COMMENT_COUNT = 'COMMENT_COUNT',
   /** Order by publish date */
-  DATE = "DATE",
+  DATE = 'DATE',
   /** Preserve the ID order given in the IN array */
-  IN = "IN",
+  IN = 'IN',
   /** Order by the menu order value */
-  MENU_ORDER = "MENU_ORDER",
+  MENU_ORDER = 'MENU_ORDER',
   /** Order by last modified date */
-  MODIFIED = "MODIFIED",
+  MODIFIED = 'MODIFIED',
   /** Preserve slug order given in the NAME_IN array */
-  NAME_IN = "NAME_IN",
+  NAME_IN = 'NAME_IN',
   /** Order by parent ID */
-  PARENT = "PARENT",
+  PARENT = 'PARENT',
   /** Order by slug */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Order by title */
-  TITLE = "TITLE",
+  TITLE = 'TITLE',
 }
 
 /** Options for ordering the connection */
@@ -1731,7 +1753,7 @@ export interface PostObjectsConnectionOrderbyInput {
 /** Set relationships between the post to postFormats */
 export interface PostPostFormatsInput {
   /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
+  append?: InputMaybe<Scalars['Boolean']>;
   /** The input list of items to set. */
   nodes?: InputMaybe<Array<InputMaybe<PostPostFormatsNodeInput>>>;
 }
@@ -1739,49 +1761,49 @@ export interface PostPostFormatsInput {
 /** List of postFormats to connect the post to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
 export interface PostPostFormatsNodeInput {
   /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the postFormat. If present, this will be used to connect to the post. If no existing postFormat exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
+  id?: InputMaybe<Scalars['ID']>;
   /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** The status of the object. */
 export enum PostStatusEnum {
   /** Objects with the acf-disabled status */
-  ACF_DISABLED = "ACF_DISABLED",
+  ACF_DISABLED = 'ACF_DISABLED',
   /** Objects with the auto-draft status */
-  AUTO_DRAFT = "AUTO_DRAFT",
+  AUTO_DRAFT = 'AUTO_DRAFT',
   /** Objects with the draft status */
-  DRAFT = "DRAFT",
+  DRAFT = 'DRAFT',
   /** Objects with the future status */
-  FUTURE = "FUTURE",
+  FUTURE = 'FUTURE',
   /** Objects with the inherit status */
-  INHERIT = "INHERIT",
+  INHERIT = 'INHERIT',
   /** Objects with the pending status */
-  PENDING = "PENDING",
+  PENDING = 'PENDING',
   /** Objects with the private status */
-  PRIVATE = "PRIVATE",
+  PRIVATE = 'PRIVATE',
   /** Objects with the publish status */
-  PUBLISH = "PUBLISH",
+  PUBLISH = 'PUBLISH',
   /** Objects with the request-completed status */
-  REQUEST_COMPLETED = "REQUEST_COMPLETED",
+  REQUEST_COMPLETED = 'REQUEST_COMPLETED',
   /** Objects with the request-confirmed status */
-  REQUEST_CONFIRMED = "REQUEST_CONFIRMED",
+  REQUEST_CONFIRMED = 'REQUEST_CONFIRMED',
   /** Objects with the request-failed status */
-  REQUEST_FAILED = "REQUEST_FAILED",
+  REQUEST_FAILED = 'REQUEST_FAILED',
   /** Objects with the request-pending status */
-  REQUEST_PENDING = "REQUEST_PENDING",
+  REQUEST_PENDING = 'REQUEST_PENDING',
   /** Objects with the trash status */
-  TRASH = "TRASH",
+  TRASH = 'TRASH',
 }
 
 /** Set relationships between the post to tags */
 export interface PostTagsInput {
   /** If true, this will append the tag to existing related tags. If false, this will replace existing relationships. Default true. */
-  append?: InputMaybe<Scalars["Boolean"]>;
+  append?: InputMaybe<Scalars['Boolean']>;
   /** The input list of items to set. */
   nodes?: InputMaybe<Array<InputMaybe<PostTagsNodeInput>>>;
 }
@@ -1789,429 +1811,429 @@ export interface PostTagsInput {
 /** List of tags to connect the post to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
 export interface PostTagsNodeInput {
   /** The description of the tag. This field is used to set a description of the tag if a new one is created during the mutation. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the tag. If present, this will be used to connect to the post. If no existing tag exists with this ID, no connection will be made. */
-  id?: InputMaybe<Scalars["ID"]>;
+  id?: InputMaybe<Scalars['ID']>;
   /** The name of the tag. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** The slug of the tag. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the PostToCategoryConnection connection */
 export interface PostToCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the PostToCommentConnection connection */
 export interface PostToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the PostToPostFormatConnection connection */
 export interface PostToPostFormatConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the postToRevisionConnection connection */
 export interface PostToRevisionConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the PostToTagConnection connection */
 export interface PostToTagConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the PostToTermNodeConnection connection */
 export interface PostToTermNodeConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** The Taxonomy to filter terms by */
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Input for the registerUser mutation */
 export interface RegisterUserInput {
   /** User's AOL IM account. */
-  aim?: InputMaybe<Scalars["String"]>;
+  aim?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** A string containing content about the user. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through obscurity (that is if you dont use and delete the default admin user). */
-  displayName?: InputMaybe<Scalars["String"]>;
+  displayName?: InputMaybe<Scalars['String']>;
   /** A string containing the user's email address. */
-  email?: InputMaybe<Scalars["String"]>;
+  email?: InputMaybe<Scalars['String']>;
   /** 	The user's first name. */
-  firstName?: InputMaybe<Scalars["String"]>;
+  firstName?: InputMaybe<Scalars['String']>;
   /** User's Jabber account. */
-  jabber?: InputMaybe<Scalars["String"]>;
+  jabber?: InputMaybe<Scalars['String']>;
   /** The user's last name. */
-  lastName?: InputMaybe<Scalars["String"]>;
+  lastName?: InputMaybe<Scalars['String']>;
   /** User's locale. */
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
   /** A string that contains a URL-friendly name for the user. The default is the user's username. */
-  nicename?: InputMaybe<Scalars["String"]>;
+  nicename?: InputMaybe<Scalars['String']>;
   /** The user's nickname, defaults to the user's username. */
-  nickname?: InputMaybe<Scalars["String"]>;
+  nickname?: InputMaybe<Scalars['String']>;
   /** A string that contains the plain text password for the user. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The date the user registered. Format is Y-m-d H:i:s. */
-  registered?: InputMaybe<Scalars["String"]>;
+  registered?: InputMaybe<Scalars['String']>;
   /** A string for whether to enable the rich editor or not. False if not empty. */
-  richEditing?: InputMaybe<Scalars["String"]>;
+  richEditing?: InputMaybe<Scalars['String']>;
   /** A string that contains the user's username. */
-  username: Scalars["String"];
+  username: Scalars['String'];
   /** A string containing the user's URL for the user's web site. */
-  websiteUrl?: InputMaybe<Scalars["String"]>;
+  websiteUrl?: InputMaybe<Scalars['String']>;
   /** User's Yahoo IM account. */
-  yim?: InputMaybe<Scalars["String"]>;
+  yim?: InputMaybe<Scalars['String']>;
 }
 
 /** The logical relation between each item in the array when there are more than one. */
 export enum RelationEnum {
   /** The logical AND condition returns true if both operands are true, otherwise, it returns false. */
-  AND = "AND",
+  AND = 'AND',
   /** The logical OR condition returns false if both operands are false, otherwise, it returns true. */
-  OR = "OR",
+  OR = 'OR',
 }
 
 /** Input for the resetUserPassword mutation */
 export interface ResetUserPasswordInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Password reset key */
-  key?: InputMaybe<Scalars["String"]>;
+  key?: InputMaybe<Scalars['String']>;
   /** The user's login (username). */
-  login?: InputMaybe<Scalars["String"]>;
+  login?: InputMaybe<Scalars['String']>;
   /** The new password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the restoreComment mutation */
 export interface RestoreCommentInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the comment to be restored */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 }
 
 /** Arguments for filtering the RootQueryToAToZCategoryConnection connection */
 export interface RootQueryToAToZCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToAToZConnection connection */
@@ -2219,37 +2241,37 @@ export interface RootQueryToAToZConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToAcalogProgramConnection connection */
@@ -2257,143 +2279,143 @@ export interface RootQueryToAcalogProgramConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToCategoryConnection connection */
 export interface RootQueryToCategoryConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToCommentConnection connection */
 export interface RootQueryToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the RootQueryToContentNodeConnection connection */
@@ -2403,37 +2425,37 @@ export interface RootQueryToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToContentRevisionUnionConnection connection */
@@ -2443,373 +2465,383 @@ export interface RootQueryToContentRevisionUnionConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToMediaItemConnection connection */
 export interface RootQueryToMediaItemConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToMenuConnection connection */
 export interface RootQueryToMenuConnectionWhereArgs {
   /** The ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
   /** The slug of the menu to query items for */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToMenuItemConnection connection */
 export interface RootQueryToMenuItemConnectionWhereArgs {
   /** The ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
   /** The database ID of the parent menu object */
-  parentDatabaseId?: InputMaybe<Scalars["Int"]>;
+  parentDatabaseId?: InputMaybe<Scalars['Int']>;
   /** The ID of the parent menu object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the RootQueryToPageConnection connection */
 export interface RootQueryToPageConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the RootQueryToPluginConnection connection */
+export interface RootQueryToPluginConnectionWhereArgs {
+  /** Show plugin based on a keyword search. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve plugins where plugin status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PluginStatusEnum>>>;
+  /** Show plugins with a specific status. */
+  status?: InputMaybe<PluginStatusEnum>;
 }
 
 /** Arguments for filtering the RootQueryToPostConnection connection */
 export interface RootQueryToPostConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToPostFormatConnection connection */
 export interface RootQueryToPostFormatConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToTagConnection connection */
 export interface RootQueryToTagConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToTermNodeConnection connection */
 export interface RootQueryToTermNodeConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
-  cacheDomain?: InputMaybe<Scalars["String"]>;
+  cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
-  childOf?: InputMaybe<Scalars["Int"]>;
+  childOf?: InputMaybe<Scalars['Int']>;
   /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
-  childless?: InputMaybe<Scalars["Boolean"]>;
+  childless?: InputMaybe<Scalars['Boolean']>;
   /** Retrieve terms where the description is LIKE the input value. Default empty. */
-  descriptionLike?: InputMaybe<Scalars["String"]>;
+  descriptionLike?: InputMaybe<Scalars['String']>;
   /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
-  excludeTree?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
-  hideEmpty?: InputMaybe<Scalars["Boolean"]>;
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
   /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
-  hierarchical?: InputMaybe<Scalars["Boolean"]>;
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
   /** Array of term ids to include. Default empty array. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of names to return term(s) for. Default empty. */
-  name?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Retrieve terms where the name is LIKE the input value. Default empty. */
-  nameLike?: InputMaybe<Scalars["String"]>;
+  nameLike?: InputMaybe<Scalars['String']>;
   /** Array of object IDs. Results will be limited to terms associated with these objects. */
-  objectIds?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Direction the connection should be ordered in */
   order?: InputMaybe<OrderEnum>;
   /** Field(s) to order terms by. Defaults to 'name'. */
   orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
   /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
-  padCounts?: InputMaybe<Scalars["Boolean"]>;
+  padCounts?: InputMaybe<Scalars['Boolean']>;
   /** Parent term ID to retrieve direct-child terms of. Default empty. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of slugs to return term(s) for. Default empty. */
-  slug?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** The Taxonomy to filter terms by */
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
-  updateTermMetaCache?: InputMaybe<Scalars["Boolean"]>;
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToUserConnection connection */
 export interface RootQueryToUserConnectionWhereArgs {
   /** Array of userIds to exclude. */
-  exclude?: InputMaybe<Array<InputMaybe<Scalars["Int"]>>>;
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** Pass an array of post types to filter results to users who have published posts in those post types. */
   hasPublishedPosts?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of userIds to include. */
-  include?: InputMaybe<Array<InputMaybe<Scalars["Int"]>>>;
+  include?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** The user login. */
-  login?: InputMaybe<Scalars["String"]>;
+  login?: InputMaybe<Scalars['String']>;
   /** An array of logins to include. Users matching one of these logins will be included in results. */
-  loginIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  loginIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** An array of logins to exclude. Users matching one of these logins will not be included in results. */
-  loginNotIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  loginNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** The user nicename. */
-  nicename?: InputMaybe<Scalars["String"]>;
+  nicename?: InputMaybe<Scalars['String']>;
   /** An array of nicenames to include. Users matching one of these nicenames will be included in results. */
-  nicenameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nicenameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** An array of nicenames to exclude. Users matching one of these nicenames will not be included in results. */
-  nicenameNotIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nicenameNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<UsersConnectionOrderbyInput>>>;
   /** An array of role names that users must match to be included in results. Note that this is an inclusive list: users must match *each* role. */
@@ -2819,7 +2851,7 @@ export interface RootQueryToUserConnectionWhereArgs {
   /** An array of role names to exclude. Users matching one or more of these roles will not be included in results. */
   roleNotIn?: InputMaybe<Array<InputMaybe<UserRoleEnum>>>;
   /** Search keyword. Searches for possible string matches on columns. When "searchColumns" is left empty, it tries to determine which column to search in based on search string. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Array of column names to be searched. Accepts 'ID', 'login', 'nicename', 'email', 'url'. */
   searchColumns?: InputMaybe<
     Array<InputMaybe<UsersConnectionSearchColumnEnum>>
@@ -2829,23 +2861,23 @@ export interface RootQueryToUserConnectionWhereArgs {
 /** Input for the sendPasswordResetEmail mutation */
 export interface SendPasswordResetEmailInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** A string that contains the user's username or email address. */
-  username: Scalars["String"];
+  username: Scalars['String'];
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
 export enum TagIdType {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the node */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Url friendly name of the node */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Arguments for filtering the TagToContentNodeConnection connection */
@@ -2855,171 +2887,171 @@ export interface TagToContentNodeConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the TagToPostConnection connection */
 export interface TagToPostConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Allowed taxonomies */
 export enum TaxonomyEnum {
   /** Taxonomy enum a_to_z_categories */
-  ATOZCATEGORY = "ATOZCATEGORY",
+  ATOZCATEGORY = 'ATOZCATEGORY',
   /** Taxonomy enum category */
-  CATEGORY = "CATEGORY",
+  CATEGORY = 'CATEGORY',
   /** Taxonomy enum post_format */
-  POSTFORMAT = "POSTFORMAT",
+  POSTFORMAT = 'POSTFORMAT',
   /** Taxonomy enum post_tag */
-  TAG = "TAG",
+  TAG = 'TAG',
 }
 
 /** The Type of Identifier used to fetch a single Taxonomy node. To be used along with the "id" field. Default is "ID". */
 export enum TaxonomyIdTypeEnum {
   /** The globally unique ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the taxonomy */
-  NAME = "NAME",
+  NAME = 'NAME',
 }
 
 /** The Type of Identifier used to fetch a single resource. Default is "ID". To be used along with the "id" field. */
 export enum TermNodeIdTypeEnum {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The name of the node */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Url friendly name of the node */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
 }
 
 /** Options for ordering the connection by */
 export enum TermObjectsConnectionOrderbyEnum {
   /** Order the connection by item count. */
-  COUNT = "COUNT",
+  COUNT = 'COUNT',
   /** Order the connection by description. */
-  DESCRIPTION = "DESCRIPTION",
+  DESCRIPTION = 'DESCRIPTION',
   /** Order the connection by name. */
-  NAME = "NAME",
+  NAME = 'NAME',
   /** Order the connection by slug. */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** Order the connection by term group. */
-  TERM_GROUP = "TERM_GROUP",
+  TERM_GROUP = 'TERM_GROUP',
   /** Order the connection by term id. */
-  TERM_ID = "TERM_ID",
+  TERM_ID = 'TERM_ID',
   /** Order the connection by term order. */
-  TERM_ORDER = "TERM_ORDER",
+  TERM_ORDER = 'TERM_ORDER',
 }
 
 /** Input for the UpdateAToZCategory mutation */
 export interface UpdateAToZCategoryInput {
   /** The slug that the a_to_z_categories will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the a_to_z_categories object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the AToZCategory object to update */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** The name of the a_to_z_categories object to mutate */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateAToZ mutation */
@@ -3027,390 +3059,390 @@ export interface UpdateAToZInput {
   /** Set connections between the AToZ and AToZCategories */
   aToZCategories?: InputMaybe<AToZAToZCategoriesInput>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The ID of the AToZ object */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateAcalogProgram mutation */
 export interface UpdateAcalogProgramInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The ID of the AcalogProgram object */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the UpdateCategory mutation */
 export interface UpdateCategoryInput {
   /** The slug that the category will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the category object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the category object to update */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** The name of the category object to mutate */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** The ID of the category that should be set as the parent */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateComment mutation */
 export interface UpdateCommentInput {
   /** The approval status of the comment. */
-  approved?: InputMaybe<Scalars["String"]>;
+  approved?: InputMaybe<Scalars['String']>;
   /** The name of the comment's author. */
-  author?: InputMaybe<Scalars["String"]>;
+  author?: InputMaybe<Scalars['String']>;
   /** The email of the comment's author. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** The url of the comment's author. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
-  /** The ID of the post object the comment belongs to. */
-  commentOn?: InputMaybe<Scalars["Int"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The database ID of the post object the comment belongs to. */
+  commentOn?: InputMaybe<Scalars['Int']>;
   /** Content of the comment. */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day ( e.g. 01/31/2017 ) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The ID of the comment being updated. */
-  id: Scalars["ID"];
-  /** Parent comment of current comment. */
-  parent?: InputMaybe<Scalars["ID"]>;
+  id: Scalars['ID'];
+  /** Parent comment ID of current comment. */
+  parent?: InputMaybe<Scalars['ID']>;
   /** Type of comment. */
-  type?: InputMaybe<Scalars["String"]>;
+  type?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateMediaItem mutation */
 export interface UpdateMediaItemInput {
   /** Alternative text to display when mediaItem is not displayed */
-  altText?: InputMaybe<Scalars["String"]>;
+  altText?: InputMaybe<Scalars['String']>;
   /** The userId to assign as the author of the mediaItem */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** The caption for the mediaItem */
-  caption?: InputMaybe<Scalars["String"]>;
+  caption?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the mediaItem */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The date of the mediaItem */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The date (in GMT zone) of the mediaItem */
-  dateGmt?: InputMaybe<Scalars["String"]>;
+  dateGmt?: InputMaybe<Scalars['String']>;
   /** Description of the mediaItem */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The file name of the mediaItem */
-  filePath?: InputMaybe<Scalars["String"]>;
+  filePath?: InputMaybe<Scalars['String']>;
   /** The file type of the mediaItem */
   fileType?: InputMaybe<MimeTypeEnum>;
   /** The ID of the mediaItem object */
-  id: Scalars["ID"];
-  /** The WordPress post ID or the graphQL postId of the parent object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  id: Scalars['ID'];
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']>;
   /** The ping status for the mediaItem */
-  pingStatus?: InputMaybe<Scalars["String"]>;
+  pingStatus?: InputMaybe<Scalars['String']>;
   /** The slug of the mediaItem */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the mediaItem */
   status?: InputMaybe<MediaItemStatusEnum>;
   /** The title of the mediaItem */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updatePage mutation */
 export interface UpdatePageInput {
   /** The userId to assign as the author of the object */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the object */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The ID of the page object */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The ID of the parent object */
-  parentId?: InputMaybe<Scalars["ID"]>;
+  parentId?: InputMaybe<Scalars['ID']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the UpdatePostFormat mutation */
 export interface UpdatePostFormatInput {
   /** The slug that the post_format will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the post_format object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the postFormat object to update */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** The name of the post_format object to mutate */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updatePost mutation */
 export interface UpdatePostInput {
   /** The userId to assign as the author of the object */
-  authorId?: InputMaybe<Scalars["ID"]>;
+  authorId?: InputMaybe<Scalars['ID']>;
   /** Set connections between the post and categories */
   categories?: InputMaybe<PostCategoriesInput>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The comment status for the object */
-  commentStatus?: InputMaybe<Scalars["String"]>;
+  commentStatus?: InputMaybe<Scalars['String']>;
   /** The content of the object */
-  content?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['String']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
-  date?: InputMaybe<Scalars["String"]>;
+  date?: InputMaybe<Scalars['String']>;
   /** The excerpt of the object */
-  excerpt?: InputMaybe<Scalars["String"]>;
+  excerpt?: InputMaybe<Scalars['String']>;
   /** The ID of the post object */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
-  menuOrder?: InputMaybe<Scalars["Int"]>;
+  menuOrder?: InputMaybe<Scalars['Int']>;
   /** The password used to protect the content of the object */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The ping status for the object */
-  pingStatus?: InputMaybe<Scalars["String"]>;
+  pingStatus?: InputMaybe<Scalars['String']>;
   /** URLs that have been pinged. */
-  pinged?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Set connections between the post and postFormats */
   postFormats?: InputMaybe<PostPostFormatsInput>;
   /** The slug of the object */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
   /** The status of the object */
   status?: InputMaybe<PostStatusEnum>;
   /** Set connections between the post and tags */
   tags?: InputMaybe<PostTagsInput>;
   /** The title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
   /** URLs queued to be pinged. */
-  toPing?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 }
 
 /** Input for the updateSettings mutation */
 export interface UpdateSettingsInput {
   atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: InputMaybe<
-    Scalars["String"]
+    Scalars['String']
   >;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** Allow people to submit comments on new posts. */
-  discussionSettingsDefaultCommentStatus?: InputMaybe<Scalars["String"]>;
+  discussionSettingsDefaultCommentStatus?: InputMaybe<Scalars['String']>;
   /** Allow link notifications from other blogs (pingbacks and trackbacks) on new articles. */
-  discussionSettingsDefaultPingStatus?: InputMaybe<Scalars["String"]>;
+  discussionSettingsDefaultPingStatus?: InputMaybe<Scalars['String']>;
   /** A date format for all date strings. */
-  generalSettingsDateFormat?: InputMaybe<Scalars["String"]>;
+  generalSettingsDateFormat?: InputMaybe<Scalars['String']>;
   /** Site tagline. */
-  generalSettingsDescription?: InputMaybe<Scalars["String"]>;
+  generalSettingsDescription?: InputMaybe<Scalars['String']>;
   /** WordPress locale code. */
-  generalSettingsLanguage?: InputMaybe<Scalars["String"]>;
+  generalSettingsLanguage?: InputMaybe<Scalars['String']>;
   /** A day number of the week that the week should start on. */
-  generalSettingsStartOfWeek?: InputMaybe<Scalars["Int"]>;
+  generalSettingsStartOfWeek?: InputMaybe<Scalars['Int']>;
   /** A time format for all time strings. */
-  generalSettingsTimeFormat?: InputMaybe<Scalars["String"]>;
+  generalSettingsTimeFormat?: InputMaybe<Scalars['String']>;
   /** A city in the same timezone as you. */
-  generalSettingsTimezone?: InputMaybe<Scalars["String"]>;
+  generalSettingsTimezone?: InputMaybe<Scalars['String']>;
   /** Site title. */
-  generalSettingsTitle?: InputMaybe<Scalars["String"]>;
+  generalSettingsTitle?: InputMaybe<Scalars['String']>;
   /** Blog pages show at most. */
-  readingSettingsPostsPerPage?: InputMaybe<Scalars["Int"]>;
+  readingSettingsPostsPerPage?: InputMaybe<Scalars['Int']>;
   /** Default post category. */
-  writingSettingsDefaultCategory?: InputMaybe<Scalars["Int"]>;
+  writingSettingsDefaultCategory?: InputMaybe<Scalars['Int']>;
   /** Default post format. */
-  writingSettingsDefaultPostFormat?: InputMaybe<Scalars["String"]>;
+  writingSettingsDefaultPostFormat?: InputMaybe<Scalars['String']>;
   /** Convert emoticons like :-) and :-P to graphics on display. */
-  writingSettingsUseSmilies?: InputMaybe<Scalars["Boolean"]>;
+  writingSettingsUseSmilies?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Input for the UpdateTag mutation */
 export interface UpdateTagInput {
   /** The slug that the post_tag will be an alias of */
-  aliasOf?: InputMaybe<Scalars["String"]>;
+  aliasOf?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** The description of the post_tag object */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** The ID of the tag object to update */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** The name of the post_tag object to mutate */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
-  slug?: InputMaybe<Scalars["String"]>;
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateUser mutation */
 export interface UpdateUserInput {
   /** User's AOL IM account. */
-  aim?: InputMaybe<Scalars["String"]>;
+  aim?: InputMaybe<Scalars['String']>;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
-  clientMutationId?: InputMaybe<Scalars["String"]>;
+  clientMutationId?: InputMaybe<Scalars['String']>;
   /** A string containing content about the user. */
-  description?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
   /** A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through obscurity (that is if you dont use and delete the default admin user). */
-  displayName?: InputMaybe<Scalars["String"]>;
+  displayName?: InputMaybe<Scalars['String']>;
   /** A string containing the user's email address. */
-  email?: InputMaybe<Scalars["String"]>;
+  email?: InputMaybe<Scalars['String']>;
   /** 	The user's first name. */
-  firstName?: InputMaybe<Scalars["String"]>;
+  firstName?: InputMaybe<Scalars['String']>;
   /** The ID of the user */
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   /** User's Jabber account. */
-  jabber?: InputMaybe<Scalars["String"]>;
+  jabber?: InputMaybe<Scalars['String']>;
   /** The user's last name. */
-  lastName?: InputMaybe<Scalars["String"]>;
+  lastName?: InputMaybe<Scalars['String']>;
   /** User's locale. */
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
   /** A string that contains a URL-friendly name for the user. The default is the user's username. */
-  nicename?: InputMaybe<Scalars["String"]>;
+  nicename?: InputMaybe<Scalars['String']>;
   /** The user's nickname, defaults to the user's username. */
-  nickname?: InputMaybe<Scalars["String"]>;
+  nickname?: InputMaybe<Scalars['String']>;
   /** A string that contains the plain text password for the user. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** The date the user registered. Format is Y-m-d H:i:s. */
-  registered?: InputMaybe<Scalars["String"]>;
+  registered?: InputMaybe<Scalars['String']>;
   /** A string for whether to enable the rich editor or not. False if not empty. */
-  richEditing?: InputMaybe<Scalars["String"]>;
+  richEditing?: InputMaybe<Scalars['String']>;
   /** An array of roles to be assigned to the user. */
-  roles?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  roles?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** A string containing the user's URL for the user's web site. */
-  websiteUrl?: InputMaybe<Scalars["String"]>;
+  websiteUrl?: InputMaybe<Scalars['String']>;
   /** User's Yahoo IM account. */
-  yim?: InputMaybe<Scalars["String"]>;
+  yim?: InputMaybe<Scalars['String']>;
 }
 
 /** The Type of Identifier used to fetch a single User node. To be used along with the "id" field. Default is "ID". */
 export enum UserNodeIdTypeEnum {
   /** The Database ID for the node */
-  DATABASE_ID = "DATABASE_ID",
+  DATABASE_ID = 'DATABASE_ID',
   /** The Email of the User */
-  EMAIL = "EMAIL",
+  EMAIL = 'EMAIL',
   /** The hashed Global ID */
-  ID = "ID",
+  ID = 'ID',
   /** The slug of the User */
-  SLUG = "SLUG",
+  SLUG = 'SLUG',
   /** The URI for the node */
-  URI = "URI",
+  URI = 'URI',
   /** The username the User uses to login with */
-  USERNAME = "USERNAME",
+  USERNAME = 'USERNAME',
 }
 
 /** Names of available user roles */
 export enum UserRoleEnum {
   /** User role with specific capabilities */
-  ADMINISTRATOR = "ADMINISTRATOR",
+  ADMINISTRATOR = 'ADMINISTRATOR',
   /** User role with specific capabilities */
-  AUTHOR = "AUTHOR",
+  AUTHOR = 'AUTHOR',
   /** User role with specific capabilities */
-  CONTRIBUTOR = "CONTRIBUTOR",
+  CONTRIBUTOR = 'CONTRIBUTOR',
   /** User role with specific capabilities */
-  EDITOR = "EDITOR",
+  EDITOR = 'EDITOR',
   /** User role with specific capabilities */
-  SUBSCRIBER = "SUBSCRIBER",
+  SUBSCRIBER = 'SUBSCRIBER',
 }
 
 /** Arguments for filtering the UserToCommentConnection connection */
 export interface UserToCommentConnectionWhereArgs {
   /** Comment author email address. */
-  authorEmail?: InputMaybe<Scalars["String"]>;
+  authorEmail?: InputMaybe<Scalars['String']>;
   /** Array of author IDs to include comments for. */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to exclude comments for. */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Comment author URL. */
-  authorUrl?: InputMaybe<Scalars["String"]>;
+  authorUrl?: InputMaybe<Scalars['String']>;
   /** Array of comment IDs to include. */
-  commentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
-  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Include comments of a given type. */
-  commentType?: InputMaybe<Scalars["String"]>;
+  commentType?: InputMaybe<Scalars['String']>;
   /** Include comments from a given array of comment types. */
-  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Exclude comments from a given array of comment types. */
-  commentTypeNotIn?: InputMaybe<Scalars["String"]>;
+  commentTypeNotIn?: InputMaybe<Scalars['String']>;
   /** Content object author ID to limit results by. */
-  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs to retrieve comments for. */
-  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of author IDs *not* to retrieve comments for. */
-  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Limit results to those affiliated with a given content object ID. */
-  contentId?: InputMaybe<Scalars["ID"]>;
+  contentId?: InputMaybe<Scalars['ID']>;
   /** Array of content object IDs to include affiliated comments for. */
-  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
-  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Content object name to retrieve affiliated comments for. */
-  contentName?: InputMaybe<Scalars["String"]>;
+  contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
-  contentParent?: InputMaybe<Scalars["Int"]>;
+  contentParent?: InputMaybe<Scalars['Int']>;
   /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
   contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
   /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
-  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Karma score to retrieve matching comments for. */
-  karma?: InputMaybe<Scalars["Int"]>;
+  karma?: InputMaybe<Scalars['Int']>;
   /** The cardinality of the order of the connection */
   order?: InputMaybe<OrderEnum>;
   /** Field to order the comments by. */
   orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
   /** Parent ID of comment to retrieve children of. */
-  parent?: InputMaybe<Scalars["Int"]>;
+  parent?: InputMaybe<Scalars['Int']>;
   /** Array of parent IDs of comments to retrieve children for. */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of parent IDs of comments *not* to retrieve children for. */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Search term(s) to retrieve matching comments for. */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars["String"]>;
+  status?: InputMaybe<Scalars['String']>;
   /** Include comments for a specific user ID. */
-  userId?: InputMaybe<Scalars["ID"]>;
+  userId?: InputMaybe<Scalars['ID']>;
 }
 
 /** Arguments for filtering the UserToContentRevisionUnionConnection connection */
@@ -3420,215 +3452,215 @@ export interface UserToContentRevisionUnionConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the UserToMediaItemConnection connection */
 export interface UserToMediaItemConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the UserToPageConnection connection */
 export interface UserToPageConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the UserToPostConnection connection */
 export interface UserToPostConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
-  author?: InputMaybe<Scalars["Int"]>;
+  author?: InputMaybe<Scalars['Int']>;
   /** Find objects connected to author(s) in the array of author's userIds */
-  authorIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Find objects connected to the author by the author's nicename */
-  authorName?: InputMaybe<Scalars["String"]>;
+  authorName?: InputMaybe<Scalars['String']>;
   /** Find objects NOT connected to author(s) in the array of author's userIds */
-  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Category ID */
-  categoryId?: InputMaybe<Scalars["Int"]>;
+  categoryId?: InputMaybe<Scalars['Int']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Use Category Slug */
-  categoryName?: InputMaybe<Scalars["String"]>;
+  categoryName?: InputMaybe<Scalars['String']>;
   /** Array of category IDs, used to display objects from one category OR another */
-  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
-  hasPassword?: InputMaybe<Scalars["Boolean"]>;
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
   /** Specific ID of the object */
-  id?: InputMaybe<Scalars["Int"]>;
+  id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
-  in?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Get objects with a specific mimeType property */
   mimeType?: InputMaybe<MimeTypeEnum>;
   /** Slug / post_name of the object */
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
   /** Specify objects to retrieve. Use slugs */
-  nameIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** What paramater to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
-  parent?: InputMaybe<Scalars["ID"]>;
+  parent?: InputMaybe<Scalars['ID']>;
   /** Specify objects whose parent is in an array */
-  parentIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Specify posts whose parent is not in an array */
-  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Show posts with a specific password. */
-  password?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
   /** Show Posts based on a keyword search */
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
   /** Retrieve posts where post status is in an array. */
   stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
   /** Show posts with a specific status. */
   status?: InputMaybe<PostStatusEnum>;
   /** Tag Slug */
-  tag?: InputMaybe<Scalars["String"]>;
+  tag?: InputMaybe<Scalars['String']>;
   /** Use Tag ID */
-  tagId?: InputMaybe<Scalars["String"]>;
+  tagId?: InputMaybe<Scalars['String']>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
-  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag slugs, used to display objects from one tag OR another */
-  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of tag slugs, used to exclude objects in specified tags */
-  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
-  title?: InputMaybe<Scalars["String"]>;
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Field to order the connection by */
 export enum UsersConnectionOrderbyEnum {
   /** Order by display name */
-  DISPLAY_NAME = "DISPLAY_NAME",
+  DISPLAY_NAME = 'DISPLAY_NAME',
   /** Order by email address */
-  EMAIL = "EMAIL",
+  EMAIL = 'EMAIL',
   /** Order by login */
-  LOGIN = "LOGIN",
+  LOGIN = 'LOGIN',
   /** Preserve the login order given in the LOGIN_IN array */
-  LOGIN_IN = "LOGIN_IN",
+  LOGIN_IN = 'LOGIN_IN',
   /** Order by nice name */
-  NICE_NAME = "NICE_NAME",
+  NICE_NAME = 'NICE_NAME',
   /** Preserve the nice name order given in the NICE_NAME_IN array */
-  NICE_NAME_IN = "NICE_NAME_IN",
+  NICE_NAME_IN = 'NICE_NAME_IN',
   /** Order by registration date */
-  REGISTERED = "REGISTERED",
+  REGISTERED = 'REGISTERED',
   /** Order by URL */
-  URL = "URL",
+  URL = 'URL',
 }
 
 /** Options for ordering the connection */
@@ -3642,18 +3674,18 @@ export interface UsersConnectionOrderbyInput {
 /** Column used for searching for users. */
 export enum UsersConnectionSearchColumnEnum {
   /** The user's email address. */
-  EMAIL = "EMAIL",
+  EMAIL = 'EMAIL',
   /** The globally unique ID. */
-  ID = "ID",
+  ID = 'ID',
   /** The username the User uses to login with. */
-  LOGIN = "LOGIN",
+  LOGIN = 'LOGIN',
   /** A URL-friendly name for the user. The default is the user's username. */
-  NICENAME = "NICENAME",
+  NICENAME = 'NICENAME',
   /** The URL of the user\s website. */
-  URL = "URL",
+  URL = 'URL',
 }
 
-export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
+export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   AToZCategoryIdType: true,
   AToZIdType: true,
   AcalogProgramIdType: true,
@@ -3680,6 +3712,7 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   MimeTypeEnum: true,
   OrderEnum: true,
   PageIdType: true,
+  PluginStatusEnum: true,
   PostFormatIdType: true,
   PostIdType: true,
   PostObjectFieldFormatEnum: true,
@@ -3700,4558 +3733,4579 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
 };
 export const generatedSchema = {
   AToZ: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     aToZCategories: {
-      __type: "AToZToAToZCategoryConnection",
+      __type: 'AToZToAToZCategoryConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "AToZToAToZCategoryConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AToZToAToZCategoryConnectionWhereArgs',
       },
     },
-    aToZFields: { __type: "AToZ_Atozfields" },
-    aToZId: { __type: "Int!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    aToZFields: { __type: 'AToZ_Atozfields' },
+    aToZId: { __type: 'Int!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    preview: { __type: "AToZToPreviewConnectionEdge" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    preview: { __type: 'AToZToPreviewConnectionEdge' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
     terms: {
-      __type: "AToZToTermNodeConnection",
+      __type: 'AToZToTermNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "AToZToTermNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AToZToTermNodeConnectionWhereArgs',
       },
     },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    uri: { __type: "String" },
+    uri: { __type: 'String' },
   },
   AToZAToZCategoriesInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[AToZAToZCategoriesNodeInput]" },
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[AToZAToZCategoriesNodeInput]' },
   },
   AToZAToZCategoriesNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   AToZCategory: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     aToZ: {
-      __type: "AToZCategoryToAToZConnection",
+      __type: 'AToZCategoryToAToZConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "AToZCategoryToAToZConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AToZCategoryToAToZConnectionWhereArgs',
       },
     },
-    aToZCategoryId: { __type: "Int" },
-    conditionalTags: { __type: "ConditionalTags" },
+    aToZCategoryId: { __type: 'Int' },
+    conditionalTags: { __type: 'ConditionalTags' },
     contentNodes: {
-      __type: "AToZCategoryToContentNodeConnection",
+      __type: 'AToZCategoryToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "AToZCategoryToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AToZCategoryToContentNodeConnectionWhereArgs',
       },
     },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
     enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
-    taxonomy: { __type: "AToZCategoryToTaxonomyConnectionEdge" },
-    taxonomyName: { __type: "String" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    uri: { __type: "String" },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'AToZCategoryToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
   },
   AToZCategoryToAToZConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[AToZCategoryToAToZConnectionEdge]" },
-    nodes: { __type: "[AToZ]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AToZCategoryToAToZConnectionEdge]' },
+    nodes: { __type: '[AToZ]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   AToZCategoryToAToZConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "AToZ" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AToZ' },
   },
   AToZCategoryToAToZConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   AToZCategoryToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[AToZCategoryToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AToZCategoryToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   AToZCategoryToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   AToZCategoryToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypesOfAToZCategoryEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypesOfAToZCategoryEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   AToZCategoryToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
   },
   AToZToAToZCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[AToZToAToZCategoryConnectionEdge]" },
-    nodes: { __type: "[AToZCategory]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AToZToAToZCategoryConnectionEdge]' },
+    nodes: { __type: '[AToZCategory]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   AToZToAToZCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "AToZCategory" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AToZCategory' },
   },
   AToZToAToZCategoryConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   AToZToPreviewConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "AToZ" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'AToZ' },
   },
   AToZToTermNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[AToZToTermNodeConnectionEdge]" },
-    nodes: { __type: "[TermNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AToZToTermNodeConnectionEdge]' },
+    nodes: { __type: '[TermNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   AToZToTermNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TermNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'TermNode' },
   },
   AToZToTermNodeConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    taxonomies: { __type: "[TaxonomyEnum]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    taxonomies: { __type: '[TaxonomyEnum]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   AToZ_Atozfields: {
-    __typename: { __type: "String!" },
-    fieldGroupName: { __type: "String" },
-    url: { __type: "String" },
+    __typename: { __type: 'String!' },
+    fieldGroupName: { __type: 'String' },
+    url: { __type: 'String' },
   },
   AcalogProgram: {
-    __typename: { __type: "String!" },
-    acalogDepartmentFields: { __type: "AcalogProgram_Acalogdepartmentfields" },
-    acalogProgramId: { __type: "Int!" },
-    conditionalTags: { __type: "ConditionalTags" },
+    __typename: { __type: 'String!' },
+    acalogDepartmentFields: { __type: 'AcalogProgram_Acalogdepartmentfields' },
+    acalogProgramId: { __type: 'Int!' },
+    conditionalTags: { __type: 'ConditionalTags' },
     content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
-    featuredImageDatabaseId: { __type: "Int" },
-    featuredImageId: { __type: "ID" },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    preview: { __type: "AcalogProgramToPreviewConnectionEdge" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
+    featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
+    featuredImageDatabaseId: { __type: 'Int' },
+    featuredImageId: { __type: 'ID' },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    preview: { __type: 'AcalogProgramToPreviewConnectionEdge' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    uri: { __type: "String" },
+    uri: { __type: 'String' },
   },
   AcalogProgramToPreviewConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "AcalogProgram" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'AcalogProgram' },
   },
   AcalogProgram_Acalogdepartmentfields: {
-    __typename: { __type: "String!" },
-    catoid: { __type: "String" },
-    core: { __type: "String" },
-    courseDepartment: { __type: "String" },
-    degreeType: { __type: "String" },
-    fieldGroupName: { __type: "String" },
-    poid: { __type: "String" },
-    programContent: { __type: "String" },
-    programType: { __type: "String" },
+    __typename: { __type: 'String!' },
+    catoid: { __type: 'String' },
+    core: { __type: 'String' },
+    courseDepartment: { __type: 'String' },
+    degreeType: { __type: 'String' },
+    fieldGroupName: { __type: 'String' },
+    poid: { __type: 'String' },
+    programContent: { __type: 'String' },
+    programType: { __type: 'String' },
   },
   AcfFieldGroup: {
-    __typename: { __type: "String!" },
-    fieldGroupName: { __type: "String" },
-    $on: { __type: "$AcfFieldGroup!" },
+    __typename: { __type: 'String!' },
+    fieldGroupName: { __type: 'String' },
+    $on: { __type: '$AcfFieldGroup!' },
   },
   AtlasContentModelerSettingsSettings: {
-    __typename: { __type: "String!" },
-    atlasContentModelerUsageTracking: { __type: "String" },
+    __typename: { __type: 'String!' },
+    atlasContentModelerUsageTracking: { __type: 'String' },
   },
   Avatar: {
-    __typename: { __type: "String!" },
-    default: { __type: "String" },
-    extraAttr: { __type: "String" },
-    forceDefault: { __type: "Boolean" },
-    foundAvatar: { __type: "Boolean" },
-    height: { __type: "Int" },
-    isRestricted: { __type: "Boolean" },
-    rating: { __type: "String" },
-    scheme: { __type: "String" },
-    size: { __type: "Int" },
-    url: { __type: "String" },
-    width: { __type: "Int" },
+    __typename: { __type: 'String!' },
+    default: { __type: 'String' },
+    extraAttr: { __type: 'String' },
+    forceDefault: { __type: 'Boolean' },
+    foundAvatar: { __type: 'Boolean' },
+    height: { __type: 'Int' },
+    isRestricted: { __type: 'Boolean' },
+    rating: { __type: 'String' },
+    scheme: { __type: 'String' },
+    size: { __type: 'Int' },
+    url: { __type: 'String' },
+    width: { __type: 'Int' },
   },
   Category: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     ancestors: {
-      __type: "CategoryToAncestorsCategoryConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'CategoryToAncestorsCategoryConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    categoryId: { __type: "Int" },
+    categoryId: { __type: 'Int' },
     children: {
-      __type: "CategoryToCategoryConnection",
+      __type: 'CategoryToCategoryConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "CategoryToCategoryConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CategoryToCategoryConnectionWhereArgs',
       },
     },
-    conditionalTags: { __type: "ConditionalTags" },
+    conditionalTags: { __type: 'ConditionalTags' },
     contentNodes: {
-      __type: "CategoryToContentNodeConnection",
+      __type: 'CategoryToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "CategoryToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CategoryToContentNodeConnectionWhereArgs',
       },
     },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
     enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
-    parent: { __type: "CategoryToParentCategoryConnectionEdge" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    parent: { __type: 'CategoryToParentCategoryConnectionEdge' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
     posts: {
-      __type: "CategoryToPostConnection",
+      __type: 'CategoryToPostConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "CategoryToPostConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CategoryToPostConnectionWhereArgs',
       },
     },
-    slug: { __type: "String" },
-    taxonomy: { __type: "CategoryToTaxonomyConnectionEdge" },
-    taxonomyName: { __type: "String" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    uri: { __type: "String" },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'CategoryToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
   },
   CategoryToAncestorsCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[CategoryToAncestorsCategoryConnectionEdge]" },
-    nodes: { __type: "[Category]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CategoryToAncestorsCategoryConnectionEdge]' },
+    nodes: { __type: '[Category]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   CategoryToAncestorsCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Category" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Category' },
   },
   CategoryToCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[CategoryToCategoryConnectionEdge]" },
-    nodes: { __type: "[Category]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CategoryToCategoryConnectionEdge]' },
+    nodes: { __type: '[Category]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   CategoryToCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Category" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Category' },
   },
   CategoryToCategoryConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   CategoryToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[CategoryToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CategoryToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   CategoryToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   CategoryToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypesOfCategoryEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypesOfCategoryEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   CategoryToParentCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Category" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Category' },
   },
   CategoryToPostConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[CategoryToPostConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CategoryToPostConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   CategoryToPostConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   CategoryToPostConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   CategoryToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
   },
   Comment: {
-    __typename: { __type: "String!" },
-    agent: { __type: "String" },
-    approved: { __type: "Boolean" },
-    author: { __type: "CommentToCommenterConnectionEdge" },
-    authorIp: { __type: "String" },
-    commentId: { __type: "Int" },
-    commentedOn: { __type: "CommentToContentNodeConnectionEdge" },
+    __typename: { __type: 'String!' },
+    agent: { __type: 'String' },
+    approved: { __type: 'Boolean' },
+    author: { __type: 'CommentToCommenterConnectionEdge' },
+    authorIp: { __type: 'String' },
+    commentId: { __type: 'Int' },
+    commentedOn: { __type: 'CommentToContentNodeConnectionEdge' },
     content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    karma: { __type: "Int" },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    karma: { __type: 'Int' },
     parent: {
-      __type: "CommentToParentCommentConnectionEdge",
-      __args: { where: "CommentToParentCommentConnectionWhereArgs" },
+      __type: 'CommentToParentCommentConnectionEdge',
+      __args: { where: 'CommentToParentCommentConnectionWhereArgs' },
     },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
     replies: {
-      __type: "CommentToCommentConnection",
+      __type: 'CommentToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "CommentToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CommentToCommentConnectionWhereArgs',
       },
     },
-    type: { __type: "String" },
+    type: { __type: 'String' },
   },
   CommentAuthor: {
-    __typename: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    email: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    name: { __type: "String" },
-    url: { __type: "String" },
+    __typename: { __type: 'String!' },
+    avatar: {
+      __type: 'Avatar',
+      __args: {
+        forceDefault: 'Boolean',
+        rating: 'AvatarRatingEnum',
+        size: 'Int',
+      },
+    },
+    databaseId: { __type: 'Int!' },
+    email: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    name: { __type: 'String' },
+    url: { __type: 'String' },
   },
   CommentToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[CommentToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CommentToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   CommentToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   CommentToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   CommentToCommenterConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Commenter" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Commenter' },
   },
   CommentToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'ContentNode' },
   },
   CommentToParentCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Comment' },
   },
   CommentToParentCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   Commenter: {
-    __typename: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    email: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    name: { __type: "String" },
-    url: { __type: "String" },
-    $on: { __type: "$Commenter!" },
+    __typename: { __type: 'String!' },
+    avatar: { __type: 'Avatar' },
+    databaseId: { __type: 'Int!' },
+    email: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    name: { __type: 'String' },
+    url: { __type: 'String' },
+    $on: { __type: '$Commenter!' },
   },
   ConditionalTags: {
-    __typename: { __type: "String!" },
-    isArchive: { __type: "Boolean" },
-    isAttachment: { __type: "Boolean" },
-    isAuthor: { __type: "Boolean" },
-    isCategory: { __type: "Boolean" },
-    isDate: { __type: "Boolean" },
-    isDay: { __type: "Boolean" },
-    isFrontPage: { __type: "Boolean" },
-    isHome: { __type: "Boolean" },
-    isMonth: { __type: "Boolean" },
-    isMultiAuthor: { __type: "Boolean" },
-    isPage: { __type: "Boolean" },
-    isPageTemplate: { __type: "Boolean" },
-    isPostTypeArchive: { __type: "Boolean" },
-    isPreview: { __type: "Boolean" },
-    isPrivacyPolicy: { __type: "Boolean" },
-    isSearch: { __type: "Boolean" },
-    isSingle: { __type: "Boolean" },
-    isSingular: { __type: "Boolean" },
-    isSticky: { __type: "Boolean" },
-    isTag: { __type: "Boolean" },
-    isTax: { __type: "Boolean" },
-    isYear: { __type: "Boolean" },
+    __typename: { __type: 'String!' },
+    isArchive: { __type: 'Boolean' },
+    isAttachment: { __type: 'Boolean' },
+    isAuthor: { __type: 'Boolean' },
+    isCategory: { __type: 'Boolean' },
+    isDate: { __type: 'Boolean' },
+    isDay: { __type: 'Boolean' },
+    isFrontPage: { __type: 'Boolean' },
+    isHome: { __type: 'Boolean' },
+    isMonth: { __type: 'Boolean' },
+    isMultiAuthor: { __type: 'Boolean' },
+    isPage: { __type: 'Boolean' },
+    isPageTemplate: { __type: 'Boolean' },
+    isPostTypeArchive: { __type: 'Boolean' },
+    isPreview: { __type: 'Boolean' },
+    isPrivacyPolicy: { __type: 'Boolean' },
+    isSearch: { __type: 'Boolean' },
+    isSingle: { __type: 'Boolean' },
+    isSingular: { __type: 'Boolean' },
+    isSticky: { __type: 'Boolean' },
+    isTag: { __type: 'Boolean' },
+    isTax: { __type: 'Boolean' },
+    isYear: { __type: 'Boolean' },
   },
   ContentNode: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
-    uri: { __type: "String" },
-    $on: { __type: "$ContentNode!" },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
+    uri: { __type: 'String' },
+    $on: { __type: '$ContentNode!' },
   },
   ContentNodeToContentTypeConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "ContentType" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'ContentType' },
   },
   ContentNodeToEditLastConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "User" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'User' },
   },
   ContentNodeToEditLockConnectionEdge: {
-    __typename: { __type: "String!" },
-    lockTimestamp: { __type: "String" },
-    node: { __type: "User" },
+    __typename: { __type: 'String!' },
+    lockTimestamp: { __type: 'String' },
+    node: { __type: 'User' },
   },
   ContentNodeToEnqueuedScriptConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[ContentNodeToEnqueuedScriptConnectionEdge]" },
-    nodes: { __type: "[EnqueuedScript]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ContentNodeToEnqueuedScriptConnectionEdge]' },
+    nodes: { __type: '[EnqueuedScript]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   ContentNodeToEnqueuedScriptConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedScript" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedScript' },
   },
   ContentNodeToEnqueuedStylesheetConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[ContentNodeToEnqueuedStylesheetConnectionEdge]" },
-    nodes: { __type: "[EnqueuedStylesheet]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ContentNodeToEnqueuedStylesheetConnectionEdge]' },
+    nodes: { __type: '[EnqueuedStylesheet]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   ContentNodeToEnqueuedStylesheetConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedStylesheet" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedStylesheet' },
   },
   ContentRevisionUnion: {
-    __typename: { __type: "String!" },
-    $on: { __type: "$ContentRevisionUnion!" },
+    __typename: { __type: 'String!' },
+    $on: { __type: '$ContentRevisionUnion!' },
   },
   ContentTemplate: {
-    __typename: { __type: "String!" },
-    templateName: { __type: "String" },
-    $on: { __type: "$ContentTemplate!" },
+    __typename: { __type: 'String!' },
+    templateName: { __type: 'String' },
+    $on: { __type: '$ContentTemplate!' },
   },
   ContentType: {
-    __typename: { __type: "String!" },
-    canExport: { __type: "Boolean" },
-    conditionalTags: { __type: "ConditionalTags" },
+    __typename: { __type: 'String!' },
+    canExport: { __type: 'Boolean' },
+    conditionalTags: { __type: 'ConditionalTags' },
     connectedTaxonomies: {
-      __type: "ContentTypeToTaxonomyConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentTypeToTaxonomyConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     contentNodes: {
-      __type: "ContentTypeToContentNodeConnection",
+      __type: 'ContentTypeToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "ContentTypeToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ContentTypeToContentNodeConnectionWhereArgs',
       },
     },
-    deleteWithUser: { __type: "Boolean" },
-    description: { __type: "String" },
-    excludeFromSearch: { __type: "Boolean" },
-    graphqlPluralName: { __type: "String" },
-    graphqlSingleName: { __type: "String" },
-    hasArchive: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isFrontPage: { __type: "Boolean!" },
-    isPostsPage: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    label: { __type: "String" },
-    labels: { __type: "PostTypeLabelDetails" },
-    menuIcon: { __type: "String" },
-    menuPosition: { __type: "Int" },
-    name: { __type: "String" },
-    public: { __type: "Boolean" },
-    publiclyQueryable: { __type: "Boolean" },
-    restBase: { __type: "String" },
-    restControllerClass: { __type: "String" },
-    showInAdminBar: { __type: "Boolean" },
-    showInGraphql: { __type: "Boolean" },
-    showInMenu: { __type: "Boolean" },
-    showInNavMenus: { __type: "Boolean" },
-    showInRest: { __type: "Boolean" },
-    showUi: { __type: "Boolean" },
-    templates: { __type: "[String]" },
-    uri: { __type: "String" },
+    deleteWithUser: { __type: 'Boolean' },
+    description: { __type: 'String' },
+    excludeFromSearch: { __type: 'Boolean' },
+    graphqlPluralName: { __type: 'String' },
+    graphqlSingleName: { __type: 'String' },
+    hasArchive: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isFrontPage: { __type: 'Boolean!' },
+    isPostsPage: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    label: { __type: 'String' },
+    labels: { __type: 'PostTypeLabelDetails' },
+    menuIcon: { __type: 'String' },
+    menuPosition: { __type: 'Int' },
+    name: { __type: 'String' },
+    public: { __type: 'Boolean' },
+    publiclyQueryable: { __type: 'Boolean' },
+    restBase: { __type: 'String' },
+    restControllerClass: { __type: 'String' },
+    showInAdminBar: { __type: 'Boolean' },
+    showInGraphql: { __type: 'Boolean' },
+    showInMenu: { __type: 'Boolean' },
+    showInNavMenus: { __type: 'Boolean' },
+    showInRest: { __type: 'Boolean' },
+    showUi: { __type: 'Boolean' },
+    templates: { __type: '[String]' },
+    uri: { __type: 'String' },
   },
   ContentTypeToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[ContentTypeToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ContentTypeToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   ContentTypeToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   ContentTypeToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   ContentTypeToTaxonomyConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[ContentTypeToTaxonomyConnectionEdge]" },
-    nodes: { __type: "[Taxonomy]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ContentTypeToTaxonomyConnectionEdge]' },
+    nodes: { __type: '[Taxonomy]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   ContentTypeToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Taxonomy' },
   },
   CreateAToZCategoryInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    name: { __type: "String!" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
   },
   CreateAToZCategoryPayload: {
-    __typename: { __type: "String!" },
-    aToZCategory: { __type: "AToZCategory" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    aToZCategory: { __type: 'AToZCategory' },
+    clientMutationId: { __type: 'String' },
   },
   CreateAToZInput: {
-    aToZCategories: { __type: "AToZAToZCategoriesInput" },
-    clientMutationId: { __type: "String" },
-    date: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    aToZCategories: { __type: 'AToZAToZCategoriesInput' },
+    clientMutationId: { __type: 'String' },
+    date: { __type: 'String' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   CreateAToZPayload: {
-    __typename: { __type: "String!" },
-    aToZ: { __type: "AToZ" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    aToZ: { __type: 'AToZ' },
+    clientMutationId: { __type: 'String' },
   },
   CreateAcalogProgramInput: {
-    clientMutationId: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    clientMutationId: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   CreateAcalogProgramPayload: {
-    __typename: { __type: "String!" },
-    acalogProgram: { __type: "AcalogProgram" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    acalogProgram: { __type: 'AcalogProgram' },
+    clientMutationId: { __type: 'String' },
   },
   CreateCategoryInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    name: { __type: "String!" },
-    parentId: { __type: "ID" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    parentId: { __type: 'ID' },
+    slug: { __type: 'String' },
   },
   CreateCategoryPayload: {
-    __typename: { __type: "String!" },
-    category: { __type: "Category" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    category: { __type: 'Category' },
+    clientMutationId: { __type: 'String' },
   },
   CreateCommentInput: {
-    approved: { __type: "String" },
-    author: { __type: "String" },
-    authorEmail: { __type: "String" },
-    authorUrl: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    commentOn: { __type: "Int" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    parent: { __type: "ID" },
-    type: { __type: "String" },
+    approved: { __type: 'String' },
+    author: { __type: 'String' },
+    authorEmail: { __type: 'String' },
+    authorUrl: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    commentOn: { __type: 'Int' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    parent: { __type: 'ID' },
+    type: { __type: 'String' },
   },
   CreateCommentPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    comment: { __type: "Comment" },
-    success: { __type: "Boolean" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    comment: { __type: 'Comment' },
+    success: { __type: 'Boolean' },
   },
   CreateMediaItemInput: {
-    altText: { __type: "String" },
-    authorId: { __type: "ID" },
-    caption: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    description: { __type: "String" },
-    filePath: { __type: "String" },
-    fileType: { __type: "MimeTypeEnum" },
-    parentId: { __type: "ID" },
-    pingStatus: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "MediaItemStatusEnum" },
-    title: { __type: "String" },
+    altText: { __type: 'String' },
+    authorId: { __type: 'ID' },
+    caption: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    description: { __type: 'String' },
+    filePath: { __type: 'String' },
+    fileType: { __type: 'MimeTypeEnum' },
+    parentId: { __type: 'ID' },
+    pingStatus: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'MediaItemStatusEnum' },
+    title: { __type: 'String' },
   },
   CreateMediaItemPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    mediaItem: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    mediaItem: { __type: 'MediaItem' },
   },
   CreatePageInput: {
-    authorId: { __type: "ID" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    parentId: { __type: "ID" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    authorId: { __type: 'ID' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    menuOrder: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   CreatePagePayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    page: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    page: { __type: 'Page' },
   },
   CreatePostFormatInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    name: { __type: "String!" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
   },
   CreatePostFormatPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    postFormat: { __type: "PostFormat" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    postFormat: { __type: 'PostFormat' },
   },
   CreatePostInput: {
-    authorId: { __type: "ID" },
-    categories: { __type: "PostCategoriesInput" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    excerpt: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    pingStatus: { __type: "String" },
-    pinged: { __type: "[String]" },
-    postFormats: { __type: "PostPostFormatsInput" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    tags: { __type: "PostTagsInput" },
-    title: { __type: "String" },
-    toPing: { __type: "[String]" },
+    authorId: { __type: 'ID' },
+    categories: { __type: 'PostCategoriesInput' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    excerpt: { __type: 'String' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    pingStatus: { __type: 'String' },
+    pinged: { __type: '[String]' },
+    postFormats: { __type: 'PostPostFormatsInput' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    tags: { __type: 'PostTagsInput' },
+    title: { __type: 'String' },
+    toPing: { __type: '[String]' },
   },
   CreatePostPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    post: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    post: { __type: 'Post' },
   },
   CreateTagInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    name: { __type: "String!" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
   },
   CreateTagPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    tag: { __type: "Tag" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    tag: { __type: 'Tag' },
   },
   CreateUserInput: {
-    aim: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    displayName: { __type: "String" },
-    email: { __type: "String" },
-    firstName: { __type: "String" },
-    jabber: { __type: "String" },
-    lastName: { __type: "String" },
-    locale: { __type: "String" },
-    nicename: { __type: "String" },
-    nickname: { __type: "String" },
-    password: { __type: "String" },
-    registered: { __type: "String" },
-    richEditing: { __type: "String" },
-    roles: { __type: "[String]" },
-    username: { __type: "String!" },
-    websiteUrl: { __type: "String" },
-    yim: { __type: "String" },
+    aim: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    displayName: { __type: 'String' },
+    email: { __type: 'String' },
+    firstName: { __type: 'String' },
+    jabber: { __type: 'String' },
+    lastName: { __type: 'String' },
+    locale: { __type: 'String' },
+    nicename: { __type: 'String' },
+    nickname: { __type: 'String' },
+    password: { __type: 'String' },
+    registered: { __type: 'String' },
+    richEditing: { __type: 'String' },
+    roles: { __type: '[String]' },
+    username: { __type: 'String!' },
+    websiteUrl: { __type: 'String' },
+    yim: { __type: 'String' },
   },
   CreateUserPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    user: { __type: 'User' },
   },
   DatabaseIdentifier: {
-    __typename: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    $on: { __type: "$DatabaseIdentifier!" },
+    __typename: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    $on: { __type: '$DatabaseIdentifier!' },
   },
   DateInput: {
-    day: { __type: "Int" },
-    month: { __type: "Int" },
-    year: { __type: "Int" },
+    day: { __type: 'Int' },
+    month: { __type: 'Int' },
+    year: { __type: 'Int' },
   },
   DateQueryInput: {
-    after: { __type: "DateInput" },
-    before: { __type: "DateInput" },
-    column: { __type: "PostObjectsConnectionDateColumnEnum" },
-    compare: { __type: "String" },
-    day: { __type: "Int" },
-    hour: { __type: "Int" },
-    inclusive: { __type: "Boolean" },
-    minute: { __type: "Int" },
-    month: { __type: "Int" },
-    relation: { __type: "RelationEnum" },
-    second: { __type: "Int" },
-    week: { __type: "Int" },
-    year: { __type: "Int" },
+    after: { __type: 'DateInput' },
+    before: { __type: 'DateInput' },
+    column: { __type: 'PostObjectsConnectionDateColumnEnum' },
+    compare: { __type: 'String' },
+    day: { __type: 'Int' },
+    hour: { __type: 'Int' },
+    inclusive: { __type: 'Boolean' },
+    minute: { __type: 'Int' },
+    month: { __type: 'Int' },
+    relation: { __type: 'RelationEnum' },
+    second: { __type: 'Int' },
+    week: { __type: 'Int' },
+    year: { __type: 'Int' },
   },
   DefaultTemplate: {
-    __typename: { __type: "String!" },
-    templateName: { __type: "String" },
+    __typename: { __type: 'String!' },
+    templateName: { __type: 'String' },
   },
   DeleteAToZCategoryInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
   },
   DeleteAToZCategoryPayload: {
-    __typename: { __type: "String!" },
-    aToZCategory: { __type: "AToZCategory" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    aToZCategory: { __type: 'AToZCategory' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
   },
   DeleteAToZInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeleteAToZPayload: {
-    __typename: { __type: "String!" },
-    aToZ: { __type: "AToZ" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    aToZ: { __type: 'AToZ' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
   },
   DeleteAcalogProgramInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeleteAcalogProgramPayload: {
-    __typename: { __type: "String!" },
-    acalogProgram: { __type: "AcalogProgram" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    acalogProgram: { __type: 'AcalogProgram' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
   },
   DeleteCategoryInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
   },
   DeleteCategoryPayload: {
-    __typename: { __type: "String!" },
-    category: { __type: "Category" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    category: { __type: 'Category' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
   },
   DeleteCommentInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeleteCommentPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    comment: { __type: "Comment" },
-    deletedId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    comment: { __type: 'Comment' },
+    deletedId: { __type: 'ID' },
   },
   DeleteMediaItemInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeleteMediaItemPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    mediaItem: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    mediaItem: { __type: 'MediaItem' },
   },
   DeletePageInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeletePagePayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    page: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    page: { __type: 'Page' },
   },
   DeletePostFormatInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
   },
   DeletePostFormatPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    postFormat: { __type: "PostFormat" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    postFormat: { __type: 'PostFormat' },
   },
   DeletePostInput: {
-    clientMutationId: { __type: "String" },
-    forceDelete: { __type: "Boolean" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
   },
   DeletePostPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    post: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    post: { __type: 'Post' },
   },
   DeleteTagInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
   },
   DeleteTagPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    tag: { __type: "Tag" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    tag: { __type: 'Tag' },
   },
   DeleteUserInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
-    reassignId: { __type: "ID" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
+    reassignId: { __type: 'ID' },
   },
   DeleteUserPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    deletedId: { __type: "ID" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    user: { __type: 'User' },
   },
   DiscussionSettings: {
-    __typename: { __type: "String!" },
-    defaultCommentStatus: { __type: "String" },
-    defaultPingStatus: { __type: "String" },
+    __typename: { __type: 'String!' },
+    defaultCommentStatus: { __type: 'String' },
+    defaultPingStatus: { __type: 'String' },
   },
   EnqueuedAsset: {
-    __typename: { __type: "String!" },
-    args: { __type: "Boolean" },
-    dependencies: { __type: "[EnqueuedScript]" },
-    extra: { __type: "String" },
-    handle: { __type: "String" },
-    id: { __type: "ID!" },
-    src: { __type: "String" },
-    version: { __type: "String" },
-    $on: { __type: "$EnqueuedAsset!" },
+    __typename: { __type: 'String!' },
+    args: { __type: 'Boolean' },
+    dependencies: { __type: '[EnqueuedScript]' },
+    extra: { __type: 'String' },
+    handle: { __type: 'String' },
+    id: { __type: 'ID!' },
+    src: { __type: 'String' },
+    version: { __type: 'String' },
+    $on: { __type: '$EnqueuedAsset!' },
   },
   EnqueuedScript: {
-    __typename: { __type: "String!" },
-    args: { __type: "Boolean" },
-    dependencies: { __type: "[EnqueuedScript]" },
-    extra: { __type: "String" },
-    handle: { __type: "String" },
-    id: { __type: "ID!" },
-    src: { __type: "String" },
-    version: { __type: "String" },
+    __typename: { __type: 'String!' },
+    args: { __type: 'Boolean' },
+    dependencies: { __type: '[EnqueuedScript]' },
+    extra: { __type: 'String' },
+    handle: { __type: 'String' },
+    id: { __type: 'ID!' },
+    src: { __type: 'String' },
+    version: { __type: 'String' },
   },
   EnqueuedStylesheet: {
-    __typename: { __type: "String!" },
-    args: { __type: "Boolean" },
-    dependencies: { __type: "[EnqueuedScript]" },
-    extra: { __type: "String" },
-    handle: { __type: "String" },
-    id: { __type: "ID!" },
-    src: { __type: "String" },
-    version: { __type: "String" },
+    __typename: { __type: 'String!' },
+    args: { __type: 'Boolean' },
+    dependencies: { __type: '[EnqueuedScript]' },
+    extra: { __type: 'String' },
+    handle: { __type: 'String' },
+    id: { __type: 'ID!' },
+    src: { __type: 'String' },
+    version: { __type: 'String' },
   },
   GeneralSettings: {
-    __typename: { __type: "String!" },
-    dateFormat: { __type: "String" },
-    description: { __type: "String" },
-    language: { __type: "String" },
-    startOfWeek: { __type: "Int" },
-    timeFormat: { __type: "String" },
-    timezone: { __type: "String" },
-    title: { __type: "String" },
-    url: { __type: "String" },
+    __typename: { __type: 'String!' },
+    dateFormat: { __type: 'String' },
+    description: { __type: 'String' },
+    language: { __type: 'String' },
+    startOfWeek: { __type: 'Int' },
+    timeFormat: { __type: 'String' },
+    timezone: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
   },
   GenerateAuthorizationCodeInput: {
-    clientMutationId: { __type: "String" },
-    email: { __type: "String" },
-    password: { __type: "String" },
-    username: { __type: "String" },
+    clientMutationId: { __type: 'String' },
+    email: { __type: 'String' },
+    password: { __type: 'String' },
+    username: { __type: 'String' },
   },
   GenerateAuthorizationCodePayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    code: { __type: "String" },
-    error: { __type: "String" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    code: { __type: 'String' },
+    error: { __type: 'String' },
   },
   HierarchicalContentNode: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     ancestors: {
-      __type: "HierarchicalContentNodeToContentNodeAncestorsConnection",
+      __type: 'HierarchicalContentNodeToContentNodeAncestorsConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs',
       },
     },
     children: {
-      __type: "HierarchicalContentNodeToContentNodeChildrenConnection",
+      __type: 'HierarchicalContentNodeToContentNodeChildrenConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs',
       },
     },
     parent: {
-      __type: "HierarchicalContentNodeToParentContentNodeConnectionEdge",
+      __type: 'HierarchicalContentNodeToParentContentNodeConnectionEdge',
     },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    $on: { __type: "$HierarchicalContentNode!" },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    $on: { __type: '$HierarchicalContentNode!' },
   },
   HierarchicalContentNodeToContentNodeAncestorsConnection: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     edges: {
-      __type: "[HierarchicalContentNodeToContentNodeAncestorsConnectionEdge]",
+      __type: '[HierarchicalContentNodeToContentNodeAncestorsConnectionEdge]',
     },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   HierarchicalContentNodeToContentNodeAncestorsConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   HierarchicalContentNodeToContentNodeChildrenConnection: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     edges: {
-      __type: "[HierarchicalContentNodeToContentNodeChildrenConnectionEdge]",
+      __type: '[HierarchicalContentNodeToContentNodeChildrenConnectionEdge]',
     },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   HierarchicalContentNodeToContentNodeChildrenConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   HierarchicalContentNodeToParentContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'ContentNode' },
   },
   HierarchicalTermNode: {
-    __typename: { __type: "String!" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    $on: { __type: "$HierarchicalTermNode!" },
+    __typename: { __type: 'String!' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    $on: { __type: '$HierarchicalTermNode!' },
   },
   MediaDetails: {
-    __typename: { __type: "String!" },
-    file: { __type: "String" },
-    height: { __type: "Int" },
-    meta: { __type: "MediaItemMeta" },
-    sizes: { __type: "[MediaSize]" },
-    width: { __type: "Int" },
+    __typename: { __type: 'String!' },
+    file: { __type: 'String' },
+    height: { __type: 'Int' },
+    meta: { __type: 'MediaItemMeta' },
+    sizes: { __type: '[MediaSize]' },
+    width: { __type: 'Int' },
   },
   MediaItem: {
-    __typename: { __type: "String!" },
-    altText: { __type: "String" },
+    __typename: { __type: 'String!' },
+    altText: { __type: 'String' },
     ancestors: {
-      __type: "HierarchicalContentNodeToContentNodeAncestorsConnection",
+      __type: 'HierarchicalContentNodeToContentNodeAncestorsConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs',
       },
     },
-    author: { __type: "NodeWithAuthorToUserConnectionEdge" },
-    authorDatabaseId: { __type: "Int" },
-    authorId: { __type: "ID" },
+    author: { __type: 'NodeWithAuthorToUserConnectionEdge' },
+    authorDatabaseId: { __type: 'Int' },
+    authorId: { __type: 'ID' },
     caption: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
     children: {
-      __type: "HierarchicalContentNodeToContentNodeChildrenConnection",
+      __type: 'HierarchicalContentNodeToContentNodeChildrenConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs',
       },
     },
-    commentCount: { __type: "Int" },
-    commentStatus: { __type: "String" },
+    commentCount: { __type: 'Int' },
+    commentStatus: { __type: 'String' },
     comments: {
-      __type: "MediaItemToCommentConnection",
+      __type: 'MediaItemToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "MediaItemToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'MediaItemToCommentConnectionWhereArgs',
       },
     },
-    conditionalTags: { __type: "ConditionalTags" },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
     description: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    fileSize: { __type: "Int", __args: { size: "MediaItemSizeEnum" } },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    mediaDetails: { __type: "MediaDetails" },
-    mediaItemId: { __type: "Int!" },
-    mediaItemUrl: { __type: "String" },
-    mediaType: { __type: "String" },
-    mimeType: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
+    fileSize: { __type: 'Int', __args: { size: 'MediaItemSizeEnum' } },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    mediaDetails: { __type: 'MediaDetails' },
+    mediaItemId: { __type: 'Int!' },
+    mediaItemUrl: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mimeType: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
     parent: {
-      __type: "HierarchicalContentNodeToParentContentNodeConnectionEdge",
+      __type: 'HierarchicalContentNodeToParentContentNodeConnectionEdge',
     },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    sizes: { __type: "String", __args: { size: "MediaItemSizeEnum" } },
-    slug: { __type: "String" },
-    sourceUrl: { __type: "String", __args: { size: "MediaItemSizeEnum" } },
-    srcSet: { __type: "String", __args: { size: "MediaItemSizeEnum" } },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    sizes: { __type: 'String', __args: { size: 'MediaItemSizeEnum' } },
+    slug: { __type: 'String' },
+    sourceUrl: { __type: 'String', __args: { size: 'MediaItemSizeEnum' } },
+    srcSet: { __type: 'String', __args: { size: 'MediaItemSizeEnum' } },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    uri: { __type: "String" },
+    uri: { __type: 'String' },
   },
   MediaItemMeta: {
-    __typename: { __type: "String!" },
-    aperture: { __type: "Float" },
-    camera: { __type: "String" },
-    caption: { __type: "String" },
-    copyright: { __type: "String" },
-    createdTimestamp: { __type: "Int" },
-    credit: { __type: "String" },
-    focalLength: { __type: "Float" },
-    iso: { __type: "Int" },
-    keywords: { __type: "[String]" },
-    orientation: { __type: "String" },
-    shutterSpeed: { __type: "Float" },
-    title: { __type: "String" },
+    __typename: { __type: 'String!' },
+    aperture: { __type: 'Float' },
+    camera: { __type: 'String' },
+    caption: { __type: 'String' },
+    copyright: { __type: 'String' },
+    createdTimestamp: { __type: 'Int' },
+    credit: { __type: 'String' },
+    focalLength: { __type: 'Float' },
+    iso: { __type: 'Int' },
+    keywords: { __type: '[String]' },
+    orientation: { __type: 'String' },
+    shutterSpeed: { __type: 'Float' },
+    title: { __type: 'String' },
   },
   MediaItemToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[MediaItemToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[MediaItemToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   MediaItemToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   MediaItemToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   MediaSize: {
-    __typename: { __type: "String!" },
-    file: { __type: "String" },
-    fileSize: { __type: "Int" },
-    height: { __type: "String" },
-    mimeType: { __type: "String" },
-    name: { __type: "String" },
-    sourceUrl: { __type: "String" },
-    width: { __type: "String" },
+    __typename: { __type: 'String!' },
+    file: { __type: 'String' },
+    fileSize: { __type: 'Int' },
+    height: { __type: 'String' },
+    mimeType: { __type: 'String' },
+    name: { __type: 'String' },
+    sourceUrl: { __type: 'String' },
+    width: { __type: 'String' },
   },
   Menu: {
-    __typename: { __type: "String!" },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    locations: { __type: "[MenuLocationEnum]" },
-    menuId: { __type: "Int" },
+    __typename: { __type: 'String!' },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    locations: { __type: '[MenuLocationEnum]' },
+    menuId: { __type: 'Int' },
     menuItems: {
-      __type: "MenuToMenuItemConnection",
+      __type: 'MenuToMenuItemConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "MenuToMenuItemConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'MenuToMenuItemConnectionWhereArgs',
       },
     },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   MenuItem: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     childItems: {
-      __type: "MenuItemToMenuItemConnection",
+      __type: 'MenuItemToMenuItemConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "MenuItemToMenuItemConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'MenuItemToMenuItemConnectionWhereArgs',
       },
     },
-    connectedNode: { __type: "MenuItemToMenuItemLinkableConnectionEdge" },
-    connectedObject: { __type: "MenuItemObjectUnion" },
-    cssClasses: { __type: "[String]" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    label: { __type: "String" },
-    linkRelationship: { __type: "String" },
-    locations: { __type: "[MenuLocationEnum]" },
-    menu: { __type: "MenuItemToMenuConnectionEdge" },
-    menuItemId: { __type: "Int" },
-    order: { __type: "Int" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    path: { __type: "String" },
-    target: { __type: "String" },
-    title: { __type: "String" },
-    url: { __type: "String" },
+    connectedNode: { __type: 'MenuItemToMenuItemLinkableConnectionEdge' },
+    connectedObject: { __type: 'MenuItemObjectUnion' },
+    cssClasses: { __type: '[String]' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    label: { __type: 'String' },
+    linkRelationship: { __type: 'String' },
+    locations: { __type: '[MenuLocationEnum]' },
+    menu: { __type: 'MenuItemToMenuConnectionEdge' },
+    menuItemId: { __type: 'Int' },
+    order: { __type: 'Int' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    path: { __type: 'String' },
+    target: { __type: 'String' },
+    title: { __type: 'String' },
+    uri: { __type: 'String' },
+    url: { __type: 'String' },
   },
   MenuItemLinkable: {
-    __typename: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    id: { __type: "ID!" },
-    uri: { __type: "String" },
-    $on: { __type: "$MenuItemLinkable!" },
+    __typename: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    id: { __type: 'ID!' },
+    uri: { __type: 'String' },
+    $on: { __type: '$MenuItemLinkable!' },
   },
   MenuItemObjectUnion: {
-    __typename: { __type: "String!" },
-    $on: { __type: "$MenuItemObjectUnion!" },
+    __typename: { __type: 'String!' },
+    $on: { __type: '$MenuItemObjectUnion!' },
   },
   MenuItemToMenuConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Menu" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Menu' },
   },
   MenuItemToMenuItemConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[MenuItemToMenuItemConnectionEdge]" },
-    nodes: { __type: "[MenuItem]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[MenuItemToMenuItemConnectionEdge]' },
+    nodes: { __type: '[MenuItem]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   MenuItemToMenuItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "MenuItem" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'MenuItem' },
   },
   MenuItemToMenuItemConnectionWhereArgs: {
-    id: { __type: "Int" },
-    location: { __type: "MenuLocationEnum" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
+    id: { __type: 'Int' },
+    location: { __type: 'MenuLocationEnum' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
   },
   MenuItemToMenuItemLinkableConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "MenuItemLinkable" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'MenuItemLinkable' },
   },
   MenuToMenuItemConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[MenuToMenuItemConnectionEdge]" },
-    nodes: { __type: "[MenuItem]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[MenuToMenuItemConnectionEdge]' },
+    nodes: { __type: '[MenuItem]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   MenuToMenuItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "MenuItem" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'MenuItem' },
   },
   MenuToMenuItemConnectionWhereArgs: {
-    id: { __type: "Int" },
-    location: { __type: "MenuLocationEnum" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
+    id: { __type: 'Int' },
+    location: { __type: 'MenuLocationEnum' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
   },
   Node: {
-    __typename: { __type: "String!" },
-    id: { __type: "ID!" },
-    $on: { __type: "$Node!" },
+    __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
+    $on: { __type: '$Node!' },
   },
   NodeWithAuthor: {
-    __typename: { __type: "String!" },
-    author: { __type: "NodeWithAuthorToUserConnectionEdge" },
-    authorDatabaseId: { __type: "Int" },
-    authorId: { __type: "ID" },
-    $on: { __type: "$NodeWithAuthor!" },
+    __typename: { __type: 'String!' },
+    author: { __type: 'NodeWithAuthorToUserConnectionEdge' },
+    authorDatabaseId: { __type: 'Int' },
+    authorId: { __type: 'ID' },
+    $on: { __type: '$NodeWithAuthor!' },
   },
   NodeWithAuthorToUserConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "User" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'User' },
   },
   NodeWithComments: {
-    __typename: { __type: "String!" },
-    commentCount: { __type: "Int" },
-    commentStatus: { __type: "String" },
-    $on: { __type: "$NodeWithComments!" },
+    __typename: { __type: 'String!' },
+    commentCount: { __type: 'Int' },
+    commentStatus: { __type: 'String' },
+    $on: { __type: '$NodeWithComments!' },
   },
   NodeWithContentEditor: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    $on: { __type: "$NodeWithContentEditor!" },
+    $on: { __type: '$NodeWithContentEditor!' },
   },
   NodeWithExcerpt: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     excerpt: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    $on: { __type: "$NodeWithExcerpt!" },
+    $on: { __type: '$NodeWithExcerpt!' },
   },
   NodeWithFeaturedImage: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
-    featuredImageDatabaseId: { __type: "Int" },
-    featuredImageId: { __type: "ID" },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
-    uri: { __type: "String" },
-    $on: { __type: "$NodeWithFeaturedImage!" },
+    featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
+    featuredImageDatabaseId: { __type: 'Int' },
+    featuredImageId: { __type: 'ID' },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
+    uri: { __type: 'String' },
+    $on: { __type: '$NodeWithFeaturedImage!' },
   },
   NodeWithFeaturedImageToMediaItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'MediaItem' },
   },
   NodeWithPageAttributes: {
-    __typename: { __type: "String!" },
-    menuOrder: { __type: "Int" },
-    $on: { __type: "$NodeWithPageAttributes!" },
+    __typename: { __type: 'String!' },
+    menuOrder: { __type: 'Int' },
+    $on: { __type: '$NodeWithPageAttributes!' },
   },
   NodeWithRevisions: {
-    __typename: { __type: "String!" },
-    isRevision: { __type: "Boolean" },
-    revisionOf: { __type: "NodeWithRevisionsToContentNodeConnectionEdge" },
-    $on: { __type: "$NodeWithRevisions!" },
+    __typename: { __type: 'String!' },
+    isRevision: { __type: 'Boolean' },
+    revisionOf: { __type: 'NodeWithRevisionsToContentNodeConnectionEdge' },
+    $on: { __type: '$NodeWithRevisions!' },
   },
   NodeWithRevisionsToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'ContentNode' },
   },
   NodeWithTemplate: {
-    __typename: { __type: "String!" },
-    template: { __type: "ContentTemplate" },
-    $on: { __type: "$NodeWithTemplate!" },
+    __typename: { __type: 'String!' },
+    template: { __type: 'ContentTemplate' },
+    $on: { __type: '$NodeWithTemplate!' },
   },
   NodeWithTitle: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    $on: { __type: "$NodeWithTitle!" },
+    $on: { __type: '$NodeWithTitle!' },
   },
   NodeWithTrackbacks: {
-    __typename: { __type: "String!" },
-    pingStatus: { __type: "String" },
-    pinged: { __type: "[String]" },
-    toPing: { __type: "[String]" },
-    $on: { __type: "$NodeWithTrackbacks!" },
+    __typename: { __type: 'String!' },
+    pingStatus: { __type: 'String' },
+    pinged: { __type: '[String]' },
+    toPing: { __type: '[String]' },
+    $on: { __type: '$NodeWithTrackbacks!' },
   },
   Page: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     ancestors: {
-      __type: "HierarchicalContentNodeToContentNodeAncestorsConnection",
+      __type: 'HierarchicalContentNodeToContentNodeAncestorsConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs',
       },
     },
-    author: { __type: "NodeWithAuthorToUserConnectionEdge" },
-    authorDatabaseId: { __type: "Int" },
-    authorId: { __type: "ID" },
+    author: { __type: 'NodeWithAuthorToUserConnectionEdge' },
+    authorDatabaseId: { __type: 'Int' },
+    authorId: { __type: 'ID' },
     children: {
-      __type: "HierarchicalContentNodeToContentNodeChildrenConnection",
+      __type: 'HierarchicalContentNodeToContentNodeChildrenConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
         where:
-          "HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs",
+          'HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs',
       },
     },
-    commentCount: { __type: "Int" },
-    commentStatus: { __type: "String" },
+    commentCount: { __type: 'Int' },
+    commentStatus: { __type: 'String' },
     comments: {
-      __type: "PageToCommentConnection",
+      __type: 'PageToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PageToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PageToCommentConnectionWhereArgs',
       },
     },
-    conditionalTags: { __type: "ConditionalTags" },
+    conditionalTags: { __type: 'ConditionalTags' },
     content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
-    featuredImageDatabaseId: { __type: "Int" },
-    featuredImageId: { __type: "ID" },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isFrontPage: { __type: "Boolean!" },
-    isPostsPage: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isPrivacyPage: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isRevision: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    menuOrder: { __type: "Int" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    pageId: { __type: "Int!" },
+    featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
+    featuredImageDatabaseId: { __type: 'Int' },
+    featuredImageId: { __type: 'ID' },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isFrontPage: { __type: 'Boolean!' },
+    isPostsPage: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isPrivacyPage: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isRevision: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    menuOrder: { __type: 'Int' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    pageId: { __type: 'Int!' },
     parent: {
-      __type: "HierarchicalContentNodeToParentContentNodeConnectionEdge",
+      __type: 'HierarchicalContentNodeToParentContentNodeConnectionEdge',
     },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
-    preview: { __type: "PageToPreviewConnectionEdge" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    revisionOf: { __type: "NodeWithRevisionsToContentNodeConnectionEdge" },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    preview: { __type: 'PageToPreviewConnectionEdge' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    revisionOf: { __type: 'NodeWithRevisionsToContentNodeConnectionEdge' },
     revisions: {
-      __type: "PageToRevisionConnection",
+      __type: 'PageToRevisionConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PageToRevisionConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PageToRevisionConnectionWhereArgs',
       },
     },
-    slug: { __type: "String" },
-    status: { __type: "String" },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    uri: { __type: "String" },
+    uri: { __type: 'String' },
   },
   PageToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PageToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PageToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PageToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   PageToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   PageToPreviewConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Page' },
   },
   PageToRevisionConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PageToRevisionConnectionEdge]" },
-    nodes: { __type: "[Page]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PageToRevisionConnectionEdge]' },
+    nodes: { __type: '[Page]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PageToRevisionConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Page' },
   },
   PageToRevisionConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   Plugin: {
-    __typename: { __type: "String!" },
-    author: { __type: "String" },
-    authorUri: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    name: { __type: "String" },
-    path: { __type: "String" },
-    pluginUri: { __type: "String" },
-    version: { __type: "String" },
+    __typename: { __type: 'String!' },
+    author: { __type: 'String' },
+    authorUri: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    name: { __type: 'String' },
+    path: { __type: 'String' },
+    pluginUri: { __type: 'String' },
+    version: { __type: 'String' },
   },
   Post: {
-    __typename: { __type: "String!" },
-    author: { __type: "NodeWithAuthorToUserConnectionEdge" },
-    authorDatabaseId: { __type: "Int" },
-    authorId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    author: { __type: 'NodeWithAuthorToUserConnectionEdge' },
+    authorDatabaseId: { __type: 'Int' },
+    authorId: { __type: 'ID' },
     categories: {
-      __type: "PostToCategoryConnection",
+      __type: 'PostToCategoryConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToCategoryConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToCategoryConnectionWhereArgs',
       },
     },
-    commentCount: { __type: "Int" },
-    commentStatus: { __type: "String" },
+    commentCount: { __type: 'Int' },
+    commentStatus: { __type: 'String' },
     comments: {
-      __type: "PostToCommentConnection",
+      __type: 'PostToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToCommentConnectionWhereArgs',
       },
     },
-    conditionalTags: { __type: "ConditionalTags" },
+    conditionalTags: { __type: 'ConditionalTags' },
     content: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    contentType: { __type: "ContentNodeToContentTypeConnectionEdge" },
-    contentTypeName: { __type: "String!" },
-    databaseId: { __type: "Int!" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    desiredSlug: { __type: "String" },
-    editingLockedBy: { __type: "ContentNodeToEditLockConnectionEdge" },
-    enclosure: { __type: "String" },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
     enqueuedScripts: {
-      __type: "ContentNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "ContentNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     excerpt: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    featuredImage: { __type: "NodeWithFeaturedImageToMediaItemConnectionEdge" },
-    featuredImageDatabaseId: { __type: "Int" },
-    featuredImageId: { __type: "ID" },
-    guid: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isPreview: { __type: "Boolean" },
-    isRestricted: { __type: "Boolean" },
-    isRevision: { __type: "Boolean" },
-    isSticky: { __type: "Boolean!" },
-    isTermNode: { __type: "Boolean!" },
-    lastEditedBy: { __type: "ContentNodeToEditLastConnectionEdge" },
-    link: { __type: "String" },
-    modified: { __type: "String" },
-    modifiedGmt: { __type: "String" },
-    pingStatus: { __type: "String" },
-    pinged: { __type: "[String]" },
+    featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
+    featuredImageDatabaseId: { __type: 'Int' },
+    featuredImageId: { __type: 'ID' },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isRevision: { __type: 'Boolean' },
+    isSticky: { __type: 'Boolean!' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    pingStatus: { __type: 'String' },
+    pinged: { __type: '[String]' },
     postFormats: {
-      __type: "PostToPostFormatConnection",
+      __type: 'PostToPostFormatConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToPostFormatConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToPostFormatConnectionWhereArgs',
       },
     },
-    postId: { __type: "Int!" },
-    preview: { __type: "PostToPreviewConnectionEdge" },
-    previewRevisionDatabaseId: { __type: "Int" },
-    previewRevisionId: { __type: "ID" },
-    revisionOf: { __type: "NodeWithRevisionsToContentNodeConnectionEdge" },
+    postId: { __type: 'Int!' },
+    preview: { __type: 'PostToPreviewConnectionEdge' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    revisionOf: { __type: 'NodeWithRevisionsToContentNodeConnectionEdge' },
     revisions: {
-      __type: "PostToRevisionConnection",
+      __type: 'PostToRevisionConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToRevisionConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToRevisionConnectionWhereArgs',
       },
     },
-    slug: { __type: "String" },
-    status: { __type: "String" },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
     tags: {
-      __type: "PostToTagConnection",
+      __type: 'PostToTagConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToTagConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToTagConnectionWhereArgs',
       },
     },
-    template: { __type: "ContentTemplate" },
-    templates: { __type: "[String]" },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
     terms: {
-      __type: "PostToTermNodeConnection",
+      __type: 'PostToTermNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostToTermNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostToTermNodeConnectionWhereArgs',
       },
     },
     title: {
-      __type: "String",
-      __args: { format: "PostObjectFieldFormatEnum" },
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
     },
-    toPing: { __type: "[String]" },
-    uri: { __type: "String" },
+    toPing: { __type: '[String]' },
+    uri: { __type: 'String' },
   },
   PostCategoriesInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[PostCategoriesNodeInput]" },
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[PostCategoriesNodeInput]' },
   },
   PostCategoriesNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   PostFormat: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
     contentNodes: {
-      __type: "PostFormatToContentNodeConnection",
+      __type: 'PostFormatToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostFormatToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostFormatToContentNodeConnectionWhereArgs',
       },
     },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
     enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
-    postFormatId: { __type: "Int" },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    postFormatId: { __type: 'Int' },
     posts: {
-      __type: "PostFormatToPostConnection",
+      __type: 'PostFormatToPostConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "PostFormatToPostConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'PostFormatToPostConnectionWhereArgs',
       },
     },
-    slug: { __type: "String" },
-    taxonomy: { __type: "PostFormatToTaxonomyConnectionEdge" },
-    taxonomyName: { __type: "String" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    uri: { __type: "String" },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'PostFormatToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
   },
   PostFormatToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostFormatToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostFormatToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostFormatToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   PostFormatToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypesOfPostFormatEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypesOfPostFormatEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   PostFormatToPostConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostFormatToPostConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostFormatToPostConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostFormatToPostConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   PostFormatToPostConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   PostFormatToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
   },
   PostObjectsConnectionOrderbyInput: {
-    field: { __type: "PostObjectsConnectionOrderbyEnum!" },
-    order: { __type: "OrderEnum!" },
+    field: { __type: 'PostObjectsConnectionOrderbyEnum!' },
+    order: { __type: 'OrderEnum!' },
   },
   PostPostFormatsInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[PostPostFormatsNodeInput]" },
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[PostPostFormatsNodeInput]' },
   },
   PostPostFormatsNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   PostTagsInput: {
-    append: { __type: "Boolean" },
-    nodes: { __type: "[PostTagsNodeInput]" },
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[PostTagsNodeInput]' },
   },
   PostTagsNodeInput: {
-    description: { __type: "String" },
-    id: { __type: "ID" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   PostToCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToCategoryConnectionEdge]" },
-    nodes: { __type: "[Category]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToCategoryConnectionEdge]' },
+    nodes: { __type: '[Category]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Category" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Category' },
   },
   PostToCategoryConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   PostToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   PostToPostFormatConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToPostFormatConnectionEdge]" },
-    nodes: { __type: "[PostFormat]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToPostFormatConnectionEdge]' },
+    nodes: { __type: '[PostFormat]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToPostFormatConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "PostFormat" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'PostFormat' },
   },
   PostToPostFormatConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToPreviewConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Post' },
   },
   PostToRevisionConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToRevisionConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToRevisionConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToRevisionConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   PostToRevisionConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   PostToTagConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToTagConnectionEdge]" },
-    nodes: { __type: "[Tag]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToTagConnectionEdge]' },
+    nodes: { __type: '[Tag]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToTagConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Tag" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Tag' },
   },
   PostToTagConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToTermNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[PostToTermNodeConnectionEdge]" },
-    nodes: { __type: "[TermNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[PostToTermNodeConnectionEdge]' },
+    nodes: { __type: '[TermNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   PostToTermNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TermNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'TermNode' },
   },
   PostToTermNodeConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    taxonomies: { __type: "[TaxonomyEnum]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    taxonomies: { __type: '[TaxonomyEnum]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   PostTypeLabelDetails: {
-    __typename: { __type: "String!" },
-    addNew: { __type: "String" },
-    addNewItem: { __type: "String" },
-    allItems: { __type: "String" },
-    archives: { __type: "String" },
-    attributes: { __type: "String" },
-    editItem: { __type: "String" },
-    featuredImage: { __type: "String" },
-    filterItemsList: { __type: "String" },
-    insertIntoItem: { __type: "String" },
-    itemsList: { __type: "String" },
-    itemsListNavigation: { __type: "String" },
-    menuName: { __type: "String" },
-    name: { __type: "String" },
-    newItem: { __type: "String" },
-    notFound: { __type: "String" },
-    notFoundInTrash: { __type: "String" },
-    parentItemColon: { __type: "String" },
-    removeFeaturedImage: { __type: "String" },
-    searchItems: { __type: "String" },
-    setFeaturedImage: { __type: "String" },
-    singularName: { __type: "String" },
-    uploadedToThisItem: { __type: "String" },
-    useFeaturedImage: { __type: "String" },
-    viewItem: { __type: "String" },
-    viewItems: { __type: "String" },
+    __typename: { __type: 'String!' },
+    addNew: { __type: 'String' },
+    addNewItem: { __type: 'String' },
+    allItems: { __type: 'String' },
+    archives: { __type: 'String' },
+    attributes: { __type: 'String' },
+    editItem: { __type: 'String' },
+    featuredImage: { __type: 'String' },
+    filterItemsList: { __type: 'String' },
+    insertIntoItem: { __type: 'String' },
+    itemsList: { __type: 'String' },
+    itemsListNavigation: { __type: 'String' },
+    menuName: { __type: 'String' },
+    name: { __type: 'String' },
+    newItem: { __type: 'String' },
+    notFound: { __type: 'String' },
+    notFoundInTrash: { __type: 'String' },
+    parentItemColon: { __type: 'String' },
+    removeFeaturedImage: { __type: 'String' },
+    searchItems: { __type: 'String' },
+    setFeaturedImage: { __type: 'String' },
+    singularName: { __type: 'String' },
+    uploadedToThisItem: { __type: 'String' },
+    useFeaturedImage: { __type: 'String' },
+    viewItem: { __type: 'String' },
+    viewItems: { __type: 'String' },
   },
   ReadingSettings: {
-    __typename: { __type: "String!" },
-    postsPerPage: { __type: "Int" },
+    __typename: { __type: 'String!' },
+    postsPerPage: { __type: 'Int' },
   },
   RegisterUserInput: {
-    aim: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    displayName: { __type: "String" },
-    email: { __type: "String" },
-    firstName: { __type: "String" },
-    jabber: { __type: "String" },
-    lastName: { __type: "String" },
-    locale: { __type: "String" },
-    nicename: { __type: "String" },
-    nickname: { __type: "String" },
-    password: { __type: "String" },
-    registered: { __type: "String" },
-    richEditing: { __type: "String" },
-    username: { __type: "String!" },
-    websiteUrl: { __type: "String" },
-    yim: { __type: "String" },
+    aim: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    displayName: { __type: 'String' },
+    email: { __type: 'String' },
+    firstName: { __type: 'String' },
+    jabber: { __type: 'String' },
+    lastName: { __type: 'String' },
+    locale: { __type: 'String' },
+    nicename: { __type: 'String' },
+    nickname: { __type: 'String' },
+    password: { __type: 'String' },
+    registered: { __type: 'String' },
+    richEditing: { __type: 'String' },
+    username: { __type: 'String!' },
+    websiteUrl: { __type: 'String' },
+    yim: { __type: 'String' },
   },
   RegisterUserPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    user: { __type: 'User' },
   },
   ResetUserPasswordInput: {
-    clientMutationId: { __type: "String" },
-    key: { __type: "String" },
-    login: { __type: "String" },
-    password: { __type: "String" },
+    clientMutationId: { __type: 'String' },
+    key: { __type: 'String' },
+    login: { __type: 'String' },
+    password: { __type: 'String' },
   },
   ResetUserPasswordPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    user: { __type: 'User' },
   },
   RestoreCommentInput: {
-    clientMutationId: { __type: "String" },
-    id: { __type: "ID!" },
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
   },
   RestoreCommentPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    comment: { __type: "Comment" },
-    restoredId: { __type: "ID" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    comment: { __type: 'Comment' },
+    restoredId: { __type: 'ID' },
   },
   RootQueryToAToZCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToAToZCategoryConnectionEdge]" },
-    nodes: { __type: "[AToZCategory]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToAToZCategoryConnectionEdge]' },
+    nodes: { __type: '[AToZCategory]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToAToZCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "AToZCategory" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AToZCategory' },
   },
   RootQueryToAToZCategoryConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToAToZConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToAToZConnectionEdge]" },
-    nodes: { __type: "[AToZ]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToAToZConnectionEdge]' },
+    nodes: { __type: '[AToZ]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToAToZConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "AToZ" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AToZ' },
   },
   RootQueryToAToZConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToAcalogProgramConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToAcalogProgramConnectionEdge]" },
-    nodes: { __type: "[AcalogProgram]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToAcalogProgramConnectionEdge]' },
+    nodes: { __type: '[AcalogProgram]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToAcalogProgramConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "AcalogProgram" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AcalogProgram' },
   },
   RootQueryToAcalogProgramConnectionWhereArgs: {
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToCategoryConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToCategoryConnectionEdge]" },
-    nodes: { __type: "[Category]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToCategoryConnectionEdge]' },
+    nodes: { __type: '[Category]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToCategoryConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Category" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Category' },
   },
   RootQueryToCategoryConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   RootQueryToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   RootQueryToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   RootQueryToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToContentRevisionUnionConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToContentRevisionUnionConnectionEdge]" },
-    nodes: { __type: "[ContentRevisionUnion]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToContentRevisionUnionConnectionEdge]' },
+    nodes: { __type: '[ContentRevisionUnion]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToContentRevisionUnionConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentRevisionUnion" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentRevisionUnion' },
   },
   RootQueryToContentRevisionUnionConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToContentTypeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToContentTypeConnectionEdge]" },
-    nodes: { __type: "[ContentType]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToContentTypeConnectionEdge]' },
+    nodes: { __type: '[ContentType]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToContentTypeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentType" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentType' },
   },
   RootQueryToEnqueuedScriptConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToEnqueuedScriptConnectionEdge]" },
-    nodes: { __type: "[EnqueuedScript]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToEnqueuedScriptConnectionEdge]' },
+    nodes: { __type: '[EnqueuedScript]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToEnqueuedScriptConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedScript" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedScript' },
   },
   RootQueryToEnqueuedStylesheetConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToEnqueuedStylesheetConnectionEdge]" },
-    nodes: { __type: "[EnqueuedStylesheet]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToEnqueuedStylesheetConnectionEdge]' },
+    nodes: { __type: '[EnqueuedStylesheet]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToEnqueuedStylesheetConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedStylesheet" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedStylesheet' },
   },
   RootQueryToMediaItemConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToMediaItemConnectionEdge]" },
-    nodes: { __type: "[MediaItem]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToMediaItemConnectionEdge]' },
+    nodes: { __type: '[MediaItem]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToMediaItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'MediaItem' },
   },
   RootQueryToMediaItemConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToMenuConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToMenuConnectionEdge]" },
-    nodes: { __type: "[Menu]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToMenuConnectionEdge]' },
+    nodes: { __type: '[Menu]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToMenuConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Menu" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Menu' },
   },
   RootQueryToMenuConnectionWhereArgs: {
-    id: { __type: "Int" },
-    location: { __type: "MenuLocationEnum" },
-    slug: { __type: "String" },
+    id: { __type: 'Int' },
+    location: { __type: 'MenuLocationEnum' },
+    slug: { __type: 'String' },
   },
   RootQueryToMenuItemConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToMenuItemConnectionEdge]" },
-    nodes: { __type: "[MenuItem]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToMenuItemConnectionEdge]' },
+    nodes: { __type: '[MenuItem]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToMenuItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "MenuItem" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'MenuItem' },
   },
   RootQueryToMenuItemConnectionWhereArgs: {
-    id: { __type: "Int" },
-    location: { __type: "MenuLocationEnum" },
-    parentDatabaseId: { __type: "Int" },
-    parentId: { __type: "ID" },
+    id: { __type: 'Int' },
+    location: { __type: 'MenuLocationEnum' },
+    parentDatabaseId: { __type: 'Int' },
+    parentId: { __type: 'ID' },
   },
   RootQueryToPageConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToPageConnectionEdge]" },
-    nodes: { __type: "[Page]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToPageConnectionEdge]' },
+    nodes: { __type: '[Page]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToPageConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Page' },
   },
   RootQueryToPageConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToPluginConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToPluginConnectionEdge]" },
-    nodes: { __type: "[Plugin]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToPluginConnectionEdge]' },
+    nodes: { __type: '[Plugin]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToPluginConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Plugin" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Plugin' },
+  },
+  RootQueryToPluginConnectionWhereArgs: {
+    search: { __type: 'String' },
+    stati: { __type: '[PluginStatusEnum]' },
+    status: { __type: 'PluginStatusEnum' },
   },
   RootQueryToPostConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToPostConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToPostConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToPostConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   RootQueryToPostConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   RootQueryToPostFormatConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToPostFormatConnectionEdge]" },
-    nodes: { __type: "[PostFormat]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToPostFormatConnectionEdge]' },
+    nodes: { __type: '[PostFormat]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToPostFormatConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "PostFormat" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'PostFormat' },
   },
   RootQueryToPostFormatConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToTagConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToTagConnectionEdge]" },
-    nodes: { __type: "[Tag]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToTagConnectionEdge]' },
+    nodes: { __type: '[Tag]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToTagConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Tag" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Tag' },
   },
   RootQueryToTagConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToTaxonomyConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToTaxonomyConnectionEdge]" },
-    nodes: { __type: "[Taxonomy]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToTaxonomyConnectionEdge]' },
+    nodes: { __type: '[Taxonomy]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Taxonomy' },
   },
   RootQueryToTermNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToTermNodeConnectionEdge]" },
-    nodes: { __type: "[TermNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToTermNodeConnectionEdge]' },
+    nodes: { __type: '[TermNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToTermNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "TermNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'TermNode' },
   },
   RootQueryToTermNodeConnectionWhereArgs: {
-    cacheDomain: { __type: "String" },
-    childOf: { __type: "Int" },
-    childless: { __type: "Boolean" },
-    descriptionLike: { __type: "String" },
-    exclude: { __type: "[ID]" },
-    excludeTree: { __type: "[ID]" },
-    hideEmpty: { __type: "Boolean" },
-    hierarchical: { __type: "Boolean" },
-    include: { __type: "[ID]" },
-    name: { __type: "[String]" },
-    nameLike: { __type: "String" },
-    objectIds: { __type: "[ID]" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "TermObjectsConnectionOrderbyEnum" },
-    padCounts: { __type: "Boolean" },
-    parent: { __type: "Int" },
-    search: { __type: "String" },
-    slug: { __type: "[String]" },
-    taxonomies: { __type: "[TaxonomyEnum]" },
-    termTaxonomId: { __type: "[ID]" },
-    updateTermMetaCache: { __type: "Boolean" },
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    taxonomies: { __type: '[TaxonomyEnum]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToThemeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToThemeConnectionEdge]" },
-    nodes: { __type: "[Theme]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToThemeConnectionEdge]' },
+    nodes: { __type: '[Theme]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToThemeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Theme" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Theme' },
   },
   RootQueryToUserConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToUserConnectionEdge]" },
-    nodes: { __type: "[User]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToUserConnectionEdge]' },
+    nodes: { __type: '[User]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToUserConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "User" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'User' },
   },
   RootQueryToUserConnectionWhereArgs: {
-    exclude: { __type: "[Int]" },
-    hasPublishedPosts: { __type: "[ContentTypeEnum]" },
-    include: { __type: "[Int]" },
-    login: { __type: "String" },
-    loginIn: { __type: "[String]" },
-    loginNotIn: { __type: "[String]" },
-    nicename: { __type: "String" },
-    nicenameIn: { __type: "[String]" },
-    nicenameNotIn: { __type: "[String]" },
-    orderby: { __type: "[UsersConnectionOrderbyInput]" },
-    role: { __type: "UserRoleEnum" },
-    roleIn: { __type: "[UserRoleEnum]" },
-    roleNotIn: { __type: "[UserRoleEnum]" },
-    search: { __type: "String" },
-    searchColumns: { __type: "[UsersConnectionSearchColumnEnum]" },
+    exclude: { __type: '[Int]' },
+    hasPublishedPosts: { __type: '[ContentTypeEnum]' },
+    include: { __type: '[Int]' },
+    login: { __type: 'String' },
+    loginIn: { __type: '[String]' },
+    loginNotIn: { __type: '[String]' },
+    nicename: { __type: 'String' },
+    nicenameIn: { __type: '[String]' },
+    nicenameNotIn: { __type: '[String]' },
+    orderby: { __type: '[UsersConnectionOrderbyInput]' },
+    role: { __type: 'UserRoleEnum' },
+    roleIn: { __type: '[UserRoleEnum]' },
+    roleNotIn: { __type: '[UserRoleEnum]' },
+    search: { __type: 'String' },
+    searchColumns: { __type: '[UsersConnectionSearchColumnEnum]' },
   },
   RootQueryToUserRoleConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[RootQueryToUserRoleConnectionEdge]" },
-    nodes: { __type: "[UserRole]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToUserRoleConnectionEdge]' },
+    nodes: { __type: '[UserRole]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   RootQueryToUserRoleConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "UserRole" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'UserRole' },
   },
   SendPasswordResetEmailInput: {
-    clientMutationId: { __type: "String" },
-    username: { __type: "String!" },
+    clientMutationId: { __type: 'String' },
+    username: { __type: 'String!' },
   },
   SendPasswordResetEmailPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    user: { __type: 'User' },
   },
   Settings: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
-      __type: "String",
+      __type: 'String',
     },
-    discussionSettingsDefaultCommentStatus: { __type: "String" },
-    discussionSettingsDefaultPingStatus: { __type: "String" },
-    generalSettingsDateFormat: { __type: "String" },
-    generalSettingsDescription: { __type: "String" },
-    generalSettingsLanguage: { __type: "String" },
-    generalSettingsStartOfWeek: { __type: "Int" },
-    generalSettingsTimeFormat: { __type: "String" },
-    generalSettingsTimezone: { __type: "String" },
-    generalSettingsTitle: { __type: "String" },
-    readingSettingsPostsPerPage: { __type: "Int" },
-    writingSettingsDefaultCategory: { __type: "Int" },
-    writingSettingsDefaultPostFormat: { __type: "String" },
-    writingSettingsUseSmilies: { __type: "Boolean" },
+    discussionSettingsDefaultCommentStatus: { __type: 'String' },
+    discussionSettingsDefaultPingStatus: { __type: 'String' },
+    generalSettingsDateFormat: { __type: 'String' },
+    generalSettingsDescription: { __type: 'String' },
+    generalSettingsLanguage: { __type: 'String' },
+    generalSettingsStartOfWeek: { __type: 'Int' },
+    generalSettingsTimeFormat: { __type: 'String' },
+    generalSettingsTimezone: { __type: 'String' },
+    generalSettingsTitle: { __type: 'String' },
+    readingSettingsPostsPerPage: { __type: 'Int' },
+    writingSettingsDefaultCategory: { __type: 'Int' },
+    writingSettingsDefaultPostFormat: { __type: 'String' },
+    writingSettingsUseSmilies: { __type: 'Boolean' },
   },
   Tag: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
     contentNodes: {
-      __type: "TagToContentNodeConnection",
+      __type: 'TagToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TagToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'TagToContentNodeConnectionWhereArgs',
       },
     },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
     enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
     posts: {
-      __type: "TagToPostConnection",
+      __type: 'TagToPostConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "TagToPostConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'TagToPostConnectionWhereArgs',
       },
     },
-    slug: { __type: "String" },
-    tagId: { __type: "Int" },
-    taxonomy: { __type: "TagToTaxonomyConnectionEdge" },
-    taxonomyName: { __type: "String" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    uri: { __type: "String" },
+    slug: { __type: 'String' },
+    tagId: { __type: 'Int' },
+    taxonomy: { __type: 'TagToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
   },
   TagToContentNodeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TagToContentNodeConnectionEdge]" },
-    nodes: { __type: "[ContentNode]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[TagToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   TagToContentNodeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentNode" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
   },
   TagToContentNodeConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypesOfTagEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypesOfTagEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   TagToPostConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TagToPostConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[TagToPostConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   TagToPostConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   TagToPostConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   TagToTaxonomyConnectionEdge: {
-    __typename: { __type: "String!" },
-    node: { __type: "Taxonomy" },
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
   },
   Taxonomy: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     connectedContentTypes: {
-      __type: "TaxonomyToContentTypeConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TaxonomyToContentTypeConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    description: { __type: "String" },
-    graphqlPluralName: { __type: "String" },
-    graphqlSingleName: { __type: "String" },
-    hierarchical: { __type: "Boolean" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    label: { __type: "String" },
-    name: { __type: "String" },
-    public: { __type: "Boolean" },
-    restBase: { __type: "String" },
-    restControllerClass: { __type: "String" },
-    showCloud: { __type: "Boolean" },
-    showInAdminColumn: { __type: "Boolean" },
-    showInGraphql: { __type: "Boolean" },
-    showInMenu: { __type: "Boolean" },
-    showInNavMenus: { __type: "Boolean" },
-    showInQuickEdit: { __type: "Boolean" },
-    showInRest: { __type: "Boolean" },
-    showUi: { __type: "Boolean" },
+    description: { __type: 'String' },
+    graphqlPluralName: { __type: 'String' },
+    graphqlSingleName: { __type: 'String' },
+    hierarchical: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    label: { __type: 'String' },
+    name: { __type: 'String' },
+    public: { __type: 'Boolean' },
+    restBase: { __type: 'String' },
+    restControllerClass: { __type: 'String' },
+    showCloud: { __type: 'Boolean' },
+    showInAdminColumn: { __type: 'Boolean' },
+    showInGraphql: { __type: 'Boolean' },
+    showInMenu: { __type: 'Boolean' },
+    showInNavMenus: { __type: 'Boolean' },
+    showInQuickEdit: { __type: 'Boolean' },
+    showInRest: { __type: 'Boolean' },
+    showUi: { __type: 'Boolean' },
   },
   TaxonomyToContentTypeConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TaxonomyToContentTypeConnectionEdge]" },
-    nodes: { __type: "[ContentType]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[TaxonomyToContentTypeConnectionEdge]' },
+    nodes: { __type: '[ContentType]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   TaxonomyToContentTypeConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentType" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentType' },
   },
   Template_Blank: {
-    __typename: { __type: "String!" },
-    templateName: { __type: "String" },
+    __typename: { __type: 'String!' },
+    templateName: { __type: 'String' },
   },
   Template_WithSidebar: {
-    __typename: { __type: "String!" },
-    templateName: { __type: "String" },
+    __typename: { __type: 'String!' },
+    templateName: { __type: 'String' },
   },
   TermNode: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    count: { __type: "Int" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
     enqueuedScripts: {
-      __type: "TermNodeToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "TermNodeToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    link: { __type: "String" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
-    taxonomyName: { __type: "String" },
-    templates: { __type: "[String]" },
-    termGroupId: { __type: "Int" },
-    termTaxonomyId: { __type: "Int" },
-    uri: { __type: "String" },
-    $on: { __type: "$TermNode!" },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
+    $on: { __type: '$TermNode!' },
   },
   TermNodeToEnqueuedScriptConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TermNodeToEnqueuedScriptConnectionEdge]" },
-    nodes: { __type: "[EnqueuedScript]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[TermNodeToEnqueuedScriptConnectionEdge]' },
+    nodes: { __type: '[EnqueuedScript]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   TermNodeToEnqueuedScriptConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedScript" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedScript' },
   },
   TermNodeToEnqueuedStylesheetConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[TermNodeToEnqueuedStylesheetConnectionEdge]" },
-    nodes: { __type: "[EnqueuedStylesheet]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[TermNodeToEnqueuedStylesheetConnectionEdge]' },
+    nodes: { __type: '[EnqueuedStylesheet]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   TermNodeToEnqueuedStylesheetConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedStylesheet" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedStylesheet' },
   },
   Theme: {
-    __typename: { __type: "String!" },
-    author: { __type: "String" },
-    authorUri: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    name: { __type: "String" },
-    screenshot: { __type: "String" },
-    slug: { __type: "String" },
-    tags: { __type: "[String]" },
-    themeUri: { __type: "String" },
-    version: { __type: "String" },
+    __typename: { __type: 'String!' },
+    author: { __type: 'String' },
+    authorUri: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    name: { __type: 'String' },
+    screenshot: { __type: 'String' },
+    slug: { __type: 'String' },
+    tags: { __type: '[String]' },
+    themeUri: { __type: 'String' },
+    version: { __type: 'String' },
   },
   UniformResourceIdentifiable: {
-    __typename: { __type: "String!" },
-    conditionalTags: { __type: "ConditionalTags" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isTermNode: { __type: "Boolean!" },
-    templates: { __type: "[String]" },
-    uri: { __type: "String" },
-    $on: { __type: "$UniformResourceIdentifiable!" },
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isTermNode: { __type: 'Boolean!' },
+    templates: { __type: '[String]' },
+    uri: { __type: 'String' },
+    $on: { __type: '$UniformResourceIdentifiable!' },
   },
   UpdateAToZCategoryInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   UpdateAToZCategoryPayload: {
-    __typename: { __type: "String!" },
-    aToZCategory: { __type: "AToZCategory" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    aToZCategory: { __type: 'AToZCategory' },
+    clientMutationId: { __type: 'String' },
   },
   UpdateAToZInput: {
-    aToZCategories: { __type: "AToZAToZCategoriesInput" },
-    clientMutationId: { __type: "String" },
-    date: { __type: "String" },
-    id: { __type: "ID!" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    aToZCategories: { __type: 'AToZAToZCategoriesInput' },
+    clientMutationId: { __type: 'String' },
+    date: { __type: 'String' },
+    id: { __type: 'ID!' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UpdateAToZPayload: {
-    __typename: { __type: "String!" },
-    aToZ: { __type: "AToZ" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    aToZ: { __type: 'AToZ' },
+    clientMutationId: { __type: 'String' },
   },
   UpdateAcalogProgramInput: {
-    clientMutationId: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    id: { __type: "ID!" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    clientMutationId: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    id: { __type: 'ID!' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UpdateAcalogProgramPayload: {
-    __typename: { __type: "String!" },
-    acalogProgram: { __type: "AcalogProgram" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    acalogProgram: { __type: 'AcalogProgram' },
+    clientMutationId: { __type: 'String' },
   },
   UpdateCategoryInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    name: { __type: "String" },
-    parentId: { __type: "ID" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    parentId: { __type: 'ID' },
+    slug: { __type: 'String' },
   },
   UpdateCategoryPayload: {
-    __typename: { __type: "String!" },
-    category: { __type: "Category" },
-    clientMutationId: { __type: "String" },
+    __typename: { __type: 'String!' },
+    category: { __type: 'Category' },
+    clientMutationId: { __type: 'String' },
   },
   UpdateCommentInput: {
-    approved: { __type: "String" },
-    author: { __type: "String" },
-    authorEmail: { __type: "String" },
-    authorUrl: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    commentOn: { __type: "Int" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    id: { __type: "ID!" },
-    parent: { __type: "ID" },
-    type: { __type: "String" },
+    approved: { __type: 'String' },
+    author: { __type: 'String' },
+    authorEmail: { __type: 'String' },
+    authorUrl: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    commentOn: { __type: 'Int' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    id: { __type: 'ID!' },
+    parent: { __type: 'ID' },
+    type: { __type: 'String' },
   },
   UpdateCommentPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    comment: { __type: "Comment" },
-    success: { __type: "Boolean" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    comment: { __type: 'Comment' },
+    success: { __type: 'Boolean' },
   },
   UpdateMediaItemInput: {
-    altText: { __type: "String" },
-    authorId: { __type: "ID" },
-    caption: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    date: { __type: "String" },
-    dateGmt: { __type: "String" },
-    description: { __type: "String" },
-    filePath: { __type: "String" },
-    fileType: { __type: "MimeTypeEnum" },
-    id: { __type: "ID!" },
-    parentId: { __type: "ID" },
-    pingStatus: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "MediaItemStatusEnum" },
-    title: { __type: "String" },
+    altText: { __type: 'String' },
+    authorId: { __type: 'ID' },
+    caption: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    description: { __type: 'String' },
+    filePath: { __type: 'String' },
+    fileType: { __type: 'MimeTypeEnum' },
+    id: { __type: 'ID!' },
+    parentId: { __type: 'ID' },
+    pingStatus: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'MediaItemStatusEnum' },
+    title: { __type: 'String' },
   },
   UpdateMediaItemPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    mediaItem: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    mediaItem: { __type: 'MediaItem' },
   },
   UpdatePageInput: {
-    authorId: { __type: "ID" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    id: { __type: "ID!" },
-    menuOrder: { __type: "Int" },
-    parentId: { __type: "ID" },
-    password: { __type: "String" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    authorId: { __type: 'ID' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    id: { __type: 'ID!' },
+    menuOrder: { __type: 'Int' },
+    parentId: { __type: 'ID' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UpdatePagePayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    page: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    page: { __type: 'Page' },
   },
   UpdatePostFormatInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   UpdatePostFormatPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    postFormat: { __type: "PostFormat" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    postFormat: { __type: 'PostFormat' },
   },
   UpdatePostInput: {
-    authorId: { __type: "ID" },
-    categories: { __type: "PostCategoriesInput" },
-    clientMutationId: { __type: "String" },
-    commentStatus: { __type: "String" },
-    content: { __type: "String" },
-    date: { __type: "String" },
-    excerpt: { __type: "String" },
-    id: { __type: "ID!" },
-    menuOrder: { __type: "Int" },
-    password: { __type: "String" },
-    pingStatus: { __type: "String" },
-    pinged: { __type: "[String]" },
-    postFormats: { __type: "PostPostFormatsInput" },
-    slug: { __type: "String" },
-    status: { __type: "PostStatusEnum" },
-    tags: { __type: "PostTagsInput" },
-    title: { __type: "String" },
-    toPing: { __type: "[String]" },
+    authorId: { __type: 'ID' },
+    categories: { __type: 'PostCategoriesInput' },
+    clientMutationId: { __type: 'String' },
+    commentStatus: { __type: 'String' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    excerpt: { __type: 'String' },
+    id: { __type: 'ID!' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    pingStatus: { __type: 'String' },
+    pinged: { __type: '[String]' },
+    postFormats: { __type: 'PostPostFormatsInput' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    tags: { __type: 'PostTagsInput' },
+    title: { __type: 'String' },
+    toPing: { __type: '[String]' },
   },
   UpdatePostPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    post: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    post: { __type: 'Post' },
   },
   UpdateSettingsInput: {
     atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
-      __type: "String",
+      __type: 'String',
     },
-    clientMutationId: { __type: "String" },
-    discussionSettingsDefaultCommentStatus: { __type: "String" },
-    discussionSettingsDefaultPingStatus: { __type: "String" },
-    generalSettingsDateFormat: { __type: "String" },
-    generalSettingsDescription: { __type: "String" },
-    generalSettingsLanguage: { __type: "String" },
-    generalSettingsStartOfWeek: { __type: "Int" },
-    generalSettingsTimeFormat: { __type: "String" },
-    generalSettingsTimezone: { __type: "String" },
-    generalSettingsTitle: { __type: "String" },
-    readingSettingsPostsPerPage: { __type: "Int" },
-    writingSettingsDefaultCategory: { __type: "Int" },
-    writingSettingsDefaultPostFormat: { __type: "String" },
-    writingSettingsUseSmilies: { __type: "Boolean" },
+    clientMutationId: { __type: 'String' },
+    discussionSettingsDefaultCommentStatus: { __type: 'String' },
+    discussionSettingsDefaultPingStatus: { __type: 'String' },
+    generalSettingsDateFormat: { __type: 'String' },
+    generalSettingsDescription: { __type: 'String' },
+    generalSettingsLanguage: { __type: 'String' },
+    generalSettingsStartOfWeek: { __type: 'Int' },
+    generalSettingsTimeFormat: { __type: 'String' },
+    generalSettingsTimezone: { __type: 'String' },
+    generalSettingsTitle: { __type: 'String' },
+    readingSettingsPostsPerPage: { __type: 'Int' },
+    writingSettingsDefaultCategory: { __type: 'Int' },
+    writingSettingsDefaultPostFormat: { __type: 'String' },
+    writingSettingsUseSmilies: { __type: 'Boolean' },
   },
   UpdateSettingsPayload: {
-    __typename: { __type: "String!" },
-    allSettings: { __type: "Settings" },
+    __typename: { __type: 'String!' },
+    allSettings: { __type: 'Settings' },
     atlasContentModelerSettingsSettings: {
-      __type: "AtlasContentModelerSettingsSettings",
+      __type: 'AtlasContentModelerSettingsSettings',
     },
-    clientMutationId: { __type: "String" },
-    discussionSettings: { __type: "DiscussionSettings" },
-    generalSettings: { __type: "GeneralSettings" },
-    readingSettings: { __type: "ReadingSettings" },
-    writingSettings: { __type: "WritingSettings" },
+    clientMutationId: { __type: 'String' },
+    discussionSettings: { __type: 'DiscussionSettings' },
+    generalSettings: { __type: 'GeneralSettings' },
+    readingSettings: { __type: 'ReadingSettings' },
+    writingSettings: { __type: 'WritingSettings' },
   },
   UpdateTagInput: {
-    aliasOf: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    id: { __type: "ID!" },
-    name: { __type: "String" },
-    slug: { __type: "String" },
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
   },
   UpdateTagPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    tag: { __type: "Tag" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    tag: { __type: 'Tag' },
   },
   UpdateUserInput: {
-    aim: { __type: "String" },
-    clientMutationId: { __type: "String" },
-    description: { __type: "String" },
-    displayName: { __type: "String" },
-    email: { __type: "String" },
-    firstName: { __type: "String" },
-    id: { __type: "ID!" },
-    jabber: { __type: "String" },
-    lastName: { __type: "String" },
-    locale: { __type: "String" },
-    nicename: { __type: "String" },
-    nickname: { __type: "String" },
-    password: { __type: "String" },
-    registered: { __type: "String" },
-    richEditing: { __type: "String" },
-    roles: { __type: "[String]" },
-    websiteUrl: { __type: "String" },
-    yim: { __type: "String" },
+    aim: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    displayName: { __type: 'String' },
+    email: { __type: 'String' },
+    firstName: { __type: 'String' },
+    id: { __type: 'ID!' },
+    jabber: { __type: 'String' },
+    lastName: { __type: 'String' },
+    locale: { __type: 'String' },
+    nicename: { __type: 'String' },
+    nickname: { __type: 'String' },
+    password: { __type: 'String' },
+    registered: { __type: 'String' },
+    richEditing: { __type: 'String' },
+    roles: { __type: '[String]' },
+    websiteUrl: { __type: 'String' },
+    yim: { __type: 'String' },
   },
   UpdateUserPayload: {
-    __typename: { __type: "String!" },
-    clientMutationId: { __type: "String" },
-    user: { __type: "User" },
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    user: { __type: 'User' },
   },
   User: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     avatar: {
-      __type: "Avatar",
+      __type: 'Avatar',
       __args: {
-        forceDefault: "Boolean",
-        rating: "AvatarRatingEnum",
-        size: "Int",
+        forceDefault: 'Boolean',
+        rating: 'AvatarRatingEnum',
+        size: 'Int',
       },
     },
-    capKey: { __type: "String" },
-    capabilities: { __type: "[String]" },
+    capKey: { __type: 'String' },
+    capabilities: { __type: '[String]' },
     comments: {
-      __type: "UserToCommentConnection",
+      __type: 'UserToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "UserToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'UserToCommentConnectionWhereArgs',
       },
     },
-    conditionalTags: { __type: "ConditionalTags" },
-    databaseId: { __type: "Int!" },
-    description: { __type: "String" },
-    email: { __type: "String" },
+    conditionalTags: { __type: 'ConditionalTags' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
+    email: { __type: 'String' },
     enqueuedScripts: {
-      __type: "UserToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'UserToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     enqueuedStylesheets: {
-      __type: "UserToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'UserToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    extraCapabilities: { __type: "[String]" },
-    firstName: { __type: "String" },
-    id: { __type: "ID!" },
-    isContentNode: { __type: "Boolean!" },
-    isRestricted: { __type: "Boolean" },
-    isTermNode: { __type: "Boolean!" },
-    lastName: { __type: "String" },
-    locale: { __type: "String" },
+    extraCapabilities: { __type: '[String]' },
+    firstName: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastName: { __type: 'String' },
+    locale: { __type: 'String' },
     mediaItems: {
-      __type: "UserToMediaItemConnection",
+      __type: 'UserToMediaItemConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "UserToMediaItemConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'UserToMediaItemConnectionWhereArgs',
       },
     },
-    name: { __type: "String" },
-    nicename: { __type: "String" },
-    nickname: { __type: "String" },
+    name: { __type: 'String' },
+    nicename: { __type: 'String' },
+    nickname: { __type: 'String' },
     pages: {
-      __type: "UserToPageConnection",
+      __type: 'UserToPageConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "UserToPageConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'UserToPageConnectionWhereArgs',
       },
     },
     posts: {
-      __type: "UserToPostConnection",
+      __type: 'UserToPostConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "UserToPostConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'UserToPostConnectionWhereArgs',
       },
     },
-    registeredDate: { __type: "String" },
+    registeredDate: { __type: 'String' },
     revisions: {
-      __type: "UserToContentRevisionUnionConnection",
+      __type: 'UserToContentRevisionUnionConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "UserToContentRevisionUnionConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'UserToContentRevisionUnionConnectionWhereArgs',
       },
     },
     roles: {
-      __type: "UserToUserRoleConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'UserToUserRoleConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    slug: { __type: "String" },
-    templates: { __type: "[String]" },
-    uri: { __type: "String" },
-    url: { __type: "String" },
-    userId: { __type: "Int" },
-    username: { __type: "String" },
+    slug: { __type: 'String' },
+    templates: { __type: '[String]' },
+    uri: { __type: 'String' },
+    url: { __type: 'String' },
+    userId: { __type: 'Int' },
+    username: { __type: 'String' },
   },
   UserRole: {
-    __typename: { __type: "String!" },
-    capabilities: { __type: "[String]" },
-    displayName: { __type: "String" },
-    id: { __type: "ID!" },
-    isRestricted: { __type: "Boolean" },
-    name: { __type: "String" },
+    __typename: { __type: 'String!' },
+    capabilities: { __type: '[String]' },
+    displayName: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isRestricted: { __type: 'Boolean' },
+    name: { __type: 'String' },
   },
   UserToCommentConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToCommentConnectionEdge]" },
-    nodes: { __type: "[Comment]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToCommentConnectionEdge]' },
+    nodes: { __type: '[Comment]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToCommentConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Comment" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Comment' },
   },
   UserToCommentConnectionWhereArgs: {
-    authorEmail: { __type: "String" },
-    authorIn: { __type: "[ID]" },
-    authorNotIn: { __type: "[ID]" },
-    authorUrl: { __type: "String" },
-    commentIn: { __type: "[ID]" },
-    commentNotIn: { __type: "[ID]" },
-    commentType: { __type: "String" },
-    commentTypeIn: { __type: "[String]" },
-    commentTypeNotIn: { __type: "String" },
-    contentAuthor: { __type: "[ID]" },
-    contentAuthorIn: { __type: "[ID]" },
-    contentAuthorNotIn: { __type: "[ID]" },
-    contentId: { __type: "ID" },
-    contentIdIn: { __type: "[ID]" },
-    contentIdNotIn: { __type: "[ID]" },
-    contentName: { __type: "String" },
-    contentParent: { __type: "Int" },
-    contentStatus: { __type: "[PostStatusEnum]" },
-    contentType: { __type: "[ContentTypeEnum]" },
-    includeUnapproved: { __type: "[ID]" },
-    karma: { __type: "Int" },
-    order: { __type: "OrderEnum" },
-    orderby: { __type: "CommentsConnectionOrderbyEnum" },
-    parent: { __type: "Int" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    search: { __type: "String" },
-    status: { __type: "String" },
-    userId: { __type: "ID" },
+    authorEmail: { __type: 'String' },
+    authorIn: { __type: '[ID]' },
+    authorNotIn: { __type: '[ID]' },
+    authorUrl: { __type: 'String' },
+    commentIn: { __type: '[ID]' },
+    commentNotIn: { __type: '[ID]' },
+    commentType: { __type: 'String' },
+    commentTypeIn: { __type: '[String]' },
+    commentTypeNotIn: { __type: 'String' },
+    contentAuthor: { __type: '[ID]' },
+    contentAuthorIn: { __type: '[ID]' },
+    contentAuthorNotIn: { __type: '[ID]' },
+    contentId: { __type: 'ID' },
+    contentIdIn: { __type: '[ID]' },
+    contentIdNotIn: { __type: '[ID]' },
+    contentName: { __type: 'String' },
+    contentParent: { __type: 'Int' },
+    contentStatus: { __type: '[PostStatusEnum]' },
+    contentType: { __type: '[ContentTypeEnum]' },
+    includeUnapproved: { __type: '[ID]' },
+    karma: { __type: 'Int' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'CommentsConnectionOrderbyEnum' },
+    parent: { __type: 'Int' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    search: { __type: 'String' },
+    status: { __type: 'String' },
+    userId: { __type: 'ID' },
   },
   UserToContentRevisionUnionConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToContentRevisionUnionConnectionEdge]" },
-    nodes: { __type: "[ContentRevisionUnion]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToContentRevisionUnionConnectionEdge]' },
+    nodes: { __type: '[ContentRevisionUnion]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToContentRevisionUnionConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "ContentRevisionUnion" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentRevisionUnion' },
   },
   UserToContentRevisionUnionConnectionWhereArgs: {
-    contentTypes: { __type: "[ContentTypeEnum]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    contentTypes: { __type: '[ContentTypeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UserToEnqueuedScriptConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToEnqueuedScriptConnectionEdge]" },
-    nodes: { __type: "[EnqueuedScript]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToEnqueuedScriptConnectionEdge]' },
+    nodes: { __type: '[EnqueuedScript]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToEnqueuedScriptConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedScript" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedScript' },
   },
   UserToEnqueuedStylesheetConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToEnqueuedStylesheetConnectionEdge]" },
-    nodes: { __type: "[EnqueuedStylesheet]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToEnqueuedStylesheetConnectionEdge]' },
+    nodes: { __type: '[EnqueuedStylesheet]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToEnqueuedStylesheetConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "EnqueuedStylesheet" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'EnqueuedStylesheet' },
   },
   UserToMediaItemConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToMediaItemConnectionEdge]" },
-    nodes: { __type: "[MediaItem]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToMediaItemConnectionEdge]' },
+    nodes: { __type: '[MediaItem]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToMediaItemConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "MediaItem" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'MediaItem' },
   },
   UserToMediaItemConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UserToPageConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToPageConnectionEdge]" },
-    nodes: { __type: "[Page]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToPageConnectionEdge]' },
+    nodes: { __type: '[Page]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToPageConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Page" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Page' },
   },
   UserToPageConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   UserToPostConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToPostConnectionEdge]" },
-    nodes: { __type: "[Post]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToPostConnectionEdge]' },
+    nodes: { __type: '[Post]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToPostConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "Post" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Post' },
   },
   UserToPostConnectionWhereArgs: {
-    author: { __type: "Int" },
-    authorIn: { __type: "[ID]" },
-    authorName: { __type: "String" },
-    authorNotIn: { __type: "[ID]" },
-    categoryId: { __type: "Int" },
-    categoryIn: { __type: "[ID]" },
-    categoryName: { __type: "String" },
-    categoryNotIn: { __type: "[ID]" },
-    dateQuery: { __type: "DateQueryInput" },
-    hasPassword: { __type: "Boolean" },
-    id: { __type: "Int" },
-    in: { __type: "[ID]" },
-    mimeType: { __type: "MimeTypeEnum" },
-    name: { __type: "String" },
-    nameIn: { __type: "[String]" },
-    notIn: { __type: "[ID]" },
-    orderby: { __type: "[PostObjectsConnectionOrderbyInput]" },
-    parent: { __type: "ID" },
-    parentIn: { __type: "[ID]" },
-    parentNotIn: { __type: "[ID]" },
-    password: { __type: "String" },
-    search: { __type: "String" },
-    stati: { __type: "[PostStatusEnum]" },
-    status: { __type: "PostStatusEnum" },
-    tag: { __type: "String" },
-    tagId: { __type: "String" },
-    tagIn: { __type: "[ID]" },
-    tagNotIn: { __type: "[ID]" },
-    tagSlugAnd: { __type: "[String]" },
-    tagSlugIn: { __type: "[String]" },
-    title: { __type: "String" },
+    author: { __type: 'Int' },
+    authorIn: { __type: '[ID]' },
+    authorName: { __type: 'String' },
+    authorNotIn: { __type: '[ID]' },
+    categoryId: { __type: 'Int' },
+    categoryIn: { __type: '[ID]' },
+    categoryName: { __type: 'String' },
+    categoryNotIn: { __type: '[ID]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    tag: { __type: 'String' },
+    tagId: { __type: 'String' },
+    tagIn: { __type: '[ID]' },
+    tagNotIn: { __type: '[ID]' },
+    tagSlugAnd: { __type: '[String]' },
+    tagSlugIn: { __type: '[String]' },
+    title: { __type: 'String' },
   },
   UserToUserRoleConnection: {
-    __typename: { __type: "String!" },
-    edges: { __type: "[UserToUserRoleConnectionEdge]" },
-    nodes: { __type: "[UserRole]" },
-    pageInfo: { __type: "WPPageInfo" },
+    __typename: { __type: 'String!' },
+    edges: { __type: '[UserToUserRoleConnectionEdge]' },
+    nodes: { __type: '[UserRole]' },
+    pageInfo: { __type: 'WPPageInfo' },
   },
   UserToUserRoleConnectionEdge: {
-    __typename: { __type: "String!" },
-    cursor: { __type: "String" },
-    node: { __type: "UserRole" },
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'UserRole' },
   },
   UsersConnectionOrderbyInput: {
-    field: { __type: "UsersConnectionOrderbyEnum!" },
-    order: { __type: "OrderEnum" },
+    field: { __type: 'UsersConnectionOrderbyEnum!' },
+    order: { __type: 'OrderEnum' },
   },
   WPPageInfo: {
-    __typename: { __type: "String!" },
-    endCursor: { __type: "String" },
-    hasNextPage: { __type: "Boolean!" },
-    hasPreviousPage: { __type: "Boolean!" },
-    startCursor: { __type: "String" },
+    __typename: { __type: 'String!' },
+    endCursor: { __type: 'String' },
+    hasNextPage: { __type: 'Boolean!' },
+    hasPreviousPage: { __type: 'Boolean!' },
+    startCursor: { __type: 'String' },
   },
   WritingSettings: {
-    __typename: { __type: "String!" },
-    defaultCategory: { __type: "Int" },
-    defaultPostFormat: { __type: "String" },
-    useSmilies: { __type: "Boolean" },
+    __typename: { __type: 'String!' },
+    defaultCategory: { __type: 'Int' },
+    defaultPostFormat: { __type: 'String' },
+    useSmilies: { __type: 'Boolean' },
   },
   mutation: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     createAToZ: {
-      __type: "CreateAToZPayload",
-      __args: { input: "CreateAToZInput!" },
+      __type: 'CreateAToZPayload',
+      __args: { input: 'CreateAToZInput!' },
     },
     createAToZCategory: {
-      __type: "CreateAToZCategoryPayload",
-      __args: { input: "CreateAToZCategoryInput!" },
+      __type: 'CreateAToZCategoryPayload',
+      __args: { input: 'CreateAToZCategoryInput!' },
     },
     createAcalogProgram: {
-      __type: "CreateAcalogProgramPayload",
-      __args: { input: "CreateAcalogProgramInput!" },
+      __type: 'CreateAcalogProgramPayload',
+      __args: { input: 'CreateAcalogProgramInput!' },
     },
     createCategory: {
-      __type: "CreateCategoryPayload",
-      __args: { input: "CreateCategoryInput!" },
+      __type: 'CreateCategoryPayload',
+      __args: { input: 'CreateCategoryInput!' },
     },
     createComment: {
-      __type: "CreateCommentPayload",
-      __args: { input: "CreateCommentInput!" },
+      __type: 'CreateCommentPayload',
+      __args: { input: 'CreateCommentInput!' },
     },
     createMediaItem: {
-      __type: "CreateMediaItemPayload",
-      __args: { input: "CreateMediaItemInput!" },
+      __type: 'CreateMediaItemPayload',
+      __args: { input: 'CreateMediaItemInput!' },
     },
     createPage: {
-      __type: "CreatePagePayload",
-      __args: { input: "CreatePageInput!" },
+      __type: 'CreatePagePayload',
+      __args: { input: 'CreatePageInput!' },
     },
     createPost: {
-      __type: "CreatePostPayload",
-      __args: { input: "CreatePostInput!" },
+      __type: 'CreatePostPayload',
+      __args: { input: 'CreatePostInput!' },
     },
     createPostFormat: {
-      __type: "CreatePostFormatPayload",
-      __args: { input: "CreatePostFormatInput!" },
+      __type: 'CreatePostFormatPayload',
+      __args: { input: 'CreatePostFormatInput!' },
     },
     createTag: {
-      __type: "CreateTagPayload",
-      __args: { input: "CreateTagInput!" },
+      __type: 'CreateTagPayload',
+      __args: { input: 'CreateTagInput!' },
     },
     createUser: {
-      __type: "CreateUserPayload",
-      __args: { input: "CreateUserInput!" },
+      __type: 'CreateUserPayload',
+      __args: { input: 'CreateUserInput!' },
     },
     deleteAToZ: {
-      __type: "DeleteAToZPayload",
-      __args: { input: "DeleteAToZInput!" },
+      __type: 'DeleteAToZPayload',
+      __args: { input: 'DeleteAToZInput!' },
     },
     deleteAToZCategory: {
-      __type: "DeleteAToZCategoryPayload",
-      __args: { input: "DeleteAToZCategoryInput!" },
+      __type: 'DeleteAToZCategoryPayload',
+      __args: { input: 'DeleteAToZCategoryInput!' },
     },
     deleteAcalogProgram: {
-      __type: "DeleteAcalogProgramPayload",
-      __args: { input: "DeleteAcalogProgramInput!" },
+      __type: 'DeleteAcalogProgramPayload',
+      __args: { input: 'DeleteAcalogProgramInput!' },
     },
     deleteCategory: {
-      __type: "DeleteCategoryPayload",
-      __args: { input: "DeleteCategoryInput!" },
+      __type: 'DeleteCategoryPayload',
+      __args: { input: 'DeleteCategoryInput!' },
     },
     deleteComment: {
-      __type: "DeleteCommentPayload",
-      __args: { input: "DeleteCommentInput!" },
+      __type: 'DeleteCommentPayload',
+      __args: { input: 'DeleteCommentInput!' },
     },
     deleteMediaItem: {
-      __type: "DeleteMediaItemPayload",
-      __args: { input: "DeleteMediaItemInput!" },
+      __type: 'DeleteMediaItemPayload',
+      __args: { input: 'DeleteMediaItemInput!' },
     },
     deletePage: {
-      __type: "DeletePagePayload",
-      __args: { input: "DeletePageInput!" },
+      __type: 'DeletePagePayload',
+      __args: { input: 'DeletePageInput!' },
     },
     deletePost: {
-      __type: "DeletePostPayload",
-      __args: { input: "DeletePostInput!" },
+      __type: 'DeletePostPayload',
+      __args: { input: 'DeletePostInput!' },
     },
     deletePostFormat: {
-      __type: "DeletePostFormatPayload",
-      __args: { input: "DeletePostFormatInput!" },
+      __type: 'DeletePostFormatPayload',
+      __args: { input: 'DeletePostFormatInput!' },
     },
     deleteTag: {
-      __type: "DeleteTagPayload",
-      __args: { input: "DeleteTagInput!" },
+      __type: 'DeleteTagPayload',
+      __args: { input: 'DeleteTagInput!' },
     },
     deleteUser: {
-      __type: "DeleteUserPayload",
-      __args: { input: "DeleteUserInput!" },
+      __type: 'DeleteUserPayload',
+      __args: { input: 'DeleteUserInput!' },
     },
     generateAuthorizationCode: {
-      __type: "GenerateAuthorizationCodePayload",
-      __args: { input: "GenerateAuthorizationCodeInput!" },
+      __type: 'GenerateAuthorizationCodePayload',
+      __args: { input: 'GenerateAuthorizationCodeInput!' },
     },
-    increaseCount: { __type: "Int", __args: { count: "Int" } },
+    increaseCount: { __type: 'Int', __args: { count: 'Int' } },
     registerUser: {
-      __type: "RegisterUserPayload",
-      __args: { input: "RegisterUserInput!" },
+      __type: 'RegisterUserPayload',
+      __args: { input: 'RegisterUserInput!' },
     },
     resetUserPassword: {
-      __type: "ResetUserPasswordPayload",
-      __args: { input: "ResetUserPasswordInput!" },
+      __type: 'ResetUserPasswordPayload',
+      __args: { input: 'ResetUserPasswordInput!' },
     },
     restoreComment: {
-      __type: "RestoreCommentPayload",
-      __args: { input: "RestoreCommentInput!" },
+      __type: 'RestoreCommentPayload',
+      __args: { input: 'RestoreCommentInput!' },
     },
     sendPasswordResetEmail: {
-      __type: "SendPasswordResetEmailPayload",
-      __args: { input: "SendPasswordResetEmailInput!" },
+      __type: 'SendPasswordResetEmailPayload',
+      __args: { input: 'SendPasswordResetEmailInput!' },
     },
     updateAToZ: {
-      __type: "UpdateAToZPayload",
-      __args: { input: "UpdateAToZInput!" },
+      __type: 'UpdateAToZPayload',
+      __args: { input: 'UpdateAToZInput!' },
     },
     updateAToZCategory: {
-      __type: "UpdateAToZCategoryPayload",
-      __args: { input: "UpdateAToZCategoryInput!" },
+      __type: 'UpdateAToZCategoryPayload',
+      __args: { input: 'UpdateAToZCategoryInput!' },
     },
     updateAcalogProgram: {
-      __type: "UpdateAcalogProgramPayload",
-      __args: { input: "UpdateAcalogProgramInput!" },
+      __type: 'UpdateAcalogProgramPayload',
+      __args: { input: 'UpdateAcalogProgramInput!' },
     },
     updateCategory: {
-      __type: "UpdateCategoryPayload",
-      __args: { input: "UpdateCategoryInput!" },
+      __type: 'UpdateCategoryPayload',
+      __args: { input: 'UpdateCategoryInput!' },
     },
     updateComment: {
-      __type: "UpdateCommentPayload",
-      __args: { input: "UpdateCommentInput!" },
+      __type: 'UpdateCommentPayload',
+      __args: { input: 'UpdateCommentInput!' },
     },
     updateMediaItem: {
-      __type: "UpdateMediaItemPayload",
-      __args: { input: "UpdateMediaItemInput!" },
+      __type: 'UpdateMediaItemPayload',
+      __args: { input: 'UpdateMediaItemInput!' },
     },
     updatePage: {
-      __type: "UpdatePagePayload",
-      __args: { input: "UpdatePageInput!" },
+      __type: 'UpdatePagePayload',
+      __args: { input: 'UpdatePageInput!' },
     },
     updatePost: {
-      __type: "UpdatePostPayload",
-      __args: { input: "UpdatePostInput!" },
+      __type: 'UpdatePostPayload',
+      __args: { input: 'UpdatePostInput!' },
     },
     updatePostFormat: {
-      __type: "UpdatePostFormatPayload",
-      __args: { input: "UpdatePostFormatInput!" },
+      __type: 'UpdatePostFormatPayload',
+      __args: { input: 'UpdatePostFormatInput!' },
     },
     updateSettings: {
-      __type: "UpdateSettingsPayload",
-      __args: { input: "UpdateSettingsInput!" },
+      __type: 'UpdateSettingsPayload',
+      __args: { input: 'UpdateSettingsInput!' },
     },
     updateTag: {
-      __type: "UpdateTagPayload",
-      __args: { input: "UpdateTagInput!" },
+      __type: 'UpdateTagPayload',
+      __args: { input: 'UpdateTagInput!' },
     },
     updateUser: {
-      __type: "UpdateUserPayload",
-      __args: { input: "UpdateUserInput!" },
+      __type: 'UpdateUserPayload',
+      __args: { input: 'UpdateUserInput!' },
     },
   },
   query: {
-    __typename: { __type: "String!" },
+    __typename: { __type: 'String!' },
     aToZ: {
-      __type: "AToZ",
-      __args: { asPreview: "Boolean", id: "ID!", idType: "AToZIdType" },
+      __type: 'AToZ',
+      __args: { asPreview: 'Boolean', id: 'ID!', idType: 'AToZIdType' },
     },
     aToZBy: {
-      __type: "AToZ",
-      __args: { aToZId: "Int", id: "ID", slug: "String", uri: "String" },
+      __type: 'AToZ',
+      __args: { aToZId: 'Int', id: 'ID', slug: 'String', uri: 'String' },
     },
     aToZCategories: {
-      __type: "RootQueryToAToZCategoryConnection",
+      __type: 'RootQueryToAToZCategoryConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToAToZCategoryConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToAToZCategoryConnectionWhereArgs',
       },
     },
     aToZCategory: {
-      __type: "AToZCategory",
-      __args: { id: "ID!", idType: "AToZCategoryIdType" },
+      __type: 'AToZCategory',
+      __args: { id: 'ID!', idType: 'AToZCategoryIdType' },
     },
     acalogProgram: {
-      __type: "AcalogProgram",
+      __type: 'AcalogProgram',
       __args: {
-        asPreview: "Boolean",
-        id: "ID!",
-        idType: "AcalogProgramIdType",
+        asPreview: 'Boolean',
+        id: 'ID!',
+        idType: 'AcalogProgramIdType',
       },
     },
     acalogProgramBy: {
-      __type: "AcalogProgram",
+      __type: 'AcalogProgram',
       __args: {
-        acalogProgramId: "Int",
-        id: "ID",
-        slug: "String",
-        uri: "String",
+        acalogProgramId: 'Int',
+        id: 'ID',
+        slug: 'String',
+        uri: 'String',
       },
     },
     acalogPrograms: {
-      __type: "RootQueryToAcalogProgramConnection",
+      __type: 'RootQueryToAcalogProgramConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToAcalogProgramConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToAcalogProgramConnectionWhereArgs',
       },
     },
     allAToZ: {
-      __type: "RootQueryToAToZConnection",
+      __type: 'RootQueryToAToZConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToAToZConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToAToZConnectionWhereArgs',
       },
     },
-    allSettings: { __type: "Settings" },
+    allSettings: { __type: 'Settings' },
     atlasContentModelerSettingsSettings: {
-      __type: "AtlasContentModelerSettingsSettings",
+      __type: 'AtlasContentModelerSettingsSettings',
     },
     categories: {
-      __type: "RootQueryToCategoryConnection",
+      __type: 'RootQueryToCategoryConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToCategoryConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToCategoryConnectionWhereArgs',
       },
     },
     category: {
-      __type: "Category",
-      __args: { id: "ID!", idType: "CategoryIdType" },
+      __type: 'Category',
+      __args: { id: 'ID!', idType: 'CategoryIdType' },
     },
-    comment: { __type: "Comment", __args: { id: "ID!" } },
+    comment: { __type: 'Comment', __args: { id: 'ID!' } },
     comments: {
-      __type: "RootQueryToCommentConnection",
+      __type: 'RootQueryToCommentConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToCommentConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToCommentConnectionWhereArgs',
       },
     },
     contentNode: {
-      __type: "ContentNode",
+      __type: 'ContentNode',
       __args: {
-        asPreview: "Boolean",
-        contentType: "ContentTypeEnum",
-        id: "ID!",
-        idType: "ContentNodeIdTypeEnum",
+        asPreview: 'Boolean',
+        contentType: 'ContentTypeEnum',
+        id: 'ID!',
+        idType: 'ContentNodeIdTypeEnum',
       },
     },
     contentNodes: {
-      __type: "RootQueryToContentNodeConnection",
+      __type: 'RootQueryToContentNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToContentNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToContentNodeConnectionWhereArgs',
       },
     },
     contentType: {
-      __type: "ContentType",
-      __args: { id: "ID!", idType: "ContentTypeIdTypeEnum" },
+      __type: 'ContentType',
+      __args: { id: 'ID!', idType: 'ContentTypeIdTypeEnum' },
     },
     contentTypes: {
-      __type: "RootQueryToContentTypeConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToContentTypeConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
-    discussionSettings: { __type: "DiscussionSettings" },
-    generalSettings: { __type: "GeneralSettings" },
+    discussionSettings: { __type: 'DiscussionSettings' },
+    generalSettings: { __type: 'GeneralSettings' },
     mediaItem: {
-      __type: "MediaItem",
-      __args: { asPreview: "Boolean", id: "ID!", idType: "MediaItemIdType" },
+      __type: 'MediaItem',
+      __args: { asPreview: 'Boolean', id: 'ID!', idType: 'MediaItemIdType' },
     },
     mediaItemBy: {
-      __type: "MediaItem",
-      __args: { id: "ID", mediaItemId: "Int", slug: "String", uri: "String" },
+      __type: 'MediaItem',
+      __args: { id: 'ID', mediaItemId: 'Int', slug: 'String', uri: 'String' },
     },
     mediaItems: {
-      __type: "RootQueryToMediaItemConnection",
+      __type: 'RootQueryToMediaItemConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToMediaItemConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToMediaItemConnectionWhereArgs',
       },
     },
     menu: {
-      __type: "Menu",
-      __args: { id: "ID!", idType: "MenuNodeIdTypeEnum" },
+      __type: 'Menu',
+      __args: { id: 'ID!', idType: 'MenuNodeIdTypeEnum' },
     },
     menuItem: {
-      __type: "MenuItem",
-      __args: { id: "ID!", idType: "MenuItemNodeIdTypeEnum" },
+      __type: 'MenuItem',
+      __args: { id: 'ID!', idType: 'MenuItemNodeIdTypeEnum' },
     },
     menuItems: {
-      __type: "RootQueryToMenuItemConnection",
+      __type: 'RootQueryToMenuItemConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToMenuItemConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToMenuItemConnectionWhereArgs',
       },
     },
     menus: {
-      __type: "RootQueryToMenuConnection",
+      __type: 'RootQueryToMenuConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToMenuConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToMenuConnectionWhereArgs',
       },
     },
-    node: { __type: "Node", __args: { id: "ID" } },
+    node: { __type: 'Node', __args: { id: 'ID' } },
     nodeByUri: {
-      __type: "UniformResourceIdentifiable",
-      __args: { uri: "String!" },
+      __type: 'UniformResourceIdentifiable',
+      __args: { uri: 'String!' },
     },
     page: {
-      __type: "Page",
-      __args: { asPreview: "Boolean", id: "ID!", idType: "PageIdType" },
+      __type: 'Page',
+      __args: { asPreview: 'Boolean', id: 'ID!', idType: 'PageIdType' },
     },
     pageBy: {
-      __type: "Page",
-      __args: { id: "ID", pageId: "Int", uri: "String" },
+      __type: 'Page',
+      __args: { id: 'ID', pageId: 'Int', uri: 'String' },
     },
     pages: {
-      __type: "RootQueryToPageConnection",
+      __type: 'RootQueryToPageConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToPageConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToPageConnectionWhereArgs',
       },
     },
-    plugin: { __type: "Plugin", __args: { id: "ID!" } },
+    plugin: { __type: 'Plugin', __args: { id: 'ID!' } },
     plugins: {
-      __type: "RootQueryToPluginConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToPluginConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToPluginConnectionWhereArgs',
+      },
     },
     post: {
-      __type: "Post",
-      __args: { asPreview: "Boolean", id: "ID!", idType: "PostIdType" },
+      __type: 'Post',
+      __args: { asPreview: 'Boolean', id: 'ID!', idType: 'PostIdType' },
     },
     postBy: {
-      __type: "Post",
-      __args: { id: "ID", postId: "Int", slug: "String", uri: "String" },
+      __type: 'Post',
+      __args: { id: 'ID', postId: 'Int', slug: 'String', uri: 'String' },
     },
     postFormat: {
-      __type: "PostFormat",
-      __args: { id: "ID!", idType: "PostFormatIdType" },
+      __type: 'PostFormat',
+      __args: { id: 'ID!', idType: 'PostFormatIdType' },
     },
     postFormats: {
-      __type: "RootQueryToPostFormatConnection",
+      __type: 'RootQueryToPostFormatConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToPostFormatConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToPostFormatConnectionWhereArgs',
       },
     },
     posts: {
-      __type: "RootQueryToPostConnection",
+      __type: 'RootQueryToPostConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToPostConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToPostConnectionWhereArgs',
       },
     },
-    readingSettings: { __type: "ReadingSettings" },
+    readingSettings: { __type: 'ReadingSettings' },
     registeredScripts: {
-      __type: "RootQueryToEnqueuedScriptConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     registeredStylesheets: {
-      __type: "RootQueryToEnqueuedStylesheetConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     revisions: {
-      __type: "RootQueryToContentRevisionUnionConnection",
+      __type: 'RootQueryToContentRevisionUnionConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToContentRevisionUnionConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToContentRevisionUnionConnectionWhereArgs',
       },
     },
-    tag: { __type: "Tag", __args: { id: "ID!", idType: "TagIdType" } },
+    tag: { __type: 'Tag', __args: { id: 'ID!', idType: 'TagIdType' } },
     tags: {
-      __type: "RootQueryToTagConnection",
+      __type: 'RootQueryToTagConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToTagConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToTagConnectionWhereArgs',
       },
     },
     taxonomies: {
-      __type: "RootQueryToTaxonomyConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToTaxonomyConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     taxonomy: {
-      __type: "Taxonomy",
-      __args: { id: "ID!", idType: "TaxonomyIdTypeEnum" },
+      __type: 'Taxonomy',
+      __args: { id: 'ID!', idType: 'TaxonomyIdTypeEnum' },
     },
     termNode: {
-      __type: "TermNode",
+      __type: 'TermNode',
       __args: {
-        id: "ID!",
-        idType: "TermNodeIdTypeEnum",
-        taxonomy: "TaxonomyEnum",
+        id: 'ID!',
+        idType: 'TermNodeIdTypeEnum',
+        taxonomy: 'TaxonomyEnum',
       },
     },
     terms: {
-      __type: "RootQueryToTermNodeConnection",
+      __type: 'RootQueryToTermNodeConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToTermNodeConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToTermNodeConnectionWhereArgs',
       },
     },
-    theme: { __type: "Theme", __args: { id: "ID!" } },
+    theme: { __type: 'Theme', __args: { id: 'ID!' } },
     themes: {
-      __type: "RootQueryToThemeConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToThemeConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     user: {
-      __type: "User",
-      __args: { id: "ID!", idType: "UserNodeIdTypeEnum" },
+      __type: 'User',
+      __args: { id: 'ID!', idType: 'UserNodeIdTypeEnum' },
     },
-    userRole: { __type: "UserRole", __args: { id: "ID!" } },
+    userRole: { __type: 'UserRole', __args: { id: 'ID!' } },
     userRoles: {
-      __type: "RootQueryToUserRoleConnection",
-      __args: { after: "String", before: "String", first: "Int", last: "Int" },
+      __type: 'RootQueryToUserRoleConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
     users: {
-      __type: "RootQueryToUserConnection",
+      __type: 'RootQueryToUserConnection',
       __args: {
-        after: "String",
-        before: "String",
-        first: "Int",
-        last: "Int",
-        where: "RootQueryToUserConnectionWhereArgs",
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToUserConnectionWhereArgs',
       },
     },
-    viewer: { __type: "User" },
-    writingSettings: { __type: "WritingSettings" },
+    viewer: { __type: 'User' },
+    writingSettings: { __type: 'WritingSettings' },
   },
   subscription: {},
   [SchemaUnionsKey]: {
-    ContentNode: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
+    ContentNode: ['AToZ', 'AcalogProgram', 'MediaItem', 'Page', 'Post'],
     DatabaseIdentifier: [
-      "AToZ",
-      "AToZCategory",
-      "AcalogProgram",
-      "Category",
-      "Comment",
-      "MediaItem",
-      "Menu",
-      "MenuItem",
-      "Page",
-      "Post",
-      "PostFormat",
-      "Tag",
-      "User",
+      'AToZ',
+      'AToZCategory',
+      'AcalogProgram',
+      'Category',
+      'Comment',
+      'MediaItem',
+      'Menu',
+      'MenuItem',
+      'Page',
+      'Post',
+      'PostFormat',
+      'Tag',
+      'User',
     ],
     MenuItemLinkable: [
-      "AToZ",
-      "AToZCategory",
-      "AcalogProgram",
-      "Category",
-      "Page",
-      "Post",
-      "Tag",
+      'AToZ',
+      'AToZCategory',
+      'AcalogProgram',
+      'Category',
+      'Page',
+      'Post',
+      'Tag',
     ],
     Node: [
-      "AToZ",
-      "AToZCategory",
-      "AcalogProgram",
-      "Category",
-      "Comment",
-      "CommentAuthor",
-      "ContentType",
-      "EnqueuedScript",
-      "EnqueuedStylesheet",
-      "MediaItem",
-      "Menu",
-      "MenuItem",
-      "Page",
-      "Plugin",
-      "Post",
-      "PostFormat",
-      "Tag",
-      "Taxonomy",
-      "Theme",
-      "User",
-      "UserRole",
+      'AToZ',
+      'AToZCategory',
+      'AcalogProgram',
+      'Category',
+      'Comment',
+      'CommentAuthor',
+      'ContentType',
+      'EnqueuedScript',
+      'EnqueuedStylesheet',
+      'MediaItem',
+      'Menu',
+      'MenuItem',
+      'Page',
+      'Plugin',
+      'Post',
+      'PostFormat',
+      'Tag',
+      'Taxonomy',
+      'Theme',
+      'User',
+      'UserRole',
     ],
-    NodeWithTemplate: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
-    NodeWithTitle: ["AToZ", "AcalogProgram", "MediaItem", "Page", "Post"],
+    NodeWithTemplate: ['AToZ', 'AcalogProgram', 'MediaItem', 'Page', 'Post'],
+    NodeWithTitle: ['AToZ', 'AcalogProgram', 'MediaItem', 'Page', 'Post'],
     UniformResourceIdentifiable: [
-      "AToZ",
-      "AToZCategory",
-      "AcalogProgram",
-      "Category",
-      "ContentType",
-      "MediaItem",
-      "Page",
-      "Post",
-      "PostFormat",
-      "Tag",
-      "User",
+      'AToZ',
+      'AToZCategory',
+      'AcalogProgram',
+      'Category',
+      'ContentType',
+      'MediaItem',
+      'Page',
+      'Post',
+      'PostFormat',
+      'Tag',
+      'User',
     ],
-    TermNode: ["AToZCategory", "Category", "PostFormat", "Tag"],
-    AcfFieldGroup: ["AToZ_Atozfields", "AcalogProgram_Acalogdepartmentfields"],
-    NodeWithContentEditor: ["AcalogProgram", "Page", "Post"],
-    NodeWithFeaturedImage: ["AcalogProgram", "Page", "Post"],
-    HierarchicalTermNode: ["Category"],
-    Commenter: ["CommentAuthor", "User"],
-    ContentRevisionUnion: ["Page", "Post"],
+    TermNode: ['AToZCategory', 'Category', 'PostFormat', 'Tag'],
+    AcfFieldGroup: ['AToZ_Atozfields', 'AcalogProgram_Acalogdepartmentfields'],
+    NodeWithContentEditor: ['AcalogProgram', 'Page', 'Post'],
+    NodeWithFeaturedImage: ['AcalogProgram', 'Page', 'Post'],
+    HierarchicalTermNode: ['Category'],
+    Commenter: ['CommentAuthor', 'User'],
+    ContentRevisionUnion: ['Page', 'Post'],
     ContentTemplate: [
-      "DefaultTemplate",
-      "Template_Blank",
-      "Template_WithSidebar",
+      'DefaultTemplate',
+      'Template_Blank',
+      'Template_WithSidebar',
     ],
-    EnqueuedAsset: ["EnqueuedScript", "EnqueuedStylesheet"],
-    HierarchicalContentNode: ["MediaItem", "Page"],
-    NodeWithAuthor: ["MediaItem", "Page", "Post"],
-    NodeWithComments: ["MediaItem", "Page", "Post"],
+    EnqueuedAsset: ['EnqueuedScript', 'EnqueuedStylesheet'],
+    HierarchicalContentNode: ['MediaItem', 'Page'],
+    NodeWithAuthor: ['MediaItem', 'Page', 'Post'],
+    NodeWithComments: ['MediaItem', 'Page', 'Post'],
     MenuItemObjectUnion: [
-      "AToZ",
-      "AToZCategory",
-      "AcalogProgram",
-      "Category",
-      "Page",
-      "Post",
-      "Tag",
+      'AToZ',
+      'AToZCategory',
+      'AcalogProgram',
+      'Category',
+      'Page',
+      'Post',
+      'Tag',
     ],
-    NodeWithPageAttributes: ["Page"],
-    NodeWithRevisions: ["Page", "Post"],
-    NodeWithExcerpt: ["Post"],
-    NodeWithTrackbacks: ["Post"],
+    NodeWithPageAttributes: ['Page'],
+    NodeWithRevisions: ['Page', 'Post'],
+    NodeWithExcerpt: ['Post'],
+    NodeWithTrackbacks: ['Post'],
   },
 } as const;
 
@@ -8259,7 +8313,7 @@ export const generatedSchema = {
  * The AToZ type
  */
 export interface AToZ {
-  __typename?: "AToZ";
+  __typename?: 'AToZ';
   /**
    * Connection between the AToZ type and the AToZCategory type
    */
@@ -8267,19 +8321,19 @@ export interface AToZ {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -8293,7 +8347,7 @@ export interface AToZ {
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  aToZId: ScalarsEnums["Int"];
+  aToZId: ScalarsEnums['Int'];
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -8305,23 +8359,23 @@ export interface AToZ {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -8329,7 +8383,7 @@ export interface AToZ {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -8337,19 +8391,19 @@ export interface AToZ {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -8358,44 +8412,44 @@ export interface AToZ {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the a_to_z object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -8403,15 +8457,15 @@ export interface AToZ {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the AToZ type and the AToZ type
    */
@@ -8419,24 +8473,24 @@ export interface AToZ {
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * Connection between the AToZ type and the TermNode type
    */
@@ -8444,19 +8498,19 @@ export interface AToZ {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -8470,18 +8524,18 @@ export interface AToZ {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The AToZCategory type
  */
 export interface AToZCategory {
-  __typename?: "AToZCategory";
+  __typename?: 'AToZCategory';
   /**
    * Connection between the AToZCategory type and the AToZ type
    */
@@ -8489,19 +8543,19 @@ export interface AToZCategory {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -8511,7 +8565,7 @@ export interface AToZCategory {
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
-  aToZCategoryId?: Maybe<ScalarsEnums["Int"]>;
+  aToZCategoryId?: Maybe<ScalarsEnums['Int']>;
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -8523,19 +8577,19 @@ export interface AToZCategory {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -8544,15 +8598,15 @@ export interface AToZCategory {
   /**
    * The number of objects connected to the object
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The description of the object
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the TermNode type and the EnqueuedScript type
    */
@@ -8560,19 +8614,19 @@ export interface AToZCategory {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the TermNode type and the EnqueuedStylesheet type
@@ -8581,48 +8635,48 @@ export interface AToZCategory {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The link to the term
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The human friendly name of the object.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * An alphanumeric identifier for the object unique to its type.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the AToZCategory type and the Taxonomy type
    */
@@ -8630,27 +8684,27 @@ export interface AToZCategory {
   /**
    * The name of the taxonomy that the object is associated with
    */
-  taxonomyName?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The ID of the term group that this term object belongs to
    */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The taxonomy ID that the object is associated with
    */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the AToZCategory type and the AToZ type
  */
 export interface AToZCategoryToAToZConnection {
-  __typename?: "AToZCategoryToAToZConnection";
+  __typename?: 'AToZCategoryToAToZConnection';
   /**
    * Edges for the AToZCategoryToAToZConnection connection
    */
@@ -8669,11 +8723,11 @@ export interface AToZCategoryToAToZConnection {
  * An edge in a connection
  */
 export interface AToZCategoryToAToZConnectionEdge {
-  __typename?: "AToZCategoryToAToZConnectionEdge";
+  __typename?: 'AToZCategoryToAToZConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -8684,7 +8738,7 @@ export interface AToZCategoryToAToZConnectionEdge {
  * Connection between the AToZCategory type and the ContentNode type
  */
 export interface AToZCategoryToContentNodeConnection {
-  __typename?: "AToZCategoryToContentNodeConnection";
+  __typename?: 'AToZCategoryToContentNodeConnection';
   /**
    * Edges for the AToZCategoryToContentNodeConnection connection
    */
@@ -8703,11 +8757,11 @@ export interface AToZCategoryToContentNodeConnection {
  * An edge in a connection
  */
 export interface AToZCategoryToContentNodeConnectionEdge {
-  __typename?: "AToZCategoryToContentNodeConnectionEdge";
+  __typename?: 'AToZCategoryToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -8718,7 +8772,7 @@ export interface AToZCategoryToContentNodeConnectionEdge {
  * Connection between the AToZCategory type and the Taxonomy type
  */
 export interface AToZCategoryToTaxonomyConnectionEdge {
-  __typename?: "AToZCategoryToTaxonomyConnectionEdge";
+  __typename?: 'AToZCategoryToTaxonomyConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -8729,7 +8783,7 @@ export interface AToZCategoryToTaxonomyConnectionEdge {
  * Connection between the AToZ type and the AToZCategory type
  */
 export interface AToZToAToZCategoryConnection {
-  __typename?: "AToZToAToZCategoryConnection";
+  __typename?: 'AToZToAToZCategoryConnection';
   /**
    * Edges for the AToZToAToZCategoryConnection connection
    */
@@ -8748,11 +8802,11 @@ export interface AToZToAToZCategoryConnection {
  * An edge in a connection
  */
 export interface AToZToAToZCategoryConnectionEdge {
-  __typename?: "AToZToAToZCategoryConnectionEdge";
+  __typename?: 'AToZToAToZCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -8763,7 +8817,7 @@ export interface AToZToAToZCategoryConnectionEdge {
  * Connection between the AToZ type and the AToZ type
  */
 export interface AToZToPreviewConnectionEdge {
-  __typename?: "AToZToPreviewConnectionEdge";
+  __typename?: 'AToZToPreviewConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -8774,7 +8828,7 @@ export interface AToZToPreviewConnectionEdge {
  * Connection between the AToZ type and the TermNode type
  */
 export interface AToZToTermNodeConnection {
-  __typename?: "AToZToTermNodeConnection";
+  __typename?: 'AToZToTermNodeConnection';
   /**
    * Edges for the AToZToTermNodeConnection connection
    */
@@ -8793,11 +8847,11 @@ export interface AToZToTermNodeConnection {
  * An edge in a connection
  */
 export interface AToZToTermNodeConnectionEdge {
-  __typename?: "AToZToTermNodeConnectionEdge";
+  __typename?: 'AToZToTermNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -8808,19 +8862,19 @@ export interface AToZToTermNodeConnectionEdge {
  * Field Group
  */
 export interface AToZ_Atozfields {
-  __typename?: "AToZ_Atozfields";
+  __typename?: 'AToZ_Atozfields';
   /**
    * The name of the ACF Field Group
    */
-  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
-  url?: Maybe<ScalarsEnums["String"]>;
+  fieldGroupName?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The AcalogProgram type
  */
 export interface AcalogProgram {
-  __typename?: "AcalogProgram";
+  __typename?: 'AcalogProgram';
   /**
    * Added to the GraphQL Schema because the ACF Field Group &quot;Acalog Department Fields&quot; was set to Show in GraphQL.
    */
@@ -8829,7 +8883,7 @@ export interface AcalogProgram {
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  acalogProgramId: ScalarsEnums["Int"];
+  acalogProgramId: ScalarsEnums['Int'];
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -8842,7 +8896,7 @@ export interface AcalogProgram {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
@@ -8850,23 +8904,23 @@ export interface AcalogProgram {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -8874,7 +8928,7 @@ export interface AcalogProgram {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -8882,19 +8936,19 @@ export interface AcalogProgram {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -8903,19 +8957,19 @@ export interface AcalogProgram {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * Connection between the NodeWithFeaturedImage type and the MediaItem type
@@ -8924,35 +8978,35 @@ export interface AcalogProgram {
   /**
    * The database identifier for the featured image node assigned to the content node
    */
-  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  featuredImageDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Globally unique ID of the featured image assigned to the node
    */
-  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  featuredImageId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the acalog_program object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -8960,15 +9014,15 @@ export interface AcalogProgram {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the AcalogProgram type and the AcalogProgram type
    */
@@ -8976,24 +9030,24 @@ export interface AcalogProgram {
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to a node of content
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -9002,18 +9056,18 @@ export interface AcalogProgram {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the AcalogProgram type and the AcalogProgram type
  */
 export interface AcalogProgramToPreviewConnectionEdge {
-  __typename?: "AcalogProgramToPreviewConnectionEdge";
+  __typename?: 'AcalogProgramToPreviewConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9024,29 +9078,29 @@ export interface AcalogProgramToPreviewConnectionEdge {
  * Field Group
  */
 export interface AcalogProgram_Acalogdepartmentfields {
-  __typename?: "AcalogProgram_Acalogdepartmentfields";
-  catoid?: Maybe<ScalarsEnums["String"]>;
-  core?: Maybe<ScalarsEnums["String"]>;
-  courseDepartment?: Maybe<ScalarsEnums["String"]>;
-  degreeType?: Maybe<ScalarsEnums["String"]>;
+  __typename?: 'AcalogProgram_Acalogdepartmentfields';
+  catoid?: Maybe<ScalarsEnums['String']>;
+  core?: Maybe<ScalarsEnums['String']>;
+  courseDepartment?: Maybe<ScalarsEnums['String']>;
+  degreeType?: Maybe<ScalarsEnums['String']>;
   /**
    * The name of the ACF Field Group
    */
-  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
-  poid?: Maybe<ScalarsEnums["String"]>;
-  programContent?: Maybe<ScalarsEnums["String"]>;
-  programType?: Maybe<ScalarsEnums["String"]>;
+  fieldGroupName?: Maybe<ScalarsEnums['String']>;
+  poid?: Maybe<ScalarsEnums['String']>;
+  programContent?: Maybe<ScalarsEnums['String']>;
+  programType?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * A Field Group registered by ACF
  */
 export interface AcfFieldGroup {
-  __typename?: "AToZ_Atozfields" | "AcalogProgram_Acalogdepartmentfields";
+  __typename?: 'AToZ_Atozfields' | 'AcalogProgram_Acalogdepartmentfields';
   /**
    * The name of the ACF Field Group
    */
-  fieldGroupName?: Maybe<ScalarsEnums["String"]>;
+  fieldGroupName?: Maybe<ScalarsEnums['String']>;
   $on: $AcfFieldGroup;
 }
 
@@ -9054,69 +9108,69 @@ export interface AcfFieldGroup {
  * The atlasContentModelerSettings setting type
  */
 export interface AtlasContentModelerSettingsSettings {
-  __typename?: "AtlasContentModelerSettingsSettings";
+  __typename?: 'AtlasContentModelerSettingsSettings';
   /**
    * The string Settings Group
    */
-  atlasContentModelerUsageTracking?: Maybe<ScalarsEnums["String"]>;
+  atlasContentModelerUsageTracking?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from.
  */
 export interface Avatar {
-  __typename?: "Avatar";
+  __typename?: 'Avatar';
   /**
    * URL for the default image or a default type. Accepts &#039;404&#039; (return a 404 instead of a default image), &#039;retro&#039; (8bit), &#039;monsterid&#039; (monster), &#039;wavatar&#039; (cartoon face), &#039;indenticon&#039; (the &#039;quilt&#039;), &#039;mystery&#039;, &#039;mm&#039;, or &#039;mysteryman&#039; (The Oyster Man), &#039;blank&#039; (transparent GIF), or &#039;gravatar_default&#039; (the Gravatar logo).
    */
-  default?: Maybe<ScalarsEnums["String"]>;
+  default?: Maybe<ScalarsEnums['String']>;
   /**
    * HTML attributes to insert in the IMG element. Is not sanitized.
    */
-  extraAttr?: Maybe<ScalarsEnums["String"]>;
+  extraAttr?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether to always show the default image, never the Gravatar.
    */
-  forceDefault?: Maybe<ScalarsEnums["Boolean"]>;
+  forceDefault?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the avatar was successfully found.
    */
-  foundAvatar?: Maybe<ScalarsEnums["Boolean"]>;
+  foundAvatar?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Height of the avatar image.
    */
-  height?: Maybe<ScalarsEnums["Int"]>;
+  height?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * What rating to display avatars up to. Accepts &#039;G&#039;, &#039;PG&#039;, &#039;R&#039;, &#039;X&#039;, and are judged in that order.
    */
-  rating?: Maybe<ScalarsEnums["String"]>;
+  rating?: Maybe<ScalarsEnums['String']>;
   /**
    * Type of url scheme to use. Typically HTTP vs. HTTPS.
    */
-  scheme?: Maybe<ScalarsEnums["String"]>;
+  scheme?: Maybe<ScalarsEnums['String']>;
   /**
    * The size of the avatar in pixels. A value of 96 will match a 96px x 96px gravatar image.
    */
-  size?: Maybe<ScalarsEnums["Int"]>;
+  size?: Maybe<ScalarsEnums['Int']>;
   /**
    * URL for the gravatar image source.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
   /**
    * Width of the avatar image.
    */
-  width?: Maybe<ScalarsEnums["Int"]>;
+  width?: Maybe<ScalarsEnums['Int']>;
 }
 
 /**
  * The category type
  */
 export interface Category {
-  __typename?: "Category";
+  __typename?: 'Category';
   /**
    * The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
    */
@@ -9124,25 +9178,25 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<CategoryToAncestorsCategoryConnection>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
-  categoryId?: Maybe<ScalarsEnums["Int"]>;
+  categoryId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the category type and the category type
    */
@@ -9150,19 +9204,19 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -9179,19 +9233,19 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -9200,15 +9254,15 @@ export interface Category {
   /**
    * The number of objects connected to the object
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The description of the object
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the TermNode type and the EnqueuedScript type
    */
@@ -9216,19 +9270,19 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the TermNode type and the EnqueuedStylesheet type
@@ -9237,44 +9291,44 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The link to the term
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The human friendly name of the object.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the category type and the category type
    */
@@ -9282,11 +9336,11 @@ export interface Category {
   /**
    * Database id of the parent node
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Connection between the category type and the post type
    */
@@ -9294,19 +9348,19 @@ export interface Category {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -9315,7 +9369,7 @@ export interface Category {
   /**
    * An alphanumeric identifier for the object unique to its type.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the category type and the Taxonomy type
    */
@@ -9323,27 +9377,27 @@ export interface Category {
   /**
    * The name of the taxonomy that the object is associated with
    */
-  taxonomyName?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The ID of the term group that this term object belongs to
    */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The taxonomy ID that the object is associated with
    */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the category type and the category type
  */
 export interface CategoryToAncestorsCategoryConnection {
-  __typename?: "CategoryToAncestorsCategoryConnection";
+  __typename?: 'CategoryToAncestorsCategoryConnection';
   /**
    * Edges for the CategoryToAncestorsCategoryConnection connection
    */
@@ -9362,11 +9416,11 @@ export interface CategoryToAncestorsCategoryConnection {
  * An edge in a connection
  */
 export interface CategoryToAncestorsCategoryConnectionEdge {
-  __typename?: "CategoryToAncestorsCategoryConnectionEdge";
+  __typename?: 'CategoryToAncestorsCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -9377,7 +9431,7 @@ export interface CategoryToAncestorsCategoryConnectionEdge {
  * Connection between the category type and the category type
  */
 export interface CategoryToCategoryConnection {
-  __typename?: "CategoryToCategoryConnection";
+  __typename?: 'CategoryToCategoryConnection';
   /**
    * Edges for the CategoryToCategoryConnection connection
    */
@@ -9396,11 +9450,11 @@ export interface CategoryToCategoryConnection {
  * An edge in a connection
  */
 export interface CategoryToCategoryConnectionEdge {
-  __typename?: "CategoryToCategoryConnectionEdge";
+  __typename?: 'CategoryToCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -9411,7 +9465,7 @@ export interface CategoryToCategoryConnectionEdge {
  * Connection between the category type and the ContentNode type
  */
 export interface CategoryToContentNodeConnection {
-  __typename?: "CategoryToContentNodeConnection";
+  __typename?: 'CategoryToContentNodeConnection';
   /**
    * Edges for the CategoryToContentNodeConnection connection
    */
@@ -9430,11 +9484,11 @@ export interface CategoryToContentNodeConnection {
  * An edge in a connection
  */
 export interface CategoryToContentNodeConnectionEdge {
-  __typename?: "CategoryToContentNodeConnectionEdge";
+  __typename?: 'CategoryToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -9445,7 +9499,7 @@ export interface CategoryToContentNodeConnectionEdge {
  * Connection between the category type and the category type
  */
 export interface CategoryToParentCategoryConnectionEdge {
-  __typename?: "CategoryToParentCategoryConnectionEdge";
+  __typename?: 'CategoryToParentCategoryConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9456,7 +9510,7 @@ export interface CategoryToParentCategoryConnectionEdge {
  * Connection between the category type and the post type
  */
 export interface CategoryToPostConnection {
-  __typename?: "CategoryToPostConnection";
+  __typename?: 'CategoryToPostConnection';
   /**
    * Edges for the CategoryToPostConnection connection
    */
@@ -9475,11 +9529,11 @@ export interface CategoryToPostConnection {
  * An edge in a connection
  */
 export interface CategoryToPostConnectionEdge {
-  __typename?: "CategoryToPostConnectionEdge";
+  __typename?: 'CategoryToPostConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -9490,7 +9544,7 @@ export interface CategoryToPostConnectionEdge {
  * Connection between the category type and the Taxonomy type
  */
 export interface CategoryToTaxonomyConnectionEdge {
-  __typename?: "CategoryToTaxonomyConnectionEdge";
+  __typename?: 'CategoryToTaxonomyConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9501,15 +9555,15 @@ export interface CategoryToTaxonomyConnectionEdge {
  * A Comment object
  */
 export interface Comment {
-  __typename?: "Comment";
+  __typename?: 'Comment';
   /**
    * User agent used to post the comment. This field is equivalent to WP_Comment-&gt;comment_agent and the value matching the &quot;comment_agent&quot; column in SQL.
    */
-  agent?: Maybe<ScalarsEnums["String"]>;
+  agent?: Maybe<ScalarsEnums['String']>;
   /**
    * The approval status of the comment. This field is equivalent to WP_Comment-&gt;comment_approved and the value matching the &quot;comment_approved&quot; column in SQL.
    */
-  approved?: Maybe<ScalarsEnums["Boolean"]>;
+  approved?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The author of the comment
    */
@@ -9517,12 +9571,12 @@ export interface Comment {
   /**
    * IP address for the author. This field is equivalent to WP_Comment-&gt;comment_author_IP and the value matching the &quot;comment_author_IP&quot; column in SQL.
    */
-  authorIp?: Maybe<ScalarsEnums["String"]>;
+  authorIp?: Maybe<ScalarsEnums['String']>;
   /**
    * ID for the comment, unique among comments.
    * @deprecated Deprecated in favor of databaseId
    */
-  commentId?: Maybe<ScalarsEnums["Int"]>;
+  commentId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the Comment type and the ContentNode type
    */
@@ -9535,31 +9589,31 @@ export interface Comment {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Date the comment was posted in local time. This field is equivalent to WP_Comment-&gt;date and the value matching the &quot;date&quot; column in SQL.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * Date the comment was posted in GMT. This field is equivalent to WP_Comment-&gt;date_gmt and the value matching the &quot;date_gmt&quot; column in SQL.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier for the comment object
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Karma value for the comment. This field is equivalent to WP_Comment-&gt;comment_karma and the value matching the &quot;comment_karma&quot; column in SQL.
    */
-  karma?: Maybe<ScalarsEnums["Int"]>;
+  karma?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the Comment type and the Comment type
    */
@@ -9572,11 +9626,11 @@ export interface Comment {
   /**
    * The database id of the parent comment node or null if it is the root comment
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent comment node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Connection between the Comment type and the Comment type
    */
@@ -9584,19 +9638,19 @@ export interface Comment {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -9605,45 +9659,63 @@ export interface Comment {
   /**
    * Type of comment. This field is equivalent to WP_Comment-&gt;comment_type and the value matching the &quot;comment_type&quot; column in SQL.
    */
-  type?: Maybe<ScalarsEnums["String"]>;
+  type?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * A Comment Author object
  */
 export interface CommentAuthor {
-  __typename?: "CommentAuthor";
+  __typename?: 'CommentAuthor';
+  /**
+   * Avatar object for user. The avatar object can be retrieved in different sizes by specifying the size argument.
+   */
+  avatar: (args?: {
+    /**
+     * Whether to always show the default image, never the Gravatar. Default false
+     */
+    forceDefault?: Maybe<Scalars['Boolean']>;
+    /**
+     * The rating level of the avatar.
+     */
+    rating?: Maybe<AvatarRatingEnum>;
+    /**
+     * The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.
+     * @defaultValue `96`
+     */
+    size?: Maybe<Scalars['Int']>;
+  }) => Maybe<Avatar>;
   /**
    * Identifies the primary key from the database.
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The email for the comment author
    */
-  email?: Maybe<ScalarsEnums["String"]>;
+  email?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier for the comment author object
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The name for the comment author.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The url the comment author.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the Comment type and the Comment type
  */
 export interface CommentToCommentConnection {
-  __typename?: "CommentToCommentConnection";
+  __typename?: 'CommentToCommentConnection';
   /**
    * Edges for the CommentToCommentConnection connection
    */
@@ -9662,11 +9734,11 @@ export interface CommentToCommentConnection {
  * An edge in a connection
  */
 export interface CommentToCommentConnectionEdge {
-  __typename?: "CommentToCommentConnectionEdge";
+  __typename?: 'CommentToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -9677,7 +9749,7 @@ export interface CommentToCommentConnectionEdge {
  * Connection between the Comment type and the Commenter type
  */
 export interface CommentToCommenterConnectionEdge {
-  __typename?: "CommentToCommenterConnectionEdge";
+  __typename?: 'CommentToCommenterConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9688,7 +9760,7 @@ export interface CommentToCommenterConnectionEdge {
  * Connection between the Comment type and the ContentNode type
  */
 export interface CommentToContentNodeConnectionEdge {
-  __typename?: "CommentToContentNodeConnectionEdge";
+  __typename?: 'CommentToContentNodeConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9699,7 +9771,7 @@ export interface CommentToContentNodeConnectionEdge {
  * Connection between the Comment type and the Comment type
  */
 export interface CommentToParentCommentConnectionEdge {
-  __typename?: "CommentToParentCommentConnectionEdge";
+  __typename?: 'CommentToParentCommentConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -9710,31 +9782,35 @@ export interface CommentToParentCommentConnectionEdge {
  * The author of a comment
  */
 export interface Commenter {
-  __typename?: "CommentAuthor" | "User";
+  __typename?: 'CommentAuthor' | 'User';
+  /**
+   * Avatar object for user. The avatar object can be retrieved in different sizes by specifying the size argument.
+   */
+  avatar?: Maybe<Avatar>;
   /**
    * Identifies the primary key from the database.
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The email address of the author of a comment.
    */
-  email?: Maybe<ScalarsEnums["String"]>;
+  email?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier for the comment author.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the author information is considered restricted. (not fully public)
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The name of the author of a comment.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The url of the author of a comment.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
   $on: $Commenter;
 }
 
@@ -9742,124 +9818,124 @@ export interface Commenter {
  * GraphQL representation of WordPress Conditional Tags.
  */
 export interface ConditionalTags {
-  __typename?: "ConditionalTags";
+  __typename?: 'ConditionalTags';
   /**
    * Determines whether the query is for an existing archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isArchive?: Maybe<ScalarsEnums["Boolean"]>;
+  isArchive?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing attachment page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isAttachment?: Maybe<ScalarsEnums["Boolean"]>;
+  isAttachment?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing author archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isAuthor?: Maybe<ScalarsEnums["Boolean"]>;
+  isAuthor?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing category archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isCategory?: Maybe<ScalarsEnums["Boolean"]>;
+  isCategory?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing date archive.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isDate?: Maybe<ScalarsEnums["Boolean"]>;
+  isDate?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing day archive.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isDay?: Maybe<ScalarsEnums["Boolean"]>;
+  isDay?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for the front page of the site.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isFrontPage?: Maybe<ScalarsEnums["Boolean"]>;
+  isFrontPage?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for the blog homepage.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isHome?: Maybe<ScalarsEnums["Boolean"]>;
+  isHome?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing month archive.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isMonth?: Maybe<ScalarsEnums["Boolean"]>;
+  isMonth?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether this site has more than one author.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isMultiAuthor?: Maybe<ScalarsEnums["Boolean"]>;
+  isMultiAuthor?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing single page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isPage?: Maybe<ScalarsEnums["Boolean"]>;
+  isPage?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether currently in a page template.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isPageTemplate?: Maybe<ScalarsEnums["Boolean"]>;
+  isPageTemplate?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing post type archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isPostTypeArchive?: Maybe<ScalarsEnums["Boolean"]>;
+  isPostTypeArchive?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for a post or page preview.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for the Privacy Policy page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isPrivacyPolicy?: Maybe<ScalarsEnums["Boolean"]>;
+  isPrivacyPolicy?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for a search.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isSearch?: Maybe<ScalarsEnums["Boolean"]>;
+  isSearch?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing single post.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isSingle?: Maybe<ScalarsEnums["Boolean"]>;
+  isSingle?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isSingular?: Maybe<ScalarsEnums["Boolean"]>;
+  isSingular?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether a post is sticky.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isSticky?: Maybe<ScalarsEnums["Boolean"]>;
+  isSticky?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing tag archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isTag?: Maybe<ScalarsEnums["Boolean"]>;
+  isTag?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing custom taxonomy archive page.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isTax?: Maybe<ScalarsEnums["Boolean"]>;
+  isTax?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Determines whether the query is for an existing year archive.
    * @deprecated Deprecated in favor of using Next.js pages
    */
-  isYear?: Maybe<ScalarsEnums["Boolean"]>;
+  isYear?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 /**
  * Nodes used to manage content
  */
 export interface ContentNode {
-  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
+  __typename?: 'AToZ' | 'AcalogProgram' | 'MediaItem' | 'Page' | 'Post';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -9871,23 +9947,23 @@ export interface ContentNode {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The ID of the node in the database.
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -9895,7 +9971,7 @@ export interface ContentNode {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -9903,19 +9979,19 @@ export interface ContentNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -9924,44 +10000,44 @@ export interface ContentNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -9969,40 +10045,40 @@ export interface ContentNode {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to a node of content
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   $on: $ContentNode;
 }
 
@@ -10010,7 +10086,7 @@ export interface ContentNode {
  * Connection between the ContentNode type and the ContentType type
  */
 export interface ContentNodeToContentTypeConnectionEdge {
-  __typename?: "ContentNodeToContentTypeConnectionEdge";
+  __typename?: 'ContentNodeToContentTypeConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -10021,7 +10097,7 @@ export interface ContentNodeToContentTypeConnectionEdge {
  * Connection between the ContentNode type and the User type
  */
 export interface ContentNodeToEditLastConnectionEdge {
-  __typename?: "ContentNodeToEditLastConnectionEdge";
+  __typename?: 'ContentNodeToEditLastConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -10032,11 +10108,11 @@ export interface ContentNodeToEditLastConnectionEdge {
  * Connection between the ContentNode type and the User type
  */
 export interface ContentNodeToEditLockConnectionEdge {
-  __typename?: "ContentNodeToEditLockConnectionEdge";
+  __typename?: 'ContentNodeToEditLockConnectionEdge';
   /**
    * The timestamp for when the node was last edited
    */
-  lockTimestamp?: Maybe<ScalarsEnums["String"]>;
+  lockTimestamp?: Maybe<ScalarsEnums['String']>;
   /**
    * The node of the connection, without the edges
    */
@@ -10047,7 +10123,7 @@ export interface ContentNodeToEditLockConnectionEdge {
  * Connection between the ContentNode type and the EnqueuedScript type
  */
 export interface ContentNodeToEnqueuedScriptConnection {
-  __typename?: "ContentNodeToEnqueuedScriptConnection";
+  __typename?: 'ContentNodeToEnqueuedScriptConnection';
   /**
    * Edges for the ContentNodeToEnqueuedScriptConnection connection
    */
@@ -10066,11 +10142,11 @@ export interface ContentNodeToEnqueuedScriptConnection {
  * An edge in a connection
  */
 export interface ContentNodeToEnqueuedScriptConnectionEdge {
-  __typename?: "ContentNodeToEnqueuedScriptConnectionEdge";
+  __typename?: 'ContentNodeToEnqueuedScriptConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -10081,7 +10157,7 @@ export interface ContentNodeToEnqueuedScriptConnectionEdge {
  * Connection between the ContentNode type and the EnqueuedStylesheet type
  */
 export interface ContentNodeToEnqueuedStylesheetConnection {
-  __typename?: "ContentNodeToEnqueuedStylesheetConnection";
+  __typename?: 'ContentNodeToEnqueuedStylesheetConnection';
   /**
    * Edges for the ContentNodeToEnqueuedStylesheetConnection connection
    */
@@ -10100,11 +10176,11 @@ export interface ContentNodeToEnqueuedStylesheetConnection {
  * An edge in a connection
  */
 export interface ContentNodeToEnqueuedStylesheetConnectionEdge {
-  __typename?: "ContentNodeToEnqueuedStylesheetConnectionEdge";
+  __typename?: 'ContentNodeToEnqueuedStylesheetConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -10115,7 +10191,7 @@ export interface ContentNodeToEnqueuedStylesheetConnectionEdge {
  * A union of Content Node Types that support revisions
  */
 export interface ContentRevisionUnion {
-  __typename?: "Page" | "Post";
+  __typename?: 'Page' | 'Post';
   $on: $ContentRevisionUnion;
 }
 
@@ -10123,11 +10199,11 @@ export interface ContentRevisionUnion {
  * The template assigned to a node of content
  */
 export interface ContentTemplate {
-  __typename?: "DefaultTemplate" | "Template_Blank" | "Template_WithSidebar";
+  __typename?: 'DefaultTemplate' | 'Template_Blank' | 'Template_WithSidebar';
   /**
    * The name of the template
    */
-  templateName?: Maybe<ScalarsEnums["String"]>;
+  templateName?: Maybe<ScalarsEnums['String']>;
   $on: $ContentTemplate;
 }
 
@@ -10135,11 +10211,11 @@ export interface ContentTemplate {
  * An Post Type object
  */
 export interface ContentType {
-  __typename?: "ContentType";
+  __typename?: 'ContentType';
   /**
    * Whether this content type should can be exported.
    */
-  canExport?: Maybe<ScalarsEnums["Boolean"]>;
+  canExport?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -10151,19 +10227,19 @@ export interface ContentType {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentTypeToTaxonomyConnection>;
   /**
    * Connection between the ContentType type and the ContentNode type
@@ -10172,19 +10248,19 @@ export interface ContentType {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -10193,59 +10269,59 @@ export interface ContentType {
   /**
    * Whether content of this type should be deleted when the author of it is deleted from the system.
    */
-  deleteWithUser?: Maybe<ScalarsEnums["Boolean"]>;
+  deleteWithUser?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Description of the content type.
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether to exclude nodes of this content type from front end search results.
    */
-  excludeFromSearch?: Maybe<ScalarsEnums["Boolean"]>;
+  excludeFromSearch?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The plural name of the content type within the GraphQL Schema.
    */
-  graphqlPluralName?: Maybe<ScalarsEnums["String"]>;
+  graphqlPluralName?: Maybe<ScalarsEnums['String']>;
   /**
    * The singular name of the content type within the GraphQL Schema.
    */
-  graphqlSingleName?: Maybe<ScalarsEnums["String"]>;
+  graphqlSingleName?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether this content type should have archives. Content archives are generated by type and by date.
    */
-  hasArchive?: Maybe<ScalarsEnums["Boolean"]>;
+  hasArchive?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the content type is hierarchical, for example pages.
    */
-  hierarchical?: Maybe<ScalarsEnums["Boolean"]>;
+  hierarchical?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The globally unique identifier of the post-type object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether this page is set to the static front page.
    */
-  isFrontPage: ScalarsEnums["Boolean"];
+  isFrontPage: ScalarsEnums['Boolean'];
   /**
    * Whether this page is set to the blog posts page.
    */
-  isPostsPage: ScalarsEnums["Boolean"];
+  isPostsPage: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * Display name of the content type.
    */
-  label?: Maybe<ScalarsEnums["String"]>;
+  label?: Maybe<ScalarsEnums['String']>;
   /**
    * Details about the content type labels.
    */
@@ -10253,67 +10329,67 @@ export interface ContentType {
   /**
    * The name of the icon file to display as a menu icon.
    */
-  menuIcon?: Maybe<ScalarsEnums["String"]>;
+  menuIcon?: Maybe<ScalarsEnums['String']>;
   /**
    * The position of this post type in the menu. Only applies if show_in_menu is true.
    */
-  menuPosition?: Maybe<ScalarsEnums["Int"]>;
+  menuPosition?: Maybe<ScalarsEnums['Int']>;
   /**
    * The internal name of the post type. This should not be used for display purposes.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether a content type is intended for use publicly either via the admin interface or by front-end users. While the default settings of exclude_from_search, publicly_queryable, show_ui, and show_in_nav_menus are inherited from public, each does not rely on this relationship and controls a very specific intention.
    */
-  public?: Maybe<ScalarsEnums["Boolean"]>;
+  public?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether queries can be performed on the front end for the content type as part of parse_request().
    */
-  publiclyQueryable?: Maybe<ScalarsEnums["Boolean"]>;
+  publiclyQueryable?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Name of content type to display in REST API &quot;wp/v2&quot; namespace.
    */
-  restBase?: Maybe<ScalarsEnums["String"]>;
+  restBase?: Maybe<ScalarsEnums['String']>;
   /**
    * The REST Controller class assigned to handling this content type.
    */
-  restControllerClass?: Maybe<ScalarsEnums["String"]>;
+  restControllerClass?: Maybe<ScalarsEnums['String']>;
   /**
    * Makes this content type available via the admin bar.
    */
-  showInAdminBar?: Maybe<ScalarsEnums["Boolean"]>;
+  showInAdminBar?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to add the content type to the GraphQL Schema.
    */
-  showInGraphql?: Maybe<ScalarsEnums["Boolean"]>;
+  showInGraphql?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Where to show the content type in the admin menu. To work, $show_ui must be true. If true, the post type is shown in its own top level menu. If false, no menu is shown. If a string of an existing top level menu (eg. &quot;tools.php&quot; or &quot;edit.php?post_type=page&quot;), the post type will be placed as a sub-menu of that.
    */
-  showInMenu?: Maybe<ScalarsEnums["Boolean"]>;
+  showInMenu?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Makes this content type available for selection in navigation menus.
    */
-  showInNavMenus?: Maybe<ScalarsEnums["Boolean"]>;
+  showInNavMenus?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the content type is associated with a route under the the REST API &quot;wp/v2&quot; namespace.
    */
-  showInRest?: Maybe<ScalarsEnums["Boolean"]>;
+  showInRest?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to generate and allow a UI for managing this content type in the admin.
    */
-  showUi?: Maybe<ScalarsEnums["Boolean"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  showUi?: Maybe<ScalarsEnums['Boolean']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the ContentType type and the ContentNode type
  */
 export interface ContentTypeToContentNodeConnection {
-  __typename?: "ContentTypeToContentNodeConnection";
+  __typename?: 'ContentTypeToContentNodeConnection';
   /**
    * Edges for the ContentTypeToContentNodeConnection connection
    */
@@ -10332,11 +10408,11 @@ export interface ContentTypeToContentNodeConnection {
  * An edge in a connection
  */
 export interface ContentTypeToContentNodeConnectionEdge {
-  __typename?: "ContentTypeToContentNodeConnectionEdge";
+  __typename?: 'ContentTypeToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -10347,7 +10423,7 @@ export interface ContentTypeToContentNodeConnectionEdge {
  * Connection between the ContentType type and the Taxonomy type
  */
 export interface ContentTypeToTaxonomyConnection {
-  __typename?: "ContentTypeToTaxonomyConnection";
+  __typename?: 'ContentTypeToTaxonomyConnection';
   /**
    * Edges for the ContentTypeToTaxonomyConnection connection
    */
@@ -10366,11 +10442,11 @@ export interface ContentTypeToTaxonomyConnection {
  * An edge in a connection
  */
 export interface ContentTypeToTaxonomyConnectionEdge {
-  __typename?: "ContentTypeToTaxonomyConnectionEdge";
+  __typename?: 'ContentTypeToTaxonomyConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -10381,7 +10457,7 @@ export interface ContentTypeToTaxonomyConnectionEdge {
  * The payload for the createAToZCategory mutation
  */
 export interface CreateAToZCategoryPayload {
-  __typename?: "CreateAToZCategoryPayload";
+  __typename?: 'CreateAToZCategoryPayload';
   /**
    * The created a_to_z_categories
    */
@@ -10389,14 +10465,14 @@ export interface CreateAToZCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the createAToZ mutation
  */
 export interface CreateAToZPayload {
-  __typename?: "CreateAToZPayload";
+  __typename?: 'CreateAToZPayload';
   /**
    * The Post object mutation type.
    */
@@ -10404,14 +10480,14 @@ export interface CreateAToZPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the createAcalogProgram mutation
  */
 export interface CreateAcalogProgramPayload {
-  __typename?: "CreateAcalogProgramPayload";
+  __typename?: 'CreateAcalogProgramPayload';
   /**
    * The Post object mutation type.
    */
@@ -10419,14 +10495,14 @@ export interface CreateAcalogProgramPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the createCategory mutation
  */
 export interface CreateCategoryPayload {
-  __typename?: "CreateCategoryPayload";
+  __typename?: 'CreateCategoryPayload';
   /**
    * The created category
    */
@@ -10434,18 +10510,18 @@ export interface CreateCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the createComment mutation
  */
 export interface CreateCommentPayload {
-  __typename?: "CreateCommentPayload";
+  __typename?: 'CreateCommentPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The comment that was created
    */
@@ -10453,18 +10529,18 @@ export interface CreateCommentPayload {
   /**
    * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
    */
-  success?: Maybe<ScalarsEnums["Boolean"]>;
+  success?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 /**
  * The payload for the createMediaItem mutation
  */
 export interface CreateMediaItemPayload {
-  __typename?: "CreateMediaItemPayload";
+  __typename?: 'CreateMediaItemPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The MediaItem object mutation type.
    */
@@ -10475,11 +10551,11 @@ export interface CreateMediaItemPayload {
  * The payload for the createPage mutation
  */
 export interface CreatePagePayload {
-  __typename?: "CreatePagePayload";
+  __typename?: 'CreatePagePayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The Post object mutation type.
    */
@@ -10490,11 +10566,11 @@ export interface CreatePagePayload {
  * The payload for the createPostFormat mutation
  */
 export interface CreatePostFormatPayload {
-  __typename?: "CreatePostFormatPayload";
+  __typename?: 'CreatePostFormatPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The created post_format
    */
@@ -10505,11 +10581,11 @@ export interface CreatePostFormatPayload {
  * The payload for the createPost mutation
  */
 export interface CreatePostPayload {
-  __typename?: "CreatePostPayload";
+  __typename?: 'CreatePostPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The Post object mutation type.
    */
@@ -10520,11 +10596,11 @@ export interface CreatePostPayload {
  * The payload for the createTag mutation
  */
 export interface CreateTagPayload {
-  __typename?: "CreateTagPayload";
+  __typename?: 'CreateTagPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The created post_tag
    */
@@ -10535,11 +10611,11 @@ export interface CreateTagPayload {
  * The payload for the createUser mutation
  */
 export interface CreateUserPayload {
-  __typename?: "CreateUserPayload";
+  __typename?: 'CreateUserPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The User object mutation type.
    */
@@ -10551,23 +10627,23 @@ export interface CreateUserPayload {
  */
 export interface DatabaseIdentifier {
   __typename?:
-    | "AToZ"
-    | "AToZCategory"
-    | "AcalogProgram"
-    | "Category"
-    | "Comment"
-    | "MediaItem"
-    | "Menu"
-    | "MenuItem"
-    | "Page"
-    | "Post"
-    | "PostFormat"
-    | "Tag"
-    | "User";
+    | 'AToZ'
+    | 'AToZCategory'
+    | 'AcalogProgram'
+    | 'Category'
+    | 'Comment'
+    | 'MediaItem'
+    | 'Menu'
+    | 'MenuItem'
+    | 'Page'
+    | 'Post'
+    | 'PostFormat'
+    | 'Tag'
+    | 'User';
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   $on: $DatabaseIdentifier;
 }
 
@@ -10575,18 +10651,18 @@ export interface DatabaseIdentifier {
  * The template assigned to the node
  */
 export interface DefaultTemplate {
-  __typename?: "DefaultTemplate";
+  __typename?: 'DefaultTemplate';
   /**
    * The name of the template
    */
-  templateName?: Maybe<ScalarsEnums["String"]>;
+  templateName?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the deleteAToZCategory mutation
  */
 export interface DeleteAToZCategoryPayload {
-  __typename?: "DeleteAToZCategoryPayload";
+  __typename?: 'DeleteAToZCategoryPayload';
   /**
    * The deteted term object
    */
@@ -10594,18 +10670,18 @@ export interface DeleteAToZCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * The payload for the deleteAToZ mutation
  */
 export interface DeleteAToZPayload {
-  __typename?: "DeleteAToZPayload";
+  __typename?: 'DeleteAToZPayload';
   /**
    * The object before it was deleted
    */
@@ -10613,18 +10689,18 @@ export interface DeleteAToZPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * The payload for the deleteAcalogProgram mutation
  */
 export interface DeleteAcalogProgramPayload {
-  __typename?: "DeleteAcalogProgramPayload";
+  __typename?: 'DeleteAcalogProgramPayload';
   /**
    * The object before it was deleted
    */
@@ -10632,18 +10708,18 @@ export interface DeleteAcalogProgramPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * The payload for the deleteCategory mutation
  */
 export interface DeleteCategoryPayload {
-  __typename?: "DeleteCategoryPayload";
+  __typename?: 'DeleteCategoryPayload';
   /**
    * The deteted term object
    */
@@ -10651,22 +10727,22 @@ export interface DeleteCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * The payload for the deleteComment mutation
  */
 export interface DeleteCommentPayload {
-  __typename?: "DeleteCommentPayload";
+  __typename?: 'DeleteCommentPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The deleted comment object
    */
@@ -10674,22 +10750,22 @@ export interface DeleteCommentPayload {
   /**
    * The deleted comment ID
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * The payload for the deleteMediaItem mutation
  */
 export interface DeleteMediaItemPayload {
-  __typename?: "DeleteMediaItemPayload";
+  __typename?: 'DeleteMediaItemPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted mediaItem
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The mediaItem before it was deleted
    */
@@ -10700,15 +10776,15 @@ export interface DeleteMediaItemPayload {
  * The payload for the deletePage mutation
  */
 export interface DeletePagePayload {
-  __typename?: "DeletePagePayload";
+  __typename?: 'DeletePagePayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The object before it was deleted
    */
@@ -10719,15 +10795,15 @@ export interface DeletePagePayload {
  * The payload for the deletePostFormat mutation
  */
 export interface DeletePostFormatPayload {
-  __typename?: "DeletePostFormatPayload";
+  __typename?: 'DeletePostFormatPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The deteted term object
    */
@@ -10738,15 +10814,15 @@ export interface DeletePostFormatPayload {
  * The payload for the deletePost mutation
  */
 export interface DeletePostPayload {
-  __typename?: "DeletePostPayload";
+  __typename?: 'DeletePostPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The object before it was deleted
    */
@@ -10757,15 +10833,15 @@ export interface DeletePostPayload {
  * The payload for the deleteTag mutation
  */
 export interface DeleteTagPayload {
-  __typename?: "DeleteTagPayload";
+  __typename?: 'DeleteTagPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the deleted object
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The deteted term object
    */
@@ -10776,15 +10852,15 @@ export interface DeleteTagPayload {
  * The payload for the deleteUser mutation
  */
 export interface DeleteUserPayload {
-  __typename?: "DeleteUserPayload";
+  __typename?: 'DeleteUserPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the user that you just deleted
    */
-  deletedId?: Maybe<ScalarsEnums["ID"]>;
+  deletedId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The deleted user object
    */
@@ -10795,26 +10871,26 @@ export interface DeleteUserPayload {
  * The discussion setting type
  */
 export interface DiscussionSettings {
-  __typename?: "DiscussionSettings";
+  __typename?: 'DiscussionSettings';
   /**
    * Allow people to submit comments on new posts.
    */
-  defaultCommentStatus?: Maybe<ScalarsEnums["String"]>;
+  defaultCommentStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
    */
-  defaultPingStatus?: Maybe<ScalarsEnums["String"]>;
+  defaultPingStatus?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Asset enqueued by the CMS
  */
 export interface EnqueuedAsset {
-  __typename?: "EnqueuedScript" | "EnqueuedStylesheet";
+  __typename?: 'EnqueuedScript' | 'EnqueuedStylesheet';
   /**
    * @todo
    */
-  args?: Maybe<ScalarsEnums["Boolean"]>;
+  args?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Dependencies needed to use this asset
    */
@@ -10822,23 +10898,23 @@ export interface EnqueuedAsset {
   /**
    * Extra information needed for the script
    */
-  extra?: Maybe<ScalarsEnums["String"]>;
+  extra?: Maybe<ScalarsEnums['String']>;
   /**
    * The handle of the enqueued asset
    */
-  handle?: Maybe<ScalarsEnums["String"]>;
+  handle?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the enqueued asset
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * The source of the asset
    */
-  src?: Maybe<ScalarsEnums["String"]>;
+  src?: Maybe<ScalarsEnums['String']>;
   /**
    * The version of the enqueued asset
    */
-  version?: Maybe<ScalarsEnums["String"]>;
+  version?: Maybe<ScalarsEnums['String']>;
   $on: $EnqueuedAsset;
 }
 
@@ -10846,11 +10922,11 @@ export interface EnqueuedAsset {
  * Script enqueued by the CMS
  */
 export interface EnqueuedScript {
-  __typename?: "EnqueuedScript";
+  __typename?: 'EnqueuedScript';
   /**
    * @todo
    */
-  args?: Maybe<ScalarsEnums["Boolean"]>;
+  args?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Dependencies needed to use this asset
    */
@@ -10858,34 +10934,34 @@ export interface EnqueuedScript {
   /**
    * Extra information needed for the script
    */
-  extra?: Maybe<ScalarsEnums["String"]>;
+  extra?: Maybe<ScalarsEnums['String']>;
   /**
    * The handle of the enqueued asset
    */
-  handle?: Maybe<ScalarsEnums["String"]>;
+  handle?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the enqueued asset
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * The source of the asset
    */
-  src?: Maybe<ScalarsEnums["String"]>;
+  src?: Maybe<ScalarsEnums['String']>;
   /**
    * The version of the enqueued asset
    */
-  version?: Maybe<ScalarsEnums["String"]>;
+  version?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Stylesheet enqueued by the CMS
  */
 export interface EnqueuedStylesheet {
-  __typename?: "EnqueuedStylesheet";
+  __typename?: 'EnqueuedStylesheet';
   /**
    * @todo
    */
-  args?: Maybe<ScalarsEnums["Boolean"]>;
+  args?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Dependencies needed to use this asset
    */
@@ -10893,88 +10969,88 @@ export interface EnqueuedStylesheet {
   /**
    * Extra information needed for the script
    */
-  extra?: Maybe<ScalarsEnums["String"]>;
+  extra?: Maybe<ScalarsEnums['String']>;
   /**
    * The handle of the enqueued asset
    */
-  handle?: Maybe<ScalarsEnums["String"]>;
+  handle?: Maybe<ScalarsEnums['String']>;
   /**
    * The ID of the enqueued asset
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * The source of the asset
    */
-  src?: Maybe<ScalarsEnums["String"]>;
+  src?: Maybe<ScalarsEnums['String']>;
   /**
    * The version of the enqueued asset
    */
-  version?: Maybe<ScalarsEnums["String"]>;
+  version?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The general setting type
  */
 export interface GeneralSettings {
-  __typename?: "GeneralSettings";
+  __typename?: 'GeneralSettings';
   /**
    * A date format for all date strings.
    */
-  dateFormat?: Maybe<ScalarsEnums["String"]>;
+  dateFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * Site tagline.
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * WordPress locale code.
    */
-  language?: Maybe<ScalarsEnums["String"]>;
+  language?: Maybe<ScalarsEnums['String']>;
   /**
    * A day number of the week that the week should start on.
    */
-  startOfWeek?: Maybe<ScalarsEnums["Int"]>;
+  startOfWeek?: Maybe<ScalarsEnums['Int']>;
   /**
    * A time format for all time strings.
    */
-  timeFormat?: Maybe<ScalarsEnums["String"]>;
+  timeFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * A city in the same timezone as you.
    */
-  timezone?: Maybe<ScalarsEnums["String"]>;
+  timezone?: Maybe<ScalarsEnums['String']>;
   /**
    * Site title.
    */
-  title?: Maybe<ScalarsEnums["String"]>;
+  title?: Maybe<ScalarsEnums['String']>;
   /**
    * Site URL.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the generateAuthorizationCode mutation
  */
 export interface GenerateAuthorizationCodePayload {
-  __typename?: "GenerateAuthorizationCodePayload";
+  __typename?: 'GenerateAuthorizationCodePayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * Authorization code used for requesting refresh/access tokens
    */
-  code?: Maybe<ScalarsEnums["String"]>;
+  code?: Maybe<ScalarsEnums['String']>;
   /**
    * Error encountered during user authentication, if any
    */
-  error?: Maybe<ScalarsEnums["String"]>;
+  error?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Content node with hierarchical (parent/child) relationships
  */
 export interface HierarchicalContentNode {
-  __typename?: "MediaItem" | "Page";
+  __typename?: 'MediaItem' | 'Page';
   /**
    * Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
    */
@@ -10982,19 +11058,19 @@ export interface HierarchicalContentNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11007,19 +11083,19 @@ export interface HierarchicalContentNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11032,11 +11108,11 @@ export interface HierarchicalContentNode {
   /**
    * Database id of the parent node
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   $on: $HierarchicalContentNode;
 }
 
@@ -11044,7 +11120,7 @@ export interface HierarchicalContentNode {
  * Connection between the HierarchicalContentNode type and the ContentNode type
  */
 export interface HierarchicalContentNodeToContentNodeAncestorsConnection {
-  __typename?: "HierarchicalContentNodeToContentNodeAncestorsConnection";
+  __typename?: 'HierarchicalContentNodeToContentNodeAncestorsConnection';
   /**
    * Edges for the HierarchicalContentNodeToContentNodeAncestorsConnection connection
    */
@@ -11065,11 +11141,11 @@ export interface HierarchicalContentNodeToContentNodeAncestorsConnection {
  * An edge in a connection
  */
 export interface HierarchicalContentNodeToContentNodeAncestorsConnectionEdge {
-  __typename?: "HierarchicalContentNodeToContentNodeAncestorsConnectionEdge";
+  __typename?: 'HierarchicalContentNodeToContentNodeAncestorsConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -11080,7 +11156,7 @@ export interface HierarchicalContentNodeToContentNodeAncestorsConnectionEdge {
  * Connection between the HierarchicalContentNode type and the ContentNode type
  */
 export interface HierarchicalContentNodeToContentNodeChildrenConnection {
-  __typename?: "HierarchicalContentNodeToContentNodeChildrenConnection";
+  __typename?: 'HierarchicalContentNodeToContentNodeChildrenConnection';
   /**
    * Edges for the HierarchicalContentNodeToContentNodeChildrenConnection connection
    */
@@ -11101,11 +11177,11 @@ export interface HierarchicalContentNodeToContentNodeChildrenConnection {
  * An edge in a connection
  */
 export interface HierarchicalContentNodeToContentNodeChildrenConnectionEdge {
-  __typename?: "HierarchicalContentNodeToContentNodeChildrenConnectionEdge";
+  __typename?: 'HierarchicalContentNodeToContentNodeChildrenConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -11116,7 +11192,7 @@ export interface HierarchicalContentNodeToContentNodeChildrenConnectionEdge {
  * Connection between the HierarchicalContentNode type and the ContentNode type
  */
 export interface HierarchicalContentNodeToParentContentNodeConnectionEdge {
-  __typename?: "HierarchicalContentNodeToParentContentNodeConnectionEdge";
+  __typename?: 'HierarchicalContentNodeToParentContentNodeConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -11127,15 +11203,15 @@ export interface HierarchicalContentNodeToParentContentNodeConnectionEdge {
  * Term node with hierarchical (parent/child) relationships
  */
 export interface HierarchicalTermNode {
-  __typename?: "Category";
+  __typename?: 'Category';
   /**
    * Database id of the parent node
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   $on: $HierarchicalTermNode;
 }
 
@@ -11143,15 +11219,15 @@ export interface HierarchicalTermNode {
  * File details for a Media Item
  */
 export interface MediaDetails {
-  __typename?: "MediaDetails";
+  __typename?: 'MediaDetails';
   /**
    * The filename of the mediaItem
    */
-  file?: Maybe<ScalarsEnums["String"]>;
+  file?: Maybe<ScalarsEnums['String']>;
   /**
    * The height of the mediaItem
    */
-  height?: Maybe<ScalarsEnums["Int"]>;
+  height?: Maybe<ScalarsEnums['Int']>;
   /**
    * Meta information associated with the mediaItem
    */
@@ -11163,18 +11239,18 @@ export interface MediaDetails {
   /**
    * The width of the mediaItem
    */
-  width?: Maybe<ScalarsEnums["Int"]>;
+  width?: Maybe<ScalarsEnums['Int']>;
 }
 
 /**
  * The mediaItem type
  */
 export interface MediaItem {
-  __typename?: "MediaItem";
+  __typename?: 'MediaItem';
   /**
    * Alternative text to display when resource is not displayed
    */
-  altText?: Maybe<ScalarsEnums["String"]>;
+  altText?: Maybe<ScalarsEnums['String']>;
   /**
    * Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
    */
@@ -11182,19 +11258,19 @@ export interface MediaItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11207,11 +11283,11 @@ export interface MediaItem {
   /**
    * The database identifier of the author of the node
    */
-  authorDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  authorDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the author of the node
    */
-  authorId?: Maybe<ScalarsEnums["ID"]>;
+  authorId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The caption for the resource
    */
@@ -11220,7 +11296,7 @@ export interface MediaItem {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the HierarchicalContentNode type and the ContentNode type
    */
@@ -11228,19 +11304,19 @@ export interface MediaItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11249,11 +11325,11 @@ export interface MediaItem {
   /**
    * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
    */
-  commentCount?: Maybe<ScalarsEnums["Int"]>;
+  commentCount?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the comments are open or closed for this particular post.
    */
-  commentStatus?: Maybe<ScalarsEnums["String"]>;
+  commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the mediaItem type and the Comment type
    */
@@ -11261,19 +11337,19 @@ export interface MediaItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11290,19 +11366,19 @@ export interface MediaItem {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * Description of the image (stored as post_content)
    */
@@ -11311,11 +11387,11 @@ export interface MediaItem {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -11323,7 +11399,7 @@ export interface MediaItem {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -11331,19 +11407,19 @@ export interface MediaItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -11352,19 +11428,19 @@ export interface MediaItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * The filesize in bytes of the resource
@@ -11374,31 +11450,31 @@ export interface MediaItem {
      * Size of the MediaItem to return
      */
     size?: Maybe<MediaItemSizeEnum>;
-  }) => Maybe<ScalarsEnums["Int"]>;
+  }) => Maybe<ScalarsEnums['Int']>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the attachment object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -11406,7 +11482,7 @@ export interface MediaItem {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * Details about the mediaItem
    */
@@ -11415,27 +11491,27 @@ export interface MediaItem {
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  mediaItemId: ScalarsEnums["Int"];
+  mediaItemId: ScalarsEnums['Int'];
   /**
    * Url of the mediaItem
    */
-  mediaItemUrl?: Maybe<ScalarsEnums["String"]>;
+  mediaItemUrl?: Maybe<ScalarsEnums['String']>;
   /**
    * Type of resource
    */
-  mediaType?: Maybe<ScalarsEnums["String"]>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
   /**
    * The mime type of the mediaItem
    */
-  mimeType?: Maybe<ScalarsEnums["String"]>;
+  mimeType?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The parent of the node. The parent object can be of various types
    */
@@ -11443,19 +11519,19 @@ export interface MediaItem {
   /**
    * Database id of the parent node
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The sizes attribute value for an image.
    */
@@ -11464,11 +11540,11 @@ export interface MediaItem {
      * Size of the MediaItem to calculate sizes with
      */
     size?: Maybe<MediaItemSizeEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * Url of the mediaItem
    */
@@ -11477,7 +11553,7 @@ export interface MediaItem {
      * Size of the MediaItem to return
      */
     size?: Maybe<MediaItemSizeEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The srcset attribute specifies the URL of the image to use in different situations. It is a comma separated string of urls and their widths.
    */
@@ -11486,16 +11562,16 @@ export interface MediaItem {
      * Size of the MediaItem to calculate srcSet with
      */
     size?: Maybe<MediaItemSizeEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -11504,73 +11580,73 @@ export interface MediaItem {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Meta connected to a MediaItem
  */
 export interface MediaItemMeta {
-  __typename?: "MediaItemMeta";
+  __typename?: 'MediaItemMeta';
   /**
    * Aperture measurement of the media item.
    */
-  aperture?: Maybe<ScalarsEnums["Float"]>;
+  aperture?: Maybe<ScalarsEnums['Float']>;
   /**
    * Information about the camera used to create the media item.
    */
-  camera?: Maybe<ScalarsEnums["String"]>;
+  camera?: Maybe<ScalarsEnums['String']>;
   /**
    * The text string description associated with the media item.
    */
-  caption?: Maybe<ScalarsEnums["String"]>;
+  caption?: Maybe<ScalarsEnums['String']>;
   /**
    * Copyright information associated with the media item.
    */
-  copyright?: Maybe<ScalarsEnums["String"]>;
+  copyright?: Maybe<ScalarsEnums['String']>;
   /**
    * The date/time when the media was created.
    */
-  createdTimestamp?: Maybe<ScalarsEnums["Int"]>;
+  createdTimestamp?: Maybe<ScalarsEnums['Int']>;
   /**
    * The original creator of the media item.
    */
-  credit?: Maybe<ScalarsEnums["String"]>;
+  credit?: Maybe<ScalarsEnums['String']>;
   /**
    * The focal length value of the media item.
    */
-  focalLength?: Maybe<ScalarsEnums["Float"]>;
+  focalLength?: Maybe<ScalarsEnums['Float']>;
   /**
    * The ISO (International Organization for Standardization) value of the media item.
    */
-  iso?: Maybe<ScalarsEnums["Int"]>;
+  iso?: Maybe<ScalarsEnums['Int']>;
   /**
    * List of keywords used to describe or identfy the media item.
    */
-  keywords?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  keywords?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The vertical or horizontal aspect of the media item.
    */
-  orientation?: Maybe<ScalarsEnums["String"]>;
+  orientation?: Maybe<ScalarsEnums['String']>;
   /**
    * The shutter speed information of the media item.
    */
-  shutterSpeed?: Maybe<ScalarsEnums["Float"]>;
+  shutterSpeed?: Maybe<ScalarsEnums['Float']>;
   /**
    * A useful title for the media item.
    */
-  title?: Maybe<ScalarsEnums["String"]>;
+  title?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the mediaItem type and the Comment type
  */
 export interface MediaItemToCommentConnection {
-  __typename?: "MediaItemToCommentConnection";
+  __typename?: 'MediaItemToCommentConnection';
   /**
    * Edges for the MediaItemToCommentConnection connection
    */
@@ -11589,11 +11665,11 @@ export interface MediaItemToCommentConnection {
  * An edge in a connection
  */
 export interface MediaItemToCommentConnectionEdge {
-  __typename?: "MediaItemToCommentConnectionEdge";
+  __typename?: 'MediaItemToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -11604,67 +11680,67 @@ export interface MediaItemToCommentConnectionEdge {
  * Details of an available size for a media item
  */
 export interface MediaSize {
-  __typename?: "MediaSize";
+  __typename?: 'MediaSize';
   /**
    * The filename of the referenced size
    */
-  file?: Maybe<ScalarsEnums["String"]>;
+  file?: Maybe<ScalarsEnums['String']>;
   /**
    * The filesize of the resource
    */
-  fileSize?: Maybe<ScalarsEnums["Int"]>;
+  fileSize?: Maybe<ScalarsEnums['Int']>;
   /**
    * The height of the referenced size
    */
-  height?: Maybe<ScalarsEnums["String"]>;
+  height?: Maybe<ScalarsEnums['String']>;
   /**
    * The mime type of the referenced size
    */
-  mimeType?: Maybe<ScalarsEnums["String"]>;
+  mimeType?: Maybe<ScalarsEnums['String']>;
   /**
    * The referenced size name
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The url of the referenced size
    */
-  sourceUrl?: Maybe<ScalarsEnums["String"]>;
+  sourceUrl?: Maybe<ScalarsEnums['String']>;
   /**
    * The width of the referenced size
    */
-  width?: Maybe<ScalarsEnums["String"]>;
+  width?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Menus are the containers for navigation items. Menus can be assigned to menu locations, which are typically registered by the active theme.
  */
 export interface Menu {
-  __typename?: "Menu";
+  __typename?: 'Menu';
   /**
    * The number of items in the menu
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The globally unique identifier of the nav menu object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The locations a menu is assigned to
    */
-  locations?: Maybe<Array<Maybe<ScalarsEnums["MenuLocationEnum"]>>>;
+  locations?: Maybe<Array<Maybe<ScalarsEnums['MenuLocationEnum']>>>;
   /**
    * WP ID of the nav menu.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  menuId?: Maybe<ScalarsEnums["Int"]>;
+  menuId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the Menu type and the MenuItem type
    */
@@ -11672,19 +11748,19 @@ export interface Menu {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11693,18 +11769,18 @@ export interface Menu {
   /**
    * Display name of the menu. Equivalent to WP_Term-&gt;name.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The url friendly name of the menu. Equivalent to WP_Term-&gt;slug
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Navigation menu items are the individual items assigned to a menu. These are rendered as the links in a navigation menu.
  */
 export interface MenuItem {
-  __typename?: "MenuItem";
+  __typename?: 'MenuItem';
   /**
    * Connection between the MenuItem type and the MenuItem type
    */
@@ -11712,19 +11788,19 @@ export interface MenuItem {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -11742,35 +11818,35 @@ export interface MenuItem {
   /**
    * Class attribute for the menu item link
    */
-  cssClasses?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  cssClasses?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Description of the menu item.
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the nav menu item object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Label or title of the menu item.
    */
-  label?: Maybe<ScalarsEnums["String"]>;
+  label?: Maybe<ScalarsEnums['String']>;
   /**
    * Link relationship (XFN) of the menu item.
    */
-  linkRelationship?: Maybe<ScalarsEnums["String"]>;
+  linkRelationship?: Maybe<ScalarsEnums['String']>;
   /**
    * The locations the menu item&#039;s Menu is assigned to
    */
-  locations?: Maybe<Array<Maybe<ScalarsEnums["MenuLocationEnum"]>>>;
+  locations?: Maybe<Array<Maybe<ScalarsEnums['MenuLocationEnum']>>>;
   /**
    * The Menu a MenuItem is part of
    */
@@ -11779,35 +11855,39 @@ export interface MenuItem {
    * WP ID of the menu item.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  menuItemId?: Maybe<ScalarsEnums["Int"]>;
+  menuItemId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Menu item order
    */
-  order?: Maybe<ScalarsEnums["Int"]>;
+  order?: Maybe<ScalarsEnums['Int']>;
   /**
    * The database id of the parent menu item or null if it is the root
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent nav menu item object.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Path for the resource. Relative path for internal resources. Absolute path for external resources.
    */
-  path?: Maybe<ScalarsEnums["String"]>;
+  path?: Maybe<ScalarsEnums['String']>;
   /**
    * Target attribute for the menu item link.
    */
-  target?: Maybe<ScalarsEnums["String"]>;
+  target?: Maybe<ScalarsEnums['String']>;
   /**
    * Title attribute for the menu item link
    */
-  title?: Maybe<ScalarsEnums["String"]>;
+  title?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The uri of the resource the menu item links to
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
   /**
    * URL or destination of the menu item.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -11815,25 +11895,25 @@ export interface MenuItem {
  */
 export interface MenuItemLinkable {
   __typename?:
-    | "AToZ"
-    | "AToZCategory"
-    | "AcalogProgram"
-    | "Category"
-    | "Page"
-    | "Post"
-    | "Tag";
+    | 'AToZ'
+    | 'AToZCategory'
+    | 'AcalogProgram'
+    | 'Category'
+    | 'Page'
+    | 'Post'
+    | 'Tag';
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   $on: $MenuItemLinkable;
 }
 
@@ -11842,13 +11922,13 @@ export interface MenuItemLinkable {
  */
 export interface MenuItemObjectUnion {
   __typename?:
-    | "AToZ"
-    | "AToZCategory"
-    | "AcalogProgram"
-    | "Category"
-    | "Page"
-    | "Post"
-    | "Tag";
+    | 'AToZ'
+    | 'AToZCategory'
+    | 'AcalogProgram'
+    | 'Category'
+    | 'Page'
+    | 'Post'
+    | 'Tag';
   $on: $MenuItemObjectUnion;
 }
 
@@ -11856,7 +11936,7 @@ export interface MenuItemObjectUnion {
  * Connection between the MenuItem type and the Menu type
  */
 export interface MenuItemToMenuConnectionEdge {
-  __typename?: "MenuItemToMenuConnectionEdge";
+  __typename?: 'MenuItemToMenuConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -11867,7 +11947,7 @@ export interface MenuItemToMenuConnectionEdge {
  * Connection between the MenuItem type and the MenuItem type
  */
 export interface MenuItemToMenuItemConnection {
-  __typename?: "MenuItemToMenuItemConnection";
+  __typename?: 'MenuItemToMenuItemConnection';
   /**
    * Edges for the MenuItemToMenuItemConnection connection
    */
@@ -11886,11 +11966,11 @@ export interface MenuItemToMenuItemConnection {
  * An edge in a connection
  */
 export interface MenuItemToMenuItemConnectionEdge {
-  __typename?: "MenuItemToMenuItemConnectionEdge";
+  __typename?: 'MenuItemToMenuItemConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -11901,7 +11981,7 @@ export interface MenuItemToMenuItemConnectionEdge {
  * Connection between the MenuItem type and the MenuItemLinkable type
  */
 export interface MenuItemToMenuItemLinkableConnectionEdge {
-  __typename?: "MenuItemToMenuItemLinkableConnectionEdge";
+  __typename?: 'MenuItemToMenuItemLinkableConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -11912,7 +11992,7 @@ export interface MenuItemToMenuItemLinkableConnectionEdge {
  * Connection between the Menu type and the MenuItem type
  */
 export interface MenuToMenuItemConnection {
-  __typename?: "MenuToMenuItemConnection";
+  __typename?: 'MenuToMenuItemConnection';
   /**
    * Edges for the MenuToMenuItemConnection connection
    */
@@ -11931,11 +12011,11 @@ export interface MenuToMenuItemConnection {
  * An edge in a connection
  */
 export interface MenuToMenuItemConnectionEdge {
-  __typename?: "MenuToMenuItemConnectionEdge";
+  __typename?: 'MenuToMenuItemConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -11947,31 +12027,31 @@ export interface MenuToMenuItemConnectionEdge {
  */
 export interface Node {
   __typename?:
-    | "AToZ"
-    | "AToZCategory"
-    | "AcalogProgram"
-    | "Category"
-    | "Comment"
-    | "CommentAuthor"
-    | "ContentType"
-    | "EnqueuedScript"
-    | "EnqueuedStylesheet"
-    | "MediaItem"
-    | "Menu"
-    | "MenuItem"
-    | "Page"
-    | "Plugin"
-    | "Post"
-    | "PostFormat"
-    | "Tag"
-    | "Taxonomy"
-    | "Theme"
-    | "User"
-    | "UserRole";
+    | 'AToZ'
+    | 'AToZCategory'
+    | 'AcalogProgram'
+    | 'Category'
+    | 'Comment'
+    | 'CommentAuthor'
+    | 'ContentType'
+    | 'EnqueuedScript'
+    | 'EnqueuedStylesheet'
+    | 'MediaItem'
+    | 'Menu'
+    | 'MenuItem'
+    | 'Page'
+    | 'Plugin'
+    | 'Post'
+    | 'PostFormat'
+    | 'Tag'
+    | 'Taxonomy'
+    | 'Theme'
+    | 'User'
+    | 'UserRole';
   /**
    * The globally unique ID for the object
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   $on: $Node;
 }
 
@@ -11979,7 +12059,7 @@ export interface Node {
  * A node that can have an author assigned to it
  */
 export interface NodeWithAuthor {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: 'MediaItem' | 'Page' | 'Post';
   /**
    * Connection between the NodeWithAuthor type and the User type
    */
@@ -11987,11 +12067,11 @@ export interface NodeWithAuthor {
   /**
    * The database identifier of the author of the node
    */
-  authorDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  authorDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the author of the node
    */
-  authorId?: Maybe<ScalarsEnums["ID"]>;
+  authorId?: Maybe<ScalarsEnums['ID']>;
   $on: $NodeWithAuthor;
 }
 
@@ -11999,7 +12079,7 @@ export interface NodeWithAuthor {
  * Connection between the NodeWithAuthor type and the User type
  */
 export interface NodeWithAuthorToUserConnectionEdge {
-  __typename?: "NodeWithAuthorToUserConnectionEdge";
+  __typename?: 'NodeWithAuthorToUserConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -12010,15 +12090,15 @@ export interface NodeWithAuthorToUserConnectionEdge {
  * A node that can have comments associated with it
  */
 export interface NodeWithComments {
-  __typename?: "MediaItem" | "Page" | "Post";
+  __typename?: 'MediaItem' | 'Page' | 'Post';
   /**
    * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
    */
-  commentCount?: Maybe<ScalarsEnums["Int"]>;
+  commentCount?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the comments are open or closed for this particular post.
    */
-  commentStatus?: Maybe<ScalarsEnums["String"]>;
+  commentStatus?: Maybe<ScalarsEnums['String']>;
   $on: $NodeWithComments;
 }
 
@@ -12026,7 +12106,7 @@ export interface NodeWithComments {
  * A node that supports the content editor
  */
 export interface NodeWithContentEditor {
-  __typename?: "AcalogProgram" | "Page" | "Post";
+  __typename?: 'AcalogProgram' | 'Page' | 'Post';
   /**
    * The content of the post.
    */
@@ -12035,7 +12115,7 @@ export interface NodeWithContentEditor {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   $on: $NodeWithContentEditor;
 }
 
@@ -12043,7 +12123,7 @@ export interface NodeWithContentEditor {
  * A node that can have an excerpt
  */
 export interface NodeWithExcerpt {
-  __typename?: "Post";
+  __typename?: 'Post';
   /**
    * The excerpt of the post.
    */
@@ -12052,7 +12132,7 @@ export interface NodeWithExcerpt {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   $on: $NodeWithExcerpt;
 }
 
@@ -12060,7 +12140,7 @@ export interface NodeWithExcerpt {
  * A node that can have a featured image set
  */
 export interface NodeWithFeaturedImage {
-  __typename?: "AcalogProgram" | "Page" | "Post";
+  __typename?: 'AcalogProgram' | 'Page' | 'Post';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -12072,23 +12152,23 @@ export interface NodeWithFeaturedImage {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -12096,7 +12176,7 @@ export interface NodeWithFeaturedImage {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -12104,19 +12184,19 @@ export interface NodeWithFeaturedImage {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -12125,19 +12205,19 @@ export interface NodeWithFeaturedImage {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * Connection between the NodeWithFeaturedImage type and the MediaItem type
@@ -12146,35 +12226,35 @@ export interface NodeWithFeaturedImage {
   /**
    * The database identifier for the featured image node assigned to the content node
    */
-  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  featuredImageDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Globally unique ID of the featured image assigned to the node
    */
-  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  featuredImageId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -12182,40 +12262,40 @@ export interface NodeWithFeaturedImage {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to a node of content
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   $on: $NodeWithFeaturedImage;
 }
 
@@ -12223,7 +12303,7 @@ export interface NodeWithFeaturedImage {
  * Connection between the NodeWithFeaturedImage type and the MediaItem type
  */
 export interface NodeWithFeaturedImageToMediaItemConnectionEdge {
-  __typename?: "NodeWithFeaturedImageToMediaItemConnectionEdge";
+  __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -12234,11 +12314,11 @@ export interface NodeWithFeaturedImageToMediaItemConnectionEdge {
  * A node that can have page attributes
  */
 export interface NodeWithPageAttributes {
-  __typename?: "Page";
+  __typename?: 'Page';
   /**
    * A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.
    */
-  menuOrder?: Maybe<ScalarsEnums["Int"]>;
+  menuOrder?: Maybe<ScalarsEnums['Int']>;
   $on: $NodeWithPageAttributes;
 }
 
@@ -12246,11 +12326,11 @@ export interface NodeWithPageAttributes {
  * A node that can have revisions
  */
 export interface NodeWithRevisions {
-  __typename?: "Page" | "Post";
+  __typename?: 'Page' | 'Post';
   /**
    * True if the node is a revision of another node
    */
-  isRevision?: Maybe<ScalarsEnums["Boolean"]>;
+  isRevision?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
    */
@@ -12262,7 +12342,7 @@ export interface NodeWithRevisions {
  * Connection between the NodeWithRevisions type and the ContentNode type
  */
 export interface NodeWithRevisionsToContentNodeConnectionEdge {
-  __typename?: "NodeWithRevisionsToContentNodeConnectionEdge";
+  __typename?: 'NodeWithRevisionsToContentNodeConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -12273,7 +12353,7 @@ export interface NodeWithRevisionsToContentNodeConnectionEdge {
  * A node that can have a template associated with it
  */
 export interface NodeWithTemplate {
-  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
+  __typename?: 'AToZ' | 'AcalogProgram' | 'MediaItem' | 'Page' | 'Post';
   /**
    * The template assigned to the node
    */
@@ -12285,7 +12365,7 @@ export interface NodeWithTemplate {
  * A node that NodeWith a title
  */
 export interface NodeWithTitle {
-  __typename?: "AToZ" | "AcalogProgram" | "MediaItem" | "Page" | "Post";
+  __typename?: 'AToZ' | 'AcalogProgram' | 'MediaItem' | 'Page' | 'Post';
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -12294,7 +12374,7 @@ export interface NodeWithTitle {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   $on: $NodeWithTitle;
 }
 
@@ -12302,19 +12382,19 @@ export interface NodeWithTitle {
  * A node that can have trackbacks and pingbacks
  */
 export interface NodeWithTrackbacks {
-  __typename?: "Post";
+  __typename?: 'Post';
   /**
    * Whether the pings are open or closed for this particular post.
    */
-  pingStatus?: Maybe<ScalarsEnums["String"]>;
+  pingStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * URLs that have been pinged.
    */
-  pinged?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  pinged?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * URLs queued to be pinged.
    */
-  toPing?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  toPing?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   $on: $NodeWithTrackbacks;
 }
 
@@ -12322,7 +12402,7 @@ export interface NodeWithTrackbacks {
  * The page type
  */
 export interface Page {
-  __typename?: "Page";
+  __typename?: 'Page';
   /**
    * Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
    */
@@ -12330,19 +12410,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12355,11 +12435,11 @@ export interface Page {
   /**
    * The database identifier of the author of the node
    */
-  authorDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  authorDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the author of the node
    */
-  authorId?: Maybe<ScalarsEnums["ID"]>;
+  authorId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Connection between the HierarchicalContentNode type and the ContentNode type
    */
@@ -12367,19 +12447,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12388,11 +12468,11 @@ export interface Page {
   /**
    * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
    */
-  commentCount?: Maybe<ScalarsEnums["Int"]>;
+  commentCount?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the comments are open or closed for this particular post.
    */
-  commentStatus?: Maybe<ScalarsEnums["String"]>;
+  commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the page type and the Comment type
    */
@@ -12400,19 +12480,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12430,7 +12510,7 @@ export interface Page {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
@@ -12438,23 +12518,23 @@ export interface Page {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -12462,7 +12542,7 @@ export interface Page {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -12470,19 +12550,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -12491,19 +12571,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * Connection between the NodeWithFeaturedImage type and the MediaItem type
@@ -12512,51 +12592,51 @@ export interface Page {
   /**
    * The database identifier for the featured image node assigned to the content node
    */
-  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  featuredImageDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Globally unique ID of the featured image assigned to the node
    */
-  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  featuredImageId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the page object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether this page is set to the static front page.
    */
-  isFrontPage: ScalarsEnums["Boolean"];
+  isFrontPage: ScalarsEnums['Boolean'];
   /**
    * Whether this page is set to the blog posts page.
    */
-  isPostsPage: ScalarsEnums["Boolean"];
+  isPostsPage: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether this page is set to the privacy page.
    */
-  isPrivacyPage: ScalarsEnums["Boolean"];
+  isPrivacyPage: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * True if the node is a revision of another node
    */
-  isRevision?: Maybe<ScalarsEnums["Boolean"]>;
+  isRevision?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -12564,24 +12644,24 @@ export interface Page {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.
    */
-  menuOrder?: Maybe<ScalarsEnums["Int"]>;
+  menuOrder?: Maybe<ScalarsEnums['Int']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  pageId: ScalarsEnums["Int"];
+  pageId: ScalarsEnums['Int'];
   /**
    * The parent of the node. The parent object can be of various types
    */
@@ -12589,11 +12669,11 @@ export interface Page {
   /**
    * Database id of the parent node
    */
-  parentDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  parentDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the parent node.
    */
-  parentId?: Maybe<ScalarsEnums["ID"]>;
+  parentId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Connection between the page type and the page type
    */
@@ -12601,11 +12681,11 @@ export interface Page {
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
    */
@@ -12617,19 +12697,19 @@ export interface Page {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12638,16 +12718,16 @@ export interface Page {
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * The template assigned to a node of content
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
@@ -12656,18 +12736,18 @@ export interface Page {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the page type and the Comment type
  */
 export interface PageToCommentConnection {
-  __typename?: "PageToCommentConnection";
+  __typename?: 'PageToCommentConnection';
   /**
    * Edges for the PageToCommentConnection connection
    */
@@ -12686,11 +12766,11 @@ export interface PageToCommentConnection {
  * An edge in a connection
  */
 export interface PageToCommentConnectionEdge {
-  __typename?: "PageToCommentConnectionEdge";
+  __typename?: 'PageToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -12701,7 +12781,7 @@ export interface PageToCommentConnectionEdge {
  * Connection between the page type and the page type
  */
 export interface PageToPreviewConnectionEdge {
-  __typename?: "PageToPreviewConnectionEdge";
+  __typename?: 'PageToPreviewConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -12712,7 +12792,7 @@ export interface PageToPreviewConnectionEdge {
  * Connection between the page type and the page type
  */
 export interface PageToRevisionConnection {
-  __typename?: "PageToRevisionConnection";
+  __typename?: 'PageToRevisionConnection';
   /**
    * Edges for the pageToRevisionConnection connection
    */
@@ -12731,11 +12811,11 @@ export interface PageToRevisionConnection {
  * An edge in a connection
  */
 export interface PageToRevisionConnectionEdge {
-  __typename?: "PageToRevisionConnectionEdge";
+  __typename?: 'PageToRevisionConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -12746,50 +12826,50 @@ export interface PageToRevisionConnectionEdge {
  * An plugin object
  */
 export interface Plugin {
-  __typename?: "Plugin";
+  __typename?: 'Plugin';
   /**
    * Name of the plugin author(s), may also be a company name.
    */
-  author?: Maybe<ScalarsEnums["String"]>;
+  author?: Maybe<ScalarsEnums['String']>;
   /**
    * URI for the related author(s)/company website.
    */
-  authorUri?: Maybe<ScalarsEnums["String"]>;
+  authorUri?: Maybe<ScalarsEnums['String']>;
   /**
    * Description of the plugin.
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the plugin object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Display name of the plugin.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Plugin path.
    */
-  path?: Maybe<ScalarsEnums["String"]>;
+  path?: Maybe<ScalarsEnums['String']>;
   /**
    * URI for the plugin website. This is useful for directing users for support requests etc.
    */
-  pluginUri?: Maybe<ScalarsEnums["String"]>;
+  pluginUri?: Maybe<ScalarsEnums['String']>;
   /**
    * Current version of the plugin.
    */
-  version?: Maybe<ScalarsEnums["String"]>;
+  version?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The post type
  */
 export interface Post {
-  __typename?: "Post";
+  __typename?: 'Post';
   /**
    * Connection between the NodeWithAuthor type and the User type
    */
@@ -12797,11 +12877,11 @@ export interface Post {
   /**
    * The database identifier of the author of the node
    */
-  authorDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  authorDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The globally unique identifier of the author of the node
    */
-  authorId?: Maybe<ScalarsEnums["ID"]>;
+  authorId?: Maybe<ScalarsEnums['ID']>;
   /**
    * Connection between the post type and the category type
    */
@@ -12809,19 +12889,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12830,11 +12910,11 @@ export interface Post {
   /**
    * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
    */
-  commentCount?: Maybe<ScalarsEnums["Int"]>;
+  commentCount?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the comments are open or closed for this particular post.
    */
-  commentStatus?: Maybe<ScalarsEnums["String"]>;
+  commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the post type and the Comment type
    */
@@ -12842,19 +12922,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -12872,7 +12952,7 @@ export interface Post {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the ContentType type
    */
@@ -12880,23 +12960,23 @@ export interface Post {
   /**
    * The name of the Content Type the node belongs to
    */
-  contentTypeName: ScalarsEnums["String"];
+  contentTypeName: ScalarsEnums['String'];
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Post publishing date.
    */
-  date?: Maybe<ScalarsEnums["String"]>;
+  date?: Maybe<ScalarsEnums['String']>;
   /**
    * The publishing date set in GMT.
    */
-  dateGmt?: Maybe<ScalarsEnums["String"]>;
+  dateGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * The desired slug of the post
    */
-  desiredSlug?: Maybe<ScalarsEnums["String"]>;
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
   /**
    * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
    */
@@ -12904,7 +12984,7 @@ export interface Post {
   /**
    * The RSS enclosure for the object
    */
-  enclosure?: Maybe<ScalarsEnums["String"]>;
+  enclosure?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the ContentNode type and the EnqueuedScript type
    */
@@ -12912,19 +12992,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the ContentNode type and the EnqueuedStylesheet type
@@ -12933,19 +13013,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * The excerpt of the post.
@@ -12955,7 +13035,7 @@ export interface Post {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the NodeWithFeaturedImage type and the MediaItem type
    */
@@ -12963,43 +13043,43 @@ export interface Post {
   /**
    * The database identifier for the featured image node assigned to the content node
    */
-  featuredImageDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  featuredImageDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Globally unique ID of the featured image assigned to the node
    */
-  featuredImageId?: Maybe<ScalarsEnums["ID"]>;
+  featuredImageId?: Maybe<ScalarsEnums['ID']>;
   /**
    * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
    */
-  guid?: Maybe<ScalarsEnums["String"]>;
+  guid?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the post object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is a node in the preview state
    */
-  isPreview?: Maybe<ScalarsEnums["Boolean"]>;
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * True if the node is a revision of another node
    */
-  isRevision?: Maybe<ScalarsEnums["Boolean"]>;
+  isRevision?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether this page is sticky
    */
-  isSticky: ScalarsEnums["Boolean"];
+  isSticky: ScalarsEnums['Boolean'];
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The user that most recently edited the node
    */
@@ -13007,23 +13087,23 @@ export interface Post {
   /**
    * The permalink of the post
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
    */
-  modified?: Maybe<ScalarsEnums["String"]>;
+  modified?: Maybe<ScalarsEnums['String']>;
   /**
    * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
    */
-  modifiedGmt?: Maybe<ScalarsEnums["String"]>;
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether the pings are open or closed for this particular post.
    */
-  pingStatus?: Maybe<ScalarsEnums["String"]>;
+  pingStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * URLs that have been pinged.
    */
-  pinged?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  pinged?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * Connection between the post type and the postFormat type
    */
@@ -13031,19 +13111,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13053,7 +13133,7 @@ export interface Post {
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
-  postId: ScalarsEnums["Int"];
+  postId: ScalarsEnums['Int'];
   /**
    * Connection between the post type and the post type
    */
@@ -13061,11 +13141,11 @@ export interface Post {
   /**
    * The database id of the preview node
    */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums["Int"]>;
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Whether the object is a node in the preview state
    */
-  previewRevisionId?: Maybe<ScalarsEnums["ID"]>;
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
    * If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
    */
@@ -13077,19 +13157,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13098,11 +13178,11 @@ export interface Post {
   /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The current status of the object
    */
-  status?: Maybe<ScalarsEnums["String"]>;
+  status?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the post type and the tag type
    */
@@ -13110,19 +13190,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13132,7 +13212,7 @@ export interface Post {
    * The template assigned to a node of content
    */
   template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * Connection between the post type and the TermNode type
    */
@@ -13140,19 +13220,19 @@ export interface Post {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13166,22 +13246,22 @@ export interface Post {
      * Format of the field output
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
-  }) => Maybe<ScalarsEnums["String"]>;
+  }) => Maybe<ScalarsEnums['String']>;
   /**
    * URLs queued to be pinged.
    */
-  toPing?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  toPing?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The postFormat type
  */
 export interface PostFormat {
-  __typename?: "PostFormat";
+  __typename?: 'PostFormat';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -13193,19 +13273,19 @@ export interface PostFormat {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13214,15 +13294,15 @@ export interface PostFormat {
   /**
    * The number of objects connected to the object
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique identifier stored in the database
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The description of the object
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the TermNode type and the EnqueuedScript type
    */
@@ -13230,19 +13310,19 @@ export interface PostFormat {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the TermNode type and the EnqueuedStylesheet type
@@ -13251,49 +13331,49 @@ export interface PostFormat {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The link to the term
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The human friendly name of the object.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
-  postFormatId?: Maybe<ScalarsEnums["Int"]>;
+  postFormatId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the postFormat type and the post type
    */
@@ -13301,19 +13381,19 @@ export interface PostFormat {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -13322,7 +13402,7 @@ export interface PostFormat {
   /**
    * An alphanumeric identifier for the object unique to its type.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the postFormat type and the Taxonomy type
    */
@@ -13330,27 +13410,27 @@ export interface PostFormat {
   /**
    * The name of the taxonomy that the object is associated with
    */
-  taxonomyName?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The ID of the term group that this term object belongs to
    */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The taxonomy ID that the object is associated with
    */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the postFormat type and the ContentNode type
  */
 export interface PostFormatToContentNodeConnection {
-  __typename?: "PostFormatToContentNodeConnection";
+  __typename?: 'PostFormatToContentNodeConnection';
   /**
    * Edges for the PostFormatToContentNodeConnection connection
    */
@@ -13369,11 +13449,11 @@ export interface PostFormatToContentNodeConnection {
  * An edge in a connection
  */
 export interface PostFormatToContentNodeConnectionEdge {
-  __typename?: "PostFormatToContentNodeConnectionEdge";
+  __typename?: 'PostFormatToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13384,7 +13464,7 @@ export interface PostFormatToContentNodeConnectionEdge {
  * Connection between the postFormat type and the post type
  */
 export interface PostFormatToPostConnection {
-  __typename?: "PostFormatToPostConnection";
+  __typename?: 'PostFormatToPostConnection';
   /**
    * Edges for the PostFormatToPostConnection connection
    */
@@ -13403,11 +13483,11 @@ export interface PostFormatToPostConnection {
  * An edge in a connection
  */
 export interface PostFormatToPostConnectionEdge {
-  __typename?: "PostFormatToPostConnectionEdge";
+  __typename?: 'PostFormatToPostConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13418,7 +13498,7 @@ export interface PostFormatToPostConnectionEdge {
  * Connection between the postFormat type and the Taxonomy type
  */
 export interface PostFormatToTaxonomyConnectionEdge {
-  __typename?: "PostFormatToTaxonomyConnectionEdge";
+  __typename?: 'PostFormatToTaxonomyConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -13429,7 +13509,7 @@ export interface PostFormatToTaxonomyConnectionEdge {
  * Connection between the post type and the category type
  */
 export interface PostToCategoryConnection {
-  __typename?: "PostToCategoryConnection";
+  __typename?: 'PostToCategoryConnection';
   /**
    * Edges for the PostToCategoryConnection connection
    */
@@ -13448,11 +13528,11 @@ export interface PostToCategoryConnection {
  * An edge in a connection
  */
 export interface PostToCategoryConnectionEdge {
-  __typename?: "PostToCategoryConnectionEdge";
+  __typename?: 'PostToCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13463,7 +13543,7 @@ export interface PostToCategoryConnectionEdge {
  * Connection between the post type and the Comment type
  */
 export interface PostToCommentConnection {
-  __typename?: "PostToCommentConnection";
+  __typename?: 'PostToCommentConnection';
   /**
    * Edges for the PostToCommentConnection connection
    */
@@ -13482,11 +13562,11 @@ export interface PostToCommentConnection {
  * An edge in a connection
  */
 export interface PostToCommentConnectionEdge {
-  __typename?: "PostToCommentConnectionEdge";
+  __typename?: 'PostToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13497,7 +13577,7 @@ export interface PostToCommentConnectionEdge {
  * Connection between the post type and the postFormat type
  */
 export interface PostToPostFormatConnection {
-  __typename?: "PostToPostFormatConnection";
+  __typename?: 'PostToPostFormatConnection';
   /**
    * Edges for the PostToPostFormatConnection connection
    */
@@ -13516,11 +13596,11 @@ export interface PostToPostFormatConnection {
  * An edge in a connection
  */
 export interface PostToPostFormatConnectionEdge {
-  __typename?: "PostToPostFormatConnectionEdge";
+  __typename?: 'PostToPostFormatConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13531,7 +13611,7 @@ export interface PostToPostFormatConnectionEdge {
  * Connection between the post type and the post type
  */
 export interface PostToPreviewConnectionEdge {
-  __typename?: "PostToPreviewConnectionEdge";
+  __typename?: 'PostToPreviewConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -13542,7 +13622,7 @@ export interface PostToPreviewConnectionEdge {
  * Connection between the post type and the post type
  */
 export interface PostToRevisionConnection {
-  __typename?: "PostToRevisionConnection";
+  __typename?: 'PostToRevisionConnection';
   /**
    * Edges for the postToRevisionConnection connection
    */
@@ -13561,11 +13641,11 @@ export interface PostToRevisionConnection {
  * An edge in a connection
  */
 export interface PostToRevisionConnectionEdge {
-  __typename?: "PostToRevisionConnectionEdge";
+  __typename?: 'PostToRevisionConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13576,7 +13656,7 @@ export interface PostToRevisionConnectionEdge {
  * Connection between the post type and the tag type
  */
 export interface PostToTagConnection {
-  __typename?: "PostToTagConnection";
+  __typename?: 'PostToTagConnection';
   /**
    * Edges for the PostToTagConnection connection
    */
@@ -13595,11 +13675,11 @@ export interface PostToTagConnection {
  * An edge in a connection
  */
 export interface PostToTagConnectionEdge {
-  __typename?: "PostToTagConnectionEdge";
+  __typename?: 'PostToTagConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13610,7 +13690,7 @@ export interface PostToTagConnectionEdge {
  * Connection between the post type and the TermNode type
  */
 export interface PostToTermNodeConnection {
-  __typename?: "PostToTermNodeConnection";
+  __typename?: 'PostToTermNodeConnection';
   /**
    * Edges for the PostToTermNodeConnection connection
    */
@@ -13629,11 +13709,11 @@ export interface PostToTermNodeConnection {
  * An edge in a connection
  */
 export interface PostToTermNodeConnectionEdge {
-  __typename?: "PostToTermNodeConnectionEdge";
+  __typename?: 'PostToTermNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13644,129 +13724,129 @@ export interface PostToTermNodeConnectionEdge {
  * Details for labels of the PostType
  */
 export interface PostTypeLabelDetails {
-  __typename?: "PostTypeLabelDetails";
+  __typename?: 'PostTypeLabelDetails';
   /**
    * Default is ‘Add New’ for both hierarchical and non-hierarchical types.
    */
-  addNew?: Maybe<ScalarsEnums["String"]>;
+  addNew?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for adding a new singular item.
    */
-  addNewItem?: Maybe<ScalarsEnums["String"]>;
+  addNewItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label to signify all items in a submenu link.
    */
-  allItems?: Maybe<ScalarsEnums["String"]>;
+  allItems?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for archives in nav menus
    */
-  archives?: Maybe<ScalarsEnums["String"]>;
+  archives?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the attributes meta box.
    */
-  attributes?: Maybe<ScalarsEnums["String"]>;
+  attributes?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for editing a singular item.
    */
-  editItem?: Maybe<ScalarsEnums["String"]>;
+  editItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the Featured Image meta box title.
    */
-  featuredImage?: Maybe<ScalarsEnums["String"]>;
+  featuredImage?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the table views hidden heading.
    */
-  filterItemsList?: Maybe<ScalarsEnums["String"]>;
+  filterItemsList?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the media frame button.
    */
-  insertIntoItem?: Maybe<ScalarsEnums["String"]>;
+  insertIntoItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the table hidden heading.
    */
-  itemsList?: Maybe<ScalarsEnums["String"]>;
+  itemsList?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the table pagination hidden heading.
    */
-  itemsListNavigation?: Maybe<ScalarsEnums["String"]>;
+  itemsListNavigation?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the menu name.
    */
-  menuName?: Maybe<ScalarsEnums["String"]>;
+  menuName?: Maybe<ScalarsEnums['String']>;
   /**
    * General name for the post type, usually plural.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the new item page title.
    */
-  newItem?: Maybe<ScalarsEnums["String"]>;
+  newItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label used when no items are found.
    */
-  notFound?: Maybe<ScalarsEnums["String"]>;
+  notFound?: Maybe<ScalarsEnums['String']>;
   /**
    * Label used when no items are in the trash.
    */
-  notFoundInTrash?: Maybe<ScalarsEnums["String"]>;
+  notFoundInTrash?: Maybe<ScalarsEnums['String']>;
   /**
    * Label used to prefix parents of hierarchical items.
    */
-  parentItemColon?: Maybe<ScalarsEnums["String"]>;
+  parentItemColon?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for removing the featured image.
    */
-  removeFeaturedImage?: Maybe<ScalarsEnums["String"]>;
+  removeFeaturedImage?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for searching plural items.
    */
-  searchItems?: Maybe<ScalarsEnums["String"]>;
+  searchItems?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for setting the featured image.
    */
-  setFeaturedImage?: Maybe<ScalarsEnums["String"]>;
+  setFeaturedImage?: Maybe<ScalarsEnums['String']>;
   /**
    * Name for one object of this post type.
    */
-  singularName?: Maybe<ScalarsEnums["String"]>;
+  singularName?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for the media frame filter.
    */
-  uploadedToThisItem?: Maybe<ScalarsEnums["String"]>;
+  uploadedToThisItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label in the media frame for using a featured image.
    */
-  useFeaturedImage?: Maybe<ScalarsEnums["String"]>;
+  useFeaturedImage?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for viewing a singular item.
    */
-  viewItem?: Maybe<ScalarsEnums["String"]>;
+  viewItem?: Maybe<ScalarsEnums['String']>;
   /**
    * Label for viewing post type archives.
    */
-  viewItems?: Maybe<ScalarsEnums["String"]>;
+  viewItems?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The reading setting type
  */
 export interface ReadingSettings {
-  __typename?: "ReadingSettings";
+  __typename?: 'ReadingSettings';
   /**
    * Blog pages show at most.
    */
-  postsPerPage?: Maybe<ScalarsEnums["Int"]>;
+  postsPerPage?: Maybe<ScalarsEnums['Int']>;
 }
 
 /**
  * The payload for the registerUser mutation
  */
 export interface RegisterUserPayload {
-  __typename?: "RegisterUserPayload";
+  __typename?: 'RegisterUserPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The User object mutation type.
    */
@@ -13777,11 +13857,11 @@ export interface RegisterUserPayload {
  * The payload for the resetUserPassword mutation
  */
 export interface ResetUserPasswordPayload {
-  __typename?: "ResetUserPasswordPayload";
+  __typename?: 'ResetUserPasswordPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The User object mutation type.
    */
@@ -13792,11 +13872,11 @@ export interface ResetUserPasswordPayload {
  * The payload for the restoreComment mutation
  */
 export interface RestoreCommentPayload {
-  __typename?: "RestoreCommentPayload";
+  __typename?: 'RestoreCommentPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The restored comment object
    */
@@ -13804,14 +13884,14 @@ export interface RestoreCommentPayload {
   /**
    * The ID of the restored comment
    */
-  restoredId?: Maybe<ScalarsEnums["ID"]>;
+  restoredId?: Maybe<ScalarsEnums['ID']>;
 }
 
 /**
  * Connection between the RootQuery type and the AToZCategory type
  */
 export interface RootQueryToAToZCategoryConnection {
-  __typename?: "RootQueryToAToZCategoryConnection";
+  __typename?: 'RootQueryToAToZCategoryConnection';
   /**
    * Edges for the RootQueryToAToZCategoryConnection connection
    */
@@ -13830,11 +13910,11 @@ export interface RootQueryToAToZCategoryConnection {
  * An edge in a connection
  */
 export interface RootQueryToAToZCategoryConnectionEdge {
-  __typename?: "RootQueryToAToZCategoryConnectionEdge";
+  __typename?: 'RootQueryToAToZCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13845,7 +13925,7 @@ export interface RootQueryToAToZCategoryConnectionEdge {
  * Connection between the RootQuery type and the AToZ type
  */
 export interface RootQueryToAToZConnection {
-  __typename?: "RootQueryToAToZConnection";
+  __typename?: 'RootQueryToAToZConnection';
   /**
    * Edges for the RootQueryToAToZConnection connection
    */
@@ -13864,11 +13944,11 @@ export interface RootQueryToAToZConnection {
  * An edge in a connection
  */
 export interface RootQueryToAToZConnectionEdge {
-  __typename?: "RootQueryToAToZConnectionEdge";
+  __typename?: 'RootQueryToAToZConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13879,7 +13959,7 @@ export interface RootQueryToAToZConnectionEdge {
  * Connection between the RootQuery type and the AcalogProgram type
  */
 export interface RootQueryToAcalogProgramConnection {
-  __typename?: "RootQueryToAcalogProgramConnection";
+  __typename?: 'RootQueryToAcalogProgramConnection';
   /**
    * Edges for the RootQueryToAcalogProgramConnection connection
    */
@@ -13898,11 +13978,11 @@ export interface RootQueryToAcalogProgramConnection {
  * An edge in a connection
  */
 export interface RootQueryToAcalogProgramConnectionEdge {
-  __typename?: "RootQueryToAcalogProgramConnectionEdge";
+  __typename?: 'RootQueryToAcalogProgramConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13913,7 +13993,7 @@ export interface RootQueryToAcalogProgramConnectionEdge {
  * Connection between the RootQuery type and the category type
  */
 export interface RootQueryToCategoryConnection {
-  __typename?: "RootQueryToCategoryConnection";
+  __typename?: 'RootQueryToCategoryConnection';
   /**
    * Edges for the RootQueryToCategoryConnection connection
    */
@@ -13932,11 +14012,11 @@ export interface RootQueryToCategoryConnection {
  * An edge in a connection
  */
 export interface RootQueryToCategoryConnectionEdge {
-  __typename?: "RootQueryToCategoryConnectionEdge";
+  __typename?: 'RootQueryToCategoryConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13947,7 +14027,7 @@ export interface RootQueryToCategoryConnectionEdge {
  * Connection between the RootQuery type and the Comment type
  */
 export interface RootQueryToCommentConnection {
-  __typename?: "RootQueryToCommentConnection";
+  __typename?: 'RootQueryToCommentConnection';
   /**
    * Edges for the RootQueryToCommentConnection connection
    */
@@ -13966,11 +14046,11 @@ export interface RootQueryToCommentConnection {
  * An edge in a connection
  */
 export interface RootQueryToCommentConnectionEdge {
-  __typename?: "RootQueryToCommentConnectionEdge";
+  __typename?: 'RootQueryToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -13981,7 +14061,7 @@ export interface RootQueryToCommentConnectionEdge {
  * Connection between the RootQuery type and the ContentNode type
  */
 export interface RootQueryToContentNodeConnection {
-  __typename?: "RootQueryToContentNodeConnection";
+  __typename?: 'RootQueryToContentNodeConnection';
   /**
    * Edges for the RootQueryToContentNodeConnection connection
    */
@@ -14000,11 +14080,11 @@ export interface RootQueryToContentNodeConnection {
  * An edge in a connection
  */
 export interface RootQueryToContentNodeConnectionEdge {
-  __typename?: "RootQueryToContentNodeConnectionEdge";
+  __typename?: 'RootQueryToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14015,7 +14095,7 @@ export interface RootQueryToContentNodeConnectionEdge {
  * Connection between the RootQuery type and the ContentRevisionUnion type
  */
 export interface RootQueryToContentRevisionUnionConnection {
-  __typename?: "RootQueryToContentRevisionUnionConnection";
+  __typename?: 'RootQueryToContentRevisionUnionConnection';
   /**
    * Edges for the RootQueryToContentRevisionUnionConnection connection
    */
@@ -14034,11 +14114,11 @@ export interface RootQueryToContentRevisionUnionConnection {
  * An edge in a connection
  */
 export interface RootQueryToContentRevisionUnionConnectionEdge {
-  __typename?: "RootQueryToContentRevisionUnionConnectionEdge";
+  __typename?: 'RootQueryToContentRevisionUnionConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14049,7 +14129,7 @@ export interface RootQueryToContentRevisionUnionConnectionEdge {
  * Connection between the RootQuery type and the ContentType type
  */
 export interface RootQueryToContentTypeConnection {
-  __typename?: "RootQueryToContentTypeConnection";
+  __typename?: 'RootQueryToContentTypeConnection';
   /**
    * Edges for the RootQueryToContentTypeConnection connection
    */
@@ -14068,11 +14148,11 @@ export interface RootQueryToContentTypeConnection {
  * An edge in a connection
  */
 export interface RootQueryToContentTypeConnectionEdge {
-  __typename?: "RootQueryToContentTypeConnectionEdge";
+  __typename?: 'RootQueryToContentTypeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14083,7 +14163,7 @@ export interface RootQueryToContentTypeConnectionEdge {
  * Connection between the RootQuery type and the EnqueuedScript type
  */
 export interface RootQueryToEnqueuedScriptConnection {
-  __typename?: "RootQueryToEnqueuedScriptConnection";
+  __typename?: 'RootQueryToEnqueuedScriptConnection';
   /**
    * Edges for the RootQueryToEnqueuedScriptConnection connection
    */
@@ -14102,11 +14182,11 @@ export interface RootQueryToEnqueuedScriptConnection {
  * An edge in a connection
  */
 export interface RootQueryToEnqueuedScriptConnectionEdge {
-  __typename?: "RootQueryToEnqueuedScriptConnectionEdge";
+  __typename?: 'RootQueryToEnqueuedScriptConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14117,7 +14197,7 @@ export interface RootQueryToEnqueuedScriptConnectionEdge {
  * Connection between the RootQuery type and the EnqueuedStylesheet type
  */
 export interface RootQueryToEnqueuedStylesheetConnection {
-  __typename?: "RootQueryToEnqueuedStylesheetConnection";
+  __typename?: 'RootQueryToEnqueuedStylesheetConnection';
   /**
    * Edges for the RootQueryToEnqueuedStylesheetConnection connection
    */
@@ -14136,11 +14216,11 @@ export interface RootQueryToEnqueuedStylesheetConnection {
  * An edge in a connection
  */
 export interface RootQueryToEnqueuedStylesheetConnectionEdge {
-  __typename?: "RootQueryToEnqueuedStylesheetConnectionEdge";
+  __typename?: 'RootQueryToEnqueuedStylesheetConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14151,7 +14231,7 @@ export interface RootQueryToEnqueuedStylesheetConnectionEdge {
  * Connection between the RootQuery type and the mediaItem type
  */
 export interface RootQueryToMediaItemConnection {
-  __typename?: "RootQueryToMediaItemConnection";
+  __typename?: 'RootQueryToMediaItemConnection';
   /**
    * Edges for the RootQueryToMediaItemConnection connection
    */
@@ -14170,11 +14250,11 @@ export interface RootQueryToMediaItemConnection {
  * An edge in a connection
  */
 export interface RootQueryToMediaItemConnectionEdge {
-  __typename?: "RootQueryToMediaItemConnectionEdge";
+  __typename?: 'RootQueryToMediaItemConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14185,7 +14265,7 @@ export interface RootQueryToMediaItemConnectionEdge {
  * Connection between the RootQuery type and the Menu type
  */
 export interface RootQueryToMenuConnection {
-  __typename?: "RootQueryToMenuConnection";
+  __typename?: 'RootQueryToMenuConnection';
   /**
    * Edges for the RootQueryToMenuConnection connection
    */
@@ -14204,11 +14284,11 @@ export interface RootQueryToMenuConnection {
  * An edge in a connection
  */
 export interface RootQueryToMenuConnectionEdge {
-  __typename?: "RootQueryToMenuConnectionEdge";
+  __typename?: 'RootQueryToMenuConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14219,7 +14299,7 @@ export interface RootQueryToMenuConnectionEdge {
  * Connection between the RootQuery type and the MenuItem type
  */
 export interface RootQueryToMenuItemConnection {
-  __typename?: "RootQueryToMenuItemConnection";
+  __typename?: 'RootQueryToMenuItemConnection';
   /**
    * Edges for the RootQueryToMenuItemConnection connection
    */
@@ -14238,11 +14318,11 @@ export interface RootQueryToMenuItemConnection {
  * An edge in a connection
  */
 export interface RootQueryToMenuItemConnectionEdge {
-  __typename?: "RootQueryToMenuItemConnectionEdge";
+  __typename?: 'RootQueryToMenuItemConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14253,7 +14333,7 @@ export interface RootQueryToMenuItemConnectionEdge {
  * Connection between the RootQuery type and the page type
  */
 export interface RootQueryToPageConnection {
-  __typename?: "RootQueryToPageConnection";
+  __typename?: 'RootQueryToPageConnection';
   /**
    * Edges for the RootQueryToPageConnection connection
    */
@@ -14272,11 +14352,11 @@ export interface RootQueryToPageConnection {
  * An edge in a connection
  */
 export interface RootQueryToPageConnectionEdge {
-  __typename?: "RootQueryToPageConnectionEdge";
+  __typename?: 'RootQueryToPageConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14287,7 +14367,7 @@ export interface RootQueryToPageConnectionEdge {
  * Connection between the RootQuery type and the Plugin type
  */
 export interface RootQueryToPluginConnection {
-  __typename?: "RootQueryToPluginConnection";
+  __typename?: 'RootQueryToPluginConnection';
   /**
    * Edges for the RootQueryToPluginConnection connection
    */
@@ -14306,11 +14386,11 @@ export interface RootQueryToPluginConnection {
  * An edge in a connection
  */
 export interface RootQueryToPluginConnectionEdge {
-  __typename?: "RootQueryToPluginConnectionEdge";
+  __typename?: 'RootQueryToPluginConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14321,7 +14401,7 @@ export interface RootQueryToPluginConnectionEdge {
  * Connection between the RootQuery type and the post type
  */
 export interface RootQueryToPostConnection {
-  __typename?: "RootQueryToPostConnection";
+  __typename?: 'RootQueryToPostConnection';
   /**
    * Edges for the RootQueryToPostConnection connection
    */
@@ -14340,11 +14420,11 @@ export interface RootQueryToPostConnection {
  * An edge in a connection
  */
 export interface RootQueryToPostConnectionEdge {
-  __typename?: "RootQueryToPostConnectionEdge";
+  __typename?: 'RootQueryToPostConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14355,7 +14435,7 @@ export interface RootQueryToPostConnectionEdge {
  * Connection between the RootQuery type and the postFormat type
  */
 export interface RootQueryToPostFormatConnection {
-  __typename?: "RootQueryToPostFormatConnection";
+  __typename?: 'RootQueryToPostFormatConnection';
   /**
    * Edges for the RootQueryToPostFormatConnection connection
    */
@@ -14374,11 +14454,11 @@ export interface RootQueryToPostFormatConnection {
  * An edge in a connection
  */
 export interface RootQueryToPostFormatConnectionEdge {
-  __typename?: "RootQueryToPostFormatConnectionEdge";
+  __typename?: 'RootQueryToPostFormatConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14389,7 +14469,7 @@ export interface RootQueryToPostFormatConnectionEdge {
  * Connection between the RootQuery type and the tag type
  */
 export interface RootQueryToTagConnection {
-  __typename?: "RootQueryToTagConnection";
+  __typename?: 'RootQueryToTagConnection';
   /**
    * Edges for the RootQueryToTagConnection connection
    */
@@ -14408,11 +14488,11 @@ export interface RootQueryToTagConnection {
  * An edge in a connection
  */
 export interface RootQueryToTagConnectionEdge {
-  __typename?: "RootQueryToTagConnectionEdge";
+  __typename?: 'RootQueryToTagConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14423,7 +14503,7 @@ export interface RootQueryToTagConnectionEdge {
  * Connection between the RootQuery type and the Taxonomy type
  */
 export interface RootQueryToTaxonomyConnection {
-  __typename?: "RootQueryToTaxonomyConnection";
+  __typename?: 'RootQueryToTaxonomyConnection';
   /**
    * Edges for the RootQueryToTaxonomyConnection connection
    */
@@ -14442,11 +14522,11 @@ export interface RootQueryToTaxonomyConnection {
  * An edge in a connection
  */
 export interface RootQueryToTaxonomyConnectionEdge {
-  __typename?: "RootQueryToTaxonomyConnectionEdge";
+  __typename?: 'RootQueryToTaxonomyConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14457,7 +14537,7 @@ export interface RootQueryToTaxonomyConnectionEdge {
  * Connection between the RootQuery type and the TermNode type
  */
 export interface RootQueryToTermNodeConnection {
-  __typename?: "RootQueryToTermNodeConnection";
+  __typename?: 'RootQueryToTermNodeConnection';
   /**
    * Edges for the RootQueryToTermNodeConnection connection
    */
@@ -14476,11 +14556,11 @@ export interface RootQueryToTermNodeConnection {
  * An edge in a connection
  */
 export interface RootQueryToTermNodeConnectionEdge {
-  __typename?: "RootQueryToTermNodeConnectionEdge";
+  __typename?: 'RootQueryToTermNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14491,7 +14571,7 @@ export interface RootQueryToTermNodeConnectionEdge {
  * Connection between the RootQuery type and the Theme type
  */
 export interface RootQueryToThemeConnection {
-  __typename?: "RootQueryToThemeConnection";
+  __typename?: 'RootQueryToThemeConnection';
   /**
    * Edges for the RootQueryToThemeConnection connection
    */
@@ -14510,11 +14590,11 @@ export interface RootQueryToThemeConnection {
  * An edge in a connection
  */
 export interface RootQueryToThemeConnectionEdge {
-  __typename?: "RootQueryToThemeConnectionEdge";
+  __typename?: 'RootQueryToThemeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14525,7 +14605,7 @@ export interface RootQueryToThemeConnectionEdge {
  * Connection between the RootQuery type and the User type
  */
 export interface RootQueryToUserConnection {
-  __typename?: "RootQueryToUserConnection";
+  __typename?: 'RootQueryToUserConnection';
   /**
    * Edges for the RootQueryToUserConnection connection
    */
@@ -14544,11 +14624,11 @@ export interface RootQueryToUserConnection {
  * An edge in a connection
  */
 export interface RootQueryToUserConnectionEdge {
-  __typename?: "RootQueryToUserConnectionEdge";
+  __typename?: 'RootQueryToUserConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14559,7 +14639,7 @@ export interface RootQueryToUserConnectionEdge {
  * Connection between the RootQuery type and the UserRole type
  */
 export interface RootQueryToUserRoleConnection {
-  __typename?: "RootQueryToUserRoleConnection";
+  __typename?: 'RootQueryToUserRoleConnection';
   /**
    * Edges for the RootQueryToUserRoleConnection connection
    */
@@ -14578,11 +14658,11 @@ export interface RootQueryToUserRoleConnection {
  * An edge in a connection
  */
 export interface RootQueryToUserRoleConnectionEdge {
-  __typename?: "RootQueryToUserRoleConnectionEdge";
+  __typename?: 'RootQueryToUserRoleConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14593,11 +14673,11 @@ export interface RootQueryToUserRoleConnectionEdge {
  * The payload for the sendPasswordResetEmail mutation
  */
 export interface SendPasswordResetEmailPayload {
-  __typename?: "SendPasswordResetEmailPayload";
+  __typename?: 'SendPasswordResetEmailPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The user that the password reset email was sent to
    */
@@ -14608,72 +14688,72 @@ export interface SendPasswordResetEmailPayload {
  * All of the registered settings
  */
 export interface Settings {
-  __typename?: "Settings";
+  __typename?: 'Settings';
   /**
    * Settings of the the string Settings Group
    */
   atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: Maybe<
-    ScalarsEnums["String"]
+    ScalarsEnums['String']
   >;
   /**
    * Settings of the the string Settings Group
    */
-  discussionSettingsDefaultCommentStatus?: Maybe<ScalarsEnums["String"]>;
+  discussionSettingsDefaultCommentStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  discussionSettingsDefaultPingStatus?: Maybe<ScalarsEnums["String"]>;
+  discussionSettingsDefaultPingStatus?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsDateFormat?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsDateFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsDescription?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsDescription?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsLanguage?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsLanguage?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the integer Settings Group
    */
-  generalSettingsStartOfWeek?: Maybe<ScalarsEnums["Int"]>;
+  generalSettingsStartOfWeek?: Maybe<ScalarsEnums['Int']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsTimeFormat?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsTimeFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsTimezone?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsTimezone?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the string Settings Group
    */
-  generalSettingsTitle?: Maybe<ScalarsEnums["String"]>;
+  generalSettingsTitle?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the integer Settings Group
    */
-  readingSettingsPostsPerPage?: Maybe<ScalarsEnums["Int"]>;
+  readingSettingsPostsPerPage?: Maybe<ScalarsEnums['Int']>;
   /**
    * Settings of the the integer Settings Group
    */
-  writingSettingsDefaultCategory?: Maybe<ScalarsEnums["Int"]>;
+  writingSettingsDefaultCategory?: Maybe<ScalarsEnums['Int']>;
   /**
    * Settings of the the string Settings Group
    */
-  writingSettingsDefaultPostFormat?: Maybe<ScalarsEnums["String"]>;
+  writingSettingsDefaultPostFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * Settings of the the boolean Settings Group
    */
-  writingSettingsUseSmilies?: Maybe<ScalarsEnums["Boolean"]>;
+  writingSettingsUseSmilies?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 /**
  * The tag type
  */
 export interface Tag {
-  __typename?: "Tag";
+  __typename?: 'Tag';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -14685,19 +14765,19 @@ export interface Tag {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -14706,15 +14786,15 @@ export interface Tag {
   /**
    * The number of objects connected to the object
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The description of the object
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the TermNode type and the EnqueuedScript type
    */
@@ -14722,19 +14802,19 @@ export interface Tag {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the TermNode type and the EnqueuedStylesheet type
@@ -14743,44 +14823,44 @@ export interface Tag {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The link to the term
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The human friendly name of the object.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the tag type and the post type
    */
@@ -14788,19 +14868,19 @@ export interface Tag {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -14809,12 +14889,12 @@ export interface Tag {
   /**
    * An alphanumeric identifier for the object unique to its type.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
-  tagId?: Maybe<ScalarsEnums["Int"]>;
+  tagId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Connection between the tag type and the Taxonomy type
    */
@@ -14822,27 +14902,27 @@ export interface Tag {
   /**
    * The name of the taxonomy that the object is associated with
    */
-  taxonomyName?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The ID of the term group that this term object belongs to
    */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The taxonomy ID that the object is associated with
    */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the tag type and the ContentNode type
  */
 export interface TagToContentNodeConnection {
-  __typename?: "TagToContentNodeConnection";
+  __typename?: 'TagToContentNodeConnection';
   /**
    * Edges for the TagToContentNodeConnection connection
    */
@@ -14861,11 +14941,11 @@ export interface TagToContentNodeConnection {
  * An edge in a connection
  */
 export interface TagToContentNodeConnectionEdge {
-  __typename?: "TagToContentNodeConnectionEdge";
+  __typename?: 'TagToContentNodeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14876,7 +14956,7 @@ export interface TagToContentNodeConnectionEdge {
  * Connection between the tag type and the post type
  */
 export interface TagToPostConnection {
-  __typename?: "TagToPostConnection";
+  __typename?: 'TagToPostConnection';
   /**
    * Edges for the TagToPostConnection connection
    */
@@ -14895,11 +14975,11 @@ export interface TagToPostConnection {
  * An edge in a connection
  */
 export interface TagToPostConnectionEdge {
-  __typename?: "TagToPostConnectionEdge";
+  __typename?: 'TagToPostConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -14910,7 +14990,7 @@ export interface TagToPostConnectionEdge {
  * Connection between the tag type and the Taxonomy type
  */
 export interface TagToTaxonomyConnectionEdge {
-  __typename?: "TagToTaxonomyConnectionEdge";
+  __typename?: 'TagToTaxonomyConnectionEdge';
   /**
    * The node of the connection, without the edges
    */
@@ -14921,7 +15001,7 @@ export interface TagToTaxonomyConnectionEdge {
  * A taxonomy object
  */
 export interface Taxonomy {
-  __typename?: "Taxonomy";
+  __typename?: 'Taxonomy';
   /**
    * List of Content Types associated with the Taxonomy
    */
@@ -14929,103 +15009,103 @@ export interface Taxonomy {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TaxonomyToContentTypeConnection>;
   /**
    * Description of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;description
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * The plural name of the post type within the GraphQL Schema.
    */
-  graphqlPluralName?: Maybe<ScalarsEnums["String"]>;
+  graphqlPluralName?: Maybe<ScalarsEnums['String']>;
   /**
    * The singular name of the post type within the GraphQL Schema.
    */
-  graphqlSingleName?: Maybe<ScalarsEnums["String"]>;
+  graphqlSingleName?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether the taxonomy is hierarchical
    */
-  hierarchical?: Maybe<ScalarsEnums["Boolean"]>;
+  hierarchical?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The globally unique identifier of the taxonomy object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Name of the taxonomy shown in the menu. Usually plural.
    */
-  label?: Maybe<ScalarsEnums["String"]>;
+  label?: Maybe<ScalarsEnums['String']>;
   /**
    * The display name of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;label
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether the taxonomy is publicly queryable
    */
-  public?: Maybe<ScalarsEnums["Boolean"]>;
+  public?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Name of content type to diplay in REST API &quot;wp/v2&quot; namespace.
    */
-  restBase?: Maybe<ScalarsEnums["String"]>;
+  restBase?: Maybe<ScalarsEnums['String']>;
   /**
    * The REST Controller class assigned to handling this content type.
    */
-  restControllerClass?: Maybe<ScalarsEnums["String"]>;
+  restControllerClass?: Maybe<ScalarsEnums['String']>;
   /**
    * Whether to show the taxonomy as part of a tag cloud widget. This field is equivalent to WP_Taxonomy-&gt;show_tagcloud
    */
-  showCloud?: Maybe<ScalarsEnums["Boolean"]>;
+  showCloud?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to display a column for the taxonomy on its post type listing screens.
    */
-  showInAdminColumn?: Maybe<ScalarsEnums["Boolean"]>;
+  showInAdminColumn?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to add the post type to the GraphQL Schema.
    */
-  showInGraphql?: Maybe<ScalarsEnums["Boolean"]>;
+  showInGraphql?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to show the taxonomy in the admin menu
    */
-  showInMenu?: Maybe<ScalarsEnums["Boolean"]>;
+  showInMenu?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the taxonomy is available for selection in navigation menus.
    */
-  showInNavMenus?: Maybe<ScalarsEnums["Boolean"]>;
+  showInNavMenus?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to show the taxonomy in the quick/bulk edit panel.
    */
-  showInQuickEdit?: Maybe<ScalarsEnums["Boolean"]>;
+  showInQuickEdit?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to add the post type route in the REST API &quot;wp/v2&quot; namespace.
    */
-  showInRest?: Maybe<ScalarsEnums["Boolean"]>;
+  showInRest?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether to generate and allow a UI for managing terms in this taxonomy in the admin
    */
-  showUi?: Maybe<ScalarsEnums["Boolean"]>;
+  showUi?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 /**
  * Connection between the Taxonomy type and the ContentType type
  */
 export interface TaxonomyToContentTypeConnection {
-  __typename?: "TaxonomyToContentTypeConnection";
+  __typename?: 'TaxonomyToContentTypeConnection';
   /**
    * Edges for the TaxonomyToContentTypeConnection connection
    */
@@ -15044,11 +15124,11 @@ export interface TaxonomyToContentTypeConnection {
  * An edge in a connection
  */
 export interface TaxonomyToContentTypeConnectionEdge {
-  __typename?: "TaxonomyToContentTypeConnectionEdge";
+  __typename?: 'TaxonomyToContentTypeConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15059,29 +15139,29 @@ export interface TaxonomyToContentTypeConnectionEdge {
  * The template assigned to the node
  */
 export interface Template_Blank {
-  __typename?: "Template_Blank";
+  __typename?: 'Template_Blank';
   /**
    * The name of the template
    */
-  templateName?: Maybe<ScalarsEnums["String"]>;
+  templateName?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The template assigned to the node
  */
 export interface Template_WithSidebar {
-  __typename?: "Template_WithSidebar";
+  __typename?: 'Template_WithSidebar';
   /**
    * The name of the template
    */
-  templateName?: Maybe<ScalarsEnums["String"]>;
+  templateName?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Terms are nodes within a Taxonomy, used to group and relate other nodes.
  */
 export interface TermNode {
-  __typename?: "AToZCategory" | "Category" | "PostFormat" | "Tag";
+  __typename?: 'AToZCategory' | 'Category' | 'PostFormat' | 'Tag';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -15089,15 +15169,15 @@ export interface TermNode {
   /**
    * The number of objects connected to the object
    */
-  count?: Maybe<ScalarsEnums["Int"]>;
+  count?: Maybe<ScalarsEnums['Int']>;
   /**
    * Identifies the primary key from the database.
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * The description of the object
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the TermNode type and the EnqueuedScript type
    */
@@ -15105,19 +15185,19 @@ export interface TermNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedScriptConnection>;
   /**
    * Connection between the TermNode type and the EnqueuedStylesheet type
@@ -15126,65 +15206,65 @@ export interface TermNode {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * The link to the term
    */
-  link?: Maybe<ScalarsEnums["String"]>;
+  link?: Maybe<ScalarsEnums['String']>;
   /**
    * The human friendly name of the object.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * An alphanumeric identifier for the object unique to its type.
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * The name of the taxonomy that the object is associated with
    */
-  taxonomyName?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The ID of the term group that this term object belongs to
    */
-  termGroupId?: Maybe<ScalarsEnums["Int"]>;
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The taxonomy ID that the object is associated with
    */
-  termTaxonomyId?: Maybe<ScalarsEnums["Int"]>;
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   $on: $TermNode;
 }
 
@@ -15192,7 +15272,7 @@ export interface TermNode {
  * Connection between the TermNode type and the EnqueuedScript type
  */
 export interface TermNodeToEnqueuedScriptConnection {
-  __typename?: "TermNodeToEnqueuedScriptConnection";
+  __typename?: 'TermNodeToEnqueuedScriptConnection';
   /**
    * Edges for the TermNodeToEnqueuedScriptConnection connection
    */
@@ -15211,11 +15291,11 @@ export interface TermNodeToEnqueuedScriptConnection {
  * An edge in a connection
  */
 export interface TermNodeToEnqueuedScriptConnectionEdge {
-  __typename?: "TermNodeToEnqueuedScriptConnectionEdge";
+  __typename?: 'TermNodeToEnqueuedScriptConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15226,7 +15306,7 @@ export interface TermNodeToEnqueuedScriptConnectionEdge {
  * Connection between the TermNode type and the EnqueuedStylesheet type
  */
 export interface TermNodeToEnqueuedStylesheetConnection {
-  __typename?: "TermNodeToEnqueuedStylesheetConnection";
+  __typename?: 'TermNodeToEnqueuedStylesheetConnection';
   /**
    * Edges for the TermNodeToEnqueuedStylesheetConnection connection
    */
@@ -15245,11 +15325,11 @@ export interface TermNodeToEnqueuedStylesheetConnection {
  * An edge in a connection
  */
 export interface TermNodeToEnqueuedStylesheetConnectionEdge {
-  __typename?: "TermNodeToEnqueuedStylesheetConnectionEdge";
+  __typename?: 'TermNodeToEnqueuedStylesheetConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15260,51 +15340,51 @@ export interface TermNodeToEnqueuedStylesheetConnectionEdge {
  * A theme object
  */
 export interface Theme {
-  __typename?: "Theme";
+  __typename?: 'Theme';
   /**
    * Name of the theme author(s), could also be a company name. This field is equivalent to WP_Theme-&gt;get( &quot;Author&quot; ).
    */
-  author?: Maybe<ScalarsEnums["String"]>;
+  author?: Maybe<ScalarsEnums['String']>;
   /**
    * URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;AuthorURI&quot; ).
    */
-  authorUri?: Maybe<ScalarsEnums["String"]>;
+  authorUri?: Maybe<ScalarsEnums['String']>;
   /**
    * The description of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Description&quot; ).
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier of the theme object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Display name of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Name&quot; ).
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The URL of the screenshot for the theme. The screenshot is intended to give an overview of what the theme looks like. This field is equivalent to WP_Theme-&gt;get_screenshot().
    */
-  screenshot?: Maybe<ScalarsEnums["String"]>;
+  screenshot?: Maybe<ScalarsEnums['String']>;
   /**
    * The theme slug is used to internally match themes. Theme slugs can have subdirectories like: my-theme/sub-theme. This field is equivalent to WP_Theme-&gt;get_stylesheet().
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
+  slug?: Maybe<ScalarsEnums['String']>;
   /**
    * URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;Tags&quot; ).
    */
-  tags?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  tags?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * A URI if the theme has a website associated with it. The Theme URI is handy for directing users to a theme site for support etc. This field is equivalent to WP_Theme-&gt;get( &quot;ThemeURI&quot; ).
    */
-  themeUri?: Maybe<ScalarsEnums["String"]>;
+  themeUri?: Maybe<ScalarsEnums['String']>;
   /**
    * The current version of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Version&quot; ).
    */
-  version?: Maybe<ScalarsEnums["String"]>;
+  version?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -15312,17 +15392,17 @@ export interface Theme {
  */
 export interface UniformResourceIdentifiable {
   __typename?:
-    | "AToZ"
-    | "AToZCategory"
-    | "AcalogProgram"
-    | "Category"
-    | "ContentType"
-    | "MediaItem"
-    | "Page"
-    | "Post"
-    | "PostFormat"
-    | "Tag"
-    | "User";
+    | 'AToZ'
+    | 'AToZCategory'
+    | 'AcalogProgram'
+    | 'Category'
+    | 'ContentType'
+    | 'MediaItem'
+    | 'Page'
+    | 'Post'
+    | 'PostFormat'
+    | 'Tag'
+    | 'User';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -15330,20 +15410,20 @@ export interface UniformResourceIdentifiable {
   /**
    * The unique resource identifier path
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  isTermNode: ScalarsEnums['Boolean'];
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   $on: $UniformResourceIdentifiable;
 }
 
@@ -15351,7 +15431,7 @@ export interface UniformResourceIdentifiable {
  * The payload for the UpdateAToZCategory mutation
  */
 export interface UpdateAToZCategoryPayload {
-  __typename?: "UpdateAToZCategoryPayload";
+  __typename?: 'UpdateAToZCategoryPayload';
   /**
    * The created a_to_z_categories
    */
@@ -15359,14 +15439,14 @@ export interface UpdateAToZCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the updateAToZ mutation
  */
 export interface UpdateAToZPayload {
-  __typename?: "UpdateAToZPayload";
+  __typename?: 'UpdateAToZPayload';
   /**
    * The Post object mutation type.
    */
@@ -15374,14 +15454,14 @@ export interface UpdateAToZPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the updateAcalogProgram mutation
  */
 export interface UpdateAcalogProgramPayload {
-  __typename?: "UpdateAcalogProgramPayload";
+  __typename?: 'UpdateAcalogProgramPayload';
   /**
    * The Post object mutation type.
    */
@@ -15389,14 +15469,14 @@ export interface UpdateAcalogProgramPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the UpdateCategory mutation
  */
 export interface UpdateCategoryPayload {
-  __typename?: "UpdateCategoryPayload";
+  __typename?: 'UpdateCategoryPayload';
   /**
    * The created category
    */
@@ -15404,18 +15484,18 @@ export interface UpdateCategoryPayload {
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The payload for the updateComment mutation
  */
 export interface UpdateCommentPayload {
-  __typename?: "UpdateCommentPayload";
+  __typename?: 'UpdateCommentPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The comment that was created
    */
@@ -15423,18 +15503,18 @@ export interface UpdateCommentPayload {
   /**
    * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
    */
-  success?: Maybe<ScalarsEnums["Boolean"]>;
+  success?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 /**
  * The payload for the updateMediaItem mutation
  */
 export interface UpdateMediaItemPayload {
-  __typename?: "UpdateMediaItemPayload";
+  __typename?: 'UpdateMediaItemPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The MediaItem object mutation type.
    */
@@ -15445,11 +15525,11 @@ export interface UpdateMediaItemPayload {
  * The payload for the updatePage mutation
  */
 export interface UpdatePagePayload {
-  __typename?: "UpdatePagePayload";
+  __typename?: 'UpdatePagePayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The Post object mutation type.
    */
@@ -15460,11 +15540,11 @@ export interface UpdatePagePayload {
  * The payload for the UpdatePostFormat mutation
  */
 export interface UpdatePostFormatPayload {
-  __typename?: "UpdatePostFormatPayload";
+  __typename?: 'UpdatePostFormatPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The created post_format
    */
@@ -15475,11 +15555,11 @@ export interface UpdatePostFormatPayload {
  * The payload for the updatePost mutation
  */
 export interface UpdatePostPayload {
-  __typename?: "UpdatePostPayload";
+  __typename?: 'UpdatePostPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The Post object mutation type.
    */
@@ -15490,33 +15570,33 @@ export interface UpdatePostPayload {
  * The payload for the updateSettings mutation
  */
 export interface UpdateSettingsPayload {
-  __typename?: "UpdateSettingsPayload";
+  __typename?: 'UpdateSettingsPayload';
   /**
    * Update all settings.
    */
   allSettings?: Maybe<Settings>;
   /**
-   * Update the atlasContentModelerSettings setting.
+   * Update the AtlasContentModelerSettingsSettings setting.
    */
   atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
-   * Update the discussion setting.
+   * Update the DiscussionSettings setting.
    */
   discussionSettings?: Maybe<DiscussionSettings>;
   /**
-   * Update the general setting.
+   * Update the GeneralSettings setting.
    */
   generalSettings?: Maybe<GeneralSettings>;
   /**
-   * Update the reading setting.
+   * Update the ReadingSettings setting.
    */
   readingSettings?: Maybe<ReadingSettings>;
   /**
-   * Update the writing setting.
+   * Update the WritingSettings setting.
    */
   writingSettings?: Maybe<WritingSettings>;
 }
@@ -15525,11 +15605,11 @@ export interface UpdateSettingsPayload {
  * The payload for the UpdateTag mutation
  */
 export interface UpdateTagPayload {
-  __typename?: "UpdateTagPayload";
+  __typename?: 'UpdateTagPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The created post_tag
    */
@@ -15540,11 +15620,11 @@ export interface UpdateTagPayload {
  * The payload for the updateUser mutation
  */
 export interface UpdateUserPayload {
-  __typename?: "UpdateUserPayload";
+  __typename?: 'UpdateUserPayload';
   /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
-  clientMutationId?: Maybe<ScalarsEnums["String"]>;
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
    * The User object mutation type.
    */
@@ -15555,7 +15635,7 @@ export interface UpdateUserPayload {
  * A User object
  */
 export interface User {
-  __typename?: "User";
+  __typename?: 'User';
   /**
    * Avatar object for user. The avatar object can be retrieved in different sizes by specifying the size argument.
    */
@@ -15563,7 +15643,7 @@ export interface User {
     /**
      * Whether to always show the default image, never the Gravatar. Default false
      */
-    forceDefault?: Maybe<Scalars["Boolean"]>;
+    forceDefault?: Maybe<Scalars['Boolean']>;
     /**
      * The rating level of the avatar.
      */
@@ -15572,16 +15652,16 @@ export interface User {
      * The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.
      * @defaultValue `96`
      */
-    size?: Maybe<Scalars["Int"]>;
+    size?: Maybe<Scalars['Int']>;
   }) => Maybe<Avatar>;
   /**
    * User metadata option name. Usually it will be &quot;wp_capabilities&quot;.
    */
-  capKey?: Maybe<ScalarsEnums["String"]>;
+  capKey?: Maybe<ScalarsEnums['String']>;
   /**
    * A list of capabilities (permissions) granted to the user
    */
-  capabilities?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  capabilities?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * Connection between the User type and the Comment type
    */
@@ -15589,19 +15669,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -15614,15 +15694,15 @@ export interface User {
   /**
    * Identifies the primary key from the database.
    */
-  databaseId: ScalarsEnums["Int"];
+  databaseId: ScalarsEnums['Int'];
   /**
    * Description of the user.
    */
-  description?: Maybe<ScalarsEnums["String"]>;
+  description?: Maybe<ScalarsEnums['String']>;
   /**
    * Email address of the user. This is equivalent to the WP_User-&gt;user_email property.
    */
-  email?: Maybe<ScalarsEnums["String"]>;
+  email?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the User type and the EnqueuedScript type
    */
@@ -15630,19 +15710,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<UserToEnqueuedScriptConnection>;
   /**
    * Connection between the User type and the EnqueuedStylesheet type
@@ -15651,52 +15731,52 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<UserToEnqueuedStylesheetConnection>;
   /**
    * A complete list of capabilities including capabilities inherited from a role. This is equivalent to the array keys of WP_User-&gt;allcaps.
    */
-  extraCapabilities?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  extraCapabilities?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * First name of the user. This is equivalent to the WP_User-&gt;user_first_name property.
    */
-  firstName?: Maybe<ScalarsEnums["String"]>;
+  firstName?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier for the user object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the node is a Content Node
    */
-  isContentNode: ScalarsEnums["Boolean"];
+  isContentNode: ScalarsEnums['Boolean'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * Whether the node is a Term
    */
-  isTermNode: ScalarsEnums["Boolean"];
+  isTermNode: ScalarsEnums['Boolean'];
   /**
    * Last name of the user. This is equivalent to the WP_User-&gt;user_last_name property.
    */
-  lastName?: Maybe<ScalarsEnums["String"]>;
+  lastName?: Maybe<ScalarsEnums['String']>;
   /**
    * The preferred language locale set for the user. Value derived from get_user_locale().
    */
-  locale?: Maybe<ScalarsEnums["String"]>;
+  locale?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the User type and the mediaItem type
    */
@@ -15704,19 +15784,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -15725,15 +15805,15 @@ export interface User {
   /**
    * Display name of the user. This is equivalent to the WP_User-&gt;dispaly_name property.
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
   /**
    * The nicename for the user. This field is equivalent to WP_User-&gt;user_nicename
    */
-  nicename?: Maybe<ScalarsEnums["String"]>;
+  nicename?: Maybe<ScalarsEnums['String']>;
   /**
    * Nickname of the user.
    */
-  nickname?: Maybe<ScalarsEnums["String"]>;
+  nickname?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the User type and the page type
    */
@@ -15741,19 +15821,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -15766,19 +15846,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -15787,7 +15867,7 @@ export interface User {
   /**
    * The date the user registered or was created. The field follows a full ISO8601 date string format.
    */
-  registeredDate?: Maybe<ScalarsEnums["String"]>;
+  registeredDate?: Maybe<ScalarsEnums['String']>;
   /**
    * Connection between the User and Revisions authored by the user
    */
@@ -15795,19 +15875,19 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
     /**
      * Arguments for filtering the connection
      */
@@ -15820,76 +15900,76 @@ export interface User {
     /**
      * Cursor used along with the "first" argument to reference where in the dataset to get data
      */
-    after?: Maybe<Scalars["String"]>;
+    after?: Maybe<Scalars['String']>;
     /**
      * Cursor used along with the "last" argument to reference where in the dataset to get data
      */
-    before?: Maybe<Scalars["String"]>;
+    before?: Maybe<Scalars['String']>;
     /**
      * The number of items to return after the referenced "after" cursor
      */
-    first?: Maybe<Scalars["Int"]>;
+    first?: Maybe<Scalars['Int']>;
     /**
      * The number of items to return before the referenced "before" cursor
      */
-    last?: Maybe<Scalars["Int"]>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<UserToUserRoleConnection>;
   /**
    * The slug for the user. This field is equivalent to WP_User-&gt;user_nicename
    */
-  slug?: Maybe<ScalarsEnums["String"]>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  slug?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The unique resource identifier path
    */
-  uri?: Maybe<ScalarsEnums["String"]>;
+  uri?: Maybe<ScalarsEnums['String']>;
   /**
    * A website url that is associated with the user.
    */
-  url?: Maybe<ScalarsEnums["String"]>;
+  url?: Maybe<ScalarsEnums['String']>;
   /**
    * The Id of the user. Equivalent to WP_User-&gt;ID
    * @deprecated Deprecated in favor of the databaseId field
    */
-  userId?: Maybe<ScalarsEnums["Int"]>;
+  userId?: Maybe<ScalarsEnums['Int']>;
   /**
    * Username for the user. This field is equivalent to WP_User-&gt;user_login.
    */
-  username?: Maybe<ScalarsEnums["String"]>;
+  username?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * A user role object
  */
 export interface UserRole {
-  __typename?: "UserRole";
+  __typename?: 'UserRole';
   /**
    * The capabilities that belong to this role
    */
-  capabilities?: Maybe<Array<Maybe<ScalarsEnums["String"]>>>;
+  capabilities?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
    * The display name of the role
    */
-  displayName?: Maybe<ScalarsEnums["String"]>;
+  displayName?: Maybe<ScalarsEnums['String']>;
   /**
    * The globally unique identifier for the user role object.
    */
-  id: ScalarsEnums["ID"];
+  id: ScalarsEnums['ID'];
   /**
    * Whether the object is restricted from the current viewer
    */
-  isRestricted?: Maybe<ScalarsEnums["Boolean"]>;
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
   /**
    * The registered name of the role
    */
-  name?: Maybe<ScalarsEnums["String"]>;
+  name?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * Connection between the User type and the Comment type
  */
 export interface UserToCommentConnection {
-  __typename?: "UserToCommentConnection";
+  __typename?: 'UserToCommentConnection';
   /**
    * Edges for the UserToCommentConnection connection
    */
@@ -15908,11 +15988,11 @@ export interface UserToCommentConnection {
  * An edge in a connection
  */
 export interface UserToCommentConnectionEdge {
-  __typename?: "UserToCommentConnectionEdge";
+  __typename?: 'UserToCommentConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15923,7 +16003,7 @@ export interface UserToCommentConnectionEdge {
  * Connection between the User type and the ContentRevisionUnion type
  */
 export interface UserToContentRevisionUnionConnection {
-  __typename?: "UserToContentRevisionUnionConnection";
+  __typename?: 'UserToContentRevisionUnionConnection';
   /**
    * Edges for the UserToContentRevisionUnionConnection connection
    */
@@ -15942,11 +16022,11 @@ export interface UserToContentRevisionUnionConnection {
  * An edge in a connection
  */
 export interface UserToContentRevisionUnionConnectionEdge {
-  __typename?: "UserToContentRevisionUnionConnectionEdge";
+  __typename?: 'UserToContentRevisionUnionConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15957,7 +16037,7 @@ export interface UserToContentRevisionUnionConnectionEdge {
  * Connection between the User type and the EnqueuedScript type
  */
 export interface UserToEnqueuedScriptConnection {
-  __typename?: "UserToEnqueuedScriptConnection";
+  __typename?: 'UserToEnqueuedScriptConnection';
   /**
    * Edges for the UserToEnqueuedScriptConnection connection
    */
@@ -15976,11 +16056,11 @@ export interface UserToEnqueuedScriptConnection {
  * An edge in a connection
  */
 export interface UserToEnqueuedScriptConnectionEdge {
-  __typename?: "UserToEnqueuedScriptConnectionEdge";
+  __typename?: 'UserToEnqueuedScriptConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -15991,7 +16071,7 @@ export interface UserToEnqueuedScriptConnectionEdge {
  * Connection between the User type and the EnqueuedStylesheet type
  */
 export interface UserToEnqueuedStylesheetConnection {
-  __typename?: "UserToEnqueuedStylesheetConnection";
+  __typename?: 'UserToEnqueuedStylesheetConnection';
   /**
    * Edges for the UserToEnqueuedStylesheetConnection connection
    */
@@ -16010,11 +16090,11 @@ export interface UserToEnqueuedStylesheetConnection {
  * An edge in a connection
  */
 export interface UserToEnqueuedStylesheetConnectionEdge {
-  __typename?: "UserToEnqueuedStylesheetConnectionEdge";
+  __typename?: 'UserToEnqueuedStylesheetConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -16025,7 +16105,7 @@ export interface UserToEnqueuedStylesheetConnectionEdge {
  * Connection between the User type and the mediaItem type
  */
 export interface UserToMediaItemConnection {
-  __typename?: "UserToMediaItemConnection";
+  __typename?: 'UserToMediaItemConnection';
   /**
    * Edges for the UserToMediaItemConnection connection
    */
@@ -16044,11 +16124,11 @@ export interface UserToMediaItemConnection {
  * An edge in a connection
  */
 export interface UserToMediaItemConnectionEdge {
-  __typename?: "UserToMediaItemConnectionEdge";
+  __typename?: 'UserToMediaItemConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -16059,7 +16139,7 @@ export interface UserToMediaItemConnectionEdge {
  * Connection between the User type and the page type
  */
 export interface UserToPageConnection {
-  __typename?: "UserToPageConnection";
+  __typename?: 'UserToPageConnection';
   /**
    * Edges for the UserToPageConnection connection
    */
@@ -16078,11 +16158,11 @@ export interface UserToPageConnection {
  * An edge in a connection
  */
 export interface UserToPageConnectionEdge {
-  __typename?: "UserToPageConnectionEdge";
+  __typename?: 'UserToPageConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -16093,7 +16173,7 @@ export interface UserToPageConnectionEdge {
  * Connection between the User type and the post type
  */
 export interface UserToPostConnection {
-  __typename?: "UserToPostConnection";
+  __typename?: 'UserToPostConnection';
   /**
    * Edges for the UserToPostConnection connection
    */
@@ -16112,11 +16192,11 @@ export interface UserToPostConnection {
  * An edge in a connection
  */
 export interface UserToPostConnectionEdge {
-  __typename?: "UserToPostConnectionEdge";
+  __typename?: 'UserToPostConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -16127,7 +16207,7 @@ export interface UserToPostConnectionEdge {
  * Connection between the User type and the UserRole type
  */
 export interface UserToUserRoleConnection {
-  __typename?: "UserToUserRoleConnection";
+  __typename?: 'UserToUserRoleConnection';
   /**
    * Edges for the UserToUserRoleConnection connection
    */
@@ -16146,11 +16226,11 @@ export interface UserToUserRoleConnection {
  * An edge in a connection
  */
 export interface UserToUserRoleConnectionEdge {
-  __typename?: "UserToUserRoleConnectionEdge";
+  __typename?: 'UserToUserRoleConnectionEdge';
   /**
    * A cursor for use in pagination
    */
-  cursor?: Maybe<ScalarsEnums["String"]>;
+  cursor?: Maybe<ScalarsEnums['String']>;
   /**
    * The item at the end of the edge
    */
@@ -16161,46 +16241,46 @@ export interface UserToUserRoleConnectionEdge {
  * Information about pagination in a connection.
  */
 export interface WPPageInfo {
-  __typename?: "WPPageInfo";
+  __typename?: 'WPPageInfo';
   /**
    * When paginating forwards, the cursor to continue.
    */
-  endCursor?: Maybe<ScalarsEnums["String"]>;
+  endCursor?: Maybe<ScalarsEnums['String']>;
   /**
    * When paginating forwards, are there more items?
    */
-  hasNextPage: ScalarsEnums["Boolean"];
+  hasNextPage: ScalarsEnums['Boolean'];
   /**
    * When paginating backwards, are there more items?
    */
-  hasPreviousPage: ScalarsEnums["Boolean"];
+  hasPreviousPage: ScalarsEnums['Boolean'];
   /**
    * When paginating backwards, the cursor to continue.
    */
-  startCursor?: Maybe<ScalarsEnums["String"]>;
+  startCursor?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
  * The writing setting type
  */
 export interface WritingSettings {
-  __typename?: "WritingSettings";
+  __typename?: 'WritingSettings';
   /**
    * Default post category.
    */
-  defaultCategory?: Maybe<ScalarsEnums["Int"]>;
+  defaultCategory?: Maybe<ScalarsEnums['Int']>;
   /**
    * Default post format.
    */
-  defaultPostFormat?: Maybe<ScalarsEnums["String"]>;
+  defaultPostFormat?: Maybe<ScalarsEnums['String']>;
   /**
    * Convert emoticons like :-) and :-P to graphics on display.
    */
-  useSmilies?: Maybe<ScalarsEnums["Boolean"]>;
+  useSmilies?: Maybe<ScalarsEnums['Boolean']>;
 }
 
 export interface Mutation {
-  __typename?: "Mutation";
+  __typename?: 'Mutation';
   createAToZ: (args: { input: CreateAToZInput }) => Maybe<CreateAToZPayload>;
   createAToZCategory: (args: {
     input: CreateAToZCategoryInput;
@@ -16251,8 +16331,8 @@ export interface Mutation {
     input: GenerateAuthorizationCodeInput;
   }) => Maybe<GenerateAuthorizationCodePayload>;
   increaseCount: (args?: {
-    count?: Maybe<Scalars["Int"]>;
-  }) => Maybe<ScalarsEnums["Int"]>;
+    count?: Maybe<Scalars['Int']>;
+  }) => Maybe<ScalarsEnums['Int']>;
   registerUser: (args: {
     input: RegisterUserInput;
   }) => Maybe<RegisterUserPayload>;
@@ -16294,270 +16374,271 @@ export interface Mutation {
 }
 
 export interface Query {
-  __typename?: "Query";
+  __typename?: 'Query';
   aToZ: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
     idType?: Maybe<AToZIdType>;
   }) => Maybe<AToZ>;
   aToZBy: (args?: {
-    aToZId?: Maybe<Scalars["Int"]>;
-    id?: Maybe<Scalars["ID"]>;
-    slug?: Maybe<Scalars["String"]>;
-    uri?: Maybe<Scalars["String"]>;
+    aToZId?: Maybe<Scalars['Int']>;
+    id?: Maybe<Scalars['ID']>;
+    slug?: Maybe<Scalars['String']>;
+    uri?: Maybe<Scalars['String']>;
   }) => Maybe<AToZ>;
   aToZCategories: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToAToZCategoryConnectionWhereArgs>;
   }) => Maybe<RootQueryToAToZCategoryConnection>;
   aToZCategory: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<AToZCategoryIdType>;
   }) => Maybe<AToZCategory>;
   acalogProgram: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
     idType?: Maybe<AcalogProgramIdType>;
   }) => Maybe<AcalogProgram>;
   acalogProgramBy: (args?: {
-    acalogProgramId?: Maybe<Scalars["Int"]>;
-    id?: Maybe<Scalars["ID"]>;
-    slug?: Maybe<Scalars["String"]>;
-    uri?: Maybe<Scalars["String"]>;
+    acalogProgramId?: Maybe<Scalars['Int']>;
+    id?: Maybe<Scalars['ID']>;
+    slug?: Maybe<Scalars['String']>;
+    uri?: Maybe<Scalars['String']>;
   }) => Maybe<AcalogProgram>;
   acalogPrograms: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToAcalogProgramConnectionWhereArgs>;
   }) => Maybe<RootQueryToAcalogProgramConnection>;
   allAToZ: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToAToZConnectionWhereArgs>;
   }) => Maybe<RootQueryToAToZConnection>;
   allSettings?: Maybe<Settings>;
   atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   categories: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToCategoryConnectionWhereArgs>;
   }) => Maybe<RootQueryToCategoryConnection>;
   category: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<CategoryIdType>;
   }) => Maybe<Category>;
-  comment: (args: { id: Scalars["ID"] }) => Maybe<Comment>;
+  comment: (args: { id: Scalars['ID'] }) => Maybe<Comment>;
   comments: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToCommentConnectionWhereArgs>;
   }) => Maybe<RootQueryToCommentConnection>;
   contentNode: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
+    asPreview?: Maybe<Scalars['Boolean']>;
     contentType?: Maybe<ContentTypeEnum>;
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<ContentNodeIdTypeEnum>;
   }) => Maybe<ContentNode>;
   contentNodes: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToContentNodeConnectionWhereArgs>;
   }) => Maybe<RootQueryToContentNodeConnection>;
   contentType: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<ContentTypeIdTypeEnum>;
   }) => Maybe<ContentType>;
   contentTypes: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToContentTypeConnection>;
   discussionSettings?: Maybe<DiscussionSettings>;
   generalSettings?: Maybe<GeneralSettings>;
   mediaItem: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
     idType?: Maybe<MediaItemIdType>;
   }) => Maybe<MediaItem>;
   mediaItemBy: (args?: {
-    id?: Maybe<Scalars["ID"]>;
-    mediaItemId?: Maybe<Scalars["Int"]>;
-    slug?: Maybe<Scalars["String"]>;
-    uri?: Maybe<Scalars["String"]>;
+    id?: Maybe<Scalars['ID']>;
+    mediaItemId?: Maybe<Scalars['Int']>;
+    slug?: Maybe<Scalars['String']>;
+    uri?: Maybe<Scalars['String']>;
   }) => Maybe<MediaItem>;
   mediaItems: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToMediaItemConnectionWhereArgs>;
   }) => Maybe<RootQueryToMediaItemConnection>;
   menu: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<MenuNodeIdTypeEnum>;
   }) => Maybe<Menu>;
   menuItem: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<MenuItemNodeIdTypeEnum>;
   }) => Maybe<MenuItem>;
   menuItems: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToMenuItemConnectionWhereArgs>;
   }) => Maybe<RootQueryToMenuItemConnection>;
   menus: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToMenuConnectionWhereArgs>;
   }) => Maybe<RootQueryToMenuConnection>;
-  node: (args?: { id?: Maybe<Scalars["ID"]> }) => Maybe<Node>;
+  node: (args?: { id?: Maybe<Scalars['ID']> }) => Maybe<Node>;
   nodeByUri: (args: {
-    uri: Scalars["String"];
+    uri: Scalars['String'];
   }) => Maybe<UniformResourceIdentifiable>;
   page: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
     idType?: Maybe<PageIdType>;
   }) => Maybe<Page>;
   pageBy: (args?: {
-    id?: Maybe<Scalars["ID"]>;
-    pageId?: Maybe<Scalars["Int"]>;
-    uri?: Maybe<Scalars["String"]>;
+    id?: Maybe<Scalars['ID']>;
+    pageId?: Maybe<Scalars['Int']>;
+    uri?: Maybe<Scalars['String']>;
   }) => Maybe<Page>;
   pages: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToPageConnectionWhereArgs>;
   }) => Maybe<RootQueryToPageConnection>;
-  plugin: (args: { id: Scalars["ID"] }) => Maybe<Plugin>;
+  plugin: (args: { id: Scalars['ID'] }) => Maybe<Plugin>;
   plugins: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToPluginConnectionWhereArgs>;
   }) => Maybe<RootQueryToPluginConnection>;
   post: (args: {
-    asPreview?: Maybe<Scalars["Boolean"]>;
-    id: Scalars["ID"];
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
     idType?: Maybe<PostIdType>;
   }) => Maybe<Post>;
   postBy: (args?: {
-    id?: Maybe<Scalars["ID"]>;
-    postId?: Maybe<Scalars["Int"]>;
-    slug?: Maybe<Scalars["String"]>;
-    uri?: Maybe<Scalars["String"]>;
+    id?: Maybe<Scalars['ID']>;
+    postId?: Maybe<Scalars['Int']>;
+    slug?: Maybe<Scalars['String']>;
+    uri?: Maybe<Scalars['String']>;
   }) => Maybe<Post>;
   postFormat: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<PostFormatIdType>;
   }) => Maybe<PostFormat>;
   postFormats: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToPostFormatConnectionWhereArgs>;
   }) => Maybe<RootQueryToPostFormatConnection>;
   posts: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToPostConnectionWhereArgs>;
   }) => Maybe<RootQueryToPostConnection>;
   readingSettings?: Maybe<ReadingSettings>;
   registeredScripts: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToEnqueuedScriptConnection>;
   registeredStylesheets: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToEnqueuedStylesheetConnection>;
   revisions: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToContentRevisionUnionConnectionWhereArgs>;
   }) => Maybe<RootQueryToContentRevisionUnionConnection>;
-  tag: (args: { id: Scalars["ID"]; idType?: Maybe<TagIdType> }) => Maybe<Tag>;
+  tag: (args: { id: Scalars['ID']; idType?: Maybe<TagIdType> }) => Maybe<Tag>;
   tags: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToTagConnectionWhereArgs>;
   }) => Maybe<RootQueryToTagConnection>;
   taxonomies: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToTaxonomyConnection>;
   taxonomy: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<TaxonomyIdTypeEnum>;
   }) => Maybe<Taxonomy>;
   termNode: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<TermNodeIdTypeEnum>;
     taxonomy?: Maybe<TaxonomyEnum>;
   }) => Maybe<TermNode>;
   terms: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToTermNodeConnectionWhereArgs>;
   }) => Maybe<RootQueryToTermNodeConnection>;
-  theme: (args: { id: Scalars["ID"] }) => Maybe<Theme>;
+  theme: (args: { id: Scalars['ID'] }) => Maybe<Theme>;
   themes: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToThemeConnection>;
   user: (args: {
-    id: Scalars["ID"];
+    id: Scalars['ID'];
     idType?: Maybe<UserNodeIdTypeEnum>;
   }) => Maybe<User>;
-  userRole: (args: { id: Scalars["ID"] }) => Maybe<UserRole>;
+  userRole: (args: { id: Scalars['ID'] }) => Maybe<UserRole>;
   userRoles: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToUserRoleConnection>;
   users: (args?: {
-    after?: Maybe<Scalars["String"]>;
-    before?: Maybe<Scalars["String"]>;
-    first?: Maybe<Scalars["Int"]>;
-    last?: Maybe<Scalars["Int"]>;
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToUserConnectionWhereArgs>;
   }) => Maybe<RootQueryToUserConnection>;
   viewer?: Maybe<User>;
@@ -16565,7 +16646,7 @@ export interface Query {
 }
 
 export interface Subscription {
-  __typename?: "Subscription";
+  __typename?: 'Subscription';
 }
 
 export interface SchemaObjectTypes {
@@ -16801,236 +16882,236 @@ export interface SchemaObjectTypes {
   WritingSettings: WritingSettings;
 }
 export type SchemaObjectTypesNames =
-  | "AToZ"
-  | "AToZCategory"
-  | "AToZCategoryToAToZConnection"
-  | "AToZCategoryToAToZConnectionEdge"
-  | "AToZCategoryToContentNodeConnection"
-  | "AToZCategoryToContentNodeConnectionEdge"
-  | "AToZCategoryToTaxonomyConnectionEdge"
-  | "AToZToAToZCategoryConnection"
-  | "AToZToAToZCategoryConnectionEdge"
-  | "AToZToPreviewConnectionEdge"
-  | "AToZToTermNodeConnection"
-  | "AToZToTermNodeConnectionEdge"
-  | "AToZ_Atozfields"
-  | "AcalogProgram"
-  | "AcalogProgramToPreviewConnectionEdge"
-  | "AcalogProgram_Acalogdepartmentfields"
-  | "AtlasContentModelerSettingsSettings"
-  | "Avatar"
-  | "Category"
-  | "CategoryToAncestorsCategoryConnection"
-  | "CategoryToAncestorsCategoryConnectionEdge"
-  | "CategoryToCategoryConnection"
-  | "CategoryToCategoryConnectionEdge"
-  | "CategoryToContentNodeConnection"
-  | "CategoryToContentNodeConnectionEdge"
-  | "CategoryToParentCategoryConnectionEdge"
-  | "CategoryToPostConnection"
-  | "CategoryToPostConnectionEdge"
-  | "CategoryToTaxonomyConnectionEdge"
-  | "Comment"
-  | "CommentAuthor"
-  | "CommentToCommentConnection"
-  | "CommentToCommentConnectionEdge"
-  | "CommentToCommenterConnectionEdge"
-  | "CommentToContentNodeConnectionEdge"
-  | "CommentToParentCommentConnectionEdge"
-  | "ConditionalTags"
-  | "ContentNodeToContentTypeConnectionEdge"
-  | "ContentNodeToEditLastConnectionEdge"
-  | "ContentNodeToEditLockConnectionEdge"
-  | "ContentNodeToEnqueuedScriptConnection"
-  | "ContentNodeToEnqueuedScriptConnectionEdge"
-  | "ContentNodeToEnqueuedStylesheetConnection"
-  | "ContentNodeToEnqueuedStylesheetConnectionEdge"
-  | "ContentType"
-  | "ContentTypeToContentNodeConnection"
-  | "ContentTypeToContentNodeConnectionEdge"
-  | "ContentTypeToTaxonomyConnection"
-  | "ContentTypeToTaxonomyConnectionEdge"
-  | "CreateAToZCategoryPayload"
-  | "CreateAToZPayload"
-  | "CreateAcalogProgramPayload"
-  | "CreateCategoryPayload"
-  | "CreateCommentPayload"
-  | "CreateMediaItemPayload"
-  | "CreatePagePayload"
-  | "CreatePostFormatPayload"
-  | "CreatePostPayload"
-  | "CreateTagPayload"
-  | "CreateUserPayload"
-  | "DefaultTemplate"
-  | "DeleteAToZCategoryPayload"
-  | "DeleteAToZPayload"
-  | "DeleteAcalogProgramPayload"
-  | "DeleteCategoryPayload"
-  | "DeleteCommentPayload"
-  | "DeleteMediaItemPayload"
-  | "DeletePagePayload"
-  | "DeletePostFormatPayload"
-  | "DeletePostPayload"
-  | "DeleteTagPayload"
-  | "DeleteUserPayload"
-  | "DiscussionSettings"
-  | "EnqueuedScript"
-  | "EnqueuedStylesheet"
-  | "GeneralSettings"
-  | "GenerateAuthorizationCodePayload"
-  | "HierarchicalContentNodeToContentNodeAncestorsConnection"
-  | "HierarchicalContentNodeToContentNodeAncestorsConnectionEdge"
-  | "HierarchicalContentNodeToContentNodeChildrenConnection"
-  | "HierarchicalContentNodeToContentNodeChildrenConnectionEdge"
-  | "HierarchicalContentNodeToParentContentNodeConnectionEdge"
-  | "MediaDetails"
-  | "MediaItem"
-  | "MediaItemMeta"
-  | "MediaItemToCommentConnection"
-  | "MediaItemToCommentConnectionEdge"
-  | "MediaSize"
-  | "Menu"
-  | "MenuItem"
-  | "MenuItemToMenuConnectionEdge"
-  | "MenuItemToMenuItemConnection"
-  | "MenuItemToMenuItemConnectionEdge"
-  | "MenuItemToMenuItemLinkableConnectionEdge"
-  | "MenuToMenuItemConnection"
-  | "MenuToMenuItemConnectionEdge"
-  | "Mutation"
-  | "NodeWithAuthorToUserConnectionEdge"
-  | "NodeWithFeaturedImageToMediaItemConnectionEdge"
-  | "NodeWithRevisionsToContentNodeConnectionEdge"
-  | "Page"
-  | "PageToCommentConnection"
-  | "PageToCommentConnectionEdge"
-  | "PageToPreviewConnectionEdge"
-  | "PageToRevisionConnection"
-  | "PageToRevisionConnectionEdge"
-  | "Plugin"
-  | "Post"
-  | "PostFormat"
-  | "PostFormatToContentNodeConnection"
-  | "PostFormatToContentNodeConnectionEdge"
-  | "PostFormatToPostConnection"
-  | "PostFormatToPostConnectionEdge"
-  | "PostFormatToTaxonomyConnectionEdge"
-  | "PostToCategoryConnection"
-  | "PostToCategoryConnectionEdge"
-  | "PostToCommentConnection"
-  | "PostToCommentConnectionEdge"
-  | "PostToPostFormatConnection"
-  | "PostToPostFormatConnectionEdge"
-  | "PostToPreviewConnectionEdge"
-  | "PostToRevisionConnection"
-  | "PostToRevisionConnectionEdge"
-  | "PostToTagConnection"
-  | "PostToTagConnectionEdge"
-  | "PostToTermNodeConnection"
-  | "PostToTermNodeConnectionEdge"
-  | "PostTypeLabelDetails"
-  | "Query"
-  | "ReadingSettings"
-  | "RegisterUserPayload"
-  | "ResetUserPasswordPayload"
-  | "RestoreCommentPayload"
-  | "RootQueryToAToZCategoryConnection"
-  | "RootQueryToAToZCategoryConnectionEdge"
-  | "RootQueryToAToZConnection"
-  | "RootQueryToAToZConnectionEdge"
-  | "RootQueryToAcalogProgramConnection"
-  | "RootQueryToAcalogProgramConnectionEdge"
-  | "RootQueryToCategoryConnection"
-  | "RootQueryToCategoryConnectionEdge"
-  | "RootQueryToCommentConnection"
-  | "RootQueryToCommentConnectionEdge"
-  | "RootQueryToContentNodeConnection"
-  | "RootQueryToContentNodeConnectionEdge"
-  | "RootQueryToContentRevisionUnionConnection"
-  | "RootQueryToContentRevisionUnionConnectionEdge"
-  | "RootQueryToContentTypeConnection"
-  | "RootQueryToContentTypeConnectionEdge"
-  | "RootQueryToEnqueuedScriptConnection"
-  | "RootQueryToEnqueuedScriptConnectionEdge"
-  | "RootQueryToEnqueuedStylesheetConnection"
-  | "RootQueryToEnqueuedStylesheetConnectionEdge"
-  | "RootQueryToMediaItemConnection"
-  | "RootQueryToMediaItemConnectionEdge"
-  | "RootQueryToMenuConnection"
-  | "RootQueryToMenuConnectionEdge"
-  | "RootQueryToMenuItemConnection"
-  | "RootQueryToMenuItemConnectionEdge"
-  | "RootQueryToPageConnection"
-  | "RootQueryToPageConnectionEdge"
-  | "RootQueryToPluginConnection"
-  | "RootQueryToPluginConnectionEdge"
-  | "RootQueryToPostConnection"
-  | "RootQueryToPostConnectionEdge"
-  | "RootQueryToPostFormatConnection"
-  | "RootQueryToPostFormatConnectionEdge"
-  | "RootQueryToTagConnection"
-  | "RootQueryToTagConnectionEdge"
-  | "RootQueryToTaxonomyConnection"
-  | "RootQueryToTaxonomyConnectionEdge"
-  | "RootQueryToTermNodeConnection"
-  | "RootQueryToTermNodeConnectionEdge"
-  | "RootQueryToThemeConnection"
-  | "RootQueryToThemeConnectionEdge"
-  | "RootQueryToUserConnection"
-  | "RootQueryToUserConnectionEdge"
-  | "RootQueryToUserRoleConnection"
-  | "RootQueryToUserRoleConnectionEdge"
-  | "SendPasswordResetEmailPayload"
-  | "Settings"
-  | "Subscription"
-  | "Tag"
-  | "TagToContentNodeConnection"
-  | "TagToContentNodeConnectionEdge"
-  | "TagToPostConnection"
-  | "TagToPostConnectionEdge"
-  | "TagToTaxonomyConnectionEdge"
-  | "Taxonomy"
-  | "TaxonomyToContentTypeConnection"
-  | "TaxonomyToContentTypeConnectionEdge"
-  | "Template_Blank"
-  | "Template_WithSidebar"
-  | "TermNodeToEnqueuedScriptConnection"
-  | "TermNodeToEnqueuedScriptConnectionEdge"
-  | "TermNodeToEnqueuedStylesheetConnection"
-  | "TermNodeToEnqueuedStylesheetConnectionEdge"
-  | "Theme"
-  | "UpdateAToZCategoryPayload"
-  | "UpdateAToZPayload"
-  | "UpdateAcalogProgramPayload"
-  | "UpdateCategoryPayload"
-  | "UpdateCommentPayload"
-  | "UpdateMediaItemPayload"
-  | "UpdatePagePayload"
-  | "UpdatePostFormatPayload"
-  | "UpdatePostPayload"
-  | "UpdateSettingsPayload"
-  | "UpdateTagPayload"
-  | "UpdateUserPayload"
-  | "User"
-  | "UserRole"
-  | "UserToCommentConnection"
-  | "UserToCommentConnectionEdge"
-  | "UserToContentRevisionUnionConnection"
-  | "UserToContentRevisionUnionConnectionEdge"
-  | "UserToEnqueuedScriptConnection"
-  | "UserToEnqueuedScriptConnectionEdge"
-  | "UserToEnqueuedStylesheetConnection"
-  | "UserToEnqueuedStylesheetConnectionEdge"
-  | "UserToMediaItemConnection"
-  | "UserToMediaItemConnectionEdge"
-  | "UserToPageConnection"
-  | "UserToPageConnectionEdge"
-  | "UserToPostConnection"
-  | "UserToPostConnectionEdge"
-  | "UserToUserRoleConnection"
-  | "UserToUserRoleConnectionEdge"
-  | "WPPageInfo"
-  | "WritingSettings";
+  | 'AToZ'
+  | 'AToZCategory'
+  | 'AToZCategoryToAToZConnection'
+  | 'AToZCategoryToAToZConnectionEdge'
+  | 'AToZCategoryToContentNodeConnection'
+  | 'AToZCategoryToContentNodeConnectionEdge'
+  | 'AToZCategoryToTaxonomyConnectionEdge'
+  | 'AToZToAToZCategoryConnection'
+  | 'AToZToAToZCategoryConnectionEdge'
+  | 'AToZToPreviewConnectionEdge'
+  | 'AToZToTermNodeConnection'
+  | 'AToZToTermNodeConnectionEdge'
+  | 'AToZ_Atozfields'
+  | 'AcalogProgram'
+  | 'AcalogProgramToPreviewConnectionEdge'
+  | 'AcalogProgram_Acalogdepartmentfields'
+  | 'AtlasContentModelerSettingsSettings'
+  | 'Avatar'
+  | 'Category'
+  | 'CategoryToAncestorsCategoryConnection'
+  | 'CategoryToAncestorsCategoryConnectionEdge'
+  | 'CategoryToCategoryConnection'
+  | 'CategoryToCategoryConnectionEdge'
+  | 'CategoryToContentNodeConnection'
+  | 'CategoryToContentNodeConnectionEdge'
+  | 'CategoryToParentCategoryConnectionEdge'
+  | 'CategoryToPostConnection'
+  | 'CategoryToPostConnectionEdge'
+  | 'CategoryToTaxonomyConnectionEdge'
+  | 'Comment'
+  | 'CommentAuthor'
+  | 'CommentToCommentConnection'
+  | 'CommentToCommentConnectionEdge'
+  | 'CommentToCommenterConnectionEdge'
+  | 'CommentToContentNodeConnectionEdge'
+  | 'CommentToParentCommentConnectionEdge'
+  | 'ConditionalTags'
+  | 'ContentNodeToContentTypeConnectionEdge'
+  | 'ContentNodeToEditLastConnectionEdge'
+  | 'ContentNodeToEditLockConnectionEdge'
+  | 'ContentNodeToEnqueuedScriptConnection'
+  | 'ContentNodeToEnqueuedScriptConnectionEdge'
+  | 'ContentNodeToEnqueuedStylesheetConnection'
+  | 'ContentNodeToEnqueuedStylesheetConnectionEdge'
+  | 'ContentType'
+  | 'ContentTypeToContentNodeConnection'
+  | 'ContentTypeToContentNodeConnectionEdge'
+  | 'ContentTypeToTaxonomyConnection'
+  | 'ContentTypeToTaxonomyConnectionEdge'
+  | 'CreateAToZCategoryPayload'
+  | 'CreateAToZPayload'
+  | 'CreateAcalogProgramPayload'
+  | 'CreateCategoryPayload'
+  | 'CreateCommentPayload'
+  | 'CreateMediaItemPayload'
+  | 'CreatePagePayload'
+  | 'CreatePostFormatPayload'
+  | 'CreatePostPayload'
+  | 'CreateTagPayload'
+  | 'CreateUserPayload'
+  | 'DefaultTemplate'
+  | 'DeleteAToZCategoryPayload'
+  | 'DeleteAToZPayload'
+  | 'DeleteAcalogProgramPayload'
+  | 'DeleteCategoryPayload'
+  | 'DeleteCommentPayload'
+  | 'DeleteMediaItemPayload'
+  | 'DeletePagePayload'
+  | 'DeletePostFormatPayload'
+  | 'DeletePostPayload'
+  | 'DeleteTagPayload'
+  | 'DeleteUserPayload'
+  | 'DiscussionSettings'
+  | 'EnqueuedScript'
+  | 'EnqueuedStylesheet'
+  | 'GeneralSettings'
+  | 'GenerateAuthorizationCodePayload'
+  | 'HierarchicalContentNodeToContentNodeAncestorsConnection'
+  | 'HierarchicalContentNodeToContentNodeAncestorsConnectionEdge'
+  | 'HierarchicalContentNodeToContentNodeChildrenConnection'
+  | 'HierarchicalContentNodeToContentNodeChildrenConnectionEdge'
+  | 'HierarchicalContentNodeToParentContentNodeConnectionEdge'
+  | 'MediaDetails'
+  | 'MediaItem'
+  | 'MediaItemMeta'
+  | 'MediaItemToCommentConnection'
+  | 'MediaItemToCommentConnectionEdge'
+  | 'MediaSize'
+  | 'Menu'
+  | 'MenuItem'
+  | 'MenuItemToMenuConnectionEdge'
+  | 'MenuItemToMenuItemConnection'
+  | 'MenuItemToMenuItemConnectionEdge'
+  | 'MenuItemToMenuItemLinkableConnectionEdge'
+  | 'MenuToMenuItemConnection'
+  | 'MenuToMenuItemConnectionEdge'
+  | 'Mutation'
+  | 'NodeWithAuthorToUserConnectionEdge'
+  | 'NodeWithFeaturedImageToMediaItemConnectionEdge'
+  | 'NodeWithRevisionsToContentNodeConnectionEdge'
+  | 'Page'
+  | 'PageToCommentConnection'
+  | 'PageToCommentConnectionEdge'
+  | 'PageToPreviewConnectionEdge'
+  | 'PageToRevisionConnection'
+  | 'PageToRevisionConnectionEdge'
+  | 'Plugin'
+  | 'Post'
+  | 'PostFormat'
+  | 'PostFormatToContentNodeConnection'
+  | 'PostFormatToContentNodeConnectionEdge'
+  | 'PostFormatToPostConnection'
+  | 'PostFormatToPostConnectionEdge'
+  | 'PostFormatToTaxonomyConnectionEdge'
+  | 'PostToCategoryConnection'
+  | 'PostToCategoryConnectionEdge'
+  | 'PostToCommentConnection'
+  | 'PostToCommentConnectionEdge'
+  | 'PostToPostFormatConnection'
+  | 'PostToPostFormatConnectionEdge'
+  | 'PostToPreviewConnectionEdge'
+  | 'PostToRevisionConnection'
+  | 'PostToRevisionConnectionEdge'
+  | 'PostToTagConnection'
+  | 'PostToTagConnectionEdge'
+  | 'PostToTermNodeConnection'
+  | 'PostToTermNodeConnectionEdge'
+  | 'PostTypeLabelDetails'
+  | 'Query'
+  | 'ReadingSettings'
+  | 'RegisterUserPayload'
+  | 'ResetUserPasswordPayload'
+  | 'RestoreCommentPayload'
+  | 'RootQueryToAToZCategoryConnection'
+  | 'RootQueryToAToZCategoryConnectionEdge'
+  | 'RootQueryToAToZConnection'
+  | 'RootQueryToAToZConnectionEdge'
+  | 'RootQueryToAcalogProgramConnection'
+  | 'RootQueryToAcalogProgramConnectionEdge'
+  | 'RootQueryToCategoryConnection'
+  | 'RootQueryToCategoryConnectionEdge'
+  | 'RootQueryToCommentConnection'
+  | 'RootQueryToCommentConnectionEdge'
+  | 'RootQueryToContentNodeConnection'
+  | 'RootQueryToContentNodeConnectionEdge'
+  | 'RootQueryToContentRevisionUnionConnection'
+  | 'RootQueryToContentRevisionUnionConnectionEdge'
+  | 'RootQueryToContentTypeConnection'
+  | 'RootQueryToContentTypeConnectionEdge'
+  | 'RootQueryToEnqueuedScriptConnection'
+  | 'RootQueryToEnqueuedScriptConnectionEdge'
+  | 'RootQueryToEnqueuedStylesheetConnection'
+  | 'RootQueryToEnqueuedStylesheetConnectionEdge'
+  | 'RootQueryToMediaItemConnection'
+  | 'RootQueryToMediaItemConnectionEdge'
+  | 'RootQueryToMenuConnection'
+  | 'RootQueryToMenuConnectionEdge'
+  | 'RootQueryToMenuItemConnection'
+  | 'RootQueryToMenuItemConnectionEdge'
+  | 'RootQueryToPageConnection'
+  | 'RootQueryToPageConnectionEdge'
+  | 'RootQueryToPluginConnection'
+  | 'RootQueryToPluginConnectionEdge'
+  | 'RootQueryToPostConnection'
+  | 'RootQueryToPostConnectionEdge'
+  | 'RootQueryToPostFormatConnection'
+  | 'RootQueryToPostFormatConnectionEdge'
+  | 'RootQueryToTagConnection'
+  | 'RootQueryToTagConnectionEdge'
+  | 'RootQueryToTaxonomyConnection'
+  | 'RootQueryToTaxonomyConnectionEdge'
+  | 'RootQueryToTermNodeConnection'
+  | 'RootQueryToTermNodeConnectionEdge'
+  | 'RootQueryToThemeConnection'
+  | 'RootQueryToThemeConnectionEdge'
+  | 'RootQueryToUserConnection'
+  | 'RootQueryToUserConnectionEdge'
+  | 'RootQueryToUserRoleConnection'
+  | 'RootQueryToUserRoleConnectionEdge'
+  | 'SendPasswordResetEmailPayload'
+  | 'Settings'
+  | 'Subscription'
+  | 'Tag'
+  | 'TagToContentNodeConnection'
+  | 'TagToContentNodeConnectionEdge'
+  | 'TagToPostConnection'
+  | 'TagToPostConnectionEdge'
+  | 'TagToTaxonomyConnectionEdge'
+  | 'Taxonomy'
+  | 'TaxonomyToContentTypeConnection'
+  | 'TaxonomyToContentTypeConnectionEdge'
+  | 'Template_Blank'
+  | 'Template_WithSidebar'
+  | 'TermNodeToEnqueuedScriptConnection'
+  | 'TermNodeToEnqueuedScriptConnectionEdge'
+  | 'TermNodeToEnqueuedStylesheetConnection'
+  | 'TermNodeToEnqueuedStylesheetConnectionEdge'
+  | 'Theme'
+  | 'UpdateAToZCategoryPayload'
+  | 'UpdateAToZPayload'
+  | 'UpdateAcalogProgramPayload'
+  | 'UpdateCategoryPayload'
+  | 'UpdateCommentPayload'
+  | 'UpdateMediaItemPayload'
+  | 'UpdatePagePayload'
+  | 'UpdatePostFormatPayload'
+  | 'UpdatePostPayload'
+  | 'UpdateSettingsPayload'
+  | 'UpdateTagPayload'
+  | 'UpdateUserPayload'
+  | 'User'
+  | 'UserRole'
+  | 'UserToCommentConnection'
+  | 'UserToCommentConnectionEdge'
+  | 'UserToContentRevisionUnionConnection'
+  | 'UserToContentRevisionUnionConnectionEdge'
+  | 'UserToEnqueuedScriptConnection'
+  | 'UserToEnqueuedScriptConnectionEdge'
+  | 'UserToEnqueuedStylesheetConnection'
+  | 'UserToEnqueuedStylesheetConnectionEdge'
+  | 'UserToMediaItemConnection'
+  | 'UserToMediaItemConnectionEdge'
+  | 'UserToPageConnection'
+  | 'UserToPageConnectionEdge'
+  | 'UserToPostConnection'
+  | 'UserToPostConnectionEdge'
+  | 'UserToUserRoleConnection'
+  | 'UserToUserRoleConnectionEdge'
+  | 'WPPageInfo'
+  | 'WritingSettings';
 
 export interface $AcfFieldGroup {
   AToZ_Atozfields?: AToZ_Atozfields;
@@ -17246,6 +17327,7 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
   MimeTypeEnum: MimeTypeEnum | undefined;
   OrderEnum: OrderEnum | undefined;
   PageIdType: PageIdType | undefined;
+  PluginStatusEnum: PluginStatusEnum | undefined;
   PostFormatIdType: PostFormatIdType | undefined;
   PostIdType: PostIdType | undefined;
   PostObjectFieldFormatEnum: PostObjectFieldFormatEnum | undefined;

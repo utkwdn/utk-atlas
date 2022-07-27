@@ -1,32 +1,35 @@
 import React from 'react';
 
-const CalEvent = props => {
+interface Event {
+  id: number;
+  title: string;
+}
 
-  const [fetchedEvents, setEvents] = React.useState( { events: [] } );
+const CalEvent = () => {
+  const [events, setEvents] = React.useState<Event[]>([]);
 
   React.useEffect(() => {
     const fetchCalEvents = async () => {
-      const response = await fetch("https://calendar.utk.edu/api/2/events?page=1&pp=5");
-      const fetchedEvents = await response.json();
+      const response = await fetch(
+        'https://calendar.utk.edu/api/2/events?page=1&pp=5'
+      );
+      const { events: fetchedEvents }: { events: Event[] } =
+        await response.json();
       setEvents(fetchedEvents);
     };
     fetchCalEvents();
   }, []);
 
-  fetchedEvents?.events?.map((event) => (
-    console.log(event)
-  ));
-
   return (
     <div>
       <h1>Event Titles</h1>
-      <ul>
-      {
-      fetchedEvents?.events?.map((event) => (
-        <li key={event?.event.id}>{event?.event.title}</li>
-      ))
-      }
-      </ul>
+      {events.length > 0 && (
+        <ul>
+          {events.map((event) => (
+            <li key={event.id}>{event.title}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
