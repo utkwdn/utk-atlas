@@ -1,0 +1,134 @@
+@import "scss/common";
+.areasContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem 2rem;
+  align-items: stretch;
+  margin: 2rem 0;
+  padding-bottom: 3rem;
+  @media (min-width: 800px) {
+    flex-direction: row;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+}
+.areaCard {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+  border: 1px solid #4e4f51;
+  width: 100%;
+  &:before {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    position: absolute;
+    background-color: $utorange;
+    left: 1.5rem;
+    top: -1.5rem; // 2 rem padding + half height of square
+    // top: calc(-1 * (2rem + (2vw / 2)));
+    z-index: 10;
+  }
+  > div {
+    // flex-basis: 50%;
+  }
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+
+  .areaTeaser {
+    // left side of program boxes
+    flex: 1 0 40%;
+
+    .areaTitle {
+      // surrounds the area of study text ex. art. performance.
+      width: 100%;
+      background-color: $utgray1;
+      display: inline-block;
+      padding: 1rem;
+      margin: 0;
+
+      h2 {
+        padding: 0;
+        color: #707070;
+        font-size: calc(2.5 * $spacer);
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        .oa-period {
+          color: $utorange;
+        }
+      }
+      .areaImage {
+        height: 20rem;
+        width: 100%;
+        border: 2px solid red;
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+    }
+    p {
+      font-style: italic;
+      color: $utsmokey;
+      padding: 1.5rem;
+    }
+    .btnTweak {
+      text-decoration: none;
+      margin-left: 1.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.card-oa-square {
+}
+.programList {
+  flex: 1 1 60%;
+  height: 90%;
+  // overflow-y: scroll;
+  ul {
+    padding: 1.5rem;
+    @media screen and (min-width: 800px) {
+      border-left: 1px solid $utorange;
+      padding: 1.5rem 2rem;
+      padding-top: 6rem;
+    }
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 2rem 0;
+      .programDegrees {
+        font-weigth: 600;
+        font-size: 0.9rem;
+      }
+      a {
+        text-decoration: none;
+        box-shadow: inset 0px -1px $utorange;
+        padding: 0 0.5rem 0.2rem 0;
+        margin-bottom: 0.1rem;
+        display: inline-block;
+        font-weight: 600;
+        .result-search-term {
+          font-weight: 800;
+        }
+      }
+      .programCollege {
+        font-size: 0.9rem;
+        display: block;
+      }
+      .programDegrees {
+        font-weight: 700;
+
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
