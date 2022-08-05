@@ -336,17 +336,19 @@ $font-weight-ultra: 900;
 $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.5 !default;
 
-$h1-font-size: $font-size-base * 5.2; // 6.6rem
+
+$h1-font-size: $font-size-base * 4.52; // 5.65
 $h2-font-size: $font-size-base * 3.2; // 4rem
-$h3-font-size: $font-size-base * 2.24; // 2.8rem
+$h3-font-size: $font-size-base * 2.264; // 2.83rem
 $h4-font-size: $font-size-base * 1.6; // 2rem
-$h5-font-size: $font-size-base * 1.248; // 1.56rem
+$h5-font-size: $font-size-base * 1.128; // 1.41rem
 $h6-font-size: $font-size-base; // 1.25rem
+
 
 $headings-margin-bottom: calc($spacer / 2) !default;
 $headings-font-family: null !default;
-$headings-font-weight: 700;
-$headings-line-height: 0.97;
+$headings-font-weight: 800;
+$headings-line-height: 0.85;
 $headings-color: null !default;
 
 $display-font-sizes: (
