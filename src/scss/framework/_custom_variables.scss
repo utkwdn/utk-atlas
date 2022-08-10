@@ -366,14 +366,11 @@ $display-font-sizes: (
 $display-font-weight: 900 !default;
 $display-line-height: 1 !default;
 
-$lead-font-size: $font-size-base * 1.25 !default;
-$lead-font-weight: 200 !default;
-
 $hr-border-color: rgba($utsmokey, 0.25) !default;
 
 // scss-docs-start type-variables
-$lead-font-size: $font-size-base * 1.25 !default;
-$lead-font-weight: 700;
+$lead-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
+$lead-font-weight: $font-weight-light;
 
 $small-font-size: 0.875em !default;
 
@@ -384,7 +381,7 @@ $text-muted: $gray-600 !default;
 $initialism-font-size: $small-font-size !default;
 
 $blockquote-margin-y: $spacer !default;
-$blockquote-font-size: $font-size-base * 1.25 !default;
+$blockquote-font-size: $font-size-base * 1.5 !default;
 $blockquote-footer-color: $gray-600 !default;
 $blockquote-footer-font-size: $small-font-size !default;
 
