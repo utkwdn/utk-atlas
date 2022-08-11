@@ -5,6 +5,8 @@ import Script from 'next/script';
 import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
 import { TRUE } from 'sass';
 
+import Intro from '../components/Intro';
+
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 function Alpha() {
@@ -57,39 +59,35 @@ function Alpha() {
   return (
     <Layout>
       {/* <Head></Head> */}
-      <section className={styles['intro-container']}>
-        <div className={styles['page-title-group']}>
-          <hr className={styles['oa-thick-bar']} />
-          <h1 className={[styles.area, 'text-condensed'].join(' ')}>
-            A-Z Index
-          </h1>
-          <div className={styles['title-container']}>
-            <p className={styles['title']}>Locate the Sites You Need</p>
-          </div>
-        </div>
-        <div className={styles.intro}>
-          <p>
-            This tool will help you locate the sites you’re looking for and
-            more. If you find a broken link or would like to add or update an
-            existing link,{' '}
-            <a href="https://communications.utk.edu/a-z-index-update-request/">
-              please let us know
-            </a>
-            .
-          </p>
-          <div className={styles['input-wrapper']}>
-            <input
-              className={styles['form-control']}
-              type="text"
-              list="alphaDataList"
-              placeholder="Type to search..."
-            />
-            <button> Search </button>
+      <Intro
+        title={'A-Z Index'}
+        theme={'Locate the Sites You Need'}
+        intro={
+          <div>
+            <p>
+              This tool will help you locate the sites you’re looking for and
+              more. If you find a broken link or would like to add or update an
+              existing link,{' '}
+              <a href="https://communications.utk.edu/a-z-index-update-request/">
+                please let us know
+              </a>
+              .
+            </p>
+            <div className={styles['input-wrapper']}>
+              <input
+                className={styles['form-control']}
+                type="text"
+                list="alphaDataList"
+                placeholder="Type to search..."
+              />
+              <button> Search </button>
 
-            <datalist id="alphaDataList" />
+              <datalist id="alphaDataList" />
+            </div>
           </div>
-        </div>
-      </section>
+        }
+      />
+
       <section className={styles['alpha-container']}>
         <div className={styles.alpha}>
           {isLetter('[0-9]') && <a href="#num">#</a>}
