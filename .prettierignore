@@ -41,3 +41,6 @@ yarn-error.log*
 /public/js/meet.js
 /public/css/style.css
 /public/style.css
+
+# Local Framework
+/src/scss/framework/_custom_variables.scss

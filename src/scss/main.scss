@@ -3,7 +3,8 @@
 // @import "variables";
 // @import "typography";
 @import './node_modules/bootstrap/scss/functions';
-@import './node_modules/utksds-framework/src/scss/custom_variables';
+@import './framework/custom_variables';
+
 @import './node_modules/bootstrap/scss/variables';
 @import './node_modules/bootstrap/scss/mixins';
 @import './node_modules/bootstrap/scss/utilities';
@@ -46,52 +47,101 @@
 @import './node_modules/bootstrap/scss/spinners';
 @import './node_modules/bootstrap/scss/offcanvas';
 
-@import './node_modules/utksds-framework/src/scss/regions/contentarea';
-@import './node_modules/utksds-framework/src/scss/regions/extended_footer';
-@import './node_modules/utksds-framework/src/scss/regions/footers';
-@import './node_modules/utksds-framework/src/scss/regions/headers';
-@import './node_modules/utksds-framework/src/scss/regions/navigation_horizontal';
-@import './node_modules/utksds-framework/src/scss/regions/navigation_unit';
-@import './node_modules/utksds-framework/src/scss/regions/navigation_universal';
+// @import './node_modules/utksds-framework/src/scss/regions/contentarea';
+// @import './node_modules/utksds-framework/src/scss/regions/extended_footer';
+// @import './node_modules/utksds-framework/src/scss/regions/footers';
+// @import './node_modules/utksds-framework/src/scss/regions/headers';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_horizontal';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_unit';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_universal';
 // @import "./node_modules/utksds-framework/src/scss/regions/search_area";
-@import './node_modules/utksds-framework/src/scss/regions/sidebar';
-@import './node_modules/utksds-framework/src/scss/regions/universal-header';
-@import './node_modules/utksds-framework/src/scss/regions/universal-footer';
+// @import './node_modules/utksds-framework/src/scss/regions/sidebar';
+// @import './node_modules/utksds-framework/src/scss/regions/universal-header';
+// @import './node_modules/utksds-framework/src/scss/regions/universal-footer';
 
 // UT Components
-
-@import './node_modules/utksds-framework/src/scss/components/accordion_folds';
-@import './node_modules/utksds-framework/src/scss/components/calendars';
-@import './node_modules/utksds-framework/src/scss/components/cards';
-@import './node_modules/utksds-framework/src/scss/components/forms';
-@import './node_modules/utksds-framework/src/scss/components/gallery';
-@import './node_modules/utksds-framework/src/scss/components/latest_posts';
-@import './node_modules/utksds-framework/src/scss/components/profiles';
-@import './node_modules/utksds-framework/src/scss/components/promos';
-@import './node_modules/utksds-framework/src/scss/components/jumbotron';
-@import './node_modules/utksds-framework/src/scss/components/strip';
+// @import './node_modules/utksds-framework/src/scss/components/accordion_folds';
+// @import './node_modules/utksds-framework/src/scss/components/calendars';
+// @import './node_modules/utksds-framework/src/scss/components/cards';
+// @import './node_modules/utksds-framework/src/scss/components/forms';
+// @import './node_modules/utksds-framework/src/scss/components/gallery';
+// @import './node_modules/utksds-framework/src/scss/components/latest_posts';
+// @import './node_modules/utksds-framework/src/scss/components/profiles';
+// @import './node_modules/utksds-framework/src/scss/components/promos';
+// @import './node_modules/utksds-framework/src/scss/components/jumbotron';
+// @import './node_modules/utksds-framework/src/scss/components/strip';
 
 // UT Styles
-@import './node_modules/utksds-framework/src/scss/styles/breadcrumbs';
-@import './node_modules/utksds-framework/src/scss/styles/buttons';
-@import './node_modules/utksds-framework/src/scss/styles/blockquote';
-@import './node_modules/utksds-framework/src/scss/styles/highlight_boxes';
-@import './node_modules/utksds-framework/src/scss/styles/frame';
-@import './node_modules/utksds-framework/src/scss/styles/gutenberg';
-@import './node_modules/utksds-framework/src/scss/styles/images';
-@import './node_modules/utksds-framework/src/scss/styles/orange_hr';
-@import './node_modules/utksds-framework/src/scss/styles/orange_mark';
-@import './node_modules/utksds-framework/src/scss/styles/search_forms';
-@import './node_modules/utksds-framework/src/scss/styles/typography';
-@import './node_modules/utksds-framework/src/scss/styles/background';
-@import './node_modules/utksds-framework/src/scss/styles/textcolors';
-@import './node_modules/utksds-framework/src/scss/styles/pagination';
-@import './node_modules/utksds-framework/src/scss/styles/logos';
-@import './node_modules/utksds-framework/src/scss/styles/wp';
+// @import './node_modules/utksds-framework/src/scss/styles/breadcrumbs';
+// @import './node_modules/utksds-framework/src/scss/styles/buttons';
+// @import './node_modules/utksds-framework/src/scss/styles/blockquote';
+// @import './node_modules/utksds-framework/src/scss/styles/highlight_boxes';
+// @import './node_modules/utksds-framework/src/scss/styles/frame';
+// @import './node_modules/utksds-framework/src/scss/styles/gutenberg';
+// @import './node_modules/utksds-framework/src/scss/styles/images';
+// @import './node_modules/utksds-framework/src/scss/styles/orange_hr';
+// @import './node_modules/utksds-framework/src/scss/styles/orange_mark';
+// @import './node_modules/utksds-framework/src/scss/styles/search_forms';
+// @import './node_modules/utksds-framework/src/scss/styles/typography';
+// @import './node_modules/utksds-framework/src/scss/styles/background';
+// @import './node_modules/utksds-framework/src/scss/styles/textcolors';
+// @import './node_modules/utksds-framework/src/scss/styles/pagination';
+// @import './node_modules/utksds-framework/src/scss/styles/logos';
+// @import './node_modules/utksds-framework/src/scss/styles/wp';
 
-// body {
-//   min-height: 100vh;
-// }
+// ------  UT Regions – LOCAL
+@import './framework/regions/contentarea';
+@import './framework/regions/extended_footer';
+@import './framework/regions/footers';
+@import './framework/regions/headers';
+@import './framework/regions/navigation_horizontal';
+
+// several of the navigation styles were not originally pulled in from the framework. Commenting out for now
+// @import './framework/regions/navigation_horizontal_dropdown';
+// @import './framework/regions/navigation_leftrail';
+// @import './framework/regions/navigation_megamenu';
+// @import './framework/regions/navigation_offcanvas';
+
+@import './framework/regions/navigation_unit';
+@import './framework/regions/navigation_universal';
+@import './framework/regions/search_area';
+@import './framework/regions/sidebar';
+@import './framework/regions/universal-footer';
+@import './framework/regions/universal-header';
+
+// ------  UT Components – LOCAL
+@import './framework/components/accordion_folds';
+@import './framework/components/calendars';
+@import './framework/components/cards';
+@import './framework/components/forms';
+@import './framework/components/gallery';
+@import './framework/components/jumbotron';
+@import './framework/components/latest_posts';
+@import './framework/components/profiles';
+@import './framework/components/promos';
+@import './framework/components/sliders';
+@import './framework/components/strip';
+
+// ------  UT Styles – LOCAL
+@import './framework/styles/background';
+@import './framework/styles/blockquote';
+@import './framework/styles/breadcrumbs';
+@import './framework/styles/buttons';
+@import './framework/styles/frame';
+@import './framework/styles/gutenberg';
+@import './framework/styles/highlight_boxes';
+@import './framework/styles/images';
+@import './framework/styles/logos';
+@import './framework/styles/orange_hr';
+@import './framework/styles/orange_mark';
+@import './framework/styles/pagination';
+@import './framework/styles/search_forms';
+@import './framework/styles/textcolors';
+@import './framework/styles/typography';
+@import './framework/styles/wp';
+
+// @import './framework/styles/webfont';
+//webfont was not originally pulled in from the framework, commenting out for now
 
 // Main Site
 
