@@ -929,7 +929,7 @@ hr.oa-thick-bar {
 .title-container {
 }
 
-p.title {
+p.theme {
   // font-size: 4.7rem;
   // font-weight: 600;
   // line-height: 4.6rem;
@@ -939,7 +939,7 @@ p.title {
   // line-height: 6rem;
   // line-height: 4.8rem; // need to figure out how to get bootstrap variables used here
   line-height: $headings-line-height;
-  font-weight: 900;
+  font-weight: $font-weight-ultra;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
