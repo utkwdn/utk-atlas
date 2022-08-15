@@ -64,7 +64,7 @@ function Alpha() {
         theme={'Locate the Sites You Need'}
         intro={
           <div>
-            <p>
+            <p className="lead">
               This tool will help you locate the sites you’re looking for and
               more. If you find a broken link or would like to add or update an
               existing link,{' '}
