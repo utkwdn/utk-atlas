@@ -24,11 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        with:
-          ref: development
 
       # Runs a single command using the runners shell
       - name: Deploy storybook to GitHub Pages
-        run: npm run deploy-storybook -- --ci
+        run: npm run deploy-storybook -- --ci --branch=development
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
