@@ -29,6 +29,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy storybook to GitHub Pages
-        run: npm run deploy-storybook -- --ci --source-branch=development
+        run: |
+          npm install
+          npm run build-storybook
+          npm run deploy-storybook -- --ci --source-branch=development
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
