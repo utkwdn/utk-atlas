@@ -967,93 +967,53 @@ p.theme {
 
     margin: 2rem 0 -12rem auto;
   }
-  blockquote {
-    // background-color: white;
-    background-image: none;
-    margin: 0;
-    padding: 0;
-    padding: 1rem;
+  // blockquote {
+  //   // background-color: white;
+  //   background-image: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   padding: 1rem;
 
-    &:before {
-      // animation: quoteMarks 1s linear infinite;
-      // animation-play-state: paused;
-      // animation-delay: calc(var(scroll) * -1s);
-      content: open-quote;
-      font-family: $font-family-sans-serif;
-      font-weight: 900;
-      font-size: calc($font-size-base * 3);
-      font-size: clamp(8rem, 20vw, 13rem);
-      font-size: clamp(
-        (calc($font-size-base * 6.4)),
-        20vw,
-        (calc($font-size-base * 8.5))
-      );
-      display: inline-block;
-      color: $utorange;
-      position: absolute;
-      top: -4rem;
-      left: -3.5rem;
-      left: -2.5rem;
-      @media screen and (min-width: 700px) {
-        left: -4rem;
-        top: -5rem;
-      }
-      @media screen and (min-width: 930px) {
-        left: -5rem;
-        top: -6rem;
-      }
-    }
-    &:after {
-      visibility: hidden;
-      content: close-quote;
-      // must close quote or else, netxt instance of quote will use a single quote
-    }
-    p {
-      margin-top: 0;
-    }
-  }
+  //   &:before {
+  //     // animation: quoteMarks 1s linear infinite;
+  //     // animation-play-state: paused;
+  //     // animation-delay: calc(var(scroll) * -1s);
+  //     content: open-quote;
+  //     font-family: $font-family-sans-serif;
+  //     font-weight: 900;
+  //     font-size: calc($font-size-base * 3);
+  //     font-size: clamp(8rem, 20vw, 13rem);
+  //     font-size: clamp(
+  //       (calc($font-size-base * 6.4)),
+  //       20vw,
+  //       (calc($font-size-base * 8.5))
+  //     );
+  //     display: inline-block;
+  //     color: $utorange;
+  //     position: absolute;
+  //     top: -4rem;
+  //     left: -3.5rem;
+  //     left: -2.5rem;
+  //     @media screen and (min-width: 700px) {
+  //       left: -4rem;
+  //       top: -5rem;
+  //     }
+  //     @media screen and (min-width: 930px) {
+  //       left: -5rem;
+  //       top: -6rem;
+  //     }
+  //   }
+  //   &:after {
+  //     visibility: hidden;
+  //     content: close-quote;
+  //     // must close quote or else, netxt instance of quote will use a single quote
+  //   }
+  //   p {
+  //     margin-top: 0;
+  //   }
+  // }
 
-  cite {
-    display: flex;
-    flex-wrap: wrap;
-    display: relative;
-    line-height: 90%;
-    // &:before {
-    //   content: " ";
-    //   position: relative;
-    //   background-color: $utorange;
-    //   height: 3rem;
-    //   width: 100%;
-    //   display: inline-block;
-    //   flex-basis: 40%;
-    //   right: 0;
-    // }
-
-    em {
-      font-size: 80%;
-      line-height: 80%;
-      margin-top: 0;
-    }
-    p:first-of-type {
-      padding-bottom: 0.5rem;
-      box-shadow: inset 0px -1px $utorange;
-      flex-basis: 60%;
-    }
-    p + p {
-      font-size: 70%;
-
-      flex-basis: 80%;
-    }
-    margin-top: 2rem;
-    // &:before {
-    //   content: "";
-    //   background-color: $utorange;
-    //   width: 80vw;
-    //   height: 2rem;
-    //   display: aboslute;
-    // }
-  }
-}
+ // control width of content based on character widths 
 .ch-med {
   max-width: 45ch;
 }
@@ -1108,25 +1068,57 @@ p.theme {
 .dig .strip {
   background-color: $white !important;
 }
-.dig-left,
-.fortysixty-forty {
-  flex-basis: 40%;
-  padding: 2rem;
+.align-items-stretch {
+  @extend .stretch;
 }
 
-.dig-right,
-.fortysixty-sixty {
+.stretch > div[class$='__inner-container'] {
+  align-items: stretch;
+}
+.fortysixty-forty {
   flex-basis: 60%;
+  flex: 20vw 1 40%;
+  padding: 2rem;
+
+  @include media-breakpoint-up(xl) {
+    flex: 20vw 1 40%;
+  }
+}
+
+.fortysixty-sixty {
+  flex-basis: 40%;
   position: relative;
+
+  @include media-breakpoint-up(xl) {
+    flex-basis: 60%;
+  }
   h2 {
     margin-top: 0;
   }
 
   img {
-    object-fit: cover;
+    // object-fit: cover;
     // max-width: 1064px;
-    max-height: 666px;
+    // max-height: 666px;
     position: realtive;
+  }
+  > div[class$='__inner-container'] {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-end;
+    & > * {
+      flex: 1 1 auto;
+      min-width: 300px;
+    }
+    figure {
+      // margin-left: calc($spacer * 2);
+    }
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 }
 .card-imagebased-container > div[class$='__inner-container'] {
@@ -1313,4 +1305,8 @@ p.theme {
 .push-down {
   bottom: -4rem;
   position: relative;
+}
+
+.clear-image {
+  display: block;
 }

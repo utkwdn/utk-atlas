@@ -98,6 +98,12 @@ p.lead + p {
   margin-top: calc($spacer * 2);
 }
 
+.emphasis {
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+  line-height: calc($line-height-base * 0.89);
+}
+
 h2.heading-oa-bar {
   // adds a thick bar under h2 headings
   border-bottom: 0.5rem solid $utorange;
@@ -105,4 +111,8 @@ h2.heading-oa-bar {
   width: auto;
   position: relative;
   width: fit-content;
+}
+
+.lead strong {
+  font-weight: $font-weight-bold;
 }
