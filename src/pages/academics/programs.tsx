@@ -5,7 +5,6 @@ import styles from 'scss/pages/Programs.module.scss';
 import Script from 'next/script';
 import { prependOnceListener } from 'process';
 import content from '../../_data/programs.json';
-import ButtonAction from 'components/ButtonAction';
 
 function Programs() {
   console.log(content);
