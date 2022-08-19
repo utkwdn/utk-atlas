@@ -1,20 +1,21 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+// import { InnerBlocks } from '@wordpress/block-editor';
 
-export default function save(props) {
-  const { attributes } = props;
+// export default function save(props) {
+//   const { attributes } = props;
 
-  return (
-    <div
-      className={
-        'card ' +
-        attributes.textColor +
-        ' ' +
-        attributes.cardColor.slug +
-        ' ' +
-        attributes.className
-      }
-    >
-      <InnerBlocks.Content />
-    </div>
-  );
-}
+//   return (
+//     <div
+//       className={
+//         'card ' +
+//         attributes.textColor +
+//         ' ' +
+//         attributes.cardColor.slug +
+//         ' ' +
+//         attributes.className
+//       }
+//     >
+//       <InnerBlocks.Content />
+//     </div>
+//   );
+// }
+export {};
