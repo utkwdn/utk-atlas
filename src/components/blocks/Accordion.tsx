@@ -1,25 +1,20 @@
-import { UtksdsAccordionBlock } from 'client/schema.generated';
-// Has Inner Blocks
+import { UtksdsAccordionBlock } from 'client';
+import BlockRouter from 'components/BlockRouter';
 
-type AccordionBlockProps = {
-  attributes;
-};
+interface Props {
+  attributes: UtksdsAccordionBlock;
+  innerBlocks?: Partial<Block>[];
+}
 
-const Intro: React.FunctionComponent<AccordionBlockProps> = ({
-  attributes,
-}) => {
-  return (
-    <div
-      className={
-        'card ' +
-        attributes.textColor +
-        ' ' +
-        attributes.cardColor.slug +
-        ' ' +
-        attributes.className
-      }
-    >
-      {/* <InnerBlocks.Content /> */}
-    </div>
-  );
-};
+const AccordionBlock = ({
+  attributes: { className, accordionID, InnerBlocks },
+}: Props) => (
+  <div
+    className={`${accordion || ''} ${className || ''} `}
+    id={'${accordionID'}
+  >
+    <InnerBlocks.Content />
+  </div>
+);
+
+export default AccordionBlock;
