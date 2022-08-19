@@ -1,21 +1,25 @@
-// import { InnerBlocks } from '@wordpress/block-editor';
+import { UtksdsAccordionBlock } from 'client/schema.generated';
+// Has Inner Blocks
 
-// export default function save(props) {
-//   const { attributes } = props;
+type AccordionBlockProps = {
+  attributes;
+};
 
-//   return (
-//     <div
-//       className={
-//         'card ' +
-//         attributes.textColor +
-//         ' ' +
-//         attributes.cardColor.slug +
-//         ' ' +
-//         attributes.className
-//       }
-//     >
-//       <InnerBlocks.Content />
-//     </div>
-//   );
-// }
-export {};
+const Intro: React.FunctionComponent<AccordionBlockProps> = ({
+  attributes,
+}) => {
+  return (
+    <div
+      className={
+        'card ' +
+        attributes.textColor +
+        ' ' +
+        attributes.cardColor.slug +
+        ' ' +
+        attributes.className
+      }
+    >
+      {/* <InnerBlocks.Content /> */}
+    </div>
+  );
+};
