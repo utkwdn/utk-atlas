@@ -1,8 +1,13 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+import { UtksdsAccordionBlock } from 'client/schema.generated';
+// Has Inner Blocks
 
-export default function save(props) {
-  const { attributes } = props;
+type AccordionBlockProps = {
+  attributes;
+};
 
+const Intro: React.FunctionComponent<AccordionBlockProps> = ({
+  attributes,
+}) => {
   return (
     <div
       className={
@@ -14,7 +19,7 @@ export default function save(props) {
         attributes.className
       }
     >
-      <InnerBlocks.Content />
+      {/* <InnerBlocks.Content /> */}
     </div>
   );
-}
+};
