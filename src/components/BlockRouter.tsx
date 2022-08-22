@@ -1,6 +1,14 @@
 import Test from './blocks/Test';
 import HorizontalRule from './blocks/HorizontalRule';
-import { Block, HorizontalRuleMainBlockAttributes } from 'client';
+import {
+  AccordionFoldBlockAttributes,
+  Block,
+  HorizontalRuleMainBlockAttributes,
+  UtksdsAccordionBlockAttributes,
+} from 'client';
+import React from 'react';
+import { Accordion } from 'react-bootstrap';
+import AccordionFold from './blocks/AccordionFold';
 
 interface Props {
   block: Partial<Block>;
@@ -26,6 +34,24 @@ const BlockRouter = ({ block }: Props) => {
           innerBlocks={innerBlocks || []}
           /** For a real block, would just import the needed type from `client` */
           attributes={attributes as Parameters<typeof Test>[0]['attributes']}
+        />
+      );
+    }
+
+    case 'utkwds/accordion': {
+      return (
+        <Accordion
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtksdsAccordionBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/accordion-fold': {
+      return (
+        <AccordionFold
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as AccordionFoldBlockAttributes}
         />
       );
     }
