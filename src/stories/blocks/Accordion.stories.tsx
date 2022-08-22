@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Blocks/Organisms/Accordion',
+  title: 'Blocks/Molecules/Accordion',
   component: Accordion,
   decorators: [
     (Story) => (
@@ -19,14 +19,9 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
   <Accordion {...args} />
 );
 
-export const Collapsed = Template.bind({});
-Collapsed.args = {
+export const AccordionID = Template.bind({});
+AccordionID.args = {
   attributes: {
-    accordionID: 'id',
+    accordionID: 'newAccordion',
   },
-};
-
-export const Expanded = Template.bind({});
-Expanded.args = {
-  attributes: {},
 };
