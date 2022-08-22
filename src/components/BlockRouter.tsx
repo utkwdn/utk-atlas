@@ -7,7 +7,7 @@ import {
   UtksdsAccordionBlockAttributes,
 } from 'client';
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
+import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 
 interface Props {

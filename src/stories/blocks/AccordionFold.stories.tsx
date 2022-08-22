@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Blocks/Molecule/AccordionFold',
+  title: 'Blocks/Molecules/AccordionFold',
   component: AccordionFold,
   decorators: [
     (Story) => (

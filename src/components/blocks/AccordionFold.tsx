@@ -22,19 +22,16 @@ const AccordionFoldBlock = ({
 
   <div className={`'accordion-item' ${className}`}>
     <h2 className={'accordion-header'} id={`heading ${foldSlug}`}>
-      {/* 
-**  not sure how to handle RichText – but attempted to jsx-ify below
-
-<RichText.Content
-  tagName={'button'}
-  className={`'accordion-button' ${collapseS}`}
-  type={'button'}
-  data-bs-toggle={collapse}
-  data-bs-target={ `'#collapse' ${foldSlug}`}
-  aria-expanded={`${show}`}
-  aria-controls={`collapse ${foldSlug}`}
-  value={`${foldName}`}
-/> */}
+      <button
+        className={`'accordion-button' ${collapseS}`}
+        type={'button'}
+        data-bs-toggle={'collapse'}
+        data-bs-target={`'#collapse' ${foldSlug}`}
+        aria-expanded={show}
+        aria-controls={`collapse ${foldSlug}`}
+      >
+        {foldName}
+      </button>
     </h2>
     <div
       id={`collapse ${foldSlug}`}
