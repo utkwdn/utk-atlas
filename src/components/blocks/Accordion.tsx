@@ -12,7 +12,7 @@ const AccordionBlock = ({
 }: Props) => (
   // eventually use React-Bootstrap Accordion, probably
   <div
-    className={`accordion ${className}`}
+    className={`accordion ${className} || ''}`}
     {...(accordionID ? { id: accordionID } : {})}
   >
     {!!innerBlocks?.length &&

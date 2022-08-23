@@ -2,6 +2,7 @@ import Test from './blocks/Test';
 import HorizontalRule from './blocks/HorizontalRule';
 import {
   AccordionFoldBlockAttributes,
+  AlertMainBlockAttributes,
   Block,
   HorizontalRuleMainBlockAttributes,
   UtksdsAccordionBlockAttributes,
@@ -9,7 +10,7 @@ import {
 import React from 'react';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
-
+import Alert from './blocks/Alert';
 interface Props {
   block: Partial<Block>;
 }
@@ -54,6 +55,10 @@ const BlockRouter = ({ block }: Props) => {
           attributes={attributes as AccordionFoldBlockAttributes}
         />
       );
+    }
+
+    case 'utkwds/alert': {
+      return <Alert attributes={attributes as AlertMainBlockAttributes} />;
     }
 
     default: {
