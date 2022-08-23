@@ -13,11 +13,12 @@ const CalEvent = () => {
       const response = await fetch(
         'https://calendar.utk.edu/api/2/events?page=1&pp=5'
       );
-      const { events: fetchedEvents }: { events: Event[] } =
-        await response.json();
+      const { events: fetchedEvents } = (await response.json()) as {
+        events: Event[];
+      };
       setEvents(fetchedEvents);
     };
-    fetchCalEvents();
+    void fetchCalEvents();
   }, []);
 
   return (

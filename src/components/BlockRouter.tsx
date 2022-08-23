@@ -18,7 +18,7 @@ interface Props {
 const BlockRouter = ({ block }: Props) => {
   const { name, innerBlocks, attributesJSON } = block;
 
-  const attributes: object = JSON.parse(attributesJSON || '{}');
+  const attributes = JSON.parse(attributesJSON || '{}') as object;
 
   switch (name) {
     case 'utkwds/horizontal-rule': {

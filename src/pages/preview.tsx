@@ -26,7 +26,7 @@ export default function Preview() {
     }
     // Add custom post types here as needed
     default: {
-      throw new Error(`Unknown post type: ${typeName}`);
+      throw new Error(`Unknown post type: ${typeName || ''}`);
     }
   }
 }
