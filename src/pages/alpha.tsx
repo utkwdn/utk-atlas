@@ -27,7 +27,7 @@ function Alpha() {
   });
 
   function isLetter(this_letter: string) {
-    let aLetter = alphaIndex?.nodes?.map((this_alpha) => {
+    const aLetter = alphaIndex?.nodes?.map((this_alpha) => {
       //console.log(this_letter);
       if (
         this_alpha

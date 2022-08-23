@@ -38,11 +38,14 @@ export default function Page() {
           {/* probably tweak `Posts` to avoid the `as` here */}
           <Posts posts={(posts?.nodes || []) as Post[]} />
 
-          <Pagination
-            /* probably tweak `Pagination` to avoid the `!` */
-            pageInfo={posts?.pageInfo!}
-            basePath={`/category/${categorySlug}`}
-          />
+          {posts?.pageInfo && (
+            <Pagination
+              pageInfo={posts.pageInfo}
+              basePath={`/category/${
+                typeof categorySlug === 'string' ? categorySlug : ''
+              }`}
+            />
+          )}
         </div>
       </main>
 

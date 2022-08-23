@@ -13,7 +13,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       {/* used in `SiteSearch.tsx` */}
       <Script src="https://cse.google.com/cse.js?cx=da48cf0836de1c946" />
-      <FaustProvider client={client} pageProps={pageProps}>
+      <FaustProvider
+        client={client}
+        pageProps={
+          pageProps as Parameters<typeof FaustProvider>[0]['pageProps']
+        }
+      >
         <Component {...pageProps} />
       </FaustProvider>
     </>

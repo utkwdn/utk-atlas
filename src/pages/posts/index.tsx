@@ -53,8 +53,9 @@ export default function Page() {
           postTitleLevel="h3"
           id={styles.post_list}
         />
-        {/* probably tweak `Pagination` to avoid the `!` */}
-        <Pagination pageInfo={posts?.pageInfo!} basePath="/posts" />
+        {posts?.pageInfo && (
+          <Pagination pageInfo={posts.pageInfo} basePath="/posts" />
+        )}
       </main>
 
       <Footer copyrightHolder={generalSettings?.title || undefined} />
