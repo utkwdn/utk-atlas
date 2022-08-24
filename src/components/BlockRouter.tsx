@@ -5,12 +5,14 @@ import {
   AlertMainBlockAttributes,
   Block,
   HorizontalRuleMainBlockAttributes,
+  LeadMainBlockAttributes,
   UtksdsAccordionBlockAttributes,
 } from 'client';
 import React from 'react';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
+import Lead from './blocks/Lead';
 interface Props {
   block: Partial<Block>;
 }
@@ -59,6 +61,10 @@ const BlockRouter = ({ block }: Props) => {
 
     case 'utkwds/alert': {
       return <Alert attributes={attributes as AlertMainBlockAttributes} />;
+    }
+
+    case 'utkwds/lead': {
+      return <Lead attributes={attributes as LeadMainBlockAttributes} />;
     }
 
     default: {
