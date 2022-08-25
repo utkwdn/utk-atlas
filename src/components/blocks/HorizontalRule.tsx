@@ -1,7 +1,7 @@
-import { HorizontalRuleMainBlockAttributes } from 'client';
+import { UtkwdsHorizontalRuleBlockAttributes } from 'client';
 
 interface Props {
-  attributes: HorizontalRuleMainBlockAttributes;
+  attributes: Partial<UtkwdsHorizontalRuleBlockAttributes>;
 }
 
 /**

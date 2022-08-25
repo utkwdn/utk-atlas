@@ -1,8 +1,8 @@
-import { Block } from 'client';
+import { AttributesBlock } from 'types/AttributesBlock';
 import BlockRouter from 'components/BlockRouter';
 
 interface Props {
-  innerBlocks?: Partial<Block>[];
+  innerBlocks?: AttributesBlock[];
   /** For a real block, would import the `attributes` type from `'client'` */
   attributes: { foo: string; bar?: string };
 }

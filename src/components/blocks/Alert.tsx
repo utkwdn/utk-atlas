@@ -1,19 +1,18 @@
-import { AlertMainBlock, AlertMainBlockAttributes, Block } from 'client';
-import BlockRouter from 'components/BlockRouter';
-import { ImagePosition } from 'stories/blocks/Alert.stories';
+import { AttributesBlock } from 'types/AttributesBlock';
+import { UtkwdsAlertBlockAttributes } from 'client';
 
 interface Props {
-  attributes: AlertMainBlockAttributes;
-  innerBlocks?: Partial<Block>[];
+  attributes: Partial<UtkwdsAlertBlockAttributes>;
+  innerBlocks?: AttributesBlock[];
 }
 
-const Alert = ({
-  attributes: { className, imagePostion, placeholder },
-}: //   Main schema has typo - ImagePosition. Missing an i so listed here as imagePostion
-Props) => (
-  <div className={`alert ${imagePostion} ${className || ''}`}>
-    <span>{placeholder || ''}</span>
-  </div>
-);
+const Alert = ({ attributes: { colorSlug, className, text } }: Props) =>
+  text ? (
+    <div className={`alert ${colorSlug || ''} ${className || ''}`}>
+      <span dangerouslySetInnerHTML={{ __html: text }} />
+    </div>
+  ) : (
+    <></>
+  );
 
 export default Alert;

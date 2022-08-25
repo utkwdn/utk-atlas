@@ -17,15 +17,10 @@ export default {
 
 const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
-export const ImagePosition = Template.bind({});
-ImagePosition.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   attributes: {
-    imagePostion: {
-      name: 'Smokey',
-      slug: 'alert-smokey',
-      color: '#58595B',
-      text: 'text-white',
-    },
-    placeholder: 'Enter alert text here.',
+    colorSlug: 'alert-smokey',
+    text: /* html */ `This is an alert. <a href="">This is a link</a>!`,
   },
 };

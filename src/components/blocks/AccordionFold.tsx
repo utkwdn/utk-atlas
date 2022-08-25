@@ -1,9 +1,10 @@
-import { AccordionFoldBlockAttributes, Block } from 'client';
+import { AttributesBlock } from 'types/AttributesBlock';
+import { UtkwdsAccordionFoldBlockAttributes } from 'client';
 import BlockRouter from 'components/BlockRouter';
 
 interface Props {
-  attributes: AccordionFoldBlockAttributes;
-  innerBlocks?: Partial<Block>[];
+  attributes: Partial<UtkwdsAccordionFoldBlockAttributes>;
+  innerBlocks?: AttributesBlock[];
 }
 
 const AccordionFoldBlock = ({

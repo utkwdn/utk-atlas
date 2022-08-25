@@ -41,7 +41,6 @@ FoldSlug.args = {
 export const Show = Template.bind({});
 Show.args = {
   attributes: {
-    type: Boolean,
     show: false,
   },
 };

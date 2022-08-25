@@ -1,9 +1,10 @@
-import { UtksdsAccordionBlockAttributes, Block } from 'client';
+import { AttributesBlock } from 'types/AttributesBlock';
+import { UtksdsAccordionBlockAttributes } from 'client';
 import BlockRouter from 'components/BlockRouter';
 
 interface Props {
-  attributes: UtksdsAccordionBlockAttributes;
-  innerBlocks?: Partial<Block>[];
+  attributes: Partial<UtksdsAccordionBlockAttributes>;
+  innerBlocks?: AttributesBlock[];
 }
 
 const AccordionBlock = ({
@@ -12,7 +13,7 @@ const AccordionBlock = ({
 }: Props) => (
   // eventually use React-Bootstrap Accordion, probably
   <div
-    className={`accordion ${className} || ''}`}
+    className={`accordion ${className || ''}`}
     {...(accordionID ? { id: accordionID } : {})}
   >
     {!!innerBlocks?.length &&
