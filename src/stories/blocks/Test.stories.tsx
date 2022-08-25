@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Test from 'components/blocks/Test';
-import { HorizontalRuleMainBlockAttributes } from 'client';
+import { UtkwdsHorizontalRuleBlockAttributes } from 'client';
 
 export default {
   title: 'Blocks/Molecules/Test',
@@ -18,10 +18,10 @@ export default {
 
 const Template: ComponentStory<typeof Test> = (args) => <Test {...args} />;
 
-const mockHrAttributes1: HorizontalRuleMainBlockAttributes = {
+const mockHrAttributes1: UtkwdsHorizontalRuleBlockAttributes = {
   imagePostion: 'hr',
 };
-const mockHrAttributes2: HorizontalRuleMainBlockAttributes = {
+const mockHrAttributes2: UtkwdsHorizontalRuleBlockAttributes = {
   imagePostion: 'orange-separator',
 };
 
@@ -34,7 +34,7 @@ Primary.args = {
   innerBlocks: [
     {
       name: 'utkwds/horizontal-rule',
-      attributesJSON: JSON.stringify(mockHrAttributes1),
+      attributes: mockHrAttributes1,
     },
   ],
 };
@@ -47,11 +47,11 @@ Secondary.args = {
   innerBlocks: [
     {
       name: 'utkwds/horizontal-rule',
-      attributesJSON: JSON.stringify(mockHrAttributes1),
+      attributes: mockHrAttributes1,
     },
     {
       name: 'utkwds/horizontal-rule',
-      attributesJSON: JSON.stringify(mockHrAttributes2),
+      attributes: mockHrAttributes2,
     },
   ],
 };

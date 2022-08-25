@@ -1,32 +1,34 @@
+import { AttributesBlock } from 'types/AttributesBlock';
+import {
+  UtksdsAccordionBlockAttributes,
+  UtkwdsAccordionFoldBlockAttributes,
+  UtkwdsAlertBlockAttributes,
+  UtkwdsHorizontalRuleBlockAttributes,
+  UtkwdsLeadBlockAttributes,
+} from 'client';
+
 import Test from './blocks/Test';
 import HorizontalRule from './blocks/HorizontalRule';
-import {
-  AccordionFoldBlockAttributes,
-  AlertMainBlockAttributes,
-  Block,
-  HorizontalRuleMainBlockAttributes,
-  LeadMainBlockAttributes,
-  UtksdsAccordionBlockAttributes,
-} from 'client';
-import React from 'react';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
 import Lead from './blocks/Lead';
+
 interface Props {
-  block: Partial<Block>;
+  block: AttributesBlock;
 }
 
 const BlockRouter = ({ block }: Props) => {
   const { name, innerBlocks, attributesJSON } = block;
 
-  const attributes = JSON.parse(attributesJSON || '{}') as object;
+  const attributes =
+    block.attributes || (JSON.parse(attributesJSON || '{}') as object);
 
   switch (name) {
     case 'utkwds/horizontal-rule': {
       return (
         <HorizontalRule
-          attributes={attributes as HorizontalRuleMainBlockAttributes}
+          attributes={attributes as UtkwdsHorizontalRuleBlockAttributes}
         />
       );
     }
@@ -54,17 +56,17 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <AccordionFold
           innerBlocks={innerBlocks || []}
-          attributes={attributes as AccordionFoldBlockAttributes}
+          attributes={attributes as UtkwdsAccordionFoldBlockAttributes}
         />
       );
     }
 
     case 'utkwds/alert': {
-      return <Alert attributes={attributes as AlertMainBlockAttributes} />;
+      return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
     }
 
     case 'utkwds/lead': {
-      return <Lead attributes={attributes as LeadMainBlockAttributes} />;
+      return <Lead attributes={attributes as UtkwdsLeadBlockAttributes} />;
     }
 
     default: {

@@ -5369,6 +5369,289 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     ref: { __type: 'Float' },
   },
+  CoreButtonBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreButtonBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreButtonBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreButtonBlockAttributesUnion!' },
+  },
+  CoreButtonBlockDeprecatedV10Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV6Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV7Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV8Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV9Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreButtonsBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreButtonsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreButtonsBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreButtonsBlockAttributesUnion!' },
+  },
+  CoreButtonsBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreButtonsBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
   CoreCalendarBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreCalendarBlockAttributes' },
@@ -5441,6 +5724,130 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     textColor: { __type: 'String' },
+  },
+  CoreColumnBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreColumnBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreColumnBlockAttributes: {
+    __typename: { __type: 'String!' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+    width: { __type: 'String' },
+  },
+  CoreColumnBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreColumnBlockAttributesUnion!' },
+  },
+  CoreColumnBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+    width: { __type: 'String' },
+  },
+  CoreColumnsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreColumnsBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreColumnsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreColumnsBlockAttributesUnion!' },
+  },
+  CoreColumnsBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
   },
   CoreCommentAuthorNameBlock: {
     __typename: { __type: 'String!' },
@@ -5802,6 +6209,284 @@ export const generatedSchema = {
     style: { __type: 'BlockAttributesObject' },
     textAlign: { __type: 'String' },
     textColor: { __type: 'String' },
+  },
+  CoreCoverBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreCoverBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreCoverBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreCoverBlockAttributesUnion!' },
+  },
+  CoreCoverBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV6Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV7Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV8Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV9Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
   },
   CoreEmbedBlock: {
     __typename: { __type: 'String!' },
@@ -6651,6 +7336,136 @@ export const generatedSchema = {
     displayLoginAsForm: { __type: 'Boolean!' },
     lock: { __type: 'BlockAttributesObject' },
     redirectToCurrent: { __type: 'Boolean!' },
+  },
+  CoreMediaTextBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreMediaTextBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreMediaTextBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreMediaTextBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreMediaTextBlockAttributesUnion!' },
+  },
+  CoreMediaTextBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreMediaTextBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreMediaTextBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
   },
   CoreMissingBlock: {
     __typename: { __type: 'String!' },
@@ -7528,6 +8343,120 @@ export const generatedSchema = {
     style: { __type: 'BlockAttributesObject' },
     textColor: { __type: 'String' },
   },
+  CorePullquoteBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CorePullquoteBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CorePullquoteBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
+  CorePullquoteBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CorePullquoteBlockAttributesUnion!' },
+  },
+  CorePullquoteBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
+  CorePullquoteBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
+  CorePullquoteBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
+  CorePullquoteBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
+  CorePullquoteBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String' },
+  },
   CoreQueryBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreQueryBlockAttributesUnion' },
@@ -7908,6 +8837,39 @@ export const generatedSchema = {
     feedURL: { __type: 'String!' },
     itemsToShow: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
+  },
+  CoreSearchBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreSearchBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreSearchBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    buttonPosition: { __type: 'String!' },
+    buttonText: { __type: 'String' },
+    buttonUseIcon: { __type: 'Boolean!' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    label: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String!' },
+    showLabel: { __type: 'Boolean!' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    width: { __type: 'Float' },
+    widthUnit: { __type: 'String' },
   },
   CoreSeparatorBlock: {
     __typename: { __type: 'String!' },
@@ -8469,6 +9431,66 @@ export const generatedSchema = {
   CoreTextColumnsBlockAttributesContent: {
     __typename: { __type: 'String!' },
     children: { __type: 'String' },
+  },
+  CoreVerseBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreVerseBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreVerseBlockAttributes: {
+    __typename: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+  },
+  CoreVerseBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreVerseBlockAttributesUnion!' },
+  },
+  CoreVerseBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
+  },
+  CoreVerseBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textAlign: { __type: 'String' },
+    textColor: { __type: 'String' },
   },
   CoreVideoBlock: {
     __typename: { __type: 'String!' },
@@ -9272,6 +10294,9 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     backgroundColor: { __type: 'String!' },
     className: { __type: 'String' },
+    imageAlt: { __type: 'String' },
+    imageSize: { __type: 'Int' },
+    imageUrl: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
   },
   MediaSize: {
@@ -12072,28 +13097,6 @@ export const generatedSchema = {
     url: { __type: 'String' },
     useIcon: { __type: 'Boolean!' },
   },
-  UtksdsButtongroupBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'UtksdsButtongroupBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  UtksdsButtongroupBlockAttributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    groupSize: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    orientation: { __type: 'String!' },
-    orientationSetting: { __type: 'Boolean!' },
-  },
   UtksdsCalendarBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'UtksdsCalendarBlockAttributes' },
@@ -12223,6 +13226,31 @@ export const generatedSchema = {
     numCols: { __type: 'Int!' },
     rowClass: { __type: 'String!' },
   },
+  UtksdsContactBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtksdsContactBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtksdsContactBlockAttributes: {
+    __typename: { __type: 'String!' },
+    address: { __type: 'String' },
+    addressDefault: { __type: 'String!' },
+    className: { __type: 'String' },
+    email: { __type: 'String' },
+    linkTab: { __type: 'Boolean!' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+  },
   UtksdsOverlayBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'UtksdsOverlayBlockAttributes' },
@@ -12246,6 +13274,65 @@ export const generatedSchema = {
     overColor: { __type: 'BlockAttributesObject!' },
     overOpacity: { __type: 'Int!' },
   },
+  UtksdsPhoneBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtksdsPhoneBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtksdsPhoneBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    phoneName: { __type: 'String' },
+    phoneNum: { __type: 'String' },
+  },
+  UtksdsPhonesBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtksdsPhonesBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtksdsPhonesBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtksdsSocialsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtksdsSocialsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtksdsSocialsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
   UtksdsTabsBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'UtksdsTabsBlockAttributes' },
@@ -12261,6 +13348,661 @@ export const generatedSchema = {
     saveContent: { __type: 'String' },
   },
   UtksdsTabsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tabID: { __type: 'String!' },
+    tabNames: { __type: 'BlockAttributesArray!' },
+  },
+  UtkwdsAccordionBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAccordionBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAccordionBlockAttributes: {
+    __typename: { __type: 'String!' },
+    accordionID: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsAccordionFoldBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAccordionFoldBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAccordionFoldBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    collapseS: { __type: 'String!' },
+    foldName: { __type: 'String!' },
+    foldNamePH: { __type: 'String!' },
+    foldSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    parentID: { __type: 'String!' },
+    show: { __type: 'Boolean!' },
+    showS: { __type: 'String!' },
+  },
+  UtkwdsAlertBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAlertBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAlertBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String!' },
+    text: { __type: 'String' },
+  },
+  UtkwdsButtonBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsButtonBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsButtonBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockClass: { __type: 'String!' },
+    buttonOutline: { __type: 'Boolean!' },
+    buttonSize: { __type: 'String!' },
+    buttonText: { __type: 'Boolean!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    iconName: { __type: 'String!' },
+    iconSize: { __type: 'String!' },
+    iconString: { __type: 'String!' },
+    linkTab: { __type: 'Boolean!' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String!' },
+    rel: { __type: 'String' },
+    text: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    useIcon: { __type: 'Boolean!' },
+  },
+  UtkwdsCalendarBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCalendarBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCalendarBlockAttributes: {
+    __typename: { __type: 'String!' },
+    audience: { __type: 'String!' },
+    calTemplate: { __type: 'String!' },
+    className: { __type: 'String' },
+    daysAhead: { __type: 'Float!' },
+    department: { __type: 'String!' },
+    evImage: { __type: 'Boolean!' },
+    evImageS: { __type: 'String!' },
+    evTime: { __type: 'Boolean!' },
+    evTimeS: { __type: 'String!' },
+    exAudience: { __type: 'String!' },
+    exTopic: { __type: 'String!' },
+    exType: { __type: 'String!' },
+    featured: { __type: 'Boolean!' },
+    featuredS: { __type: 'String!' },
+    group: { __type: 'String!' },
+    hideDesc: { __type: 'Boolean!' },
+    hideDescS: { __type: 'String!' },
+    hideDrop: { __type: 'Boolean!' },
+    hideDropS: { __type: 'String!' },
+    htmlDesc: { __type: 'Boolean!' },
+    htmlDescS: { __type: 'String!' },
+    incStyle: { __type: 'Boolean!' },
+    incStyleS: { __type: 'String!' },
+    keywords: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    matching: { __type: 'Boolean!' },
+    matchingS: { __type: 'String!' },
+    mustMatch: { __type: 'String!' },
+    newWin: { __type: 'Boolean!' },
+    newWinS: { __type: 'String!' },
+    numResults: { __type: 'Float!' },
+    past: { __type: 'Boolean!' },
+    pastS: { __type: 'String!' },
+    place: { __type: 'String!' },
+    sponsored: { __type: 'Boolean!' },
+    sponsoredS: { __type: 'String!' },
+    style: { __type: 'String!' },
+    template: { __type: 'String!' },
+    topic: { __type: 'String!' },
+    truncate: { __type: 'Boolean!' },
+    truncateS: { __type: 'String!' },
+    type: { __type: 'String!' },
+    viewAll: { __type: 'Boolean!' },
+    viewAllS: { __type: 'String!' },
+    widgetType: { __type: 'String!' },
+  },
+  UtkwdsCardBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockName: { __type: 'String!' },
+    cardOutline: { __type: 'Boolean!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsCardBodyBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardBodyBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardBodyBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+  },
+  UtkwdsCardFooterBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardFooterBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardFooterBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    muted: { __type: 'Boolean!' },
+    mutedClass: { __type: 'String!' },
+  },
+  UtkwdsCardHeaderBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardHeaderBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardHeaderBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tagName: { __type: 'String!' },
+  },
+  UtkwdsCardHeadingBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardHeadingBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardHeadingBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardImageBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardImageBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardImageBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardMainBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardMainBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardMainBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardTopcapBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardTopcapBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardTopcapBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsColumnBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsColumnBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsColumnBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    colWidth: { __type: 'Int!' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsColumnsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsColumnsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsColumnsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockName: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    numCols: { __type: 'Int!' },
+    rowClass: { __type: 'String!' },
+  },
+  UtkwdsContactBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsContactBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsContactBlockAttributes: {
+    __typename: { __type: 'String!' },
+    address: { __type: 'String' },
+    addressDefault: { __type: 'String!' },
+    className: { __type: 'String' },
+    email: { __type: 'String' },
+    linkTab: { __type: 'Boolean!' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+  },
+  UtkwdsHorizontalRuleBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsHorizontalRuleBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsHorizontalRuleBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    imagePostion: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsLeadBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsLeadBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsLeadBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsMediaContentBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsMediaContentBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsMediaContentBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsMediaObjectBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsMediaObjectBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsMediaObjectBlockAttributes: {
+    __typename: { __type: 'String!' },
+    backgroundColor: { __type: 'String!' },
+    className: { __type: 'String' },
+    imageAlt: { __type: 'String' },
+    imageSize: { __type: 'Int' },
+    imageUrl: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsOverlayBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsOverlayBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsOverlayBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    imageAlt: { __type: 'String!' },
+    imageUrl: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    overOpacity: { __type: 'Int!' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsOverlayMainBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsOverlayMainBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsOverlayMainBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsPhoneBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsPhoneBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsPhoneBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    phoneName: { __type: 'String' },
+    phoneNum: { __type: 'String' },
+  },
+  UtkwdsPhonesBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsPhonesBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsPhonesBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsSocialsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsSocialsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsSocialsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsStripBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsStripBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsStripBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    imageUrl: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    padding: { __type: 'String!' },
+    spacing: { __type: 'Int!' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsTabBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsTabBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsTabBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tabActive: { __type: 'String!' },
+    tabName: { __type: 'String!' },
+    tabPlaceholder: { __type: 'String!' },
+    tabShow: { __type: 'String!' },
+    tabSlug: { __type: 'String!' },
+  },
+  UtkwdsTabsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsTabsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsTabsBlockAttributes: {
     __typename: { __type: 'String!' },
     className: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -12942,9 +14684,13 @@ export const generatedSchema = {
       'CoreAudioBlock',
       'CoreAvatarBlock',
       'CoreBlock',
+      'CoreButtonBlock',
+      'CoreButtonsBlock',
       'CoreCalendarBlock',
       'CoreCategoriesBlock',
       'CoreCodeBlock',
+      'CoreColumnBlock',
+      'CoreColumnsBlock',
       'CoreCommentAuthorNameBlock',
       'CoreCommentContentBlock',
       'CoreCommentDateBlock',
@@ -12957,6 +14703,7 @@ export const generatedSchema = {
       'CoreCommentsPaginationPreviousBlock',
       'CoreCommentsQueryLoopBlock',
       'CoreCommentsTitleBlock',
+      'CoreCoverBlock',
       'CoreEmbedBlock',
       'CoreFileBlock',
       'CoreFreeformBlock',
@@ -12970,6 +14717,7 @@ export const generatedSchema = {
       'CoreLatestPostsBlock',
       'CoreListBlock',
       'CoreLoginoutBlock',
+      'CoreMediaTextBlock',
       'CoreMissingBlock',
       'CoreMoreBlock',
       'CoreNavigationBlock',
@@ -12992,6 +14740,7 @@ export const generatedSchema = {
       'CorePostTermsBlock',
       'CorePostTitleBlock',
       'CorePreformattedBlock',
+      'CorePullquoteBlock',
       'CoreQueryBlock',
       'CoreQueryNoResultsBlock',
       'CoreQueryPaginationBlock',
@@ -13002,6 +14751,7 @@ export const generatedSchema = {
       'CoreQuoteBlock',
       'CoreReadMoreBlock',
       'CoreRssBlock',
+      'CoreSearchBlock',
       'CoreSeparatorBlock',
       'CoreShortcodeBlock',
       'CoreSiteLogoBlock',
@@ -13015,6 +14765,7 @@ export const generatedSchema = {
       'CoreTemplatePartBlock',
       'CoreTermDescriptionBlock',
       'CoreTextColumnsBlock',
+      'CoreVerseBlock',
       'CoreVideoBlock',
       'HorizontalRuleMainBlock',
       'LeadMainBlock',
@@ -13025,13 +14776,44 @@ export const generatedSchema = {
       'TabsTabBlock',
       'UtksdsAccordionBlock',
       'UtksdsButtonBlock',
-      'UtksdsButtongroupBlock',
       'UtksdsCalendarBlock',
       'UtksdsCardBlock',
       'UtksdsColumnBlock',
       'UtksdsColumnsBlock',
+      'UtksdsContactBlock',
       'UtksdsOverlayBlock',
+      'UtksdsPhoneBlock',
+      'UtksdsPhonesBlock',
+      'UtksdsSocialsBlock',
       'UtksdsTabsBlock',
+      'UtkwdsAccordionBlock',
+      'UtkwdsAccordionFoldBlock',
+      'UtkwdsAlertBlock',
+      'UtkwdsButtonBlock',
+      'UtkwdsCalendarBlock',
+      'UtkwdsCardBlock',
+      'UtkwdsCardBodyBlock',
+      'UtkwdsCardFooterBlock',
+      'UtkwdsCardHeaderBlock',
+      'UtkwdsCardHeadingBlock',
+      'UtkwdsCardImageBlock',
+      'UtkwdsCardMainBlock',
+      'UtkwdsCardTopcapBlock',
+      'UtkwdsColumnBlock',
+      'UtkwdsColumnsBlock',
+      'UtkwdsContactBlock',
+      'UtkwdsHorizontalRuleBlock',
+      'UtkwdsLeadBlock',
+      'UtkwdsMediaContentBlock',
+      'UtkwdsMediaObjectBlock',
+      'UtkwdsOverlayBlock',
+      'UtkwdsOverlayMainBlock',
+      'UtkwdsPhoneBlock',
+      'UtkwdsPhonesBlock',
+      'UtkwdsSocialsBlock',
+      'UtkwdsStripBlock',
+      'UtkwdsTabBlock',
+      'UtkwdsTabsBlock',
     ],
     BlockEditorContentNode: ['AcalogProgram', 'Page', 'Post', 'ReusableBlock'],
     NodeWithContentEditor: [
@@ -13050,6 +14832,34 @@ export const generatedSchema = {
       'CoreAudioBlockAttributes',
       'CoreAudioBlockDeprecatedV1Attributes',
     ],
+    CoreButtonBlockAttributesUnion: [
+      'CoreButtonBlockAttributes',
+      'CoreButtonBlockDeprecatedV1Attributes',
+      'CoreButtonBlockDeprecatedV2Attributes',
+      'CoreButtonBlockDeprecatedV3Attributes',
+      'CoreButtonBlockDeprecatedV4Attributes',
+      'CoreButtonBlockDeprecatedV5Attributes',
+      'CoreButtonBlockDeprecatedV6Attributes',
+      'CoreButtonBlockDeprecatedV7Attributes',
+      'CoreButtonBlockDeprecatedV8Attributes',
+      'CoreButtonBlockDeprecatedV9Attributes',
+      'CoreButtonBlockDeprecatedV10Attributes',
+    ],
+    CoreButtonsBlockAttributesUnion: [
+      'CoreButtonsBlockAttributes',
+      'CoreButtonsBlockDeprecatedV1Attributes',
+      'CoreButtonsBlockDeprecatedV2Attributes',
+    ],
+    CoreColumnBlockAttributesUnion: [
+      'CoreColumnBlockAttributes',
+      'CoreColumnBlockDeprecatedV1Attributes',
+    ],
+    CoreColumnsBlockAttributesUnion: [
+      'CoreColumnsBlockAttributes',
+      'CoreColumnsBlockDeprecatedV1Attributes',
+      'CoreColumnsBlockDeprecatedV2Attributes',
+      'CoreColumnsBlockDeprecatedV3Attributes',
+    ],
     CoreCommentAuthorNameBlockAttributesUnion: [
       'CoreCommentAuthorNameBlockAttributes',
       'CoreCommentAuthorNameBlockDeprecatedV1Attributes',
@@ -13061,6 +14871,18 @@ export const generatedSchema = {
     CoreCommentsTitleBlockAttributesUnion: [
       'CoreCommentsTitleBlockAttributes',
       'CoreCommentsTitleBlockDeprecatedV1Attributes',
+    ],
+    CoreCoverBlockAttributesUnion: [
+      'CoreCoverBlockAttributes',
+      'CoreCoverBlockDeprecatedV1Attributes',
+      'CoreCoverBlockDeprecatedV2Attributes',
+      'CoreCoverBlockDeprecatedV3Attributes',
+      'CoreCoverBlockDeprecatedV4Attributes',
+      'CoreCoverBlockDeprecatedV5Attributes',
+      'CoreCoverBlockDeprecatedV6Attributes',
+      'CoreCoverBlockDeprecatedV7Attributes',
+      'CoreCoverBlockDeprecatedV8Attributes',
+      'CoreCoverBlockDeprecatedV9Attributes',
     ],
     CoreEmbedBlockAttributesUnion: [
       'CoreEmbedBlockAttributes',
@@ -13108,6 +14930,12 @@ export const generatedSchema = {
       'CoreListBlockAttributes',
       'CoreListBlockDeprecatedV1Attributes',
     ],
+    CoreMediaTextBlockAttributesUnion: [
+      'CoreMediaTextBlockAttributes',
+      'CoreMediaTextBlockDeprecatedV1Attributes',
+      'CoreMediaTextBlockDeprecatedV2Attributes',
+      'CoreMediaTextBlockDeprecatedV3Attributes',
+    ],
     CoreNavigationBlockAttributesUnion: [
       'CoreNavigationBlockAttributes',
       'CoreNavigationBlockDeprecatedV1Attributes',
@@ -13136,6 +14964,14 @@ export const generatedSchema = {
     CorePostTitleBlockAttributesUnion: [
       'CorePostTitleBlockAttributes',
       'CorePostTitleBlockDeprecatedV1Attributes',
+    ],
+    CorePullquoteBlockAttributesUnion: [
+      'CorePullquoteBlockAttributes',
+      'CorePullquoteBlockDeprecatedV1Attributes',
+      'CorePullquoteBlockDeprecatedV2Attributes',
+      'CorePullquoteBlockDeprecatedV3Attributes',
+      'CorePullquoteBlockDeprecatedV4Attributes',
+      'CorePullquoteBlockDeprecatedV5Attributes',
     ],
     CoreQueryBlockAttributesUnion: [
       'CoreQueryBlockAttributes',
@@ -13180,6 +15016,11 @@ export const generatedSchema = {
       'CoreTableBlockAttributes',
       'CoreTableBlockDeprecatedV1Attributes',
       'CoreTableBlockDeprecatedV2Attributes',
+    ],
+    CoreVerseBlockAttributesUnion: [
+      'CoreVerseBlockAttributes',
+      'CoreVerseBlockDeprecatedV1Attributes',
+      'CoreVerseBlockDeprecatedV2Attributes',
     ],
     ContentTemplate: [
       'DefaultTemplate',
@@ -14260,9 +16101,13 @@ export interface Block {
     | 'CoreAudioBlock'
     | 'CoreAvatarBlock'
     | 'CoreBlock'
+    | 'CoreButtonBlock'
+    | 'CoreButtonsBlock'
     | 'CoreCalendarBlock'
     | 'CoreCategoriesBlock'
     | 'CoreCodeBlock'
+    | 'CoreColumnBlock'
+    | 'CoreColumnsBlock'
     | 'CoreCommentAuthorNameBlock'
     | 'CoreCommentContentBlock'
     | 'CoreCommentDateBlock'
@@ -14275,6 +16120,7 @@ export interface Block {
     | 'CoreCommentsPaginationPreviousBlock'
     | 'CoreCommentsQueryLoopBlock'
     | 'CoreCommentsTitleBlock'
+    | 'CoreCoverBlock'
     | 'CoreEmbedBlock'
     | 'CoreFileBlock'
     | 'CoreFreeformBlock'
@@ -14288,6 +16134,7 @@ export interface Block {
     | 'CoreLatestPostsBlock'
     | 'CoreListBlock'
     | 'CoreLoginoutBlock'
+    | 'CoreMediaTextBlock'
     | 'CoreMissingBlock'
     | 'CoreMoreBlock'
     | 'CoreNavigationBlock'
@@ -14310,6 +16157,7 @@ export interface Block {
     | 'CorePostTermsBlock'
     | 'CorePostTitleBlock'
     | 'CorePreformattedBlock'
+    | 'CorePullquoteBlock'
     | 'CoreQueryBlock'
     | 'CoreQueryNoResultsBlock'
     | 'CoreQueryPaginationBlock'
@@ -14320,6 +16168,7 @@ export interface Block {
     | 'CoreQuoteBlock'
     | 'CoreReadMoreBlock'
     | 'CoreRssBlock'
+    | 'CoreSearchBlock'
     | 'CoreSeparatorBlock'
     | 'CoreShortcodeBlock'
     | 'CoreSiteLogoBlock'
@@ -14333,6 +16182,7 @@ export interface Block {
     | 'CoreTemplatePartBlock'
     | 'CoreTermDescriptionBlock'
     | 'CoreTextColumnsBlock'
+    | 'CoreVerseBlock'
     | 'CoreVideoBlock'
     | 'HorizontalRuleMainBlock'
     | 'LeadMainBlock'
@@ -14343,13 +16193,44 @@ export interface Block {
     | 'TabsTabBlock'
     | 'UtksdsAccordionBlock'
     | 'UtksdsButtonBlock'
-    | 'UtksdsButtongroupBlock'
     | 'UtksdsCalendarBlock'
     | 'UtksdsCardBlock'
     | 'UtksdsColumnBlock'
     | 'UtksdsColumnsBlock'
+    | 'UtksdsContactBlock'
     | 'UtksdsOverlayBlock'
-    | 'UtksdsTabsBlock';
+    | 'UtksdsPhoneBlock'
+    | 'UtksdsPhonesBlock'
+    | 'UtksdsSocialsBlock'
+    | 'UtksdsTabsBlock'
+    | 'UtkwdsAccordionBlock'
+    | 'UtkwdsAccordionFoldBlock'
+    | 'UtkwdsAlertBlock'
+    | 'UtkwdsButtonBlock'
+    | 'UtkwdsCalendarBlock'
+    | 'UtkwdsCardBlock'
+    | 'UtkwdsCardBodyBlock'
+    | 'UtkwdsCardFooterBlock'
+    | 'UtkwdsCardHeaderBlock'
+    | 'UtkwdsCardHeadingBlock'
+    | 'UtkwdsCardImageBlock'
+    | 'UtkwdsCardMainBlock'
+    | 'UtkwdsCardTopcapBlock'
+    | 'UtkwdsColumnBlock'
+    | 'UtkwdsColumnsBlock'
+    | 'UtkwdsContactBlock'
+    | 'UtkwdsHorizontalRuleBlock'
+    | 'UtkwdsLeadBlock'
+    | 'UtkwdsMediaContentBlock'
+    | 'UtkwdsMediaObjectBlock'
+    | 'UtkwdsOverlayBlock'
+    | 'UtkwdsOverlayMainBlock'
+    | 'UtkwdsPhoneBlock'
+    | 'UtkwdsPhonesBlock'
+    | 'UtkwdsSocialsBlock'
+    | 'UtkwdsStripBlock'
+    | 'UtkwdsTabBlock'
+    | 'UtkwdsTabsBlock';
   /**
    * Block attributes, JSON encoded
    */
@@ -16558,6 +18439,381 @@ export interface CoreBlockAttributes {
 }
 
 /**
+ * core/button block
+ */
+export interface CoreButtonBlock {
+  __typename?: 'CoreButtonBlock';
+  attributes?: Maybe<CoreButtonBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreButtonBlockAttributes {
+  __typename?: 'CoreButtonBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockAttributesUnion {
+  __typename?:
+    | 'CoreButtonBlockAttributes'
+    | 'CoreButtonBlockDeprecatedV1Attributes'
+    | 'CoreButtonBlockDeprecatedV2Attributes'
+    | 'CoreButtonBlockDeprecatedV3Attributes'
+    | 'CoreButtonBlockDeprecatedV4Attributes'
+    | 'CoreButtonBlockDeprecatedV5Attributes'
+    | 'CoreButtonBlockDeprecatedV6Attributes'
+    | 'CoreButtonBlockDeprecatedV7Attributes'
+    | 'CoreButtonBlockDeprecatedV8Attributes'
+    | 'CoreButtonBlockDeprecatedV9Attributes'
+    | 'CoreButtonBlockDeprecatedV10Attributes';
+  $on: $CoreButtonBlockAttributesUnion;
+}
+
+export interface CoreButtonBlockDeprecatedV10Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV10Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV1Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV2Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV3Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV4Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV5Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV6Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV6Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV7Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV7Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV8Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV8Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV9Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV9Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+/**
+ * core/buttons block
+ */
+export interface CoreButtonsBlock {
+  __typename?: 'CoreButtonsBlock';
+  attributes?: Maybe<CoreButtonsBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreButtonsBlockAttributes {
+  __typename?: 'CoreButtonsBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+export interface CoreButtonsBlockAttributesUnion {
+  __typename?:
+    | 'CoreButtonsBlockAttributes'
+    | 'CoreButtonsBlockDeprecatedV1Attributes'
+    | 'CoreButtonsBlockDeprecatedV2Attributes';
+  $on: $CoreButtonsBlockAttributesUnion;
+}
+
+export interface CoreButtonsBlockDeprecatedV1Attributes {
+  __typename?: 'CoreButtonsBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+export interface CoreButtonsBlockDeprecatedV2Attributes {
+  __typename?: 'CoreButtonsBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
  * core/calendar block
  */
 export interface CoreCalendarBlock {
@@ -16724,6 +18980,206 @@ export interface CoreCodeBlockAttributes {
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/column block
+ */
+export interface CoreColumnBlock {
+  __typename?: 'CoreColumnBlock';
+  attributes?: Maybe<CoreColumnBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnBlockAttributes {
+  __typename?: 'CoreColumnBlockAttributes';
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnBlockAttributesUnion {
+  __typename?:
+    | 'CoreColumnBlockAttributes'
+    | 'CoreColumnBlockDeprecatedV1Attributes';
+  $on: $CoreColumnBlockAttributesUnion;
+}
+
+export interface CoreColumnBlockDeprecatedV1Attributes {
+  __typename?: 'CoreColumnBlockDeprecatedV1Attributes';
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/columns block
+ */
+export interface CoreColumnsBlock {
+  __typename?: 'CoreColumnsBlock';
+  attributes?: Maybe<CoreColumnsBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockAttributes {
+  __typename?: 'CoreColumnsBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockAttributesUnion {
+  __typename?:
+    | 'CoreColumnsBlockAttributes'
+    | 'CoreColumnsBlockDeprecatedV1Attributes'
+    | 'CoreColumnsBlockDeprecatedV2Attributes'
+    | 'CoreColumnsBlockDeprecatedV3Attributes';
+  $on: $CoreColumnsBlockAttributesUnion;
+}
+
+export interface CoreColumnsBlockDeprecatedV1Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockDeprecatedV2Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockDeprecatedV3Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -17481,6 +19937,336 @@ export interface CoreCommentsTitleBlockDeprecatedV1Attributes {
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textAlign?: Maybe<ScalarsEnums['String']>;
   textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/cover block
+ */
+export interface CoreCoverBlock {
+  __typename?: 'CoreCoverBlock';
+  attributes?: Maybe<CoreCoverBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreCoverBlockAttributes {
+  __typename?: 'CoreCoverBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockAttributesUnion {
+  __typename?:
+    | 'CoreCoverBlockAttributes'
+    | 'CoreCoverBlockDeprecatedV1Attributes'
+    | 'CoreCoverBlockDeprecatedV2Attributes'
+    | 'CoreCoverBlockDeprecatedV3Attributes'
+    | 'CoreCoverBlockDeprecatedV4Attributes'
+    | 'CoreCoverBlockDeprecatedV5Attributes'
+    | 'CoreCoverBlockDeprecatedV6Attributes'
+    | 'CoreCoverBlockDeprecatedV7Attributes'
+    | 'CoreCoverBlockDeprecatedV8Attributes'
+    | 'CoreCoverBlockDeprecatedV9Attributes';
+  $on: $CoreCoverBlockAttributesUnion;
+}
+
+export interface CoreCoverBlockDeprecatedV1Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV2Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV3Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV4Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV5Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV6Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV6Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV7Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV7Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV8Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV8Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV9Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV9Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
 }
 
 /**
@@ -18813,6 +21599,176 @@ export interface CoreLoginoutBlockAttributes {
   displayLoginAsForm: ScalarsEnums['Boolean'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   redirectToCurrent: ScalarsEnums['Boolean'];
+}
+
+/**
+ * core/media-text block
+ */
+export interface CoreMediaTextBlock {
+  __typename?: 'CoreMediaTextBlock';
+  attributes?: Maybe<CoreMediaTextBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockAttributes {
+  __typename?: 'CoreMediaTextBlockAttributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockAttributesUnion {
+  __typename?:
+    | 'CoreMediaTextBlockAttributes'
+    | 'CoreMediaTextBlockDeprecatedV1Attributes'
+    | 'CoreMediaTextBlockDeprecatedV2Attributes'
+    | 'CoreMediaTextBlockDeprecatedV3Attributes';
+  $on: $CoreMediaTextBlockAttributesUnion;
+}
+
+export interface CoreMediaTextBlockDeprecatedV1Attributes {
+  __typename?: 'CoreMediaTextBlockDeprecatedV1Attributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockDeprecatedV2Attributes {
+  __typename?: 'CoreMediaTextBlockDeprecatedV2Attributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockDeprecatedV3Attributes {
+  __typename?: 'CoreMediaTextBlockDeprecatedV3Attributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -20434,6 +23390,164 @@ export interface CorePreformattedBlockAttributes {
 }
 
 /**
+ * core/pullquote block
+ */
+export interface CorePullquoteBlock {
+  __typename?: 'CorePullquoteBlock';
+  attributes?: Maybe<CorePullquoteBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockAttributes {
+  __typename?: 'CorePullquoteBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockAttributesUnion {
+  __typename?:
+    | 'CorePullquoteBlockAttributes'
+    | 'CorePullquoteBlockDeprecatedV1Attributes'
+    | 'CorePullquoteBlockDeprecatedV2Attributes'
+    | 'CorePullquoteBlockDeprecatedV3Attributes'
+    | 'CorePullquoteBlockDeprecatedV4Attributes'
+    | 'CorePullquoteBlockDeprecatedV5Attributes';
+  $on: $CorePullquoteBlockAttributesUnion;
+}
+
+export interface CorePullquoteBlockDeprecatedV1Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockDeprecatedV2Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockDeprecatedV3Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockDeprecatedV4Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CorePullquoteBlockDeprecatedV5Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
  * core/query block
  */
 export interface CoreQueryBlock {
@@ -21154,6 +24268,71 @@ export interface CoreRssBlockAttributes {
   feedURL: ScalarsEnums['String'];
   itemsToShow: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * core/search block
+ */
+export interface CoreSearchBlock {
+  __typename?: 'CoreSearchBlock';
+  attributes?: Maybe<CoreSearchBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreSearchBlockAttributes {
+  __typename?: 'CoreSearchBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  buttonPosition: ScalarsEnums['String'];
+  buttonText?: Maybe<ScalarsEnums['String']>;
+  buttonUseIcon: ScalarsEnums['Boolean'];
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  label?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder: ScalarsEnums['String'];
+  showLabel: ScalarsEnums['Boolean'];
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+  widthUnit?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -22176,6 +25355,104 @@ export interface CoreTextColumnsBlockAttributes {
 export interface CoreTextColumnsBlockAttributesContent {
   __typename?: 'CoreTextColumnsBlockAttributesContent';
   children?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/verse block
+ */
+export interface CoreVerseBlock {
+  __typename?: 'CoreVerseBlock';
+  attributes?: Maybe<CoreVerseBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreVerseBlockAttributes {
+  __typename?: 'CoreVerseBlockAttributes';
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreVerseBlockAttributesUnion {
+  __typename?:
+    | 'CoreVerseBlockAttributes'
+    | 'CoreVerseBlockDeprecatedV1Attributes'
+    | 'CoreVerseBlockDeprecatedV2Attributes';
+  $on: $CoreVerseBlockAttributesUnion;
+}
+
+export interface CoreVerseBlockDeprecatedV1Attributes {
+  __typename?: 'CoreVerseBlockDeprecatedV1Attributes';
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreVerseBlockDeprecatedV2Attributes {
+  __typename?: 'CoreVerseBlockDeprecatedV2Attributes';
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textAlign?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -23708,6 +26985,9 @@ export interface MediaObjectMainBlockAttributes {
   __typename?: 'MediaObjectMainBlockAttributes';
   backgroundColor: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  imageAlt?: Maybe<ScalarsEnums['String']>;
+  imageSize?: Maybe<ScalarsEnums['Int']>;
+  imageUrl?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
@@ -29057,60 +32337,6 @@ export interface UtksdsButtonBlockAttributes {
 }
 
 /**
- * utksds/buttongroup block
- */
-export interface UtksdsButtongroupBlock {
-  __typename?: 'UtksdsButtongroupBlock';
-  attributes?: Maybe<UtksdsButtongroupBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface UtksdsButtongroupBlockAttributes {
-  __typename?: 'UtksdsButtongroupBlockAttributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  groupSize: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  orientation: ScalarsEnums['String'];
-  orientationSetting: ScalarsEnums['Boolean'];
-}
-
-/**
  * utksds/calendar block
  */
 export interface UtksdsCalendarBlock {
@@ -29368,6 +32594,63 @@ export interface UtksdsColumnsBlockAttributes {
 }
 
 /**
+ * utksds/contact block
+ */
+export interface UtksdsContactBlock {
+  __typename?: 'UtksdsContactBlock';
+  attributes?: Maybe<UtksdsContactBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtksdsContactBlockAttributes {
+  __typename?: 'UtksdsContactBlockAttributes';
+  address?: Maybe<ScalarsEnums['String']>;
+  addressDefault: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  email?: Maybe<ScalarsEnums['String']>;
+  linkTab: ScalarsEnums['Boolean'];
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
  * utksds/overlay block
  */
 export interface UtksdsOverlayBlock {
@@ -29423,6 +32706,161 @@ export interface UtksdsOverlayBlockAttributes {
 }
 
 /**
+ * utksds/phone block
+ */
+export interface UtksdsPhoneBlock {
+  __typename?: 'UtksdsPhoneBlock';
+  attributes?: Maybe<UtksdsPhoneBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtksdsPhoneBlockAttributes {
+  __typename?: 'UtksdsPhoneBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  phoneName?: Maybe<ScalarsEnums['String']>;
+  phoneNum?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utksds/phones block
+ */
+export interface UtksdsPhonesBlock {
+  __typename?: 'UtksdsPhonesBlock';
+  attributes?: Maybe<UtksdsPhonesBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtksdsPhonesBlockAttributes {
+  __typename?: 'UtksdsPhonesBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utksds/socials block
+ */
+export interface UtksdsSocialsBlock {
+  __typename?: 'UtksdsSocialsBlock';
+  attributes?: Maybe<UtksdsSocialsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtksdsSocialsBlockAttributes {
+  __typename?: 'UtksdsSocialsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
  * utksds/tabs block
  */
 export interface UtksdsTabsBlock {
@@ -29469,6 +32907,1557 @@ export interface UtksdsTabsBlock {
 
 export interface UtksdsTabsBlockAttributes {
   __typename?: 'UtksdsTabsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tabID: ScalarsEnums['String'];
+  tabNames: ScalarsEnums['BlockAttributesArray'];
+}
+
+/**
+ * utkwds/accordion block
+ */
+export interface UtkwdsAccordionBlock {
+  __typename?: 'UtkwdsAccordionBlock';
+  attributes?: Maybe<UtkwdsAccordionBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAccordionBlockAttributes {
+  __typename?: 'UtkwdsAccordionBlockAttributes';
+  accordionID: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/accordion-fold block
+ */
+export interface UtkwdsAccordionFoldBlock {
+  __typename?: 'UtkwdsAccordionFoldBlock';
+  attributes?: Maybe<UtkwdsAccordionFoldBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAccordionFoldBlockAttributes {
+  __typename?: 'UtkwdsAccordionFoldBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  collapseS: ScalarsEnums['String'];
+  foldName: ScalarsEnums['String'];
+  foldNamePH: ScalarsEnums['String'];
+  foldSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  parentID: ScalarsEnums['String'];
+  show: ScalarsEnums['Boolean'];
+  showS: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/alert block
+ */
+export interface UtkwdsAlertBlock {
+  __typename?: 'UtkwdsAlertBlock';
+  attributes?: Maybe<UtkwdsAlertBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAlertBlockAttributes {
+  __typename?: 'UtkwdsAlertBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder: ScalarsEnums['String'];
+  text?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/button block
+ */
+export interface UtkwdsButtonBlock {
+  __typename?: 'UtkwdsButtonBlock';
+  attributes?: Maybe<UtkwdsButtonBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsButtonBlockAttributes {
+  __typename?: 'UtkwdsButtonBlockAttributes';
+  blockClass: ScalarsEnums['String'];
+  buttonOutline: ScalarsEnums['Boolean'];
+  buttonSize: ScalarsEnums['String'];
+  buttonText: ScalarsEnums['Boolean'];
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  iconName: ScalarsEnums['String'];
+  iconSize: ScalarsEnums['String'];
+  iconString: ScalarsEnums['String'];
+  linkTab: ScalarsEnums['Boolean'];
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder: ScalarsEnums['String'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useIcon: ScalarsEnums['Boolean'];
+}
+
+/**
+ * utkwds/calendar block
+ */
+export interface UtkwdsCalendarBlock {
+  __typename?: 'UtkwdsCalendarBlock';
+  attributes?: Maybe<UtkwdsCalendarBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCalendarBlockAttributes {
+  __typename?: 'UtkwdsCalendarBlockAttributes';
+  audience: ScalarsEnums['String'];
+  calTemplate: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  daysAhead: ScalarsEnums['Float'];
+  department: ScalarsEnums['String'];
+  evImage: ScalarsEnums['Boolean'];
+  evImageS: ScalarsEnums['String'];
+  evTime: ScalarsEnums['Boolean'];
+  evTimeS: ScalarsEnums['String'];
+  exAudience: ScalarsEnums['String'];
+  exTopic: ScalarsEnums['String'];
+  exType: ScalarsEnums['String'];
+  featured: ScalarsEnums['Boolean'];
+  featuredS: ScalarsEnums['String'];
+  group: ScalarsEnums['String'];
+  hideDesc: ScalarsEnums['Boolean'];
+  hideDescS: ScalarsEnums['String'];
+  hideDrop: ScalarsEnums['Boolean'];
+  hideDropS: ScalarsEnums['String'];
+  htmlDesc: ScalarsEnums['Boolean'];
+  htmlDescS: ScalarsEnums['String'];
+  incStyle: ScalarsEnums['Boolean'];
+  incStyleS: ScalarsEnums['String'];
+  keywords: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  matching: ScalarsEnums['Boolean'];
+  matchingS: ScalarsEnums['String'];
+  mustMatch: ScalarsEnums['String'];
+  newWin: ScalarsEnums['Boolean'];
+  newWinS: ScalarsEnums['String'];
+  numResults: ScalarsEnums['Float'];
+  past: ScalarsEnums['Boolean'];
+  pastS: ScalarsEnums['String'];
+  place: ScalarsEnums['String'];
+  sponsored: ScalarsEnums['Boolean'];
+  sponsoredS: ScalarsEnums['String'];
+  style: ScalarsEnums['String'];
+  template: ScalarsEnums['String'];
+  topic: ScalarsEnums['String'];
+  truncate: ScalarsEnums['Boolean'];
+  truncateS: ScalarsEnums['String'];
+  type: ScalarsEnums['String'];
+  viewAll: ScalarsEnums['Boolean'];
+  viewAllS: ScalarsEnums['String'];
+  widgetType: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card block
+ */
+export interface UtkwdsCardBlock {
+  __typename?: 'UtkwdsCardBlock';
+  attributes?: Maybe<UtkwdsCardBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardBlockAttributes {
+  __typename?: 'UtkwdsCardBlockAttributes';
+  blockName: ScalarsEnums['String'];
+  cardOutline: ScalarsEnums['Boolean'];
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-body block
+ */
+export interface UtkwdsCardBodyBlock {
+  __typename?: 'UtkwdsCardBodyBlock';
+  attributes?: Maybe<UtkwdsCardBodyBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardBodyBlockAttributes {
+  __typename?: 'UtkwdsCardBodyBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/card-footer block
+ */
+export interface UtkwdsCardFooterBlock {
+  __typename?: 'UtkwdsCardFooterBlock';
+  attributes?: Maybe<UtkwdsCardFooterBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardFooterBlockAttributes {
+  __typename?: 'UtkwdsCardFooterBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  muted: ScalarsEnums['Boolean'];
+  mutedClass: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-header block
+ */
+export interface UtkwdsCardHeaderBlock {
+  __typename?: 'UtkwdsCardHeaderBlock';
+  attributes?: Maybe<UtkwdsCardHeaderBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardHeaderBlockAttributes {
+  __typename?: 'UtkwdsCardHeaderBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tagName: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-heading block
+ */
+export interface UtkwdsCardHeadingBlock {
+  __typename?: 'UtkwdsCardHeadingBlock';
+  attributes?: Maybe<UtkwdsCardHeadingBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardHeadingBlockAttributes {
+  __typename?: 'UtkwdsCardHeadingBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-image block
+ */
+export interface UtkwdsCardImageBlock {
+  __typename?: 'UtkwdsCardImageBlock';
+  attributes?: Maybe<UtkwdsCardImageBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardImageBlockAttributes {
+  __typename?: 'UtkwdsCardImageBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-main block
+ */
+export interface UtkwdsCardMainBlock {
+  __typename?: 'UtkwdsCardMainBlock';
+  attributes?: Maybe<UtkwdsCardMainBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardMainBlockAttributes {
+  __typename?: 'UtkwdsCardMainBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-topcap block
+ */
+export interface UtkwdsCardTopcapBlock {
+  __typename?: 'UtkwdsCardTopcapBlock';
+  attributes?: Maybe<UtkwdsCardTopcapBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardTopcapBlockAttributes {
+  __typename?: 'UtkwdsCardTopcapBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/column block
+ */
+export interface UtkwdsColumnBlock {
+  __typename?: 'UtkwdsColumnBlock';
+  attributes?: Maybe<UtkwdsColumnBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsColumnBlockAttributes {
+  __typename?: 'UtkwdsColumnBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  colWidth: ScalarsEnums['Int'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/columns block
+ */
+export interface UtkwdsColumnsBlock {
+  __typename?: 'UtkwdsColumnsBlock';
+  attributes?: Maybe<UtkwdsColumnsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsColumnsBlockAttributes {
+  __typename?: 'UtkwdsColumnsBlockAttributes';
+  blockName: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  numCols: ScalarsEnums['Int'];
+  rowClass: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/contact block
+ */
+export interface UtkwdsContactBlock {
+  __typename?: 'UtkwdsContactBlock';
+  attributes?: Maybe<UtkwdsContactBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsContactBlockAttributes {
+  __typename?: 'UtkwdsContactBlockAttributes';
+  address?: Maybe<ScalarsEnums['String']>;
+  addressDefault: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  email?: Maybe<ScalarsEnums['String']>;
+  linkTab: ScalarsEnums['Boolean'];
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/horizontal-rule block
+ */
+export interface UtkwdsHorizontalRuleBlock {
+  __typename?: 'UtkwdsHorizontalRuleBlock';
+  attributes?: Maybe<UtkwdsHorizontalRuleBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsHorizontalRuleBlockAttributes {
+  __typename?: 'UtkwdsHorizontalRuleBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  imagePostion: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/lead block
+ */
+export interface UtkwdsLeadBlock {
+  __typename?: 'UtkwdsLeadBlock';
+  attributes?: Maybe<UtkwdsLeadBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsLeadBlockAttributes {
+  __typename?: 'UtkwdsLeadBlockAttributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/media-content block
+ */
+export interface UtkwdsMediaContentBlock {
+  __typename?: 'UtkwdsMediaContentBlock';
+  attributes?: Maybe<UtkwdsMediaContentBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsMediaContentBlockAttributes {
+  __typename?: 'UtkwdsMediaContentBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/media-object block
+ */
+export interface UtkwdsMediaObjectBlock {
+  __typename?: 'UtkwdsMediaObjectBlock';
+  attributes?: Maybe<UtkwdsMediaObjectBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsMediaObjectBlockAttributes {
+  __typename?: 'UtkwdsMediaObjectBlockAttributes';
+  backgroundColor: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  imageAlt?: Maybe<ScalarsEnums['String']>;
+  imageSize?: Maybe<ScalarsEnums['Int']>;
+  imageUrl?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/overlay block
+ */
+export interface UtkwdsOverlayBlock {
+  __typename?: 'UtkwdsOverlayBlock';
+  attributes?: Maybe<UtkwdsOverlayBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsOverlayBlockAttributes {
+  __typename?: 'UtkwdsOverlayBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  imageAlt: ScalarsEnums['String'];
+  imageUrl: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  overOpacity: ScalarsEnums['Int'];
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/overlay-main block
+ */
+export interface UtkwdsOverlayMainBlock {
+  __typename?: 'UtkwdsOverlayMainBlock';
+  attributes?: Maybe<UtkwdsOverlayMainBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsOverlayMainBlockAttributes {
+  __typename?: 'UtkwdsOverlayMainBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/phone block
+ */
+export interface UtkwdsPhoneBlock {
+  __typename?: 'UtkwdsPhoneBlock';
+  attributes?: Maybe<UtkwdsPhoneBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsPhoneBlockAttributes {
+  __typename?: 'UtkwdsPhoneBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  phoneName?: Maybe<ScalarsEnums['String']>;
+  phoneNum?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/phones block
+ */
+export interface UtkwdsPhonesBlock {
+  __typename?: 'UtkwdsPhonesBlock';
+  attributes?: Maybe<UtkwdsPhonesBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsPhonesBlockAttributes {
+  __typename?: 'UtkwdsPhonesBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/socials block
+ */
+export interface UtkwdsSocialsBlock {
+  __typename?: 'UtkwdsSocialsBlock';
+  attributes?: Maybe<UtkwdsSocialsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsSocialsBlockAttributes {
+  __typename?: 'UtkwdsSocialsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/strip block
+ */
+export interface UtkwdsStripBlock {
+  __typename?: 'UtkwdsStripBlock';
+  attributes?: Maybe<UtkwdsStripBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsStripBlockAttributes {
+  __typename?: 'UtkwdsStripBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  imageUrl: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  padding: ScalarsEnums['String'];
+  spacing: ScalarsEnums['Int'];
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/tab block
+ */
+export interface UtkwdsTabBlock {
+  __typename?: 'UtkwdsTabBlock';
+  attributes?: Maybe<UtkwdsTabBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsTabBlockAttributes {
+  __typename?: 'UtkwdsTabBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tabActive: ScalarsEnums['String'];
+  tabName: ScalarsEnums['String'];
+  tabPlaceholder: ScalarsEnums['String'];
+  tabShow: ScalarsEnums['String'];
+  tabSlug: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/tabs block
+ */
+export interface UtkwdsTabsBlock {
+  __typename?: 'UtkwdsTabsBlock';
+  attributes?: Maybe<UtkwdsTabsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsTabsBlockAttributes {
+  __typename?: 'UtkwdsTabsBlockAttributes';
   className?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tabID: ScalarsEnums['String'];
@@ -30022,12 +35011,36 @@ export interface SchemaObjectTypes {
   CoreAvatarBlockAttributes: CoreAvatarBlockAttributes;
   CoreBlock: CoreBlock;
   CoreBlockAttributes: CoreBlockAttributes;
+  CoreButtonBlock: CoreButtonBlock;
+  CoreButtonBlockAttributes: CoreButtonBlockAttributes;
+  CoreButtonBlockDeprecatedV10Attributes: CoreButtonBlockDeprecatedV10Attributes;
+  CoreButtonBlockDeprecatedV1Attributes: CoreButtonBlockDeprecatedV1Attributes;
+  CoreButtonBlockDeprecatedV2Attributes: CoreButtonBlockDeprecatedV2Attributes;
+  CoreButtonBlockDeprecatedV3Attributes: CoreButtonBlockDeprecatedV3Attributes;
+  CoreButtonBlockDeprecatedV4Attributes: CoreButtonBlockDeprecatedV4Attributes;
+  CoreButtonBlockDeprecatedV5Attributes: CoreButtonBlockDeprecatedV5Attributes;
+  CoreButtonBlockDeprecatedV6Attributes: CoreButtonBlockDeprecatedV6Attributes;
+  CoreButtonBlockDeprecatedV7Attributes: CoreButtonBlockDeprecatedV7Attributes;
+  CoreButtonBlockDeprecatedV8Attributes: CoreButtonBlockDeprecatedV8Attributes;
+  CoreButtonBlockDeprecatedV9Attributes: CoreButtonBlockDeprecatedV9Attributes;
+  CoreButtonsBlock: CoreButtonsBlock;
+  CoreButtonsBlockAttributes: CoreButtonsBlockAttributes;
+  CoreButtonsBlockDeprecatedV1Attributes: CoreButtonsBlockDeprecatedV1Attributes;
+  CoreButtonsBlockDeprecatedV2Attributes: CoreButtonsBlockDeprecatedV2Attributes;
   CoreCalendarBlock: CoreCalendarBlock;
   CoreCalendarBlockAttributes: CoreCalendarBlockAttributes;
   CoreCategoriesBlock: CoreCategoriesBlock;
   CoreCategoriesBlockAttributes: CoreCategoriesBlockAttributes;
   CoreCodeBlock: CoreCodeBlock;
   CoreCodeBlockAttributes: CoreCodeBlockAttributes;
+  CoreColumnBlock: CoreColumnBlock;
+  CoreColumnBlockAttributes: CoreColumnBlockAttributes;
+  CoreColumnBlockDeprecatedV1Attributes: CoreColumnBlockDeprecatedV1Attributes;
+  CoreColumnsBlock: CoreColumnsBlock;
+  CoreColumnsBlockAttributes: CoreColumnsBlockAttributes;
+  CoreColumnsBlockDeprecatedV1Attributes: CoreColumnsBlockDeprecatedV1Attributes;
+  CoreColumnsBlockDeprecatedV2Attributes: CoreColumnsBlockDeprecatedV2Attributes;
+  CoreColumnsBlockDeprecatedV3Attributes: CoreColumnsBlockDeprecatedV3Attributes;
   CoreCommentAuthorNameBlock: CoreCommentAuthorNameBlock;
   CoreCommentAuthorNameBlockAttributes: CoreCommentAuthorNameBlockAttributes;
   CoreCommentAuthorNameBlockDeprecatedV1Attributes: CoreCommentAuthorNameBlockDeprecatedV1Attributes;
@@ -30055,6 +35068,17 @@ export interface SchemaObjectTypes {
   CoreCommentsTitleBlock: CoreCommentsTitleBlock;
   CoreCommentsTitleBlockAttributes: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes: CoreCommentsTitleBlockDeprecatedV1Attributes;
+  CoreCoverBlock: CoreCoverBlock;
+  CoreCoverBlockAttributes: CoreCoverBlockAttributes;
+  CoreCoverBlockDeprecatedV1Attributes: CoreCoverBlockDeprecatedV1Attributes;
+  CoreCoverBlockDeprecatedV2Attributes: CoreCoverBlockDeprecatedV2Attributes;
+  CoreCoverBlockDeprecatedV3Attributes: CoreCoverBlockDeprecatedV3Attributes;
+  CoreCoverBlockDeprecatedV4Attributes: CoreCoverBlockDeprecatedV4Attributes;
+  CoreCoverBlockDeprecatedV5Attributes: CoreCoverBlockDeprecatedV5Attributes;
+  CoreCoverBlockDeprecatedV6Attributes: CoreCoverBlockDeprecatedV6Attributes;
+  CoreCoverBlockDeprecatedV7Attributes: CoreCoverBlockDeprecatedV7Attributes;
+  CoreCoverBlockDeprecatedV8Attributes: CoreCoverBlockDeprecatedV8Attributes;
+  CoreCoverBlockDeprecatedV9Attributes: CoreCoverBlockDeprecatedV9Attributes;
   CoreEmbedBlock: CoreEmbedBlock;
   CoreEmbedBlockAttributes: CoreEmbedBlockAttributes;
   CoreEmbedBlockDeprecatedV1Attributes: CoreEmbedBlockDeprecatedV1Attributes;
@@ -30110,6 +35134,11 @@ export interface SchemaObjectTypes {
   CoreListBlockDeprecatedV1Attributes: CoreListBlockDeprecatedV1Attributes;
   CoreLoginoutBlock: CoreLoginoutBlock;
   CoreLoginoutBlockAttributes: CoreLoginoutBlockAttributes;
+  CoreMediaTextBlock: CoreMediaTextBlock;
+  CoreMediaTextBlockAttributes: CoreMediaTextBlockAttributes;
+  CoreMediaTextBlockDeprecatedV1Attributes: CoreMediaTextBlockDeprecatedV1Attributes;
+  CoreMediaTextBlockDeprecatedV2Attributes: CoreMediaTextBlockDeprecatedV2Attributes;
+  CoreMediaTextBlockDeprecatedV3Attributes: CoreMediaTextBlockDeprecatedV3Attributes;
   CoreMissingBlock: CoreMissingBlock;
   CoreMissingBlockAttributes: CoreMissingBlockAttributes;
   CoreMoreBlock: CoreMoreBlock;
@@ -30168,6 +35197,13 @@ export interface SchemaObjectTypes {
   CorePostTitleBlockDeprecatedV1Attributes: CorePostTitleBlockDeprecatedV1Attributes;
   CorePreformattedBlock: CorePreformattedBlock;
   CorePreformattedBlockAttributes: CorePreformattedBlockAttributes;
+  CorePullquoteBlock: CorePullquoteBlock;
+  CorePullquoteBlockAttributes: CorePullquoteBlockAttributes;
+  CorePullquoteBlockDeprecatedV1Attributes: CorePullquoteBlockDeprecatedV1Attributes;
+  CorePullquoteBlockDeprecatedV2Attributes: CorePullquoteBlockDeprecatedV2Attributes;
+  CorePullquoteBlockDeprecatedV3Attributes: CorePullquoteBlockDeprecatedV3Attributes;
+  CorePullquoteBlockDeprecatedV4Attributes: CorePullquoteBlockDeprecatedV4Attributes;
+  CorePullquoteBlockDeprecatedV5Attributes: CorePullquoteBlockDeprecatedV5Attributes;
   CoreQueryBlock: CoreQueryBlock;
   CoreQueryBlockAttributes: CoreQueryBlockAttributes;
   CoreQueryBlockDeprecatedV1Attributes: CoreQueryBlockDeprecatedV1Attributes;
@@ -30195,6 +35231,8 @@ export interface SchemaObjectTypes {
   CoreReadMoreBlockAttributes: CoreReadMoreBlockAttributes;
   CoreRssBlock: CoreRssBlock;
   CoreRssBlockAttributes: CoreRssBlockAttributes;
+  CoreSearchBlock: CoreSearchBlock;
+  CoreSearchBlockAttributes: CoreSearchBlockAttributes;
   CoreSeparatorBlock: CoreSeparatorBlock;
   CoreSeparatorBlockAttributes: CoreSeparatorBlockAttributes;
   CoreSeparatorBlockDeprecatedV1Attributes: CoreSeparatorBlockDeprecatedV1Attributes;
@@ -30247,6 +35285,10 @@ export interface SchemaObjectTypes {
   CoreTextColumnsBlock: CoreTextColumnsBlock;
   CoreTextColumnsBlockAttributes: CoreTextColumnsBlockAttributes;
   CoreTextColumnsBlockAttributesContent: CoreTextColumnsBlockAttributesContent;
+  CoreVerseBlock: CoreVerseBlock;
+  CoreVerseBlockAttributes: CoreVerseBlockAttributes;
+  CoreVerseBlockDeprecatedV1Attributes: CoreVerseBlockDeprecatedV1Attributes;
+  CoreVerseBlockDeprecatedV2Attributes: CoreVerseBlockDeprecatedV2Attributes;
   CoreVideoBlock: CoreVideoBlock;
   CoreVideoBlockAttributes: CoreVideoBlockAttributes;
   CreateAToZCategoryPayload: CreateAToZCategoryPayload;
@@ -30459,8 +35501,6 @@ export interface SchemaObjectTypes {
   UtksdsAccordionBlockAttributes: UtksdsAccordionBlockAttributes;
   UtksdsButtonBlock: UtksdsButtonBlock;
   UtksdsButtonBlockAttributes: UtksdsButtonBlockAttributes;
-  UtksdsButtongroupBlock: UtksdsButtongroupBlock;
-  UtksdsButtongroupBlockAttributes: UtksdsButtongroupBlockAttributes;
   UtksdsCalendarBlock: UtksdsCalendarBlock;
   UtksdsCalendarBlockAttributes: UtksdsCalendarBlockAttributes;
   UtksdsCardBlock: UtksdsCardBlock;
@@ -30469,10 +35509,74 @@ export interface SchemaObjectTypes {
   UtksdsColumnBlockAttributes: UtksdsColumnBlockAttributes;
   UtksdsColumnsBlock: UtksdsColumnsBlock;
   UtksdsColumnsBlockAttributes: UtksdsColumnsBlockAttributes;
+  UtksdsContactBlock: UtksdsContactBlock;
+  UtksdsContactBlockAttributes: UtksdsContactBlockAttributes;
   UtksdsOverlayBlock: UtksdsOverlayBlock;
   UtksdsOverlayBlockAttributes: UtksdsOverlayBlockAttributes;
+  UtksdsPhoneBlock: UtksdsPhoneBlock;
+  UtksdsPhoneBlockAttributes: UtksdsPhoneBlockAttributes;
+  UtksdsPhonesBlock: UtksdsPhonesBlock;
+  UtksdsPhonesBlockAttributes: UtksdsPhonesBlockAttributes;
+  UtksdsSocialsBlock: UtksdsSocialsBlock;
+  UtksdsSocialsBlockAttributes: UtksdsSocialsBlockAttributes;
   UtksdsTabsBlock: UtksdsTabsBlock;
   UtksdsTabsBlockAttributes: UtksdsTabsBlockAttributes;
+  UtkwdsAccordionBlock: UtkwdsAccordionBlock;
+  UtkwdsAccordionBlockAttributes: UtkwdsAccordionBlockAttributes;
+  UtkwdsAccordionFoldBlock: UtkwdsAccordionFoldBlock;
+  UtkwdsAccordionFoldBlockAttributes: UtkwdsAccordionFoldBlockAttributes;
+  UtkwdsAlertBlock: UtkwdsAlertBlock;
+  UtkwdsAlertBlockAttributes: UtkwdsAlertBlockAttributes;
+  UtkwdsButtonBlock: UtkwdsButtonBlock;
+  UtkwdsButtonBlockAttributes: UtkwdsButtonBlockAttributes;
+  UtkwdsCalendarBlock: UtkwdsCalendarBlock;
+  UtkwdsCalendarBlockAttributes: UtkwdsCalendarBlockAttributes;
+  UtkwdsCardBlock: UtkwdsCardBlock;
+  UtkwdsCardBlockAttributes: UtkwdsCardBlockAttributes;
+  UtkwdsCardBodyBlock: UtkwdsCardBodyBlock;
+  UtkwdsCardBodyBlockAttributes: UtkwdsCardBodyBlockAttributes;
+  UtkwdsCardFooterBlock: UtkwdsCardFooterBlock;
+  UtkwdsCardFooterBlockAttributes: UtkwdsCardFooterBlockAttributes;
+  UtkwdsCardHeaderBlock: UtkwdsCardHeaderBlock;
+  UtkwdsCardHeaderBlockAttributes: UtkwdsCardHeaderBlockAttributes;
+  UtkwdsCardHeadingBlock: UtkwdsCardHeadingBlock;
+  UtkwdsCardHeadingBlockAttributes: UtkwdsCardHeadingBlockAttributes;
+  UtkwdsCardImageBlock: UtkwdsCardImageBlock;
+  UtkwdsCardImageBlockAttributes: UtkwdsCardImageBlockAttributes;
+  UtkwdsCardMainBlock: UtkwdsCardMainBlock;
+  UtkwdsCardMainBlockAttributes: UtkwdsCardMainBlockAttributes;
+  UtkwdsCardTopcapBlock: UtkwdsCardTopcapBlock;
+  UtkwdsCardTopcapBlockAttributes: UtkwdsCardTopcapBlockAttributes;
+  UtkwdsColumnBlock: UtkwdsColumnBlock;
+  UtkwdsColumnBlockAttributes: UtkwdsColumnBlockAttributes;
+  UtkwdsColumnsBlock: UtkwdsColumnsBlock;
+  UtkwdsColumnsBlockAttributes: UtkwdsColumnsBlockAttributes;
+  UtkwdsContactBlock: UtkwdsContactBlock;
+  UtkwdsContactBlockAttributes: UtkwdsContactBlockAttributes;
+  UtkwdsHorizontalRuleBlock: UtkwdsHorizontalRuleBlock;
+  UtkwdsHorizontalRuleBlockAttributes: UtkwdsHorizontalRuleBlockAttributes;
+  UtkwdsLeadBlock: UtkwdsLeadBlock;
+  UtkwdsLeadBlockAttributes: UtkwdsLeadBlockAttributes;
+  UtkwdsMediaContentBlock: UtkwdsMediaContentBlock;
+  UtkwdsMediaContentBlockAttributes: UtkwdsMediaContentBlockAttributes;
+  UtkwdsMediaObjectBlock: UtkwdsMediaObjectBlock;
+  UtkwdsMediaObjectBlockAttributes: UtkwdsMediaObjectBlockAttributes;
+  UtkwdsOverlayBlock: UtkwdsOverlayBlock;
+  UtkwdsOverlayBlockAttributes: UtkwdsOverlayBlockAttributes;
+  UtkwdsOverlayMainBlock: UtkwdsOverlayMainBlock;
+  UtkwdsOverlayMainBlockAttributes: UtkwdsOverlayMainBlockAttributes;
+  UtkwdsPhoneBlock: UtkwdsPhoneBlock;
+  UtkwdsPhoneBlockAttributes: UtkwdsPhoneBlockAttributes;
+  UtkwdsPhonesBlock: UtkwdsPhonesBlock;
+  UtkwdsPhonesBlockAttributes: UtkwdsPhonesBlockAttributes;
+  UtkwdsSocialsBlock: UtkwdsSocialsBlock;
+  UtkwdsSocialsBlockAttributes: UtkwdsSocialsBlockAttributes;
+  UtkwdsStripBlock: UtkwdsStripBlock;
+  UtkwdsStripBlockAttributes: UtkwdsStripBlockAttributes;
+  UtkwdsTabBlock: UtkwdsTabBlock;
+  UtkwdsTabBlockAttributes: UtkwdsTabBlockAttributes;
+  UtkwdsTabsBlock: UtkwdsTabsBlock;
+  UtkwdsTabsBlockAttributes: UtkwdsTabsBlockAttributes;
   WPPageInfo: WPPageInfo;
   WritingSettings: WritingSettings;
 }
@@ -30559,12 +35663,36 @@ export type SchemaObjectTypesNames =
   | 'CoreAvatarBlockAttributes'
   | 'CoreBlock'
   | 'CoreBlockAttributes'
+  | 'CoreButtonBlock'
+  | 'CoreButtonBlockAttributes'
+  | 'CoreButtonBlockDeprecatedV10Attributes'
+  | 'CoreButtonBlockDeprecatedV1Attributes'
+  | 'CoreButtonBlockDeprecatedV2Attributes'
+  | 'CoreButtonBlockDeprecatedV3Attributes'
+  | 'CoreButtonBlockDeprecatedV4Attributes'
+  | 'CoreButtonBlockDeprecatedV5Attributes'
+  | 'CoreButtonBlockDeprecatedV6Attributes'
+  | 'CoreButtonBlockDeprecatedV7Attributes'
+  | 'CoreButtonBlockDeprecatedV8Attributes'
+  | 'CoreButtonBlockDeprecatedV9Attributes'
+  | 'CoreButtonsBlock'
+  | 'CoreButtonsBlockAttributes'
+  | 'CoreButtonsBlockDeprecatedV1Attributes'
+  | 'CoreButtonsBlockDeprecatedV2Attributes'
   | 'CoreCalendarBlock'
   | 'CoreCalendarBlockAttributes'
   | 'CoreCategoriesBlock'
   | 'CoreCategoriesBlockAttributes'
   | 'CoreCodeBlock'
   | 'CoreCodeBlockAttributes'
+  | 'CoreColumnBlock'
+  | 'CoreColumnBlockAttributes'
+  | 'CoreColumnBlockDeprecatedV1Attributes'
+  | 'CoreColumnsBlock'
+  | 'CoreColumnsBlockAttributes'
+  | 'CoreColumnsBlockDeprecatedV1Attributes'
+  | 'CoreColumnsBlockDeprecatedV2Attributes'
+  | 'CoreColumnsBlockDeprecatedV3Attributes'
   | 'CoreCommentAuthorNameBlock'
   | 'CoreCommentAuthorNameBlockAttributes'
   | 'CoreCommentAuthorNameBlockDeprecatedV1Attributes'
@@ -30592,6 +35720,17 @@ export type SchemaObjectTypesNames =
   | 'CoreCommentsTitleBlock'
   | 'CoreCommentsTitleBlockAttributes'
   | 'CoreCommentsTitleBlockDeprecatedV1Attributes'
+  | 'CoreCoverBlock'
+  | 'CoreCoverBlockAttributes'
+  | 'CoreCoverBlockDeprecatedV1Attributes'
+  | 'CoreCoverBlockDeprecatedV2Attributes'
+  | 'CoreCoverBlockDeprecatedV3Attributes'
+  | 'CoreCoverBlockDeprecatedV4Attributes'
+  | 'CoreCoverBlockDeprecatedV5Attributes'
+  | 'CoreCoverBlockDeprecatedV6Attributes'
+  | 'CoreCoverBlockDeprecatedV7Attributes'
+  | 'CoreCoverBlockDeprecatedV8Attributes'
+  | 'CoreCoverBlockDeprecatedV9Attributes'
   | 'CoreEmbedBlock'
   | 'CoreEmbedBlockAttributes'
   | 'CoreEmbedBlockDeprecatedV1Attributes'
@@ -30647,6 +35786,11 @@ export type SchemaObjectTypesNames =
   | 'CoreListBlockDeprecatedV1Attributes'
   | 'CoreLoginoutBlock'
   | 'CoreLoginoutBlockAttributes'
+  | 'CoreMediaTextBlock'
+  | 'CoreMediaTextBlockAttributes'
+  | 'CoreMediaTextBlockDeprecatedV1Attributes'
+  | 'CoreMediaTextBlockDeprecatedV2Attributes'
+  | 'CoreMediaTextBlockDeprecatedV3Attributes'
   | 'CoreMissingBlock'
   | 'CoreMissingBlockAttributes'
   | 'CoreMoreBlock'
@@ -30705,6 +35849,13 @@ export type SchemaObjectTypesNames =
   | 'CorePostTitleBlockDeprecatedV1Attributes'
   | 'CorePreformattedBlock'
   | 'CorePreformattedBlockAttributes'
+  | 'CorePullquoteBlock'
+  | 'CorePullquoteBlockAttributes'
+  | 'CorePullquoteBlockDeprecatedV1Attributes'
+  | 'CorePullquoteBlockDeprecatedV2Attributes'
+  | 'CorePullquoteBlockDeprecatedV3Attributes'
+  | 'CorePullquoteBlockDeprecatedV4Attributes'
+  | 'CorePullquoteBlockDeprecatedV5Attributes'
   | 'CoreQueryBlock'
   | 'CoreQueryBlockAttributes'
   | 'CoreQueryBlockDeprecatedV1Attributes'
@@ -30732,6 +35883,8 @@ export type SchemaObjectTypesNames =
   | 'CoreReadMoreBlockAttributes'
   | 'CoreRssBlock'
   | 'CoreRssBlockAttributes'
+  | 'CoreSearchBlock'
+  | 'CoreSearchBlockAttributes'
   | 'CoreSeparatorBlock'
   | 'CoreSeparatorBlockAttributes'
   | 'CoreSeparatorBlockDeprecatedV1Attributes'
@@ -30784,6 +35937,10 @@ export type SchemaObjectTypesNames =
   | 'CoreTextColumnsBlock'
   | 'CoreTextColumnsBlockAttributes'
   | 'CoreTextColumnsBlockAttributesContent'
+  | 'CoreVerseBlock'
+  | 'CoreVerseBlockAttributes'
+  | 'CoreVerseBlockDeprecatedV1Attributes'
+  | 'CoreVerseBlockDeprecatedV2Attributes'
   | 'CoreVideoBlock'
   | 'CoreVideoBlockAttributes'
   | 'CreateAToZCategoryPayload'
@@ -30996,8 +36153,6 @@ export type SchemaObjectTypesNames =
   | 'UtksdsAccordionBlockAttributes'
   | 'UtksdsButtonBlock'
   | 'UtksdsButtonBlockAttributes'
-  | 'UtksdsButtongroupBlock'
-  | 'UtksdsButtongroupBlockAttributes'
   | 'UtksdsCalendarBlock'
   | 'UtksdsCalendarBlockAttributes'
   | 'UtksdsCardBlock'
@@ -31006,10 +36161,74 @@ export type SchemaObjectTypesNames =
   | 'UtksdsColumnBlockAttributes'
   | 'UtksdsColumnsBlock'
   | 'UtksdsColumnsBlockAttributes'
+  | 'UtksdsContactBlock'
+  | 'UtksdsContactBlockAttributes'
   | 'UtksdsOverlayBlock'
   | 'UtksdsOverlayBlockAttributes'
+  | 'UtksdsPhoneBlock'
+  | 'UtksdsPhoneBlockAttributes'
+  | 'UtksdsPhonesBlock'
+  | 'UtksdsPhonesBlockAttributes'
+  | 'UtksdsSocialsBlock'
+  | 'UtksdsSocialsBlockAttributes'
   | 'UtksdsTabsBlock'
   | 'UtksdsTabsBlockAttributes'
+  | 'UtkwdsAccordionBlock'
+  | 'UtkwdsAccordionBlockAttributes'
+  | 'UtkwdsAccordionFoldBlock'
+  | 'UtkwdsAccordionFoldBlockAttributes'
+  | 'UtkwdsAlertBlock'
+  | 'UtkwdsAlertBlockAttributes'
+  | 'UtkwdsButtonBlock'
+  | 'UtkwdsButtonBlockAttributes'
+  | 'UtkwdsCalendarBlock'
+  | 'UtkwdsCalendarBlockAttributes'
+  | 'UtkwdsCardBlock'
+  | 'UtkwdsCardBlockAttributes'
+  | 'UtkwdsCardBodyBlock'
+  | 'UtkwdsCardBodyBlockAttributes'
+  | 'UtkwdsCardFooterBlock'
+  | 'UtkwdsCardFooterBlockAttributes'
+  | 'UtkwdsCardHeaderBlock'
+  | 'UtkwdsCardHeaderBlockAttributes'
+  | 'UtkwdsCardHeadingBlock'
+  | 'UtkwdsCardHeadingBlockAttributes'
+  | 'UtkwdsCardImageBlock'
+  | 'UtkwdsCardImageBlockAttributes'
+  | 'UtkwdsCardMainBlock'
+  | 'UtkwdsCardMainBlockAttributes'
+  | 'UtkwdsCardTopcapBlock'
+  | 'UtkwdsCardTopcapBlockAttributes'
+  | 'UtkwdsColumnBlock'
+  | 'UtkwdsColumnBlockAttributes'
+  | 'UtkwdsColumnsBlock'
+  | 'UtkwdsColumnsBlockAttributes'
+  | 'UtkwdsContactBlock'
+  | 'UtkwdsContactBlockAttributes'
+  | 'UtkwdsHorizontalRuleBlock'
+  | 'UtkwdsHorizontalRuleBlockAttributes'
+  | 'UtkwdsLeadBlock'
+  | 'UtkwdsLeadBlockAttributes'
+  | 'UtkwdsMediaContentBlock'
+  | 'UtkwdsMediaContentBlockAttributes'
+  | 'UtkwdsMediaObjectBlock'
+  | 'UtkwdsMediaObjectBlockAttributes'
+  | 'UtkwdsOverlayBlock'
+  | 'UtkwdsOverlayBlockAttributes'
+  | 'UtkwdsOverlayMainBlock'
+  | 'UtkwdsOverlayMainBlockAttributes'
+  | 'UtkwdsPhoneBlock'
+  | 'UtkwdsPhoneBlockAttributes'
+  | 'UtkwdsPhonesBlock'
+  | 'UtkwdsPhonesBlockAttributes'
+  | 'UtkwdsSocialsBlock'
+  | 'UtkwdsSocialsBlockAttributes'
+  | 'UtkwdsStripBlock'
+  | 'UtkwdsStripBlockAttributes'
+  | 'UtkwdsTabBlock'
+  | 'UtkwdsTabBlockAttributes'
+  | 'UtkwdsTabsBlock'
+  | 'UtkwdsTabsBlockAttributes'
   | 'WPPageInfo'
   | 'WritingSettings';
 
@@ -31033,9 +36252,13 @@ export interface $Block {
   CoreAudioBlock?: CoreAudioBlock;
   CoreAvatarBlock?: CoreAvatarBlock;
   CoreBlock?: CoreBlock;
+  CoreButtonBlock?: CoreButtonBlock;
+  CoreButtonsBlock?: CoreButtonsBlock;
   CoreCalendarBlock?: CoreCalendarBlock;
   CoreCategoriesBlock?: CoreCategoriesBlock;
   CoreCodeBlock?: CoreCodeBlock;
+  CoreColumnBlock?: CoreColumnBlock;
+  CoreColumnsBlock?: CoreColumnsBlock;
   CoreCommentAuthorNameBlock?: CoreCommentAuthorNameBlock;
   CoreCommentContentBlock?: CoreCommentContentBlock;
   CoreCommentDateBlock?: CoreCommentDateBlock;
@@ -31048,6 +36271,7 @@ export interface $Block {
   CoreCommentsPaginationPreviousBlock?: CoreCommentsPaginationPreviousBlock;
   CoreCommentsQueryLoopBlock?: CoreCommentsQueryLoopBlock;
   CoreCommentsTitleBlock?: CoreCommentsTitleBlock;
+  CoreCoverBlock?: CoreCoverBlock;
   CoreEmbedBlock?: CoreEmbedBlock;
   CoreFileBlock?: CoreFileBlock;
   CoreFreeformBlock?: CoreFreeformBlock;
@@ -31061,6 +36285,7 @@ export interface $Block {
   CoreLatestPostsBlock?: CoreLatestPostsBlock;
   CoreListBlock?: CoreListBlock;
   CoreLoginoutBlock?: CoreLoginoutBlock;
+  CoreMediaTextBlock?: CoreMediaTextBlock;
   CoreMissingBlock?: CoreMissingBlock;
   CoreMoreBlock?: CoreMoreBlock;
   CoreNavigationBlock?: CoreNavigationBlock;
@@ -31083,6 +36308,7 @@ export interface $Block {
   CorePostTermsBlock?: CorePostTermsBlock;
   CorePostTitleBlock?: CorePostTitleBlock;
   CorePreformattedBlock?: CorePreformattedBlock;
+  CorePullquoteBlock?: CorePullquoteBlock;
   CoreQueryBlock?: CoreQueryBlock;
   CoreQueryNoResultsBlock?: CoreQueryNoResultsBlock;
   CoreQueryPaginationBlock?: CoreQueryPaginationBlock;
@@ -31093,6 +36319,7 @@ export interface $Block {
   CoreQuoteBlock?: CoreQuoteBlock;
   CoreReadMoreBlock?: CoreReadMoreBlock;
   CoreRssBlock?: CoreRssBlock;
+  CoreSearchBlock?: CoreSearchBlock;
   CoreSeparatorBlock?: CoreSeparatorBlock;
   CoreShortcodeBlock?: CoreShortcodeBlock;
   CoreSiteLogoBlock?: CoreSiteLogoBlock;
@@ -31106,6 +36333,7 @@ export interface $Block {
   CoreTemplatePartBlock?: CoreTemplatePartBlock;
   CoreTermDescriptionBlock?: CoreTermDescriptionBlock;
   CoreTextColumnsBlock?: CoreTextColumnsBlock;
+  CoreVerseBlock?: CoreVerseBlock;
   CoreVideoBlock?: CoreVideoBlock;
   HorizontalRuleMainBlock?: HorizontalRuleMainBlock;
   LeadMainBlock?: LeadMainBlock;
@@ -31116,13 +36344,44 @@ export interface $Block {
   TabsTabBlock?: TabsTabBlock;
   UtksdsAccordionBlock?: UtksdsAccordionBlock;
   UtksdsButtonBlock?: UtksdsButtonBlock;
-  UtksdsButtongroupBlock?: UtksdsButtongroupBlock;
   UtksdsCalendarBlock?: UtksdsCalendarBlock;
   UtksdsCardBlock?: UtksdsCardBlock;
   UtksdsColumnBlock?: UtksdsColumnBlock;
   UtksdsColumnsBlock?: UtksdsColumnsBlock;
+  UtksdsContactBlock?: UtksdsContactBlock;
   UtksdsOverlayBlock?: UtksdsOverlayBlock;
+  UtksdsPhoneBlock?: UtksdsPhoneBlock;
+  UtksdsPhonesBlock?: UtksdsPhonesBlock;
+  UtksdsSocialsBlock?: UtksdsSocialsBlock;
   UtksdsTabsBlock?: UtksdsTabsBlock;
+  UtkwdsAccordionBlock?: UtkwdsAccordionBlock;
+  UtkwdsAccordionFoldBlock?: UtkwdsAccordionFoldBlock;
+  UtkwdsAlertBlock?: UtkwdsAlertBlock;
+  UtkwdsButtonBlock?: UtkwdsButtonBlock;
+  UtkwdsCalendarBlock?: UtkwdsCalendarBlock;
+  UtkwdsCardBlock?: UtkwdsCardBlock;
+  UtkwdsCardBodyBlock?: UtkwdsCardBodyBlock;
+  UtkwdsCardFooterBlock?: UtkwdsCardFooterBlock;
+  UtkwdsCardHeaderBlock?: UtkwdsCardHeaderBlock;
+  UtkwdsCardHeadingBlock?: UtkwdsCardHeadingBlock;
+  UtkwdsCardImageBlock?: UtkwdsCardImageBlock;
+  UtkwdsCardMainBlock?: UtkwdsCardMainBlock;
+  UtkwdsCardTopcapBlock?: UtkwdsCardTopcapBlock;
+  UtkwdsColumnBlock?: UtkwdsColumnBlock;
+  UtkwdsColumnsBlock?: UtkwdsColumnsBlock;
+  UtkwdsContactBlock?: UtkwdsContactBlock;
+  UtkwdsHorizontalRuleBlock?: UtkwdsHorizontalRuleBlock;
+  UtkwdsLeadBlock?: UtkwdsLeadBlock;
+  UtkwdsMediaContentBlock?: UtkwdsMediaContentBlock;
+  UtkwdsMediaObjectBlock?: UtkwdsMediaObjectBlock;
+  UtkwdsOverlayBlock?: UtkwdsOverlayBlock;
+  UtkwdsOverlayMainBlock?: UtkwdsOverlayMainBlock;
+  UtkwdsPhoneBlock?: UtkwdsPhoneBlock;
+  UtkwdsPhonesBlock?: UtkwdsPhonesBlock;
+  UtkwdsSocialsBlock?: UtkwdsSocialsBlock;
+  UtkwdsStripBlock?: UtkwdsStripBlock;
+  UtkwdsTabBlock?: UtkwdsTabBlock;
+  UtkwdsTabsBlock?: UtkwdsTabsBlock;
 }
 
 export interface $BlockEditorContentNode {
@@ -31164,6 +36423,38 @@ export interface $CoreAudioBlockAttributesUnion {
   CoreAudioBlockDeprecatedV1Attributes?: CoreAudioBlockDeprecatedV1Attributes;
 }
 
+export interface $CoreButtonBlockAttributesUnion {
+  CoreButtonBlockAttributes?: CoreButtonBlockAttributes;
+  CoreButtonBlockDeprecatedV1Attributes?: CoreButtonBlockDeprecatedV1Attributes;
+  CoreButtonBlockDeprecatedV2Attributes?: CoreButtonBlockDeprecatedV2Attributes;
+  CoreButtonBlockDeprecatedV3Attributes?: CoreButtonBlockDeprecatedV3Attributes;
+  CoreButtonBlockDeprecatedV4Attributes?: CoreButtonBlockDeprecatedV4Attributes;
+  CoreButtonBlockDeprecatedV5Attributes?: CoreButtonBlockDeprecatedV5Attributes;
+  CoreButtonBlockDeprecatedV6Attributes?: CoreButtonBlockDeprecatedV6Attributes;
+  CoreButtonBlockDeprecatedV7Attributes?: CoreButtonBlockDeprecatedV7Attributes;
+  CoreButtonBlockDeprecatedV8Attributes?: CoreButtonBlockDeprecatedV8Attributes;
+  CoreButtonBlockDeprecatedV9Attributes?: CoreButtonBlockDeprecatedV9Attributes;
+  CoreButtonBlockDeprecatedV10Attributes?: CoreButtonBlockDeprecatedV10Attributes;
+}
+
+export interface $CoreButtonsBlockAttributesUnion {
+  CoreButtonsBlockAttributes?: CoreButtonsBlockAttributes;
+  CoreButtonsBlockDeprecatedV1Attributes?: CoreButtonsBlockDeprecatedV1Attributes;
+  CoreButtonsBlockDeprecatedV2Attributes?: CoreButtonsBlockDeprecatedV2Attributes;
+}
+
+export interface $CoreColumnBlockAttributesUnion {
+  CoreColumnBlockAttributes?: CoreColumnBlockAttributes;
+  CoreColumnBlockDeprecatedV1Attributes?: CoreColumnBlockDeprecatedV1Attributes;
+}
+
+export interface $CoreColumnsBlockAttributesUnion {
+  CoreColumnsBlockAttributes?: CoreColumnsBlockAttributes;
+  CoreColumnsBlockDeprecatedV1Attributes?: CoreColumnsBlockDeprecatedV1Attributes;
+  CoreColumnsBlockDeprecatedV2Attributes?: CoreColumnsBlockDeprecatedV2Attributes;
+  CoreColumnsBlockDeprecatedV3Attributes?: CoreColumnsBlockDeprecatedV3Attributes;
+}
+
 export interface $CoreCommentAuthorNameBlockAttributesUnion {
   CoreCommentAuthorNameBlockAttributes?: CoreCommentAuthorNameBlockAttributes;
   CoreCommentAuthorNameBlockDeprecatedV1Attributes?: CoreCommentAuthorNameBlockDeprecatedV1Attributes;
@@ -31177,6 +36468,19 @@ export interface $CoreCommentDateBlockAttributesUnion {
 export interface $CoreCommentsTitleBlockAttributesUnion {
   CoreCommentsTitleBlockAttributes?: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes?: CoreCommentsTitleBlockDeprecatedV1Attributes;
+}
+
+export interface $CoreCoverBlockAttributesUnion {
+  CoreCoverBlockAttributes?: CoreCoverBlockAttributes;
+  CoreCoverBlockDeprecatedV1Attributes?: CoreCoverBlockDeprecatedV1Attributes;
+  CoreCoverBlockDeprecatedV2Attributes?: CoreCoverBlockDeprecatedV2Attributes;
+  CoreCoverBlockDeprecatedV3Attributes?: CoreCoverBlockDeprecatedV3Attributes;
+  CoreCoverBlockDeprecatedV4Attributes?: CoreCoverBlockDeprecatedV4Attributes;
+  CoreCoverBlockDeprecatedV5Attributes?: CoreCoverBlockDeprecatedV5Attributes;
+  CoreCoverBlockDeprecatedV6Attributes?: CoreCoverBlockDeprecatedV6Attributes;
+  CoreCoverBlockDeprecatedV7Attributes?: CoreCoverBlockDeprecatedV7Attributes;
+  CoreCoverBlockDeprecatedV8Attributes?: CoreCoverBlockDeprecatedV8Attributes;
+  CoreCoverBlockDeprecatedV9Attributes?: CoreCoverBlockDeprecatedV9Attributes;
 }
 
 export interface $CoreEmbedBlockAttributesUnion {
@@ -31233,6 +36537,13 @@ export interface $CoreListBlockAttributesUnion {
   CoreListBlockDeprecatedV1Attributes?: CoreListBlockDeprecatedV1Attributes;
 }
 
+export interface $CoreMediaTextBlockAttributesUnion {
+  CoreMediaTextBlockAttributes?: CoreMediaTextBlockAttributes;
+  CoreMediaTextBlockDeprecatedV1Attributes?: CoreMediaTextBlockDeprecatedV1Attributes;
+  CoreMediaTextBlockDeprecatedV2Attributes?: CoreMediaTextBlockDeprecatedV2Attributes;
+  CoreMediaTextBlockDeprecatedV3Attributes?: CoreMediaTextBlockDeprecatedV3Attributes;
+}
+
 export interface $CoreNavigationBlockAttributesUnion {
   CoreNavigationBlockAttributes?: CoreNavigationBlockAttributes;
   CoreNavigationBlockDeprecatedV1Attributes?: CoreNavigationBlockDeprecatedV1Attributes;
@@ -31265,6 +36576,15 @@ export interface $CorePostDateBlockAttributesUnion {
 export interface $CorePostTitleBlockAttributesUnion {
   CorePostTitleBlockAttributes?: CorePostTitleBlockAttributes;
   CorePostTitleBlockDeprecatedV1Attributes?: CorePostTitleBlockDeprecatedV1Attributes;
+}
+
+export interface $CorePullquoteBlockAttributesUnion {
+  CorePullquoteBlockAttributes?: CorePullquoteBlockAttributes;
+  CorePullquoteBlockDeprecatedV1Attributes?: CorePullquoteBlockDeprecatedV1Attributes;
+  CorePullquoteBlockDeprecatedV2Attributes?: CorePullquoteBlockDeprecatedV2Attributes;
+  CorePullquoteBlockDeprecatedV3Attributes?: CorePullquoteBlockDeprecatedV3Attributes;
+  CorePullquoteBlockDeprecatedV4Attributes?: CorePullquoteBlockDeprecatedV4Attributes;
+  CorePullquoteBlockDeprecatedV5Attributes?: CorePullquoteBlockDeprecatedV5Attributes;
 }
 
 export interface $CoreQueryBlockAttributesUnion {
@@ -31319,6 +36639,12 @@ export interface $CoreTableBlockAttributesUnion {
   CoreTableBlockAttributes?: CoreTableBlockAttributes;
   CoreTableBlockDeprecatedV1Attributes?: CoreTableBlockDeprecatedV1Attributes;
   CoreTableBlockDeprecatedV2Attributes?: CoreTableBlockDeprecatedV2Attributes;
+}
+
+export interface $CoreVerseBlockAttributesUnion {
+  CoreVerseBlockAttributes?: CoreVerseBlockAttributes;
+  CoreVerseBlockDeprecatedV1Attributes?: CoreVerseBlockDeprecatedV1Attributes;
+  CoreVerseBlockDeprecatedV2Attributes?: CoreVerseBlockDeprecatedV2Attributes;
 }
 
 export interface $DatabaseIdentifier {
