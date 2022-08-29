@@ -851,6 +851,11 @@ body.academics {
     border: 2px solid green;
   }
 }
+
+.d-flex {
+  @extend .intro-flex;
+}
+
 /* INTRO TITLE TREATMENT */
 
 .intro-flex > div[class$='__inner-container'] {
@@ -871,13 +876,10 @@ body.academics {
 
 .page-title-group {
   width: 84vw;
-  // border: 2px solid purple;
-  margin: 0 8vw 2rem 8vw;
+  border: 1px solid purple;
+  margin: 0 auto 2rem auto;
   padding: 0;
   @media screen and (min-width: 1200px) {
-    // width: 40vw;
-    // max-width: 500px;
-    flex-basis: 32vw;
     flex-basis: 66vw;
     margin-bottom: 4rem;
     // flex-grow: 1;
@@ -894,8 +896,8 @@ body.academics {
 }
 .hero-img-group {
   width: 84vw;
-  // border: 2px solid purple;
-  margin: 0 8vw 2rem 8vw;
+  border: 2px solid red;
+  margin: 0 auto 2rem auto;
   @media screen and (min-width: 800px) {
     position: relative;
     max-width: 40vw;
@@ -915,11 +917,39 @@ body.academics {
     max-width: 803px;
   }
 }
-
+.intro-img-group {
+  width: 100vw;
+  margin: 0 auto 4rem auto;
+  // margin-left: calc(-1 * $spacer / 2);
+  border: 2px solid green;
+  & > div[class$='__inner-container'] {
+    // background-color: pink;
+    width: 100%;
+    min-height: 16rem;
+    height: 100%;
+    object-fit: cover;
+  }
+  figure {
+    object-fit: cover;
+  }
+  img {
+    // border: 2px solid blue;
+    object-fit: cover;
+    min-height: 16rem;
+    width: auto;
+    // background-color: blue;
+    @media screen and (min-width: 800px) {
+      min-height: 20rem;
+    }
+    @media screen and (min-width: 1200px) {
+      min-height: 40rem;
+    }
+  }
+}
 .intro-quote-group {
   width: 100vw;
   margin: 0 auto 4rem auto;
-  margin-left: calc(-1 * $spacer / 2);
+  // margin-left: calc(-1 * $spacer / 2);
 
   // @media screen and (min-width: 1200px) {
   //   flex-basis: 50vw;
@@ -933,7 +963,7 @@ body.academics {
 
   .quote-img-group {
     & > div[class$='__inner-container'] {
-      // background-color: pink;
+      background-color: pink;
       width: 100%;
       min-height: 16rem;
       height: 100%;
@@ -980,7 +1010,8 @@ body.academics {
   // }
   .quote-content-group {
     width: 84vw;
-    margin: 0 8vw 4rem 8vw;
+    margin: 0 auto 4rem auto;
+    border: 2px solid blue;
     @media screen and (min-width: 1200px) {
       margin: 0;
       width: 96%;
@@ -1400,4 +1431,165 @@ p.theme {
 
 .clear-image {
   display: block;
+}
+
+.center {
+  width: 84vw;
+  border: 2px solid purple;
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  position: relative;
+}
+
+.halfGroup > div[class$='__inner-container'] {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 4rem;
+    border: 2px solid green;
+    // flex-grow: 1;
+  }
+  & > * {
+    flex: 1 1 50%;
+    border: 1px solid blue;
+  }
+}
+
+.twoThirdsGroup > div[class$='__inner-container'] {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 4rem;
+    border: 2px solid green;
+    // flex-grow: 1;
+  }
+  & > :first-child {
+    flex: 0 1 66%;
+    padding-right: calc($spacer * 2);
+  }
+  & > :nth-child(2) {
+    flex: 0 1 33%;
+    border: 2px solid red;
+  }
+}
+
+.twoThirdsGroup--reverse {
+  @extend .twoThirdsGroup;
+}
+
+.twoThirdsGroup--reverse > div[class$='__inner-container'] {
+  border: 2px solid green;
+  & > :first-child {
+    flex: 0 1 33%;
+  }
+  & > :nth-child(2) {
+    flex: 0 1 66%;
+    border: 2px solid purple;
+  }
+}
+.thirdsGroup {
+  @extend .twoThirdsGroup;
+}
+.thirdsGroup > div[class$='__inner-container'] {
+  & > *,
+  & > :first-child,
+  & > :nth-child(2) {
+    flex: 0 1 33%;
+    border: 2px solid purple;
+  }
+}
+/* - - - - - - - - - - - - */
+/* fiftyFiftyCard */
+/* - - - - - - - - - - - - */
+
+.fiftyFifityCardContainer > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fiftyFifityCardContainer > div[class$='__inner-container'] > * {
+  flex-basis: 98%;
+  /* border:2px solid blue; */
+}
+
+.fiftyFiftyCard {
+  border: 1px solid #707070;
+}
+
+.fiftyFiftyCard div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.fiftyFiftyCard div[class$='__inner-container'] > * {
+  flex-basis: 50%;
+}
+
+.areaCardTop > div[class$='__inner-container'] {
+  /* This surrounds image, and group areaCardText */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* border:1px solid red; */
+}
+
+.areaCardTop > div[class$='__inner-container'] > * {
+  flex-basis: 50%;
+  /* border:2px solid green; */
+}
+
+.areaCardText div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.areaCardText div[class$='__inner-container'] > * {
+  /* all children */
+}
+
+.areaCardText .titleWithBar {
+  margin-top: 3rem;
+}
+
+.fiftyImage {
+  width: 90%;
+  padding-right: 2rem;
+  height: auto;
+  position: relative;
+}
+
+.fiftyFiftyCard .areaCardReadMore {
+  /* border:2px solid green; */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 900px) {
+  .fiftyFifityCardContainer > div[class$='__inner-container'] > * {
+    flex-basis: 49%;
+    /* border:2px solid green; */
+  }
 }
