@@ -881,6 +881,7 @@ body.academics {
   padding: 0;
   @media screen and (min-width: 1200px) {
     flex-basis: 66vw;
+    flex: 0 1 66vw;
     margin-bottom: 4rem;
     // flex-grow: 1;
   }
@@ -947,10 +948,12 @@ body.academics {
   }
 }
 .intro-quote-group {
-  width: 100vw;
+  // width: 100vw;
+  width: 100%;
   margin: 0 auto 4rem auto;
   // margin-left: calc(-1 * $spacer / 2);
 
+  border: 1px solid purple;
   // @media screen and (min-width: 1200px) {
   //   flex-basis: 50vw;
   //   max-width: none;
@@ -963,7 +966,7 @@ body.academics {
 
   .quote-img-group {
     & > div[class$='__inner-container'] {
-      background-color: pink;
+      // background-color: pink;
       width: 100%;
       min-height: 16rem;
       height: 100%;
@@ -995,6 +998,7 @@ body.academics {
     @media screen and (min-width: 800px) {
       display: flex;
       flex-direction: row;
+      width: 100%;
       // background-color: pink;
     }
     @media screen and (min-width: 1200px) {
@@ -1433,14 +1437,6 @@ p.theme {
   display: block;
 }
 
-.center {
-  width: 84vw;
-  border: 2px solid purple;
-  margin: 0 auto 2rem auto;
-  padding: 0;
-  position: relative;
-}
-
 .halfGroup > div[class$='__inner-container'] {
   display: flex;
   position: relative;
@@ -1451,7 +1447,7 @@ p.theme {
   }
   @media screen and (min-width: 800px) {
     flex-direction: row;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
   }
   @media screen and (min-width: 1200px) {
     margin-bottom: 4rem;
@@ -1478,7 +1474,7 @@ p.theme {
   }
   @media screen and (min-width: 1200px) {
     margin-bottom: 4rem;
-    border: 2px solid green;
+    // border: 2px solid green;
     // flex-grow: 1;
   }
   & > :first-child {
@@ -1496,7 +1492,7 @@ p.theme {
 }
 
 .twoThirdsGroup--reverse > div[class$='__inner-container'] {
-  border: 2px solid green;
+  // border: 2px solid green;
   & > :first-child {
     flex: 0 1 33%;
   }
@@ -1516,6 +1512,31 @@ p.theme {
     border: 2px solid purple;
   }
 }
+
+.tripleCalendar > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: row;
+  column-gap: $spacer;
+}
+.event {
+  border: 1px solid #333333;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  @extend .twoThirdsGroup--reverse;
+  .datesGroup > div[class$='__inner-container'] {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    > :first-child {
+      font-size: calc($spacer * 3);
+    }
+  }
+}
+
 /* - - - - - - - - - - - - */
 /* fiftyFiftyCard */
 /* - - - - - - - - - - - - */
