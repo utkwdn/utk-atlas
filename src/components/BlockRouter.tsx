@@ -3,6 +3,7 @@ import {
   UtksdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
+  UtkwdsCardImageBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
 } from 'client';
@@ -12,6 +13,7 @@ import HorizontalRule from './blocks/HorizontalRule';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
+import CardImage from './blocks/CardImage';
 import Lead from './blocks/Lead';
 
 interface Props {
@@ -67,6 +69,15 @@ const BlockRouter = ({ block }: Props) => {
 
     case 'utkwds/lead': {
       return <Lead attributes={attributes as UtkwdsLeadBlockAttributes} />;
+    }
+
+    case 'utkwds/card-image': {
+      return (
+        <CardImage
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardImageBlockAttributes}
+        />
+      );
     }
 
     default: {
