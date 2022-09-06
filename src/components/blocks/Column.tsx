@@ -11,7 +11,6 @@ const Column = ({
   attributes: { className, colWidth },
   innerBlocks,
 }: Props) => (
-  // eventually use React-Bootstrap Accordion, probably
   <div
     className={`'className col-12 col-md-'${colWidth || ''} ${className || ''}`}
   >
