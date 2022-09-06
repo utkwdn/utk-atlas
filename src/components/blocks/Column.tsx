@@ -11,9 +11,7 @@ const Column = ({
   attributes: { className, colWidth },
   innerBlocks,
 }: Props) => (
-  <div
-    className={`className col-12 col-md-${colWidth || ''} ${className || ''}`}
-  >
+  <div className={`col-12 col-md-${colWidth || ''} ${className || ''}`}>
     {!!innerBlocks?.length &&
       innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
   </div>
