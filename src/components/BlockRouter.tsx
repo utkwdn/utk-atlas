@@ -4,6 +4,14 @@ import {
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
   UtkwdsColumnBlockAttributes,
+  UtkwdsCardTopcapBlockAttributes,
+  UtkwdsCardMainBlockAttributes,
+  UtkwdsCardHeaderBlockAttributes,
+  UtkwdsCardHeadingBlockAttributes,
+  UtkwdsCardImageBlockAttributes,
+  UtkwdsCardFooterBlockAttributes,
+  UtkwdsCardBodyBlockAttributes,
+  UtkwdsCardBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
 } from 'client';
@@ -14,6 +22,14 @@ import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
 import Column from './blocks/Column';
+import CardTopcap from './blocks/CardTopcap';
+import CardMain from './blocks/CardMain';
+import CardHeader from './blocks/CardHeader';
+import CardHeading from './blocks/CardHeading';
+import CardImage from './blocks/CardImage';
+import CardFooter from './blocks/CardFooter';
+import CardBody from './blocks/CardBody';
+import Card from './blocks/Card';
 import Lead from './blocks/Lead';
 
 interface Props {
@@ -66,6 +82,7 @@ const BlockRouter = ({ block }: Props) => {
     case 'utkwds/alert': {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
     }
+
     case 'utkwds/column': {
       return (
         <Column
@@ -75,8 +92,78 @@ const BlockRouter = ({ block }: Props) => {
       );
     }
 
+    case 'utkwds/card-topcap': {
+      return (
+        <CardTopcap
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardTopcapBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card-main': {
+      return (
+        <CardMain
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardMainBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card-header': {
+      return (
+        <CardHeader
+          attributes={attributes as UtkwdsCardHeaderBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card-heading': {
+      return (
+        <CardHeading
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardHeadingBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card-footer': {
+      return (
+        <CardFooter
+          attributes={attributes as UtkwdsCardFooterBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card-body': {
+      return (
+        <CardBody
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardBodyBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/card': {
+      return (
+        <Card
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardBlockAttributes}
+        />
+      );
+    }
+
     case 'utkwds/lead': {
       return <Lead attributes={attributes as UtkwdsLeadBlockAttributes} />;
+    }
+
+    case 'utkwds/card-image': {
+      return (
+        <CardImage
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardImageBlockAttributes}
+        />
+      );
     }
 
     default: {
