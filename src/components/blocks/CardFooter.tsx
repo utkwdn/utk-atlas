@@ -11,7 +11,7 @@ const CardFooter = ({
 }: Props) =>
   content ? (
     <div
-      className={`'card-footer' ${mutedClass || ''} ${className || ''}`}
+      className={`card-footer ${mutedClass || ''} ${className || ''}`}
       dangerouslySetInnerHTML={{ __html: content }}
     ></div>
   ) : (

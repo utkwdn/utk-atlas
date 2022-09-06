@@ -23,7 +23,6 @@ export const NotMuted = Template.bind({});
 NotMuted.args = {
   attributes: {
     content: 'This is a Card Footer',
-    muted: false,
     mutedClass: '',
   },
 };
