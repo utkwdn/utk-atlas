@@ -75,12 +75,18 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <CardFooter
           attributes={attributes as UtkwdsCardFooterBlockAttributes}
+        />
+      );
+    }
 
     case 'utkwds/card-body': {
       return (
         <CardBody
           innerBlocks={innerBlocks || []}
           attributes={attributes as UtkwdsCardBodyBlockAttributes}
+        />
+      );
+    }
 
     case 'utkwds/card': {
       return (
