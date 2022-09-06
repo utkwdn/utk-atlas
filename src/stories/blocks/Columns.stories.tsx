@@ -21,9 +21,5 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  attributes: {
-    rowClass: '',
-    blockName: 'utkwds/columns',
-    numCols: 0,
-  },
+  attributes: {},
 };
