@@ -3,6 +3,7 @@ import {
   UtksdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
+  UtkwdsColumnsBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
 } from 'client';
@@ -12,6 +13,7 @@ import HorizontalRule from './blocks/HorizontalRule';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
+import Columns from './blocks/Columns';
 import Lead from './blocks/Lead';
 
 interface Props {
@@ -63,6 +65,15 @@ const BlockRouter = ({ block }: Props) => {
 
     case 'utkwds/alert': {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
+    }
+
+    case 'utkwds/columns': {
+      return (
+        <Columns
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsColumnsBlockAttributes}
+        />
+      );
     }
 
     case 'utkwds/lead': {
