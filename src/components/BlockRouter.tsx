@@ -3,6 +3,7 @@ import {
   UtksdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
+  UtkwdsCardMainBlockAttributes,
   UtkwdsCardHeaderBlockAttributes,
   UtkwdsCardHeadingBlockAttributes,
   UtkwdsCardImageBlockAttributes,
@@ -18,6 +19,7 @@ import HorizontalRule from './blocks/HorizontalRule';
 import Accordion from './blocks/Accordion';
 import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
+import CardMain from './blocks/CardMain';
 import CardHeader from './blocks/CardHeader';
 import CardHeading from './blocks/CardHeading';
 import CardImage from './blocks/CardImage';
@@ -75,6 +77,15 @@ const BlockRouter = ({ block }: Props) => {
 
     case 'utkwds/alert': {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
+    }
+
+    case 'utkwds/card-main': {
+      return (
+        <CardMain
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardMainBlockAttributes}
+        />
+      );
     }
 
     case 'utkwds/card-header': {
