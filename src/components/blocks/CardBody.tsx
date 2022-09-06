@@ -11,7 +11,7 @@ const CardBody = ({
   attributes: { className, textColor },
   innerBlocks,
 }: Props) => (
-  <div className={`'card-body' ${className || ''} ${textColor || ''}`}>
+  <div className={`card-body ${className || ''} ${textColor || ''}`}>
     {!!innerBlocks?.length &&
       innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
   </div>
