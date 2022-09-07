@@ -23,8 +23,9 @@ export const Default = Template.bind({});
 Default.args = {
   attributes: {
     className: '',
-    url: '',
-    linkTarget: '',
-    email: '',
+    url: '#',
+    linkTarget: '#',
+    address: /* html */ `555 Main St.<br>Honolulu, HI 96801`,
+    email: 'blah@example.com',
   },
 };
