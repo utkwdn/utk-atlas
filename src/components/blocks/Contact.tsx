@@ -46,10 +46,10 @@ const Contact = ({
       </div>
     )}
     {email && (
-      <small className={'emailList'}>
+      <small className="emailList">
         Email:&nbsp;
         <a
-          className={'email text-white text-reset'}
+          className="email text-white text-reset"
           href={`mailto:${email}`}
           {...(linkTarget ? { target: linkTarget } : {})}
         >
