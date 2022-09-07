@@ -13,6 +13,7 @@ import {
   UtkwdsCardFooterBlockAttributes,
   UtkwdsCardBodyBlockAttributes,
   UtkwdsCardBlockAttributes,
+  UtkwdsContactBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
 } from 'client';
@@ -32,6 +33,7 @@ import CardImage from './blocks/CardImage';
 import CardFooter from './blocks/CardFooter';
 import CardBody from './blocks/CardBody';
 import Card from './blocks/Card';
+import Contact from './blocks/Contact';
 import Lead from './blocks/Lead';
 
 interface Props {
@@ -160,6 +162,15 @@ const BlockRouter = ({ block }: Props) => {
         <Card
           innerBlocks={innerBlocks || []}
           attributes={attributes as UtkwdsCardBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/contact': {
+      return (
+        <Contact
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsContactBlockAttributes}
         />
       );
     }
