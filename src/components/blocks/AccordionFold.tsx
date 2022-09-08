@@ -1,11 +1,21 @@
 import { AttributesBlock } from 'types/AttributesBlock';
 import { UtkwdsAccordionFoldBlockAttributes } from 'client';
 import BlockRouter from 'components/BlockRouter';
+import Accordion from 'react-bootstrap/Accordion';
 
-interface Props {
+export interface Props {
   attributes: Partial<UtkwdsAccordionFoldBlockAttributes>;
   innerBlocks?: AttributesBlock[];
 }
+
+/*
+  TODO: I think the `show` boolean determines whether the fold should be open
+  on page-load. In this implementation, that information would actually have to
+  travel "up" to the parent Accordion component, whose `defaultActiveKey` prop
+  should be set to the open-panel's `foldSlug` (used as `eventKey` here).
+  Not sure how to handle that yet. For now, I'm leaving in the unused
+  `attributes` below (though I *think* only `show` will be needed).
+*/
 
 const AccordionFoldBlock = ({
   attributes: {
@@ -18,34 +28,35 @@ const AccordionFoldBlock = ({
     parentID,
   },
   innerBlocks,
-}: Props) => (
-  // eventually use React-Bootstrap Accordion, probably
+}: Props) => {
+  if (!foldSlug) {
+    console.error(
+      'An AccordionFold is missing a `foldSlug`. Skipping it because all AccordionFolds must have a unique `foldSlug` to use for the `eventKey` prop.'
+    );
+    return <></>;
+  }
 
-  <div className={`'accordion-item' ${className || ''}`}>
-    <h2 className={'accordion-header'} id={`heading ${foldSlug || ''}`}>
-      <button
-        className={`'accordion-button' ${collapseS || ''}`}
-        type={'button'}
-        data-bs-toggle={'collapse'}
-        data-bs-target={`#collapse${foldSlug || ''}`}
-        aria-expanded={show}
-        aria-controls={`collapse ${foldSlug || ''}`}
-      >
-        {foldName}
-      </button>
-    </h2>
-    <div
-      id={`collapse ${foldSlug || ''}`}
-      className={`'accordion-collapse' collapse ${showS || ''}`}
-      aria-labelledby={`heading ${foldSlug || ''}`}
-      data-bs-paren={`# ${parentID || ''}`}
-    >
-      <div className={'accordion-body'}>
+  if (!foldName) {
+    console.error(
+      'An AccordionFold is missing a `foldName` (header text). Still rendering it, but this should be addressed.'
+    );
+  }
+
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'An AccordionFold has no (or an empty) `innerBlocks` array. Still rendering, but this should be addressed.'
+    );
+  }
+
+  return (
+    <Accordion.Item eventKey={foldSlug} className={className || ''}>
+      <Accordion.Header>{foldName || ''}</Accordion.Header>
+      <Accordion.Body>
         {!!innerBlocks?.length &&
           innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-      </div>
-    </div>
-  </div>
-);
+      </Accordion.Body>
+    </Accordion.Item>
+  );
+};
 
 export default AccordionFoldBlock;

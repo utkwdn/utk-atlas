@@ -16,6 +16,7 @@ import {
   UtkwdsContactBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
+  CoreParagraphBlockAttributes,
 } from 'client';
 
 import Test from './blocks/Test';
@@ -35,6 +36,7 @@ import CardBody from './blocks/CardBody';
 import Card from './blocks/Card';
 import Contact from './blocks/Contact';
 import Lead from './blocks/Lead';
+import Paragraph from './blocks/core/Paragraph';
 
 interface Props {
   block: AttributesBlock;
@@ -185,6 +187,12 @@ const BlockRouter = ({ block }: Props) => {
           innerBlocks={innerBlocks || []}
           attributes={attributes as UtkwdsCardImageBlockAttributes}
         />
+      );
+    }
+
+    case 'core/paragraph': {
+      return (
+        <Paragraph attributes={attributes as CoreParagraphBlockAttributes} />
       );
     }
 
