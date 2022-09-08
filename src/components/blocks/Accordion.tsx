@@ -1,24 +1,19 @@
 import { AttributesBlock } from 'types/AttributesBlock';
 import { UtksdsAccordionBlockAttributes } from 'client';
 import BlockRouter from 'components/BlockRouter';
+import Accordion from 'react-bootstrap/Accordion';
 
 interface Props {
   attributes: Partial<UtksdsAccordionBlockAttributes>;
   innerBlocks?: AttributesBlock[];
 }
 
-const AccordionBlock = ({
-  attributes: { className, accordionID },
-  innerBlocks,
-}: Props) => (
-  // eventually use React-Bootstrap Accordion, probably
-  <div
-    className={`accordion ${className || ''}`}
-    {...(accordionID ? { id: accordionID } : {})}
-  >
+const AccordionBlock = ({ attributes: { className }, innerBlocks }: Props) => (
+  /* need a `defaultActiveKey` if a fold should be open on load, which would mean getting the `eventKey` for that AccordionFold */
+  <Accordion className={className || ''}>
     {!!innerBlocks?.length &&
       innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </div>
+  </Accordion>
 );
 
 export default AccordionBlock;
