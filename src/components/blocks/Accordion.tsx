@@ -1,10 +1,10 @@
 import { AttributesBlock } from 'types/AttributesBlock';
-import { UtksdsAccordionBlockAttributes } from 'client';
+import { UtkwdsAccordionBlockAttributes } from 'client';
 import BlockRouter from 'components/BlockRouter';
 import Accordion from 'react-bootstrap/Accordion';
 
 interface Props {
-  attributes: Partial<UtksdsAccordionBlockAttributes>;
+  attributes: Partial<UtkwdsAccordionBlockAttributes>;
   innerBlocks?: AttributesBlock[];
 }
 
