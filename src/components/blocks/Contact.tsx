@@ -32,7 +32,7 @@ const Contact = ({
         {/* note: might need to change layout here if address is allowed to go more than one line */}
         <MapMarker />
         <a
-          /* note: the `text-white` isn't good unless there's a background-color (which there isn't by default here) */
+          /* why `text-white`? */
           className="text-white map-link"
           href={url}
           {...(linkTarget ? { target: linkTarget } : {})}

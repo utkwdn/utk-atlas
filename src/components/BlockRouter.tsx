@@ -1,6 +1,6 @@
 import { AttributesBlock } from 'types/AttributesBlock';
 import {
-  UtksdsAccordionBlockAttributes,
+  UtkwdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
   UtkwdsColumnsBlockAttributes,
@@ -17,6 +17,8 @@ import {
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsLeadBlockAttributes,
   CoreParagraphBlockAttributes,
+  UtkwdsPhoneBlockAttributes,
+  UtkwdsPhonesBlockAttributes,
 } from 'client';
 
 import Test from './blocks/Test';
@@ -37,6 +39,8 @@ import Card from './blocks/Card';
 import Contact from './blocks/Contact';
 import Lead from './blocks/Lead';
 import Paragraph from './blocks/core/Paragraph';
+import Phone from './blocks/Phone';
+import Phones from './blocks/Phones';
 
 interface Props {
   block: AttributesBlock;
@@ -49,13 +53,15 @@ const BlockRouter = ({ block }: Props) => {
     block.attributes || (JSON.parse(attributesJSON || '{}') as object);
 
   switch (name) {
-    case 'utkwds/horizontal-rule': {
+    // Core blocks
+
+    case 'core/paragraph': {
       return (
-        <HorizontalRule
-          attributes={attributes as UtkwdsHorizontalRuleBlockAttributes}
-        />
+        <Paragraph attributes={attributes as CoreParagraphBlockAttributes} />
       );
     }
+
+    // Custom blocks
 
     case 'test': {
       return (
@@ -71,7 +77,7 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <Accordion
           innerBlocks={innerBlocks || []}
-          attributes={attributes as UtksdsAccordionBlockAttributes}
+          attributes={attributes as UtkwdsAccordionBlockAttributes}
         />
       );
     }
@@ -89,38 +95,28 @@ const BlockRouter = ({ block }: Props) => {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
     }
 
-    case 'utkwds/columns': {
+    case 'utkwds/card': {
       return (
-        <Columns
+        <Card
           innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsColumnsBlockAttributes}
+          attributes={attributes as UtkwdsCardBlockAttributes}
         />
       );
     }
 
-    case 'utkwds/column': {
+    case 'utkwds/card-body': {
       return (
-        <Column
+        <CardBody
           innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsColumnBlockAttributes}
+          attributes={attributes as UtkwdsCardBodyBlockAttributes}
         />
       );
     }
 
-    case 'utkwds/card-topcap': {
+    case 'utkwds/card-footer': {
       return (
-        <CardTopcap
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardTopcapBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-main': {
-      return (
-        <CardMain
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardMainBlockAttributes}
+        <CardFooter
+          attributes={attributes as UtkwdsCardFooterBlockAttributes}
         />
       );
     }
@@ -142,28 +138,47 @@ const BlockRouter = ({ block }: Props) => {
       );
     }
 
-    case 'utkwds/card-footer': {
+    case 'utkwds/card-image': {
       return (
-        <CardFooter
-          attributes={attributes as UtkwdsCardFooterBlockAttributes}
+        <CardImage
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsCardImageBlockAttributes}
         />
       );
     }
 
-    case 'utkwds/card-body': {
+    case 'utkwds/card-main': {
       return (
-        <CardBody
+        <CardMain
           innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardBodyBlockAttributes}
+          attributes={attributes as UtkwdsCardMainBlockAttributes}
         />
       );
     }
 
-    case 'utkwds/card': {
+    case 'utkwds/card-topcap': {
       return (
-        <Card
+        <CardTopcap
           innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardBlockAttributes}
+          attributes={attributes as UtkwdsCardTopcapBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/column': {
+      return (
+        <Column
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsColumnBlockAttributes}
+        />
+      );
+    }
+
+    case 'utkwds/columns': {
+      return (
+        <Columns
+          innerBlocks={innerBlocks || []}
+          attributes={attributes as UtkwdsColumnsBlockAttributes}
         />
       );
     }
@@ -177,22 +192,28 @@ const BlockRouter = ({ block }: Props) => {
       );
     }
 
-    case 'utkwds/lead': {
-      return <Lead attributes={attributes as UtkwdsLeadBlockAttributes} />;
-    }
-
-    case 'utkwds/card-image': {
+    case 'utkwds/horizontal-rule': {
       return (
-        <CardImage
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardImageBlockAttributes}
+        <HorizontalRule
+          attributes={attributes as UtkwdsHorizontalRuleBlockAttributes}
         />
       );
     }
 
-    case 'core/paragraph': {
+    case 'utkwds/lead': {
+      return <Lead attributes={attributes as UtkwdsLeadBlockAttributes} />;
+    }
+
+    case 'utkwds/phone': {
+      return <Phone attributes={attributes as UtkwdsPhoneBlockAttributes} />;
+    }
+
+    case 'utkwds/phones': {
       return (
-        <Paragraph attributes={attributes as CoreParagraphBlockAttributes} />
+        <Phones
+          attributes={attributes as UtkwdsPhonesBlockAttributes}
+          innerBlocks={innerBlocks || []}
+        />
       );
     }
 
