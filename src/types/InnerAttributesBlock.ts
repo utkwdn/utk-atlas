@@ -10,7 +10,7 @@ import { Block } from 'client';
  * though still need to do `as unknown as Block` when passing
  * to the actual block-components (for now, anyway).
  */
-export type InnerAttributesBlock = Partial<
+export type InnerAttributesBlock<T = object> = Partial<
   Omit<Block, 'innerBlocks' | 'name'>
 > & {
   name: string;
@@ -21,5 +21,5 @@ export type InnerAttributesBlock = Partial<
    * use `attributesJSON`/`JSON.stringify()` for an `innerBlocks` prop that we
    * feed to a block-component.
    */
-  attributes?: object;
+  attributes?: T;
 };

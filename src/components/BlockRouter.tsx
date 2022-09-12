@@ -19,6 +19,9 @@ import {
   CoreParagraphBlockAttributes,
   UtkwdsPhoneBlockAttributes,
   UtkwdsPhonesBlockAttributes,
+  UtkwdsSocialsBlockAttributes,
+  CoreSocialLinksBlockAttributes,
+  // CoreSocialLinkBlockAttributes,
 } from 'client';
 
 import Test from './blocks/Test';
@@ -41,6 +44,9 @@ import Lead from './blocks/Lead';
 import Paragraph from './blocks/core/Paragraph';
 import Phone from './blocks/Phone';
 import Phones from './blocks/Phones';
+import Socials from './blocks/Socials';
+import SocialLinks from './blocks/core/SocialLinks';
+// import SocialLink from './blocks/core/SocialLink';
 
 interface Props {
   block: AttributesBlock;
@@ -58,6 +64,20 @@ const BlockRouter = ({ block }: Props) => {
     case 'core/paragraph': {
       return (
         <Paragraph attributes={attributes as CoreParagraphBlockAttributes} />
+      );
+    }
+
+    // Don't use here (gets called directly from our `SocialLinks` component instead)
+    // case 'core/social-link': {
+    //   return <SocialLink attributes={attributes as CoreSocialLinkBlockAttributes} />
+    // }
+
+    case 'core/social-links': {
+      return (
+        <SocialLinks
+          attributes={attributes as CoreSocialLinksBlockAttributes}
+          innerBlocks={innerBlocks || []}
+        />
       );
     }
 
@@ -212,6 +232,15 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <Phones
           attributes={attributes as UtkwdsPhonesBlockAttributes}
+          innerBlocks={innerBlocks || []}
+        />
+      );
+    }
+
+    case 'utkwds/socials': {
+      return (
+        <Socials
+          attributes={attributes as UtkwdsSocialsBlockAttributes}
           innerBlocks={innerBlocks || []}
         />
       );
