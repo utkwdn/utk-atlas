@@ -15,6 +15,7 @@ import {
   UtkwdsCardBlockAttributes,
   UtkwdsContactBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
+  UtkwdsCalendarBlockAttributes,
   UtkwdsLeadBlockAttributes,
   CoreParagraphBlockAttributes,
   UtkwdsPhoneBlockAttributes,
@@ -40,6 +41,7 @@ import CardFooter from './blocks/CardFooter';
 import CardBody from './blocks/CardBody';
 import Card from './blocks/Card';
 import Contact from './blocks/Contact';
+import Calendar from './blocks/Calendar';
 import Lead from './blocks/Lead';
 import Paragraph from './blocks/core/Paragraph';
 import Phone from './blocks/Phone';
@@ -113,6 +115,12 @@ const BlockRouter = ({ block }: Props) => {
 
     case 'utkwds/alert': {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
+    }
+
+    case 'utkwds/calendar': {
+      return (
+        <Calendar attributes={attributes as UtkwdsCalendarBlockAttributes} />
+      );
     }
 
     case 'utkwds/card': {
