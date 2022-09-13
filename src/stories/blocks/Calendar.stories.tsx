@@ -45,8 +45,8 @@ Default.args = {
     exTopic: '',
     exAudience: '',
     widgetType: '',
-    style: '',
-    template: '',
+    /** 'modern', 'hill-cards', 'hill-simple-list', 'hill-list-alt', 'hill-modern', 'hill-modern-no-description', 'hill-simple-columns' */
+    template: 'modern',
     hideDesc: false,
     hideDescS: '',
     truncate: false,
