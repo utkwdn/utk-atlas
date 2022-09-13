@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Blocks/Atoms/Calendar',
+  title: 'Blocks/Organisms/Calendar',
   component: Calendar,
   decorators: [
     (Story) => (

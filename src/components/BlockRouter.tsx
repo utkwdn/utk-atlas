@@ -117,6 +117,12 @@ const BlockRouter = ({ block }: Props) => {
       return <Alert attributes={attributes as UtkwdsAlertBlockAttributes} />;
     }
 
+    case 'utkwds/calendar': {
+      return (
+        <Calendar attributes={attributes as UtkwdsCalendarBlockAttributes} />
+      );
+    }
+
     case 'utkwds/card': {
       return (
         <Card
@@ -219,12 +225,6 @@ const BlockRouter = ({ block }: Props) => {
         <HorizontalRule
           attributes={attributes as UtkwdsHorizontalRuleBlockAttributes}
         />
-      );
-    }
-
-    case 'utkwds/calendar': {
-      return (
-        <Calendar attributes={attributes as UtkwdsCalendarBlockAttributes} />
       );
     }
 
