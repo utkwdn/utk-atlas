@@ -67,9 +67,14 @@ const SocialLinks = ({
     >
       {innerBlocks.flatMap((block, i) => {
         if (block.name !== 'core/social-link') return [];
+        // not sure if this is necessary
+        const attributes = (block.attributes ||
+          JSON.parse(
+            block.attributesJSON || '{}'
+          )) as CoreSocialLinkBlockAttributes;
         return (
           <SocialLink
-            attributes={block.attributes as CoreSocialLinkBlockAttributes}
+            attributes={attributes}
             key={i}
             showLabels={showLabels}
             iconColorValue={iconColorValue || undefined}
