@@ -145,4 +145,11 @@
 
 // Main Site
 
+// @import '@wordpress/block-library/build-style/style.css';
+// @import '@wordpress/block-library/build-style/theme.css';
+@import '@wordpress/block-library/build-style/button/style.css';
+@import '@wordpress/block-library/build-style/buttons/style.css';
+@import '@wordpress/block-library/build-style/columns/style.css';
+@import '@wordpress/block-library/build-style/cover/style.css';
+
 @import '_extended';
