@@ -89,6 +89,15 @@
 // @import './node_modules/utksds-framework/src/scss/styles/logos';
 // @import './node_modules/utksds-framework/src/scss/styles/wp';
 
+// ------  WP Core Block Styling
+// @import '@wordpress/block-library/build-style/style.css';
+// @import '@wordpress/block-library/build-style/theme.css';
+
+@import '@wordpress/block-library/build-style/button/style.css';
+@import '@wordpress/block-library/build-style/buttons/style.css';
+@import '@wordpress/block-library/build-style/columns/style.css';
+@import '@wordpress/block-library/build-style/cover/style.css';
+
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';
 @import './framework/regions/extended_footer';
@@ -144,12 +153,5 @@
 //webfont was not originally pulled in from the framework, commenting out for now
 
 // Main Site
-
-// @import '@wordpress/block-library/build-style/style.css';
-// @import '@wordpress/block-library/build-style/theme.css';
-@import '@wordpress/block-library/build-style/button/style.css';
-@import '@wordpress/block-library/build-style/buttons/style.css';
-@import '@wordpress/block-library/build-style/columns/style.css';
-@import '@wordpress/block-library/build-style/cover/style.css';
 
 @import '_extended';
