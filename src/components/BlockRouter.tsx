@@ -22,6 +22,7 @@ import {
   UtkwdsPhonesBlockAttributes,
   UtkwdsSocialsBlockAttributes,
   CoreSocialLinksBlockAttributes,
+  UtkwdsStripBlockAttributes,
   // CoreSocialLinkBlockAttributes,
 } from 'client';
 
@@ -48,6 +49,7 @@ import Phone from './blocks/Phone';
 import Phones from './blocks/Phones';
 import Socials from './blocks/Socials';
 import SocialLinks from './blocks/core/SocialLinks';
+import Strip from './blocks/Strip';
 // import SocialLink from './blocks/core/SocialLink';
 
 interface Props {
@@ -249,6 +251,15 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <Socials
           attributes={attributes as UtkwdsSocialsBlockAttributes}
+          innerBlocks={innerBlocks || []}
+        />
+      );
+    }
+
+    case 'utkwds/strip': {
+      return (
+        <Strip
+          attributes={attributes as UtkwdsStripBlockAttributes}
           innerBlocks={innerBlocks || []}
         />
       );
