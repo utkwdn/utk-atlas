@@ -1,5 +1,5 @@
-import Accordion from 'components/blocks/Accordion';
-import { UtkwdsAccordionFoldBlockAttributes } from 'client';
+import Tabs from 'components/blocks/Tabs';
+import { UtkwdsTabBlockAttributes } from 'client';
 import { Props as ParagraphProps } from 'components/blocks/core/Paragraph';
 
 import React from 'react';
@@ -7,8 +7,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { InnerAttributesBlock } from 'types/InnerAttributesBlock';
 
 export default {
-  title: 'Blocks/Organisms/Accordion',
-  component: Accordion,
+  title: 'Blocks/Organisms/Tabs',
+  component: Tabs,
   decorators: [
     (Story) => (
       <div className="container">
@@ -16,20 +16,15 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Accordion>;
+} as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Accordion> = (args) => (
-  <Accordion {...args} />
-);
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
-const mockAccordionFoldBlock1: InnerAttributesBlock<
-  Partial<UtkwdsAccordionFoldBlockAttributes>
-> = {
-  name: 'utkwds/accordion-fold',
+const mockTabBlock1: InnerAttributesBlock<Partial<UtkwdsTabBlockAttributes>> = {
+  name: 'utkwds/tab',
 
   attributes: {
-    foldSlug: 'foldSlug1',
-    foldName: 'Panel 1',
+    tabName: 'First Tab',
   },
 
   innerBlocks: [
@@ -47,15 +42,12 @@ const mockAccordionFoldBlock1: InnerAttributesBlock<
   ],
 };
 
-const mockAccordionFoldBlock2: InnerAttributesBlock<
-  Partial<UtkwdsAccordionFoldBlockAttributes>
-> = {
-  name: 'utkwds/accordion-fold',
+const mockTabBlock2: InnerAttributesBlock<Partial<UtkwdsTabBlockAttributes>> = {
+  name: 'utkwds/tab',
 
   attributes: {
-    foldSlug: 'foldSlug2',
-    foldName: 'Panel 2 (should be open on load)',
-    show: true,
+    tabName: 'Second Tab (should be open on load)',
+    tabActive: 'active',
   },
 
   innerBlocks: [
@@ -78,7 +70,7 @@ Primary.args = {
     className: 'test',
   },
   innerBlocks: [
-    mockAccordionFoldBlock1,
-    mockAccordionFoldBlock2,
-  ] as unknown as InnerAttributesBlock<UtkwdsAccordionFoldBlockAttributes>[],
+    mockTabBlock1,
+    mockTabBlock2,
+  ] as unknown as InnerAttributesBlock<UtkwdsTabBlockAttributes>[],
 };
