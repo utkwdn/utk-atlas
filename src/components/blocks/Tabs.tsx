@@ -55,7 +55,7 @@ const TabsBlock = ({ attributes: { className }, innerBlocks }: Props) => {
         }
 
         return (
-          <Tab title={attributes.tabName} eventKey={eventKey}>
+          <Tab title={attributes.tabName} eventKey={eventKey} key={eventKey}>
             {block.innerBlocks.map((block, i) => (
               <BlockRouter block={block as Block} key={i} />
             ))}

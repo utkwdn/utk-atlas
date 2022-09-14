@@ -30,8 +30,6 @@ import {
   // CoreSocialLinkBlockAttributes,
 } from 'client';
 
-import Test from './blocks/Test';
-import HorizontalRule from './blocks/HorizontalRule';
 import Accordion from './blocks/Accordion';
 import Alert from './blocks/Alert';
 import Columns from './blocks/Columns';
@@ -46,12 +44,13 @@ import CardBody from './blocks/CardBody';
 import Card from './blocks/Card';
 import Contact from './blocks/Contact';
 import Calendar from './blocks/Calendar';
+import HorizontalRule from './blocks/HorizontalRule';
 import Lead from './blocks/Lead';
 import Paragraph from './blocks/core/Paragraph';
 import Phone from './blocks/Phone';
 import Phones from './blocks/Phones';
-import Socials from './blocks/Socials';
 import SocialLinks from './blocks/core/SocialLinks';
+import Socials from './blocks/Socials';
 import Strip from './blocks/Strip';
 import Tabs from './blocks/Tabs';
 // import SocialLink from './blocks/core/SocialLink';
@@ -90,16 +89,6 @@ const BlockRouter = ({ block }: Props) => {
     }
 
     // Custom blocks
-
-    case 'test': {
-      return (
-        <Test
-          innerBlocks={innerBlocks || []}
-          /** For a real block, would just import the needed type from `client` */
-          attributes={attributes as Parameters<typeof Test>[0]['attributes']}
-        />
-      );
-    }
 
     case 'utkwds/accordion': {
       return (

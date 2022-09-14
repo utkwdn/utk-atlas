@@ -54,6 +54,7 @@ const AccordionBlock = ({ attributes: { className }, innerBlocks }: Props) => {
 
         return (
           <Accordion.Item
+            key={eventKey}
             eventKey={eventKey}
             className={attributes.className || ''}
           >

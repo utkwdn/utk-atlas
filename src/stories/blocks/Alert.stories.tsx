@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Blocks/Molecules/Alert',
+  title: 'Blocks/Organisms/Alert',
   component: Alert,
   decorators: [
     (Story) => (
