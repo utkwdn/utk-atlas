@@ -6,13 +6,19 @@ interface Props {
   innerBlocks?: AttributesBlock[];
 }
 
-const Alert = ({ attributes: { colorSlug, className, text } }: Props) =>
-  text ? (
+const Alert = ({ attributes: { colorSlug, className, text } }: Props) => {
+  if (!text) {
+    console.error(
+      'An `Alert` block is missing `text`, which is required. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
     <div className={`alert ${colorSlug || ''} ${className || ''}`}>
       <span dangerouslySetInnerHTML={{ __html: text }} />
     </div>
-  ) : (
-    <></>
   );
+};
 
 export default Alert;

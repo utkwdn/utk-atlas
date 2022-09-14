@@ -7,11 +7,21 @@ interface Props {
   innerBlocks?: AttributesBlock[];
 }
 
-const CardTopcap = ({ innerBlocks }: Props) => (
-  <>
-    {!!innerBlocks?.length &&
-      innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </>
-);
+const CardTopcap = ({ innerBlocks }: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `CardTopcap` block has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <>
+      {innerBlocks.map((block, i) => (
+        <BlockRouter block={block} key={i} />
+      ))}
+    </>
+  );
+};
 
 export default CardTopcap;

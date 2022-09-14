@@ -10,13 +10,25 @@ interface Props {
 const Card = ({
   attributes: { textColor, colorSlug, className },
   innerBlocks,
-}: Props) => (
-  <div
-    className={`card ${textColor || ''} ${colorSlug || ''} ${className || ''}`}
-  >
-    {!!innerBlocks?.length &&
-      innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </div>
-);
+}: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `Card` has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <div
+      className={`card ${textColor || ''} ${colorSlug || ''} ${
+        className || ''
+      }`}
+    >
+      {innerBlocks.map((block, i) => (
+        <BlockRouter block={block} key={i} />
+      ))}
+    </div>
+  );
+};
 
 export default Card;

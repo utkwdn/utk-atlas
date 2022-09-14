@@ -7,7 +7,12 @@ interface Props {
 const CardHeader = ({
   attributes: { className, content, tagName: TagName },
 }: Props) => {
-  if (!content) return <></>;
+  if (!content) {
+    console.error(
+      'A `CardHeader` block is missing `content`. Skipping this block.'
+    );
+    return <></>;
+  }
 
   switch (TagName) {
     case 'div':
@@ -21,13 +26,13 @@ const CardHeader = ({
         <TagName
           className={`card-header ${className || ''}`}
           dangerouslySetInnerHTML={{ __html: content }}
-        ></TagName>
+        />
       );
     }
 
     default: {
       console.error(
-        'A `CardHeader` has an invalid `attributes.tagName` (must be `div` or an h-tag).'
+        'A `CardHeader` has an invalid `attributes.tagName` (must be `div` or an h-tag). Skipping this block.'
       );
       return <></>;
     }

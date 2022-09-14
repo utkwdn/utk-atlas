@@ -8,14 +8,19 @@ interface Props {
 
 const CardFooter = ({
   attributes: { className, mutedClass, content },
-}: Props) =>
-  content ? (
+}: Props) => {
+  if (!content) {
+    console.error(
+      'A `CardFooter` block is missing `content`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
     <div
       className={`card-footer ${mutedClass || ''} ${className || ''}`}
       dangerouslySetInnerHTML={{ __html: content }}
-    ></div>
-  ) : (
-    <></>
+    />
   );
-
+};
 export default CardFooter;

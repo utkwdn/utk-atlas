@@ -10,23 +10,35 @@ interface Props {
 const Strip = ({
   attributes: { className, imageUrl, colorSlug, textColor, padding, spacing },
   innerBlocks,
-}: Props) => (
-  <div className={className || ''}>
-    <div
-      className={`
-        strip
-        ${padding || ''}
-        ${spacing !== undefined ? `my-${spacing}` : ''}
-        ${imageUrl ? '' : `${colorSlug || ''} ${textColor || ''}`}
-      `}
-      {...(imageUrl ? { style: { backgroundImage: `url(${imageUrl})` } } : {})}
-    >
-      <div className="container">
-        {!!innerBlocks?.length &&
-          innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
+}: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `Strip` block has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <div className={className || ''}>
+      <div
+        className={`
+          strip
+          ${padding || ''}
+          ${spacing !== undefined ? `my-${spacing}` : ''}
+          ${imageUrl ? '' : `${colorSlug || ''} ${textColor || ''}`}
+        `}
+        {...(imageUrl
+          ? { style: { backgroundImage: `url(${imageUrl})` } }
+          : {})}
+      >
+        <div className="container">
+          {innerBlocks.map((block, i) => (
+            <BlockRouter block={block} key={i} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Strip;

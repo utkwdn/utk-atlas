@@ -7,11 +7,21 @@ interface Props {
   innerBlocks?: AttributesBlock[];
 }
 
-const CardMain = ({ innerBlocks }: Props) => (
-  <>
-    {!!innerBlocks?.length &&
-      innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </>
-);
+const CardMain = ({ innerBlocks }: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `CardMain` block has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <>
+      {innerBlocks.map((block, i) => (
+        <BlockRouter block={block} key={i} />
+      ))}
+    </>
+  );
+};
 
 export default CardMain;

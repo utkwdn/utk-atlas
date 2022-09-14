@@ -7,11 +7,21 @@ interface Props {
   innerBlocks?: AttributesBlock[];
 }
 
-const Columns = ({ attributes: { className }, innerBlocks }: Props) => (
-  <div className={`row ${className || ''}`}>
-    {!!innerBlocks?.length &&
-      innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </div>
-);
+const Columns = ({ attributes: { className }, innerBlocks }: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `Columns` block has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <div className={`row ${className || ''}`}>
+      {innerBlocks.map((block, i) => (
+        <BlockRouter block={block} key={i} />
+      ))}
+    </div>
+  );
+};
 
 export default Columns;

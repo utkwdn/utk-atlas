@@ -31,8 +31,9 @@ const Paragraph = ({
 }: Props) => {
   if (!content) {
     console.error(
-      'A Paragraph block is missing its `content`. Still rendering, but this should be addressed.'
+      'A `Paragraph` block is missing `content`. Skipping this block.'
     );
+    return <></>;
   }
 
   const styleObj = styleJSON ? (JSON.parse(styleJSON) as Style) : undefined;
@@ -57,7 +58,7 @@ const Paragraph = ({
       /* not really sure if this is right for `direction`, but I think it probably is */
       {...(direction ? { dir: direction } : {})}
     >
-      {content || ''}
+      {content}
     </p>
   );
 };

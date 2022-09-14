@@ -4,8 +4,13 @@ interface Props {
   attributes: Partial<UtkwdsLeadBlockAttributes>;
 }
 
-const Lead = ({ attributes: { className, align, content } }: Props) =>
-  content ? (
+const Lead = ({ attributes: { className, align, content } }: Props) => {
+  if (!content) {
+    console.error('A `Lead` block is missing `content`. Skipping this block.');
+    return <></>;
+  }
+
+  return (
     <p
       className={`lead ${className || ''} ${
         align ? `has-text-align-${align}` : ''
@@ -14,8 +19,7 @@ const Lead = ({ attributes: { className, align, content } }: Props) =>
         __html: content,
       }}
     />
-  ) : (
-    <></>
   );
+};
 
 export default Lead;

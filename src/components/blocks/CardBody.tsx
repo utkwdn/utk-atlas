@@ -10,11 +10,21 @@ interface Props {
 const CardBody = ({
   attributes: { className, textColor },
   innerBlocks,
-}: Props) => (
-  <div className={`card-body ${className || ''} ${textColor || ''}`}>
-    {!!innerBlocks?.length &&
-      innerBlocks.map((block, i) => <BlockRouter block={block} key={i} />)}
-  </div>
-);
+}: Props) => {
+  if (!innerBlocks || !innerBlocks.length) {
+    console.error(
+      'A `CardBody` block has a missing or empty `innerBlocks`. Skipping this block.'
+    );
+    return <></>;
+  }
+
+  return (
+    <div className={`card-body ${className || ''} ${textColor || ''}`}>
+      {innerBlocks.map((block, i) => (
+        <BlockRouter block={block} key={i} />
+      ))}
+    </div>
+  );
+};
 
 export default CardBody;

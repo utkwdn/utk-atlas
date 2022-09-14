@@ -27,24 +27,25 @@ const Contact = ({
   innerBlocks,
 }: Props) => (
   <div className={`contact_info ${className || ''}`}>
-    {url ? (
-      <div className="address col-auto">
-        {/* note: might need to change layout here if address is allowed to go more than one line */}
-        <MapMarker />
-        <a
-          /* why `text-white`? */
-          className="text-white map-link"
-          href={url}
-          {...(linkTarget ? { target: linkTarget } : {})}
-        >
-          <span dangerouslySetInnerHTML={{ __html: address || '' }} />
-        </a>
-      </div>
-    ) : (
-      <div className="address col-auto">
-        <span dangerouslySetInnerHTML={{ __html: address || '' }} />
-      </div>
-    )}
+    {address &&
+      (url ? (
+        <div className="address col-auto">
+          {/* note: might need to change layout here if address is allowed to go more than one line */}
+          <MapMarker />
+          <a
+            /* why `text-white`? */
+            className="text-white map-link"
+            href={url}
+            {...(linkTarget ? { target: linkTarget } : {})}
+          >
+            <span dangerouslySetInnerHTML={{ __html: address }} />
+          </a>
+        </div>
+      ) : (
+        <div className="address col-auto">
+          <span dangerouslySetInnerHTML={{ __html: address }} />
+        </div>
+      ))}
     {email && (
       <small className="emailList">
         Email:&nbsp;
