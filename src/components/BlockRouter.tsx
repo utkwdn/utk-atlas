@@ -1,4 +1,6 @@
 import { AttributesBlock } from 'types/AttributesBlock';
+import { InnerAttributesBlock } from 'types/InnerAttributesBlock';
+
 import {
   UtkwdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
@@ -23,13 +25,14 @@ import {
   UtkwdsSocialsBlockAttributes,
   CoreSocialLinksBlockAttributes,
   UtkwdsStripBlockAttributes,
+  UtkwdsTabsBlockAttributes,
+  UtkwdsTabBlockAttributes,
   // CoreSocialLinkBlockAttributes,
 } from 'client';
 
 import Test from './blocks/Test';
 import HorizontalRule from './blocks/HorizontalRule';
 import Accordion from './blocks/Accordion';
-import AccordionFold from './blocks/AccordionFold';
 import Alert from './blocks/Alert';
 import Columns from './blocks/Columns';
 import Column from './blocks/Column';
@@ -50,6 +53,7 @@ import Phones from './blocks/Phones';
 import Socials from './blocks/Socials';
 import SocialLinks from './blocks/core/SocialLinks';
 import Strip from './blocks/Strip';
+import Tabs from './blocks/Tabs';
 // import SocialLink from './blocks/core/SocialLink';
 
 interface Props {
@@ -100,17 +104,11 @@ const BlockRouter = ({ block }: Props) => {
     case 'utkwds/accordion': {
       return (
         <Accordion
-          innerBlocks={innerBlocks || []}
+          innerBlocks={
+            (innerBlocks ||
+              []) as InnerAttributesBlock<UtkwdsAccordionFoldBlockAttributes>[]
+          }
           attributes={attributes as UtkwdsAccordionBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/accordion-fold': {
-      return (
-        <AccordionFold
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsAccordionFoldBlockAttributes}
         />
       );
     }
@@ -261,6 +259,17 @@ const BlockRouter = ({ block }: Props) => {
         <Strip
           attributes={attributes as UtkwdsStripBlockAttributes}
           innerBlocks={innerBlocks || []}
+        />
+      );
+    }
+
+    case 'utkwds/tabs': {
+      return (
+        <Tabs
+          attributes={attributes as UtkwdsTabsBlockAttributes}
+          innerBlocks={
+            innerBlocks as InnerAttributesBlock<UtkwdsTabBlockAttributes>[]
+          }
         />
       );
     }
