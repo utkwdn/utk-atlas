@@ -56,7 +56,10 @@ const SocialLink = ({
       : undefined;
 
   return (
-    <li className={`wp-social-link wp-social-link-${service}`} style={style}>
+    <li
+      className={`wp-social-link wp-block-social-link wp-social-link-${service}`}
+      style={style}
+    >
       <a
         className="wp-block-social-link-anchor"
         href={url}

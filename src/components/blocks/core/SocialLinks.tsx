@@ -5,6 +5,7 @@ import {
 import { AttributesBlock } from 'types/AttributesBlock';
 import SocialLink from './SocialLink';
 import { Layout, toFlexLayoutStyle } from './helpers/SocialLinks-helpers';
+import './SocialLinks.scss';
 
 export interface Props {
   attributes: Partial<
@@ -41,9 +42,36 @@ const SocialLinks = ({
   },
   innerBlocks,
 }: Props) => {
-  if (!innerBlocks || !innerBlocks.length) {
+  const socialLinkItems = innerBlocks
+    ? innerBlocks.flatMap((block, i) => {
+        if (block.name !== 'core/social-link') {
+          console.error(
+            'An inner-block of a `SocialLinks` block is not a `SocialLink` block (has the wrong `name`). Skipping this inner-block.'
+          );
+          return [];
+        }
+
+        // not sure if this is necessary
+        const attributes = (block.attributes ||
+          JSON.parse(
+            block.attributesJSON || '{}'
+          )) as CoreSocialLinkBlockAttributes;
+        return (
+          <SocialLink
+            attributes={attributes}
+            key={i}
+            showLabels={showLabels}
+            iconColorValue={iconColorValue || undefined}
+            iconBackgroundColorValue={iconBackgroundColorValue || undefined}
+            openInNewTab={openInNewTab}
+          />
+        );
+      })
+    : undefined;
+
+  if (!socialLinkItems || !socialLinkItems.length) {
     console.error(
-      'A `SocialLinks` block has a missing or empty `innerBlocks`. Skipping this block.'
+      'A `SocialLinks` block has a missing `innerBlocks` or an `innerBlocks` with no `SocialLink`-block children. Skipping this `SocialLinks` block.'
     );
     return <></>;
   }
@@ -65,24 +93,7 @@ const SocialLinks = ({
       {...(anchor ? { id: anchor } : {})}
       {...(layout ? { style: layout } : {})}
     >
-      {innerBlocks.flatMap((block, i) => {
-        if (block.name !== 'core/social-link') return [];
-        // not sure if this is necessary
-        const attributes = (block.attributes ||
-          JSON.parse(
-            block.attributesJSON || '{}'
-          )) as CoreSocialLinkBlockAttributes;
-        return (
-          <SocialLink
-            attributes={attributes}
-            key={i}
-            showLabels={showLabels}
-            iconColorValue={iconColorValue || undefined}
-            iconBackgroundColorValue={iconBackgroundColorValue || undefined}
-            openInNewTab={openInNewTab}
-          />
-        );
-      })}
+      {socialLinkItems}
     </ul>
   );
 };

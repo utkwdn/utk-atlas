@@ -53,11 +53,12 @@ export const toFlexLayoutStyle = (
       : alignItemsMap.left;
 
   return {
+    display: 'flex',
     flexWrap,
     ...(orientation === 'horizontal'
       ? {
-          ...(verticalAlignment ? { alignItems: verticalAlignment } : {}),
-          ...(justifyContent ? { justifyContent } : {}),
+          ...(verticalAlignment && { alignItems: verticalAlignment }),
+          ...(justifyContent && { justifyContent }),
         }
       : {
           flexDirection: 'column',

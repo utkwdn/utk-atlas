@@ -13,7 +13,7 @@ export default {
   component: Socials,
   decorators: [
     (Story) => (
-      <div className="container">
+      <div className="container pt-4">
         <Story />
       </div>
     ),
@@ -29,9 +29,15 @@ const mockSocialLinkBlocks: InnerAttributesBlock<
 >[] = [
   {
     attributes: {
+      url: 'https://wordpress.com',
+      service: 'wordpress',
+    },
+  },
+  {
+    attributes: {
       url: 'https://facebook.com',
       service: 'facebook',
-      label: 'Facebook',
+      label: 'Custom label (Facebook)',
     },
   },
   {
@@ -40,9 +46,16 @@ const mockSocialLinkBlocks: InnerAttributesBlock<
       service: 'youtube',
     },
   },
+  {
+    attributes: {
+      url: 'https://twitter.com',
+      service: 'twitter',
+    },
+  },
 ].map((socialLinkBlock) => ({ ...socialLinkBlock, name: 'core/social-link' }));
 
 const colorOptions = {
+  default: undefined,
   orange: 'rgb(225, 130, 0)',
   smokey: 'rgb(88, 89, 91)',
   white: '#fff',
@@ -72,15 +85,20 @@ const mockSocialLinks: InnerAttributesBlock<SocialLinksProps['attributes']>[] =
     {
       name: 'core/social-links',
       attributes: {
-        iconBackgroundColorValue: colorOptions.orange,
-        iconColorValue: colorOptions.white,
+        iconBackgroundColorValue: colorOptions.default,
+        iconColorValue: colorOptions.default,
         showLabels: false,
         size: sizeOptions.normal,
         className: classNameOptions.default,
         openInNewTab: true,
-        align: alignOptions.left,
+        align: alignOptions.center,
         layout: JSON.stringify({
-          type: 'flex', // etc.
+          type: 'flex',
+          // orientation
+          // justifyContent
+          // flexWrap
+          // verticalAlignment
+          // alignItems
         } as Layout),
       },
       innerBlocks: mockSocialLinkBlocks,
