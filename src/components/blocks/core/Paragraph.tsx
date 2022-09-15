@@ -1,4 +1,5 @@
 import { CoreParagraphBlockAttributes } from 'client';
+import './Paragraph.scss';
 
 /** Not sure about this! Should test. */
 type Style = {
@@ -53,10 +54,9 @@ const Paragraph = ({
         ${textColor ? 'has-' + textColor + '-color' : ''}
         ${fontSize ? 'has-' + fontSize + '-font-size' : ''}
       `}
-      {...(anchor ? { id: anchor } : {})}
-      {...(style ? { style } : {})}
-      /* not really sure if this is right for `direction`, but I think it probably is */
-      {...(direction ? { dir: direction } : {})}
+      {...(anchor && { id: anchor })}
+      {...(style && { style })}
+      {...(direction && { dir: direction })}
     >
       {content}
     </p>
