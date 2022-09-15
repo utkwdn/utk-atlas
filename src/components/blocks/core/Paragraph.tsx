@@ -1,11 +1,10 @@
 import { CoreParagraphBlockAttributes } from 'client';
+import { CSSProperties } from 'react';
 import './Paragraph.scss';
 
 /** Not sure about this! Should test. */
 type Style = {
-  typography?: {
-    fontSize?: string;
-  };
+  typography?: CSSProperties;
 };
 
 export interface Props {
@@ -41,7 +40,7 @@ const Paragraph = ({
 
   const style =
     styleObj && styleObj.typography && styleObj.typography instanceof Object
-      ? { ...styleObj.typography }
+      ? styleObj.typography
       : undefined;
 
   return (
