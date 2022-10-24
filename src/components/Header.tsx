@@ -235,7 +235,8 @@ const Header = ({ uri }: Props) => {
         </nav>
       )}
 
-      <div className="container-fluid mb-0 px-0">
+      {/* Covid/Alert Banner */}
+      {/* <div className="container-fluid mb-0 px-0">
         <div
           className="alert bg-gray2 text-center p-1 mb-0 border-0"
           role="alert"
@@ -274,7 +275,7 @@ const Header = ({ uri }: Props) => {
             </a>
           </Link>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
