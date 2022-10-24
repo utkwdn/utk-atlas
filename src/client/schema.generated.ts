@@ -252,6 +252,98 @@ export enum AcalogProgramIdType {
   URI = 'URI',
 }
 
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AreaOfStudyIdType {
+  /** The Database ID for the node */
+  DATABASE_ID = 'DATABASE_ID',
+  /** The hashed Global ID */
+  ID = 'ID',
+  /** The name of the node */
+  NAME = 'NAME',
+  /** Url friendly name of the node */
+  SLUG = 'SLUG',
+  /** The URI for the node */
+  URI = 'URI',
+}
+
+/** Arguments for filtering the AreaOfStudyToContentNodeConnection connection */
+export interface AreaOfStudyToContentNodeConnectionWhereArgs {
+  /** The Types of content to filter */
+  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfAreaOfStudyEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the AreaOfStudyToProgramConnection connection */
+export interface AreaOfStudyToProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
 /** What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option */
 export enum AvatarRatingEnum {
   /** Indicates a G level avatar rating level. */
@@ -480,6 +572,98 @@ export interface CategoryToPostConnectionWhereArgs {
   title?: InputMaybe<Scalars['String']>;
 }
 
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum CollegeIdType {
+  /** The Database ID for the node */
+  DATABASE_ID = 'DATABASE_ID',
+  /** The hashed Global ID */
+  ID = 'ID',
+  /** The name of the node */
+  NAME = 'NAME',
+  /** Url friendly name of the node */
+  SLUG = 'SLUG',
+  /** The URI for the node */
+  URI = 'URI',
+}
+
+/** Arguments for filtering the CollegeToContentNodeConnection connection */
+export interface CollegeToContentNodeConnectionWhereArgs {
+  /** The Types of content to filter */
+  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfCollegeEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the CollegeToProgramConnection connection */
+export interface CollegeToProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
 /** Arguments for filtering the CommentToCommentConnection connection */
 export interface CommentToCommentConnectionWhereArgs {
   /** Comment author email address. */
@@ -663,6 +847,8 @@ export enum ContentTypeEnum {
   /** The Type of Content object */
   POST = 'POST',
   /** The Type of Content object */
+  PROGRAM = 'PROGRAM',
+  /** The Type of Content object */
   WGG_PREVIEW = 'WGG_PREVIEW',
   /** The Type of Content object */
   WP_BLOCK = 'WP_BLOCK',
@@ -722,10 +908,34 @@ export enum ContentTypesOfAToZCategoryEnum {
   A_TO_Z = 'A_TO_Z',
 }
 
+/** Allowed Content Types of the AreaOfStudy taxonomy. */
+export enum ContentTypesOfAreaOfStudyEnum {
+  /** The Type of Content object */
+  PROGRAM = 'PROGRAM',
+}
+
 /** Allowed Content Types of the Category taxonomy. */
 export enum ContentTypesOfCategoryEnum {
   /** The Type of Content object */
   POST = 'POST',
+}
+
+/** Allowed Content Types of the College taxonomy. */
+export enum ContentTypesOfCollegeEnum {
+  /** The Type of Content object */
+  PROGRAM = 'PROGRAM',
+}
+
+/** Allowed Content Types of the Degree taxonomy. */
+export enum ContentTypesOfDegreeEnum {
+  /** The Type of Content object */
+  PROGRAM = 'PROGRAM',
+}
+
+/** Allowed Content Types of the Major taxonomy. */
+export enum ContentTypesOfMajorEnum {
+  /** The Type of Content object */
+  PROGRAM = 'PROGRAM',
 }
 
 /** Allowed Content Types of the PostFormat taxonomy. */
@@ -794,6 +1004,20 @@ export interface CreateAcalogProgramInput {
   title?: InputMaybe<Scalars['String']>;
 }
 
+/** Input for the createAreaOfStudy mutation */
+export interface CreateAreaOfStudyInput {
+  /** The slug that the area will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the area object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The name of the area object to mutate */
+  name: Scalars['String'];
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
 /** Input for the createCategory mutation */
 export interface CreateCategoryInput {
   /** The slug that the category will be an alias of */
@@ -806,6 +1030,20 @@ export interface CreateCategoryInput {
   name: Scalars['String'];
   /** The ID of the category that should be set as the parent */
   parentId?: InputMaybe<Scalars['ID']>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the createCollege mutation */
+export interface CreateCollegeInput {
+  /** The slug that the college will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the college object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The name of the college object to mutate */
+  name: Scalars['String'];
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
   slug?: InputMaybe<Scalars['String']>;
 }
@@ -832,6 +1070,34 @@ export interface CreateCommentInput {
   parent?: InputMaybe<Scalars['ID']>;
   /** Type of comment. */
   type?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the createDegree mutation */
+export interface CreateDegreeInput {
+  /** The slug that the degree will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the degree object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The name of the degree object to mutate */
+  name: Scalars['String'];
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the createMajor mutation */
+export interface CreateMajorInput {
+  /** The slug that the major will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the major object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The name of the major object to mutate */
+  name: Scalars['String'];
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createMediaItem mutation */
@@ -944,6 +1210,34 @@ export interface CreatePostInput {
   title?: InputMaybe<Scalars['String']>;
   /** URLs queued to be pinged. */
   toPing?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+}
+
+/** Input for the createProgram mutation */
+export interface CreateProgramInput {
+  /** Set connections between the Program and AreasOfStudy */
+  areasOfStudy?: InputMaybe<ProgramAreasOfStudyInput>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** Set connections between the Program and Colleges */
+  colleges?: InputMaybe<ProgramCollegesInput>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']>;
+  /** Set connections between the Program and Degrees */
+  degrees?: InputMaybe<ProgramDegreesInput>;
+  /** Set connections between the Program and Majors */
+  majors?: InputMaybe<ProgramMajorsInput>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the createReusableBlock mutation */
@@ -1060,6 +1354,98 @@ export interface DateQueryInput {
   year?: InputMaybe<Scalars['Int']>;
 }
 
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum DegreeIdType {
+  /** The Database ID for the node */
+  DATABASE_ID = 'DATABASE_ID',
+  /** The hashed Global ID */
+  ID = 'ID',
+  /** The name of the node */
+  NAME = 'NAME',
+  /** Url friendly name of the node */
+  SLUG = 'SLUG',
+  /** The URI for the node */
+  URI = 'URI',
+}
+
+/** Arguments for filtering the DegreeToContentNodeConnection connection */
+export interface DegreeToContentNodeConnectionWhereArgs {
+  /** The Types of content to filter */
+  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfDegreeEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the DegreeToProgramConnection connection */
+export interface DegreeToProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
 /** Input for the deleteAToZCategory mutation */
 export interface DeleteAToZCategoryInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -1088,11 +1474,27 @@ export interface DeleteAcalogProgramInput {
   id: Scalars['ID'];
 }
 
+/** Input for the deleteAreaOfStudy mutation */
+export interface DeleteAreaOfStudyInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the AreaOfStudy to delete */
+  id: Scalars['ID'];
+}
+
 /** Input for the deleteCategory mutation */
 export interface DeleteCategoryInput {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the category to delete */
+  id: Scalars['ID'];
+}
+
+/** Input for the deleteCollege mutation */
+export interface DeleteCollegeInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the College to delete */
   id: Scalars['ID'];
 }
 
@@ -1103,6 +1505,22 @@ export interface DeleteCommentInput {
   /** Whether the comment should be force deleted instead of being moved to the trash */
   forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The deleted comment ID */
+  id: Scalars['ID'];
+}
+
+/** Input for the deleteDegree mutation */
+export interface DeleteDegreeInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the Degree to delete */
+  id: Scalars['ID'];
+}
+
+/** Input for the deleteMajor mutation */
+export interface DeleteMajorInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the Major to delete */
   id: Scalars['ID'];
 }
 
@@ -1141,6 +1559,16 @@ export interface DeletePostInput {
   /** Whether the object should be force deleted instead of being moved to the trash */
   forceDelete?: InputMaybe<Scalars['Boolean']>;
   /** The ID of the post to delete */
+  id: Scalars['ID'];
+}
+
+/** Input for the deleteProgram mutation */
+export interface DeleteProgramInput {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']>;
+  /** The ID of the Program to delete */
   id: Scalars['ID'];
 }
 
@@ -1228,6 +1656,98 @@ export interface HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArg
 export interface HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs {
   /** The Types of content to filter */
   contentTypes?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum MajorIdType {
+  /** The Database ID for the node */
+  DATABASE_ID = 'DATABASE_ID',
+  /** The hashed Global ID */
+  ID = 'ID',
+  /** The name of the node */
+  NAME = 'NAME',
+  /** Url friendly name of the node */
+  SLUG = 'SLUG',
+  /** The URI for the node */
+  URI = 'URI',
+}
+
+/** Arguments for filtering the MajorToContentNodeConnection connection */
+export interface MajorToContentNodeConnectionWhereArgs {
+  /** The Types of content to filter */
+  contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfMajorEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the MajorToProgramConnection connection */
+export interface MajorToProgramConnectionWhereArgs {
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
@@ -2218,6 +2738,320 @@ export interface PostToTermNodeConnectionWhereArgs {
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
+/** Set relationships between the Program to AreasOfStudy */
+export interface ProgramAreasOfStudyInput {
+  /** If true, this will append the AreaOfStudy to existing related AreasOfStudy. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<ProgramAreasOfStudyNodeInput>>>;
+}
+
+/** List of AreasOfStudy to connect the Program to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export interface ProgramAreasOfStudyNodeInput {
+  /** The description of the AreaOfStudy. This field is used to set a description of the AreaOfStudy if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the AreaOfStudy. If present, this will be used to connect to the Program. If no existing AreaOfStudy exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']>;
+  /** The name of the AreaOfStudy. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']>;
+  /** The slug of the AreaOfStudy. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Set relationships between the Program to Colleges */
+export interface ProgramCollegesInput {
+  /** If true, this will append the College to existing related Colleges. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<ProgramCollegesNodeInput>>>;
+}
+
+/** List of Colleges to connect the Program to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export interface ProgramCollegesNodeInput {
+  /** The description of the College. This field is used to set a description of the College if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the College. If present, this will be used to connect to the Program. If no existing College exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']>;
+  /** The name of the College. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']>;
+  /** The slug of the College. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Set relationships between the Program to Degrees */
+export interface ProgramDegreesInput {
+  /** If true, this will append the Degree to existing related Degrees. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<ProgramDegreesNodeInput>>>;
+}
+
+/** List of Degrees to connect the Program to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export interface ProgramDegreesNodeInput {
+  /** The description of the Degree. This field is used to set a description of the Degree if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the Degree. If present, this will be used to connect to the Program. If no existing Degree exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']>;
+  /** The name of the Degree. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']>;
+  /** The slug of the Degree. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum ProgramIdType {
+  /** Identify a resource by the Database ID. */
+  DATABASE_ID = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  ID = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  SLUG = 'SLUG',
+  /** Identify a resource by the URI. */
+  URI = 'URI',
+}
+
+/** Set relationships between the Program to Majors */
+export interface ProgramMajorsInput {
+  /** If true, this will append the Major to existing related Majors. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<ProgramMajorsNodeInput>>>;
+}
+
+/** List of Majors to connect the Program to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export interface ProgramMajorsNodeInput {
+  /** The description of the Major. This field is used to set a description of the Major if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the Major. If present, this will be used to connect to the Program. If no existing Major exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']>;
+  /** The name of the Major. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']>;
+  /** The slug of the Major. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the ProgramToAreaOfStudyConnection connection */
+export interface ProgramToAreaOfStudyConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the ProgramToCollegeConnection connection */
+export interface ProgramToCollegeConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the ProgramToDegreeConnection connection */
+export interface ProgramToDegreeConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the ProgramToMajorConnection connection */
+export interface ProgramToMajorConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the ProgramToTermNodeConnection connection */
+export interface ProgramToTermNodeConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
 /** Input for the registerUser mutation */
 export interface RegisterUserInput {
   /** User's AOL IM account. */
@@ -2454,6 +3288,50 @@ export interface RootQueryToAcalogProgramConnectionWhereArgs {
   title?: InputMaybe<Scalars['String']>;
 }
 
+/** Arguments for filtering the RootQueryToAreaOfStudyConnection connection */
+export interface RootQueryToAreaOfStudyConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
 /** Arguments for filtering the RootQueryToBlockEditorPreviewConnection connection */
 export interface RootQueryToBlockEditorPreviewConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
@@ -2504,6 +3382,50 @@ export interface RootQueryToBlockEditorPreviewConnectionWhereArgs {
 
 /** Arguments for filtering the RootQueryToCategoryConnection connection */
 export interface RootQueryToCategoryConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the RootQueryToCollegeConnection connection */
+export interface RootQueryToCollegeConnectionWhereArgs {
   /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
   cacheDomain?: InputMaybe<Scalars['String']>;
   /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
@@ -2686,6 +3608,94 @@ export interface RootQueryToContentRevisionUnionConnectionWhereArgs {
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
+}
+
+/** Arguments for filtering the RootQueryToDegreeConnection connection */
+export interface RootQueryToDegreeConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the RootQueryToMajorConnection connection */
+export interface RootQueryToMajorConnectionWhereArgs {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
 /** Arguments for filtering the RootQueryToMediaItemConnection connection */
@@ -2920,6 +3930,44 @@ export interface RootQueryToPostFormatConnectionWhereArgs {
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
+}
+
+/** Arguments for filtering the RootQueryToProgramConnection connection */
+export interface RootQueryToProgramConnectionWhereArgs {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']>;
+  /** Specific ID of the object */
+  id?: InputMaybe<Scalars['Int']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** What paramater to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Arguments for filtering the RootQueryToReusableBlockConnection connection */
@@ -3216,10 +4264,18 @@ export interface TagToPostConnectionWhereArgs {
 
 /** Allowed taxonomies */
 export enum TaxonomyEnum {
+  /** Taxonomy enum area */
+  AREAOFSTUDY = 'AREAOFSTUDY',
   /** Taxonomy enum a_to_z_categories */
   ATOZCATEGORY = 'ATOZCATEGORY',
   /** Taxonomy enum category */
   CATEGORY = 'CATEGORY',
+  /** Taxonomy enum college */
+  COLLEGE = 'COLLEGE',
+  /** Taxonomy enum degree */
+  DEGREE = 'DEGREE',
+  /** Taxonomy enum major */
+  MAJOR = 'MAJOR',
   /** Taxonomy enum post_format */
   POSTFORMAT = 'POSTFORMAT',
   /** Taxonomy enum post_tag */
@@ -3326,6 +4382,22 @@ export interface UpdateAcalogProgramInput {
   title?: InputMaybe<Scalars['String']>;
 }
 
+/** Input for the UpdateAreaOfStudy mutation */
+export interface UpdateAreaOfStudyInput {
+  /** The slug that the area will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the area object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the AreaOfStudy object to update */
+  id: Scalars['ID'];
+  /** The name of the area object to mutate */
+  name?: InputMaybe<Scalars['String']>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
 /** Input for the UpdateCategory mutation */
 export interface UpdateCategoryInput {
   /** The slug that the category will be an alias of */
@@ -3340,6 +4412,22 @@ export interface UpdateCategoryInput {
   name?: InputMaybe<Scalars['String']>;
   /** The ID of the category that should be set as the parent */
   parentId?: InputMaybe<Scalars['ID']>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the UpdateCollege mutation */
+export interface UpdateCollegeInput {
+  /** The slug that the college will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the college object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the College object to update */
+  id: Scalars['ID'];
+  /** The name of the college object to mutate */
+  name?: InputMaybe<Scalars['String']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
   slug?: InputMaybe<Scalars['String']>;
 }
@@ -3368,6 +4456,38 @@ export interface UpdateCommentInput {
   parent?: InputMaybe<Scalars['ID']>;
   /** Type of comment. */
   type?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the UpdateDegree mutation */
+export interface UpdateDegreeInput {
+  /** The slug that the degree will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the degree object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the Degree object to update */
+  id: Scalars['ID'];
+  /** The name of the degree object to mutate */
+  name?: InputMaybe<Scalars['String']>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
+}
+
+/** Input for the UpdateMajor mutation */
+export interface UpdateMajorInput {
+  /** The slug that the major will be an alias of */
+  aliasOf?: InputMaybe<Scalars['String']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The description of the major object */
+  description?: InputMaybe<Scalars['String']>;
+  /** The ID of the Major object to update */
+  id: Scalars['ID'];
+  /** The name of the major object to mutate */
+  name?: InputMaybe<Scalars['String']>;
+  /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
+  slug?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateMediaItem mutation */
@@ -3488,6 +4608,36 @@ export interface UpdatePostInput {
   title?: InputMaybe<Scalars['String']>;
   /** URLs queued to be pinged. */
   toPing?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+}
+
+/** Input for the updateProgram mutation */
+export interface UpdateProgramInput {
+  /** Set connections between the Program and AreasOfStudy */
+  areasOfStudy?: InputMaybe<ProgramAreasOfStudyInput>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** Set connections between the Program and Colleges */
+  colleges?: InputMaybe<ProgramCollegesInput>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']>;
+  /** Set connections between the Program and Degrees */
+  degrees?: InputMaybe<ProgramDegreesInput>;
+  /** The ID of the Program object */
+  id: Scalars['ID'];
+  /** Set connections between the Program and Majors */
+  majors?: InputMaybe<ProgramMajorsInput>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']>;
 }
 
 /** Input for the updateReusableBlock mutation */
@@ -3992,23 +5142,31 @@ export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   AToZCategoryIdType: true,
   AToZIdType: true,
   AcalogProgramIdType: true,
+  AreaOfStudyIdType: true,
   AvatarRatingEnum: true,
   BlockAttributesArray: true,
   BlockAttributesObject: true,
   BlockEditorPreviewIdType: true,
   Boolean: true,
   CategoryIdType: true,
+  CollegeIdType: true,
   CommentsConnectionOrderbyEnum: true,
   ContentNodeIdTypeEnum: true,
   ContentTypeEnum: true,
   ContentTypeIdTypeEnum: true,
   ContentTypesOfAToZCategoryEnum: true,
+  ContentTypesOfAreaOfStudyEnum: true,
   ContentTypesOfCategoryEnum: true,
+  ContentTypesOfCollegeEnum: true,
+  ContentTypesOfDegreeEnum: true,
+  ContentTypesOfMajorEnum: true,
   ContentTypesOfPostFormatEnum: true,
   ContentTypesOfTagEnum: true,
+  DegreeIdType: true,
   Float: true,
   ID: true,
   Int: true,
+  MajorIdType: true,
   MediaItemIdType: true,
   MediaItemSizeEnum: true,
   MediaItemStatusEnum: true,
@@ -4025,6 +5183,7 @@ export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   PostObjectsConnectionDateColumnEnum: true,
   PostObjectsConnectionOrderbyEnum: true,
   PostStatusEnum: true,
+  ProgramIdType: true,
   RelationEnum: true,
   ReusableBlockIdType: true,
   String: true,
@@ -4444,6 +5603,120 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String!' },
     text: { __type: 'String' },
+  },
+  AreaOfStudy: {
+    __typename: { __type: 'String!' },
+    areaOfStudyId: { __type: 'Int' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentNodes: {
+      __type: 'AreaOfStudyToContentNodeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AreaOfStudyToContentNodeConnectionWhereArgs',
+      },
+    },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
+    enqueuedScripts: {
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    enqueuedStylesheets: {
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    programs: {
+      __type: 'AreaOfStudyToProgramConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'AreaOfStudyToProgramConnectionWhereArgs',
+      },
+    },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'AreaOfStudyToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
+  },
+  AreaOfStudyToContentNodeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AreaOfStudyToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  AreaOfStudyToContentNodeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
+  },
+  AreaOfStudyToContentNodeConnectionWhereArgs: {
+    contentTypes: { __type: '[ContentTypesOfAreaOfStudyEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  AreaOfStudyToProgramConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[AreaOfStudyToProgramConnectionEdge]' },
+    nodes: { __type: '[Program]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  AreaOfStudyToProgramConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Program' },
+  },
+  AreaOfStudyToProgramConnectionWhereArgs: {
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  AreaOfStudyToTaxonomyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
   },
   AtlasContentModelerSettingsSettings: {
     __typename: { __type: 'String!' },
@@ -4909,6 +6182,120 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     node: { __type: 'Taxonomy' },
   },
+  College: {
+    __typename: { __type: 'String!' },
+    collegeId: { __type: 'Int' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentNodes: {
+      __type: 'CollegeToContentNodeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CollegeToContentNodeConnectionWhereArgs',
+      },
+    },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
+    enqueuedScripts: {
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    enqueuedStylesheets: {
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    programs: {
+      __type: 'CollegeToProgramConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'CollegeToProgramConnectionWhereArgs',
+      },
+    },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'CollegeToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
+  },
+  CollegeToContentNodeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CollegeToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  CollegeToContentNodeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
+  },
+  CollegeToContentNodeConnectionWhereArgs: {
+    contentTypes: { __type: '[ContentTypesOfCollegeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  CollegeToProgramConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[CollegeToProgramConnectionEdge]' },
+    nodes: { __type: '[Program]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  CollegeToProgramConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Program' },
+  },
+  CollegeToProgramConnectionWhereArgs: {
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  CollegeToTaxonomyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
+  },
   Comment: {
     __typename: { __type: 'String!' },
     agent: { __type: 'String' },
@@ -5369,6 +6756,289 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     ref: { __type: 'Float' },
   },
+  CoreButtonBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreButtonBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreButtonBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreButtonBlockAttributesUnion!' },
+  },
+  CoreButtonBlockDeprecatedV10Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV6Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV7Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV8Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV9Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreButtonsBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreButtonsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreButtonsBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreButtonsBlockAttributesUnion!' },
+  },
+  CoreButtonsBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreButtonsBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
   CoreCalendarBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreCalendarBlockAttributes' },
@@ -5441,6 +7111,130 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     textColor: { __type: 'String' },
+  },
+  CoreColumnBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreColumnBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreColumnBlockAttributes: {
+    __typename: { __type: 'String!' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+    width: { __type: 'String' },
+  },
+  CoreColumnBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreColumnBlockAttributesUnion!' },
+  },
+  CoreColumnBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+    width: { __type: 'String' },
+  },
+  CoreColumnsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreColumnsBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreColumnsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreColumnsBlockAttributesUnion!' },
+  },
+  CoreColumnsBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreColumnsBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    gradient: { __type: 'String' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
   },
   CoreCommentAuthorNameBlock: {
     __typename: { __type: 'String!' },
@@ -5802,6 +7596,284 @@ export const generatedSchema = {
     style: { __type: 'BlockAttributesObject' },
     textAlign: { __type: 'String' },
     textColor: { __type: 'String' },
+  },
+  CoreCoverBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreCoverBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreCoverBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreCoverBlockAttributesUnion!' },
+  },
+  CoreCoverBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV6Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV7Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV8Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
+  CoreCoverBlockDeprecatedV9Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
   },
   CoreEmbedBlock: {
     __typename: { __type: 'String!' },
@@ -8544,6 +10616,18 @@ export const generatedSchema = {
     acalogProgram: { __type: 'AcalogProgram' },
     clientMutationId: { __type: 'String' },
   },
+  CreateAreaOfStudyInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
+  },
+  CreateAreaOfStudyPayload: {
+    __typename: { __type: 'String!' },
+    areaOfStudy: { __type: 'AreaOfStudy' },
+    clientMutationId: { __type: 'String' },
+  },
   CreateCategoryInput: {
     aliasOf: { __type: 'String' },
     clientMutationId: { __type: 'String' },
@@ -8556,6 +10640,18 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     category: { __type: 'Category' },
     clientMutationId: { __type: 'String' },
+  },
+  CreateCollegeInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
+  },
+  CreateCollegePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    college: { __type: 'College' },
   },
   CreateCommentInput: {
     approved: { __type: 'String' },
@@ -8574,6 +10670,30 @@ export const generatedSchema = {
     clientMutationId: { __type: 'String' },
     comment: { __type: 'Comment' },
     success: { __type: 'Boolean' },
+  },
+  CreateDegreeInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
+  },
+  CreateDegreePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    degree: { __type: 'Degree' },
+  },
+  CreateMajorInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    name: { __type: 'String!' },
+    slug: { __type: 'String' },
+  },
+  CreateMajorPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    major: { __type: 'Major' },
   },
   CreateMediaItemInput: {
     altText: { __type: 'String' },
@@ -8650,6 +10770,25 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     clientMutationId: { __type: 'String' },
     post: { __type: 'Post' },
+  },
+  CreateProgramInput: {
+    areasOfStudy: { __type: 'ProgramAreasOfStudyInput' },
+    clientMutationId: { __type: 'String' },
+    colleges: { __type: 'ProgramCollegesInput' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    degrees: { __type: 'ProgramDegreesInput' },
+    majors: { __type: 'ProgramMajorsInput' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  CreateProgramPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    program: { __type: 'Program' },
   },
   CreateReusableBlockInput: {
     clientMutationId: { __type: 'String' },
@@ -8732,6 +10871,120 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     templateName: { __type: 'String' },
   },
+  Degree: {
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentNodes: {
+      __type: 'DegreeToContentNodeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'DegreeToContentNodeConnectionWhereArgs',
+      },
+    },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    degreeId: { __type: 'Int' },
+    description: { __type: 'String' },
+    enqueuedScripts: {
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    enqueuedStylesheets: {
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    name: { __type: 'String' },
+    programs: {
+      __type: 'DegreeToProgramConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'DegreeToProgramConnectionWhereArgs',
+      },
+    },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'DegreeToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
+  },
+  DegreeToContentNodeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[DegreeToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  DegreeToContentNodeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
+  },
+  DegreeToContentNodeConnectionWhereArgs: {
+    contentTypes: { __type: '[ContentTypesOfDegreeEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  DegreeToProgramConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[DegreeToProgramConnectionEdge]' },
+    nodes: { __type: '[Program]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  DegreeToProgramConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Program' },
+  },
+  DegreeToProgramConnectionWhereArgs: {
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  DegreeToTaxonomyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
+  },
   DeleteAToZCategoryInput: {
     clientMutationId: { __type: 'String' },
     id: { __type: 'ID!' },
@@ -8764,6 +11017,16 @@ export const generatedSchema = {
     clientMutationId: { __type: 'String' },
     deletedId: { __type: 'ID' },
   },
+  DeleteAreaOfStudyInput: {
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
+  },
+  DeleteAreaOfStudyPayload: {
+    __typename: { __type: 'String!' },
+    areaOfStudy: { __type: 'AreaOfStudy' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+  },
   DeleteCategoryInput: {
     clientMutationId: { __type: 'String' },
     id: { __type: 'ID!' },
@@ -8772,6 +11035,16 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     category: { __type: 'Category' },
     clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+  },
+  DeleteCollegeInput: {
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
+  },
+  DeleteCollegePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    college: { __type: 'College' },
     deletedId: { __type: 'ID' },
   },
   DeleteCommentInput: {
@@ -8784,6 +11057,26 @@ export const generatedSchema = {
     clientMutationId: { __type: 'String' },
     comment: { __type: 'Comment' },
     deletedId: { __type: 'ID' },
+  },
+  DeleteDegreeInput: {
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
+  },
+  DeleteDegreePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    degree: { __type: 'Degree' },
+    deletedId: { __type: 'ID' },
+  },
+  DeleteMajorInput: {
+    clientMutationId: { __type: 'String' },
+    id: { __type: 'ID!' },
+  },
+  DeleteMajorPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    major: { __type: 'Major' },
   },
   DeleteMediaItemInput: {
     clientMutationId: { __type: 'String' },
@@ -8827,6 +11120,17 @@ export const generatedSchema = {
     clientMutationId: { __type: 'String' },
     deletedId: { __type: 'ID' },
     post: { __type: 'Post' },
+  },
+  DeleteProgramInput: {
+    clientMutationId: { __type: 'String' },
+    forceDelete: { __type: 'Boolean' },
+    id: { __type: 'ID!' },
+  },
+  DeleteProgramPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    deletedId: { __type: 'ID' },
+    program: { __type: 'Program' },
   },
   DeleteReusableBlockInput: {
     clientMutationId: { __type: 'String' },
@@ -9069,6 +11373,120 @@ export const generatedSchema = {
     content: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
   },
+  Major: {
+    __typename: { __type: 'String!' },
+    conditionalTags: { __type: 'ConditionalTags' },
+    contentNodes: {
+      __type: 'MajorToContentNodeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'MajorToContentNodeConnectionWhereArgs',
+      },
+    },
+    count: { __type: 'Int' },
+    databaseId: { __type: 'Int!' },
+    description: { __type: 'String' },
+    enqueuedScripts: {
+      __type: 'TermNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    enqueuedStylesheets: {
+      __type: 'TermNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    link: { __type: 'String' },
+    majorId: { __type: 'Int' },
+    name: { __type: 'String' },
+    programs: {
+      __type: 'MajorToProgramConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'MajorToProgramConnectionWhereArgs',
+      },
+    },
+    slug: { __type: 'String' },
+    taxonomy: { __type: 'MajorToTaxonomyConnectionEdge' },
+    taxonomyName: { __type: 'String' },
+    templates: { __type: '[String]' },
+    termGroupId: { __type: 'Int' },
+    termTaxonomyId: { __type: 'Int' },
+    uri: { __type: 'String' },
+  },
+  MajorToContentNodeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[MajorToContentNodeConnectionEdge]' },
+    nodes: { __type: '[ContentNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  MajorToContentNodeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'ContentNode' },
+  },
+  MajorToContentNodeConnectionWhereArgs: {
+    contentTypes: { __type: '[ContentTypesOfMajorEnum]' },
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  MajorToProgramConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[MajorToProgramConnectionEdge]' },
+    nodes: { __type: '[Program]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  MajorToProgramConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Program' },
+  },
+  MajorToProgramConnectionWhereArgs: {
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  MajorToTaxonomyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    node: { __type: 'Taxonomy' },
+  },
   MediaContentBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'MediaContentBlockAttributes' },
@@ -9272,6 +11690,9 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     backgroundColor: { __type: 'String!' },
     className: { __type: 'String' },
+    imageAlt: { __type: 'String' },
+    imageSize: { __type: 'Int' },
+    imageUrl: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
   },
   MediaSize: {
@@ -10274,6 +12695,320 @@ export const generatedSchema = {
     viewItem: { __type: 'String' },
     viewItems: { __type: 'String' },
   },
+  Program: {
+    __typename: { __type: 'String!' },
+    areasOfStudy: {
+      __type: 'ProgramToAreaOfStudyConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ProgramToAreaOfStudyConnectionWhereArgs',
+      },
+    },
+    blocks: { __type: '[Block!]' },
+    blocksJSON: { __type: 'String' },
+    colleges: {
+      __type: 'ProgramToCollegeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ProgramToCollegeConnectionWhereArgs',
+      },
+    },
+    conditionalTags: { __type: 'ConditionalTags' },
+    content: {
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
+    },
+    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
+    contentTypeName: { __type: 'String!' },
+    databaseId: { __type: 'Int!' },
+    date: { __type: 'String' },
+    dateGmt: { __type: 'String' },
+    degrees: {
+      __type: 'ProgramToDegreeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ProgramToDegreeConnectionWhereArgs',
+      },
+    },
+    desiredSlug: { __type: 'String' },
+    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
+    enclosure: { __type: 'String' },
+    enqueuedScripts: {
+      __type: 'ContentNodeToEnqueuedScriptConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    enqueuedStylesheets: {
+      __type: 'ContentNodeToEnqueuedStylesheetConnection',
+      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
+    },
+    featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
+    featuredImageDatabaseId: { __type: 'Int' },
+    featuredImageId: { __type: 'ID' },
+    guid: { __type: 'String' },
+    id: { __type: 'ID!' },
+    isContentNode: { __type: 'Boolean!' },
+    isPreview: { __type: 'Boolean' },
+    isRestricted: { __type: 'Boolean' },
+    isTermNode: { __type: 'Boolean!' },
+    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
+    link: { __type: 'String' },
+    majors: {
+      __type: 'ProgramToMajorConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ProgramToMajorConnectionWhereArgs',
+      },
+    },
+    modified: { __type: 'String' },
+    modifiedGmt: { __type: 'String' },
+    preview: { __type: 'ProgramToPreviewConnectionEdge' },
+    previewBlocks: { __type: '[Block!]' },
+    previewBlocksJSON: { __type: 'String' },
+    previewRevisionDatabaseId: { __type: 'Int' },
+    previewRevisionId: { __type: 'ID' },
+    programId: { __type: 'Int!' },
+    slug: { __type: 'String' },
+    status: { __type: 'String' },
+    template: { __type: 'ContentTemplate' },
+    templates: { __type: '[String]' },
+    terms: {
+      __type: 'ProgramToTermNodeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'ProgramToTermNodeConnectionWhereArgs',
+      },
+    },
+    title: {
+      __type: 'String',
+      __args: { format: 'PostObjectFieldFormatEnum' },
+    },
+    uri: { __type: 'String' },
+  },
+  ProgramAreasOfStudyInput: {
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[ProgramAreasOfStudyNodeInput]' },
+  },
+  ProgramAreasOfStudyNodeInput: {
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  ProgramCollegesInput: {
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[ProgramCollegesNodeInput]' },
+  },
+  ProgramCollegesNodeInput: {
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  ProgramDegreesInput: {
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[ProgramDegreesNodeInput]' },
+  },
+  ProgramDegreesNodeInput: {
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  ProgramMajorsInput: {
+    append: { __type: 'Boolean' },
+    nodes: { __type: '[ProgramMajorsNodeInput]' },
+  },
+  ProgramMajorsNodeInput: {
+    description: { __type: 'String' },
+    id: { __type: 'ID' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  ProgramToAreaOfStudyConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ProgramToAreaOfStudyConnectionEdge]' },
+    nodes: { __type: '[AreaOfStudy]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  ProgramToAreaOfStudyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AreaOfStudy' },
+  },
+  ProgramToAreaOfStudyConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
+  ProgramToCollegeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ProgramToCollegeConnectionEdge]' },
+    nodes: { __type: '[College]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  ProgramToCollegeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'College' },
+  },
+  ProgramToCollegeConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
+  ProgramToDegreeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ProgramToDegreeConnectionEdge]' },
+    nodes: { __type: '[Degree]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  ProgramToDegreeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Degree' },
+  },
+  ProgramToDegreeConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
+  ProgramToMajorConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ProgramToMajorConnectionEdge]' },
+    nodes: { __type: '[Major]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  ProgramToMajorConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Major' },
+  },
+  ProgramToMajorConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
+  ProgramToPreviewConnectionEdge: {
+    __typename: { __type: 'String!' },
+    node: { __type: 'Program' },
+  },
+  ProgramToTermNodeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[ProgramToTermNodeConnectionEdge]' },
+    nodes: { __type: '[TermNode]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  ProgramToTermNodeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'TermNode' },
+  },
+  ProgramToTermNodeConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    taxonomies: { __type: '[TaxonomyEnum]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
   ReadingSettings: {
     __typename: { __type: 'String!' },
     pageForPosts: { __type: 'Int' },
@@ -10518,6 +13253,39 @@ export const generatedSchema = {
     status: { __type: 'PostStatusEnum' },
     title: { __type: 'String' },
   },
+  RootQueryToAreaOfStudyConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToAreaOfStudyConnectionEdge]' },
+    nodes: { __type: '[AreaOfStudy]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  RootQueryToAreaOfStudyConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'AreaOfStudy' },
+  },
+  RootQueryToAreaOfStudyConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
   RootQueryToBlockEditorPreviewConnection: {
     __typename: { __type: 'String!' },
     edges: { __type: '[RootQueryToBlockEditorPreviewConnectionEdge]' },
@@ -10566,6 +13334,39 @@ export const generatedSchema = {
     node: { __type: 'Category' },
   },
   RootQueryToCategoryConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
+  RootQueryToCollegeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToCollegeConnectionEdge]' },
+    nodes: { __type: '[College]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  RootQueryToCollegeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'College' },
+  },
+  RootQueryToCollegeConnectionWhereArgs: {
     cacheDomain: { __type: 'String' },
     childOf: { __type: 'Int' },
     childless: { __type: 'Boolean' },
@@ -10702,6 +13503,39 @@ export const generatedSchema = {
     cursor: { __type: 'String' },
     node: { __type: 'ContentType' },
   },
+  RootQueryToDegreeConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToDegreeConnectionEdge]' },
+    nodes: { __type: '[Degree]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  RootQueryToDegreeConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Degree' },
+  },
+  RootQueryToDegreeConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
+  },
   RootQueryToEnqueuedScriptConnection: {
     __typename: { __type: 'String!' },
     edges: { __type: '[RootQueryToEnqueuedScriptConnectionEdge]' },
@@ -10723,6 +13557,39 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     cursor: { __type: 'String' },
     node: { __type: 'EnqueuedStylesheet' },
+  },
+  RootQueryToMajorConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToMajorConnectionEdge]' },
+    nodes: { __type: '[Major]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  RootQueryToMajorConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Major' },
+  },
+  RootQueryToMajorConnectionWhereArgs: {
+    cacheDomain: { __type: 'String' },
+    childOf: { __type: 'Int' },
+    childless: { __type: 'Boolean' },
+    descriptionLike: { __type: 'String' },
+    exclude: { __type: '[ID]' },
+    excludeTree: { __type: '[ID]' },
+    hideEmpty: { __type: 'Boolean' },
+    hierarchical: { __type: 'Boolean' },
+    include: { __type: '[ID]' },
+    name: { __type: '[String]' },
+    nameLike: { __type: 'String' },
+    objectIds: { __type: '[ID]' },
+    order: { __type: 'OrderEnum' },
+    orderby: { __type: 'TermObjectsConnectionOrderbyEnum' },
+    padCounts: { __type: 'Boolean' },
+    parent: { __type: 'Int' },
+    search: { __type: 'String' },
+    slug: { __type: '[String]' },
+    termTaxonomId: { __type: '[ID]' },
+    updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToMediaItemConnection: {
     __typename: { __type: 'String!' },
@@ -10917,6 +13784,36 @@ export const generatedSchema = {
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
+  },
+  RootQueryToProgramConnection: {
+    __typename: { __type: 'String!' },
+    edges: { __type: '[RootQueryToProgramConnectionEdge]' },
+    nodes: { __type: '[Program]' },
+    pageInfo: { __type: 'WPPageInfo' },
+  },
+  RootQueryToProgramConnectionEdge: {
+    __typename: { __type: 'String!' },
+    cursor: { __type: 'String' },
+    node: { __type: 'Program' },
+  },
+  RootQueryToProgramConnectionWhereArgs: {
+    dateQuery: { __type: 'DateQueryInput' },
+    hasPassword: { __type: 'Boolean' },
+    id: { __type: 'Int' },
+    in: { __type: '[ID]' },
+    mimeType: { __type: 'MimeTypeEnum' },
+    name: { __type: 'String' },
+    nameIn: { __type: '[String]' },
+    notIn: { __type: '[ID]' },
+    orderby: { __type: '[PostObjectsConnectionOrderbyInput]' },
+    parent: { __type: 'ID' },
+    parentIn: { __type: '[ID]' },
+    parentNotIn: { __type: '[ID]' },
+    password: { __type: 'String' },
+    search: { __type: 'String' },
+    stati: { __type: '[PostStatusEnum]' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
   },
   RootQueryToReusableBlockConnection: {
     __typename: { __type: 'String!' },
@@ -11446,6 +14343,19 @@ export const generatedSchema = {
     acalogProgram: { __type: 'AcalogProgram' },
     clientMutationId: { __type: 'String' },
   },
+  UpdateAreaOfStudyInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  UpdateAreaOfStudyPayload: {
+    __typename: { __type: 'String!' },
+    areaOfStudy: { __type: 'AreaOfStudy' },
+    clientMutationId: { __type: 'String' },
+  },
   UpdateCategoryInput: {
     aliasOf: { __type: 'String' },
     clientMutationId: { __type: 'String' },
@@ -11459,6 +14369,19 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     category: { __type: 'Category' },
     clientMutationId: { __type: 'String' },
+  },
+  UpdateCollegeInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  UpdateCollegePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    college: { __type: 'College' },
   },
   UpdateCommentInput: {
     approved: { __type: 'String' },
@@ -11478,6 +14401,32 @@ export const generatedSchema = {
     clientMutationId: { __type: 'String' },
     comment: { __type: 'Comment' },
     success: { __type: 'Boolean' },
+  },
+  UpdateDegreeInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  UpdateDegreePayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    degree: { __type: 'Degree' },
+  },
+  UpdateMajorInput: {
+    aliasOf: { __type: 'String' },
+    clientMutationId: { __type: 'String' },
+    description: { __type: 'String' },
+    id: { __type: 'ID!' },
+    name: { __type: 'String' },
+    slug: { __type: 'String' },
+  },
+  UpdateMajorPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    major: { __type: 'Major' },
   },
   UpdateMediaItemInput: {
     altText: { __type: 'String' },
@@ -11558,6 +14507,26 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     clientMutationId: { __type: 'String' },
     post: { __type: 'Post' },
+  },
+  UpdateProgramInput: {
+    areasOfStudy: { __type: 'ProgramAreasOfStudyInput' },
+    clientMutationId: { __type: 'String' },
+    colleges: { __type: 'ProgramCollegesInput' },
+    content: { __type: 'String' },
+    date: { __type: 'String' },
+    degrees: { __type: 'ProgramDegreesInput' },
+    id: { __type: 'ID!' },
+    majors: { __type: 'ProgramMajorsInput' },
+    menuOrder: { __type: 'Int' },
+    password: { __type: 'String' },
+    slug: { __type: 'String' },
+    status: { __type: 'PostStatusEnum' },
+    title: { __type: 'String' },
+  },
+  UpdateProgramPayload: {
+    __typename: { __type: 'String!' },
+    clientMutationId: { __type: 'String' },
+    program: { __type: 'Program' },
   },
   UpdateReusableBlockInput: {
     clientMutationId: { __type: 'String' },
@@ -12072,28 +15041,6 @@ export const generatedSchema = {
     url: { __type: 'String' },
     useIcon: { __type: 'Boolean!' },
   },
-  UtksdsButtongroupBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'UtksdsButtongroupBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  UtksdsButtongroupBlockAttributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    groupSize: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    orientation: { __type: 'String!' },
-    orientationSetting: { __type: 'Boolean!' },
-  },
   UtksdsCalendarBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'UtksdsCalendarBlockAttributes' },
@@ -12267,6 +15214,661 @@ export const generatedSchema = {
     tabID: { __type: 'String!' },
     tabNames: { __type: 'BlockAttributesArray!' },
   },
+  UtkwdsAccordionBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAccordionBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAccordionBlockAttributes: {
+    __typename: { __type: 'String!' },
+    accordionID: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsAccordionFoldBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAccordionFoldBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAccordionFoldBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    collapseS: { __type: 'String!' },
+    foldName: { __type: 'String!' },
+    foldNamePH: { __type: 'String!' },
+    foldSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    parentID: { __type: 'String!' },
+    show: { __type: 'Boolean!' },
+    showS: { __type: 'String!' },
+  },
+  UtkwdsAlertBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsAlertBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsAlertBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String!' },
+    text: { __type: 'String' },
+  },
+  UtkwdsButtonBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsButtonBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsButtonBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockClass: { __type: 'String!' },
+    buttonOutline: { __type: 'Boolean!' },
+    buttonSize: { __type: 'String!' },
+    buttonText: { __type: 'Boolean!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    iconName: { __type: 'String!' },
+    iconSize: { __type: 'String!' },
+    iconString: { __type: 'String!' },
+    linkTab: { __type: 'Boolean!' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String!' },
+    rel: { __type: 'String' },
+    text: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    useIcon: { __type: 'Boolean!' },
+  },
+  UtkwdsCalendarBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCalendarBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCalendarBlockAttributes: {
+    __typename: { __type: 'String!' },
+    audience: { __type: 'String!' },
+    calTemplate: { __type: 'String!' },
+    className: { __type: 'String' },
+    daysAhead: { __type: 'Float!' },
+    department: { __type: 'String!' },
+    evImage: { __type: 'Boolean!' },
+    evImageS: { __type: 'String!' },
+    evTime: { __type: 'Boolean!' },
+    evTimeS: { __type: 'String!' },
+    exAudience: { __type: 'String!' },
+    exTopic: { __type: 'String!' },
+    exType: { __type: 'String!' },
+    featured: { __type: 'Boolean!' },
+    featuredS: { __type: 'String!' },
+    group: { __type: 'String!' },
+    hideDesc: { __type: 'Boolean!' },
+    hideDescS: { __type: 'String!' },
+    hideDrop: { __type: 'Boolean!' },
+    hideDropS: { __type: 'String!' },
+    htmlDesc: { __type: 'Boolean!' },
+    htmlDescS: { __type: 'String!' },
+    incStyle: { __type: 'Boolean!' },
+    incStyleS: { __type: 'String!' },
+    keywords: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    matching: { __type: 'Boolean!' },
+    matchingS: { __type: 'String!' },
+    mustMatch: { __type: 'String!' },
+    newWin: { __type: 'Boolean!' },
+    newWinS: { __type: 'String!' },
+    numResults: { __type: 'Float!' },
+    past: { __type: 'Boolean!' },
+    pastS: { __type: 'String!' },
+    place: { __type: 'String!' },
+    sponsored: { __type: 'Boolean!' },
+    sponsoredS: { __type: 'String!' },
+    style: { __type: 'String!' },
+    template: { __type: 'String!' },
+    topic: { __type: 'String!' },
+    truncate: { __type: 'Boolean!' },
+    truncateS: { __type: 'String!' },
+    type: { __type: 'String!' },
+    viewAll: { __type: 'Boolean!' },
+    viewAllS: { __type: 'String!' },
+    widgetType: { __type: 'String!' },
+  },
+  UtkwdsCardBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockName: { __type: 'String!' },
+    cardOutline: { __type: 'Boolean!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsCardBodyBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardBodyBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardBodyBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+  },
+  UtkwdsCardFooterBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardFooterBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardFooterBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    muted: { __type: 'Boolean!' },
+    mutedClass: { __type: 'String!' },
+  },
+  UtkwdsCardHeaderBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardHeaderBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardHeaderBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tagName: { __type: 'String!' },
+  },
+  UtkwdsCardHeadingBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardHeadingBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardHeadingBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardImageBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardImageBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardImageBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardMainBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardMainBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardMainBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsCardTopcapBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsCardTopcapBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsCardTopcapBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsColumnBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsColumnBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsColumnBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    colWidth: { __type: 'Int!' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsColumnsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsColumnsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsColumnsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    blockName: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    numCols: { __type: 'Int!' },
+    rowClass: { __type: 'String!' },
+  },
+  UtkwdsContactBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsContactBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsContactBlockAttributes: {
+    __typename: { __type: 'String!' },
+    address: { __type: 'String' },
+    addressDefault: { __type: 'String!' },
+    className: { __type: 'String' },
+    email: { __type: 'String' },
+    linkTab: { __type: 'Boolean!' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+  },
+  UtkwdsHorizontalRuleBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsHorizontalRuleBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsHorizontalRuleBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    imagePostion: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsLeadBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsLeadBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsLeadBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsMediaContentBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsMediaContentBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsMediaContentBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsMediaObjectBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsMediaObjectBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsMediaObjectBlockAttributes: {
+    __typename: { __type: 'String!' },
+    backgroundColor: { __type: 'String!' },
+    className: { __type: 'String' },
+    imageAlt: { __type: 'String' },
+    imageSize: { __type: 'Int' },
+    imageUrl: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsOverlayBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsOverlayBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsOverlayBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    imageAlt: { __type: 'String!' },
+    imageUrl: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    overOpacity: { __type: 'Int!' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsOverlayMainBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsOverlayMainBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsOverlayMainBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsPhoneBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsPhoneBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsPhoneBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    phoneName: { __type: 'String' },
+    phoneNum: { __type: 'String' },
+  },
+  UtkwdsPhonesBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsPhonesBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsPhonesBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsSocialsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsSocialsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsSocialsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
+  UtkwdsStripBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsStripBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsStripBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    color: { __type: 'String!' },
+    colorSlug: { __type: 'String!' },
+    imageUrl: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    padding: { __type: 'String!' },
+    spacing: { __type: 'Int!' },
+    textColor: { __type: 'String!' },
+  },
+  UtkwdsTabBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsTabBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsTabBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tabActive: { __type: 'String!' },
+    tabName: { __type: 'String!' },
+    tabPlaceholder: { __type: 'String!' },
+    tabShow: { __type: 'String!' },
+    tabSlug: { __type: 'String!' },
+  },
+  UtkwdsTabsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'UtkwdsTabsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  UtkwdsTabsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    tabID: { __type: 'String!' },
+    tabNames: { __type: 'BlockAttributesArray!' },
+  },
   WPPageInfo: {
     __typename: { __type: 'String!' },
     endCursor: { __type: 'String' },
@@ -12294,13 +15896,29 @@ export const generatedSchema = {
       __type: 'CreateAcalogProgramPayload',
       __args: { input: 'CreateAcalogProgramInput!' },
     },
+    createAreaOfStudy: {
+      __type: 'CreateAreaOfStudyPayload',
+      __args: { input: 'CreateAreaOfStudyInput!' },
+    },
     createCategory: {
       __type: 'CreateCategoryPayload',
       __args: { input: 'CreateCategoryInput!' },
     },
+    createCollege: {
+      __type: 'CreateCollegePayload',
+      __args: { input: 'CreateCollegeInput!' },
+    },
     createComment: {
       __type: 'CreateCommentPayload',
       __args: { input: 'CreateCommentInput!' },
+    },
+    createDegree: {
+      __type: 'CreateDegreePayload',
+      __args: { input: 'CreateDegreeInput!' },
+    },
+    createMajor: {
+      __type: 'CreateMajorPayload',
+      __args: { input: 'CreateMajorInput!' },
     },
     createMediaItem: {
       __type: 'CreateMediaItemPayload',
@@ -12317,6 +15935,10 @@ export const generatedSchema = {
     createPostFormat: {
       __type: 'CreatePostFormatPayload',
       __args: { input: 'CreatePostFormatInput!' },
+    },
+    createProgram: {
+      __type: 'CreateProgramPayload',
+      __args: { input: 'CreateProgramInput!' },
     },
     createReusableBlock: {
       __type: 'CreateReusableBlockPayload',
@@ -12342,13 +15964,29 @@ export const generatedSchema = {
       __type: 'DeleteAcalogProgramPayload',
       __args: { input: 'DeleteAcalogProgramInput!' },
     },
+    deleteAreaOfStudy: {
+      __type: 'DeleteAreaOfStudyPayload',
+      __args: { input: 'DeleteAreaOfStudyInput!' },
+    },
     deleteCategory: {
       __type: 'DeleteCategoryPayload',
       __args: { input: 'DeleteCategoryInput!' },
     },
+    deleteCollege: {
+      __type: 'DeleteCollegePayload',
+      __args: { input: 'DeleteCollegeInput!' },
+    },
     deleteComment: {
       __type: 'DeleteCommentPayload',
       __args: { input: 'DeleteCommentInput!' },
+    },
+    deleteDegree: {
+      __type: 'DeleteDegreePayload',
+      __args: { input: 'DeleteDegreeInput!' },
+    },
+    deleteMajor: {
+      __type: 'DeleteMajorPayload',
+      __args: { input: 'DeleteMajorInput!' },
     },
     deleteMediaItem: {
       __type: 'DeleteMediaItemPayload',
@@ -12365,6 +16003,10 @@ export const generatedSchema = {
     deletePostFormat: {
       __type: 'DeletePostFormatPayload',
       __args: { input: 'DeletePostFormatInput!' },
+    },
+    deleteProgram: {
+      __type: 'DeleteProgramPayload',
+      __args: { input: 'DeleteProgramInput!' },
     },
     deleteReusableBlock: {
       __type: 'DeleteReusableBlockPayload',
@@ -12411,13 +16053,29 @@ export const generatedSchema = {
       __type: 'UpdateAcalogProgramPayload',
       __args: { input: 'UpdateAcalogProgramInput!' },
     },
+    updateAreaOfStudy: {
+      __type: 'UpdateAreaOfStudyPayload',
+      __args: { input: 'UpdateAreaOfStudyInput!' },
+    },
     updateCategory: {
       __type: 'UpdateCategoryPayload',
       __args: { input: 'UpdateCategoryInput!' },
     },
+    updateCollege: {
+      __type: 'UpdateCollegePayload',
+      __args: { input: 'UpdateCollegeInput!' },
+    },
     updateComment: {
       __type: 'UpdateCommentPayload',
       __args: { input: 'UpdateCommentInput!' },
+    },
+    updateDegree: {
+      __type: 'UpdateDegreePayload',
+      __args: { input: 'UpdateDegreeInput!' },
+    },
+    updateMajor: {
+      __type: 'UpdateMajorPayload',
+      __args: { input: 'UpdateMajorInput!' },
     },
     updateMediaItem: {
       __type: 'UpdateMediaItemPayload',
@@ -12434,6 +16092,10 @@ export const generatedSchema = {
     updatePostFormat: {
       __type: 'UpdatePostFormatPayload',
       __args: { input: 'UpdatePostFormatInput!' },
+    },
+    updateProgram: {
+      __type: 'UpdateProgramPayload',
+      __args: { input: 'UpdateProgramInput!' },
     },
     updateReusableBlock: {
       __type: 'UpdateReusableBlockPayload',
@@ -12514,6 +16176,20 @@ export const generatedSchema = {
       },
     },
     allSettings: { __type: 'Settings' },
+    areaOfStudy: {
+      __type: 'AreaOfStudy',
+      __args: { id: 'ID!', idType: 'AreaOfStudyIdType' },
+    },
+    areasOfStudy: {
+      __type: 'RootQueryToAreaOfStudyConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToAreaOfStudyConnectionWhereArgs',
+      },
+    },
     atlasContentModelerSettingsSettings: {
       __type: 'AtlasContentModelerSettingsSettings',
     },
@@ -12568,6 +16244,20 @@ export const generatedSchema = {
       __type: 'Category',
       __args: { id: 'ID!', idType: 'CategoryIdType' },
     },
+    college: {
+      __type: 'College',
+      __args: { id: 'ID!', idType: 'CollegeIdType' },
+    },
+    colleges: {
+      __type: 'RootQueryToCollegeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToCollegeConnectionWhereArgs',
+      },
+    },
     comment: { __type: 'Comment', __args: { id: 'ID!' } },
     comments: {
       __type: 'RootQueryToCommentConnection',
@@ -12606,8 +16296,30 @@ export const generatedSchema = {
       __type: 'RootQueryToContentTypeConnection',
       __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
     },
+    degree: { __type: 'Degree', __args: { id: 'ID!', idType: 'DegreeIdType' } },
+    degrees: {
+      __type: 'RootQueryToDegreeConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToDegreeConnectionWhereArgs',
+      },
+    },
     discussionSettings: { __type: 'DiscussionSettings' },
     generalSettings: { __type: 'GeneralSettings' },
+    major: { __type: 'Major', __args: { id: 'ID!', idType: 'MajorIdType' } },
+    majors: {
+      __type: 'RootQueryToMajorConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToMajorConnectionWhereArgs',
+      },
+    },
     mediaItem: {
       __type: 'MediaItem',
       __args: { asPreview: 'Boolean', id: 'ID!', idType: 'MediaItemIdType' },
@@ -12718,6 +16430,24 @@ export const generatedSchema = {
         first: 'Int',
         last: 'Int',
         where: 'RootQueryToPostConnectionWhereArgs',
+      },
+    },
+    program: {
+      __type: 'Program',
+      __args: { asPreview: 'Boolean', id: 'ID!', idType: 'ProgramIdType' },
+    },
+    programBy: {
+      __type: 'Program',
+      __args: { id: 'ID', programId: 'Int', slug: 'String', uri: 'String' },
+    },
+    programs: {
+      __type: 'RootQueryToProgramConnection',
+      __args: {
+        after: 'String',
+        before: 'String',
+        first: 'Int',
+        last: 'Int',
+        where: 'RootQueryToProgramConnectionWhereArgs',
       },
     },
     readingSettings: { __type: 'ReadingSettings' },
@@ -12839,21 +16569,27 @@ export const generatedSchema = {
       'MediaItem',
       'Page',
       'Post',
+      'Program',
       'ReusableBlock',
     ],
     DatabaseIdentifier: [
       'AToZ',
       'AToZCategory',
       'AcalogProgram',
+      'AreaOfStudy',
       'BlockEditorPreview',
       'Category',
+      'College',
       'Comment',
+      'Degree',
+      'Major',
       'MediaItem',
       'Menu',
       'MenuItem',
       'Page',
       'Post',
       'PostFormat',
+      'Program',
       'ReusableBlock',
       'Tag',
       'User',
@@ -12862,22 +16598,31 @@ export const generatedSchema = {
       'AToZ',
       'AToZCategory',
       'AcalogProgram',
+      'AreaOfStudy',
       'Category',
+      'College',
+      'Degree',
+      'Major',
       'Page',
       'Post',
+      'Program',
       'Tag',
     ],
     Node: [
       'AToZ',
       'AToZCategory',
       'AcalogProgram',
+      'AreaOfStudy',
       'BlockEditorPreview',
       'Category',
+      'College',
       'Comment',
       'CommentAuthor',
       'ContentType',
+      'Degree',
       'EnqueuedScript',
       'EnqueuedStylesheet',
+      'Major',
       'MediaItem',
       'Menu',
       'MenuItem',
@@ -12885,6 +16630,7 @@ export const generatedSchema = {
       'Plugin',
       'Post',
       'PostFormat',
+      'Program',
       'ReusableBlock',
       'Tag',
       'Taxonomy',
@@ -12899,6 +16645,7 @@ export const generatedSchema = {
       'MediaItem',
       'Page',
       'Post',
+      'Program',
       'ReusableBlock',
     ],
     NodeWithTitle: [
@@ -12908,24 +16655,39 @@ export const generatedSchema = {
       'MediaItem',
       'Page',
       'Post',
+      'Program',
       'ReusableBlock',
     ],
     UniformResourceIdentifiable: [
       'AToZ',
       'AToZCategory',
       'AcalogProgram',
+      'AreaOfStudy',
       'BlockEditorPreview',
       'Category',
+      'College',
       'ContentType',
+      'Degree',
+      'Major',
       'MediaItem',
       'Page',
       'Post',
       'PostFormat',
+      'Program',
       'ReusableBlock',
       'Tag',
       'User',
     ],
-    TermNode: ['AToZCategory', 'Category', 'PostFormat', 'Tag'],
+    TermNode: [
+      'AToZCategory',
+      'AreaOfStudy',
+      'Category',
+      'College',
+      'Degree',
+      'Major',
+      'PostFormat',
+      'Tag',
+    ],
     AcfFieldGroup: ['AToZ_Atozfields', 'AcalogProgram_Acalogdepartmentfields'],
     Block: [
       'AcalogApiProgramsBlock',
@@ -12942,9 +16704,13 @@ export const generatedSchema = {
       'CoreAudioBlock',
       'CoreAvatarBlock',
       'CoreBlock',
+      'CoreButtonBlock',
+      'CoreButtonsBlock',
       'CoreCalendarBlock',
       'CoreCategoriesBlock',
       'CoreCodeBlock',
+      'CoreColumnBlock',
+      'CoreColumnsBlock',
       'CoreCommentAuthorNameBlock',
       'CoreCommentContentBlock',
       'CoreCommentDateBlock',
@@ -12957,6 +16723,7 @@ export const generatedSchema = {
       'CoreCommentsPaginationPreviousBlock',
       'CoreCommentsQueryLoopBlock',
       'CoreCommentsTitleBlock',
+      'CoreCoverBlock',
       'CoreEmbedBlock',
       'CoreFileBlock',
       'CoreFreeformBlock',
@@ -13025,23 +16792,57 @@ export const generatedSchema = {
       'TabsTabBlock',
       'UtksdsAccordionBlock',
       'UtksdsButtonBlock',
-      'UtksdsButtongroupBlock',
       'UtksdsCalendarBlock',
       'UtksdsCardBlock',
       'UtksdsColumnBlock',
       'UtksdsColumnsBlock',
       'UtksdsOverlayBlock',
       'UtksdsTabsBlock',
+      'UtkwdsAccordionBlock',
+      'UtkwdsAccordionFoldBlock',
+      'UtkwdsAlertBlock',
+      'UtkwdsButtonBlock',
+      'UtkwdsCalendarBlock',
+      'UtkwdsCardBlock',
+      'UtkwdsCardBodyBlock',
+      'UtkwdsCardFooterBlock',
+      'UtkwdsCardHeaderBlock',
+      'UtkwdsCardHeadingBlock',
+      'UtkwdsCardImageBlock',
+      'UtkwdsCardMainBlock',
+      'UtkwdsCardTopcapBlock',
+      'UtkwdsColumnBlock',
+      'UtkwdsColumnsBlock',
+      'UtkwdsContactBlock',
+      'UtkwdsHorizontalRuleBlock',
+      'UtkwdsLeadBlock',
+      'UtkwdsMediaContentBlock',
+      'UtkwdsMediaObjectBlock',
+      'UtkwdsOverlayBlock',
+      'UtkwdsOverlayMainBlock',
+      'UtkwdsPhoneBlock',
+      'UtkwdsPhonesBlock',
+      'UtkwdsSocialsBlock',
+      'UtkwdsStripBlock',
+      'UtkwdsTabBlock',
+      'UtkwdsTabsBlock',
     ],
-    BlockEditorContentNode: ['AcalogProgram', 'Page', 'Post', 'ReusableBlock'],
+    BlockEditorContentNode: [
+      'AcalogProgram',
+      'Page',
+      'Post',
+      'Program',
+      'ReusableBlock',
+    ],
     NodeWithContentEditor: [
       'AcalogProgram',
       'BlockEditorPreview',
       'Page',
       'Post',
+      'Program',
       'ReusableBlock',
     ],
-    NodeWithFeaturedImage: ['AcalogProgram', 'Page', 'Post'],
+    NodeWithFeaturedImage: ['AcalogProgram', 'Page', 'Post', 'Program'],
     NodeWithAuthor: ['BlockEditorPreview', 'MediaItem', 'Page', 'Post'],
     HierarchicalTermNode: ['Category'],
     Commenter: ['CommentAuthor', 'User'],
@@ -13049,6 +16850,34 @@ export const generatedSchema = {
     CoreAudioBlockAttributesUnion: [
       'CoreAudioBlockAttributes',
       'CoreAudioBlockDeprecatedV1Attributes',
+    ],
+    CoreButtonBlockAttributesUnion: [
+      'CoreButtonBlockAttributes',
+      'CoreButtonBlockDeprecatedV1Attributes',
+      'CoreButtonBlockDeprecatedV2Attributes',
+      'CoreButtonBlockDeprecatedV3Attributes',
+      'CoreButtonBlockDeprecatedV4Attributes',
+      'CoreButtonBlockDeprecatedV5Attributes',
+      'CoreButtonBlockDeprecatedV6Attributes',
+      'CoreButtonBlockDeprecatedV7Attributes',
+      'CoreButtonBlockDeprecatedV8Attributes',
+      'CoreButtonBlockDeprecatedV9Attributes',
+      'CoreButtonBlockDeprecatedV10Attributes',
+    ],
+    CoreButtonsBlockAttributesUnion: [
+      'CoreButtonsBlockAttributes',
+      'CoreButtonsBlockDeprecatedV1Attributes',
+      'CoreButtonsBlockDeprecatedV2Attributes',
+    ],
+    CoreColumnBlockAttributesUnion: [
+      'CoreColumnBlockAttributes',
+      'CoreColumnBlockDeprecatedV1Attributes',
+    ],
+    CoreColumnsBlockAttributesUnion: [
+      'CoreColumnsBlockAttributes',
+      'CoreColumnsBlockDeprecatedV1Attributes',
+      'CoreColumnsBlockDeprecatedV2Attributes',
+      'CoreColumnsBlockDeprecatedV3Attributes',
     ],
     CoreCommentAuthorNameBlockAttributesUnion: [
       'CoreCommentAuthorNameBlockAttributes',
@@ -13061,6 +16890,18 @@ export const generatedSchema = {
     CoreCommentsTitleBlockAttributesUnion: [
       'CoreCommentsTitleBlockAttributes',
       'CoreCommentsTitleBlockDeprecatedV1Attributes',
+    ],
+    CoreCoverBlockAttributesUnion: [
+      'CoreCoverBlockAttributes',
+      'CoreCoverBlockDeprecatedV1Attributes',
+      'CoreCoverBlockDeprecatedV2Attributes',
+      'CoreCoverBlockDeprecatedV3Attributes',
+      'CoreCoverBlockDeprecatedV4Attributes',
+      'CoreCoverBlockDeprecatedV5Attributes',
+      'CoreCoverBlockDeprecatedV6Attributes',
+      'CoreCoverBlockDeprecatedV7Attributes',
+      'CoreCoverBlockDeprecatedV8Attributes',
+      'CoreCoverBlockDeprecatedV9Attributes',
     ],
     CoreEmbedBlockAttributesUnion: [
       'CoreEmbedBlockAttributes',
@@ -13193,9 +17034,14 @@ export const generatedSchema = {
       'AToZ',
       'AToZCategory',
       'AcalogProgram',
+      'AreaOfStudy',
       'Category',
+      'College',
+      'Degree',
+      'Major',
       'Page',
       'Post',
+      'Program',
       'Tag',
     ],
     NodeWithPageAttributes: ['Page'],
@@ -14180,6 +18026,254 @@ export interface AlertMainBlockAttributes {
 }
 
 /**
+ * The AreaOfStudy type
+ */
+export interface AreaOfStudy {
+  __typename?: 'AreaOfStudy';
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of databaseId
+   */
+  areaOfStudyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the AreaOfStudy type and the ContentNode type
+   */
+  contentNodes: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AreaOfStudyToContentNodeConnectionWhereArgs>;
+  }) => Maybe<AreaOfStudyToContentNodeConnection>;
+  /**
+   * The number of objects connected to the object
+   */
+  count?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums['Int'];
+  /**
+   * The description of the object
+   */
+  description?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the TermNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the TermNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The unique resource identifier path
+   */
+  id: ScalarsEnums['ID'];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums['Boolean'];
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums['Boolean'];
+  /**
+   * The link to the term
+   */
+  link?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The human friendly name of the object.
+   */
+  name?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the AreaOfStudy type and the Program type
+   */
+  programs: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<AreaOfStudyToProgramConnectionWhereArgs>;
+  }) => Maybe<AreaOfStudyToProgramConnection>;
+  /**
+   * An alphanumeric identifier for the object unique to its type.
+   */
+  slug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the AreaOfStudy type and the Taxonomy type
+   */
+  taxonomy?: Maybe<AreaOfStudyToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
+  /**
+   * The ID of the term group that this term object belongs to
+   */
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The taxonomy ID that the object is associated with
+   */
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * Connection between the AreaOfStudy type and the ContentNode type
+ */
+export interface AreaOfStudyToContentNodeConnection {
+  __typename?: 'AreaOfStudyToContentNodeConnection';
+  /**
+   * Edges for the AreaOfStudyToContentNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AreaOfStudyToContentNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<ContentNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AreaOfStudyToContentNodeConnectionEdge {
+  __typename?: 'AreaOfStudyToContentNodeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<ContentNode>;
+}
+
+/**
+ * Connection between the AreaOfStudy type and the Program type
+ */
+export interface AreaOfStudyToProgramConnection {
+  __typename?: 'AreaOfStudyToProgramConnection';
+  /**
+   * Edges for the AreaOfStudyToProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<AreaOfStudyToProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Program>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface AreaOfStudyToProgramConnectionEdge {
+  __typename?: 'AreaOfStudyToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Program>;
+}
+
+/**
+ * Connection between the AreaOfStudy type and the Taxonomy type
+ */
+export interface AreaOfStudyToTaxonomyConnectionEdge {
+  __typename?: 'AreaOfStudyToTaxonomyConnectionEdge';
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Taxonomy>;
+}
+
+/**
  * The atlasContentModelerSettings setting type
  */
 export interface AtlasContentModelerSettingsSettings {
@@ -14260,9 +18354,13 @@ export interface Block {
     | 'CoreAudioBlock'
     | 'CoreAvatarBlock'
     | 'CoreBlock'
+    | 'CoreButtonBlock'
+    | 'CoreButtonsBlock'
     | 'CoreCalendarBlock'
     | 'CoreCategoriesBlock'
     | 'CoreCodeBlock'
+    | 'CoreColumnBlock'
+    | 'CoreColumnsBlock'
     | 'CoreCommentAuthorNameBlock'
     | 'CoreCommentContentBlock'
     | 'CoreCommentDateBlock'
@@ -14275,6 +18373,7 @@ export interface Block {
     | 'CoreCommentsPaginationPreviousBlock'
     | 'CoreCommentsQueryLoopBlock'
     | 'CoreCommentsTitleBlock'
+    | 'CoreCoverBlock'
     | 'CoreEmbedBlock'
     | 'CoreFileBlock'
     | 'CoreFreeformBlock'
@@ -14343,13 +18442,40 @@ export interface Block {
     | 'TabsTabBlock'
     | 'UtksdsAccordionBlock'
     | 'UtksdsButtonBlock'
-    | 'UtksdsButtongroupBlock'
     | 'UtksdsCalendarBlock'
     | 'UtksdsCardBlock'
     | 'UtksdsColumnBlock'
     | 'UtksdsColumnsBlock'
     | 'UtksdsOverlayBlock'
-    | 'UtksdsTabsBlock';
+    | 'UtksdsTabsBlock'
+    | 'UtkwdsAccordionBlock'
+    | 'UtkwdsAccordionFoldBlock'
+    | 'UtkwdsAlertBlock'
+    | 'UtkwdsButtonBlock'
+    | 'UtkwdsCalendarBlock'
+    | 'UtkwdsCardBlock'
+    | 'UtkwdsCardBodyBlock'
+    | 'UtkwdsCardFooterBlock'
+    | 'UtkwdsCardHeaderBlock'
+    | 'UtkwdsCardHeadingBlock'
+    | 'UtkwdsCardImageBlock'
+    | 'UtkwdsCardMainBlock'
+    | 'UtkwdsCardTopcapBlock'
+    | 'UtkwdsColumnBlock'
+    | 'UtkwdsColumnsBlock'
+    | 'UtkwdsContactBlock'
+    | 'UtkwdsHorizontalRuleBlock'
+    | 'UtkwdsLeadBlock'
+    | 'UtkwdsMediaContentBlock'
+    | 'UtkwdsMediaObjectBlock'
+    | 'UtkwdsOverlayBlock'
+    | 'UtkwdsOverlayMainBlock'
+    | 'UtkwdsPhoneBlock'
+    | 'UtkwdsPhonesBlock'
+    | 'UtkwdsSocialsBlock'
+    | 'UtkwdsStripBlock'
+    | 'UtkwdsTabBlock'
+    | 'UtkwdsTabsBlock';
   /**
    * Block attributes, JSON encoded
    */
@@ -14394,7 +18520,7 @@ export interface Block {
  * Gutenberg post interface
  */
 export interface BlockEditorContentNode {
-  __typename?: 'AcalogProgram' | 'Page' | 'Post' | 'ReusableBlock';
+  __typename?: 'AcalogProgram' | 'Page' | 'Post' | 'Program' | 'ReusableBlock';
   /**
    * Gutenberg blocks
    */
@@ -15404,6 +19530,254 @@ export interface CategoryToTaxonomyConnectionEdge {
 }
 
 /**
+ * The College type
+ */
+export interface College {
+  __typename?: 'College';
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of databaseId
+   */
+  collegeId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the College type and the ContentNode type
+   */
+  contentNodes: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<CollegeToContentNodeConnectionWhereArgs>;
+  }) => Maybe<CollegeToContentNodeConnection>;
+  /**
+   * The number of objects connected to the object
+   */
+  count?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums['Int'];
+  /**
+   * The description of the object
+   */
+  description?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the TermNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the TermNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The unique resource identifier path
+   */
+  id: ScalarsEnums['ID'];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums['Boolean'];
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums['Boolean'];
+  /**
+   * The link to the term
+   */
+  link?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The human friendly name of the object.
+   */
+  name?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the College type and the Program type
+   */
+  programs: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<CollegeToProgramConnectionWhereArgs>;
+  }) => Maybe<CollegeToProgramConnection>;
+  /**
+   * An alphanumeric identifier for the object unique to its type.
+   */
+  slug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the College type and the Taxonomy type
+   */
+  taxonomy?: Maybe<CollegeToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
+  /**
+   * The ID of the term group that this term object belongs to
+   */
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The taxonomy ID that the object is associated with
+   */
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * Connection between the College type and the ContentNode type
+ */
+export interface CollegeToContentNodeConnection {
+  __typename?: 'CollegeToContentNodeConnection';
+  /**
+   * Edges for the CollegeToContentNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<CollegeToContentNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<ContentNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface CollegeToContentNodeConnectionEdge {
+  __typename?: 'CollegeToContentNodeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<ContentNode>;
+}
+
+/**
+ * Connection between the College type and the Program type
+ */
+export interface CollegeToProgramConnection {
+  __typename?: 'CollegeToProgramConnection';
+  /**
+   * Edges for the CollegeToProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<CollegeToProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Program>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface CollegeToProgramConnectionEdge {
+  __typename?: 'CollegeToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Program>;
+}
+
+/**
+ * Connection between the College type and the Taxonomy type
+ */
+export interface CollegeToTaxonomyConnectionEdge {
+  __typename?: 'CollegeToTaxonomyConnectionEdge';
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Taxonomy>;
+}
+
+/**
  * A Comment object
  */
 export interface Comment {
@@ -15794,6 +20168,7 @@ export interface ContentNode {
     | 'MediaItem'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'ReusableBlock';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
@@ -16558,6 +20933,381 @@ export interface CoreBlockAttributes {
 }
 
 /**
+ * core/button block
+ */
+export interface CoreButtonBlock {
+  __typename?: 'CoreButtonBlock';
+  attributes?: Maybe<CoreButtonBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreButtonBlockAttributes {
+  __typename?: 'CoreButtonBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockAttributesUnion {
+  __typename?:
+    | 'CoreButtonBlockAttributes'
+    | 'CoreButtonBlockDeprecatedV1Attributes'
+    | 'CoreButtonBlockDeprecatedV2Attributes'
+    | 'CoreButtonBlockDeprecatedV3Attributes'
+    | 'CoreButtonBlockDeprecatedV4Attributes'
+    | 'CoreButtonBlockDeprecatedV5Attributes'
+    | 'CoreButtonBlockDeprecatedV6Attributes'
+    | 'CoreButtonBlockDeprecatedV7Attributes'
+    | 'CoreButtonBlockDeprecatedV8Attributes'
+    | 'CoreButtonBlockDeprecatedV9Attributes'
+    | 'CoreButtonBlockDeprecatedV10Attributes';
+  $on: $CoreButtonBlockAttributesUnion;
+}
+
+export interface CoreButtonBlockDeprecatedV10Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV10Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV1Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV2Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV3Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV4Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV5Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV6Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV6Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV7Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV7Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV8Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV8Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV9Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV9Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+/**
+ * core/buttons block
+ */
+export interface CoreButtonsBlock {
+  __typename?: 'CoreButtonsBlock';
+  attributes?: Maybe<CoreButtonsBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreButtonsBlockAttributes {
+  __typename?: 'CoreButtonsBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+export interface CoreButtonsBlockAttributesUnion {
+  __typename?:
+    | 'CoreButtonsBlockAttributes'
+    | 'CoreButtonsBlockDeprecatedV1Attributes'
+    | 'CoreButtonsBlockDeprecatedV2Attributes';
+  $on: $CoreButtonsBlockAttributesUnion;
+}
+
+export interface CoreButtonsBlockDeprecatedV1Attributes {
+  __typename?: 'CoreButtonsBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+export interface CoreButtonsBlockDeprecatedV2Attributes {
+  __typename?: 'CoreButtonsBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
  * core/calendar block
  */
 export interface CoreCalendarBlock {
@@ -16724,6 +21474,206 @@ export interface CoreCodeBlockAttributes {
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/column block
+ */
+export interface CoreColumnBlock {
+  __typename?: 'CoreColumnBlock';
+  attributes?: Maybe<CoreColumnBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnBlockAttributes {
+  __typename?: 'CoreColumnBlockAttributes';
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnBlockAttributesUnion {
+  __typename?:
+    | 'CoreColumnBlockAttributes'
+    | 'CoreColumnBlockDeprecatedV1Attributes';
+  $on: $CoreColumnBlockAttributesUnion;
+}
+
+export interface CoreColumnBlockDeprecatedV1Attributes {
+  __typename?: 'CoreColumnBlockDeprecatedV1Attributes';
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/columns block
+ */
+export interface CoreColumnsBlock {
+  __typename?: 'CoreColumnsBlock';
+  attributes?: Maybe<CoreColumnsBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockAttributes {
+  __typename?: 'CoreColumnsBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockAttributesUnion {
+  __typename?:
+    | 'CoreColumnsBlockAttributes'
+    | 'CoreColumnsBlockDeprecatedV1Attributes'
+    | 'CoreColumnsBlockDeprecatedV2Attributes'
+    | 'CoreColumnsBlockDeprecatedV3Attributes';
+  $on: $CoreColumnsBlockAttributesUnion;
+}
+
+export interface CoreColumnsBlockDeprecatedV1Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockDeprecatedV2Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreColumnsBlockDeprecatedV3Attributes {
+  __typename?: 'CoreColumnsBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -17481,6 +22431,336 @@ export interface CoreCommentsTitleBlockDeprecatedV1Attributes {
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textAlign?: Maybe<ScalarsEnums['String']>;
   textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/cover block
+ */
+export interface CoreCoverBlock {
+  __typename?: 'CoreCoverBlock';
+  attributes?: Maybe<CoreCoverBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreCoverBlockAttributes {
+  __typename?: 'CoreCoverBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockAttributesUnion {
+  __typename?:
+    | 'CoreCoverBlockAttributes'
+    | 'CoreCoverBlockDeprecatedV1Attributes'
+    | 'CoreCoverBlockDeprecatedV2Attributes'
+    | 'CoreCoverBlockDeprecatedV3Attributes'
+    | 'CoreCoverBlockDeprecatedV4Attributes'
+    | 'CoreCoverBlockDeprecatedV5Attributes'
+    | 'CoreCoverBlockDeprecatedV6Attributes'
+    | 'CoreCoverBlockDeprecatedV7Attributes'
+    | 'CoreCoverBlockDeprecatedV8Attributes'
+    | 'CoreCoverBlockDeprecatedV9Attributes';
+  $on: $CoreCoverBlockAttributesUnion;
+}
+
+export interface CoreCoverBlockDeprecatedV1Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV2Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV3Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV4Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV5Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV6Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV6Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV7Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV7Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV8Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV8Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
+}
+
+export interface CoreCoverBlockDeprecatedV9Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV9Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
 }
 
 /**
@@ -22288,6 +27568,21 @@ export interface CreateAcalogProgramPayload {
 }
 
 /**
+ * The payload for the createAreaOfStudy mutation
+ */
+export interface CreateAreaOfStudyPayload {
+  __typename?: 'CreateAreaOfStudyPayload';
+  /**
+   * The created area
+   */
+  areaOfStudy?: Maybe<AreaOfStudy>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
  * The payload for the createCategory mutation
  */
 export interface CreateCategoryPayload {
@@ -22300,6 +27595,21 @@ export interface CreateCategoryPayload {
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
   clientMutationId?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * The payload for the createCollege mutation
+ */
+export interface CreateCollegePayload {
+  __typename?: 'CreateCollegePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created college
+   */
+  college?: Maybe<College>;
 }
 
 /**
@@ -22319,6 +27629,36 @@ export interface CreateCommentPayload {
    * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
    */
   success?: Maybe<ScalarsEnums['Boolean']>;
+}
+
+/**
+ * The payload for the createDegree mutation
+ */
+export interface CreateDegreePayload {
+  __typename?: 'CreateDegreePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created degree
+   */
+  degree?: Maybe<Degree>;
+}
+
+/**
+ * The payload for the createMajor mutation
+ */
+export interface CreateMajorPayload {
+  __typename?: 'CreateMajorPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created major
+   */
+  major?: Maybe<Major>;
 }
 
 /**
@@ -22382,6 +27722,21 @@ export interface CreatePostPayload {
 }
 
 /**
+ * The payload for the createProgram mutation
+ */
+export interface CreateProgramPayload {
+  __typename?: 'CreateProgramPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The Post object mutation type.
+   */
+  program?: Maybe<Program>;
+}
+
+/**
  * The payload for the createReusableBlock mutation
  */
 export interface CreateReusableBlockPayload {
@@ -22434,15 +27789,20 @@ export interface DatabaseIdentifier {
     | 'AToZ'
     | 'AToZCategory'
     | 'AcalogProgram'
+    | 'AreaOfStudy'
     | 'BlockEditorPreview'
     | 'Category'
+    | 'College'
     | 'Comment'
+    | 'Degree'
+    | 'Major'
     | 'MediaItem'
     | 'Menu'
     | 'MenuItem'
     | 'Page'
     | 'Post'
     | 'PostFormat'
+    | 'Program'
     | 'ReusableBlock'
     | 'Tag'
     | 'User';
@@ -22462,6 +27822,254 @@ export interface DefaultTemplate {
    * The name of the template
    */
   templateName?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * The Degree type
+ */
+export interface Degree {
+  __typename?: 'Degree';
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the Degree type and the ContentNode type
+   */
+  contentNodes: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<DegreeToContentNodeConnectionWhereArgs>;
+  }) => Maybe<DegreeToContentNodeConnection>;
+  /**
+   * The number of objects connected to the object
+   */
+  count?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums['Int'];
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of databaseId
+   */
+  degreeId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The description of the object
+   */
+  description?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the TermNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the TermNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The unique resource identifier path
+   */
+  id: ScalarsEnums['ID'];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums['Boolean'];
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums['Boolean'];
+  /**
+   * The link to the term
+   */
+  link?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The human friendly name of the object.
+   */
+  name?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Degree type and the Program type
+   */
+  programs: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<DegreeToProgramConnectionWhereArgs>;
+  }) => Maybe<DegreeToProgramConnection>;
+  /**
+   * An alphanumeric identifier for the object unique to its type.
+   */
+  slug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Degree type and the Taxonomy type
+   */
+  taxonomy?: Maybe<DegreeToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
+  /**
+   * The ID of the term group that this term object belongs to
+   */
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The taxonomy ID that the object is associated with
+   */
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * Connection between the Degree type and the ContentNode type
+ */
+export interface DegreeToContentNodeConnection {
+  __typename?: 'DegreeToContentNodeConnection';
+  /**
+   * Edges for the DegreeToContentNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<DegreeToContentNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<ContentNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface DegreeToContentNodeConnectionEdge {
+  __typename?: 'DegreeToContentNodeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<ContentNode>;
+}
+
+/**
+ * Connection between the Degree type and the Program type
+ */
+export interface DegreeToProgramConnection {
+  __typename?: 'DegreeToProgramConnection';
+  /**
+   * Edges for the DegreeToProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<DegreeToProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Program>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface DegreeToProgramConnectionEdge {
+  __typename?: 'DegreeToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Program>;
+}
+
+/**
+ * Connection between the Degree type and the Taxonomy type
+ */
+export interface DegreeToTaxonomyConnectionEdge {
+  __typename?: 'DegreeToTaxonomyConnectionEdge';
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Taxonomy>;
 }
 
 /**
@@ -22522,6 +28130,25 @@ export interface DeleteAcalogProgramPayload {
 }
 
 /**
+ * The payload for the deleteAreaOfStudy mutation
+ */
+export interface DeleteAreaOfStudyPayload {
+  __typename?: 'DeleteAreaOfStudyPayload';
+  /**
+   * The deteted term object
+   */
+  areaOfStudy?: Maybe<AreaOfStudy>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums['ID']>;
+}
+
+/**
  * The payload for the deleteCategory mutation
  */
 export interface DeleteCategoryPayload {
@@ -22534,6 +28161,25 @@ export interface DeleteCategoryPayload {
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
   clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums['ID']>;
+}
+
+/**
+ * The payload for the deleteCollege mutation
+ */
+export interface DeleteCollegePayload {
+  __typename?: 'DeleteCollegePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The deteted term object
+   */
+  college?: Maybe<College>;
   /**
    * The ID of the deleted object
    */
@@ -22557,6 +28203,44 @@ export interface DeleteCommentPayload {
    * The deleted comment ID
    */
   deletedId?: Maybe<ScalarsEnums['ID']>;
+}
+
+/**
+ * The payload for the deleteDegree mutation
+ */
+export interface DeleteDegreePayload {
+  __typename?: 'DeleteDegreePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The deteted term object
+   */
+  degree?: Maybe<Degree>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums['ID']>;
+}
+
+/**
+ * The payload for the deleteMajor mutation
+ */
+export interface DeleteMajorPayload {
+  __typename?: 'DeleteMajorPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums['ID']>;
+  /**
+   * The deteted term object
+   */
+  major?: Maybe<Major>;
 }
 
 /**
@@ -22633,6 +28317,25 @@ export interface DeletePostPayload {
    * The object before it was deleted
    */
   post?: Maybe<Post>;
+}
+
+/**
+ * The payload for the deleteProgram mutation
+ */
+export interface DeleteProgramPayload {
+  __typename?: 'DeleteProgramPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The ID of the deleted object
+   */
+  deletedId?: Maybe<ScalarsEnums['ID']>;
+  /**
+   * The object before it was deleted
+   */
+  program?: Maybe<Program>;
 }
 
 /**
@@ -23145,6 +28848,254 @@ export interface LeadMainBlockAttributes {
   className?: Maybe<ScalarsEnums['String']>;
   content?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * The Major type
+ */
+export interface Major {
+  __typename?: 'Major';
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * Connection between the Major type and the ContentNode type
+   */
+  contentNodes: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<MajorToContentNodeConnectionWhereArgs>;
+  }) => Maybe<MajorToContentNodeConnection>;
+  /**
+   * The number of objects connected to the object
+   */
+  count?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums['Int'];
+  /**
+   * The description of the object
+   */
+  description?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the TermNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the TermNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /**
+   * The unique resource identifier path
+   */
+  id: ScalarsEnums['ID'];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums['Boolean'];
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums['Boolean'];
+  /**
+   * The link to the term
+   */
+  link?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of databaseId
+   */
+  majorId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The human friendly name of the object.
+   */
+  name?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Major type and the Program type
+   */
+  programs: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<MajorToProgramConnectionWhereArgs>;
+  }) => Maybe<MajorToProgramConnection>;
+  /**
+   * An alphanumeric identifier for the object unique to its type.
+   */
+  slug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Major type and the Taxonomy type
+   */
+  taxonomy?: Maybe<MajorToTaxonomyConnectionEdge>;
+  /**
+   * The name of the taxonomy that the object is associated with
+   */
+  taxonomyName?: Maybe<ScalarsEnums['String']>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
+  /**
+   * The ID of the term group that this term object belongs to
+   */
+  termGroupId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The taxonomy ID that the object is associated with
+   */
+  termTaxonomyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * Connection between the Major type and the ContentNode type
+ */
+export interface MajorToContentNodeConnection {
+  __typename?: 'MajorToContentNodeConnection';
+  /**
+   * Edges for the MajorToContentNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<MajorToContentNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<ContentNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface MajorToContentNodeConnectionEdge {
+  __typename?: 'MajorToContentNodeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<ContentNode>;
+}
+
+/**
+ * Connection between the Major type and the Program type
+ */
+export interface MajorToProgramConnection {
+  __typename?: 'MajorToProgramConnection';
+  /**
+   * Edges for the MajorToProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<MajorToProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Program>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface MajorToProgramConnectionEdge {
+  __typename?: 'MajorToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Program>;
+}
+
+/**
+ * Connection between the Major type and the Taxonomy type
+ */
+export interface MajorToTaxonomyConnectionEdge {
+  __typename?: 'MajorToTaxonomyConnectionEdge';
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Taxonomy>;
 }
 
 /**
@@ -23708,6 +29659,9 @@ export interface MediaObjectMainBlockAttributes {
   __typename?: 'MediaObjectMainBlockAttributes';
   backgroundColor: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  imageAlt?: Maybe<ScalarsEnums['String']>;
+  imageSize?: Maybe<ScalarsEnums['Int']>;
+  imageUrl?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
@@ -23933,9 +29887,14 @@ export interface MenuItemLinkable {
     | 'AToZ'
     | 'AToZCategory'
     | 'AcalogProgram'
+    | 'AreaOfStudy'
     | 'Category'
+    | 'College'
+    | 'Degree'
+    | 'Major'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'Tag';
   /**
    * The unique resource identifier path
@@ -23960,9 +29919,14 @@ export interface MenuItemObjectUnion {
     | 'AToZ'
     | 'AToZCategory'
     | 'AcalogProgram'
+    | 'AreaOfStudy'
     | 'Category'
+    | 'College'
+    | 'Degree'
+    | 'Major'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'Tag';
   $on: $MenuItemObjectUnion;
 }
@@ -24065,13 +30029,17 @@ export interface Node {
     | 'AToZ'
     | 'AToZCategory'
     | 'AcalogProgram'
+    | 'AreaOfStudy'
     | 'BlockEditorPreview'
     | 'Category'
+    | 'College'
     | 'Comment'
     | 'CommentAuthor'
     | 'ContentType'
+    | 'Degree'
     | 'EnqueuedScript'
     | 'EnqueuedStylesheet'
+    | 'Major'
     | 'MediaItem'
     | 'Menu'
     | 'MenuItem'
@@ -24079,6 +30047,7 @@ export interface Node {
     | 'Plugin'
     | 'Post'
     | 'PostFormat'
+    | 'Program'
     | 'ReusableBlock'
     | 'Tag'
     | 'Taxonomy'
@@ -24148,6 +30117,7 @@ export interface NodeWithContentEditor {
     | 'BlockEditorPreview'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'ReusableBlock';
   /**
    * The content of the post.
@@ -24182,7 +30152,7 @@ export interface NodeWithExcerpt {
  * A node that can have a featured image set
  */
 export interface NodeWithFeaturedImage {
-  __typename?: 'AcalogProgram' | 'Page' | 'Post';
+  __typename?: 'AcalogProgram' | 'Page' | 'Post' | 'Program';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -24402,6 +30372,7 @@ export interface NodeWithTemplate {
     | 'MediaItem'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'ReusableBlock';
   /**
    * The template assigned to the node
@@ -24421,6 +30392,7 @@ export interface NodeWithTitle {
     | 'MediaItem'
     | 'Page'
     | 'Post'
+    | 'Program'
     | 'ReusableBlock';
   /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
@@ -25967,6 +31939,517 @@ export interface PostTypeLabelDetails {
 }
 
 /**
+ * The Program type
+ */
+export interface Program {
+  __typename?: 'Program';
+  /**
+   * Connection between the Program type and the AreaOfStudy type
+   */
+  areasOfStudy: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<ProgramToAreaOfStudyConnectionWhereArgs>;
+  }) => Maybe<ProgramToAreaOfStudyConnection>;
+  /**
+   * Gutenberg blocks
+   */
+  blocks?: Maybe<Array<Block>>;
+  /**
+   * Gutenberg blocks as json string
+   */
+  blocksJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Program type and the College type
+   */
+  colleges: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<ProgramToCollegeConnectionWhereArgs>;
+  }) => Maybe<ProgramToCollegeConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /**
+   * The content of the post.
+   */
+  content: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the ContentNode type and the ContentType type
+   */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /**
+   * The name of the Content Type the node belongs to
+   */
+  contentTypeName: ScalarsEnums['String'];
+  /**
+   * The unique resource identifier path
+   */
+  databaseId: ScalarsEnums['Int'];
+  /**
+   * Post publishing date.
+   */
+  date?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The publishing date set in GMT.
+   */
+  dateGmt?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Program type and the Degree type
+   */
+  degrees: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<ProgramToDegreeConnectionWhereArgs>;
+  }) => Maybe<ProgramToDegreeConnection>;
+  /**
+   * The desired slug of the post
+   */
+  desiredSlug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
+   */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /**
+   * The RSS enclosure for the object
+   */
+  enclosure?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedScript type
+   */
+  enqueuedScripts: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /**
+   * Connection between the ContentNode type and the EnqueuedStylesheet type
+   */
+  enqueuedStylesheets: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /**
+   * Connection between the NodeWithFeaturedImage type and the MediaItem type
+   */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /**
+   * The database identifier for the featured image node assigned to the content node
+   */
+  featuredImageDatabaseId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * Globally unique ID of the featured image assigned to the node
+   */
+  featuredImageId?: Maybe<ScalarsEnums['ID']>;
+  /**
+   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
+   */
+  guid?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The globally unique identifier of the program object.
+   */
+  id: ScalarsEnums['ID'];
+  /**
+   * Whether the node is a Content Node
+   */
+  isContentNode: ScalarsEnums['Boolean'];
+  /**
+   * Whether the object is a node in the preview state
+   */
+  isPreview?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the object is restricted from the current viewer
+   */
+  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
+  /**
+   * Whether the node is a Term
+   */
+  isTermNode: ScalarsEnums['Boolean'];
+  /**
+   * The user that most recently edited the node
+   */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /**
+   * The permalink of the post
+   */
+  link?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Program type and the Major type
+   */
+  majors: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<ProgramToMajorConnectionWhereArgs>;
+  }) => Maybe<ProgramToMajorConnection>;
+  /**
+   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
+   */
+  modified?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
+   */
+  modifiedGmt?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Connection between the Program type and the Program type
+   */
+  preview?: Maybe<ProgramToPreviewConnectionEdge>;
+  /**
+   * Previewed gutenberg blocks
+   */
+  previewBlocks?: Maybe<Array<Block>>;
+  /**
+   * Previewed Gutenberg blocks as json string
+   */
+  previewBlocksJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The database id of the preview node
+   */
+  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * Whether the object is a node in the preview state
+   */
+  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  programId: ScalarsEnums['Int'];
+  /**
+   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
+   */
+  slug?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The current status of the object
+   */
+  status?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The template assigned to a node of content
+   */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
+  /**
+   * Connection between the Program type and the TermNode type
+   */
+  terms: (args?: {
+    /**
+     * Cursor used along with the "first" argument to reference where in the dataset to get data
+     */
+    after?: Maybe<Scalars['String']>;
+    /**
+     * Cursor used along with the "last" argument to reference where in the dataset to get data
+     */
+    before?: Maybe<Scalars['String']>;
+    /**
+     * The number of items to return after the referenced "after" cursor
+     */
+    first?: Maybe<Scalars['Int']>;
+    /**
+     * The number of items to return before the referenced "before" cursor
+     */
+    last?: Maybe<Scalars['Int']>;
+    /**
+     * Arguments for filtering the connection
+     */
+    where?: Maybe<ProgramToTermNodeConnectionWhereArgs>;
+  }) => Maybe<ProgramToTermNodeConnection>;
+  /**
+   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
+   */
+  title: (args?: {
+    /**
+     * Format of the field output
+     */
+    format?: Maybe<PostObjectFieldFormatEnum>;
+  }) => Maybe<ScalarsEnums['String']>;
+  /**
+   * The unique resource identifier path
+   */
+  uri?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * Connection between the Program type and the AreaOfStudy type
+ */
+export interface ProgramToAreaOfStudyConnection {
+  __typename?: 'ProgramToAreaOfStudyConnection';
+  /**
+   * Edges for the ProgramToAreaOfStudyConnection connection
+   */
+  edges?: Maybe<Array<Maybe<ProgramToAreaOfStudyConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AreaOfStudy>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface ProgramToAreaOfStudyConnectionEdge {
+  __typename?: 'ProgramToAreaOfStudyConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AreaOfStudy>;
+}
+
+/**
+ * Connection between the Program type and the College type
+ */
+export interface ProgramToCollegeConnection {
+  __typename?: 'ProgramToCollegeConnection';
+  /**
+   * Edges for the ProgramToCollegeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<ProgramToCollegeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<College>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface ProgramToCollegeConnectionEdge {
+  __typename?: 'ProgramToCollegeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<College>;
+}
+
+/**
+ * Connection between the Program type and the Degree type
+ */
+export interface ProgramToDegreeConnection {
+  __typename?: 'ProgramToDegreeConnection';
+  /**
+   * Edges for the ProgramToDegreeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<ProgramToDegreeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Degree>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface ProgramToDegreeConnectionEdge {
+  __typename?: 'ProgramToDegreeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Degree>;
+}
+
+/**
+ * Connection between the Program type and the Major type
+ */
+export interface ProgramToMajorConnection {
+  __typename?: 'ProgramToMajorConnection';
+  /**
+   * Edges for the ProgramToMajorConnection connection
+   */
+  edges?: Maybe<Array<Maybe<ProgramToMajorConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Major>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface ProgramToMajorConnectionEdge {
+  __typename?: 'ProgramToMajorConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Major>;
+}
+
+/**
+ * Connection between the Program type and the Program type
+ */
+export interface ProgramToPreviewConnectionEdge {
+  __typename?: 'ProgramToPreviewConnectionEdge';
+  /**
+   * The node of the connection, without the edges
+   */
+  node?: Maybe<Program>;
+}
+
+/**
+ * Connection between the Program type and the TermNode type
+ */
+export interface ProgramToTermNodeConnection {
+  __typename?: 'ProgramToTermNodeConnection';
+  /**
+   * Edges for the ProgramToTermNodeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<ProgramToTermNodeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<TermNode>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface ProgramToTermNodeConnectionEdge {
+  __typename?: 'ProgramToTermNodeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<TermNode>;
+}
+
+/**
  * The reading setting type
  */
 export interface ReadingSettings {
@@ -26424,6 +32907,40 @@ export interface RootQueryToAcalogProgramConnectionEdge {
 }
 
 /**
+ * Connection between the RootQuery type and the AreaOfStudy type
+ */
+export interface RootQueryToAreaOfStudyConnection {
+  __typename?: 'RootQueryToAreaOfStudyConnection';
+  /**
+   * Edges for the RootQueryToAreaOfStudyConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToAreaOfStudyConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<AreaOfStudy>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToAreaOfStudyConnectionEdge {
+  __typename?: 'RootQueryToAreaOfStudyConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<AreaOfStudy>;
+}
+
+/**
  * Connection between the RootQuery type and the BlockEditorPreview type
  */
 export interface RootQueryToBlockEditorPreviewConnection {
@@ -26489,6 +33006,40 @@ export interface RootQueryToCategoryConnectionEdge {
    * The item at the end of the edge
    */
   node?: Maybe<Category>;
+}
+
+/**
+ * Connection between the RootQuery type and the College type
+ */
+export interface RootQueryToCollegeConnection {
+  __typename?: 'RootQueryToCollegeConnection';
+  /**
+   * Edges for the RootQueryToCollegeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToCollegeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<College>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToCollegeConnectionEdge {
+  __typename?: 'RootQueryToCollegeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<College>;
 }
 
 /**
@@ -26628,6 +33179,40 @@ export interface RootQueryToContentTypeConnectionEdge {
 }
 
 /**
+ * Connection between the RootQuery type and the Degree type
+ */
+export interface RootQueryToDegreeConnection {
+  __typename?: 'RootQueryToDegreeConnection';
+  /**
+   * Edges for the RootQueryToDegreeConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToDegreeConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Degree>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToDegreeConnectionEdge {
+  __typename?: 'RootQueryToDegreeConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Degree>;
+}
+
+/**
  * Connection between the RootQuery type and the EnqueuedScript type
  */
 export interface RootQueryToEnqueuedScriptConnection {
@@ -26693,6 +33278,40 @@ export interface RootQueryToEnqueuedStylesheetConnectionEdge {
    * The item at the end of the edge
    */
   node?: Maybe<EnqueuedStylesheet>;
+}
+
+/**
+ * Connection between the RootQuery type and the Major type
+ */
+export interface RootQueryToMajorConnection {
+  __typename?: 'RootQueryToMajorConnection';
+  /**
+   * Edges for the RootQueryToMajorConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToMajorConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Major>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToMajorConnectionEdge {
+  __typename?: 'RootQueryToMajorConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Major>;
 }
 
 /**
@@ -26931,6 +33550,40 @@ export interface RootQueryToPostFormatConnectionEdge {
    * The item at the end of the edge
    */
   node?: Maybe<PostFormat>;
+}
+
+/**
+ * Connection between the RootQuery type and the Program type
+ */
+export interface RootQueryToProgramConnection {
+  __typename?: 'RootQueryToProgramConnection';
+  /**
+   * Edges for the RootQueryToProgramConnection connection
+   */
+  edges?: Maybe<Array<Maybe<RootQueryToProgramConnectionEdge>>>;
+  /**
+   * The nodes of the connection, without the edges
+   */
+  nodes?: Maybe<Array<Maybe<Program>>>;
+  /**
+   * Information about pagination in a connection.
+   */
+  pageInfo?: Maybe<WPPageInfo>;
+}
+
+/**
+ * An edge in a connection
+ */
+export interface RootQueryToProgramConnectionEdge {
+  __typename?: 'RootQueryToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   */
+  cursor?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The item at the end of the edge
+   */
+  node?: Maybe<Program>;
 }
 
 /**
@@ -27786,7 +34439,15 @@ export interface Template_WithSidebar {
  * Terms are nodes within a Taxonomy, used to group and relate other nodes.
  */
 export interface TermNode {
-  __typename?: 'AToZCategory' | 'Category' | 'PostFormat' | 'Tag';
+  __typename?:
+    | 'AToZCategory'
+    | 'AreaOfStudy'
+    | 'Category'
+    | 'College'
+    | 'Degree'
+    | 'Major'
+    | 'PostFormat'
+    | 'Tag';
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -28020,13 +34681,18 @@ export interface UniformResourceIdentifiable {
     | 'AToZ'
     | 'AToZCategory'
     | 'AcalogProgram'
+    | 'AreaOfStudy'
     | 'BlockEditorPreview'
     | 'Category'
+    | 'College'
     | 'ContentType'
+    | 'Degree'
+    | 'Major'
     | 'MediaItem'
     | 'Page'
     | 'Post'
     | 'PostFormat'
+    | 'Program'
     | 'ReusableBlock'
     | 'Tag'
     | 'User';
@@ -28100,6 +34766,21 @@ export interface UpdateAcalogProgramPayload {
 }
 
 /**
+ * The payload for the UpdateAreaOfStudy mutation
+ */
+export interface UpdateAreaOfStudyPayload {
+  __typename?: 'UpdateAreaOfStudyPayload';
+  /**
+   * The created area
+   */
+  areaOfStudy?: Maybe<AreaOfStudy>;
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
  * The payload for the UpdateCategory mutation
  */
 export interface UpdateCategoryPayload {
@@ -28112,6 +34793,21 @@ export interface UpdateCategoryPayload {
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
   clientMutationId?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * The payload for the UpdateCollege mutation
+ */
+export interface UpdateCollegePayload {
+  __typename?: 'UpdateCollegePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created college
+   */
+  college?: Maybe<College>;
 }
 
 /**
@@ -28131,6 +34827,36 @@ export interface UpdateCommentPayload {
    * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
    */
   success?: Maybe<ScalarsEnums['Boolean']>;
+}
+
+/**
+ * The payload for the UpdateDegree mutation
+ */
+export interface UpdateDegreePayload {
+  __typename?: 'UpdateDegreePayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created degree
+   */
+  degree?: Maybe<Degree>;
+}
+
+/**
+ * The payload for the UpdateMajor mutation
+ */
+export interface UpdateMajorPayload {
+  __typename?: 'UpdateMajorPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The created major
+   */
+  major?: Maybe<Major>;
 }
 
 /**
@@ -28191,6 +34917,21 @@ export interface UpdatePostPayload {
    * The Post object mutation type.
    */
   post?: Maybe<Post>;
+}
+
+/**
+ * The payload for the updateProgram mutation
+ */
+export interface UpdateProgramPayload {
+  __typename?: 'UpdateProgramPayload';
+  /**
+   * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
+   */
+  clientMutationId?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The Post object mutation type.
+   */
+  program?: Maybe<Program>;
 }
 
 /**
@@ -29057,60 +35798,6 @@ export interface UtksdsButtonBlockAttributes {
 }
 
 /**
- * utksds/buttongroup block
- */
-export interface UtksdsButtongroupBlock {
-  __typename?: 'UtksdsButtongroupBlock';
-  attributes?: Maybe<UtksdsButtongroupBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface UtksdsButtongroupBlockAttributes {
-  __typename?: 'UtksdsButtongroupBlockAttributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  groupSize: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  orientation: ScalarsEnums['String'];
-  orientationSetting: ScalarsEnums['Boolean'];
-}
-
-/**
  * utksds/calendar block
  */
 export interface UtksdsCalendarBlock {
@@ -29476,6 +36163,1557 @@ export interface UtksdsTabsBlockAttributes {
 }
 
 /**
+ * utkwds/accordion block
+ */
+export interface UtkwdsAccordionBlock {
+  __typename?: 'UtkwdsAccordionBlock';
+  attributes?: Maybe<UtkwdsAccordionBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAccordionBlockAttributes {
+  __typename?: 'UtkwdsAccordionBlockAttributes';
+  accordionID: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/accordion-fold block
+ */
+export interface UtkwdsAccordionFoldBlock {
+  __typename?: 'UtkwdsAccordionFoldBlock';
+  attributes?: Maybe<UtkwdsAccordionFoldBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAccordionFoldBlockAttributes {
+  __typename?: 'UtkwdsAccordionFoldBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  collapseS: ScalarsEnums['String'];
+  foldName: ScalarsEnums['String'];
+  foldNamePH: ScalarsEnums['String'];
+  foldSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  parentID: ScalarsEnums['String'];
+  show: ScalarsEnums['Boolean'];
+  showS: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/alert block
+ */
+export interface UtkwdsAlertBlock {
+  __typename?: 'UtkwdsAlertBlock';
+  attributes?: Maybe<UtkwdsAlertBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsAlertBlockAttributes {
+  __typename?: 'UtkwdsAlertBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder: ScalarsEnums['String'];
+  text?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/button block
+ */
+export interface UtkwdsButtonBlock {
+  __typename?: 'UtkwdsButtonBlock';
+  attributes?: Maybe<UtkwdsButtonBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsButtonBlockAttributes {
+  __typename?: 'UtkwdsButtonBlockAttributes';
+  blockClass: ScalarsEnums['String'];
+  buttonOutline: ScalarsEnums['Boolean'];
+  buttonSize: ScalarsEnums['String'];
+  buttonText: ScalarsEnums['Boolean'];
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  iconName: ScalarsEnums['String'];
+  iconSize: ScalarsEnums['String'];
+  iconString: ScalarsEnums['String'];
+  linkTab: ScalarsEnums['Boolean'];
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder: ScalarsEnums['String'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useIcon: ScalarsEnums['Boolean'];
+}
+
+/**
+ * utkwds/calendar block
+ */
+export interface UtkwdsCalendarBlock {
+  __typename?: 'UtkwdsCalendarBlock';
+  attributes?: Maybe<UtkwdsCalendarBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCalendarBlockAttributes {
+  __typename?: 'UtkwdsCalendarBlockAttributes';
+  audience: ScalarsEnums['String'];
+  calTemplate: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  daysAhead: ScalarsEnums['Float'];
+  department: ScalarsEnums['String'];
+  evImage: ScalarsEnums['Boolean'];
+  evImageS: ScalarsEnums['String'];
+  evTime: ScalarsEnums['Boolean'];
+  evTimeS: ScalarsEnums['String'];
+  exAudience: ScalarsEnums['String'];
+  exTopic: ScalarsEnums['String'];
+  exType: ScalarsEnums['String'];
+  featured: ScalarsEnums['Boolean'];
+  featuredS: ScalarsEnums['String'];
+  group: ScalarsEnums['String'];
+  hideDesc: ScalarsEnums['Boolean'];
+  hideDescS: ScalarsEnums['String'];
+  hideDrop: ScalarsEnums['Boolean'];
+  hideDropS: ScalarsEnums['String'];
+  htmlDesc: ScalarsEnums['Boolean'];
+  htmlDescS: ScalarsEnums['String'];
+  incStyle: ScalarsEnums['Boolean'];
+  incStyleS: ScalarsEnums['String'];
+  keywords: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  matching: ScalarsEnums['Boolean'];
+  matchingS: ScalarsEnums['String'];
+  mustMatch: ScalarsEnums['String'];
+  newWin: ScalarsEnums['Boolean'];
+  newWinS: ScalarsEnums['String'];
+  numResults: ScalarsEnums['Float'];
+  past: ScalarsEnums['Boolean'];
+  pastS: ScalarsEnums['String'];
+  place: ScalarsEnums['String'];
+  sponsored: ScalarsEnums['Boolean'];
+  sponsoredS: ScalarsEnums['String'];
+  style: ScalarsEnums['String'];
+  template: ScalarsEnums['String'];
+  topic: ScalarsEnums['String'];
+  truncate: ScalarsEnums['Boolean'];
+  truncateS: ScalarsEnums['String'];
+  type: ScalarsEnums['String'];
+  viewAll: ScalarsEnums['Boolean'];
+  viewAllS: ScalarsEnums['String'];
+  widgetType: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card block
+ */
+export interface UtkwdsCardBlock {
+  __typename?: 'UtkwdsCardBlock';
+  attributes?: Maybe<UtkwdsCardBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardBlockAttributes {
+  __typename?: 'UtkwdsCardBlockAttributes';
+  blockName: ScalarsEnums['String'];
+  cardOutline: ScalarsEnums['Boolean'];
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-body block
+ */
+export interface UtkwdsCardBodyBlock {
+  __typename?: 'UtkwdsCardBodyBlock';
+  attributes?: Maybe<UtkwdsCardBodyBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardBodyBlockAttributes {
+  __typename?: 'UtkwdsCardBodyBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/card-footer block
+ */
+export interface UtkwdsCardFooterBlock {
+  __typename?: 'UtkwdsCardFooterBlock';
+  attributes?: Maybe<UtkwdsCardFooterBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardFooterBlockAttributes {
+  __typename?: 'UtkwdsCardFooterBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  muted: ScalarsEnums['Boolean'];
+  mutedClass: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-header block
+ */
+export interface UtkwdsCardHeaderBlock {
+  __typename?: 'UtkwdsCardHeaderBlock';
+  attributes?: Maybe<UtkwdsCardHeaderBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardHeaderBlockAttributes {
+  __typename?: 'UtkwdsCardHeaderBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tagName: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/card-heading block
+ */
+export interface UtkwdsCardHeadingBlock {
+  __typename?: 'UtkwdsCardHeadingBlock';
+  attributes?: Maybe<UtkwdsCardHeadingBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardHeadingBlockAttributes {
+  __typename?: 'UtkwdsCardHeadingBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-image block
+ */
+export interface UtkwdsCardImageBlock {
+  __typename?: 'UtkwdsCardImageBlock';
+  attributes?: Maybe<UtkwdsCardImageBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardImageBlockAttributes {
+  __typename?: 'UtkwdsCardImageBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-main block
+ */
+export interface UtkwdsCardMainBlock {
+  __typename?: 'UtkwdsCardMainBlock';
+  attributes?: Maybe<UtkwdsCardMainBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardMainBlockAttributes {
+  __typename?: 'UtkwdsCardMainBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/card-topcap block
+ */
+export interface UtkwdsCardTopcapBlock {
+  __typename?: 'UtkwdsCardTopcapBlock';
+  attributes?: Maybe<UtkwdsCardTopcapBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsCardTopcapBlockAttributes {
+  __typename?: 'UtkwdsCardTopcapBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/column block
+ */
+export interface UtkwdsColumnBlock {
+  __typename?: 'UtkwdsColumnBlock';
+  attributes?: Maybe<UtkwdsColumnBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsColumnBlockAttributes {
+  __typename?: 'UtkwdsColumnBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  colWidth: ScalarsEnums['Int'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/columns block
+ */
+export interface UtkwdsColumnsBlock {
+  __typename?: 'UtkwdsColumnsBlock';
+  attributes?: Maybe<UtkwdsColumnsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsColumnsBlockAttributes {
+  __typename?: 'UtkwdsColumnsBlockAttributes';
+  blockName: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  numCols: ScalarsEnums['Int'];
+  rowClass: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/contact block
+ */
+export interface UtkwdsContactBlock {
+  __typename?: 'UtkwdsContactBlock';
+  attributes?: Maybe<UtkwdsContactBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsContactBlockAttributes {
+  __typename?: 'UtkwdsContactBlockAttributes';
+  address?: Maybe<ScalarsEnums['String']>;
+  addressDefault: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  email?: Maybe<ScalarsEnums['String']>;
+  linkTab: ScalarsEnums['Boolean'];
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/horizontal-rule block
+ */
+export interface UtkwdsHorizontalRuleBlock {
+  __typename?: 'UtkwdsHorizontalRuleBlock';
+  attributes?: Maybe<UtkwdsHorizontalRuleBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsHorizontalRuleBlockAttributes {
+  __typename?: 'UtkwdsHorizontalRuleBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  imagePostion: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/lead block
+ */
+export interface UtkwdsLeadBlock {
+  __typename?: 'UtkwdsLeadBlock';
+  attributes?: Maybe<UtkwdsLeadBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsLeadBlockAttributes {
+  __typename?: 'UtkwdsLeadBlockAttributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/media-content block
+ */
+export interface UtkwdsMediaContentBlock {
+  __typename?: 'UtkwdsMediaContentBlock';
+  attributes?: Maybe<UtkwdsMediaContentBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsMediaContentBlockAttributes {
+  __typename?: 'UtkwdsMediaContentBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/media-object block
+ */
+export interface UtkwdsMediaObjectBlock {
+  __typename?: 'UtkwdsMediaObjectBlock';
+  attributes?: Maybe<UtkwdsMediaObjectBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsMediaObjectBlockAttributes {
+  __typename?: 'UtkwdsMediaObjectBlockAttributes';
+  backgroundColor: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  imageAlt?: Maybe<ScalarsEnums['String']>;
+  imageSize?: Maybe<ScalarsEnums['Int']>;
+  imageUrl?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/overlay block
+ */
+export interface UtkwdsOverlayBlock {
+  __typename?: 'UtkwdsOverlayBlock';
+  attributes?: Maybe<UtkwdsOverlayBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsOverlayBlockAttributes {
+  __typename?: 'UtkwdsOverlayBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  imageAlt: ScalarsEnums['String'];
+  imageUrl: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  overOpacity: ScalarsEnums['Int'];
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/overlay-main block
+ */
+export interface UtkwdsOverlayMainBlock {
+  __typename?: 'UtkwdsOverlayMainBlock';
+  attributes?: Maybe<UtkwdsOverlayMainBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsOverlayMainBlockAttributes {
+  __typename?: 'UtkwdsOverlayMainBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/phone block
+ */
+export interface UtkwdsPhoneBlock {
+  __typename?: 'UtkwdsPhoneBlock';
+  attributes?: Maybe<UtkwdsPhoneBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsPhoneBlockAttributes {
+  __typename?: 'UtkwdsPhoneBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  phoneName?: Maybe<ScalarsEnums['String']>;
+  phoneNum?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * utkwds/phones block
+ */
+export interface UtkwdsPhonesBlock {
+  __typename?: 'UtkwdsPhonesBlock';
+  attributes?: Maybe<UtkwdsPhonesBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsPhonesBlockAttributes {
+  __typename?: 'UtkwdsPhonesBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/socials block
+ */
+export interface UtkwdsSocialsBlock {
+  __typename?: 'UtkwdsSocialsBlock';
+  attributes?: Maybe<UtkwdsSocialsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsSocialsBlockAttributes {
+  __typename?: 'UtkwdsSocialsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * utkwds/strip block
+ */
+export interface UtkwdsStripBlock {
+  __typename?: 'UtkwdsStripBlock';
+  attributes?: Maybe<UtkwdsStripBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsStripBlockAttributes {
+  __typename?: 'UtkwdsStripBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  color: ScalarsEnums['String'];
+  colorSlug: ScalarsEnums['String'];
+  imageUrl: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  padding: ScalarsEnums['String'];
+  spacing: ScalarsEnums['Int'];
+  textColor: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/tab block
+ */
+export interface UtkwdsTabBlock {
+  __typename?: 'UtkwdsTabBlock';
+  attributes?: Maybe<UtkwdsTabBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsTabBlockAttributes {
+  __typename?: 'UtkwdsTabBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tabActive: ScalarsEnums['String'];
+  tabName: ScalarsEnums['String'];
+  tabPlaceholder: ScalarsEnums['String'];
+  tabShow: ScalarsEnums['String'];
+  tabSlug: ScalarsEnums['String'];
+}
+
+/**
+ * utkwds/tabs block
+ */
+export interface UtkwdsTabsBlock {
+  __typename?: 'UtkwdsTabsBlock';
+  attributes?: Maybe<UtkwdsTabsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface UtkwdsTabsBlockAttributes {
+  __typename?: 'UtkwdsTabsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tabID: ScalarsEnums['String'];
+  tabNames: ScalarsEnums['BlockAttributesArray'];
+}
+
+/**
  * Information about pagination in a connection.
  */
 export interface WPPageInfo {
@@ -29526,12 +37764,22 @@ export interface Mutation {
   createAcalogProgram: (args: {
     input: CreateAcalogProgramInput;
   }) => Maybe<CreateAcalogProgramPayload>;
+  createAreaOfStudy: (args: {
+    input: CreateAreaOfStudyInput;
+  }) => Maybe<CreateAreaOfStudyPayload>;
   createCategory: (args: {
     input: CreateCategoryInput;
   }) => Maybe<CreateCategoryPayload>;
+  createCollege: (args: {
+    input: CreateCollegeInput;
+  }) => Maybe<CreateCollegePayload>;
   createComment: (args: {
     input: CreateCommentInput;
   }) => Maybe<CreateCommentPayload>;
+  createDegree: (args: {
+    input: CreateDegreeInput;
+  }) => Maybe<CreateDegreePayload>;
+  createMajor: (args: { input: CreateMajorInput }) => Maybe<CreateMajorPayload>;
   createMediaItem: (args: {
     input: CreateMediaItemInput;
   }) => Maybe<CreateMediaItemPayload>;
@@ -29540,6 +37788,9 @@ export interface Mutation {
   createPostFormat: (args: {
     input: CreatePostFormatInput;
   }) => Maybe<CreatePostFormatPayload>;
+  createProgram: (args: {
+    input: CreateProgramInput;
+  }) => Maybe<CreateProgramPayload>;
   createReusableBlock: (args: {
     input: CreateReusableBlockInput;
   }) => Maybe<CreateReusableBlockPayload>;
@@ -29552,12 +37803,22 @@ export interface Mutation {
   deleteAcalogProgram: (args: {
     input: DeleteAcalogProgramInput;
   }) => Maybe<DeleteAcalogProgramPayload>;
+  deleteAreaOfStudy: (args: {
+    input: DeleteAreaOfStudyInput;
+  }) => Maybe<DeleteAreaOfStudyPayload>;
   deleteCategory: (args: {
     input: DeleteCategoryInput;
   }) => Maybe<DeleteCategoryPayload>;
+  deleteCollege: (args: {
+    input: DeleteCollegeInput;
+  }) => Maybe<DeleteCollegePayload>;
   deleteComment: (args: {
     input: DeleteCommentInput;
   }) => Maybe<DeleteCommentPayload>;
+  deleteDegree: (args: {
+    input: DeleteDegreeInput;
+  }) => Maybe<DeleteDegreePayload>;
+  deleteMajor: (args: { input: DeleteMajorInput }) => Maybe<DeleteMajorPayload>;
   deleteMediaItem: (args: {
     input: DeleteMediaItemInput;
   }) => Maybe<DeleteMediaItemPayload>;
@@ -29566,6 +37827,9 @@ export interface Mutation {
   deletePostFormat: (args: {
     input: DeletePostFormatInput;
   }) => Maybe<DeletePostFormatPayload>;
+  deleteProgram: (args: {
+    input: DeleteProgramInput;
+  }) => Maybe<DeleteProgramPayload>;
   deleteReusableBlock: (args: {
     input: DeleteReusableBlockInput;
   }) => Maybe<DeleteReusableBlockPayload>;
@@ -29596,12 +37860,22 @@ export interface Mutation {
   updateAcalogProgram: (args: {
     input: UpdateAcalogProgramInput;
   }) => Maybe<UpdateAcalogProgramPayload>;
+  updateAreaOfStudy: (args: {
+    input: UpdateAreaOfStudyInput;
+  }) => Maybe<UpdateAreaOfStudyPayload>;
   updateCategory: (args: {
     input: UpdateCategoryInput;
   }) => Maybe<UpdateCategoryPayload>;
+  updateCollege: (args: {
+    input: UpdateCollegeInput;
+  }) => Maybe<UpdateCollegePayload>;
   updateComment: (args: {
     input: UpdateCommentInput;
   }) => Maybe<UpdateCommentPayload>;
+  updateDegree: (args: {
+    input: UpdateDegreeInput;
+  }) => Maybe<UpdateDegreePayload>;
+  updateMajor: (args: { input: UpdateMajorInput }) => Maybe<UpdateMajorPayload>;
   updateMediaItem: (args: {
     input: UpdateMediaItemInput;
   }) => Maybe<UpdateMediaItemPayload>;
@@ -29610,6 +37884,9 @@ export interface Mutation {
   updatePostFormat: (args: {
     input: UpdatePostFormatInput;
   }) => Maybe<UpdatePostFormatPayload>;
+  updateProgram: (args: {
+    input: UpdateProgramInput;
+  }) => Maybe<UpdateProgramPayload>;
   updateReusableBlock: (args: {
     input: UpdateReusableBlockInput;
   }) => Maybe<UpdateReusableBlockPayload>;
@@ -29670,6 +37947,17 @@ export interface Query {
     where?: Maybe<RootQueryToAToZConnectionWhereArgs>;
   }) => Maybe<RootQueryToAToZConnection>;
   allSettings?: Maybe<Settings>;
+  areaOfStudy: (args: {
+    id: Scalars['ID'];
+    idType?: Maybe<AreaOfStudyIdType>;
+  }) => Maybe<AreaOfStudy>;
+  areasOfStudy: (args?: {
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToAreaOfStudyConnectionWhereArgs>;
+  }) => Maybe<RootQueryToAreaOfStudyConnection>;
   atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   blockEditorContentNodes: (args?: {
     after?: Maybe<Scalars['String']>;
@@ -29707,6 +37995,17 @@ export interface Query {
     id: Scalars['ID'];
     idType?: Maybe<CategoryIdType>;
   }) => Maybe<Category>;
+  college: (args: {
+    id: Scalars['ID'];
+    idType?: Maybe<CollegeIdType>;
+  }) => Maybe<College>;
+  colleges: (args?: {
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToCollegeConnectionWhereArgs>;
+  }) => Maybe<RootQueryToCollegeConnection>;
   comment: (args: { id: Scalars['ID'] }) => Maybe<Comment>;
   comments: (args?: {
     after?: Maybe<Scalars['String']>;
@@ -29738,8 +38037,30 @@ export interface Query {
     first?: Maybe<Scalars['Int']>;
     last?: Maybe<Scalars['Int']>;
   }) => Maybe<RootQueryToContentTypeConnection>;
+  degree: (args: {
+    id: Scalars['ID'];
+    idType?: Maybe<DegreeIdType>;
+  }) => Maybe<Degree>;
+  degrees: (args?: {
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToDegreeConnectionWhereArgs>;
+  }) => Maybe<RootQueryToDegreeConnection>;
   discussionSettings?: Maybe<DiscussionSettings>;
   generalSettings?: Maybe<GeneralSettings>;
+  major: (args: {
+    id: Scalars['ID'];
+    idType?: Maybe<MajorIdType>;
+  }) => Maybe<Major>;
+  majors: (args?: {
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToMajorConnectionWhereArgs>;
+  }) => Maybe<RootQueryToMajorConnection>;
   mediaItem: (args: {
     asPreview?: Maybe<Scalars['Boolean']>;
     id: Scalars['ID'];
@@ -29838,6 +38159,24 @@ export interface Query {
     last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToPostConnectionWhereArgs>;
   }) => Maybe<RootQueryToPostConnection>;
+  program: (args: {
+    asPreview?: Maybe<Scalars['Boolean']>;
+    id: Scalars['ID'];
+    idType?: Maybe<ProgramIdType>;
+  }) => Maybe<Program>;
+  programBy: (args?: {
+    id?: Maybe<Scalars['ID']>;
+    programId?: Maybe<Scalars['Int']>;
+    slug?: Maybe<Scalars['String']>;
+    uri?: Maybe<Scalars['String']>;
+  }) => Maybe<Program>;
+  programs: (args?: {
+    after?: Maybe<Scalars['String']>;
+    before?: Maybe<Scalars['String']>;
+    first?: Maybe<Scalars['Int']>;
+    last?: Maybe<Scalars['Int']>;
+    where?: Maybe<RootQueryToProgramConnectionWhereArgs>;
+  }) => Maybe<RootQueryToProgramConnection>;
   readingSettings?: Maybe<ReadingSettings>;
   registeredScripts: (args?: {
     after?: Maybe<Scalars['String']>;
@@ -29962,6 +38301,12 @@ export interface SchemaObjectTypes {
   AccordionFoldBlockAttributes: AccordionFoldBlockAttributes;
   AlertMainBlock: AlertMainBlock;
   AlertMainBlockAttributes: AlertMainBlockAttributes;
+  AreaOfStudy: AreaOfStudy;
+  AreaOfStudyToContentNodeConnection: AreaOfStudyToContentNodeConnection;
+  AreaOfStudyToContentNodeConnectionEdge: AreaOfStudyToContentNodeConnectionEdge;
+  AreaOfStudyToProgramConnection: AreaOfStudyToProgramConnection;
+  AreaOfStudyToProgramConnectionEdge: AreaOfStudyToProgramConnectionEdge;
+  AreaOfStudyToTaxonomyConnectionEdge: AreaOfStudyToTaxonomyConnectionEdge;
   AtlasContentModelerSettingsSettings: AtlasContentModelerSettingsSettings;
   Avatar: Avatar;
   BlockEditorContentNodeConnection: BlockEditorContentNodeConnection;
@@ -29993,6 +38338,12 @@ export interface SchemaObjectTypes {
   CategoryToPostConnection: CategoryToPostConnection;
   CategoryToPostConnectionEdge: CategoryToPostConnectionEdge;
   CategoryToTaxonomyConnectionEdge: CategoryToTaxonomyConnectionEdge;
+  College: College;
+  CollegeToContentNodeConnection: CollegeToContentNodeConnection;
+  CollegeToContentNodeConnectionEdge: CollegeToContentNodeConnectionEdge;
+  CollegeToProgramConnection: CollegeToProgramConnection;
+  CollegeToProgramConnectionEdge: CollegeToProgramConnectionEdge;
+  CollegeToTaxonomyConnectionEdge: CollegeToTaxonomyConnectionEdge;
   Comment: Comment;
   CommentAuthor: CommentAuthor;
   CommentToCommentConnection: CommentToCommentConnection;
@@ -30022,12 +38373,36 @@ export interface SchemaObjectTypes {
   CoreAvatarBlockAttributes: CoreAvatarBlockAttributes;
   CoreBlock: CoreBlock;
   CoreBlockAttributes: CoreBlockAttributes;
+  CoreButtonBlock: CoreButtonBlock;
+  CoreButtonBlockAttributes: CoreButtonBlockAttributes;
+  CoreButtonBlockDeprecatedV10Attributes: CoreButtonBlockDeprecatedV10Attributes;
+  CoreButtonBlockDeprecatedV1Attributes: CoreButtonBlockDeprecatedV1Attributes;
+  CoreButtonBlockDeprecatedV2Attributes: CoreButtonBlockDeprecatedV2Attributes;
+  CoreButtonBlockDeprecatedV3Attributes: CoreButtonBlockDeprecatedV3Attributes;
+  CoreButtonBlockDeprecatedV4Attributes: CoreButtonBlockDeprecatedV4Attributes;
+  CoreButtonBlockDeprecatedV5Attributes: CoreButtonBlockDeprecatedV5Attributes;
+  CoreButtonBlockDeprecatedV6Attributes: CoreButtonBlockDeprecatedV6Attributes;
+  CoreButtonBlockDeprecatedV7Attributes: CoreButtonBlockDeprecatedV7Attributes;
+  CoreButtonBlockDeprecatedV8Attributes: CoreButtonBlockDeprecatedV8Attributes;
+  CoreButtonBlockDeprecatedV9Attributes: CoreButtonBlockDeprecatedV9Attributes;
+  CoreButtonsBlock: CoreButtonsBlock;
+  CoreButtonsBlockAttributes: CoreButtonsBlockAttributes;
+  CoreButtonsBlockDeprecatedV1Attributes: CoreButtonsBlockDeprecatedV1Attributes;
+  CoreButtonsBlockDeprecatedV2Attributes: CoreButtonsBlockDeprecatedV2Attributes;
   CoreCalendarBlock: CoreCalendarBlock;
   CoreCalendarBlockAttributes: CoreCalendarBlockAttributes;
   CoreCategoriesBlock: CoreCategoriesBlock;
   CoreCategoriesBlockAttributes: CoreCategoriesBlockAttributes;
   CoreCodeBlock: CoreCodeBlock;
   CoreCodeBlockAttributes: CoreCodeBlockAttributes;
+  CoreColumnBlock: CoreColumnBlock;
+  CoreColumnBlockAttributes: CoreColumnBlockAttributes;
+  CoreColumnBlockDeprecatedV1Attributes: CoreColumnBlockDeprecatedV1Attributes;
+  CoreColumnsBlock: CoreColumnsBlock;
+  CoreColumnsBlockAttributes: CoreColumnsBlockAttributes;
+  CoreColumnsBlockDeprecatedV1Attributes: CoreColumnsBlockDeprecatedV1Attributes;
+  CoreColumnsBlockDeprecatedV2Attributes: CoreColumnsBlockDeprecatedV2Attributes;
+  CoreColumnsBlockDeprecatedV3Attributes: CoreColumnsBlockDeprecatedV3Attributes;
   CoreCommentAuthorNameBlock: CoreCommentAuthorNameBlock;
   CoreCommentAuthorNameBlockAttributes: CoreCommentAuthorNameBlockAttributes;
   CoreCommentAuthorNameBlockDeprecatedV1Attributes: CoreCommentAuthorNameBlockDeprecatedV1Attributes;
@@ -30055,6 +38430,17 @@ export interface SchemaObjectTypes {
   CoreCommentsTitleBlock: CoreCommentsTitleBlock;
   CoreCommentsTitleBlockAttributes: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes: CoreCommentsTitleBlockDeprecatedV1Attributes;
+  CoreCoverBlock: CoreCoverBlock;
+  CoreCoverBlockAttributes: CoreCoverBlockAttributes;
+  CoreCoverBlockDeprecatedV1Attributes: CoreCoverBlockDeprecatedV1Attributes;
+  CoreCoverBlockDeprecatedV2Attributes: CoreCoverBlockDeprecatedV2Attributes;
+  CoreCoverBlockDeprecatedV3Attributes: CoreCoverBlockDeprecatedV3Attributes;
+  CoreCoverBlockDeprecatedV4Attributes: CoreCoverBlockDeprecatedV4Attributes;
+  CoreCoverBlockDeprecatedV5Attributes: CoreCoverBlockDeprecatedV5Attributes;
+  CoreCoverBlockDeprecatedV6Attributes: CoreCoverBlockDeprecatedV6Attributes;
+  CoreCoverBlockDeprecatedV7Attributes: CoreCoverBlockDeprecatedV7Attributes;
+  CoreCoverBlockDeprecatedV8Attributes: CoreCoverBlockDeprecatedV8Attributes;
+  CoreCoverBlockDeprecatedV9Attributes: CoreCoverBlockDeprecatedV9Attributes;
   CoreEmbedBlock: CoreEmbedBlock;
   CoreEmbedBlockAttributes: CoreEmbedBlockAttributes;
   CoreEmbedBlockDeprecatedV1Attributes: CoreEmbedBlockDeprecatedV1Attributes;
@@ -30252,25 +38638,41 @@ export interface SchemaObjectTypes {
   CreateAToZCategoryPayload: CreateAToZCategoryPayload;
   CreateAToZPayload: CreateAToZPayload;
   CreateAcalogProgramPayload: CreateAcalogProgramPayload;
+  CreateAreaOfStudyPayload: CreateAreaOfStudyPayload;
   CreateCategoryPayload: CreateCategoryPayload;
+  CreateCollegePayload: CreateCollegePayload;
   CreateCommentPayload: CreateCommentPayload;
+  CreateDegreePayload: CreateDegreePayload;
+  CreateMajorPayload: CreateMajorPayload;
   CreateMediaItemPayload: CreateMediaItemPayload;
   CreatePagePayload: CreatePagePayload;
   CreatePostFormatPayload: CreatePostFormatPayload;
   CreatePostPayload: CreatePostPayload;
+  CreateProgramPayload: CreateProgramPayload;
   CreateReusableBlockPayload: CreateReusableBlockPayload;
   CreateTagPayload: CreateTagPayload;
   CreateUserPayload: CreateUserPayload;
   DefaultTemplate: DefaultTemplate;
+  Degree: Degree;
+  DegreeToContentNodeConnection: DegreeToContentNodeConnection;
+  DegreeToContentNodeConnectionEdge: DegreeToContentNodeConnectionEdge;
+  DegreeToProgramConnection: DegreeToProgramConnection;
+  DegreeToProgramConnectionEdge: DegreeToProgramConnectionEdge;
+  DegreeToTaxonomyConnectionEdge: DegreeToTaxonomyConnectionEdge;
   DeleteAToZCategoryPayload: DeleteAToZCategoryPayload;
   DeleteAToZPayload: DeleteAToZPayload;
   DeleteAcalogProgramPayload: DeleteAcalogProgramPayload;
+  DeleteAreaOfStudyPayload: DeleteAreaOfStudyPayload;
   DeleteCategoryPayload: DeleteCategoryPayload;
+  DeleteCollegePayload: DeleteCollegePayload;
   DeleteCommentPayload: DeleteCommentPayload;
+  DeleteDegreePayload: DeleteDegreePayload;
+  DeleteMajorPayload: DeleteMajorPayload;
   DeleteMediaItemPayload: DeleteMediaItemPayload;
   DeletePagePayload: DeletePagePayload;
   DeletePostFormatPayload: DeletePostFormatPayload;
   DeletePostPayload: DeletePostPayload;
+  DeleteProgramPayload: DeleteProgramPayload;
   DeleteReusableBlockPayload: DeleteReusableBlockPayload;
   DeleteTagPayload: DeleteTagPayload;
   DeleteUserPayload: DeleteUserPayload;
@@ -30288,6 +38690,12 @@ export interface SchemaObjectTypes {
   HorizontalRuleMainBlockAttributes: HorizontalRuleMainBlockAttributes;
   LeadMainBlock: LeadMainBlock;
   LeadMainBlockAttributes: LeadMainBlockAttributes;
+  Major: Major;
+  MajorToContentNodeConnection: MajorToContentNodeConnection;
+  MajorToContentNodeConnectionEdge: MajorToContentNodeConnectionEdge;
+  MajorToProgramConnection: MajorToProgramConnection;
+  MajorToProgramConnectionEdge: MajorToProgramConnectionEdge;
+  MajorToTaxonomyConnectionEdge: MajorToTaxonomyConnectionEdge;
   MediaContentBlock: MediaContentBlock;
   MediaContentBlockAttributes: MediaContentBlockAttributes;
   MediaDetails: MediaDetails;
@@ -30340,6 +38748,18 @@ export interface SchemaObjectTypes {
   PostToTermNodeConnection: PostToTermNodeConnection;
   PostToTermNodeConnectionEdge: PostToTermNodeConnectionEdge;
   PostTypeLabelDetails: PostTypeLabelDetails;
+  Program: Program;
+  ProgramToAreaOfStudyConnection: ProgramToAreaOfStudyConnection;
+  ProgramToAreaOfStudyConnectionEdge: ProgramToAreaOfStudyConnectionEdge;
+  ProgramToCollegeConnection: ProgramToCollegeConnection;
+  ProgramToCollegeConnectionEdge: ProgramToCollegeConnectionEdge;
+  ProgramToDegreeConnection: ProgramToDegreeConnection;
+  ProgramToDegreeConnectionEdge: ProgramToDegreeConnectionEdge;
+  ProgramToMajorConnection: ProgramToMajorConnection;
+  ProgramToMajorConnectionEdge: ProgramToMajorConnectionEdge;
+  ProgramToPreviewConnectionEdge: ProgramToPreviewConnectionEdge;
+  ProgramToTermNodeConnection: ProgramToTermNodeConnection;
+  ProgramToTermNodeConnectionEdge: ProgramToTermNodeConnectionEdge;
   Query: Query;
   ReadingSettings: ReadingSettings;
   RegisterUserPayload: RegisterUserPayload;
@@ -30355,10 +38775,14 @@ export interface SchemaObjectTypes {
   RootQueryToAToZConnectionEdge: RootQueryToAToZConnectionEdge;
   RootQueryToAcalogProgramConnection: RootQueryToAcalogProgramConnection;
   RootQueryToAcalogProgramConnectionEdge: RootQueryToAcalogProgramConnectionEdge;
+  RootQueryToAreaOfStudyConnection: RootQueryToAreaOfStudyConnection;
+  RootQueryToAreaOfStudyConnectionEdge: RootQueryToAreaOfStudyConnectionEdge;
   RootQueryToBlockEditorPreviewConnection: RootQueryToBlockEditorPreviewConnection;
   RootQueryToBlockEditorPreviewConnectionEdge: RootQueryToBlockEditorPreviewConnectionEdge;
   RootQueryToCategoryConnection: RootQueryToCategoryConnection;
   RootQueryToCategoryConnectionEdge: RootQueryToCategoryConnectionEdge;
+  RootQueryToCollegeConnection: RootQueryToCollegeConnection;
+  RootQueryToCollegeConnectionEdge: RootQueryToCollegeConnectionEdge;
   RootQueryToCommentConnection: RootQueryToCommentConnection;
   RootQueryToCommentConnectionEdge: RootQueryToCommentConnectionEdge;
   RootQueryToContentNodeConnection: RootQueryToContentNodeConnection;
@@ -30367,10 +38791,14 @@ export interface SchemaObjectTypes {
   RootQueryToContentRevisionUnionConnectionEdge: RootQueryToContentRevisionUnionConnectionEdge;
   RootQueryToContentTypeConnection: RootQueryToContentTypeConnection;
   RootQueryToContentTypeConnectionEdge: RootQueryToContentTypeConnectionEdge;
+  RootQueryToDegreeConnection: RootQueryToDegreeConnection;
+  RootQueryToDegreeConnectionEdge: RootQueryToDegreeConnectionEdge;
   RootQueryToEnqueuedScriptConnection: RootQueryToEnqueuedScriptConnection;
   RootQueryToEnqueuedScriptConnectionEdge: RootQueryToEnqueuedScriptConnectionEdge;
   RootQueryToEnqueuedStylesheetConnection: RootQueryToEnqueuedStylesheetConnection;
   RootQueryToEnqueuedStylesheetConnectionEdge: RootQueryToEnqueuedStylesheetConnectionEdge;
+  RootQueryToMajorConnection: RootQueryToMajorConnection;
+  RootQueryToMajorConnectionEdge: RootQueryToMajorConnectionEdge;
   RootQueryToMediaItemConnection: RootQueryToMediaItemConnection;
   RootQueryToMediaItemConnectionEdge: RootQueryToMediaItemConnectionEdge;
   RootQueryToMenuConnection: RootQueryToMenuConnection;
@@ -30385,6 +38813,8 @@ export interface SchemaObjectTypes {
   RootQueryToPostConnectionEdge: RootQueryToPostConnectionEdge;
   RootQueryToPostFormatConnection: RootQueryToPostFormatConnection;
   RootQueryToPostFormatConnectionEdge: RootQueryToPostFormatConnectionEdge;
+  RootQueryToProgramConnection: RootQueryToProgramConnection;
+  RootQueryToProgramConnectionEdge: RootQueryToProgramConnectionEdge;
   RootQueryToReusableBlockConnection: RootQueryToReusableBlockConnection;
   RootQueryToReusableBlockConnectionEdge: RootQueryToReusableBlockConnectionEdge;
   RootQueryToTagConnection: RootQueryToTagConnection;
@@ -30425,12 +38855,17 @@ export interface SchemaObjectTypes {
   UpdateAToZCategoryPayload: UpdateAToZCategoryPayload;
   UpdateAToZPayload: UpdateAToZPayload;
   UpdateAcalogProgramPayload: UpdateAcalogProgramPayload;
+  UpdateAreaOfStudyPayload: UpdateAreaOfStudyPayload;
   UpdateCategoryPayload: UpdateCategoryPayload;
+  UpdateCollegePayload: UpdateCollegePayload;
   UpdateCommentPayload: UpdateCommentPayload;
+  UpdateDegreePayload: UpdateDegreePayload;
+  UpdateMajorPayload: UpdateMajorPayload;
   UpdateMediaItemPayload: UpdateMediaItemPayload;
   UpdatePagePayload: UpdatePagePayload;
   UpdatePostFormatPayload: UpdatePostFormatPayload;
   UpdatePostPayload: UpdatePostPayload;
+  UpdateProgramPayload: UpdateProgramPayload;
   UpdateReusableBlockPayload: UpdateReusableBlockPayload;
   UpdateSettingsPayload: UpdateSettingsPayload;
   UpdateTagPayload: UpdateTagPayload;
@@ -30459,8 +38894,6 @@ export interface SchemaObjectTypes {
   UtksdsAccordionBlockAttributes: UtksdsAccordionBlockAttributes;
   UtksdsButtonBlock: UtksdsButtonBlock;
   UtksdsButtonBlockAttributes: UtksdsButtonBlockAttributes;
-  UtksdsButtongroupBlock: UtksdsButtongroupBlock;
-  UtksdsButtongroupBlockAttributes: UtksdsButtongroupBlockAttributes;
   UtksdsCalendarBlock: UtksdsCalendarBlock;
   UtksdsCalendarBlockAttributes: UtksdsCalendarBlockAttributes;
   UtksdsCardBlock: UtksdsCardBlock;
@@ -30473,6 +38906,62 @@ export interface SchemaObjectTypes {
   UtksdsOverlayBlockAttributes: UtksdsOverlayBlockAttributes;
   UtksdsTabsBlock: UtksdsTabsBlock;
   UtksdsTabsBlockAttributes: UtksdsTabsBlockAttributes;
+  UtkwdsAccordionBlock: UtkwdsAccordionBlock;
+  UtkwdsAccordionBlockAttributes: UtkwdsAccordionBlockAttributes;
+  UtkwdsAccordionFoldBlock: UtkwdsAccordionFoldBlock;
+  UtkwdsAccordionFoldBlockAttributes: UtkwdsAccordionFoldBlockAttributes;
+  UtkwdsAlertBlock: UtkwdsAlertBlock;
+  UtkwdsAlertBlockAttributes: UtkwdsAlertBlockAttributes;
+  UtkwdsButtonBlock: UtkwdsButtonBlock;
+  UtkwdsButtonBlockAttributes: UtkwdsButtonBlockAttributes;
+  UtkwdsCalendarBlock: UtkwdsCalendarBlock;
+  UtkwdsCalendarBlockAttributes: UtkwdsCalendarBlockAttributes;
+  UtkwdsCardBlock: UtkwdsCardBlock;
+  UtkwdsCardBlockAttributes: UtkwdsCardBlockAttributes;
+  UtkwdsCardBodyBlock: UtkwdsCardBodyBlock;
+  UtkwdsCardBodyBlockAttributes: UtkwdsCardBodyBlockAttributes;
+  UtkwdsCardFooterBlock: UtkwdsCardFooterBlock;
+  UtkwdsCardFooterBlockAttributes: UtkwdsCardFooterBlockAttributes;
+  UtkwdsCardHeaderBlock: UtkwdsCardHeaderBlock;
+  UtkwdsCardHeaderBlockAttributes: UtkwdsCardHeaderBlockAttributes;
+  UtkwdsCardHeadingBlock: UtkwdsCardHeadingBlock;
+  UtkwdsCardHeadingBlockAttributes: UtkwdsCardHeadingBlockAttributes;
+  UtkwdsCardImageBlock: UtkwdsCardImageBlock;
+  UtkwdsCardImageBlockAttributes: UtkwdsCardImageBlockAttributes;
+  UtkwdsCardMainBlock: UtkwdsCardMainBlock;
+  UtkwdsCardMainBlockAttributes: UtkwdsCardMainBlockAttributes;
+  UtkwdsCardTopcapBlock: UtkwdsCardTopcapBlock;
+  UtkwdsCardTopcapBlockAttributes: UtkwdsCardTopcapBlockAttributes;
+  UtkwdsColumnBlock: UtkwdsColumnBlock;
+  UtkwdsColumnBlockAttributes: UtkwdsColumnBlockAttributes;
+  UtkwdsColumnsBlock: UtkwdsColumnsBlock;
+  UtkwdsColumnsBlockAttributes: UtkwdsColumnsBlockAttributes;
+  UtkwdsContactBlock: UtkwdsContactBlock;
+  UtkwdsContactBlockAttributes: UtkwdsContactBlockAttributes;
+  UtkwdsHorizontalRuleBlock: UtkwdsHorizontalRuleBlock;
+  UtkwdsHorizontalRuleBlockAttributes: UtkwdsHorizontalRuleBlockAttributes;
+  UtkwdsLeadBlock: UtkwdsLeadBlock;
+  UtkwdsLeadBlockAttributes: UtkwdsLeadBlockAttributes;
+  UtkwdsMediaContentBlock: UtkwdsMediaContentBlock;
+  UtkwdsMediaContentBlockAttributes: UtkwdsMediaContentBlockAttributes;
+  UtkwdsMediaObjectBlock: UtkwdsMediaObjectBlock;
+  UtkwdsMediaObjectBlockAttributes: UtkwdsMediaObjectBlockAttributes;
+  UtkwdsOverlayBlock: UtkwdsOverlayBlock;
+  UtkwdsOverlayBlockAttributes: UtkwdsOverlayBlockAttributes;
+  UtkwdsOverlayMainBlock: UtkwdsOverlayMainBlock;
+  UtkwdsOverlayMainBlockAttributes: UtkwdsOverlayMainBlockAttributes;
+  UtkwdsPhoneBlock: UtkwdsPhoneBlock;
+  UtkwdsPhoneBlockAttributes: UtkwdsPhoneBlockAttributes;
+  UtkwdsPhonesBlock: UtkwdsPhonesBlock;
+  UtkwdsPhonesBlockAttributes: UtkwdsPhonesBlockAttributes;
+  UtkwdsSocialsBlock: UtkwdsSocialsBlock;
+  UtkwdsSocialsBlockAttributes: UtkwdsSocialsBlockAttributes;
+  UtkwdsStripBlock: UtkwdsStripBlock;
+  UtkwdsStripBlockAttributes: UtkwdsStripBlockAttributes;
+  UtkwdsTabBlock: UtkwdsTabBlock;
+  UtkwdsTabBlockAttributes: UtkwdsTabBlockAttributes;
+  UtkwdsTabsBlock: UtkwdsTabsBlock;
+  UtkwdsTabsBlockAttributes: UtkwdsTabsBlockAttributes;
   WPPageInfo: WPPageInfo;
   WritingSettings: WritingSettings;
 }
@@ -30499,6 +38988,12 @@ export type SchemaObjectTypesNames =
   | 'AccordionFoldBlockAttributes'
   | 'AlertMainBlock'
   | 'AlertMainBlockAttributes'
+  | 'AreaOfStudy'
+  | 'AreaOfStudyToContentNodeConnection'
+  | 'AreaOfStudyToContentNodeConnectionEdge'
+  | 'AreaOfStudyToProgramConnection'
+  | 'AreaOfStudyToProgramConnectionEdge'
+  | 'AreaOfStudyToTaxonomyConnectionEdge'
   | 'AtlasContentModelerSettingsSettings'
   | 'Avatar'
   | 'BlockEditorContentNodeConnection'
@@ -30530,6 +39025,12 @@ export type SchemaObjectTypesNames =
   | 'CategoryToPostConnection'
   | 'CategoryToPostConnectionEdge'
   | 'CategoryToTaxonomyConnectionEdge'
+  | 'College'
+  | 'CollegeToContentNodeConnection'
+  | 'CollegeToContentNodeConnectionEdge'
+  | 'CollegeToProgramConnection'
+  | 'CollegeToProgramConnectionEdge'
+  | 'CollegeToTaxonomyConnectionEdge'
   | 'Comment'
   | 'CommentAuthor'
   | 'CommentToCommentConnection'
@@ -30559,12 +39060,36 @@ export type SchemaObjectTypesNames =
   | 'CoreAvatarBlockAttributes'
   | 'CoreBlock'
   | 'CoreBlockAttributes'
+  | 'CoreButtonBlock'
+  | 'CoreButtonBlockAttributes'
+  | 'CoreButtonBlockDeprecatedV10Attributes'
+  | 'CoreButtonBlockDeprecatedV1Attributes'
+  | 'CoreButtonBlockDeprecatedV2Attributes'
+  | 'CoreButtonBlockDeprecatedV3Attributes'
+  | 'CoreButtonBlockDeprecatedV4Attributes'
+  | 'CoreButtonBlockDeprecatedV5Attributes'
+  | 'CoreButtonBlockDeprecatedV6Attributes'
+  | 'CoreButtonBlockDeprecatedV7Attributes'
+  | 'CoreButtonBlockDeprecatedV8Attributes'
+  | 'CoreButtonBlockDeprecatedV9Attributes'
+  | 'CoreButtonsBlock'
+  | 'CoreButtonsBlockAttributes'
+  | 'CoreButtonsBlockDeprecatedV1Attributes'
+  | 'CoreButtonsBlockDeprecatedV2Attributes'
   | 'CoreCalendarBlock'
   | 'CoreCalendarBlockAttributes'
   | 'CoreCategoriesBlock'
   | 'CoreCategoriesBlockAttributes'
   | 'CoreCodeBlock'
   | 'CoreCodeBlockAttributes'
+  | 'CoreColumnBlock'
+  | 'CoreColumnBlockAttributes'
+  | 'CoreColumnBlockDeprecatedV1Attributes'
+  | 'CoreColumnsBlock'
+  | 'CoreColumnsBlockAttributes'
+  | 'CoreColumnsBlockDeprecatedV1Attributes'
+  | 'CoreColumnsBlockDeprecatedV2Attributes'
+  | 'CoreColumnsBlockDeprecatedV3Attributes'
   | 'CoreCommentAuthorNameBlock'
   | 'CoreCommentAuthorNameBlockAttributes'
   | 'CoreCommentAuthorNameBlockDeprecatedV1Attributes'
@@ -30592,6 +39117,17 @@ export type SchemaObjectTypesNames =
   | 'CoreCommentsTitleBlock'
   | 'CoreCommentsTitleBlockAttributes'
   | 'CoreCommentsTitleBlockDeprecatedV1Attributes'
+  | 'CoreCoverBlock'
+  | 'CoreCoverBlockAttributes'
+  | 'CoreCoverBlockDeprecatedV1Attributes'
+  | 'CoreCoverBlockDeprecatedV2Attributes'
+  | 'CoreCoverBlockDeprecatedV3Attributes'
+  | 'CoreCoverBlockDeprecatedV4Attributes'
+  | 'CoreCoverBlockDeprecatedV5Attributes'
+  | 'CoreCoverBlockDeprecatedV6Attributes'
+  | 'CoreCoverBlockDeprecatedV7Attributes'
+  | 'CoreCoverBlockDeprecatedV8Attributes'
+  | 'CoreCoverBlockDeprecatedV9Attributes'
   | 'CoreEmbedBlock'
   | 'CoreEmbedBlockAttributes'
   | 'CoreEmbedBlockDeprecatedV1Attributes'
@@ -30789,25 +39325,41 @@ export type SchemaObjectTypesNames =
   | 'CreateAToZCategoryPayload'
   | 'CreateAToZPayload'
   | 'CreateAcalogProgramPayload'
+  | 'CreateAreaOfStudyPayload'
   | 'CreateCategoryPayload'
+  | 'CreateCollegePayload'
   | 'CreateCommentPayload'
+  | 'CreateDegreePayload'
+  | 'CreateMajorPayload'
   | 'CreateMediaItemPayload'
   | 'CreatePagePayload'
   | 'CreatePostFormatPayload'
   | 'CreatePostPayload'
+  | 'CreateProgramPayload'
   | 'CreateReusableBlockPayload'
   | 'CreateTagPayload'
   | 'CreateUserPayload'
   | 'DefaultTemplate'
+  | 'Degree'
+  | 'DegreeToContentNodeConnection'
+  | 'DegreeToContentNodeConnectionEdge'
+  | 'DegreeToProgramConnection'
+  | 'DegreeToProgramConnectionEdge'
+  | 'DegreeToTaxonomyConnectionEdge'
   | 'DeleteAToZCategoryPayload'
   | 'DeleteAToZPayload'
   | 'DeleteAcalogProgramPayload'
+  | 'DeleteAreaOfStudyPayload'
   | 'DeleteCategoryPayload'
+  | 'DeleteCollegePayload'
   | 'DeleteCommentPayload'
+  | 'DeleteDegreePayload'
+  | 'DeleteMajorPayload'
   | 'DeleteMediaItemPayload'
   | 'DeletePagePayload'
   | 'DeletePostFormatPayload'
   | 'DeletePostPayload'
+  | 'DeleteProgramPayload'
   | 'DeleteReusableBlockPayload'
   | 'DeleteTagPayload'
   | 'DeleteUserPayload'
@@ -30825,6 +39377,12 @@ export type SchemaObjectTypesNames =
   | 'HorizontalRuleMainBlockAttributes'
   | 'LeadMainBlock'
   | 'LeadMainBlockAttributes'
+  | 'Major'
+  | 'MajorToContentNodeConnection'
+  | 'MajorToContentNodeConnectionEdge'
+  | 'MajorToProgramConnection'
+  | 'MajorToProgramConnectionEdge'
+  | 'MajorToTaxonomyConnectionEdge'
   | 'MediaContentBlock'
   | 'MediaContentBlockAttributes'
   | 'MediaDetails'
@@ -30877,6 +39435,18 @@ export type SchemaObjectTypesNames =
   | 'PostToTermNodeConnection'
   | 'PostToTermNodeConnectionEdge'
   | 'PostTypeLabelDetails'
+  | 'Program'
+  | 'ProgramToAreaOfStudyConnection'
+  | 'ProgramToAreaOfStudyConnectionEdge'
+  | 'ProgramToCollegeConnection'
+  | 'ProgramToCollegeConnectionEdge'
+  | 'ProgramToDegreeConnection'
+  | 'ProgramToDegreeConnectionEdge'
+  | 'ProgramToMajorConnection'
+  | 'ProgramToMajorConnectionEdge'
+  | 'ProgramToPreviewConnectionEdge'
+  | 'ProgramToTermNodeConnection'
+  | 'ProgramToTermNodeConnectionEdge'
   | 'Query'
   | 'ReadingSettings'
   | 'RegisterUserPayload'
@@ -30892,10 +39462,14 @@ export type SchemaObjectTypesNames =
   | 'RootQueryToAToZConnectionEdge'
   | 'RootQueryToAcalogProgramConnection'
   | 'RootQueryToAcalogProgramConnectionEdge'
+  | 'RootQueryToAreaOfStudyConnection'
+  | 'RootQueryToAreaOfStudyConnectionEdge'
   | 'RootQueryToBlockEditorPreviewConnection'
   | 'RootQueryToBlockEditorPreviewConnectionEdge'
   | 'RootQueryToCategoryConnection'
   | 'RootQueryToCategoryConnectionEdge'
+  | 'RootQueryToCollegeConnection'
+  | 'RootQueryToCollegeConnectionEdge'
   | 'RootQueryToCommentConnection'
   | 'RootQueryToCommentConnectionEdge'
   | 'RootQueryToContentNodeConnection'
@@ -30904,10 +39478,14 @@ export type SchemaObjectTypesNames =
   | 'RootQueryToContentRevisionUnionConnectionEdge'
   | 'RootQueryToContentTypeConnection'
   | 'RootQueryToContentTypeConnectionEdge'
+  | 'RootQueryToDegreeConnection'
+  | 'RootQueryToDegreeConnectionEdge'
   | 'RootQueryToEnqueuedScriptConnection'
   | 'RootQueryToEnqueuedScriptConnectionEdge'
   | 'RootQueryToEnqueuedStylesheetConnection'
   | 'RootQueryToEnqueuedStylesheetConnectionEdge'
+  | 'RootQueryToMajorConnection'
+  | 'RootQueryToMajorConnectionEdge'
   | 'RootQueryToMediaItemConnection'
   | 'RootQueryToMediaItemConnectionEdge'
   | 'RootQueryToMenuConnection'
@@ -30922,6 +39500,8 @@ export type SchemaObjectTypesNames =
   | 'RootQueryToPostConnectionEdge'
   | 'RootQueryToPostFormatConnection'
   | 'RootQueryToPostFormatConnectionEdge'
+  | 'RootQueryToProgramConnection'
+  | 'RootQueryToProgramConnectionEdge'
   | 'RootQueryToReusableBlockConnection'
   | 'RootQueryToReusableBlockConnectionEdge'
   | 'RootQueryToTagConnection'
@@ -30962,12 +39542,17 @@ export type SchemaObjectTypesNames =
   | 'UpdateAToZCategoryPayload'
   | 'UpdateAToZPayload'
   | 'UpdateAcalogProgramPayload'
+  | 'UpdateAreaOfStudyPayload'
   | 'UpdateCategoryPayload'
+  | 'UpdateCollegePayload'
   | 'UpdateCommentPayload'
+  | 'UpdateDegreePayload'
+  | 'UpdateMajorPayload'
   | 'UpdateMediaItemPayload'
   | 'UpdatePagePayload'
   | 'UpdatePostFormatPayload'
   | 'UpdatePostPayload'
+  | 'UpdateProgramPayload'
   | 'UpdateReusableBlockPayload'
   | 'UpdateSettingsPayload'
   | 'UpdateTagPayload'
@@ -30996,8 +39581,6 @@ export type SchemaObjectTypesNames =
   | 'UtksdsAccordionBlockAttributes'
   | 'UtksdsButtonBlock'
   | 'UtksdsButtonBlockAttributes'
-  | 'UtksdsButtongroupBlock'
-  | 'UtksdsButtongroupBlockAttributes'
   | 'UtksdsCalendarBlock'
   | 'UtksdsCalendarBlockAttributes'
   | 'UtksdsCardBlock'
@@ -31010,6 +39593,62 @@ export type SchemaObjectTypesNames =
   | 'UtksdsOverlayBlockAttributes'
   | 'UtksdsTabsBlock'
   | 'UtksdsTabsBlockAttributes'
+  | 'UtkwdsAccordionBlock'
+  | 'UtkwdsAccordionBlockAttributes'
+  | 'UtkwdsAccordionFoldBlock'
+  | 'UtkwdsAccordionFoldBlockAttributes'
+  | 'UtkwdsAlertBlock'
+  | 'UtkwdsAlertBlockAttributes'
+  | 'UtkwdsButtonBlock'
+  | 'UtkwdsButtonBlockAttributes'
+  | 'UtkwdsCalendarBlock'
+  | 'UtkwdsCalendarBlockAttributes'
+  | 'UtkwdsCardBlock'
+  | 'UtkwdsCardBlockAttributes'
+  | 'UtkwdsCardBodyBlock'
+  | 'UtkwdsCardBodyBlockAttributes'
+  | 'UtkwdsCardFooterBlock'
+  | 'UtkwdsCardFooterBlockAttributes'
+  | 'UtkwdsCardHeaderBlock'
+  | 'UtkwdsCardHeaderBlockAttributes'
+  | 'UtkwdsCardHeadingBlock'
+  | 'UtkwdsCardHeadingBlockAttributes'
+  | 'UtkwdsCardImageBlock'
+  | 'UtkwdsCardImageBlockAttributes'
+  | 'UtkwdsCardMainBlock'
+  | 'UtkwdsCardMainBlockAttributes'
+  | 'UtkwdsCardTopcapBlock'
+  | 'UtkwdsCardTopcapBlockAttributes'
+  | 'UtkwdsColumnBlock'
+  | 'UtkwdsColumnBlockAttributes'
+  | 'UtkwdsColumnsBlock'
+  | 'UtkwdsColumnsBlockAttributes'
+  | 'UtkwdsContactBlock'
+  | 'UtkwdsContactBlockAttributes'
+  | 'UtkwdsHorizontalRuleBlock'
+  | 'UtkwdsHorizontalRuleBlockAttributes'
+  | 'UtkwdsLeadBlock'
+  | 'UtkwdsLeadBlockAttributes'
+  | 'UtkwdsMediaContentBlock'
+  | 'UtkwdsMediaContentBlockAttributes'
+  | 'UtkwdsMediaObjectBlock'
+  | 'UtkwdsMediaObjectBlockAttributes'
+  | 'UtkwdsOverlayBlock'
+  | 'UtkwdsOverlayBlockAttributes'
+  | 'UtkwdsOverlayMainBlock'
+  | 'UtkwdsOverlayMainBlockAttributes'
+  | 'UtkwdsPhoneBlock'
+  | 'UtkwdsPhoneBlockAttributes'
+  | 'UtkwdsPhonesBlock'
+  | 'UtkwdsPhonesBlockAttributes'
+  | 'UtkwdsSocialsBlock'
+  | 'UtkwdsSocialsBlockAttributes'
+  | 'UtkwdsStripBlock'
+  | 'UtkwdsStripBlockAttributes'
+  | 'UtkwdsTabBlock'
+  | 'UtkwdsTabBlockAttributes'
+  | 'UtkwdsTabsBlock'
+  | 'UtkwdsTabsBlockAttributes'
   | 'WPPageInfo'
   | 'WritingSettings';
 
@@ -31033,9 +39672,13 @@ export interface $Block {
   CoreAudioBlock?: CoreAudioBlock;
   CoreAvatarBlock?: CoreAvatarBlock;
   CoreBlock?: CoreBlock;
+  CoreButtonBlock?: CoreButtonBlock;
+  CoreButtonsBlock?: CoreButtonsBlock;
   CoreCalendarBlock?: CoreCalendarBlock;
   CoreCategoriesBlock?: CoreCategoriesBlock;
   CoreCodeBlock?: CoreCodeBlock;
+  CoreColumnBlock?: CoreColumnBlock;
+  CoreColumnsBlock?: CoreColumnsBlock;
   CoreCommentAuthorNameBlock?: CoreCommentAuthorNameBlock;
   CoreCommentContentBlock?: CoreCommentContentBlock;
   CoreCommentDateBlock?: CoreCommentDateBlock;
@@ -31048,6 +39691,7 @@ export interface $Block {
   CoreCommentsPaginationPreviousBlock?: CoreCommentsPaginationPreviousBlock;
   CoreCommentsQueryLoopBlock?: CoreCommentsQueryLoopBlock;
   CoreCommentsTitleBlock?: CoreCommentsTitleBlock;
+  CoreCoverBlock?: CoreCoverBlock;
   CoreEmbedBlock?: CoreEmbedBlock;
   CoreFileBlock?: CoreFileBlock;
   CoreFreeformBlock?: CoreFreeformBlock;
@@ -31116,19 +39760,47 @@ export interface $Block {
   TabsTabBlock?: TabsTabBlock;
   UtksdsAccordionBlock?: UtksdsAccordionBlock;
   UtksdsButtonBlock?: UtksdsButtonBlock;
-  UtksdsButtongroupBlock?: UtksdsButtongroupBlock;
   UtksdsCalendarBlock?: UtksdsCalendarBlock;
   UtksdsCardBlock?: UtksdsCardBlock;
   UtksdsColumnBlock?: UtksdsColumnBlock;
   UtksdsColumnsBlock?: UtksdsColumnsBlock;
   UtksdsOverlayBlock?: UtksdsOverlayBlock;
   UtksdsTabsBlock?: UtksdsTabsBlock;
+  UtkwdsAccordionBlock?: UtkwdsAccordionBlock;
+  UtkwdsAccordionFoldBlock?: UtkwdsAccordionFoldBlock;
+  UtkwdsAlertBlock?: UtkwdsAlertBlock;
+  UtkwdsButtonBlock?: UtkwdsButtonBlock;
+  UtkwdsCalendarBlock?: UtkwdsCalendarBlock;
+  UtkwdsCardBlock?: UtkwdsCardBlock;
+  UtkwdsCardBodyBlock?: UtkwdsCardBodyBlock;
+  UtkwdsCardFooterBlock?: UtkwdsCardFooterBlock;
+  UtkwdsCardHeaderBlock?: UtkwdsCardHeaderBlock;
+  UtkwdsCardHeadingBlock?: UtkwdsCardHeadingBlock;
+  UtkwdsCardImageBlock?: UtkwdsCardImageBlock;
+  UtkwdsCardMainBlock?: UtkwdsCardMainBlock;
+  UtkwdsCardTopcapBlock?: UtkwdsCardTopcapBlock;
+  UtkwdsColumnBlock?: UtkwdsColumnBlock;
+  UtkwdsColumnsBlock?: UtkwdsColumnsBlock;
+  UtkwdsContactBlock?: UtkwdsContactBlock;
+  UtkwdsHorizontalRuleBlock?: UtkwdsHorizontalRuleBlock;
+  UtkwdsLeadBlock?: UtkwdsLeadBlock;
+  UtkwdsMediaContentBlock?: UtkwdsMediaContentBlock;
+  UtkwdsMediaObjectBlock?: UtkwdsMediaObjectBlock;
+  UtkwdsOverlayBlock?: UtkwdsOverlayBlock;
+  UtkwdsOverlayMainBlock?: UtkwdsOverlayMainBlock;
+  UtkwdsPhoneBlock?: UtkwdsPhoneBlock;
+  UtkwdsPhonesBlock?: UtkwdsPhonesBlock;
+  UtkwdsSocialsBlock?: UtkwdsSocialsBlock;
+  UtkwdsStripBlock?: UtkwdsStripBlock;
+  UtkwdsTabBlock?: UtkwdsTabBlock;
+  UtkwdsTabsBlock?: UtkwdsTabsBlock;
 }
 
 export interface $BlockEditorContentNode {
   AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
 }
 
@@ -31144,6 +39816,7 @@ export interface $ContentNode {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
 }
 
@@ -31164,6 +39837,38 @@ export interface $CoreAudioBlockAttributesUnion {
   CoreAudioBlockDeprecatedV1Attributes?: CoreAudioBlockDeprecatedV1Attributes;
 }
 
+export interface $CoreButtonBlockAttributesUnion {
+  CoreButtonBlockAttributes?: CoreButtonBlockAttributes;
+  CoreButtonBlockDeprecatedV1Attributes?: CoreButtonBlockDeprecatedV1Attributes;
+  CoreButtonBlockDeprecatedV2Attributes?: CoreButtonBlockDeprecatedV2Attributes;
+  CoreButtonBlockDeprecatedV3Attributes?: CoreButtonBlockDeprecatedV3Attributes;
+  CoreButtonBlockDeprecatedV4Attributes?: CoreButtonBlockDeprecatedV4Attributes;
+  CoreButtonBlockDeprecatedV5Attributes?: CoreButtonBlockDeprecatedV5Attributes;
+  CoreButtonBlockDeprecatedV6Attributes?: CoreButtonBlockDeprecatedV6Attributes;
+  CoreButtonBlockDeprecatedV7Attributes?: CoreButtonBlockDeprecatedV7Attributes;
+  CoreButtonBlockDeprecatedV8Attributes?: CoreButtonBlockDeprecatedV8Attributes;
+  CoreButtonBlockDeprecatedV9Attributes?: CoreButtonBlockDeprecatedV9Attributes;
+  CoreButtonBlockDeprecatedV10Attributes?: CoreButtonBlockDeprecatedV10Attributes;
+}
+
+export interface $CoreButtonsBlockAttributesUnion {
+  CoreButtonsBlockAttributes?: CoreButtonsBlockAttributes;
+  CoreButtonsBlockDeprecatedV1Attributes?: CoreButtonsBlockDeprecatedV1Attributes;
+  CoreButtonsBlockDeprecatedV2Attributes?: CoreButtonsBlockDeprecatedV2Attributes;
+}
+
+export interface $CoreColumnBlockAttributesUnion {
+  CoreColumnBlockAttributes?: CoreColumnBlockAttributes;
+  CoreColumnBlockDeprecatedV1Attributes?: CoreColumnBlockDeprecatedV1Attributes;
+}
+
+export interface $CoreColumnsBlockAttributesUnion {
+  CoreColumnsBlockAttributes?: CoreColumnsBlockAttributes;
+  CoreColumnsBlockDeprecatedV1Attributes?: CoreColumnsBlockDeprecatedV1Attributes;
+  CoreColumnsBlockDeprecatedV2Attributes?: CoreColumnsBlockDeprecatedV2Attributes;
+  CoreColumnsBlockDeprecatedV3Attributes?: CoreColumnsBlockDeprecatedV3Attributes;
+}
+
 export interface $CoreCommentAuthorNameBlockAttributesUnion {
   CoreCommentAuthorNameBlockAttributes?: CoreCommentAuthorNameBlockAttributes;
   CoreCommentAuthorNameBlockDeprecatedV1Attributes?: CoreCommentAuthorNameBlockDeprecatedV1Attributes;
@@ -31177,6 +39882,19 @@ export interface $CoreCommentDateBlockAttributesUnion {
 export interface $CoreCommentsTitleBlockAttributesUnion {
   CoreCommentsTitleBlockAttributes?: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes?: CoreCommentsTitleBlockDeprecatedV1Attributes;
+}
+
+export interface $CoreCoverBlockAttributesUnion {
+  CoreCoverBlockAttributes?: CoreCoverBlockAttributes;
+  CoreCoverBlockDeprecatedV1Attributes?: CoreCoverBlockDeprecatedV1Attributes;
+  CoreCoverBlockDeprecatedV2Attributes?: CoreCoverBlockDeprecatedV2Attributes;
+  CoreCoverBlockDeprecatedV3Attributes?: CoreCoverBlockDeprecatedV3Attributes;
+  CoreCoverBlockDeprecatedV4Attributes?: CoreCoverBlockDeprecatedV4Attributes;
+  CoreCoverBlockDeprecatedV5Attributes?: CoreCoverBlockDeprecatedV5Attributes;
+  CoreCoverBlockDeprecatedV6Attributes?: CoreCoverBlockDeprecatedV6Attributes;
+  CoreCoverBlockDeprecatedV7Attributes?: CoreCoverBlockDeprecatedV7Attributes;
+  CoreCoverBlockDeprecatedV8Attributes?: CoreCoverBlockDeprecatedV8Attributes;
+  CoreCoverBlockDeprecatedV9Attributes?: CoreCoverBlockDeprecatedV9Attributes;
 }
 
 export interface $CoreEmbedBlockAttributesUnion {
@@ -31325,15 +40043,20 @@ export interface $DatabaseIdentifier {
   AToZ?: AToZ;
   AToZCategory?: AToZCategory;
   AcalogProgram?: AcalogProgram;
+  AreaOfStudy?: AreaOfStudy;
   BlockEditorPreview?: BlockEditorPreview;
   Category?: Category;
+  College?: College;
   Comment?: Comment;
+  Degree?: Degree;
+  Major?: Major;
   MediaItem?: MediaItem;
   Menu?: Menu;
   MenuItem?: MenuItem;
   Page?: Page;
   Post?: Post;
   PostFormat?: PostFormat;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
   Tag?: Tag;
   User?: User;
@@ -31357,9 +40080,14 @@ export interface $MenuItemLinkable {
   AToZ?: AToZ;
   AToZCategory?: AToZCategory;
   AcalogProgram?: AcalogProgram;
+  AreaOfStudy?: AreaOfStudy;
   Category?: Category;
+  College?: College;
+  Degree?: Degree;
+  Major?: Major;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   Tag?: Tag;
 }
 
@@ -31367,9 +40095,14 @@ export interface $MenuItemObjectUnion {
   AToZ?: AToZ;
   AToZCategory?: AToZCategory;
   AcalogProgram?: AcalogProgram;
+  AreaOfStudy?: AreaOfStudy;
   Category?: Category;
+  College?: College;
+  Degree?: Degree;
+  Major?: Major;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   Tag?: Tag;
 }
 
@@ -31377,13 +40110,17 @@ export interface $Node {
   AToZ?: AToZ;
   AToZCategory?: AToZCategory;
   AcalogProgram?: AcalogProgram;
+  AreaOfStudy?: AreaOfStudy;
   BlockEditorPreview?: BlockEditorPreview;
   Category?: Category;
+  College?: College;
   Comment?: Comment;
   CommentAuthor?: CommentAuthor;
   ContentType?: ContentType;
+  Degree?: Degree;
   EnqueuedScript?: EnqueuedScript;
   EnqueuedStylesheet?: EnqueuedStylesheet;
+  Major?: Major;
   MediaItem?: MediaItem;
   Menu?: Menu;
   MenuItem?: MenuItem;
@@ -31391,6 +40128,7 @@ export interface $Node {
   Plugin?: Plugin;
   Post?: Post;
   PostFormat?: PostFormat;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
   Tag?: Tag;
   Taxonomy?: Taxonomy;
@@ -31417,6 +40155,7 @@ export interface $NodeWithContentEditor {
   BlockEditorPreview?: BlockEditorPreview;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
 }
 
@@ -31428,6 +40167,7 @@ export interface $NodeWithFeaturedImage {
   AcalogProgram?: AcalogProgram;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
 }
 
 export interface $NodeWithPageAttributes {
@@ -31447,6 +40187,7 @@ export interface $NodeWithTemplate {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
 }
 
@@ -31457,6 +40198,7 @@ export interface $NodeWithTitle {
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
 }
 
@@ -31466,7 +40208,11 @@ export interface $NodeWithTrackbacks {
 
 export interface $TermNode {
   AToZCategory?: AToZCategory;
+  AreaOfStudy?: AreaOfStudy;
   Category?: Category;
+  College?: College;
+  Degree?: Degree;
+  Major?: Major;
   PostFormat?: PostFormat;
   Tag?: Tag;
 }
@@ -31475,13 +40221,18 @@ export interface $UniformResourceIdentifiable {
   AToZ?: AToZ;
   AToZCategory?: AToZCategory;
   AcalogProgram?: AcalogProgram;
+  AreaOfStudy?: AreaOfStudy;
   BlockEditorPreview?: BlockEditorPreview;
   Category?: Category;
+  College?: College;
   ContentType?: ContentType;
+  Degree?: Degree;
+  Major?: Major;
   MediaItem?: MediaItem;
   Page?: Page;
   Post?: Post;
   PostFormat?: PostFormat;
+  Program?: Program;
   ReusableBlock?: ReusableBlock;
   Tag?: Tag;
   User?: User;
@@ -31501,17 +40252,25 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
   AToZCategoryIdType: AToZCategoryIdType | undefined;
   AToZIdType: AToZIdType | undefined;
   AcalogProgramIdType: AcalogProgramIdType | undefined;
+  AreaOfStudyIdType: AreaOfStudyIdType | undefined;
   AvatarRatingEnum: AvatarRatingEnum | undefined;
   BlockEditorPreviewIdType: BlockEditorPreviewIdType | undefined;
   CategoryIdType: CategoryIdType | undefined;
+  CollegeIdType: CollegeIdType | undefined;
   CommentsConnectionOrderbyEnum: CommentsConnectionOrderbyEnum | undefined;
   ContentNodeIdTypeEnum: ContentNodeIdTypeEnum | undefined;
   ContentTypeEnum: ContentTypeEnum | undefined;
   ContentTypeIdTypeEnum: ContentTypeIdTypeEnum | undefined;
   ContentTypesOfAToZCategoryEnum: ContentTypesOfAToZCategoryEnum | undefined;
+  ContentTypesOfAreaOfStudyEnum: ContentTypesOfAreaOfStudyEnum | undefined;
   ContentTypesOfCategoryEnum: ContentTypesOfCategoryEnum | undefined;
+  ContentTypesOfCollegeEnum: ContentTypesOfCollegeEnum | undefined;
+  ContentTypesOfDegreeEnum: ContentTypesOfDegreeEnum | undefined;
+  ContentTypesOfMajorEnum: ContentTypesOfMajorEnum | undefined;
   ContentTypesOfPostFormatEnum: ContentTypesOfPostFormatEnum | undefined;
   ContentTypesOfTagEnum: ContentTypesOfTagEnum | undefined;
+  DegreeIdType: DegreeIdType | undefined;
+  MajorIdType: MajorIdType | undefined;
   MediaItemIdType: MediaItemIdType | undefined;
   MediaItemSizeEnum: MediaItemSizeEnum | undefined;
   MediaItemStatusEnum: MediaItemStatusEnum | undefined;
@@ -31532,6 +40291,7 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
     | PostObjectsConnectionOrderbyEnum
     | undefined;
   PostStatusEnum: PostStatusEnum | undefined;
+  ProgramIdType: ProgramIdType | undefined;
   RelationEnum: RelationEnum | undefined;
   ReusableBlockIdType: ReusableBlockIdType | undefined;
   TagIdType: TagIdType | undefined;

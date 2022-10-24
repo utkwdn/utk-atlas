@@ -255,7 +255,7 @@ $link-hover-decoration: underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
-$list-group-color: nil;
+$list-group-color: null;
 $list-group-bg: transparent;
 $list-group-border-color: rgba($black, 0.125);
 $list-group-border-width: $border-width;
@@ -962,7 +962,7 @@ $card-img-overlay-padding: $spacer !default;
 $accordion-padding-y: 1rem !default;
 $accordion-padding-x: 1.25rem !default;
 $accordion-color: $body-color !default;
-$accordion-bg: nil;
+$accordion-bg: null;
 $accordion-border-width: $border-width !default;
 $accordion-border-color: rgba($black, 0.125) !default;
 $accordion-border-radius: $border-radius !default;

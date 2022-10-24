@@ -8,6 +8,7 @@ interface Params extends ParsedUrlQuery {
   postSlug?: 'after' | 'before';
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 export default Page;
@@ -32,7 +33,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
   });
 };
 
-export const getStaticPaths: GetStaticPaths<Params> = async () => {
+export const getStaticPaths: GetStaticPaths<Params> = () => {
   return {
     paths: [],
     fallback: 'blocking',
