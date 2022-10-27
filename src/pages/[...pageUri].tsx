@@ -35,7 +35,6 @@ export function PageComponent({ page }: PageProps) {
         title={page?.title() || ''}
         bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
       />
-      <body className={pageSlug || ''} />
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
