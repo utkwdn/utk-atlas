@@ -26,6 +26,12 @@ const Header = ({ uri }: Props) => {
       where: { location: MenuLocationEnum.PRIMARY },
     })?.nodes || [];
 
+  /*
+    I *think* these conditional data-selections are okay, because we get all
+    the `link.uri` properties in `primaryNavItems` unconditionally.
+    If they're NOT okay, we'll see client-side data-fetching in the built
+    app, because of this: https://gqty.dev/docs/react/troubleshooting#data-selections--conditionals
+  */
   const currentTopLevelItem = firstUriPart
     ? links.find((link) => link?.uri === `${firstUriPart}/`)
     : null;
@@ -36,9 +42,7 @@ const Header = ({ uri }: Props) => {
 
   /** Primary nav items (desktop and mobile) */
   const primaryNavItems = links.flatMap((link) => {
-    // if it has `parentId`, it's not a top-level item, so skip it
     const parentId = link?.parentId;
-    if (parentId) return [];
 
     const id = link?.id;
     const url = link?.url;
@@ -47,46 +51,35 @@ const Header = ({ uri }: Props) => {
     const label = link?.label;
     const children = link?.childItems()?.nodes || [];
 
-    if (!id || !url || !itemUri || !label) return [];
-
     const hasChildren = children.length > 0;
 
-    /** sub-nav, if applicable (only appears in mobile menu) */
-    const subNav = hasChildren ? (
-      <ul className="sub-menu">
-        {children.flatMap((child) => {
-          const childLabel = child?.label;
-          const childUrl = child?.url;
-          /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
-          const childUri = child?.uri;
-          const childId = child?.id;
+    /** mobile-only sub-nav items for this primary-nav item (will be an empty array if there are none) */
+    const subNavItems = children.flatMap((child) => {
+      const childLabel = child?.label;
+      const childUrl = child?.url;
+      /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
+      const childUri = child?.uri;
+      const childId = child?.id;
 
-          if (!childLabel || !childUrl || !childUri || !childId) return [];
+      const childIsInternal = childUrl !== childUri;
+      const childIsCurrent = childId === currentSecondLevelItemId;
 
-          const childIsInternal = childUrl !== childUri;
-          const childIsCurrent = childId === currentSecondLevelItemId;
-
-          return (
-            <li
-              key={childId}
-              className={childIsCurrent ? 'current-menu-item' : ''}
-            >
-              {childIsInternal ? (
-                <Link href={childUri}>
-                  <a {...(childIsCurrent ? { 'aria-current': 'true' } : {})}>
-                    {childLabel}
-                  </a>
-                </Link>
-              ) : (
-                <a href={childUri}>{childLabel}</a>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    ) : (
-      <></>
-    );
+      return childLabel && childUrl && childUri && childId ? (
+        <li key={childId} className={childIsCurrent ? 'current-menu-item' : ''}>
+          {childIsInternal ? (
+            <Link href={childUri}>
+              <a {...(childIsCurrent ? { 'aria-current': 'true' } : {})}>
+                {childLabel}
+              </a>
+            </Link>
+          ) : (
+            <a href={childUri}>{childLabel}</a>
+          )}
+        </li>
+      ) : (
+        []
+      );
+    });
 
     const isInternal = url !== itemUri;
 
@@ -97,7 +90,7 @@ const Header = ({ uri }: Props) => {
 
     const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
 
-    return (
+    return !parentId && id && url && itemUri && label ? (
       <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
         {isInternal ? (
           <Link href={itemUri}>
@@ -113,13 +106,14 @@ const Header = ({ uri }: Props) => {
             {label}
           </a>
         )}
-
-        {subNav}
+        {subNavItems.length > 0 && <ul className="sub-menu">{subNavItems}</ul>}
       </li>
+    ) : (
+      []
     );
   });
 
-  /** Desktop section-nav (if there is one) */
+  /** Desktop-only section-nav items (will be an empty array if there are none) */
   const secondaryNavItems = (
     currentTopLevelItem?.childItems()?.nodes || []
   ).flatMap((link) => {
@@ -129,12 +123,10 @@ const Header = ({ uri }: Props) => {
     const label = link?.label;
     const id = link?.id;
 
-    if (!url || !itemUri || !label || !id) return [];
-
     const isInternal = itemUri !== url;
     const isCurrent = id === currentSecondLevelItemId;
 
-    return (
+    return url && itemUri && label && id ? (
       <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
         {isInternal ? (
           <Link href={itemUri}>
@@ -144,6 +136,8 @@ const Header = ({ uri }: Props) => {
           <a href={itemUri}>{label}</a>
         )}
       </li>
+    ) : (
+      []
     );
   });
 
