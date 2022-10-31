@@ -40,7 +40,7 @@ const chars = ['#', ...letters] as const;
 const Alpha = () => {
   const { useQuery } = client;
 
-  const data =
+  const rawItems =
     useQuery().allAToZ({
       first: 1000, // is this enough?
       where: {
@@ -53,7 +53,7 @@ const Alpha = () => {
       },
     })?.nodes || [];
 
-  const itemsByChar = data.reduce((map, item) => {
+  const itemsByChar = rawItems.reduce((map, item) => {
     if (!item) return map;
 
     const title = item.title();
@@ -71,9 +71,9 @@ const Alpha = () => {
 
     const value = { title, url, id };
 
-    const current = map.get(key);
-    if (current) {
-      current.push(value);
+    const values = map.get(key);
+    if (values) {
+      values.push(value);
     } else {
       map.set(key, [value]);
     }
@@ -118,11 +118,9 @@ const Alpha = () => {
       <section className={styles['alpha-container']}>
         <div className={styles.alpha}>
           {activeChars.map((char) => {
-            const href = `#${char === '#' ? 'num' : char}`;
-            const title = char === '#' ? '#' : char.toUpperCase();
             return (
-              <a key={char} href={href}>
-                {title}
+              <a key={char} href={`#${char === '#' ? 'num' : char}`}>
+                {char.toUpperCase()}
               </a>
             );
           })}
