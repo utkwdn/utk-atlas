@@ -14,10 +14,7 @@ export function PostComponent({ post }: PostProps) {
 
   return (
     <>
-      <Header
-        title={generalSettings?.title || undefined}
-        description={generalSettings?.description || undefined}
-      />
+      <Header />
 
       <Head>
         <title>

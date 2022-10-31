@@ -23,10 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <Header
-        title={generalSettings?.title || undefined}
-        description={generalSettings?.description || undefined}
-      />
+      <Header />
 
       <Head>
         <title>Posts - {generalSettings?.title}</title>

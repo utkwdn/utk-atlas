@@ -4,14 +4,13 @@ import { client, MenuLocationEnum } from 'client';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
+import { useRouter } from 'next/router';
 
-interface Props {
-  title?: string;
-  description?: string;
-  uri?: string;
-}
+const Header = () => {
+  const { asPath } = useRouter();
+  const uri =
+    asPath && asPath !== '/' ? asPath.split('?')[0].split('#')[0] + '/' : null;
 
-const Header = ({ uri }: Props) => {
   const uriParts = (uri || '').split('/').filter(Boolean);
   const firstUriPartRaw = uriParts[0];
   const secondUriPartRaw = uriParts[1];

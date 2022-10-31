@@ -19,11 +19,7 @@ export function PageComponent({ page }: PageProps) {
 
   return (
     <>
-      <Header
-        title={generalSettings?.title || undefined}
-        description={generalSettings?.description || undefined}
-        uri={page?.uri || undefined}
-      />
+      <Header />
 
       <Head>
         <title>

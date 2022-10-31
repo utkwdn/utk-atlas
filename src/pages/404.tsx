@@ -8,10 +8,7 @@ export default function Page(): JSX.Element {
 
   return (
     <>
-      <Header
-        title={generalSettings?.title || undefined}
-        description={generalSettings?.description || undefined}
-      />
+      <Header />
       <main className="content content-page">
         <PageTitle title={"Oops! That page can't be found."} />
         <div className="wrap">
