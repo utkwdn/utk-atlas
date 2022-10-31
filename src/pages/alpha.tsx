@@ -1,60 +1,87 @@
 import Layout from '../components/Layout';
-import Head from 'next/head';
 import styles from 'scss/pages/alpha.module.scss';
-import Script from 'next/script';
 import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
-import { TRUE } from 'sass';
 
 import Intro from '../components/Intro';
+import { GetStaticPropsContext } from 'next';
+import { getNextStaticProps } from '@faustjs/next';
 
-const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const letters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+] as const;
 
-function Alpha() {
-  const Search = console.log('Search button will eventually do something');
+const chars = ['#', ...letters] as const;
 
+const Alpha = () => {
   const { useQuery } = client;
 
-  const alphaIndex = useQuery().allAToZ({
-    first: 1000,
-    where: {
-      orderby: [
-        {
-          field: PostObjectsConnectionOrderbyEnum.TITLE,
-          order: OrderEnum.ASC,
-        },
-      ],
-    },
-  });
+  const rawItems =
+    useQuery().allAToZ({
+      first: 1000, // is this enough?
+      where: {
+        orderby: [
+          {
+            field: PostObjectsConnectionOrderbyEnum.TITLE,
+            order: OrderEnum.ASC,
+          },
+        ],
+      },
+    })?.nodes || [];
 
-  function isLetter(this_letter: string) {
-    const aLetter = alphaIndex?.nodes?.map((this_alpha) => {
-      //console.log(this_letter);
-      if (
-        this_alpha
-          ?.title()
-          ?.toString()
-          ?.toLowerCase()
-          ?.match('^' + this_letter)
-      ) {
-        return true;
-      }
-    });
+  const itemsByChar = rawItems.reduce((map, item) => {
+    if (!item) return map;
 
-    return aLetter?.includes(true);
-  }
+    const title = item.title();
+    const url = item.aToZFields?.url;
+    const id = item.id;
 
-  //console.log(isLetter([0-9]));
+    if (!title || !url || !id) return map;
 
-  //alphaIndex.nodes.map((this_alpha) => {
+    const firstChar = title[0].toLowerCase();
 
-  //let a_letter = "[0-9]";
+    const key = firstChar.match(/\d/)
+      ? '#'
+      : letters.find((letter) => firstChar.startsWith(letter));
+    if (!key) return map;
 
-  //if( this_alpha.title()?.toString()?.toLowerCase()?.match("^" + a_letter) ){
-  //console.log(this_alpha.title())
-  //console.log(this_alpha.aToZFields.url)
-  //}
+    const value = { title, url, id };
 
-  //} );
+    const values = map.get(key);
+    if (values) {
+      values.push(value);
+    } else {
+      map.set(key, [value]);
+    }
+
+    return map;
+  }, new Map<typeof chars[number], { title: string; url: string; id: string }[]>());
+
+  const activeChars = Array.from(itemsByChar.keys());
 
   return (
     <Layout>
@@ -90,125 +117,46 @@ function Alpha() {
 
       <section className={styles['alpha-container']}>
         <div className={styles.alpha}>
-          {isLetter('[0-9]') && <a href="#num">#</a>}
-          {letters.flatMap((letter) =>
-            isLetter(letter) ? (
-              <a key={letter} href={`#${letter}`}>
-                {letter.toUpperCase()}
+          {activeChars.map((char) => {
+            return (
+              <a key={char} href={`#${char === '#' ? 'num' : char}`}>
+                {char.toUpperCase()}
               </a>
-            ) : (
-              []
-            )
-          )}
+            );
+          })}
         </div>
       </section>
       <section className={styles.results}>
-        {[
-          [
-            /*
-   //Basic Pattern for data use
-
-      <div className={styles["letter-group"]}>
-        <div className={styles["letter-container"]}>
-          <h2 id="a" className={styles.letter}>
-            {item.categoryLetter}
-          </h2>
-        </div>
-        <ul>
-        <li className={styles["result-title"]}>
-          <a href="#">
-            {item.resultTitle}
-            // add below span class around search terms to make bolder
-            // <span className={styles["result-search-term"]}>{item.searchTerm}</span>
-          </a>
-          <br />
-          <span className={styles["result-url"]}>
-            {item.resultUrl}
-          </span>
-        </li>
-        </ul>
-          </div>
-
-          */
-          ],
-        ]}
-        {isLetter('[0-9]') === true && (
-          <div className={styles['letter-group']}>
+        {activeChars.map((char) => (
+          <div key={char} className={styles['letter-group']}>
             <div className={styles['letter-container']}>
-              <h2 id="num" className={styles.letter}>
-                #
+              <h2 id={char === '#' ? 'num' : char} className={styles.letter}>
+                {char.toUpperCase()}
               </h2>
             </div>
             <ul>
-              {alphaIndex?.nodes?.flatMap((this_alpha, i) => {
-                const url = this_alpha?.aToZFields?.url;
-                if (
-                  url &&
-                  this_alpha
-                    ?.title()
-                    ?.toString()
-                    ?.toLowerCase()
-                    ?.match('^[0-9]')
-                ) {
-                  return (
-                    <li key={i} className={styles['result-title']}>
-                      <a href={url}>{this_alpha.title()}</a>
-                      <br />
-                      <span className={styles['result-url']}>
-                        {url.replace(/^https?:\/\//, '')}
-                      </span>
-                    </li>
-                  );
-                } else {
-                  return [];
-                }
-              })}
+              {itemsByChar.get(char)?.map(({ title, url, id }) => (
+                <li key={id} className={styles['result-title']}>
+                  <a href={url}>{title}</a>
+                  <br />
+                  <span className={styles['result-url']}>
+                    {url.replace(/^https?:\/\//, '')}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
-        )}
-        {letters.flatMap((letter) => {
-          if (isLetter(letter)) {
-            return (
-              <div key={letter} className={styles['letter-group']}>
-                <div className={styles['letter-container']}>
-                  <h2 id={letter} className={styles.letter}>
-                    {letter.toUpperCase()}
-                  </h2>
-                </div>
-                <ul>
-                  {alphaIndex?.nodes?.flatMap((this_alpha, i) => {
-                    const url = this_alpha?.aToZFields?.url;
-                    if (
-                      url &&
-                      this_alpha
-                        ?.title()
-                        ?.toString()
-                        ?.toLowerCase()
-                        ?.match(`^${letter}`)
-                    ) {
-                      return (
-                        <li key={i} className={styles['result-title']}>
-                          <a href={url}>{this_alpha.title()}</a>
-                          <br />
-                          <span className={styles['result-url']}>
-                            {url.replace(/^https?:\/\//, '')}
-                          </span>
-                        </li>
-                      );
-                    } else {
-                      return [];
-                    }
-                  })}
-                </ul>
-              </div>
-            );
-          } else {
-            return [];
-          }
-        })}
+        ))}
       </section>
     </Layout>
   );
-}
+};
 
 export default Alpha;
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return getNextStaticProps(context, {
+    Page: Alpha,
+    client,
+  });
+}
