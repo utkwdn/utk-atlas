@@ -3,6 +3,7 @@ import { Footer, Header, PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
+import ParsedMarkup from 'components/ParsedMarkup';
 
 export interface PageProps {
   page: PageType | null | undefined;
@@ -33,7 +34,9 @@ export function PageComponent({ page }: PageProps) {
       />
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
-          <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
+          <div>
+            <ParsedMarkup content={page?.content() || ''} />
+          </div>
         </div>
       </main>
 
