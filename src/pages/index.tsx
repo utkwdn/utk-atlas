@@ -10,6 +10,7 @@ import { client, PageIdType } from 'client';
 //import TimelineEvent from '../components/TimelineEvent';
 
 import Hero from 'components/Hero.js';
+import ParsedMarkup from 'components/ParsedMarkup';
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
@@ -57,12 +58,9 @@ export default function Page() {
 
       <div className="container-fluid">
         <main id="content">
-          <div
-            className="entry-content container-xxl"
-            dangerouslySetInnerHTML={{
-              __html: frontPageContent?.content?.() || '',
-            }}
-          />
+          <div className="entry-content container-xxl">
+            <ParsedMarkup content={frontPageContent?.content?.() || ''} />
+          </div>
         </main>
       </div>
 
