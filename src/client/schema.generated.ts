@@ -5607,6 +5607,7 @@ export const generatedSchema = {
   AreaOfStudy: {
     __typename: { __type: 'String!' },
     areaOfStudyId: { __type: 'Int' },
+    areaStudyFields: { __type: 'AreaOfStudy_Areastudyfields' },
     conditionalTags: { __type: 'ConditionalTags' },
     contentNodes: {
       __type: 'AreaOfStudyToContentNodeConnection',
@@ -5717,6 +5718,12 @@ export const generatedSchema = {
   AreaOfStudyToTaxonomyConnectionEdge: {
     __typename: { __type: 'String!' },
     node: { __type: 'Taxonomy' },
+  },
+  AreaOfStudy_Areastudyfields: {
+    __typename: { __type: 'String!' },
+    fieldGroupName: { __type: 'String' },
+    image: { __type: 'MediaItem' },
+    url: { __type: 'String' },
   },
   AtlasContentModelerSettingsSettings: {
     __typename: { __type: 'String!' },
@@ -12778,6 +12785,7 @@ export const generatedSchema = {
     previewBlocksJSON: { __type: 'String' },
     previewRevisionDatabaseId: { __type: 'Int' },
     previewRevisionId: { __type: 'ID' },
+    programDetailsFields: { __type: 'Program_Programdetailsfields' },
     programId: { __type: 'Int!' },
     slug: { __type: 'String' },
     status: { __type: 'String' },
@@ -13008,6 +13016,11 @@ export const generatedSchema = {
     taxonomies: { __type: '[TaxonomyEnum]' },
     termTaxonomId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
+  },
+  Program_Programdetailsfields: {
+    __typename: { __type: 'String!' },
+    fieldGroupName: { __type: 'String' },
+    url: { __type: 'String' },
   },
   ReadingSettings: {
     __typename: { __type: 'String!' },
@@ -16688,7 +16701,12 @@ export const generatedSchema = {
       'PostFormat',
       'Tag',
     ],
-    AcfFieldGroup: ['AToZ_Atozfields', 'AcalogProgram_Acalogdepartmentfields'],
+    AcfFieldGroup: [
+      'AToZ_Atozfields',
+      'AcalogProgram_Acalogdepartmentfields',
+      'AreaOfStudy_Areastudyfields',
+      'Program_Programdetailsfields',
+    ],
     Block: [
       'AcalogApiProgramsBlock',
       'AccordionFoldBlock',
@@ -17963,7 +17981,11 @@ export interface AccordionFoldBlockAttributes {
  * A Field Group registered by ACF
  */
 export interface AcfFieldGroup {
-  __typename?: 'AToZ_Atozfields' | 'AcalogProgram_Acalogdepartmentfields';
+  __typename?:
+    | 'AToZ_Atozfields'
+    | 'AcalogProgram_Acalogdepartmentfields'
+    | 'AreaOfStudy_Areastudyfields'
+    | 'Program_Programdetailsfields';
   /**
    * The name of the ACF Field Group
    */
@@ -18035,6 +18057,10 @@ export interface AreaOfStudy {
    * @deprecated Deprecated in favor of databaseId
    */
   areaOfStudyId?: Maybe<ScalarsEnums['Int']>;
+  /**
+   * Added to the GraphQL Schema because the ACF Field Group &quot;Area of Study Fields&quot; was set to Show in GraphQL.
+   */
+  areaStudyFields?: Maybe<AreaOfStudy_Areastudyfields>;
   /**
    * @deprecated Deprecated in favor of using Next.js pages
    */
@@ -18271,6 +18297,19 @@ export interface AreaOfStudyToTaxonomyConnectionEdge {
    * The node of the connection, without the edges
    */
   node?: Maybe<Taxonomy>;
+}
+
+/**
+ * Field Group
+ */
+export interface AreaOfStudy_Areastudyfields {
+  __typename?: 'AreaOfStudy_Areastudyfields';
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums['String']>;
+  image?: Maybe<MediaItem>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -32211,6 +32250,10 @@ export interface Program {
    */
   previewRevisionId?: Maybe<ScalarsEnums['ID']>;
   /**
+   * Added to the GraphQL Schema because the ACF Field Group &quot;Program Details&quot; was set to Show in GraphQL.
+   */
+  programDetailsFields?: Maybe<Program_Programdetailsfields>;
+  /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
@@ -32447,6 +32490,18 @@ export interface ProgramToTermNodeConnectionEdge {
    * The item at the end of the edge
    */
   node?: Maybe<TermNode>;
+}
+
+/**
+ * Field Group
+ */
+export interface Program_Programdetailsfields {
+  __typename?: 'Program_Programdetailsfields';
+  /**
+   * The name of the ACF Field Group
+   */
+  fieldGroupName?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -38307,6 +38362,7 @@ export interface SchemaObjectTypes {
   AreaOfStudyToProgramConnection: AreaOfStudyToProgramConnection;
   AreaOfStudyToProgramConnectionEdge: AreaOfStudyToProgramConnectionEdge;
   AreaOfStudyToTaxonomyConnectionEdge: AreaOfStudyToTaxonomyConnectionEdge;
+  AreaOfStudy_Areastudyfields: AreaOfStudy_Areastudyfields;
   AtlasContentModelerSettingsSettings: AtlasContentModelerSettingsSettings;
   Avatar: Avatar;
   BlockEditorContentNodeConnection: BlockEditorContentNodeConnection;
@@ -38760,6 +38816,7 @@ export interface SchemaObjectTypes {
   ProgramToPreviewConnectionEdge: ProgramToPreviewConnectionEdge;
   ProgramToTermNodeConnection: ProgramToTermNodeConnection;
   ProgramToTermNodeConnectionEdge: ProgramToTermNodeConnectionEdge;
+  Program_Programdetailsfields: Program_Programdetailsfields;
   Query: Query;
   ReadingSettings: ReadingSettings;
   RegisterUserPayload: RegisterUserPayload;
@@ -38994,6 +39051,7 @@ export type SchemaObjectTypesNames =
   | 'AreaOfStudyToProgramConnection'
   | 'AreaOfStudyToProgramConnectionEdge'
   | 'AreaOfStudyToTaxonomyConnectionEdge'
+  | 'AreaOfStudy_Areastudyfields'
   | 'AtlasContentModelerSettingsSettings'
   | 'Avatar'
   | 'BlockEditorContentNodeConnection'
@@ -39447,6 +39505,7 @@ export type SchemaObjectTypesNames =
   | 'ProgramToPreviewConnectionEdge'
   | 'ProgramToTermNodeConnection'
   | 'ProgramToTermNodeConnectionEdge'
+  | 'Program_Programdetailsfields'
   | 'Query'
   | 'ReadingSettings'
   | 'RegisterUserPayload'
@@ -39655,6 +39714,8 @@ export type SchemaObjectTypesNames =
 export interface $AcfFieldGroup {
   AToZ_Atozfields?: AToZ_Atozfields;
   AcalogProgram_Acalogdepartmentfields?: AcalogProgram_Acalogdepartmentfields;
+  AreaOfStudy_Areastudyfields?: AreaOfStudy_Areastudyfields;
+  Program_Programdetailsfields?: Program_Programdetailsfields;
 }
 
 export interface $Block {
