@@ -6,36 +6,48 @@ import Intro from '../components/Intro';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustjs/next';
 
-const letters = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z',
+const upperLetters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
 ] as const;
 
-const chars = ['#', ...letters] as const;
+const chars = ['#', ...upperLetters] as const;
+
+type UpperLetter = typeof upperLetters[number];
+type Character = typeof chars[number];
+
+const upperLetterRegExp = /^[A-Z]$/;
+const isUpperLetter = (s: string): s is UpperLetter =>
+  !!s.match(upperLetterRegExp);
+
+const digitRegExp = /^\d$/;
+const isDigit = (s: string) => !!s.match(digitRegExp);
+
+const toDomId = (char: Character) => (char === '#' ? 'num' : char);
 
 const Alpha = () => {
   const { useQuery } = client;
@@ -62,12 +74,17 @@ const Alpha = () => {
 
     if (!title || !url || !id) return map;
 
-    const firstChar = title[0].toLowerCase();
+    const firstCharUpper = title[0].toUpperCase();
 
-    const key = firstChar.match(/\d/)
-      ? '#'
-      : letters.find((letter) => firstChar.startsWith(letter));
-    if (!key) return map;
+    let key: Character;
+
+    if (isDigit(firstCharUpper)) {
+      key = '#';
+    } else if (isUpperLetter(firstCharUpper)) {
+      key = firstCharUpper;
+    } else {
+      return map;
+    }
 
     const value = { title, url, id };
 
@@ -79,7 +96,7 @@ const Alpha = () => {
     }
 
     return map;
-  }, new Map<typeof chars[number], { title: string; url: string; id: string }[]>());
+  }, new Map<Character, { title: string; url: string; id: string }[]>());
 
   const activeChars = Array.from(itemsByChar.keys());
 
@@ -119,8 +136,8 @@ const Alpha = () => {
         <div className={styles.alpha}>
           {activeChars.map((char) => {
             return (
-              <a key={char} href={`#${char === '#' ? 'num' : char}`}>
-                {char.toUpperCase()}
+              <a key={char} href={`#${toDomId(char)}`}>
+                {char}
               </a>
             );
           })}
@@ -130,8 +147,8 @@ const Alpha = () => {
         {activeChars.map((char) => (
           <div key={char} className={styles['letter-group']}>
             <div className={styles['letter-container']}>
-              <h2 id={char === '#' ? 'num' : char} className={styles.letter}>
-                {char.toUpperCase()}
+              <h2 id={toDomId(char)} className={styles.letter}>
+                {char}
               </h2>
             </div>
             <ul>
