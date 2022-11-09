@@ -75,6 +75,8 @@ const UniversalHeader = () => {
         fullscreen
         /* explicit escape-handler shouldn't be necessary here but for some reason it is */
         onEscapeKeyDown={() => setShowSearchModal(false)}
+        /* needs to beat an element on `/meet` page */
+        style={{ zIndex: 999999 }}
       >
         <div id="universal-header">
           <div className="container">

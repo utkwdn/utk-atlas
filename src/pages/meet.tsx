@@ -4,22 +4,50 @@ import styles from 'scss/pages/meet.module.scss';
 import Script from 'next/script';
 // import styles2 from "../components/MeetStyles";
 import Image from 'next/image';
+import { useEffect } from 'react';
 
-function Meet() {
+const styleSheet1 =
+  typeof window !== 'undefined' ? document.createElement('link') : null;
+if (styleSheet1) {
+  styleSheet1.rel = 'stylesheet';
+  styleSheet1.type = 'text/css';
+  styleSheet1.href =
+    'https://cloud.typography.com/6831932/7665612/css/fonts.css';
+}
+
+const styleSheet2 =
+  typeof window !== 'undefined' ? document.createElement('link') : null;
+if (styleSheet2) {
+  styleSheet2.rel = 'stylesheet';
+  styleSheet2.type = 'text/css';
+  styleSheet2.href =
+    'https://images.utk.edu/designsystem/meet/style20201118.css';
+}
+
+const Meet = () => {
+  /*
+    On mount, add stylesheets; on unmount, remove them.
+    This is to prevent possibility of conflicting styles (at least on other pages).
+    For now, not worrying about FOUC that this causes. If needed, we could look
+    into a way to get the browser to fetch these sheets when the app loads without
+    actually inserting them into the DOM until they're needed.
+  */
+  useEffect(() => {
+    [styleSheet1, styleSheet2].forEach((sheet) => {
+      // prepend b/c we want app styles to "win" when there are conflicts (and there are some)
+      if (sheet) document.head.prepend(sheet);
+    });
+    return () => {
+      [styleSheet1, styleSheet2].forEach((sheet) => {
+        if (sheet) sheet.remove();
+      });
+    };
+  });
+
   return (
     <Layout>
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cloud.typography.com/6831932/7665612/css/fonts.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://images.utk.edu/designsystem/meet/style20201118.css"
-        />
-      </Head>
+      {/* TODO: add title and other meta stuff in Head here */}
+      {/* <Head></Head> */}
 
       <div className="position-sticky">
         <ul
@@ -876,6 +904,6 @@ function Meet() {
       </div>
     </Layout>
   );
-}
+};
 
 export default Meet;
