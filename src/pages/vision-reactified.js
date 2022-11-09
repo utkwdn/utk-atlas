@@ -411,3 +411,10 @@ function Vision() {
 }
 
 export default Vision;
+
+// just to get Next.js not to build this page for now
+export async function getStaticProps() {
+  return {
+    notFound: true,
+  };
+}
