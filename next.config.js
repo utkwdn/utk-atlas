@@ -17,6 +17,10 @@ module.exports = withFaust({
         source: '/ittakesavolunteer',
         destination: '/ittakesavolunteer.html',
       },
+      {
+        source: '/meet',
+        destination: '/meet.html',
+      },
     ];
   },
 });

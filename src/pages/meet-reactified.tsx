@@ -907,3 +907,11 @@ const Meet = () => {
 };
 
 export default Meet;
+
+// just to get Next.js not to build this page for now
+// eslint-disable-next-line @typescript-eslint/require-await
+export async function getStaticProps() {
+  return {
+    notFound: true,
+  };
+}
