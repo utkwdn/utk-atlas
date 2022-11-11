@@ -153,23 +153,22 @@ const Header = () => {
         // Parse returned xml string into DOM
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(result, 'text/xml');
-        const itemCount = xmlDoc.getElementsByTagName('item').length;
         // Only assign alert values if items exist in xml
-        if (itemCount > 0) {
-          const lastItem = xmlDoc.getElementsByTagName('item')[itemCount - 1];
+        if (xmlDoc.getElementsByTagName('item').length > 0) {
+          const firstItem = xmlDoc.getElementsByTagName('item')[0];
           const alertTitle =
-            lastItem.getElementsByTagName('title')[0].textContent || '';
+            firstItem.getElementsByTagName('title')[0].textContent || '';
           const alertDescription =
-            lastItem.getElementsByTagName('description')[0].textContent || '';
+            firstItem.getElementsByTagName('description')[0].textContent || '';
           const alertDate =
-            lastItem.getElementsByTagName('dc:date')[0].textContent || '';
+            firstItem.getElementsByTagName('dc:date')[0].textContent || '';
           const unformattedDate = new Date(alertDate);
           const d = unformattedDate.getDate();
           const m = unformattedDate.getMonth();
           const y = unformattedDate.getFullYear();
           const formattedAlertDate = `${m + 1}/${d}/${y}`;
           // Don't display alert if title includes 'RSS All Clear' or is blank
-          if (alertTitle.includes('RSS All Clear') || alertTitle === '') {
+          if (alertTitle.includes('RSS All Clearr') || alertTitle === '') {
             console.log('No Current Alerts');
           } else {
             setAlertDisplay('block');
@@ -279,28 +278,31 @@ const Header = () => {
 
       {/* UT Alert Banner */}
       <div
-        className="alert alert-primary alert-dismissible"
-        role="alert"
-        style={{
-          display: alertDisplay, // Using state to show or hide alert
-          backgroundColor: '#dedede', // Pull out once stylesheet is finalized
-          borderColor: '#cdcdcd', // Pull out once stylesheet is finalized
-          zIndex: 999, // Prevents .video-flex element from overlaying and blocking interactivity
-        }}
+        className="container-fluid mb-0 px-0"
+        style={{ display: alertDisplay, zIndex: 9999999, position: 'relative' }}
       >
-        <button
-          type="button"
-          className="btn-close"
-          aria-label="Close"
-          onClick={() => setAlertDisplay('none')}
-        ></button>
-        <p className="alert-heading">{alertDescription}</p>
-        <small>Posted on {alertDate}</small>
-        <p>
-          <a className="alert-link" href="https://safety.utk.edu">
-            See campus status.
-          </a>
-        </p>
+        <div
+          className="alert alert-warning alert-dismissible ut_alert"
+          role="alert"
+        >
+          <button
+            type="button"
+            className="close"
+            data-dismiss="alert"
+            aria-label="Close"
+            onClick={() => setAlertDisplay('none')}
+          >
+            <span aria-hidden="true">&times;</span>
+            <span className="sr-only">Close</span>
+          </button>
+          <p>{alertDescription}</p>
+          <small>Posted on {alertDate}</small>
+          <p>
+            <a className="alertButton" href="https://utk.edu/status">
+              See campus status.
+            </a>
+          </p>
+        </div>
       </div>
     </>
   );
