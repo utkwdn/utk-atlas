@@ -1,4 +1,5 @@
 // import styles from 'scss/components/Header.module.scss';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { client, MenuLocationEnum } from 'client';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,6 +8,9 @@ import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
 
 const Header = () => {
+  const [alertDisplay, setAlertDisplay] = useState('none');
+  const [alertDescription, setAlertDescription] = useState('');
+  const [alertDate, setAlertDate] = useState('');
   const { asPath } = useRouter();
   const uri =
     asPath && asPath !== '/' ? asPath.split('?')[0].split('#')[0] + '/' : null;
@@ -140,6 +144,51 @@ const Header = () => {
     );
   });
 
+  // Checking UT Alerts RSS and displaying an alert if it exists
+  function fetchAlert() {
+    const url = 'http://www.getrave.com/rss/utk/channel1';
+    const response = fetch(url)
+      .then((response) => response.text())
+      .then((result) => {
+        // Parse returned xml string into DOM
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(result, 'text/xml');
+        const itemCount = xmlDoc.getElementsByTagName('item').length;
+        // Only assign alert values if items exist in xml
+        if (itemCount > 0) {
+          const lastItem = xmlDoc.getElementsByTagName('item')[itemCount - 1];
+          const alertTitle =
+            lastItem.getElementsByTagName('title')[0].textContent || '';
+          const alertDescription =
+            lastItem.getElementsByTagName('description')[0].textContent || '';
+          const alertDate =
+            lastItem.getElementsByTagName('dc:date')[0].textContent || '';
+          const unformattedDate = new Date(alertDate);
+          const d = unformattedDate.getDate();
+          const m = unformattedDate.getMonth();
+          const y = unformattedDate.getFullYear();
+          const formattedAlertDate = `${m + 1}/${d}/${y}`;
+          // Don't display alert if title includes 'RSS All Clear' or is blank
+          if (alertTitle.includes('RSS All Clear') || alertTitle === '') {
+            console.log('No Current Alerts');
+          } else {
+            setAlertDisplay('block');
+            setAlertDescription(alertDescription);
+            setAlertDate(formattedAlertDate);
+          }
+        } else {
+          console.log('No Current Alerts');
+        }
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
+  }
+
+  useEffect(() => {
+    fetchAlert();
+  }, []);
+
   return (
     <>
       <UniversalHeader />
@@ -228,47 +277,31 @@ const Header = () => {
         </nav>
       )}
 
-      {/* Covid/Alert Banner */}
-      {/* <div className="container-fluid mb-0 px-0">
-        <div
-          className="alert bg-gray2 text-center p-1 mb-0 border-0"
-          role="alert"
-        >
-          <span aria-hidden="true">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="currentColor"
-              className="bi bi-info-circle mb-1"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-            </svg>
-          </span>
-          <Link href="/coronavirus/">
-            <a className="text-center text-decoration-none text-reset home-covid-banner">
-              COVID-19 Information and Support{' '}
-              <span aria-hidden="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  fill="currentColor"
-                  className="bi bi-chevron-right mb-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                  />
-                </svg>
-              </span>
-            </a>
-          </Link>
-        </div>
-      </div> */}
+      {/* UT Alert Banner */}
+      <div
+        className="alert alert-primary alert-dismissible"
+        role="alert"
+        style={{
+          display: alertDisplay, // Using state to show or hide alert
+          backgroundColor: '#dedede', // Pull out once stylesheet is finalized
+          borderColor: '#cdcdcd', // Pull out once stylesheet is finalized
+          zIndex: 999, // Prevents .video-flex element from overlaying and blocking interactivity
+        }}
+      >
+        <button
+          type="button"
+          className="btn-close"
+          aria-label="Close"
+          onClick={() => setAlertDisplay('none')}
+        ></button>
+        <p className="alert-heading">{alertDescription}</p>
+        <small>Posted on {alertDate}</small>
+        <p>
+          <a className="alert-link" href="https://safety.utk.edu">
+            See campus status.
+          </a>
+        </p>
+      </div>
     </>
   );
 };
