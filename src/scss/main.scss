@@ -93,10 +93,25 @@
 // @import '@wordpress/block-library/build-style/style.css';
 // @import '@wordpress/block-library/build-style/theme.css';
 
+@import '@wordpress/block-library/build-style/style.css';
+@import '@wordpress/block-library/build-style/theme.css';
 @import '@wordpress/block-library/build-style/button/style.css';
 @import '@wordpress/block-library/build-style/buttons/style.css';
 @import '@wordpress/block-library/build-style/columns/style.css';
 @import '@wordpress/block-library/build-style/cover/style.css';
+@import '@wordpress/block-library/build-style/gallery/style.css';
+@import '@wordpress/block-library/build-style/gallery/theme.css';
+@import '@wordpress/block-library/build-style/group/style.css';
+@import '@wordpress/block-library/build-style/group/theme.css';
+@import '@wordpress/block-library/build-style/image/style.css';
+@import '@wordpress/block-library/build-style/image/theme.css';
+@import '@wordpress/block-library/build-style/list/style.css';
+@import '@wordpress/block-library/build-style/media-text/style.css';
+@import '@wordpress/block-library/build-style/text-columns/style.css';
+@import '@wordpress/block-library/build-style/video/style.css';
+
+// ------  Gutenberg Core Blocks than need styling
+@import './core-blocks/layout';
 
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';

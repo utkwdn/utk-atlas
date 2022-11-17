@@ -1,6 +1,6 @@
 h1,
 .h1 {
-  font-weight: $font-weight-ultra;
+  font-weight: $font-weight-bolder;
 }
 .has-drop-cap:first-letter {
   float: left;
@@ -18,7 +18,7 @@ h1,
 }
 
 .text-condensed {
-  font-family: 'Gotham Cond SSm A', 'Gotham Cond SSm B', 'Helvetica Neue',
+  font-family: "Gotham Cond SSm A", "Gotham Cond SSm B", "Helvetica Neue",
     Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -54,12 +54,13 @@ h1,
 }
 
 h1 {
-  // margin-top: calc($spacer * 6);
+  margin-top: calc($spacer * 6);
   margin-bottom: calc($spacer * 2);
-  text-transform: uppercase;
+  font-weight:900; // think it needs to be heavier like this here
+
 }
 h2 {
-  margin-top: calc($spacer * 3.2);
+  margin-top: calc($spacer * 5);
   margin-bottom: calc($spacer * 2.2);
 }
 
@@ -82,11 +83,8 @@ h6 {
   margin-bottom: calc($spacer * 1);
 }
 
-h2 + h3,
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-  margin-top: 0;
+h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
+  margin-top:0;
 }
 .entry-header h1 {
   // playing with font size in grey bar
@@ -95,13 +93,7 @@ h5 + h6 {
   padding: 0;
 }
 p.lead + p {
-  margin-top: calc($spacer * 2);
-}
-
-.emphasis {
-  font-weight: $font-weight-bold;
-  font-size: $font-size-lg;
-  line-height: calc($line-height-base * 0.89);
+margin-top: calc($spacer * 2);
 }
 
 h2.heading-oa-bar {
@@ -111,8 +103,4 @@ h2.heading-oa-bar {
   width: auto;
   position: relative;
   width: fit-content;
-}
-
-.lead strong {
-  font-weight: $font-weight-bold;
 }

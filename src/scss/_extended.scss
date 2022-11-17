@@ -853,7 +853,7 @@ body.academics {
 }
 /* INTRO TITLE TREATMENT */
 
-.intro-flex > div[class$='__inner-container'] {
+.intro-flex {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
