@@ -2,97 +2,171 @@
 
 // @import "variables";
 // @import "typography";
-@import "./node_modules/bootstrap/scss/functions";
-@import "./node_modules/utksds-framework/src/scss/custom_variables";
-@import "./node_modules/bootstrap/scss/variables";
-@import "./node_modules/bootstrap/scss/mixins";
-@import "./node_modules/bootstrap/scss/utilities";
-@import "./node_modules/bootstrap/scss/root";
+@import './node_modules/bootstrap/scss/functions';
+@import './framework/custom_variables';
+
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+@import './node_modules/bootstrap/scss/utilities';
+@import './node_modules/bootstrap/scss/root';
 
 // Helpers
-@import "./node_modules/bootstrap/scss/helpers";
+@import './node_modules/bootstrap/scss/helpers';
 
 // Utilities
-@import "./node_modules/bootstrap/scss/utilities/api";
+@import './node_modules/bootstrap/scss/utilities/api';
 
-@import "./node_modules/bootstrap/scss/reboot";
-@import "./node_modules/bootstrap/scss/type";
-@import "./node_modules/bootstrap/scss/images";
+@import './node_modules/bootstrap/scss/reboot';
+@import './node_modules/bootstrap/scss/type';
+@import './node_modules/bootstrap/scss/images';
 // Layout & components
-@import "./node_modules/bootstrap/scss/containers";
-@import "./node_modules/bootstrap/scss/grid";
-@import "./node_modules/bootstrap/scss/tables";
-@import "./node_modules/bootstrap/scss/forms";
-@import "./node_modules/bootstrap/scss/buttons";
-@import "./node_modules/bootstrap/scss/transitions";
-@import "./node_modules/bootstrap/scss/dropdown";
-@import "./node_modules/bootstrap/scss/button-group";
-@import "./node_modules/bootstrap/scss/nav";
-@import "./node_modules/bootstrap/scss/navbar";
-@import "./node_modules/bootstrap/scss/card";
-@import "./node_modules/bootstrap/scss/accordion";
-@import "./node_modules/bootstrap/scss/breadcrumb";
-@import "./node_modules/bootstrap/scss/pagination";
-@import "./node_modules/bootstrap/scss/badge";
-@import "./node_modules/bootstrap/scss/alert";
-@import "./node_modules/bootstrap/scss/progress";
-@import "./node_modules/bootstrap/scss/list-group";
-@import "./node_modules/bootstrap/scss/close";
-@import "./node_modules/bootstrap/scss/toasts";
-@import "./node_modules/bootstrap/scss/modal";
-@import "./node_modules/bootstrap/scss/tooltip";
-@import "./node_modules/bootstrap/scss/popover";
-@import "./node_modules/bootstrap/scss/carousel";
-@import "./node_modules/bootstrap/scss/spinners";
-@import "./node_modules/bootstrap/scss/offcanvas";
+@import './node_modules/bootstrap/scss/containers';
+@import './node_modules/bootstrap/scss/grid';
+@import './node_modules/bootstrap/scss/tables';
+@import './node_modules/bootstrap/scss/forms';
+@import './node_modules/bootstrap/scss/buttons';
+@import './node_modules/bootstrap/scss/transitions';
+@import './node_modules/bootstrap/scss/dropdown';
+@import './node_modules/bootstrap/scss/button-group';
+@import './node_modules/bootstrap/scss/nav';
+@import './node_modules/bootstrap/scss/navbar';
+@import './node_modules/bootstrap/scss/card';
+@import './node_modules/bootstrap/scss/accordion';
+@import './node_modules/bootstrap/scss/breadcrumb';
+@import './node_modules/bootstrap/scss/pagination';
+@import './node_modules/bootstrap/scss/badge';
+@import './node_modules/bootstrap/scss/alert';
+@import './node_modules/bootstrap/scss/progress';
+@import './node_modules/bootstrap/scss/list-group';
+@import './node_modules/bootstrap/scss/close';
+@import './node_modules/bootstrap/scss/toasts';
+@import './node_modules/bootstrap/scss/modal';
+@import './node_modules/bootstrap/scss/tooltip';
+@import './node_modules/bootstrap/scss/popover';
+@import './node_modules/bootstrap/scss/carousel';
+@import './node_modules/bootstrap/scss/spinners';
+@import './node_modules/bootstrap/scss/offcanvas';
 
-@import "./node_modules/utksds-framework/src/scss/regions/contentarea";
-@import "./node_modules/utksds-framework/src/scss/regions/extended_footer";
-@import "./node_modules/utksds-framework/src/scss/regions/footers";
-@import "./node_modules/utksds-framework/src/scss/regions/headers";
-@import "./node_modules/utksds-framework/src/scss/regions/navigation_horizontal";
-@import "./node_modules/utksds-framework/src/scss/regions/navigation_unit";
-@import "./node_modules/utksds-framework/src/scss/regions/navigation_universal";
+// @import './node_modules/utksds-framework/src/scss/regions/contentarea';
+// @import './node_modules/utksds-framework/src/scss/regions/extended_footer';
+// @import './node_modules/utksds-framework/src/scss/regions/footers';
+// @import './node_modules/utksds-framework/src/scss/regions/headers';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_horizontal';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_unit';
+// @import './node_modules/utksds-framework/src/scss/regions/navigation_universal';
 // @import "./node_modules/utksds-framework/src/scss/regions/search_area";
-@import "./node_modules/utksds-framework/src/scss/regions/sidebar";
-@import "./node_modules/utksds-framework/src/scss/regions/universal-header";
-@import "./node_modules/utksds-framework/src/scss/regions/universal-footer";
+// @import './node_modules/utksds-framework/src/scss/regions/sidebar';
+// @import './node_modules/utksds-framework/src/scss/regions/universal-header';
+// @import './node_modules/utksds-framework/src/scss/regions/universal-footer';
 
 // UT Components
-
-@import "./node_modules/utksds-framework/src/scss/components/accordion_folds";
-@import "./node_modules/utksds-framework/src/scss/components/calendars";
-@import "./node_modules/utksds-framework/src/scss/components/cards";
-@import "./node_modules/utksds-framework/src/scss/components/forms";
-@import "./node_modules/utksds-framework/src/scss/components/gallery";
-@import "./node_modules/utksds-framework/src/scss/components/latest_posts";
-@import "./node_modules/utksds-framework/src/scss/components/profiles";
-@import "./node_modules/utksds-framework/src/scss/components/promos";
-@import "./node_modules/utksds-framework/src/scss/components/jumbotron";
-@import "./node_modules/utksds-framework/src/scss/components/strip";
+// @import './node_modules/utksds-framework/src/scss/components/accordion_folds';
+// @import './node_modules/utksds-framework/src/scss/components/calendars';
+// @import './node_modules/utksds-framework/src/scss/components/cards';
+// @import './node_modules/utksds-framework/src/scss/components/forms';
+// @import './node_modules/utksds-framework/src/scss/components/gallery';
+// @import './node_modules/utksds-framework/src/scss/components/latest_posts';
+// @import './node_modules/utksds-framework/src/scss/components/profiles';
+// @import './node_modules/utksds-framework/src/scss/components/promos';
+// @import './node_modules/utksds-framework/src/scss/components/jumbotron';
+// @import './node_modules/utksds-framework/src/scss/components/strip';
 
 // UT Styles
-@import "./node_modules/utksds-framework/src/scss/styles/breadcrumbs";
-@import "./node_modules/utksds-framework/src/scss/styles/buttons";
-@import "./node_modules/utksds-framework/src/scss/styles/blockquote";
-@import "./node_modules/utksds-framework/src/scss/styles/highlight_boxes";
-@import "./node_modules/utksds-framework/src/scss/styles/frame";
-@import "./node_modules/utksds-framework/src/scss/styles/gutenberg";
-@import "./node_modules/utksds-framework/src/scss/styles/images";
-@import "./node_modules/utksds-framework/src/scss/styles/orange_hr";
-@import "./node_modules/utksds-framework/src/scss/styles/orange_mark";
-@import "./node_modules/utksds-framework/src/scss/styles/search_forms";
-@import "./node_modules/utksds-framework/src/scss/styles/typography";
-@import "./node_modules/utksds-framework/src/scss/styles/background";
-@import "./node_modules/utksds-framework/src/scss/styles/textcolors";
-@import "./node_modules/utksds-framework/src/scss/styles/pagination";
-@import "./node_modules/utksds-framework/src/scss/styles/logos";
-@import "./node_modules/utksds-framework/src/scss/styles/wp";
+// @import './node_modules/utksds-framework/src/scss/styles/breadcrumbs';
+// @import './node_modules/utksds-framework/src/scss/styles/buttons';
+// @import './node_modules/utksds-framework/src/scss/styles/blockquote';
+// @import './node_modules/utksds-framework/src/scss/styles/highlight_boxes';
+// @import './node_modules/utksds-framework/src/scss/styles/frame';
+// @import './node_modules/utksds-framework/src/scss/styles/gutenberg';
+// @import './node_modules/utksds-framework/src/scss/styles/images';
+// @import './node_modules/utksds-framework/src/scss/styles/orange_hr';
+// @import './node_modules/utksds-framework/src/scss/styles/orange_mark';
+// @import './node_modules/utksds-framework/src/scss/styles/search_forms';
+// @import './node_modules/utksds-framework/src/scss/styles/typography';
+// @import './node_modules/utksds-framework/src/scss/styles/background';
+// @import './node_modules/utksds-framework/src/scss/styles/textcolors';
+// @import './node_modules/utksds-framework/src/scss/styles/pagination';
+// @import './node_modules/utksds-framework/src/scss/styles/logos';
+// @import './node_modules/utksds-framework/src/scss/styles/wp';
 
-// body {
-//   min-height: 100vh;
-// }
+// ------  WP Core Block Styling
+// @import '@wordpress/block-library/build-style/style.css';
+// @import '@wordpress/block-library/build-style/theme.css';
+
+@import '@wordpress/block-library/build-style/style.css';
+@import '@wordpress/block-library/build-style/theme.css';
+@import '@wordpress/block-library/build-style/button/style.css';
+@import '@wordpress/block-library/build-style/buttons/style.css';
+@import '@wordpress/block-library/build-style/columns/style.css';
+@import '@wordpress/block-library/build-style/cover/style.css';
+@import '@wordpress/block-library/build-style/gallery/style.css';
+@import '@wordpress/block-library/build-style/gallery/theme.css';
+@import '@wordpress/block-library/build-style/group/style.css';
+@import '@wordpress/block-library/build-style/group/theme.css';
+@import '@wordpress/block-library/build-style/image/style.css';
+@import '@wordpress/block-library/build-style/image/theme.css';
+@import '@wordpress/block-library/build-style/list/style.css';
+@import '@wordpress/block-library/build-style/media-text/style.css';
+@import '@wordpress/block-library/build-style/text-columns/style.css';
+@import '@wordpress/block-library/build-style/video/style.css';
+
+// ------  Gutenberg Core Blocks than need styling
+@import './core-blocks/layout';
+
+// ------  UT Regions – LOCAL
+@import './framework/regions/contentarea';
+@import './framework/regions/extended_footer';
+@import './framework/regions/footers';
+@import './framework/regions/headers';
+@import './framework/regions/navigation_horizontal';
+
+// several of the navigation styles were not originally pulled in from the framework. Commenting out for now
+// @import './framework/regions/navigation_horizontal_dropdown';
+// @import './framework/regions/navigation_leftrail';
+// @import './framework/regions/navigation_megamenu';
+// @import './framework/regions/navigation_offcanvas';
+
+@import './framework/regions/navigation_unit';
+@import './framework/regions/navigation_universal';
+@import './framework/regions/search_area';
+@import './framework/regions/sidebar';
+@import './framework/regions/universal-footer';
+@import './framework/regions/universal-header';
+
+// ------  UT Components – LOCAL
+@import './framework/components/accordion_folds';
+@import './framework/components/calendars';
+@import './framework/components/cards';
+@import './framework/components/forms';
+@import './framework/components/gallery';
+@import './framework/components/jumbotron';
+@import './framework/components/latest_posts';
+@import './framework/components/profiles';
+@import './framework/components/promos';
+@import './framework/components/sliders';
+@import './framework/components/strip';
+
+// ------  UT Styles – LOCAL
+@import './framework/styles/background';
+@import './framework/styles/blockquote';
+@import './framework/styles/breadcrumbs';
+// @import './framework/styles/buttons';
+@import './framework/styles/frame';
+@import './framework/styles/gutenberg';
+@import './framework/styles/highlight_boxes';
+@import './framework/styles/images';
+@import './framework/styles/logos';
+@import './framework/styles/orange_hr';
+@import './framework/styles/orange_mark';
+@import './framework/styles/pagination';
+@import './framework/styles/search_forms';
+@import './framework/styles/textcolors';
+@import './framework/styles/typography';
+@import './framework/styles/wp';
+
+// @import './framework/styles/webfont';
+//webfont was not originally pulled in from the framework, commenting out for now
 
 // Main Site
 
-@import "_extended";
+@import '_extended';

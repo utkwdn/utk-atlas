@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Header, Footer, Posts, Pagination } from 'components';
 import { GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
-import { client } from 'client';
+import { client, Post } from 'client';
 
 const POSTS_PER_PAGE = 6;
 
@@ -23,10 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
+      <Header />
 
       <Head>
         <title>Posts - {generalSettings?.title}</title>
@@ -35,16 +32,21 @@ export default function Page() {
       <main className="content content-single">
         <div className="wrap">
           <h2>Category: {category?.name}</h2>
-          <Posts posts={posts.nodes} />
+          {/* probably tweak `Posts` to avoid the `as` here */}
+          <Posts posts={(posts?.nodes || []) as Post[]} />
 
-          <Pagination
-            pageInfo={posts.pageInfo}
-            basePath={`/category/${categorySlug}`}
-          />
+          {posts?.pageInfo && (
+            <Pagination
+              pageInfo={posts.pageInfo}
+              basePath={`/category/${
+                typeof categorySlug === 'string' ? categorySlug : ''
+              }`}
+            />
+          )}
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

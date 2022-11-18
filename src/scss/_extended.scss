@@ -1,5 +1,5 @@
-@import "./node_modules/utksds-framework/src/scss/custom_variables";
-@import "./node_modules/bootstrap/scss/variables";
+@import './framework/custom_variables';
+@import './node_modules/bootstrap/scss/variables';
 
 // applied just so I can space out some things that were overlapping. Remove later.
 // added to the Home Sweet Home section
@@ -7,8 +7,16 @@
   margin-bottom: 300px;
 }
 
+// Need to extend bootstrap
+.position-relative > div[class$='__inner-container'] {
+  position: relative;
+}
+.z-index-1 > div[class$='__inner-container'] {
+  z-index: 1;
+}
+
 /* Class to pull in max width of group */
-.inset-container > div[class$="__inner-container"] {
+.inset-container > div[class$='__inner-container'] {
   // width: 85vw;
   margin: 0 auto;
 }
@@ -34,7 +42,7 @@ body {
   width: 100vw;
 }
 .campus-gallery > div {
-  background-image: url("https://images.utk.edu/designsystem/www2021/v1/i/knoxville_illustration_3.svg");
+  background-image: url('https://images.utk.edu/designsystem/www2021/v1/i/knoxville_illustration_3.svg');
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 350%;
@@ -53,7 +61,7 @@ body {
   // background-color: white !important;
 }
 
-.cta-card-flex > div[class$="__inner-container"] {
+.cta-card-flex > div[class$='__inner-container'] {
   display: flex;
 }
 .home-card {
@@ -145,6 +153,18 @@ body {
   }
 }
 
+/* Add to card container group to allow for a more random pattern of big/little cards
+used on Traditions */
+.card-variety-A > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 50%;
+  }
+}
+.card-variety-B > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 60%;
+  }
+}
 /* In process Link Group */
 
 // .btn-group-vertical {
@@ -338,7 +358,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
 }
 
 .grey-dot-strip > div {
-  background-image: url("//images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif");
+  background-image: url('//images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif');
   background-position: bottom left;
   background-size: auto;
   background-repeat: repeat-x;
@@ -353,8 +373,8 @@ Buttons with Chevrons – pulled from ExpressionEngine
     width: 10vw;
   }
 }
-.icon-torch > div[class$="__inner-container"] {
-  background-image: url("//images.utk.edu/images/www/home/icon-light-the-way.svg");
+.icon-torch > div[class$='__inner-container'] {
+  background-image: url('//images.utk.edu/images/www/home/icon-light-the-way.svg');
   background-repeat: no-repeat;
   object-fit: cover;
   width: 100%;
@@ -373,7 +393,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   margin-bottom: 2rem;
   &::before {
     position: absolute;
-    content: " ";
+    content: ' ';
     width: 60%;
     height: calc(100% - 2rem);
     bottom: -$container-padding-x;
@@ -411,7 +431,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
 
     &::before {
       position: absolute;
-      content: " ";
+      content: ' ';
       width: 60%;
       height: calc(100% - 2rem);
       // bottom: -$container-padding-x;
@@ -430,11 +450,11 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-.futureStat > div[class$="__inner-container"] {
+.futureStat > div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  .statRow > div[class$="__inner-container"] {
+  .statRow > div[class$='__inner-container'] {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -464,7 +484,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   position: relative;
   width: 100%;
 }
-.profileCardContainer > div[class$="__inner-container"] {
+.profileCardContainer > div[class$='__inner-container'] {
   display: flex;
   align-items: stretch;
   align-content: space-around;
@@ -474,7 +494,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   row-gap: 3rem;
   position: relative;
 }
-.profileCardContainer > div[class$="__inner-container"] > * {
+.profileCardContainer > div[class$='__inner-container'] > * {
   flex-basis: 100%;
 }
 
@@ -482,7 +502,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   /* border:1px solid #707070; */
 }
 
-.profileCard div[class$="__inner-container"] {
+.profileCard div[class$='__inner-container'] {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -491,23 +511,23 @@ Buttons with Chevrons – pulled from ExpressionEngine
   border-radius: 0 30px 30px 0;
 }
 
-.profileCard div[class$="__inner-container"] > * {
+.profileCard div[class$='__inner-container'] > * {
   flex-basis: 50%;
 }
 
-.profileHeadshot div[class$="__inner-container"] {
+.profileHeadshot div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   align-content: stretch;
 }
-.profileHeadshot div[class$="__inner-container"] figure {
+.profileHeadshot div[class$='__inner-container'] figure {
   object-fit: cover;
   padding: 0;
   margin: 0;
 }
 
-.profileInfo div[class$="__inner-container"] {
+.profileInfo div[class$='__inner-container'] {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -526,6 +546,9 @@ Buttons with Chevrons – pulled from ExpressionEngine
   box-shadow: inset 0 -1px #ff8200;
   padding-bottom: 5px;
   margin-bottom: 1rem;
+  a {
+    text-decoration: none;
+  }
 }
 .profilePhone {
   font-size: 1.75rem;
@@ -535,7 +558,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   line-height: 1.7rem;
 }
 @media (min-width: 900px) {
-  .profileCardContainer > div[class$="__inner-container"] > * {
+  .profileCardContainer > div[class$='__inner-container'] > * {
     flex-basis: 49%;
   }
 }
@@ -589,7 +612,9 @@ Buttons with Chevrons – pulled from ExpressionEngine
     padding-top: 35rem;
   }
 }
-.home-alumni-strip {
+.home-alumni-strip,
+.strip-with-card {
+  position: relative;
   .strip {
     @media (max-width: 600px) {
       background-size: cover;
@@ -607,7 +632,62 @@ Buttons with Chevrons – pulled from ExpressionEngine
     }
   }
 }
+.grey-dot-overlay .strip.p-lg {
+  // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
+  // Currently set to  only work with a strip using Large Padding and 0 spacing
+  &:before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    // @media screen and (min-width: 800px) {
+    //   width: 60vw;
+    //   left: 0;
+    // }
+    // height: 50%;
+    position: absolute;
+    background-image: url('//images.utk.edu/designsystem/patterns/dot-repeat-y.png');
+    background-size: 40%;
+    background-position: bottom left;
+    background-repeat: repeat-y;
+    @media screen and (min-width: 800px) {
+      background-repeat: repeat-y;
+    }
+    opacity: 0.25;
+    margin: -6rem 0 0;
+    padding: 0;
+  }
+}
 
+// .grey-dot-overlay > div.strip-light .container {
+//   // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
+//   position: relative;
+//   &:before {
+//     content: "";
+//     width: 20vw;
+//     height: 100%;
+
+//     position: absolute;
+//     background-image: url("//images.utk.edu/designsystem/patterns/dot-repeat-y.png");
+//     filter: hue-rotate(20deg);
+//     filter: contrast(20%);
+//     background-size: 80%;
+//     background-position: bottom left;
+//     background-repeat: repeat-y;
+//     transform: rotate(90deg);
+
+//     z-index: 0;
+//     @media screen and (min-width: 800px) {
+//       background-repeat: repeat-y;
+//     }
+//     opacity: 0.25;
+//     margin: -6rem 0 0;
+//     padding: 0;
+//   }
+// }
+
+.orange-border-bottom .strip {
+  border-bottom: 4rem solid $utorange;
+}
 /* ––––––––––––––––––––––––––––––––––––– */
 /* ACADEMICS */
 /* –––––––––––––––––––––––––––– */
@@ -617,8 +697,39 @@ h1 {
   // top:0;
   // left:0;
 }
+// h2 {
+//   position: relative;
+//   z-index: 2;
+//   font-weight: 800;
+// }
+
+// Texture Add on. Works like heading-oa-bar
+.heading-texture-dots {
+  &:before {
+    content: '';
+    width: 75%;
+    width: 20rem;
+    height: 150%;
+
+    position: absolute;
+    background-image: url('//images.utk.edu/designsystem/patterns/dot-repeat-y.png');
+
+    filter: contrast(20%);
+    background-size: 70%;
+    background-position: bottom left;
+    background-repeat: repeat-y;
+
+    z-index: -1;
+    @media screen and (min-width: 800px) {
+      background-repeat: repeat-y;
+    }
+    opacity: 0.25;
+    margin: -2.5rem 0 0 -3rem;
+    padding: 0;
+  }
+}
 body.academics {
-  section[class^="PageTitle_hero"] {
+  section[class^='PageTitle_hero'] {
     position: relative;
     h1 {
       display: none;
@@ -636,7 +747,7 @@ body.academics {
       right: 0;
       &:after {
         position: absolute;
-        content: "";
+        content: '';
         top: 0;
         right: -3rem;
         border-right: 3rem solid $utorange;
@@ -656,15 +767,31 @@ body.academics {
   }
 }
 
-.fake-d-flex > div[class$="__inner-container"] {
+.fake-d-flex > div[class$='__inner-container'] {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
-  display: column;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
+  position: relative;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.fake-d-flex-end > div[class$='__inner-container'] {
+  // temporary fix until we have the framework in place
+  //parent flexbox group for .page-title-group and .hero-img-group
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
   // border: 2px solid red;
   position: relative;
   @media screen and (min-width: 800px) {
@@ -673,22 +800,90 @@ body.academics {
   }
 }
 
-/* ACADEMICS PAGE TITLE TREATMENT, based on A-Z index module */
+.comfy-container {
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: 1600px) {
+    width: 100%;
+  }
+}
+
+.split > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  & > :first-child {
+    flex-basis: 40%;
+  }
+  & > :last-child {
+    flex-basis: calc(60% - 2rem);
+    align-self: flex-start;
+  }
+}
+
+.third-split-visual > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and (min-width: 799px) {
+    flex-direction: row;
+  }
+  & > :first-child {
+    flex-basis: 70%;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    & > div[class$='__inner-container'] {
+      display: flex;
+      flex-direction: row;
+      & > {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  & > :nth-child(2n) {
+    flex-basis: 30%;
+    border: 2px solid green;
+  }
+}
+/* INTRO TITLE TREATMENT */
+
+.intro-flex {
+  // temporary fix until we have the framework in place
+  //parent flexbox group for .page-title-group and .hero-img-group
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: relative;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
 
 .page-title-group {
-  width: 80vw;
+  width: 84vw;
   // border: 2px solid purple;
-  margin: 0 auto 2rem auto;
-
+  margin: 0 8vw 2rem 8vw;
+  padding: 0;
   @media screen and (min-width: 1200px) {
     // width: 40vw;
     // max-width: 500px;
     flex-basis: 32vw;
+    flex-basis: 66vw;
     margin-bottom: 4rem;
     // flex-grow: 1;
   }
 }
-.hero-img-group > div[class$="__inner-container"] {
+.hero-img-group > div[class$='__inner-container'] {
   flex-basis: 50vw;
   // border: 2px solid red;
   display: flex;
@@ -698,11 +893,11 @@ body.academics {
   }
 }
 .hero-img-group {
-  width: 80vw;
-  // justify-content: flex-end;
-  margin: 0 auto 4rem auto;
+  width: 84vw;
+  // border: 2px solid purple;
+  margin: 0 8vw 2rem 8vw;
   @media screen and (min-width: 800px) {
-    position: absolute;
+    position: relative;
     max-width: 40vw;
     top: 0;
     right: 0;
@@ -721,6 +916,79 @@ body.academics {
   }
 }
 
+.intro-quote-group {
+  width: 100vw;
+  margin: 0 auto 4rem auto;
+  margin-left: calc(-1 * $spacer / 2);
+
+  // @media screen and (min-width: 1200px) {
+  //   flex-basis: 50vw;
+  //   max-width: none;
+  //   position: relative;
+  //   margin-left: 2rem;
+  //   align-items: center;
+  //   border: 2px solid red;
+  //   background-color: green;
+  // }
+
+  .quote-img-group {
+    & > div[class$='__inner-container'] {
+      // background-color: pink;
+      width: 100%;
+      min-height: 16rem;
+      height: 100%;
+      object-fit: cover;
+    }
+    figure {
+      object-fit: cover;
+    }
+    img {
+      // border: 2px solid blue;
+      object-fit: cover;
+      min-height: 16rem;
+      width: auto;
+      // background-color: blue;
+      @media screen and (min-width: 800px) {
+        min-height: 20rem;
+      }
+      @media screen and (min-width: 1200px) {
+        min-height: 25rem;
+      }
+    }
+  }
+  // main intro-quote-group inner container
+  & > div[class$='__inner-container'] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      flex-direction: row;
+      // background-color: pink;
+    }
+    @media screen and (min-width: 1200px) {
+      // background-color: purple;
+      flex-direction: column;
+    }
+  }
+
+  // .img {
+  //   flex-shrink: 1;
+  //   flex-grow: 1;
+  //   max-width: 803px;
+  // }
+  .quote-content-group {
+    width: 84vw;
+    margin: 0 8vw 4rem 8vw;
+    @media screen and (min-width: 1200px) {
+      margin: 0;
+      width: 96%;
+      margin: 2%;
+    }
+  }
+}
+
 h1.area {
   font-size: 2.6rem;
   font-weight: 600;
@@ -729,7 +997,7 @@ h1.area {
   letter-spacing: 0.26rem;
   text-transform: uppercase;
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     color: $utorange;
   }
@@ -751,11 +1019,385 @@ hr.oa-thick-bar {
 .title-container {
 }
 
-p.title {
-  font-size: 4.7rem;
-  font-weight: 600;
-
-  max-width: 10ch;
-  line-height: 4.6rem;
+p.theme {
+  // font-size: 4.7rem;
+  // font-weight: 600;
+  // line-height: 4.6rem;
+  // max-width: 10ch;
+  // font-size: 6.5rem;
+  font-size: $h1-font-size;
+  // line-height: 6rem;
+  // line-height: 4.8rem; // need to figure out how to get bootstrap variables used here
+  line-height: $headings-line-height;
+  font-weight: $font-weight-ultra;
   margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.card-quote-offset {
+  width: 90%;
+  position: relative;
+  // margin-left: 20%;
+  display: inline-block;
+  z-index: 20;
+  background-color: $white;
+  border-bottom-left-radius: 3rem 3rem;
+  padding: 2.5rem;
+  margin: 4rem auto -9rem;
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    // max-width: 500px;
+    // margin-left: auto;
+    // margin-right: 0;
+    // margin-top: 4.5rem;
+
+    margin: 5rem 0 -12rem auto;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 50%;
+
+    margin: 2rem 0 -12rem auto;
+  }
+  // blockquote {
+  //   // background-color: white;
+  //   background-image: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   padding: 1rem;
+
+  //   &:before {
+  //     // animation: quoteMarks 1s linear infinite;
+  //     // animation-play-state: paused;
+  //     // animation-delay: calc(var(scroll) * -1s);
+  //     content: open-quote;
+  //     font-family: $font-family-sans-serif;
+  //     font-weight: 900;
+  //     font-size: calc($font-size-base * 3);
+  //     font-size: clamp(8rem, 20vw, 13rem);
+  //     font-size: clamp(
+  //       (calc($font-size-base * 6.4)),
+  //       20vw,
+  //       (calc($font-size-base * 8.5))
+  //     );
+  //     display: inline-block;
+  //     color: $utorange;
+  //     position: absolute;
+  //     top: -4rem;
+  //     left: -3.5rem;
+  //     left: -2.5rem;
+  //     @media screen and (min-width: 700px) {
+  //       left: -4rem;
+  //       top: -5rem;
+  //     }
+  //     @media screen and (min-width: 930px) {
+  //       left: -5rem;
+  //       top: -6rem;
+  //     }
+  //   }
+  //   &:after {
+  //     visibility: hidden;
+  //     content: close-quote;
+  //     // must close quote or else, netxt instance of quote will use a single quote
+  //   }
+  //   p {
+  //     margin-top: 0;
+  //   }
+  // }
+}
+
+// control width of content based on character widths
+.ch-med {
+  max-width: 45ch;
+}
+.ch-lg {
+  max-width: 60ch;
+}
+// @keyframes quoteMarks {
+//   0% {
+//     -webkit-transform: rotate(10deg);
+//     transform: rotate(10deg);
+//   }
+//   25% {
+//     -webkit-transform: rotate(-10deg);
+//     transform: rotate(-10deg);
+//   }
+//   50% {
+//     -webkit-transform: rotate(20deg);
+//     transform: rotate(20deg);
+//   }
+//   75% {
+//     -webkit-transform: rotate(-5deg);
+//     transform: rotate(-5deg);
+//   }
+//   100% {
+//     -webkit-transform: rotate(0deg);
+//     transform: rotate(0deg);
+//   }
+// }
+.message-big {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  // color: #ed7002;
+}
+.group-overlay-blur .strip {
+  &:before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: $white;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    opacity: 0.9;
+  }
+}
+
+.group-100 {
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+}
+
+.dig .strip {
+  background-color: $white !important;
+}
+.align-items-stretch {
+  @extend .stretch;
+}
+
+.stretch > div[class$='__inner-container'] {
+  align-items: stretch;
+}
+.fortysixty-forty {
+  flex-basis: 60%;
+  flex: 20vw 1 40%;
+  padding: 2rem;
+
+  @include media-breakpoint-up(xl) {
+    flex: 20vw 1 40%;
+  }
+}
+
+.fortysixty-sixty {
+  flex-basis: 40%;
+  position: relative;
+
+  @include media-breakpoint-up(xl) {
+    flex-basis: 60%;
+  }
+  h2 {
+    margin-top: 0;
+  }
+
+  img {
+    // object-fit: cover;
+    // max-width: 1064px;
+    // max-height: 666px;
+    position: realtive;
+  }
+  > div[class$='__inner-container'] {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-end;
+    & > * {
+      flex: 1 1 auto;
+      min-width: 300px;
+    }
+    figure {
+      // margin-left: calc($spacer * 2);
+    }
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+.card-imagebased-container > div[class$='__inner-container'] {
+  display: flex;
+  gap: 5rem 3rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+  }
+}
+.card-imgbased {
+  flex-basis: 100%;
+  border: 0.5rem solid white;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: 992px) {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+.card-imgbased > div[class$='__inner-container'] {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  figure {
+    margin: 0;
+  }
+  .link-function-only {
+    color: white;
+    font-size: 0;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  &:hover {
+    // opacity: 0.8;
+    cursor: pointer;
+
+    .card-imgbased-title {
+      h3 {
+        transition: all 0.2s ease-in;
+        color: $utsmokeytext !important;
+      }
+      &:after {
+        transition: all 0.2s ease-in;
+        width: 50%;
+        height: 60%;
+      }
+    }
+  }
+
+  .card-imgbased-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .card-imgbased-title {
+    position: absolute;
+    margin: 0;
+    width: 86%;
+    z-index: 10;
+    height: auto;
+    bottom: 0.1vh;
+    bottom: -3rem;
+    right: 0;
+    left: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    &:after {
+      content: '';
+      background-color: $utorange;
+      background-image: url('//images.utk.edu/designsystem/patterns/gingham40.svg');
+
+      transition: all 0.2s ease-in;
+      right: -1rem;
+      bottom: -1rem;
+      display: block;
+      width: 46%;
+      height: 60%;
+      z-index: -3;
+      position: absolute;
+    }
+  }
+
+  .card-imgbased-title > div[class$='__inner-container'] {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    background-color: $white;
+
+    padding: 1rem 1rem 1rem 0;
+    h3 {
+      transition: all 0.2s ease-in;
+      // filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
+      position: relative;
+      width: auto;
+      // color: white;
+
+      color: #707070;
+      font-size: clamp(2.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+      // text-transform: uppercase;
+      vertical-align: top;
+    }
+    p {
+      // color: white;
+      color: $utsmokey;
+      color: #707070;
+      font-weight: 700;
+      line-height: clamp(1rem, 10vw, 1.3rem);
+      margin-top: 0.74rem;
+
+      // filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
+    }
+    // &:before {
+    //   position: relative;
+    //   content: " ";
+    //   flex-basis: 5%;
+    //   margin-right: 0.5rem;
+    //   display: flex;
+
+    //   height: inherit;
+    //   justify-content: flex-start;
+    //   align-items: flex-start;
+    //   align-content: flex-start;
+    //   background-color: #ff8200;
+    //   // height: clamp(0.5rem, 10vw, 3.5rem);
+    //   width: clamp(0.5rem, 10vw, 3.5rem);
+
+    //   content: "\25AA";
+    //   content: "\25FC";
+    //   content: " ";
+    //   // font-size: clamp(1rem, 20vw, 3rem);
+    //   // font-size: clamp(6rem, 30vw, 12rem);
+    //   margin-top: 0;
+    //   margin-bottom: 0;
+    //   text-align: left;
+    //   color: $utorange;
+    //   vertical-align: top;
+    //   margin-top: 1.2rem;
+    // }
+  }
+}
+
+.squareBlock {
+  // width: clamp(0.5rem, 10vw, 3.5rem);
+  display: flex;
+  flex-basis: 14%;
+  flex: 1 0 14%;
+  max-width: 2.5rem;
+  @media screen and (min-width: 992px) {
+    flex-basis: 10%;
+  }
+  margin-right: 0.5rem;
+  background-color: #ff8200;
+  display: inline-block;
+  margin-top: 0.6rem;
+  margin-left: -1rem;
+  &:after {
+    padding-bottom: 100%;
+    // padding bottom makes this have perfect square proportions relative to the width
+    display: block;
+    content: '';
+  }
+}
+
+.push-up {
+  margin-top: -4rem;
+  position: absolute;
+}
+.push-down {
+  bottom: -4rem;
+  position: relative;
+}
+
+.clear-image {
+  display: block;
 }

@@ -1,5 +1,10 @@
 import { getNextStaticProps } from '@faustjs/next';
-import { client, OrderEnum, PostObjectsConnectionOrderbyEnum } from 'client';
+import {
+  client,
+  OrderEnum,
+  Post,
+  PostObjectsConnectionOrderbyEnum,
+} from 'client';
 import { Footer, Header, Pagination, Posts } from 'components';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
@@ -28,29 +33,29 @@ export default function Page() {
 
   return (
     <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
+      <Header />
 
       <Head>
         <title>
-          {generalSettings.title} - {generalSettings.description}
+          {generalSettings?.title} - {generalSettings?.description}
         </title>
       </Head>
 
       <main className="content content-index">
+        {/* probably tweak `Posts` to avoid the `as` here */}
         <Posts
-          posts={posts.nodes}
+          posts={(posts?.nodes || []) as Post[]}
           heading="Blog Posts"
           headingLevel="h2"
           postTitleLevel="h3"
           id={styles.post_list}
         />
-        <Pagination pageInfo={posts.pageInfo} basePath="/posts" />
+        {posts?.pageInfo && (
+          <Pagination pageInfo={posts.pageInfo} basePath="/posts" />
+        )}
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

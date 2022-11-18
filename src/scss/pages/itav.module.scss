@@ -1,10 +1,21 @@
-@import "scss/common";
-
+@import 'scss/common';
+//custom
 .fullscreen-bg {
   width: 100%;
   background-size: cover;
-  border: 2px solid red;
   display: block;
+  video.fullscreen-bg__video {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.st0 {
+  fill: none;
+  stroke: #ff8200;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
 }
 
 // pulled from ExpressionEngine css_itavhomegraphic.css
@@ -104,7 +115,7 @@
   left: 0;
   z-index: 1;
   pointer-events: auto;
-  content: "";
+  content: '';
   background-color: rgba(0, 0, 0, 0);
 }
 

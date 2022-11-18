@@ -1,0 +1,74 @@
+{
+    "Areasofstudy": [
+{
+    "category": "Art and Performance",
+    "categoryA": "Art",
+    "categoryB": "Performance",
+    "image": "//images/someimage.jpg",
+    "description": "Art and performance is the study of...",
+    "programs": 
+        [
+            {
+                "program": "Art Education",
+                "college": "College of Something",
+                "degrees": [
+                    "BA",
+                    "BS"
+                ]
+            },
+            {
+                "program": "Architecture",
+                "college": "College of Something",
+                "degrees": [
+                    "BA",
+                    "MA",
+                    "PHD"
+                ]
+            },
+            {
+                "program": "Science",
+                "college": "College of Something",
+                "degrees": [
+                    "BS",
+                    "BS"
+                ]
+            }
+        ]
+    },
+
+    {
+        "category": "Business",
+        "categoryA": "Business",
+        "image": "//images/someimage.jpg",
+        "description": "Business is the study of...",
+        "programs": 
+            [
+                {
+                    "program": "Art Education",
+                    "college": "Haslam College of Business",
+                    "degreestypes": [
+                        "BA",
+                        "BS"
+                    ]
+                },
+                {
+                    "program": "Architecture",
+                    "college": "College of Something",
+                    "degrees": [
+                        "BA",
+                        "MA",
+                        "PHD"
+                    ]
+                },
+                {
+                    "program": "Science",
+                    "college": "College of Something",
+                    "degrees": [
+                        "BS",
+                        "BS"
+                    ]
+                }
+            ]
+        }
+]
+}

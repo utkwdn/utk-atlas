@@ -8,10 +8,7 @@ export default function Page(): JSX.Element {
 
   return (
     <>
-      <Header
-        title={generalSettings?.title}
-        description={generalSettings?.description}
-      />
+      <Header />
       <main className="content content-page">
         <PageTitle title={"Oops! That page can't be found."} />
         <div className="wrap">
@@ -25,7 +22,7 @@ export default function Page(): JSX.Element {
           </div>
         </div>
       </main>
-      <Footer copyrightHolder={generalSettings?.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

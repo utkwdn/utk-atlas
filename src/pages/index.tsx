@@ -1,15 +1,16 @@
-import { getNextStaticProps } from "@faustjs/next";
+import { getNextStaticProps } from '@faustjs/next';
 
-import { GetStaticPropsContext } from "next";
-import Head from "next/head";
-import React from "react";
-import { CTA, Footer, Header, PageTitle, Posts } from "components";
-import styles from "scss/pages/home.module.scss";
-import { client, PageIdType } from "client";
+import { GetStaticPropsContext } from 'next';
+import Head from 'next/head';
+import React from 'react';
+import { CTA, Footer, Header, PageTitle, Posts } from 'components';
+import styles from 'scss/pages/home.module.scss';
+import { client, PageIdType } from 'client';
 //import { getArrayFields, castNotSkeleton } from 'gqty';
 //import TimelineEvent from '../components/TimelineEvent';
 
-import Hero from "components/Hero.js";
+import Hero from 'components/Hero.js';
+import ParsedMarkup from 'components/ParsedMarkup';
 
 export default function Page() {
   const { useQuery, usePage, usePosts } = client;
@@ -23,7 +24,7 @@ export default function Page() {
   //let frontPageClean = Object.fromEntries(frontPageParts);
 
   const frontPageContent = usePage({
-    id: "/",
+    id: '/',
     idType: PageIdType.URI,
   });
 
@@ -32,21 +33,18 @@ export default function Page() {
   const posts = usePosts({
     first: 6,
     where: {
-      categoryName: "uncategorized",
+      categoryName: 'uncategorized',
     },
   });
   //console.log(timelineEvents[0].slug);
 
   return (
     <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
+      <Header />
 
       <Head>
         <title>
-          {generalSettings.title} - {generalSettings.description}
+          {generalSettings?.title} - {generalSettings?.description}
         </title>
       </Head>
       <Hero />
@@ -60,14 +58,13 @@ export default function Page() {
 
       <div className="container-fluid">
         <main id="content">
-          <div
-            className="entry-content container-xxl"
-            dangerouslySetInnerHTML={{ __html: frontPageContent?.content() }}
-          />
+          <div className="entry-content container-xxl">
+            <ParsedMarkup content={frontPageContent?.content?.() || ''} />
+          </div>
         </main>
       </div>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }
