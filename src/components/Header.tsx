@@ -146,7 +146,7 @@ const Header = () => {
 
   // Checking UT Alerts RSS and displaying an alert if it exists
   function fetchAlert() {
-    const url = 'http://www.getrave.com/rss/utk/channel1';
+    const url = 'https://www.getrave.com/rss/utk/channel1';
     const response = fetch(url)
       .then((response) => response.text())
       .then((result) => {
