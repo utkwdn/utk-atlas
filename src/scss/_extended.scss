@@ -480,11 +480,11 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-.futureStat > div[class$='__inner-container'] {
+.futureStat {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  .statRow > div[class$='__inner-container'] {
+  .statRow {
     display: flex;
     flex-direction: row;
     align-items: center;
