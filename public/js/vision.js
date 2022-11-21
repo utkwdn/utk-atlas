@@ -1,7 +1,7 @@
 // Remove the transition class
 
 console.log('hi – the javascript is firing');
-const torchSlide = document.querySelector('[class^="Vision_torchCamo01"]');
+const torchSlide = document.querySelector('.torchCamo01');
 torchSlide.classList.remove('torchCamoAnimate');
 
 // Create the observer, same as before:
@@ -16,7 +16,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-observer.observe(document.querySelector('.Vision_camo01Container'));
+observer.observe(document.querySelector('.camo01Container'));
 
 // End TorchCamo01
 // ---------------------------------------------------------
