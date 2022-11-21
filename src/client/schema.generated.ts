@@ -66,7 +66,7 @@ export interface AToZCategoryToAToZConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -106,7 +106,7 @@ export interface AToZCategoryToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -190,6 +190,8 @@ export interface AToZToAToZCategoryConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -236,6 +238,8 @@ export interface AToZToTermNodeConnectionWhereArgs {
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -274,7 +278,7 @@ export interface AreaOfStudyToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -312,7 +316,7 @@ export interface AreaOfStudyToProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -364,7 +368,7 @@ export interface BlockEditorContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -462,6 +466,8 @@ export interface CategoryToCategoryConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -474,7 +480,7 @@ export interface CategoryToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -528,7 +534,7 @@ export interface CategoryToPostConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -564,9 +570,9 @@ export interface CategoryToPostConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -594,7 +600,7 @@ export interface CollegeToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -632,7 +638,7 @@ export interface CollegeToProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -662,6 +668,14 @@ export interface CollegeToProgramConnectionWhereArgs {
   status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
+}
+
+/** The Type of Identifier used to fetch a single comment node. Default is "ID". To be used along with the "id" field. */
+export enum CommentNodeIdTypeEnum {
+  /** Identify a resource by the Database ID. */
+  DATABASE_ID = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  ID = 'ID',
 }
 
 /** Arguments for filtering the CommentToCommentConnection connection */
@@ -696,7 +710,7 @@ export interface CommentToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -758,7 +772,7 @@ export interface CommentToParentCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -870,7 +884,7 @@ export interface ContentTypeToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1376,7 +1390,7 @@ export interface DegreeToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1414,7 +1428,7 @@ export interface DegreeToProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1620,7 +1634,7 @@ export interface HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArg
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1660,7 +1674,7 @@ export interface HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1714,7 +1728,7 @@ export interface MajorToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1752,7 +1766,7 @@ export interface MajorToProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1858,7 +1872,7 @@ export interface MediaItemToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -1898,7 +1912,7 @@ export enum MenuItemNodeIdTypeEnum {
 
 /** Arguments for filtering the MenuItemToMenuItemConnection connection */
 export interface MenuItemToMenuItemConnectionWhereArgs {
-  /** The ID of the object */
+  /** The database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
@@ -1934,7 +1948,7 @@ export enum MenuNodeIdTypeEnum {
 
 /** Arguments for filtering the MenuToMenuItemConnection connection */
 export interface MenuToMenuItemConnectionWhereArgs {
-  /** The ID of the object */
+  /** The database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
@@ -2064,7 +2078,7 @@ export interface PageToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -2094,7 +2108,7 @@ export interface PageToCommentConnectionWhereArgs {
   userId?: InputMaybe<Scalars['ID']>;
 }
 
-/** Arguments for filtering the pageToRevisionConnection connection */
+/** Arguments for filtering the PageToRevisionConnection connection */
 export interface PageToRevisionConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
   author?: InputMaybe<Scalars['Int']>;
@@ -2108,7 +2122,7 @@ export interface PageToRevisionConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -2204,7 +2218,7 @@ export interface PostFormatToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -2258,7 +2272,7 @@ export interface PostFormatToPostConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -2294,9 +2308,9 @@ export interface PostFormatToPostConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -2472,6 +2486,8 @@ export interface PostToCategoryConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -2508,7 +2524,7 @@ export interface PostToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -2578,11 +2594,13 @@ export interface PostToPostFormatConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
 
-/** Arguments for filtering the postToRevisionConnection connection */
+/** Arguments for filtering the PostToRevisionConnection connection */
 export interface PostToRevisionConnectionWhereArgs {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
   author?: InputMaybe<Scalars['Int']>;
@@ -2604,7 +2622,7 @@ export interface PostToRevisionConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -2640,9 +2658,9 @@ export interface PostToRevisionConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -2688,6 +2706,8 @@ export interface PostToTagConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -2734,6 +2754,8 @@ export interface PostToTermNodeConnectionWhereArgs {
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -2870,6 +2892,8 @@ export interface ProgramToAreaOfStudyConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -2914,6 +2938,8 @@ export interface ProgramToCollegeConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -2958,6 +2984,8 @@ export interface ProgramToDegreeConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3002,6 +3030,8 @@ export interface ProgramToMajorConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3048,6 +3078,8 @@ export interface ProgramToTermNodeConnectionWhereArgs {
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3136,7 +3168,7 @@ export interface ReusableBlockToRevisionConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3208,6 +3240,8 @@ export interface RootQueryToAToZCategoryConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3218,7 +3252,7 @@ export interface RootQueryToAToZConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3256,7 +3290,7 @@ export interface RootQueryToAcalogProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3328,6 +3362,8 @@ export interface RootQueryToAreaOfStudyConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3346,7 +3382,7 @@ export interface RootQueryToBlockEditorPreviewConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3420,6 +3456,8 @@ export interface RootQueryToCategoryConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3464,6 +3502,8 @@ export interface RootQueryToCollegeConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3500,7 +3540,7 @@ export interface RootQueryToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -3538,7 +3578,7 @@ export interface RootQueryToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3578,7 +3618,7 @@ export interface RootQueryToContentRevisionUnionConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3650,6 +3690,8 @@ export interface RootQueryToDegreeConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3694,6 +3736,8 @@ export interface RootQueryToMajorConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3712,7 +3756,7 @@ export interface RootQueryToMediaItemConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3746,7 +3790,7 @@ export interface RootQueryToMediaItemConnectionWhereArgs {
 
 /** Arguments for filtering the RootQueryToMenuConnection connection */
 export interface RootQueryToMenuConnectionWhereArgs {
-  /** The ID of the object */
+  /** The database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
@@ -3756,7 +3800,7 @@ export interface RootQueryToMenuConnectionWhereArgs {
 
 /** Arguments for filtering the RootQueryToMenuItemConnection connection */
 export interface RootQueryToMenuItemConnectionWhereArgs {
-  /** The ID of the object */
+  /** The database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** The menu location for the menu being queried */
   location?: InputMaybe<MenuLocationEnum>;
@@ -3780,7 +3824,7 @@ export interface RootQueryToPageConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3844,7 +3888,7 @@ export interface RootQueryToPostConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3880,9 +3924,9 @@ export interface RootQueryToPostConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -3928,6 +3972,8 @@ export interface RootQueryToPostFormatConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -3938,7 +3984,7 @@ export interface RootQueryToProgramConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -3976,7 +4022,7 @@ export interface RootQueryToReusableBlockConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4048,6 +4094,8 @@ export interface RootQueryToTagConnectionWhereArgs {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -4094,6 +4142,8 @@ export interface RootQueryToTermNodeConnectionWhereArgs {
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']>;
 }
@@ -4164,7 +4214,7 @@ export interface TagToContentNodeConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4218,7 +4268,7 @@ export interface TagToPostConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4254,9 +4304,9 @@ export interface TagToPostConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -4787,6 +4837,10 @@ export enum UserRoleEnum {
   /** User role with specific capabilities */
   EDITOR = 'EDITOR',
   /** User role with specific capabilities */
+  SEO_EDITOR = 'SEO_EDITOR',
+  /** User role with specific capabilities */
+  SEO_MANAGER = 'SEO_MANAGER',
+  /** User role with specific capabilities */
   SUBSCRIBER = 'SUBSCRIBER',
 }
 
@@ -4804,7 +4858,7 @@ export interface UserToBlockEditorPreviewConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4868,7 +4922,7 @@ export interface UserToCommentConnectionWhereArgs {
   contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of content object IDs to exclude affiliated comments for. */
   contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Content object name to retrieve affiliated comments for. */
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
   contentName?: InputMaybe<Scalars['String']>;
   /** Content Object parent ID to retrieve affiliated comments for. */
   contentParent?: InputMaybe<Scalars['Int']>;
@@ -4906,7 +4960,7 @@ export interface UserToContentRevisionUnionConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4952,7 +5006,7 @@ export interface UserToMediaItemConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -4998,7 +5052,7 @@ export interface UserToPageConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -5052,7 +5106,7 @@ export interface UserToPostConnectionWhereArgs {
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
   hasPassword?: InputMaybe<Scalars['Boolean']>;
-  /** Specific ID of the object */
+  /** Specific database ID of the object */
   id?: InputMaybe<Scalars['Int']>;
   /** Array of IDs for the objects to retrieve */
   in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -5088,9 +5142,9 @@ export interface UserToPostConnectionWhereArgs {
   tagIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   /** Array of tag IDs, used to display objects from one tag OR another */
   tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
-  /** Array of tag slugs, used to display objects from one tag OR another */
+  /** Array of tag slugs, used to display objects from one tag AND another */
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** Array of tag slugs, used to exclude objects in specified tags */
+  /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']>;
@@ -5150,6 +5204,7 @@ export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   Boolean: true,
   CategoryIdType: true,
   CollegeIdType: true,
+  CommentNodeIdTypeEnum: true,
   CommentsConnectionOrderbyEnum: true,
   ContentNodeIdTypeEnum: true,
   ContentTypeEnum: true,
@@ -5417,6 +5472,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   AToZToPreviewConnectionEdge: {
@@ -5455,6 +5511,7 @@ export const generatedSchema = {
     slug: { __type: '[String]' },
     taxonomies: { __type: '[TaxonomyEnum]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   AToZ_Atozfields: {
@@ -5917,6 +5974,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   CategoryToContentNodeConnection: {
@@ -6482,8 +6540,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     className: { __type: 'String' },
     displayAsDropdown: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
+    showLabel: { __type: 'Boolean!' },
     showPostCounts: { __type: 'Boolean!' },
+    style: { __type: 'BlockAttributesObject' },
     type: { __type: 'String!' },
   },
   CoreAudioBlock: {
@@ -6512,6 +6574,7 @@ export const generatedSchema = {
     loop: { __type: 'Boolean' },
     preload: { __type: 'String' },
     src: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreAudioBlockAttributesUnion: {
     __typename: { __type: 'String!' },
@@ -6529,6 +6592,7 @@ export const generatedSchema = {
     loop: { __type: 'Boolean' },
     preload: { __type: 'String' },
     src: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreAvatarBlock: {
     __typename: { __type: 'String!' },
@@ -6555,26 +6619,6 @@ export const generatedSchema = {
     size: { __type: 'Float!' },
     style: { __type: 'BlockAttributesObject' },
     userId: { __type: 'Float' },
-  },
-  CoreBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    reusableBlock: { __type: 'Node!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreBlockAttributes: {
-    __typename: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    ref: { __type: 'Float' },
   },
   CoreButtonBlock: {
     __typename: { __type: 'String!' },
@@ -6615,6 +6659,26 @@ export const generatedSchema = {
     $on: { __type: '$CoreButtonBlockAttributesUnion!' },
   },
   CoreButtonBlockDeprecatedV10Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    text: { __type: 'String' },
+    textColor: { __type: 'String' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreButtonBlockDeprecatedV11Attributes: {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
@@ -6833,6 +6897,8 @@ export const generatedSchema = {
     align: { __type: 'String' },
     anchor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
@@ -6846,6 +6912,8 @@ export const generatedSchema = {
     align: { __type: 'String' },
     anchor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
@@ -6855,6 +6923,8 @@ export const generatedSchema = {
     align: { __type: 'String' },
     anchor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
@@ -6877,8 +6947,11 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     month: { __type: 'Int' },
+    style: { __type: 'BlockAttributesObject' },
     year: { __type: 'Int' },
   },
   CoreCategoriesBlock: {
@@ -6900,10 +6973,14 @@ export const generatedSchema = {
     align: { __type: 'String' },
     className: { __type: 'String' },
     displayAsDropdown: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
+    showEmpty: { __type: 'Boolean!' },
     showHierarchy: { __type: 'Boolean!' },
     showOnlyTopLevel: { __type: 'Boolean!' },
     showPostCounts: { __type: 'Boolean!' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreCodeBlock: {
     __typename: { __type: 'String!' },
@@ -6926,6 +7003,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -6951,7 +7029,10 @@ export const generatedSchema = {
     allowedBlocks: { __type: 'BlockAttributesArray' },
     anchor: { __type: 'String' },
     backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
@@ -6969,7 +7050,10 @@ export const generatedSchema = {
     allowedBlocks: { __type: 'BlockAttributesArray' },
     anchor: { __type: 'String' },
     backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
@@ -6999,6 +7083,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     isStackedOnMobile: { __type: 'Boolean!' },
     layout: { __type: 'BlockAttributesObject' },
@@ -7018,6 +7104,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     isStackedOnMobile: { __type: 'Boolean!' },
     layout: { __type: 'BlockAttributesObject' },
@@ -7033,6 +7121,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     isStackedOnMobile: { __type: 'Boolean!' },
     layout: { __type: 'BlockAttributesObject' },
@@ -7048,6 +7138,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     isStackedOnMobile: { __type: 'Boolean!' },
     layout: { __type: 'BlockAttributesObject' },
@@ -7243,7 +7335,56 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreCommentsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreCommentsBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreCommentsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    legacy: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    tagName: { __type: 'String!' },
+    textColor: { __type: 'String' },
+  },
+  CoreCommentsBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreCommentsBlockAttributesUnion!' },
+  },
+  CoreCommentsBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    legacy: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    tagName: { __type: 'String!' },
+    textColor: { __type: 'String' },
   },
   CoreCommentsPaginationBlock: {
     __typename: { __type: 'String!' },
@@ -7264,6 +7405,8 @@ export const generatedSchema = {
     align: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
@@ -7289,6 +7432,7 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     label: { __type: 'String' },
@@ -7313,7 +7457,10 @@ export const generatedSchema = {
   CoreCommentsPaginationNumbersBlockAttributes: {
     __typename: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreCommentsPaginationPreviousBlock: {
     __typename: { __type: 'String!' },
@@ -7333,36 +7480,12 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     label: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreCommentsQueryLoopBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreCommentsQueryLoopBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreCommentsQueryLoopBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
   },
   CoreCommentsTitleBlock: {
@@ -7444,6 +7567,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7461,6 +7586,34 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     $on: { __type: '$CoreCoverBlockAttributesUnion!' },
   },
+  CoreCoverBlockDeprecatedV10Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowedBlocks: { __type: 'BlockAttributesArray' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundType: { __type: 'String!' },
+    className: { __type: 'String' },
+    contentPosition: { __type: 'String' },
+    customGradient: { __type: 'String' },
+    customOverlayColor: { __type: 'String' },
+    dimRatio: { __type: 'Float!' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    hasParallax: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    isDark: { __type: 'Boolean!' },
+    isRepeated: { __type: 'Boolean!' },
+    lock: { __type: 'BlockAttributesObject' },
+    minHeight: { __type: 'Float' },
+    minHeightUnit: { __type: 'String' },
+    overlayColor: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    url: { __type: 'String' },
+    useFeaturedImage: { __type: 'Boolean!' },
+  },
   CoreCoverBlockDeprecatedV1Attributes: {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
@@ -7474,6 +7627,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7500,6 +7655,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7526,6 +7683,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7552,6 +7711,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7578,6 +7739,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7604,6 +7767,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7630,6 +7795,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7656,6 +7823,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7682,6 +7851,8 @@ export const generatedSchema = {
     customOverlayColor: { __type: 'String' },
     dimRatio: { __type: 'Float!' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     hasParallax: { __type: 'Boolean!' },
     id: { __type: 'Float' },
@@ -7727,6 +7898,19 @@ export const generatedSchema = {
     $on: { __type: '$CoreEmbedBlockAttributesUnion!' },
   },
   CoreEmbedBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowResponsive: { __type: 'Boolean!' },
+    caption: { __type: 'String' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    previewable: { __type: 'Boolean!' },
+    providerNameSlug: { __type: 'String' },
+    responsive: { __type: 'Boolean!' },
+    type: { __type: 'String' },
+    url: { __type: 'String' },
+  },
+  CoreEmbedBlockDeprecatedV2Attributes: {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     allowResponsive: { __type: 'Boolean!' },
@@ -7791,24 +7975,39 @@ export const generatedSchema = {
     textLinkHref: { __type: 'String' },
     textLinkTarget: { __type: 'String' },
   },
-  CoreFreeformBlock: {
+  CoreFileBlockDeprecatedV2Attributes: {
     __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreFreeformBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreFreeformBlockAttributes: {
-    __typename: { __type: 'String!' },
-    content: { __type: 'String' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    displayPreview: { __type: 'Boolean' },
+    downloadButtonText: { __type: 'String' },
+    fileId: { __type: 'String' },
+    fileName: { __type: 'String' },
+    href: { __type: 'String' },
+    id: { __type: 'Float' },
     lock: { __type: 'BlockAttributesObject' },
+    previewHeight: { __type: 'Float!' },
+    showDownloadButton: { __type: 'Boolean!' },
+    textLinkHref: { __type: 'String' },
+    textLinkTarget: { __type: 'String' },
+  },
+  CoreFileBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    className: { __type: 'String' },
+    displayPreview: { __type: 'Boolean' },
+    downloadButtonText: { __type: 'String' },
+    fileId: { __type: 'String' },
+    fileName: { __type: 'String' },
+    href: { __type: 'String' },
+    id: { __type: 'Float' },
+    lock: { __type: 'BlockAttributesObject' },
+    previewHeight: { __type: 'Float!' },
+    showDownloadButton: { __type: 'Boolean!' },
+    textLinkHref: { __type: 'String' },
+    textLinkTarget: { __type: 'String' },
   },
   CoreGalleryBlock: {
     __typename: { __type: 'String!' },
@@ -7829,10 +8028,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockAttributesImages]!' },
@@ -7843,6 +8044,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockAttributesImages: {
     __typename: { __type: 'String!' },
@@ -7862,10 +8064,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV1AttributesImages]!' },
@@ -7876,6 +8080,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV1AttributesImages: {
     __typename: { __type: 'String!' },
@@ -7891,10 +8096,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV2AttributesImages]!' },
@@ -7905,6 +8112,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV2AttributesImages: {
     __typename: { __type: 'String!' },
@@ -7920,10 +8128,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV3AttributesImages]!' },
@@ -7934,6 +8144,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV3AttributesImages: {
     __typename: { __type: 'String!' },
@@ -7949,10 +8160,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV4AttributesImages]!' },
@@ -7963,6 +8176,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV4AttributesImages: {
     __typename: { __type: 'String!' },
@@ -7978,10 +8192,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV5AttributesImages]!' },
@@ -7992,6 +8208,7 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV5AttributesImages: {
     __typename: { __type: 'String!' },
@@ -8007,10 +8224,12 @@ export const generatedSchema = {
     align: { __type: 'String' },
     allowResize: { __type: 'Boolean!' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     columns: { __type: 'Float' },
     fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
     ids: { __type: '[Float]!' },
     imageCrop: { __type: 'Boolean!' },
     images: { __type: '[CoreGalleryBlockDeprecatedV6AttributesImages]!' },
@@ -8021,8 +8240,41 @@ export const generatedSchema = {
     shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
     sizeSlug: { __type: 'String!' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreGalleryBlockDeprecatedV6AttributesImages: {
+    __typename: { __type: 'String!' },
+    alt: { __type: 'String!' },
+    caption: { __type: 'String' },
+    fullUrl: { __type: 'String' },
+    id: { __type: 'String' },
+    link: { __type: 'String' },
+    url: { __type: 'String' },
+  },
+  CoreGalleryBlockDeprecatedV7Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    allowResize: { __type: 'Boolean!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    caption: { __type: 'String' },
+    className: { __type: 'String' },
+    columns: { __type: 'Float' },
+    fixedHeight: { __type: 'Boolean!' },
+    gradient: { __type: 'String' },
+    ids: { __type: '[Float]!' },
+    imageCrop: { __type: 'Boolean!' },
+    images: { __type: '[CoreGalleryBlockDeprecatedV7AttributesImages]!' },
+    layout: { __type: 'BlockAttributesObject' },
+    linkTarget: { __type: 'String' },
+    linkTo: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    shortCodeTransforms: { __type: '[BlockAttributesObject]!' },
+    sizeSlug: { __type: 'String!' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+  },
+  CoreGalleryBlockDeprecatedV7AttributesImages: {
     __typename: { __type: 'String!' },
     alt: { __type: 'String!' },
     caption: { __type: 'String' },
@@ -8049,13 +8301,16 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
@@ -8068,13 +8323,16 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
@@ -8083,13 +8341,16 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
@@ -8098,13 +8359,16 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
@@ -8113,13 +8377,34 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     borderColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     layout: { __type: 'BlockAttributesObject' },
     lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    tagName: { __type: 'String!' },
+    textColor: { __type: 'String' },
+  },
+  CoreGroupBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    ariaLabel: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    layout: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
+    settings: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     tagName: { __type: 'String!' },
     textColor: { __type: 'String' },
@@ -8145,7 +8430,9 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
@@ -8164,7 +8451,9 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
@@ -8179,7 +8468,9 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
@@ -8194,7 +8485,9 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
@@ -8209,7 +8502,9 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
@@ -8234,8 +8529,11 @@ export const generatedSchema = {
   CoreHomeLinkBlockAttributes: {
     __typename: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     label: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreHtmlBlock: {
     __typename: { __type: 'String!' },
@@ -8275,6 +8573,7 @@ export const generatedSchema = {
     align: { __type: 'String' },
     alt: { __type: 'String!' },
     anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     height: { __type: 'Float' },
@@ -8300,6 +8599,7 @@ export const generatedSchema = {
     align: { __type: 'String' },
     alt: { __type: 'String!' },
     anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     height: { __type: 'Float' },
@@ -8321,6 +8621,7 @@ export const generatedSchema = {
     align: { __type: 'String' },
     alt: { __type: 'String!' },
     anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     height: { __type: 'Float' },
@@ -8342,6 +8643,7 @@ export const generatedSchema = {
     align: { __type: 'String' },
     alt: { __type: 'String!' },
     anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     height: { __type: 'Float' },
@@ -8363,6 +8665,29 @@ export const generatedSchema = {
     align: { __type: 'String' },
     alt: { __type: 'String!' },
     anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    caption: { __type: 'String' },
+    className: { __type: 'String' },
+    height: { __type: 'Float' },
+    href: { __type: 'String' },
+    id: { __type: 'Float' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    rel: { __type: 'String' },
+    sizeSlug: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    title: { __type: 'String' },
+    url: { __type: 'String' },
+    width: { __type: 'Float' },
+  },
+  CoreImageBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    alt: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    borderColor: { __type: 'String' },
     caption: { __type: 'String' },
     className: { __type: 'String' },
     height: { __type: 'Float' },
@@ -8434,12 +8759,15 @@ export const generatedSchema = {
     featuredImageSizeHeight: { __type: 'Float' },
     featuredImageSizeSlug: { __type: 'String!' },
     featuredImageSizeWidth: { __type: 'Float' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     order: { __type: 'String!' },
     orderBy: { __type: 'String!' },
     postLayout: { __type: 'String!' },
     postsToShow: { __type: 'Float!' },
     selectedAuthor: { __type: 'Float' },
+    style: { __type: 'BlockAttributesObject' },
   },
   CoreLatestPostsBlockAttributesUnion: {
     __typename: { __type: 'String!' },
@@ -8462,12 +8790,36 @@ export const generatedSchema = {
     featuredImageSizeHeight: { __type: 'Float' },
     featuredImageSizeSlug: { __type: 'String!' },
     featuredImageSizeWidth: { __type: 'Float' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     order: { __type: 'String!' },
     orderBy: { __type: 'String!' },
     postLayout: { __type: 'String!' },
     postsToShow: { __type: 'Float!' },
     selectedAuthor: { __type: 'Float' },
+    style: { __type: 'BlockAttributesObject' },
+  },
+  CoreLegacyWidgetBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreLegacyWidgetBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreLegacyWidgetBlockAttributes: {
+    __typename: { __type: 'String!' },
+    id: { __type: 'String' },
+    idBase: { __type: 'String' },
+    instance: { __type: 'BlockAttributesObject' },
+    lock: { __type: 'BlockAttributesObject' },
   },
   CoreListBlock: {
     __typename: { __type: 'String!' },
@@ -8523,6 +8875,45 @@ export const generatedSchema = {
     type: { __type: 'String' },
     values: { __type: 'String!' },
   },
+  CoreListBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    ordered: { __type: 'Boolean!' },
+    placeholder: { __type: 'String' },
+    reversed: { __type: 'Boolean' },
+    start: { __type: 'Float' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    type: { __type: 'String' },
+    values: { __type: 'String!' },
+  },
+  CoreListItemBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreListItemBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreListItemBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    content: { __type: 'String!' },
+    lock: { __type: 'BlockAttributesObject' },
+    placeholder: { __type: 'String' },
+  },
   CoreLoginoutBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreLoginoutBlockAttributes' },
@@ -8565,6 +8956,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     href: { __type: 'String' },
     imageFill: { __type: 'Boolean' },
@@ -8597,6 +8990,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     href: { __type: 'String' },
     imageFill: { __type: 'Boolean' },
@@ -8625,6 +9020,8 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     href: { __type: 'String' },
     imageFill: { __type: 'Boolean' },
@@ -8653,6 +9050,68 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreMediaTextBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    href: { __type: 'String' },
+    imageFill: { __type: 'Boolean' },
+    isStackedOnMobile: { __type: 'Boolean!' },
+    linkClass: { __type: 'String' },
+    linkDestination: { __type: 'String' },
+    linkTarget: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    mediaAlt: { __type: 'String!' },
+    mediaId: { __type: 'Float' },
+    mediaLink: { __type: 'String' },
+    mediaPosition: { __type: 'String!' },
+    mediaSizeSlug: { __type: 'String' },
+    mediaType: { __type: 'String' },
+    mediaUrl: { __type: 'String' },
+    mediaWidth: { __type: 'Float!' },
+    rel: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    verticalAlignment: { __type: 'String' },
+  },
+  CoreMediaTextBlockDeprecatedV5Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String!' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    className: { __type: 'String' },
+    focalPoint: { __type: 'BlockAttributesObject' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     href: { __type: 'String' },
     imageFill: { __type: 'Boolean' },
@@ -8695,317 +9154,6 @@ export const generatedSchema = {
     originalName: { __type: 'String' },
     originalUndelimitedContent: { __type: 'String' },
   },
-  CoreMoreBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreMoreBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreMoreBlockAttributes: {
-    __typename: { __type: 'String!' },
-    customText: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    noTeaser: { __type: 'Boolean!' },
-  },
-  CoreNavigationBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreNavigationBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreNavigationBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreNavigationBlockAttributesUnion!' },
-  },
-  CoreNavigationBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockDeprecatedV2Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockDeprecatedV3Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockDeprecatedV4Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockDeprecatedV5Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationBlockDeprecatedV6Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    anchor: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    customBackgroundColor: { __type: 'String' },
-    customOverlayBackgroundColor: { __type: 'String' },
-    customOverlayTextColor: { __type: 'String' },
-    customTextColor: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    hasIcon: { __type: 'Boolean!' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    maxNestingLevel: { __type: 'Float!' },
-    openSubmenusOnClick: { __type: 'Boolean!' },
-    overlayBackgroundColor: { __type: 'String' },
-    overlayMenu: { __type: 'String!' },
-    overlayTextColor: { __type: 'String' },
-    ref: { __type: 'Float' },
-    rgbBackgroundColor: { __type: 'String' },
-    rgbTextColor: { __type: 'String' },
-    showSubmenuIcon: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-    unstableLocation: { __type: 'String' },
-  },
-  CoreNavigationLinkBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreNavigationLinkBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreNavigationLinkBlockAttributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    description: { __type: 'String' },
-    id: { __type: 'Float' },
-    isTopLevelLink: { __type: 'Boolean' },
-    kind: { __type: 'String' },
-    label: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    opensInNewTab: { __type: 'Boolean!' },
-    rel: { __type: 'String' },
-    title: { __type: 'String' },
-    type: { __type: 'String' },
-    url: { __type: 'String' },
-  },
-  CoreNavigationLinkBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreNavigationLinkBlockAttributesUnion!' },
-  },
-  CoreNavigationLinkBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    description: { __type: 'String' },
-    id: { __type: 'Float' },
-    isTopLevelLink: { __type: 'Boolean' },
-    kind: { __type: 'String' },
-    label: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    opensInNewTab: { __type: 'Boolean!' },
-    rel: { __type: 'String' },
-    title: { __type: 'String' },
-    type: { __type: 'String' },
-    url: { __type: 'String' },
-  },
-  CoreNavigationSubmenuBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreNavigationSubmenuBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreNavigationSubmenuBlockAttributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    description: { __type: 'String' },
-    id: { __type: 'Float' },
-    isTopLevelItem: { __type: 'Boolean' },
-    kind: { __type: 'String' },
-    label: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    opensInNewTab: { __type: 'Boolean!' },
-    rel: { __type: 'String' },
-    title: { __type: 'String' },
-    type: { __type: 'String' },
-    url: { __type: 'String' },
-  },
   CoreNextpageBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreNextpageBlockAttributes' },
@@ -9042,7 +9190,6 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     className: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
-    unstableMaxPages: { __type: 'Float' },
   },
   CoreParagraphBlock: {
     __typename: { __type: 'String!' },
@@ -9067,7 +9214,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9086,7 +9235,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9101,7 +9252,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9116,7 +9269,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9131,7 +9286,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9146,7 +9303,9 @@ export const generatedSchema = {
     content: { __type: 'String!' },
     direction: { __type: 'String' },
     dropCap: { __type: 'Boolean!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
@@ -9172,358 +9331,6 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     slug: { __type: 'String' },
   },
-  CorePostAuthorBiographyBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostAuthorBiographyBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostAuthorBiographyBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostAuthorBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostAuthorBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostAuthorBlockAttributes: {
-    __typename: { __type: 'String!' },
-    avatarSize: { __type: 'Float!' },
-    backgroundColor: { __type: 'String' },
-    byline: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    showAvatar: { __type: 'Boolean!' },
-    showBio: { __type: 'Boolean' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostCommentsBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostCommentsBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostCommentsBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostCommentsFormBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostCommentsFormBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostCommentsFormBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostContentBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostContentBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostContentBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    className: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-  },
-  CorePostDateBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostDateBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostDateBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    format: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostDateBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CorePostDateBlockAttributesUnion!' },
-  },
-  CorePostDateBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    format: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostExcerptBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostExcerptBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostExcerptBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    moreText: { __type: 'String' },
-    showMoreOnNewLine: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostFeaturedImageBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostFeaturedImageBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostFeaturedImageBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    className: { __type: 'String' },
-    height: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    lock: { __type: 'BlockAttributesObject' },
-    scale: { __type: 'String!' },
-    sizeSlug: { __type: 'String' },
-    style: { __type: 'BlockAttributesObject' },
-    width: { __type: 'String' },
-  },
-  CorePostNavigationLinkBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostNavigationLinkBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostNavigationLinkBlockAttributes: {
-    __typename: { __type: 'String!' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    label: { __type: 'String' },
-    linkLabel: { __type: 'Boolean!' },
-    lock: { __type: 'BlockAttributesObject' },
-    showTitle: { __type: 'Boolean!' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    type: { __type: 'String!' },
-  },
-  CorePostTemplateBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostTemplateBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostTemplateBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    className: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-  },
-  CorePostTermsBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostTermsBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostTermsBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    separator: { __type: 'String!' },
-    style: { __type: 'BlockAttributesObject' },
-    term: { __type: 'String' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostTitleBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CorePostTitleBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CorePostTitleBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    level: { __type: 'Float!' },
-    linkTarget: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    rel: { __type: 'String!' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CorePostTitleBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CorePostTitleBlockAttributesUnion!' },
-  },
-  CorePostTitleBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    level: { __type: 'Float!' },
-    linkTarget: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    rel: { __type: 'String!' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
   CorePreformattedBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CorePreformattedBlockAttributes' },
@@ -9544,6 +9351,7 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     content: { __type: 'String!' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9572,6 +9380,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9592,6 +9401,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9608,6 +9418,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9624,6 +9435,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9640,6 +9452,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9656,6 +9469,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9664,256 +9478,22 @@ export const generatedSchema = {
     textColor: { __type: 'String' },
     value: { __type: 'String' },
   },
-  CoreQueryBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryBlockAttributes: {
+  CorePullquoteBlockDeprecatedV6Attributes: {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
+    anchor: { __type: 'String' },
     backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    displayLayout: { __type: 'BlockAttributesObject!' },
-    gradient: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    query: { __type: 'BlockAttributesObject!' },
-    queryId: { __type: 'Float' },
-    style: { __type: 'BlockAttributesObject' },
-    tagName: { __type: 'String!' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreQueryBlockAttributesUnion!' },
-  },
-  CoreQueryBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    displayLayout: { __type: 'BlockAttributesObject!' },
-    gradient: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    query: { __type: 'BlockAttributesObject!' },
-    queryId: { __type: 'Float' },
-    style: { __type: 'BlockAttributesObject' },
-    tagName: { __type: 'String!' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryBlockDeprecatedV2Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    displayLayout: { __type: 'BlockAttributesObject!' },
-    gradient: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    query: { __type: 'BlockAttributesObject!' },
-    queryId: { __type: 'Float' },
-    style: { __type: 'BlockAttributesObject' },
-    tagName: { __type: 'String!' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryNoResultsBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryNoResultsBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryNoResultsBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryPaginationBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryPaginationBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryPaginationBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    gradient: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    paginationArrow: { __type: 'String!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryPaginationBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreQueryPaginationBlockAttributesUnion!' },
-  },
-  CoreQueryPaginationBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    gradient: { __type: 'String' },
-    layout: { __type: 'BlockAttributesObject' },
-    lock: { __type: 'BlockAttributesObject' },
-    paginationArrow: { __type: 'String!' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryPaginationNextBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryPaginationNextBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryPaginationNextBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    label: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryPaginationNumbersBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryPaginationNumbersBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryPaginationNumbersBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryPaginationPreviousBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryPaginationPreviousBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryPaginationPreviousBlockAttributes: {
-    __typename: { __type: 'String!' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    label: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textColor: { __type: 'String' },
-  },
-  CoreQueryTitleBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreQueryTitleBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreQueryTitleBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
+    borderColor: { __type: 'String' },
+    citation: { __type: 'String!' },
     className: { __type: 'String' },
     fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
-    level: { __type: 'Float!' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
     textAlign: { __type: 'String' },
     textColor: { __type: 'String' },
-    type: { __type: 'String' },
-  },
-  CoreQueryTitleBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreQueryTitleBlockAttributesUnion!' },
-  },
-  CoreQueryTitleBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    level: { __type: 'Float!' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-    type: { __type: 'String' },
+    value: { __type: 'String' },
   },
   CoreQuoteBlock: {
     __typename: { __type: 'String!' },
@@ -9936,6 +9516,7 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9954,6 +9535,7 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9968,6 +9550,7 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -9982,6 +9565,22 @@ export const generatedSchema = {
     backgroundColor: { __type: 'String' },
     citation: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    gradient: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+    value: { __type: 'String!' },
+  },
+  CoreQuoteBlockDeprecatedV4Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    citation: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
@@ -10068,10 +9667,13 @@ export const generatedSchema = {
     buttonText: { __type: 'String' },
     buttonUseIcon: { __type: 'Boolean!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
     gradient: { __type: 'String' },
     label: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     placeholder: { __type: 'String!' },
+    query: { __type: 'BlockAttributesObject!' },
     showLabel: { __type: 'Boolean!' },
     style: { __type: 'BlockAttributesObject' },
     textColor: { __type: 'String' },
@@ -10139,125 +9741,6 @@ export const generatedSchema = {
     lock: { __type: 'BlockAttributesObject' },
     text: { __type: 'String' },
   },
-  CoreSiteLogoBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreSiteLogoBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreSiteLogoBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    className: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    linkTarget: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    shouldSyncIcon: { __type: 'Boolean' },
-    style: { __type: 'BlockAttributesObject' },
-    width: { __type: 'Float' },
-  },
-  CoreSiteTaglineBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreSiteTaglineBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreSiteTaglineBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CoreSiteTaglineBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreSiteTaglineBlockAttributesUnion!' },
-  },
-  CoreSiteTaglineBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CoreSiteTitleBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreSiteTitleBlockAttributesUnion' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreSiteTitleBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    level: { __type: 'Float!' },
-    linkTarget: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
-  CoreSiteTitleBlockAttributesUnion: {
-    __typename: { __type: 'String!' },
-    $on: { __type: '$CoreSiteTitleBlockAttributesUnion!' },
-  },
-  CoreSiteTitleBlockDeprecatedV1Attributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    backgroundColor: { __type: 'String' },
-    className: { __type: 'String' },
-    fontFamily: { __type: 'String' },
-    fontSize: { __type: 'String' },
-    gradient: { __type: 'String' },
-    isLink: { __type: 'Boolean!' },
-    level: { __type: 'Float!' },
-    linkTarget: { __type: 'String!' },
-    lock: { __type: 'BlockAttributesObject' },
-    style: { __type: 'BlockAttributesObject' },
-    textAlign: { __type: 'String' },
-    textColor: { __type: 'String' },
-  },
   CoreSocialLinkBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreSocialLinkBlockAttributes' },
@@ -10298,9 +9781,11 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     customIconBackgroundColor: { __type: 'String' },
     customIconColor: { __type: 'String' },
+    gradient: { __type: 'String' },
     iconBackgroundColor: { __type: 'String' },
     iconBackgroundColorValue: { __type: 'String' },
     iconColor: { __type: 'String' },
@@ -10311,6 +9796,7 @@ export const generatedSchema = {
     showLabels: { __type: 'Boolean!' },
     size: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreSocialLinksBlockAttributesUnion: {
     __typename: { __type: 'String!' },
@@ -10320,9 +9806,11 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     align: { __type: 'String' },
     anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
     customIconBackgroundColor: { __type: 'String' },
     customIconColor: { __type: 'String' },
+    gradient: { __type: 'String' },
     iconBackgroundColor: { __type: 'String' },
     iconBackgroundColorValue: { __type: 'String' },
     iconColor: { __type: 'String' },
@@ -10333,6 +9821,7 @@ export const generatedSchema = {
     showLabels: { __type: 'Boolean!' },
     size: { __type: 'String' },
     style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
   },
   CoreSpacerBlock: {
     __typename: { __type: 'String!' },
@@ -10354,6 +9843,7 @@ export const generatedSchema = {
     className: { __type: 'String' },
     height: { __type: 'String!' },
     lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
     width: { __type: 'String' },
   },
   CoreSpacerBlockAttributesUnion: {
@@ -10366,6 +9856,7 @@ export const generatedSchema = {
     className: { __type: 'String' },
     height: { __type: 'String!' },
     lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
     width: { __type: 'String' },
   },
   CoreTableBlock: {
@@ -10391,6 +9882,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     caption: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     foot: { __type: '[CoreTableBlockAttributesFoot]!' },
     gradient: { __type: 'String' },
@@ -10446,6 +9938,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     caption: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     foot: { __type: '[CoreTableBlockDeprecatedV1AttributesFoot]!' },
     gradient: { __type: 'String' },
@@ -10497,6 +9990,7 @@ export const generatedSchema = {
     borderColor: { __type: 'String' },
     caption: { __type: 'String!' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     foot: { __type: '[CoreTableBlockDeprecatedV2AttributesFoot]!' },
     gradient: { __type: 'String' },
@@ -10539,6 +10033,58 @@ export const generatedSchema = {
     scope: { __type: 'String' },
     tag: { __type: 'String!' },
   },
+  CoreTableBlockDeprecatedV3Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    backgroundColor: { __type: 'String' },
+    body: { __type: '[CoreTableBlockDeprecatedV3AttributesBody]!' },
+    borderColor: { __type: 'String' },
+    caption: { __type: 'String!' },
+    className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
+    fontSize: { __type: 'String' },
+    foot: { __type: '[CoreTableBlockDeprecatedV3AttributesFoot]!' },
+    gradient: { __type: 'String' },
+    hasFixedLayout: { __type: 'Boolean!' },
+    head: { __type: '[CoreTableBlockDeprecatedV3AttributesHead]!' },
+    lock: { __type: 'BlockAttributesObject' },
+    style: { __type: 'BlockAttributesObject' },
+    textColor: { __type: 'String' },
+  },
+  CoreTableBlockDeprecatedV3AttributesBody: {
+    __typename: { __type: 'String!' },
+    cells: { __type: '[CoreTableBlockDeprecatedV3AttributesBodyCells]!' },
+  },
+  CoreTableBlockDeprecatedV3AttributesBodyCells: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    content: { __type: 'String' },
+    scope: { __type: 'String' },
+    tag: { __type: 'String!' },
+  },
+  CoreTableBlockDeprecatedV3AttributesFoot: {
+    __typename: { __type: 'String!' },
+    cells: { __type: '[CoreTableBlockDeprecatedV3AttributesFootCells]!' },
+  },
+  CoreTableBlockDeprecatedV3AttributesFootCells: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    content: { __type: 'String' },
+    scope: { __type: 'String' },
+    tag: { __type: 'String!' },
+  },
+  CoreTableBlockDeprecatedV3AttributesHead: {
+    __typename: { __type: 'String!' },
+    cells: { __type: '[CoreTableBlockDeprecatedV3AttributesHeadCells]!' },
+  },
+  CoreTableBlockDeprecatedV3AttributesHeadCells: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    content: { __type: 'String' },
+    scope: { __type: 'String' },
+    tag: { __type: 'String!' },
+  },
   CoreTagCloudBlock: {
     __typename: { __type: 'String!' },
     attributes: { __type: 'CoreTagCloudBlockAttributes' },
@@ -10562,31 +10108,8 @@ export const generatedSchema = {
     numberOfTags: { __type: 'Float!' },
     showTagCounts: { __type: 'Boolean!' },
     smallestFontSize: { __type: 'String!' },
+    style: { __type: 'BlockAttributesObject' },
     taxonomy: { __type: 'String!' },
-  },
-  CoreTemplatePartBlock: {
-    __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreTemplatePartBlockAttributes' },
-    attributesJSON: { __type: 'String' },
-    dynamicContent: { __type: 'String' },
-    innerBlocks: { __type: '[Block!]' },
-    isDynamic: { __type: 'Boolean!' },
-    name: { __type: 'String!' },
-    order: { __type: 'Int!' },
-    originalContent: { __type: 'String' },
-    parentNode: { __type: 'Node!' },
-    parentNodeDatabaseId: { __type: 'Int!' },
-    saveContent: { __type: 'String' },
-  },
-  CoreTemplatePartBlockAttributes: {
-    __typename: { __type: 'String!' },
-    align: { __type: 'String' },
-    area: { __type: 'String' },
-    className: { __type: 'String' },
-    lock: { __type: 'BlockAttributesObject' },
-    slug: { __type: 'String' },
-    tagName: { __type: 'String' },
-    theme: { __type: 'String' },
   },
   CoreTermDescriptionBlock: {
     __typename: { __type: 'String!' },
@@ -10607,6 +10130,7 @@ export const generatedSchema = {
     align: { __type: 'String' },
     backgroundColor: { __type: 'String' },
     className: { __type: 'String' },
+    fontFamily: { __type: 'String' },
     fontSize: { __type: 'String' },
     lock: { __type: 'BlockAttributesObject' },
     style: { __type: 'BlockAttributesObject' },
@@ -10701,7 +10225,7 @@ export const generatedSchema = {
   },
   CoreVideoBlock: {
     __typename: { __type: 'String!' },
-    attributes: { __type: 'CoreVideoBlockAttributes' },
+    attributes: { __type: 'CoreVideoBlockAttributesUnion' },
     attributesJSON: { __type: 'String' },
     dynamicContent: { __type: 'String' },
     innerBlocks: { __type: '[Block!]' },
@@ -10729,7 +10253,81 @@ export const generatedSchema = {
     poster: { __type: 'String' },
     preload: { __type: 'String!' },
     src: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
     tracks: { __type: '[BlockAttributesObject]!' },
+  },
+  CoreVideoBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreVideoBlockAttributesUnion!' },
+  },
+  CoreVideoBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    align: { __type: 'String' },
+    anchor: { __type: 'String' },
+    autoplay: { __type: 'Boolean' },
+    caption: { __type: 'String' },
+    className: { __type: 'String' },
+    controls: { __type: 'Boolean!' },
+    id: { __type: 'Float' },
+    lock: { __type: 'BlockAttributesObject' },
+    loop: { __type: 'Boolean' },
+    muted: { __type: 'Boolean' },
+    playsInline: { __type: 'Boolean' },
+    poster: { __type: 'String' },
+    preload: { __type: 'String!' },
+    src: { __type: 'String' },
+    style: { __type: 'BlockAttributesObject' },
+    tracks: { __type: '[BlockAttributesObject]!' },
+  },
+  CoreWidgetAreaBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreWidgetAreaBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreWidgetAreaBlockAttributes: {
+    __typename: { __type: 'String!' },
+    id: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    name: { __type: 'String' },
+  },
+  CoreWidgetGroupBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'CoreWidgetGroupBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  CoreWidgetGroupBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    title: { __type: 'String' },
+  },
+  CoreWidgetGroupBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$CoreWidgetGroupBlockAttributesUnion!' },
+  },
+  CoreWidgetGroupBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    title: { __type: 'String' },
   },
   CreateAToZCategoryInput: {
     aliasOf: { __type: 'String' },
@@ -11606,7 +11204,13 @@ export const generatedSchema = {
     file: { __type: 'String' },
     height: { __type: 'Int' },
     meta: { __type: 'MediaItemMeta' },
-    sizes: { __type: '[MediaSize]' },
+    sizes: {
+      __type: '[MediaSize]',
+      __args: {
+        exclude: '[MediaItemSizeEnum]',
+        include: '[MediaItemSizeEnum]',
+      },
+    },
     width: { __type: 'Int' },
   },
   MediaItem: {
@@ -11894,6 +11498,7 @@ export const generatedSchema = {
     author: { __type: 'NodeWithAuthorToUserConnectionEdge' },
     authorDatabaseId: { __type: 'Int' },
     authorId: { __type: 'ID' },
+    id: { __type: 'ID!' },
     $on: { __type: '$NodeWithAuthor!' },
   },
   NodeWithAuthorToUserConnectionEdge: {
@@ -11904,6 +11509,7 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     commentCount: { __type: 'Int' },
     commentStatus: { __type: 'String' },
+    id: { __type: 'ID!' },
     $on: { __type: '$NodeWithComments!' },
   },
   NodeWithContentEditor: {
@@ -11912,6 +11518,7 @@ export const generatedSchema = {
       __type: 'String',
       __args: { format: 'PostObjectFieldFormatEnum' },
     },
+    id: { __type: 'ID!' },
     $on: { __type: '$NodeWithContentEditor!' },
   },
   NodeWithExcerpt: {
@@ -11920,47 +11527,15 @@ export const generatedSchema = {
       __type: 'String',
       __args: { format: 'PostObjectFieldFormatEnum' },
     },
+    id: { __type: 'ID!' },
     $on: { __type: '$NodeWithExcerpt!' },
   },
   NodeWithFeaturedImage: {
     __typename: { __type: 'String!' },
-    conditionalTags: { __type: 'ConditionalTags' },
-    contentType: { __type: 'ContentNodeToContentTypeConnectionEdge' },
-    contentTypeName: { __type: 'String!' },
-    databaseId: { __type: 'Int!' },
-    date: { __type: 'String' },
-    dateGmt: { __type: 'String' },
-    desiredSlug: { __type: 'String' },
-    editingLockedBy: { __type: 'ContentNodeToEditLockConnectionEdge' },
-    enclosure: { __type: 'String' },
-    enqueuedScripts: {
-      __type: 'ContentNodeToEnqueuedScriptConnection',
-      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
-    },
-    enqueuedStylesheets: {
-      __type: 'ContentNodeToEnqueuedStylesheetConnection',
-      __args: { after: 'String', before: 'String', first: 'Int', last: 'Int' },
-    },
     featuredImage: { __type: 'NodeWithFeaturedImageToMediaItemConnectionEdge' },
     featuredImageDatabaseId: { __type: 'Int' },
     featuredImageId: { __type: 'ID' },
-    guid: { __type: 'String' },
     id: { __type: 'ID!' },
-    isContentNode: { __type: 'Boolean!' },
-    isPreview: { __type: 'Boolean' },
-    isRestricted: { __type: 'Boolean' },
-    isTermNode: { __type: 'Boolean!' },
-    lastEditedBy: { __type: 'ContentNodeToEditLastConnectionEdge' },
-    link: { __type: 'String' },
-    modified: { __type: 'String' },
-    modifiedGmt: { __type: 'String' },
-    previewRevisionDatabaseId: { __type: 'Int' },
-    previewRevisionId: { __type: 'ID' },
-    slug: { __type: 'String' },
-    status: { __type: 'String' },
-    template: { __type: 'ContentTemplate' },
-    templates: { __type: '[String]' },
-    uri: { __type: 'String' },
     $on: { __type: '$NodeWithFeaturedImage!' },
   },
   NodeWithFeaturedImageToMediaItemConnectionEdge: {
@@ -11969,11 +11544,13 @@ export const generatedSchema = {
   },
   NodeWithPageAttributes: {
     __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
     menuOrder: { __type: 'Int' },
     $on: { __type: '$NodeWithPageAttributes!' },
   },
   NodeWithRevisions: {
     __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
     isRevision: { __type: 'Boolean' },
     revisionOf: { __type: 'NodeWithRevisionsToContentNodeConnectionEdge' },
     $on: { __type: '$NodeWithRevisions!' },
@@ -11984,11 +11561,13 @@ export const generatedSchema = {
   },
   NodeWithTemplate: {
     __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
     template: { __type: 'ContentTemplate' },
     $on: { __type: '$NodeWithTemplate!' },
   },
   NodeWithTitle: {
     __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
     title: {
       __type: 'String',
       __args: { format: 'PostObjectFieldFormatEnum' },
@@ -11997,6 +11576,7 @@ export const generatedSchema = {
   },
   NodeWithTrackbacks: {
     __typename: { __type: 'String!' },
+    id: { __type: 'ID!' },
     pingStatus: { __type: 'String' },
     pinged: { __type: '[String]' },
     toPing: { __type: '[String]' },
@@ -12104,6 +11684,7 @@ export const generatedSchema = {
         where: 'PageToRevisionConnectionWhereArgs',
       },
     },
+    showsHeadline: { __type: 'Boolean' },
     slug: { __type: 'String' },
     status: { __type: 'String' },
     template: { __type: 'ContentTemplate' },
@@ -12528,6 +12109,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToCommentConnection: {
@@ -12603,6 +12185,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToPreviewConnectionEdge: {
@@ -12684,6 +12267,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   PostToTermNodeConnection: {
@@ -12718,6 +12302,7 @@ export const generatedSchema = {
     slug: { __type: '[String]' },
     taxonomies: { __type: '[TaxonomyEnum]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   PostTypeLabelDetails: {
@@ -12924,6 +12509,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   ProgramToCollegeConnection: {
@@ -12957,6 +12543,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   ProgramToDegreeConnection: {
@@ -12990,6 +12577,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   ProgramToMajorConnection: {
@@ -13023,6 +12611,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   ProgramToPreviewConnectionEdge: {
@@ -13061,6 +12650,7 @@ export const generatedSchema = {
     slug: { __type: '[String]' },
     taxonomies: { __type: '[TaxonomyEnum]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   Program_Programdetailsfields: {
@@ -13250,6 +12840,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToAToZConnection: {
@@ -13343,6 +12934,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToBlockEditorPreviewConnection: {
@@ -13412,6 +13004,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToCollegeConnection: {
@@ -13445,6 +13038,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToCommentConnection: {
@@ -13593,6 +13187,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToEnqueuedScriptConnection: {
@@ -13648,6 +13243,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToMediaItemConnection: {
@@ -13842,6 +13438,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToProgramConnection: {
@@ -13935,6 +13532,7 @@ export const generatedSchema = {
     search: { __type: 'String' },
     slug: { __type: '[String]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToTaxonomyConnection: {
@@ -13980,6 +13578,7 @@ export const generatedSchema = {
     slug: { __type: '[String]' },
     taxonomies: { __type: '[TaxonomyEnum]' },
     termTaxonomId: { __type: '[ID]' },
+    termTaxonomyId: { __type: '[ID]' },
     updateTermMetaCache: { __type: 'Boolean' },
   },
   RootQueryToThemeConnection: {
@@ -14039,6 +13638,7 @@ export const generatedSchema = {
   SendPasswordResetEmailPayload: {
     __typename: { __type: 'String!' },
     clientMutationId: { __type: 'String' },
+    success: { __type: 'Boolean' },
     user: { __type: 'User' },
   },
   Settings: {
@@ -15315,6 +14915,123 @@ export const generatedSchema = {
     defaultPostFormat: { __type: 'String' },
     useSmilies: { __type: 'Boolean' },
   },
+  YoastFaqBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'YoastFaqBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  YoastFaqBlockAttributes: {
+    __typename: { __type: 'String!' },
+    additionalListCssClasses: { __type: 'String' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    questions: { __type: 'BlockAttributesArray' },
+  },
+  YoastFaqBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$YoastFaqBlockAttributesUnion!' },
+  },
+  YoastFaqBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    additionalListCssClasses: { __type: 'String' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    questions: { __type: 'BlockAttributesArray' },
+  },
+  YoastHowToBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'YoastHowToBlockAttributesUnion' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  YoastHowToBlockAttributes: {
+    __typename: { __type: 'String!' },
+    additionalListCssClasses: { __type: 'String' },
+    className: { __type: 'String' },
+    days: { __type: 'String' },
+    defaultDurationText: { __type: 'String' },
+    description: { __type: 'BlockAttributesArray' },
+    durationText: { __type: 'String' },
+    hasDuration: { __type: 'Boolean' },
+    hours: { __type: 'String' },
+    jsonDescription: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    minutes: { __type: 'String' },
+    steps: { __type: 'BlockAttributesArray' },
+    unorderedList: { __type: 'Boolean' },
+  },
+  YoastHowToBlockAttributesUnion: {
+    __typename: { __type: 'String!' },
+    $on: { __type: '$YoastHowToBlockAttributesUnion!' },
+  },
+  YoastHowToBlockDeprecatedV1Attributes: {
+    __typename: { __type: 'String!' },
+    additionalListCssClasses: { __type: 'String' },
+    className: { __type: 'String' },
+    days: { __type: 'String' },
+    defaultDurationText: { __type: 'String' },
+    description: { __type: 'BlockAttributesArray' },
+    durationText: { __type: 'String' },
+    hasDuration: { __type: 'Boolean' },
+    hours: { __type: 'String' },
+    jsonDescription: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    minutes: { __type: 'String' },
+    steps: { __type: 'BlockAttributesArray' },
+    unorderedList: { __type: 'Boolean' },
+  },
+  YoastHowToBlockDeprecatedV2Attributes: {
+    __typename: { __type: 'String!' },
+    additionalListCssClasses: { __type: 'String' },
+    className: { __type: 'String' },
+    days: { __type: 'String' },
+    defaultDurationText: { __type: 'String' },
+    description: { __type: 'BlockAttributesArray' },
+    durationText: { __type: 'String' },
+    hasDuration: { __type: 'Boolean' },
+    hours: { __type: 'String' },
+    jsonDescription: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+    minutes: { __type: 'String' },
+    steps: { __type: 'BlockAttributesArray' },
+    unorderedList: { __type: 'Boolean' },
+  },
+  YoastSeoBreadcrumbsBlock: {
+    __typename: { __type: 'String!' },
+    attributes: { __type: 'YoastSeoBreadcrumbsBlockAttributes' },
+    attributesJSON: { __type: 'String' },
+    dynamicContent: { __type: 'String' },
+    innerBlocks: { __type: '[Block!]' },
+    isDynamic: { __type: 'Boolean!' },
+    name: { __type: 'String!' },
+    order: { __type: 'Int!' },
+    originalContent: { __type: 'String' },
+    parentNode: { __type: 'Node!' },
+    parentNodeDatabaseId: { __type: 'Int!' },
+    saveContent: { __type: 'String' },
+  },
+  YoastSeoBreadcrumbsBlockAttributes: {
+    __typename: { __type: 'String!' },
+    className: { __type: 'String' },
+    lock: { __type: 'BlockAttributesObject' },
+  },
   mutation: {
     __typename: { __type: 'String!' },
     createAToZ: {
@@ -15691,7 +15408,10 @@ export const generatedSchema = {
         where: 'RootQueryToCollegeConnectionWhereArgs',
       },
     },
-    comment: { __type: 'Comment', __args: { id: 'ID!' } },
+    comment: {
+      __type: 'Comment',
+      __args: { id: 'ID!', idType: 'CommentNodeIdTypeEnum' },
+    },
     comments: {
       __type: 'RootQueryToCommentConnection',
       __args: {
@@ -16132,7 +15852,6 @@ export const generatedSchema = {
       'CoreArchivesBlock',
       'CoreAudioBlock',
       'CoreAvatarBlock',
-      'CoreBlock',
       'CoreButtonBlock',
       'CoreButtonsBlock',
       'CoreCalendarBlock',
@@ -16146,16 +15865,15 @@ export const generatedSchema = {
       'CoreCommentEditLinkBlock',
       'CoreCommentReplyLinkBlock',
       'CoreCommentTemplateBlock',
+      'CoreCommentsBlock',
       'CoreCommentsPaginationBlock',
       'CoreCommentsPaginationNextBlock',
       'CoreCommentsPaginationNumbersBlock',
       'CoreCommentsPaginationPreviousBlock',
-      'CoreCommentsQueryLoopBlock',
       'CoreCommentsTitleBlock',
       'CoreCoverBlock',
       'CoreEmbedBlock',
       'CoreFileBlock',
-      'CoreFreeformBlock',
       'CoreGalleryBlock',
       'CoreGroupBlock',
       'CoreHeadingBlock',
@@ -16164,58 +15882,35 @@ export const generatedSchema = {
       'CoreImageBlock',
       'CoreLatestCommentsBlock',
       'CoreLatestPostsBlock',
+      'CoreLegacyWidgetBlock',
       'CoreListBlock',
+      'CoreListItemBlock',
       'CoreLoginoutBlock',
       'CoreMediaTextBlock',
       'CoreMissingBlock',
-      'CoreMoreBlock',
-      'CoreNavigationBlock',
-      'CoreNavigationLinkBlock',
-      'CoreNavigationSubmenuBlock',
       'CoreNextpageBlock',
       'CorePageListBlock',
       'CoreParagraphBlock',
       'CorePatternBlock',
-      'CorePostAuthorBiographyBlock',
-      'CorePostAuthorBlock',
-      'CorePostCommentsBlock',
-      'CorePostCommentsFormBlock',
-      'CorePostContentBlock',
-      'CorePostDateBlock',
-      'CorePostExcerptBlock',
-      'CorePostFeaturedImageBlock',
-      'CorePostNavigationLinkBlock',
-      'CorePostTemplateBlock',
-      'CorePostTermsBlock',
-      'CorePostTitleBlock',
       'CorePreformattedBlock',
       'CorePullquoteBlock',
-      'CoreQueryBlock',
-      'CoreQueryNoResultsBlock',
-      'CoreQueryPaginationBlock',
-      'CoreQueryPaginationNextBlock',
-      'CoreQueryPaginationNumbersBlock',
-      'CoreQueryPaginationPreviousBlock',
-      'CoreQueryTitleBlock',
       'CoreQuoteBlock',
       'CoreReadMoreBlock',
       'CoreRssBlock',
       'CoreSearchBlock',
       'CoreSeparatorBlock',
       'CoreShortcodeBlock',
-      'CoreSiteLogoBlock',
-      'CoreSiteTaglineBlock',
-      'CoreSiteTitleBlock',
       'CoreSocialLinkBlock',
       'CoreSocialLinksBlock',
       'CoreSpacerBlock',
       'CoreTableBlock',
       'CoreTagCloudBlock',
-      'CoreTemplatePartBlock',
       'CoreTermDescriptionBlock',
       'CoreTextColumnsBlock',
       'CoreVerseBlock',
       'CoreVideoBlock',
+      'CoreWidgetAreaBlock',
+      'CoreWidgetGroupBlock',
       'UtkwdsAccordionBlock',
       'UtkwdsAccordionFoldBlock',
       'UtkwdsAlertBlock',
@@ -16228,6 +15923,9 @@ export const generatedSchema = {
       'UtkwdsSocialsBlock',
       'UtkwdsTabBlock',
       'UtkwdsTabsBlock',
+      'YoastFaqBlock',
+      'YoastHowToBlock',
+      'YoastSeoBreadcrumbsBlock',
     ],
     BlockEditorContentNode: [
       'AcalogProgram',
@@ -16265,6 +15963,7 @@ export const generatedSchema = {
       'CoreButtonBlockDeprecatedV8Attributes',
       'CoreButtonBlockDeprecatedV9Attributes',
       'CoreButtonBlockDeprecatedV10Attributes',
+      'CoreButtonBlockDeprecatedV11Attributes',
     ],
     CoreButtonsBlockAttributesUnion: [
       'CoreButtonsBlockAttributes',
@@ -16289,6 +15988,10 @@ export const generatedSchema = {
       'CoreCommentDateBlockAttributes',
       'CoreCommentDateBlockDeprecatedV1Attributes',
     ],
+    CoreCommentsBlockAttributesUnion: [
+      'CoreCommentsBlockAttributes',
+      'CoreCommentsBlockDeprecatedV1Attributes',
+    ],
     CoreCommentsTitleBlockAttributesUnion: [
       'CoreCommentsTitleBlockAttributes',
       'CoreCommentsTitleBlockDeprecatedV1Attributes',
@@ -16304,14 +16007,18 @@ export const generatedSchema = {
       'CoreCoverBlockDeprecatedV7Attributes',
       'CoreCoverBlockDeprecatedV8Attributes',
       'CoreCoverBlockDeprecatedV9Attributes',
+      'CoreCoverBlockDeprecatedV10Attributes',
     ],
     CoreEmbedBlockAttributesUnion: [
       'CoreEmbedBlockAttributes',
       'CoreEmbedBlockDeprecatedV1Attributes',
+      'CoreEmbedBlockDeprecatedV2Attributes',
     ],
     CoreFileBlockAttributesUnion: [
       'CoreFileBlockAttributes',
       'CoreFileBlockDeprecatedV1Attributes',
+      'CoreFileBlockDeprecatedV2Attributes',
+      'CoreFileBlockDeprecatedV3Attributes',
     ],
     CoreGalleryBlockAttributesUnion: [
       'CoreGalleryBlockAttributes',
@@ -16321,6 +16028,7 @@ export const generatedSchema = {
       'CoreGalleryBlockDeprecatedV4Attributes',
       'CoreGalleryBlockDeprecatedV5Attributes',
       'CoreGalleryBlockDeprecatedV6Attributes',
+      'CoreGalleryBlockDeprecatedV7Attributes',
     ],
     CoreGroupBlockAttributesUnion: [
       'CoreGroupBlockAttributes',
@@ -16328,6 +16036,7 @@ export const generatedSchema = {
       'CoreGroupBlockDeprecatedV2Attributes',
       'CoreGroupBlockDeprecatedV3Attributes',
       'CoreGroupBlockDeprecatedV4Attributes',
+      'CoreGroupBlockDeprecatedV5Attributes',
     ],
     CoreHeadingBlockAttributesUnion: [
       'CoreHeadingBlockAttributes',
@@ -16342,6 +16051,7 @@ export const generatedSchema = {
       'CoreImageBlockDeprecatedV2Attributes',
       'CoreImageBlockDeprecatedV3Attributes',
       'CoreImageBlockDeprecatedV4Attributes',
+      'CoreImageBlockDeprecatedV5Attributes',
     ],
     CoreLatestPostsBlockAttributesUnion: [
       'CoreLatestPostsBlockAttributes',
@@ -16350,25 +16060,15 @@ export const generatedSchema = {
     CoreListBlockAttributesUnion: [
       'CoreListBlockAttributes',
       'CoreListBlockDeprecatedV1Attributes',
+      'CoreListBlockDeprecatedV2Attributes',
     ],
     CoreMediaTextBlockAttributesUnion: [
       'CoreMediaTextBlockAttributes',
       'CoreMediaTextBlockDeprecatedV1Attributes',
       'CoreMediaTextBlockDeprecatedV2Attributes',
       'CoreMediaTextBlockDeprecatedV3Attributes',
-    ],
-    CoreNavigationBlockAttributesUnion: [
-      'CoreNavigationBlockAttributes',
-      'CoreNavigationBlockDeprecatedV1Attributes',
-      'CoreNavigationBlockDeprecatedV2Attributes',
-      'CoreNavigationBlockDeprecatedV3Attributes',
-      'CoreNavigationBlockDeprecatedV4Attributes',
-      'CoreNavigationBlockDeprecatedV5Attributes',
-      'CoreNavigationBlockDeprecatedV6Attributes',
-    ],
-    CoreNavigationLinkBlockAttributesUnion: [
-      'CoreNavigationLinkBlockAttributes',
-      'CoreNavigationLinkBlockDeprecatedV1Attributes',
+      'CoreMediaTextBlockDeprecatedV4Attributes',
+      'CoreMediaTextBlockDeprecatedV5Attributes',
     ],
     CoreParagraphBlockAttributesUnion: [
       'CoreParagraphBlockAttributes',
@@ -16378,14 +16078,6 @@ export const generatedSchema = {
       'CoreParagraphBlockDeprecatedV4Attributes',
       'CoreParagraphBlockDeprecatedV5Attributes',
     ],
-    CorePostDateBlockAttributesUnion: [
-      'CorePostDateBlockAttributes',
-      'CorePostDateBlockDeprecatedV1Attributes',
-    ],
-    CorePostTitleBlockAttributesUnion: [
-      'CorePostTitleBlockAttributes',
-      'CorePostTitleBlockDeprecatedV1Attributes',
-    ],
     CorePullquoteBlockAttributesUnion: [
       'CorePullquoteBlockAttributes',
       'CorePullquoteBlockDeprecatedV1Attributes',
@@ -16393,37 +16085,18 @@ export const generatedSchema = {
       'CorePullquoteBlockDeprecatedV3Attributes',
       'CorePullquoteBlockDeprecatedV4Attributes',
       'CorePullquoteBlockDeprecatedV5Attributes',
-    ],
-    CoreQueryBlockAttributesUnion: [
-      'CoreQueryBlockAttributes',
-      'CoreQueryBlockDeprecatedV1Attributes',
-      'CoreQueryBlockDeprecatedV2Attributes',
-    ],
-    CoreQueryPaginationBlockAttributesUnion: [
-      'CoreQueryPaginationBlockAttributes',
-      'CoreQueryPaginationBlockDeprecatedV1Attributes',
-    ],
-    CoreQueryTitleBlockAttributesUnion: [
-      'CoreQueryTitleBlockAttributes',
-      'CoreQueryTitleBlockDeprecatedV1Attributes',
+      'CorePullquoteBlockDeprecatedV6Attributes',
     ],
     CoreQuoteBlockAttributesUnion: [
       'CoreQuoteBlockAttributes',
       'CoreQuoteBlockDeprecatedV1Attributes',
       'CoreQuoteBlockDeprecatedV2Attributes',
       'CoreQuoteBlockDeprecatedV3Attributes',
+      'CoreQuoteBlockDeprecatedV4Attributes',
     ],
     CoreSeparatorBlockAttributesUnion: [
       'CoreSeparatorBlockAttributes',
       'CoreSeparatorBlockDeprecatedV1Attributes',
-    ],
-    CoreSiteTaglineBlockAttributesUnion: [
-      'CoreSiteTaglineBlockAttributes',
-      'CoreSiteTaglineBlockDeprecatedV1Attributes',
-    ],
-    CoreSiteTitleBlockAttributesUnion: [
-      'CoreSiteTitleBlockAttributes',
-      'CoreSiteTitleBlockDeprecatedV1Attributes',
     ],
     CoreSocialLinksBlockAttributesUnion: [
       'CoreSocialLinksBlockAttributes',
@@ -16437,11 +16110,20 @@ export const generatedSchema = {
       'CoreTableBlockAttributes',
       'CoreTableBlockDeprecatedV1Attributes',
       'CoreTableBlockDeprecatedV2Attributes',
+      'CoreTableBlockDeprecatedV3Attributes',
     ],
     CoreVerseBlockAttributesUnion: [
       'CoreVerseBlockAttributes',
       'CoreVerseBlockDeprecatedV1Attributes',
       'CoreVerseBlockDeprecatedV2Attributes',
+    ],
+    CoreVideoBlockAttributesUnion: [
+      'CoreVideoBlockAttributes',
+      'CoreVideoBlockDeprecatedV1Attributes',
+    ],
+    CoreWidgetGroupBlockAttributesUnion: [
+      'CoreWidgetGroupBlockAttributes',
+      'CoreWidgetGroupBlockDeprecatedV1Attributes',
     ],
     ContentTemplate: [
       'DefaultTemplate',
@@ -16469,6 +16151,15 @@ export const generatedSchema = {
     NodeWithRevisions: ['Page', 'Post', 'ReusableBlock'],
     NodeWithExcerpt: ['Post'],
     NodeWithTrackbacks: ['Post'],
+    YoastFaqBlockAttributesUnion: [
+      'YoastFaqBlockAttributes',
+      'YoastFaqBlockDeprecatedV1Attributes',
+    ],
+    YoastHowToBlockAttributesUnion: [
+      'YoastHowToBlockAttributes',
+      'YoastHowToBlockDeprecatedV1Attributes',
+      'YoastHowToBlockDeprecatedV2Attributes',
+    ],
   },
 } as const;
 
@@ -17274,7 +16965,7 @@ export interface AcalogProgram {
    */
   status?: Maybe<ScalarsEnums['String']>;
   /**
-   * The template assigned to a node of content
+   * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
   templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
@@ -17674,7 +17365,6 @@ export interface Block {
     | 'CoreArchivesBlock'
     | 'CoreAudioBlock'
     | 'CoreAvatarBlock'
-    | 'CoreBlock'
     | 'CoreButtonBlock'
     | 'CoreButtonsBlock'
     | 'CoreCalendarBlock'
@@ -17688,16 +17378,15 @@ export interface Block {
     | 'CoreCommentEditLinkBlock'
     | 'CoreCommentReplyLinkBlock'
     | 'CoreCommentTemplateBlock'
+    | 'CoreCommentsBlock'
     | 'CoreCommentsPaginationBlock'
     | 'CoreCommentsPaginationNextBlock'
     | 'CoreCommentsPaginationNumbersBlock'
     | 'CoreCommentsPaginationPreviousBlock'
-    | 'CoreCommentsQueryLoopBlock'
     | 'CoreCommentsTitleBlock'
     | 'CoreCoverBlock'
     | 'CoreEmbedBlock'
     | 'CoreFileBlock'
-    | 'CoreFreeformBlock'
     | 'CoreGalleryBlock'
     | 'CoreGroupBlock'
     | 'CoreHeadingBlock'
@@ -17706,58 +17395,35 @@ export interface Block {
     | 'CoreImageBlock'
     | 'CoreLatestCommentsBlock'
     | 'CoreLatestPostsBlock'
+    | 'CoreLegacyWidgetBlock'
     | 'CoreListBlock'
+    | 'CoreListItemBlock'
     | 'CoreLoginoutBlock'
     | 'CoreMediaTextBlock'
     | 'CoreMissingBlock'
-    | 'CoreMoreBlock'
-    | 'CoreNavigationBlock'
-    | 'CoreNavigationLinkBlock'
-    | 'CoreNavigationSubmenuBlock'
     | 'CoreNextpageBlock'
     | 'CorePageListBlock'
     | 'CoreParagraphBlock'
     | 'CorePatternBlock'
-    | 'CorePostAuthorBiographyBlock'
-    | 'CorePostAuthorBlock'
-    | 'CorePostCommentsBlock'
-    | 'CorePostCommentsFormBlock'
-    | 'CorePostContentBlock'
-    | 'CorePostDateBlock'
-    | 'CorePostExcerptBlock'
-    | 'CorePostFeaturedImageBlock'
-    | 'CorePostNavigationLinkBlock'
-    | 'CorePostTemplateBlock'
-    | 'CorePostTermsBlock'
-    | 'CorePostTitleBlock'
     | 'CorePreformattedBlock'
     | 'CorePullquoteBlock'
-    | 'CoreQueryBlock'
-    | 'CoreQueryNoResultsBlock'
-    | 'CoreQueryPaginationBlock'
-    | 'CoreQueryPaginationNextBlock'
-    | 'CoreQueryPaginationNumbersBlock'
-    | 'CoreQueryPaginationPreviousBlock'
-    | 'CoreQueryTitleBlock'
     | 'CoreQuoteBlock'
     | 'CoreReadMoreBlock'
     | 'CoreRssBlock'
     | 'CoreSearchBlock'
     | 'CoreSeparatorBlock'
     | 'CoreShortcodeBlock'
-    | 'CoreSiteLogoBlock'
-    | 'CoreSiteTaglineBlock'
-    | 'CoreSiteTitleBlock'
     | 'CoreSocialLinkBlock'
     | 'CoreSocialLinksBlock'
     | 'CoreSpacerBlock'
     | 'CoreTableBlock'
     | 'CoreTagCloudBlock'
-    | 'CoreTemplatePartBlock'
     | 'CoreTermDescriptionBlock'
     | 'CoreTextColumnsBlock'
     | 'CoreVerseBlock'
     | 'CoreVideoBlock'
+    | 'CoreWidgetAreaBlock'
+    | 'CoreWidgetGroupBlock'
     | 'UtkwdsAccordionBlock'
     | 'UtkwdsAccordionFoldBlock'
     | 'UtkwdsAlertBlock'
@@ -17769,7 +17435,10 @@ export interface Block {
     | 'UtkwdsPhonesBlock'
     | 'UtkwdsSocialsBlock'
     | 'UtkwdsTabBlock'
-    | 'UtkwdsTabsBlock';
+    | 'UtkwdsTabsBlock'
+    | 'YoastFaqBlock'
+    | 'YoastHowToBlock'
+    | 'YoastSeoBreadcrumbsBlock';
   /**
    * Block attributes, JSON encoded
    */
@@ -18107,7 +17776,7 @@ export interface Category {
    */
   categoryId?: Maybe<ScalarsEnums['Int']>;
   /**
-   * Connection between the category type and the category type
+   * Connection between the category type and its children categories.
    */
   children: (args?: {
     /**
@@ -18136,7 +17805,7 @@ export interface Category {
    */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
-   * Connection between the category type and the ContentNode type
+   * Connection between the Category type and the ContentNode type
    */
   contentNodes: (args?: {
     /**
@@ -18239,7 +17908,7 @@ export interface Category {
    */
   name?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the category type and the category type
+   * Connection between the category type and its parent category.
    */
   parent?: Maybe<CategoryToParentCategoryConnectionEdge>;
   /**
@@ -18251,7 +17920,7 @@ export interface Category {
    */
   parentId?: Maybe<ScalarsEnums['ID']>;
   /**
-   * Connection between the category type and the post type
+   * Connection between the Category type and the post type
    */
   posts: (args?: {
     /**
@@ -18280,7 +17949,7 @@ export interface Category {
    */
   slug?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the category type and the Taxonomy type
+   * Connection between the Category type and the Taxonomy type
    */
   taxonomy?: Maybe<CategoryToTaxonomyConnectionEdge>;
   /**
@@ -18303,7 +17972,7 @@ export interface Category {
 }
 
 /**
- * Connection between the category type and the category type
+ * Connection between the Category type and the category type
  */
 export interface CategoryToAncestorsCategoryConnection {
   __typename?: 'CategoryToAncestorsCategoryConnection';
@@ -18337,7 +18006,7 @@ export interface CategoryToAncestorsCategoryConnectionEdge {
 }
 
 /**
- * Connection between the category type and the category type
+ * Connection between the Category type and the category type
  */
 export interface CategoryToCategoryConnection {
   __typename?: 'CategoryToCategoryConnection';
@@ -18371,7 +18040,7 @@ export interface CategoryToCategoryConnectionEdge {
 }
 
 /**
- * Connection between the category type and the ContentNode type
+ * Connection between the Category type and the ContentNode type
  */
 export interface CategoryToContentNodeConnection {
   __typename?: 'CategoryToContentNodeConnection';
@@ -18405,7 +18074,7 @@ export interface CategoryToContentNodeConnectionEdge {
 }
 
 /**
- * Connection between the category type and the category type
+ * Connection between the Category type and the category type
  */
 export interface CategoryToParentCategoryConnectionEdge {
   __typename?: 'CategoryToParentCategoryConnectionEdge';
@@ -18416,7 +18085,7 @@ export interface CategoryToParentCategoryConnectionEdge {
 }
 
 /**
- * Connection between the category type and the post type
+ * Connection between the Category type and the post type
  */
 export interface CategoryToPostConnection {
   __typename?: 'CategoryToPostConnection';
@@ -18450,7 +18119,7 @@ export interface CategoryToPostConnectionEdge {
 }
 
 /**
- * Connection between the category type and the Taxonomy type
+ * Connection between the Category type and the Taxonomy type
  */
 export interface CategoryToTaxonomyConnectionEdge {
   __typename?: 'CategoryToTaxonomyConnectionEdge';
@@ -19668,8 +19337,12 @@ export interface CoreArchivesBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   displayAsDropdown: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  showLabel: ScalarsEnums['Boolean'];
   showPostCounts: ScalarsEnums['Boolean'];
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   type: ScalarsEnums['String'];
 }
 
@@ -19730,6 +19403,7 @@ export interface CoreAudioBlockAttributes {
   loop?: Maybe<ScalarsEnums['Boolean']>;
   preload?: Maybe<ScalarsEnums['String']>;
   src?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 export interface CoreAudioBlockAttributesUnion {
@@ -19751,6 +19425,7 @@ export interface CoreAudioBlockDeprecatedV1Attributes {
   loop?: Maybe<ScalarsEnums['Boolean']>;
   preload?: Maybe<ScalarsEnums['String']>;
   src?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 /**
@@ -19809,58 +19484,6 @@ export interface CoreAvatarBlockAttributes {
   size: ScalarsEnums['Float'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   userId?: Maybe<ScalarsEnums['Float']>;
-}
-
-/**
- * core/block block
- */
-export interface CoreBlock {
-  __typename?: 'CoreBlock';
-  attributes?: Maybe<CoreBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  reusableBlock: Node;
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreBlockAttributes {
-  __typename?: 'CoreBlockAttributes';
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
 }
 
 /**
@@ -19941,12 +19564,34 @@ export interface CoreButtonBlockAttributesUnion {
     | 'CoreButtonBlockDeprecatedV7Attributes'
     | 'CoreButtonBlockDeprecatedV8Attributes'
     | 'CoreButtonBlockDeprecatedV9Attributes'
-    | 'CoreButtonBlockDeprecatedV10Attributes';
+    | 'CoreButtonBlockDeprecatedV10Attributes'
+    | 'CoreButtonBlockDeprecatedV11Attributes';
   $on: $CoreButtonBlockAttributesUnion;
 }
 
 export interface CoreButtonBlockDeprecatedV10Attributes {
   __typename?: 'CoreButtonBlockDeprecatedV10Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  text?: Maybe<ScalarsEnums['String']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreButtonBlockDeprecatedV11Attributes {
+  __typename?: 'CoreButtonBlockDeprecatedV11Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
@@ -20205,6 +19850,8 @@ export interface CoreButtonsBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20223,6 +19870,8 @@ export interface CoreButtonsBlockDeprecatedV1Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20233,6 +19882,8 @@ export interface CoreButtonsBlockDeprecatedV2Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20287,8 +19938,11 @@ export interface CoreCalendarBlockAttributes {
   __typename?: 'CoreCalendarBlockAttributes';
   align?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   month?: Maybe<ScalarsEnums['Int']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   year?: Maybe<ScalarsEnums['Int']>;
 }
 
@@ -20342,10 +19996,14 @@ export interface CoreCategoriesBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   displayAsDropdown: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  showEmpty: ScalarsEnums['Boolean'];
   showHierarchy: ScalarsEnums['Boolean'];
   showOnlyTopLevel: ScalarsEnums['Boolean'];
   showPostCounts: ScalarsEnums['Boolean'];
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 /**
@@ -20400,6 +20058,7 @@ export interface CoreCodeBlockAttributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20457,7 +20116,10 @@ export interface CoreColumnBlockAttributes {
   allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20479,7 +20141,10 @@ export interface CoreColumnBlockDeprecatedV1Attributes {
   allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
   anchor?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20541,6 +20206,8 @@ export interface CoreColumnsBlockAttributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   isStackedOnMobile: ScalarsEnums['Boolean'];
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20566,6 +20233,8 @@ export interface CoreColumnsBlockDeprecatedV1Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   isStackedOnMobile: ScalarsEnums['Boolean'];
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20582,6 +20251,8 @@ export interface CoreColumnsBlockDeprecatedV2Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   isStackedOnMobile: ScalarsEnums['Boolean'];
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20598,6 +20269,8 @@ export interface CoreColumnsBlockDeprecatedV3Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   isStackedOnMobile: ScalarsEnums['Boolean'];
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -20993,7 +20666,92 @@ export interface CoreCommentTemplateBlockAttributes {
   __typename?: 'CoreCommentTemplateBlockAttributes';
   align?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * core/comments block
+ */
+export interface CoreCommentsBlock {
+  __typename?: 'CoreCommentsBlock';
+  attributes?: Maybe<CoreCommentsBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreCommentsBlockAttributes {
+  __typename?: 'CoreCommentsBlockAttributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  legacy: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tagName: ScalarsEnums['String'];
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreCommentsBlockAttributesUnion {
+  __typename?:
+    | 'CoreCommentsBlockAttributes'
+    | 'CoreCommentsBlockDeprecatedV1Attributes';
+  $on: $CoreCommentsBlockAttributesUnion;
+}
+
+export interface CoreCommentsBlockDeprecatedV1Attributes {
+  __typename?: 'CoreCommentsBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  legacy: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tagName: ScalarsEnums['String'];
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -21046,6 +20804,8 @@ export interface CoreCommentsPaginationBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -21103,6 +20863,7 @@ export interface CoreCommentsPaginationNextBlockAttributes {
   __typename?: 'CoreCommentsPaginationNextBlockAttributes';
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   label?: Maybe<ScalarsEnums['String']>;
@@ -21159,7 +20920,10 @@ export interface CoreCommentsPaginationNumbersBlock {
 export interface CoreCommentsPaginationNumbersBlockAttributes {
   __typename?: 'CoreCommentsPaginationNumbersBlockAttributes';
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 /**
@@ -21211,68 +20975,12 @@ export interface CoreCommentsPaginationPreviousBlockAttributes {
   __typename?: 'CoreCommentsPaginationPreviousBlockAttributes';
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   label?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/comments-query-loop block
- */
-export interface CoreCommentsQueryLoopBlock {
-  __typename?: 'CoreCommentsQueryLoopBlock';
-  attributes?: Maybe<CoreCommentsQueryLoopBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreCommentsQueryLoopBlockAttributes {
-  __typename?: 'CoreCommentsQueryLoopBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
 }
 
@@ -21422,6 +21130,8 @@ export interface CoreCoverBlockAttributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21447,8 +21157,38 @@ export interface CoreCoverBlockAttributesUnion {
     | 'CoreCoverBlockDeprecatedV6Attributes'
     | 'CoreCoverBlockDeprecatedV7Attributes'
     | 'CoreCoverBlockDeprecatedV8Attributes'
-    | 'CoreCoverBlockDeprecatedV9Attributes';
+    | 'CoreCoverBlockDeprecatedV9Attributes'
+    | 'CoreCoverBlockDeprecatedV10Attributes';
   $on: $CoreCoverBlockAttributesUnion;
+}
+
+export interface CoreCoverBlockDeprecatedV10Attributes {
+  __typename?: 'CoreCoverBlockDeprecatedV10Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowedBlocks?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundType: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  contentPosition?: Maybe<ScalarsEnums['String']>;
+  customGradient?: Maybe<ScalarsEnums['String']>;
+  customOverlayColor?: Maybe<ScalarsEnums['String']>;
+  dimRatio: ScalarsEnums['Float'];
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasParallax: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  isDark: ScalarsEnums['Boolean'];
+  isRepeated: ScalarsEnums['Boolean'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minHeight?: Maybe<ScalarsEnums['Float']>;
+  minHeightUnit?: Maybe<ScalarsEnums['String']>;
+  overlayColor?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  useFeaturedImage: ScalarsEnums['Boolean'];
 }
 
 export interface CoreCoverBlockDeprecatedV1Attributes {
@@ -21464,6 +21204,8 @@ export interface CoreCoverBlockDeprecatedV1Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21491,6 +21233,8 @@ export interface CoreCoverBlockDeprecatedV2Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21518,6 +21262,8 @@ export interface CoreCoverBlockDeprecatedV3Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21545,6 +21291,8 @@ export interface CoreCoverBlockDeprecatedV4Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21572,6 +21320,8 @@ export interface CoreCoverBlockDeprecatedV5Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21599,6 +21349,8 @@ export interface CoreCoverBlockDeprecatedV6Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21626,6 +21378,8 @@ export interface CoreCoverBlockDeprecatedV7Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21653,6 +21407,8 @@ export interface CoreCoverBlockDeprecatedV8Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21680,6 +21436,8 @@ export interface CoreCoverBlockDeprecatedV9Attributes {
   customOverlayColor?: Maybe<ScalarsEnums['String']>;
   dimRatio: ScalarsEnums['Float'];
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   hasParallax: ScalarsEnums['Boolean'];
   id?: Maybe<ScalarsEnums['Float']>;
@@ -21756,12 +21514,27 @@ export interface CoreEmbedBlockAttributes {
 export interface CoreEmbedBlockAttributesUnion {
   __typename?:
     | 'CoreEmbedBlockAttributes'
-    | 'CoreEmbedBlockDeprecatedV1Attributes';
+    | 'CoreEmbedBlockDeprecatedV1Attributes'
+    | 'CoreEmbedBlockDeprecatedV2Attributes';
   $on: $CoreEmbedBlockAttributesUnion;
 }
 
 export interface CoreEmbedBlockDeprecatedV1Attributes {
   __typename?: 'CoreEmbedBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowResponsive: ScalarsEnums['Boolean'];
+  caption?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  previewable: ScalarsEnums['Boolean'];
+  providerNameSlug?: Maybe<ScalarsEnums['String']>;
+  responsive: ScalarsEnums['Boolean'];
+  type?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreEmbedBlockDeprecatedV2Attributes {
+  __typename?: 'CoreEmbedBlockDeprecatedV2Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   allowResponsive: ScalarsEnums['Boolean'];
   caption?: Maybe<ScalarsEnums['String']>;
@@ -21840,7 +21613,9 @@ export interface CoreFileBlockAttributes {
 export interface CoreFileBlockAttributesUnion {
   __typename?:
     | 'CoreFileBlockAttributes'
-    | 'CoreFileBlockDeprecatedV1Attributes';
+    | 'CoreFileBlockDeprecatedV1Attributes'
+    | 'CoreFileBlockDeprecatedV2Attributes'
+    | 'CoreFileBlockDeprecatedV3Attributes';
   $on: $CoreFileBlockAttributesUnion;
 }
 
@@ -21862,55 +21637,40 @@ export interface CoreFileBlockDeprecatedV1Attributes {
   textLinkTarget?: Maybe<ScalarsEnums['String']>;
 }
 
-/**
- * core/freeform block
- */
-export interface CoreFreeformBlock {
-  __typename?: 'CoreFreeformBlock';
-  attributes?: Maybe<CoreFreeformBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
+export interface CoreFileBlockDeprecatedV2Attributes {
+  __typename?: 'CoreFileBlockDeprecatedV2Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  displayPreview?: Maybe<ScalarsEnums['Boolean']>;
+  downloadButtonText?: Maybe<ScalarsEnums['String']>;
+  fileId?: Maybe<ScalarsEnums['String']>;
+  fileName?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  id?: Maybe<ScalarsEnums['Float']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  previewHeight: ScalarsEnums['Float'];
+  showDownloadButton: ScalarsEnums['Boolean'];
+  textLinkHref?: Maybe<ScalarsEnums['String']>;
+  textLinkTarget?: Maybe<ScalarsEnums['String']>;
 }
 
-export interface CoreFreeformBlockAttributes {
-  __typename?: 'CoreFreeformBlockAttributes';
-  content?: Maybe<ScalarsEnums['String']>;
+export interface CoreFileBlockDeprecatedV3Attributes {
+  __typename?: 'CoreFileBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  displayPreview?: Maybe<ScalarsEnums['Boolean']>;
+  downloadButtonText?: Maybe<ScalarsEnums['String']>;
+  fileId?: Maybe<ScalarsEnums['String']>;
+  fileName?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  id?: Maybe<ScalarsEnums['Float']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  previewHeight: ScalarsEnums['Float'];
+  showDownloadButton: ScalarsEnums['Boolean'];
+  textLinkHref?: Maybe<ScalarsEnums['String']>;
+  textLinkTarget?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -21963,10 +21723,12 @@ export interface CoreGalleryBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockAttributesImages>>;
@@ -21977,6 +21739,7 @@ export interface CoreGalleryBlockAttributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockAttributesImages {
@@ -21997,7 +21760,8 @@ export interface CoreGalleryBlockAttributesUnion {
     | 'CoreGalleryBlockDeprecatedV3Attributes'
     | 'CoreGalleryBlockDeprecatedV4Attributes'
     | 'CoreGalleryBlockDeprecatedV5Attributes'
-    | 'CoreGalleryBlockDeprecatedV6Attributes';
+    | 'CoreGalleryBlockDeprecatedV6Attributes'
+    | 'CoreGalleryBlockDeprecatedV7Attributes';
   $on: $CoreGalleryBlockAttributesUnion;
 }
 
@@ -22006,10 +21770,12 @@ export interface CoreGalleryBlockDeprecatedV1Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV1AttributesImages>>;
@@ -22020,6 +21786,7 @@ export interface CoreGalleryBlockDeprecatedV1Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV1AttributesImages {
@@ -22037,10 +21804,12 @@ export interface CoreGalleryBlockDeprecatedV2Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV2AttributesImages>>;
@@ -22051,6 +21820,7 @@ export interface CoreGalleryBlockDeprecatedV2Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV2AttributesImages {
@@ -22068,10 +21838,12 @@ export interface CoreGalleryBlockDeprecatedV3Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV3AttributesImages>>;
@@ -22082,6 +21854,7 @@ export interface CoreGalleryBlockDeprecatedV3Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV3AttributesImages {
@@ -22099,10 +21872,12 @@ export interface CoreGalleryBlockDeprecatedV4Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV4AttributesImages>>;
@@ -22113,6 +21888,7 @@ export interface CoreGalleryBlockDeprecatedV4Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV4AttributesImages {
@@ -22130,10 +21906,12 @@ export interface CoreGalleryBlockDeprecatedV5Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV5AttributesImages>>;
@@ -22144,6 +21922,7 @@ export interface CoreGalleryBlockDeprecatedV5Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV5AttributesImages {
@@ -22161,10 +21940,12 @@ export interface CoreGalleryBlockDeprecatedV6Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   allowResize: ScalarsEnums['Boolean'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   columns?: Maybe<ScalarsEnums['Float']>;
   fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
   ids: Array<Maybe<ScalarsEnums['Float']>>;
   imageCrop: ScalarsEnums['Boolean'];
   images: Array<Maybe<CoreGalleryBlockDeprecatedV6AttributesImages>>;
@@ -22175,10 +21956,45 @@ export interface CoreGalleryBlockDeprecatedV6Attributes {
   shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
   sizeSlug: ScalarsEnums['String'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreGalleryBlockDeprecatedV6AttributesImages {
   __typename?: 'CoreGalleryBlockDeprecatedV6AttributesImages';
+  alt: ScalarsEnums['String'];
+  caption?: Maybe<ScalarsEnums['String']>;
+  fullUrl?: Maybe<ScalarsEnums['String']>;
+  id?: Maybe<ScalarsEnums['String']>;
+  link?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreGalleryBlockDeprecatedV7Attributes {
+  __typename?: 'CoreGalleryBlockDeprecatedV7Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  allowResize: ScalarsEnums['Boolean'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  caption?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  columns?: Maybe<ScalarsEnums['Float']>;
+  fixedHeight: ScalarsEnums['Boolean'];
+  gradient?: Maybe<ScalarsEnums['String']>;
+  ids: Array<Maybe<ScalarsEnums['Float']>>;
+  imageCrop: ScalarsEnums['Boolean'];
+  images: Array<Maybe<CoreGalleryBlockDeprecatedV7AttributesImages>>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  linkTo?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  shortCodeTransforms: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
+  sizeSlug: ScalarsEnums['String'];
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreGalleryBlockDeprecatedV7AttributesImages {
+  __typename?: 'CoreGalleryBlockDeprecatedV7AttributesImages';
   alt: ScalarsEnums['String'];
   caption?: Maybe<ScalarsEnums['String']>;
   fullUrl?: Maybe<ScalarsEnums['String']>;
@@ -22236,13 +22052,16 @@ export interface CoreGroupBlockAttributes {
   __typename?: 'CoreGroupBlockAttributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -22254,7 +22073,8 @@ export interface CoreGroupBlockAttributesUnion {
     | 'CoreGroupBlockDeprecatedV1Attributes'
     | 'CoreGroupBlockDeprecatedV2Attributes'
     | 'CoreGroupBlockDeprecatedV3Attributes'
-    | 'CoreGroupBlockDeprecatedV4Attributes';
+    | 'CoreGroupBlockDeprecatedV4Attributes'
+    | 'CoreGroupBlockDeprecatedV5Attributes';
   $on: $CoreGroupBlockAttributesUnion;
 }
 
@@ -22262,13 +22082,16 @@ export interface CoreGroupBlockDeprecatedV1Attributes {
   __typename?: 'CoreGroupBlockDeprecatedV1Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -22278,13 +22101,16 @@ export interface CoreGroupBlockDeprecatedV2Attributes {
   __typename?: 'CoreGroupBlockDeprecatedV2Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -22294,13 +22120,16 @@ export interface CoreGroupBlockDeprecatedV3Attributes {
   __typename?: 'CoreGroupBlockDeprecatedV3Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -22310,13 +22139,35 @@ export interface CoreGroupBlockDeprecatedV4Attributes {
   __typename?: 'CoreGroupBlockDeprecatedV4Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   borderColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tagName: ScalarsEnums['String'];
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreGroupBlockDeprecatedV5Attributes {
+  __typename?: 'CoreGroupBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  ariaLabel?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  settings?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tagName: ScalarsEnums['String'];
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -22374,7 +22225,9 @@ export interface CoreHeadingBlockAttributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
@@ -22400,7 +22253,9 @@ export interface CoreHeadingBlockDeprecatedV1Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
@@ -22416,7 +22271,9 @@ export interface CoreHeadingBlockDeprecatedV2Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
@@ -22432,7 +22289,9 @@ export interface CoreHeadingBlockDeprecatedV3Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
@@ -22448,7 +22307,9 @@ export interface CoreHeadingBlockDeprecatedV4Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
@@ -22505,8 +22366,11 @@ export interface CoreHomeLinkBlock {
 export interface CoreHomeLinkBlockAttributes {
   __typename?: 'CoreHomeLinkBlockAttributes';
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   label?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 /**
@@ -22610,6 +22474,7 @@ export interface CoreImageBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   alt: ScalarsEnums['String'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   height?: Maybe<ScalarsEnums['Float']>;
@@ -22633,7 +22498,8 @@ export interface CoreImageBlockAttributesUnion {
     | 'CoreImageBlockDeprecatedV1Attributes'
     | 'CoreImageBlockDeprecatedV2Attributes'
     | 'CoreImageBlockDeprecatedV3Attributes'
-    | 'CoreImageBlockDeprecatedV4Attributes';
+    | 'CoreImageBlockDeprecatedV4Attributes'
+    | 'CoreImageBlockDeprecatedV5Attributes';
   $on: $CoreImageBlockAttributesUnion;
 }
 
@@ -22642,6 +22508,7 @@ export interface CoreImageBlockDeprecatedV1Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   alt: ScalarsEnums['String'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   height?: Maybe<ScalarsEnums['Float']>;
@@ -22664,6 +22531,7 @@ export interface CoreImageBlockDeprecatedV2Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   alt: ScalarsEnums['String'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   height?: Maybe<ScalarsEnums['Float']>;
@@ -22686,6 +22554,7 @@ export interface CoreImageBlockDeprecatedV3Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   alt: ScalarsEnums['String'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   height?: Maybe<ScalarsEnums['Float']>;
@@ -22708,6 +22577,30 @@ export interface CoreImageBlockDeprecatedV4Attributes {
   align?: Maybe<ScalarsEnums['String']>;
   alt: ScalarsEnums['String'];
   anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  caption?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  height?: Maybe<ScalarsEnums['Float']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  id?: Maybe<ScalarsEnums['Float']>;
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  rel?: Maybe<ScalarsEnums['String']>;
+  sizeSlug?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  title?: Maybe<ScalarsEnums['String']>;
+  url?: Maybe<ScalarsEnums['String']>;
+  width?: Maybe<ScalarsEnums['Float']>;
+}
+
+export interface CoreImageBlockDeprecatedV5Attributes {
+  __typename?: 'CoreImageBlockDeprecatedV5Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  alt: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
   caption?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   height?: Maybe<ScalarsEnums['Float']>;
@@ -22843,12 +22736,15 @@ export interface CoreLatestPostsBlockAttributes {
   featuredImageSizeHeight?: Maybe<ScalarsEnums['Float']>;
   featuredImageSizeSlug: ScalarsEnums['String'];
   featuredImageSizeWidth?: Maybe<ScalarsEnums['Float']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   order: ScalarsEnums['String'];
   orderBy: ScalarsEnums['String'];
   postLayout: ScalarsEnums['String'];
   postsToShow: ScalarsEnums['Float'];
   selectedAuthor?: Maybe<ScalarsEnums['Float']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 export interface CoreLatestPostsBlockAttributesUnion {
@@ -22875,12 +22771,68 @@ export interface CoreLatestPostsBlockDeprecatedV1Attributes {
   featuredImageSizeHeight?: Maybe<ScalarsEnums['Float']>;
   featuredImageSizeSlug: ScalarsEnums['String'];
   featuredImageSizeWidth?: Maybe<ScalarsEnums['Float']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   order: ScalarsEnums['String'];
   orderBy: ScalarsEnums['String'];
   postLayout: ScalarsEnums['String'];
   postsToShow: ScalarsEnums['Float'];
   selectedAuthor?: Maybe<ScalarsEnums['Float']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
+/**
+ * core/legacy-widget block
+ */
+export interface CoreLegacyWidgetBlock {
+  __typename?: 'CoreLegacyWidgetBlock';
+  attributes?: Maybe<CoreLegacyWidgetBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreLegacyWidgetBlockAttributes {
+  __typename?: 'CoreLegacyWidgetBlockAttributes';
+  id?: Maybe<ScalarsEnums['String']>;
+  idBase?: Maybe<ScalarsEnums['String']>;
+  instance?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
 }
 
 /**
@@ -22950,7 +22902,8 @@ export interface CoreListBlockAttributes {
 export interface CoreListBlockAttributesUnion {
   __typename?:
     | 'CoreListBlockAttributes'
-    | 'CoreListBlockDeprecatedV1Attributes';
+    | 'CoreListBlockDeprecatedV1Attributes'
+    | 'CoreListBlockDeprecatedV2Attributes';
   $on: $CoreListBlockAttributesUnion;
 }
 
@@ -22971,6 +22924,78 @@ export interface CoreListBlockDeprecatedV1Attributes {
   textColor?: Maybe<ScalarsEnums['String']>;
   type?: Maybe<ScalarsEnums['String']>;
   values: ScalarsEnums['String'];
+}
+
+export interface CoreListBlockDeprecatedV2Attributes {
+  __typename?: 'CoreListBlockDeprecatedV2Attributes';
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  ordered: ScalarsEnums['Boolean'];
+  placeholder?: Maybe<ScalarsEnums['String']>;
+  reversed?: Maybe<ScalarsEnums['Boolean']>;
+  start?: Maybe<ScalarsEnums['Float']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  type?: Maybe<ScalarsEnums['String']>;
+  values: ScalarsEnums['String'];
+}
+
+/**
+ * core/list-item block
+ */
+export interface CoreListItemBlock {
+  __typename?: 'CoreListItemBlock';
+  attributes?: Maybe<CoreListItemBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreListItemBlockAttributes {
+  __typename?: 'CoreListItemBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  content: ScalarsEnums['String'];
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  placeholder?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -23078,6 +23103,8 @@ export interface CoreMediaTextBlockAttributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   href?: Maybe<ScalarsEnums['String']>;
   imageFill?: Maybe<ScalarsEnums['Boolean']>;
@@ -23105,7 +23132,9 @@ export interface CoreMediaTextBlockAttributesUnion {
     | 'CoreMediaTextBlockAttributes'
     | 'CoreMediaTextBlockDeprecatedV1Attributes'
     | 'CoreMediaTextBlockDeprecatedV2Attributes'
-    | 'CoreMediaTextBlockDeprecatedV3Attributes';
+    | 'CoreMediaTextBlockDeprecatedV3Attributes'
+    | 'CoreMediaTextBlockDeprecatedV4Attributes'
+    | 'CoreMediaTextBlockDeprecatedV5Attributes';
   $on: $CoreMediaTextBlockAttributesUnion;
 }
 
@@ -23116,6 +23145,8 @@ export interface CoreMediaTextBlockDeprecatedV1Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   href?: Maybe<ScalarsEnums['String']>;
   imageFill?: Maybe<ScalarsEnums['Boolean']>;
@@ -23145,6 +23176,8 @@ export interface CoreMediaTextBlockDeprecatedV2Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   href?: Maybe<ScalarsEnums['String']>;
   imageFill?: Maybe<ScalarsEnums['Boolean']>;
@@ -23174,6 +23207,70 @@ export interface CoreMediaTextBlockDeprecatedV3Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockDeprecatedV4Attributes {
+  __typename?: 'CoreMediaTextBlockDeprecatedV4Attributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  href?: Maybe<ScalarsEnums['String']>;
+  imageFill?: Maybe<ScalarsEnums['Boolean']>;
+  isStackedOnMobile: ScalarsEnums['Boolean'];
+  linkClass?: Maybe<ScalarsEnums['String']>;
+  linkDestination?: Maybe<ScalarsEnums['String']>;
+  linkTarget?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  mediaAlt: ScalarsEnums['String'];
+  mediaId?: Maybe<ScalarsEnums['Float']>;
+  mediaLink?: Maybe<ScalarsEnums['String']>;
+  mediaPosition: ScalarsEnums['String'];
+  mediaSizeSlug?: Maybe<ScalarsEnums['String']>;
+  mediaType?: Maybe<ScalarsEnums['String']>;
+  mediaUrl?: Maybe<ScalarsEnums['String']>;
+  mediaWidth: ScalarsEnums['Float'];
+  rel?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  verticalAlignment?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreMediaTextBlockDeprecatedV5Attributes {
+  __typename?: 'CoreMediaTextBlockDeprecatedV5Attributes';
+  align: ScalarsEnums['String'];
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  focalPoint?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   href?: Maybe<ScalarsEnums['String']>;
   imageFill?: Maybe<ScalarsEnums['Boolean']>;
@@ -23247,463 +23344,6 @@ export interface CoreMissingBlockAttributes {
   originalContent?: Maybe<ScalarsEnums['String']>;
   originalName?: Maybe<ScalarsEnums['String']>;
   originalUndelimitedContent?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/more block
- */
-export interface CoreMoreBlock {
-  __typename?: 'CoreMoreBlock';
-  attributes?: Maybe<CoreMoreBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreMoreBlockAttributes {
-  __typename?: 'CoreMoreBlockAttributes';
-  customText?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  noTeaser: ScalarsEnums['Boolean'];
-}
-
-/**
- * core/navigation block
- */
-export interface CoreNavigationBlock {
-  __typename?: 'CoreNavigationBlock';
-  attributes?: Maybe<CoreNavigationBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockAttributes {
-  __typename?: 'CoreNavigationBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockAttributesUnion {
-  __typename?:
-    | 'CoreNavigationBlockAttributes'
-    | 'CoreNavigationBlockDeprecatedV1Attributes'
-    | 'CoreNavigationBlockDeprecatedV2Attributes'
-    | 'CoreNavigationBlockDeprecatedV3Attributes'
-    | 'CoreNavigationBlockDeprecatedV4Attributes'
-    | 'CoreNavigationBlockDeprecatedV5Attributes'
-    | 'CoreNavigationBlockDeprecatedV6Attributes';
-  $on: $CoreNavigationBlockAttributesUnion;
-}
-
-export interface CoreNavigationBlockDeprecatedV1Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockDeprecatedV2Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV2Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockDeprecatedV3Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV3Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockDeprecatedV4Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV4Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockDeprecatedV5Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV5Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationBlockDeprecatedV6Attributes {
-  __typename?: 'CoreNavigationBlockDeprecatedV6Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  anchor?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  customBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  customOverlayTextColor?: Maybe<ScalarsEnums['String']>;
-  customTextColor?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  hasIcon: ScalarsEnums['Boolean'];
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  maxNestingLevel: ScalarsEnums['Float'];
-  openSubmenusOnClick: ScalarsEnums['Boolean'];
-  overlayBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  overlayMenu: ScalarsEnums['String'];
-  overlayTextColor?: Maybe<ScalarsEnums['String']>;
-  ref?: Maybe<ScalarsEnums['Float']>;
-  rgbBackgroundColor?: Maybe<ScalarsEnums['String']>;
-  rgbTextColor?: Maybe<ScalarsEnums['String']>;
-  showSubmenuIcon: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  unstableLocation?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/navigation-link block
- */
-export interface CoreNavigationLinkBlock {
-  __typename?: 'CoreNavigationLinkBlock';
-  attributes?: Maybe<CoreNavigationLinkBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationLinkBlockAttributes {
-  __typename?: 'CoreNavigationLinkBlockAttributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['String']>;
-  id?: Maybe<ScalarsEnums['Float']>;
-  isTopLevelLink?: Maybe<ScalarsEnums['Boolean']>;
-  kind?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  opensInNewTab: ScalarsEnums['Boolean'];
-  rel?: Maybe<ScalarsEnums['String']>;
-  title?: Maybe<ScalarsEnums['String']>;
-  type?: Maybe<ScalarsEnums['String']>;
-  url?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationLinkBlockAttributesUnion {
-  __typename?:
-    | 'CoreNavigationLinkBlockAttributes'
-    | 'CoreNavigationLinkBlockDeprecatedV1Attributes';
-  $on: $CoreNavigationLinkBlockAttributesUnion;
-}
-
-export interface CoreNavigationLinkBlockDeprecatedV1Attributes {
-  __typename?: 'CoreNavigationLinkBlockDeprecatedV1Attributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['String']>;
-  id?: Maybe<ScalarsEnums['Float']>;
-  isTopLevelLink?: Maybe<ScalarsEnums['Boolean']>;
-  kind?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  opensInNewTab: ScalarsEnums['Boolean'];
-  rel?: Maybe<ScalarsEnums['String']>;
-  title?: Maybe<ScalarsEnums['String']>;
-  type?: Maybe<ScalarsEnums['String']>;
-  url?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/navigation-submenu block
- */
-export interface CoreNavigationSubmenuBlock {
-  __typename?: 'CoreNavigationSubmenuBlock';
-  attributes?: Maybe<CoreNavigationSubmenuBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreNavigationSubmenuBlockAttributes {
-  __typename?: 'CoreNavigationSubmenuBlockAttributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['String']>;
-  id?: Maybe<ScalarsEnums['Float']>;
-  isTopLevelItem?: Maybe<ScalarsEnums['Boolean']>;
-  kind?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  opensInNewTab: ScalarsEnums['Boolean'];
-  rel?: Maybe<ScalarsEnums['String']>;
-  title?: Maybe<ScalarsEnums['String']>;
-  type?: Maybe<ScalarsEnums['String']>;
-  url?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -23805,7 +23445,6 @@ export interface CorePageListBlockAttributes {
   __typename?: 'CorePageListBlockAttributes';
   className?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  unstableMaxPages?: Maybe<ScalarsEnums['Float']>;
 }
 
 /**
@@ -23862,7 +23501,9 @@ export interface CoreParagraphBlockAttributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -23889,7 +23530,9 @@ export interface CoreParagraphBlockDeprecatedV1Attributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -23905,7 +23548,9 @@ export interface CoreParagraphBlockDeprecatedV2Attributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -23921,7 +23566,9 @@ export interface CoreParagraphBlockDeprecatedV3Attributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -23937,7 +23584,9 @@ export interface CoreParagraphBlockDeprecatedV4Attributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -23953,7 +23602,9 @@ export interface CoreParagraphBlockDeprecatedV5Attributes {
   content: ScalarsEnums['String'];
   direction?: Maybe<ScalarsEnums['String']>;
   dropCap: ScalarsEnums['Boolean'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24013,750 +23664,6 @@ export interface CorePatternBlockAttributes {
 }
 
 /**
- * core/post-author-biography block
- */
-export interface CorePostAuthorBiographyBlock {
-  __typename?: 'CorePostAuthorBiographyBlock';
-  attributes?: Maybe<CorePostAuthorBiographyBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostAuthorBiographyBlockAttributes {
-  __typename?: 'CorePostAuthorBiographyBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-author block
- */
-export interface CorePostAuthorBlock {
-  __typename?: 'CorePostAuthorBlock';
-  attributes?: Maybe<CorePostAuthorBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostAuthorBlockAttributes {
-  __typename?: 'CorePostAuthorBlockAttributes';
-  avatarSize: ScalarsEnums['Float'];
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  byline?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  showAvatar: ScalarsEnums['Boolean'];
-  showBio?: Maybe<ScalarsEnums['Boolean']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-comments block
- */
-export interface CorePostCommentsBlock {
-  __typename?: 'CorePostCommentsBlock';
-  attributes?: Maybe<CorePostCommentsBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostCommentsBlockAttributes {
-  __typename?: 'CorePostCommentsBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-comments-form block
- */
-export interface CorePostCommentsFormBlock {
-  __typename?: 'CorePostCommentsFormBlock';
-  attributes?: Maybe<CorePostCommentsFormBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostCommentsFormBlockAttributes {
-  __typename?: 'CorePostCommentsFormBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-content block
- */
-export interface CorePostContentBlock {
-  __typename?: 'CorePostContentBlock';
-  attributes?: Maybe<CorePostContentBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostContentBlockAttributes {
-  __typename?: 'CorePostContentBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-}
-
-/**
- * core/post-date block
- */
-export interface CorePostDateBlock {
-  __typename?: 'CorePostDateBlock';
-  attributes?: Maybe<CorePostDateBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostDateBlockAttributes {
-  __typename?: 'CorePostDateBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  format?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostDateBlockAttributesUnion {
-  __typename?:
-    | 'CorePostDateBlockAttributes'
-    | 'CorePostDateBlockDeprecatedV1Attributes';
-  $on: $CorePostDateBlockAttributesUnion;
-}
-
-export interface CorePostDateBlockDeprecatedV1Attributes {
-  __typename?: 'CorePostDateBlockDeprecatedV1Attributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  format?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-excerpt block
- */
-export interface CorePostExcerptBlock {
-  __typename?: 'CorePostExcerptBlock';
-  attributes?: Maybe<CorePostExcerptBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostExcerptBlockAttributes {
-  __typename?: 'CorePostExcerptBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  moreText?: Maybe<ScalarsEnums['String']>;
-  showMoreOnNewLine: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-featured-image block
- */
-export interface CorePostFeaturedImageBlock {
-  __typename?: 'CorePostFeaturedImageBlock';
-  attributes?: Maybe<CorePostFeaturedImageBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostFeaturedImageBlockAttributes {
-  __typename?: 'CorePostFeaturedImageBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  height?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  scale: ScalarsEnums['String'];
-  sizeSlug?: Maybe<ScalarsEnums['String']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  width?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-navigation-link block
- */
-export interface CorePostNavigationLinkBlock {
-  __typename?: 'CorePostNavigationLinkBlock';
-  attributes?: Maybe<CorePostNavigationLinkBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostNavigationLinkBlockAttributes {
-  __typename?: 'CorePostNavigationLinkBlockAttributes';
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  linkLabel: ScalarsEnums['Boolean'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  showTitle: ScalarsEnums['Boolean'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  type: ScalarsEnums['String'];
-}
-
-/**
- * core/post-template block
- */
-export interface CorePostTemplateBlock {
-  __typename?: 'CorePostTemplateBlock';
-  attributes?: Maybe<CorePostTemplateBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostTemplateBlockAttributes {
-  __typename?: 'CorePostTemplateBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-}
-
-/**
- * core/post-terms block
- */
-export interface CorePostTermsBlock {
-  __typename?: 'CorePostTermsBlock';
-  attributes?: Maybe<CorePostTermsBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostTermsBlockAttributes {
-  __typename?: 'CorePostTermsBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  separator: ScalarsEnums['String'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  term?: Maybe<ScalarsEnums['String']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/post-title block
- */
-export interface CorePostTitleBlock {
-  __typename?: 'CorePostTitleBlock';
-  attributes?: Maybe<CorePostTitleBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostTitleBlockAttributes {
-  __typename?: 'CorePostTitleBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  level: ScalarsEnums['Float'];
-  linkTarget: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  rel: ScalarsEnums['String'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CorePostTitleBlockAttributesUnion {
-  __typename?:
-    | 'CorePostTitleBlockAttributes'
-    | 'CorePostTitleBlockDeprecatedV1Attributes';
-  $on: $CorePostTitleBlockAttributesUnion;
-}
-
-export interface CorePostTitleBlockDeprecatedV1Attributes {
-  __typename?: 'CorePostTitleBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  level: ScalarsEnums['Float'];
-  linkTarget: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  rel: ScalarsEnums['String'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
  * core/preformatted block
  */
 export interface CorePreformattedBlock {
@@ -24807,6 +23714,7 @@ export interface CorePreformattedBlockAttributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   content: ScalarsEnums['String'];
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24867,6 +23775,7 @@ export interface CorePullquoteBlockAttributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24883,7 +23792,8 @@ export interface CorePullquoteBlockAttributesUnion {
     | 'CorePullquoteBlockDeprecatedV2Attributes'
     | 'CorePullquoteBlockDeprecatedV3Attributes'
     | 'CorePullquoteBlockDeprecatedV4Attributes'
-    | 'CorePullquoteBlockDeprecatedV5Attributes';
+    | 'CorePullquoteBlockDeprecatedV5Attributes'
+    | 'CorePullquoteBlockDeprecatedV6Attributes';
   $on: $CorePullquoteBlockAttributesUnion;
 }
 
@@ -24895,6 +23805,7 @@ export interface CorePullquoteBlockDeprecatedV1Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24912,6 +23823,7 @@ export interface CorePullquoteBlockDeprecatedV2Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24929,6 +23841,7 @@ export interface CorePullquoteBlockDeprecatedV3Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24946,6 +23859,7 @@ export interface CorePullquoteBlockDeprecatedV4Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24963,6 +23877,7 @@ export interface CorePullquoteBlockDeprecatedV5Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -24972,493 +23887,22 @@ export interface CorePullquoteBlockDeprecatedV5Attributes {
   value?: Maybe<ScalarsEnums['String']>;
 }
 
-/**
- * core/query block
- */
-export interface CoreQueryBlock {
-  __typename?: 'CoreQueryBlock';
-  attributes?: Maybe<CoreQueryBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryBlockAttributes {
-  __typename?: 'CoreQueryBlockAttributes';
+export interface CorePullquoteBlockDeprecatedV6Attributes {
+  __typename?: 'CorePullquoteBlockDeprecatedV6Attributes';
   align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  displayLayout: ScalarsEnums['BlockAttributesObject'];
-  gradient?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  query: ScalarsEnums['BlockAttributesObject'];
-  queryId?: Maybe<ScalarsEnums['Float']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  tagName: ScalarsEnums['String'];
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryBlockAttributesUnion {
-  __typename?:
-    | 'CoreQueryBlockAttributes'
-    | 'CoreQueryBlockDeprecatedV1Attributes'
-    | 'CoreQueryBlockDeprecatedV2Attributes';
-  $on: $CoreQueryBlockAttributesUnion;
-}
-
-export interface CoreQueryBlockDeprecatedV1Attributes {
-  __typename?: 'CoreQueryBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  displayLayout: ScalarsEnums['BlockAttributesObject'];
-  gradient?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  query: ScalarsEnums['BlockAttributesObject'];
-  queryId?: Maybe<ScalarsEnums['Float']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  tagName: ScalarsEnums['String'];
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryBlockDeprecatedV2Attributes {
-  __typename?: 'CoreQueryBlockDeprecatedV2Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  displayLayout: ScalarsEnums['BlockAttributesObject'];
-  gradient?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  query: ScalarsEnums['BlockAttributesObject'];
-  queryId?: Maybe<ScalarsEnums['Float']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  tagName: ScalarsEnums['String'];
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-no-results block
- */
-export interface CoreQueryNoResultsBlock {
-  __typename?: 'CoreQueryNoResultsBlock';
-  attributes?: Maybe<CoreQueryNoResultsBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryNoResultsBlockAttributes {
-  __typename?: 'CoreQueryNoResultsBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-pagination block
- */
-export interface CoreQueryPaginationBlock {
-  __typename?: 'CoreQueryPaginationBlock';
-  attributes?: Maybe<CoreQueryPaginationBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryPaginationBlockAttributes {
-  __typename?: 'CoreQueryPaginationBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  paginationArrow: ScalarsEnums['String'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryPaginationBlockAttributesUnion {
-  __typename?:
-    | 'CoreQueryPaginationBlockAttributes'
-    | 'CoreQueryPaginationBlockDeprecatedV1Attributes';
-  $on: $CoreQueryPaginationBlockAttributesUnion;
-}
-
-export interface CoreQueryPaginationBlockDeprecatedV1Attributes {
-  __typename?: 'CoreQueryPaginationBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  layout?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  paginationArrow: ScalarsEnums['String'];
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-pagination-next block
- */
-export interface CoreQueryPaginationNextBlock {
-  __typename?: 'CoreQueryPaginationNextBlock';
-  attributes?: Maybe<CoreQueryPaginationNextBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryPaginationNextBlockAttributes {
-  __typename?: 'CoreQueryPaginationNextBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-pagination-numbers block
- */
-export interface CoreQueryPaginationNumbersBlock {
-  __typename?: 'CoreQueryPaginationNumbersBlock';
-  attributes?: Maybe<CoreQueryPaginationNumbersBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryPaginationNumbersBlockAttributes {
-  __typename?: 'CoreQueryPaginationNumbersBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-pagination-previous block
- */
-export interface CoreQueryPaginationPreviousBlock {
-  __typename?: 'CoreQueryPaginationPreviousBlock';
-  attributes?: Maybe<CoreQueryPaginationPreviousBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryPaginationPreviousBlockAttributes {
-  __typename?: 'CoreQueryPaginationPreviousBlockAttributes';
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  label?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/query-title block
- */
-export interface CoreQueryTitleBlock {
-  __typename?: 'CoreQueryTitleBlock';
-  attributes?: Maybe<CoreQueryTitleBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryTitleBlockAttributes {
-  __typename?: 'CoreQueryTitleBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
   fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
-  level: ScalarsEnums['Float'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textAlign?: Maybe<ScalarsEnums['String']>;
   textColor?: Maybe<ScalarsEnums['String']>;
-  type?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreQueryTitleBlockAttributesUnion {
-  __typename?:
-    | 'CoreQueryTitleBlockAttributes'
-    | 'CoreQueryTitleBlockDeprecatedV1Attributes';
-  $on: $CoreQueryTitleBlockAttributesUnion;
-}
-
-export interface CoreQueryTitleBlockDeprecatedV1Attributes {
-  __typename?: 'CoreQueryTitleBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  level: ScalarsEnums['Float'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-  type?: Maybe<ScalarsEnums['String']>;
+  value?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -25513,6 +23957,7 @@ export interface CoreQuoteBlockAttributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -25526,7 +23971,8 @@ export interface CoreQuoteBlockAttributesUnion {
     | 'CoreQuoteBlockAttributes'
     | 'CoreQuoteBlockDeprecatedV1Attributes'
     | 'CoreQuoteBlockDeprecatedV2Attributes'
-    | 'CoreQuoteBlockDeprecatedV3Attributes';
+    | 'CoreQuoteBlockDeprecatedV3Attributes'
+    | 'CoreQuoteBlockDeprecatedV4Attributes';
   $on: $CoreQuoteBlockAttributesUnion;
 }
 
@@ -25537,6 +23983,7 @@ export interface CoreQuoteBlockDeprecatedV1Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -25552,6 +23999,7 @@ export interface CoreQuoteBlockDeprecatedV2Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -25567,6 +24015,23 @@ export interface CoreQuoteBlockDeprecatedV3Attributes {
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   citation: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+  value: ScalarsEnums['String'];
+}
+
+export interface CoreQuoteBlockDeprecatedV4Attributes {
+  __typename?: 'CoreQuoteBlockDeprecatedV4Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  citation: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -25749,10 +24214,13 @@ export interface CoreSearchBlockAttributes {
   buttonText?: Maybe<ScalarsEnums['String']>;
   buttonUseIcon: ScalarsEnums['Boolean'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
   gradient?: Maybe<ScalarsEnums['String']>;
   label?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   placeholder: ScalarsEnums['String'];
+  query: ScalarsEnums['BlockAttributesObject'];
   showLabel: ScalarsEnums['Boolean'];
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   textColor?: Maybe<ScalarsEnums['String']>;
@@ -25890,229 +24358,6 @@ export interface CoreShortcodeBlockAttributes {
 }
 
 /**
- * core/site-logo block
- */
-export interface CoreSiteLogoBlock {
-  __typename?: 'CoreSiteLogoBlock';
-  attributes?: Maybe<CoreSiteLogoBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreSiteLogoBlockAttributes {
-  __typename?: 'CoreSiteLogoBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  linkTarget: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  shouldSyncIcon?: Maybe<ScalarsEnums['Boolean']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  width?: Maybe<ScalarsEnums['Float']>;
-}
-
-/**
- * core/site-tagline block
- */
-export interface CoreSiteTaglineBlock {
-  __typename?: 'CoreSiteTaglineBlock';
-  attributes?: Maybe<CoreSiteTaglineBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreSiteTaglineBlockAttributes {
-  __typename?: 'CoreSiteTaglineBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreSiteTaglineBlockAttributesUnion {
-  __typename?:
-    | 'CoreSiteTaglineBlockAttributes'
-    | 'CoreSiteTaglineBlockDeprecatedV1Attributes';
-  $on: $CoreSiteTaglineBlockAttributesUnion;
-}
-
-export interface CoreSiteTaglineBlockDeprecatedV1Attributes {
-  __typename?: 'CoreSiteTaglineBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
- * core/site-title block
- */
-export interface CoreSiteTitleBlock {
-  __typename?: 'CoreSiteTitleBlock';
-  attributes?: Maybe<CoreSiteTitleBlockAttributesUnion>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreSiteTitleBlockAttributes {
-  __typename?: 'CoreSiteTitleBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  level: ScalarsEnums['Float'];
-  linkTarget: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreSiteTitleBlockAttributesUnion {
-  __typename?:
-    | 'CoreSiteTitleBlockAttributes'
-    | 'CoreSiteTitleBlockDeprecatedV1Attributes';
-  $on: $CoreSiteTitleBlockAttributesUnion;
-}
-
-export interface CoreSiteTitleBlockDeprecatedV1Attributes {
-  __typename?: 'CoreSiteTitleBlockDeprecatedV1Attributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  backgroundColor?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  fontFamily?: Maybe<ScalarsEnums['String']>;
-  fontSize?: Maybe<ScalarsEnums['String']>;
-  gradient?: Maybe<ScalarsEnums['String']>;
-  isLink: ScalarsEnums['Boolean'];
-  level: ScalarsEnums['Float'];
-  linkTarget: ScalarsEnums['String'];
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  textAlign?: Maybe<ScalarsEnums['String']>;
-  textColor?: Maybe<ScalarsEnums['String']>;
-}
-
-/**
  * core/social-link block
  */
 export interface CoreSocialLinkBlock {
@@ -26215,9 +24460,11 @@ export interface CoreSocialLinksBlockAttributes {
   __typename?: 'CoreSocialLinksBlockAttributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   customIconBackgroundColor?: Maybe<ScalarsEnums['String']>;
   customIconColor?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   iconBackgroundColor?: Maybe<ScalarsEnums['String']>;
   iconBackgroundColorValue?: Maybe<ScalarsEnums['String']>;
   iconColor?: Maybe<ScalarsEnums['String']>;
@@ -26228,6 +24475,7 @@ export interface CoreSocialLinksBlockAttributes {
   showLabels: ScalarsEnums['Boolean'];
   size?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 export interface CoreSocialLinksBlockAttributesUnion {
@@ -26241,9 +24489,11 @@ export interface CoreSocialLinksBlockDeprecatedV1Attributes {
   __typename?: 'CoreSocialLinksBlockDeprecatedV1Attributes';
   align?: Maybe<ScalarsEnums['String']>;
   anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
   customIconBackgroundColor?: Maybe<ScalarsEnums['String']>;
   customIconColor?: Maybe<ScalarsEnums['String']>;
+  gradient?: Maybe<ScalarsEnums['String']>;
   iconBackgroundColor?: Maybe<ScalarsEnums['String']>;
   iconBackgroundColorValue?: Maybe<ScalarsEnums['String']>;
   iconColor?: Maybe<ScalarsEnums['String']>;
@@ -26254,6 +24504,7 @@ export interface CoreSocialLinksBlockDeprecatedV1Attributes {
   showLabels: ScalarsEnums['Boolean'];
   size?: Maybe<ScalarsEnums['String']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -26307,6 +24558,7 @@ export interface CoreSpacerBlockAttributes {
   className?: Maybe<ScalarsEnums['String']>;
   height: ScalarsEnums['String'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   width?: Maybe<ScalarsEnums['String']>;
 }
 
@@ -26323,6 +24575,7 @@ export interface CoreSpacerBlockDeprecatedV1Attributes {
   className?: Maybe<ScalarsEnums['String']>;
   height: ScalarsEnums['String'];
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   width?: Maybe<ScalarsEnums['String']>;
 }
 
@@ -26380,6 +24633,7 @@ export interface CoreTableBlockAttributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   caption: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   foot: Array<Maybe<CoreTableBlockAttributesFoot>>;
   gradient?: Maybe<ScalarsEnums['String']>;
@@ -26433,7 +24687,8 @@ export interface CoreTableBlockAttributesUnion {
   __typename?:
     | 'CoreTableBlockAttributes'
     | 'CoreTableBlockDeprecatedV1Attributes'
-    | 'CoreTableBlockDeprecatedV2Attributes';
+    | 'CoreTableBlockDeprecatedV2Attributes'
+    | 'CoreTableBlockDeprecatedV3Attributes';
   $on: $CoreTableBlockAttributesUnion;
 }
 
@@ -26446,6 +24701,7 @@ export interface CoreTableBlockDeprecatedV1Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   caption: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   foot: Array<Maybe<CoreTableBlockDeprecatedV1AttributesFoot>>;
   gradient?: Maybe<ScalarsEnums['String']>;
@@ -26504,6 +24760,7 @@ export interface CoreTableBlockDeprecatedV2Attributes {
   borderColor?: Maybe<ScalarsEnums['String']>;
   caption: ScalarsEnums['String'];
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   foot: Array<Maybe<CoreTableBlockDeprecatedV2AttributesFoot>>;
   gradient?: Maybe<ScalarsEnums['String']>;
@@ -26547,6 +24804,65 @@ export interface CoreTableBlockDeprecatedV2AttributesHead {
 
 export interface CoreTableBlockDeprecatedV2AttributesHeadCells {
   __typename?: 'CoreTableBlockDeprecatedV2AttributesHeadCells';
+  align?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  scope?: Maybe<ScalarsEnums['String']>;
+  tag: ScalarsEnums['String'];
+}
+
+export interface CoreTableBlockDeprecatedV3Attributes {
+  __typename?: 'CoreTableBlockDeprecatedV3Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  backgroundColor?: Maybe<ScalarsEnums['String']>;
+  body: Array<Maybe<CoreTableBlockDeprecatedV3AttributesBody>>;
+  borderColor?: Maybe<ScalarsEnums['String']>;
+  caption: ScalarsEnums['String'];
+  className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
+  fontSize?: Maybe<ScalarsEnums['String']>;
+  foot: Array<Maybe<CoreTableBlockDeprecatedV3AttributesFoot>>;
+  gradient?: Maybe<ScalarsEnums['String']>;
+  hasFixedLayout: ScalarsEnums['Boolean'];
+  head: Array<Maybe<CoreTableBlockDeprecatedV3AttributesHead>>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  textColor?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesBody {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesBody';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV3AttributesBodyCells>>;
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesBodyCells {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesBodyCells';
+  align?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  scope?: Maybe<ScalarsEnums['String']>;
+  tag: ScalarsEnums['String'];
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesFoot {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesFoot';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV3AttributesFootCells>>;
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesFootCells {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesFootCells';
+  align?: Maybe<ScalarsEnums['String']>;
+  content?: Maybe<ScalarsEnums['String']>;
+  scope?: Maybe<ScalarsEnums['String']>;
+  tag: ScalarsEnums['String'];
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesHead {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesHead';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV3AttributesHeadCells>>;
+}
+
+export interface CoreTableBlockDeprecatedV3AttributesHeadCells {
+  __typename?: 'CoreTableBlockDeprecatedV3AttributesHeadCells';
   align?: Maybe<ScalarsEnums['String']>;
   content?: Maybe<ScalarsEnums['String']>;
   scope?: Maybe<ScalarsEnums['String']>;
@@ -26607,63 +24923,8 @@ export interface CoreTagCloudBlockAttributes {
   numberOfTags: ScalarsEnums['Float'];
   showTagCounts: ScalarsEnums['Boolean'];
   smallestFontSize: ScalarsEnums['String'];
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   taxonomy: ScalarsEnums['String'];
-}
-
-/**
- * core/template-part block
- */
-export interface CoreTemplatePartBlock {
-  __typename?: 'CoreTemplatePartBlock';
-  attributes?: Maybe<CoreTemplatePartBlockAttributes>;
-  /**
-   * Block attributes, JSON encoded
-   */
-  attributesJSON?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Server side rendered content.
-   */
-  dynamicContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Gutenberg blocks
-   */
-  innerBlocks?: Maybe<Array<Block>>;
-  /**
-   * Is block rendered server side.
-   */
-  isDynamic: ScalarsEnums['Boolean'];
-  /**
-   * Name of the block.
-   */
-  name: ScalarsEnums['String'];
-  order: ScalarsEnums['Int'];
-  /**
-   * Original HTML content.
-   */
-  originalContent?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Parent post.
-   */
-  parentNode: Node;
-  /**
-   * Parent post id.
-   */
-  parentNodeDatabaseId: ScalarsEnums['Int'];
-  /**
-   * Original HTML content with inner blocks.
-   */
-  saveContent?: Maybe<ScalarsEnums['String']>;
-}
-
-export interface CoreTemplatePartBlockAttributes {
-  __typename?: 'CoreTemplatePartBlockAttributes';
-  align?: Maybe<ScalarsEnums['String']>;
-  area?: Maybe<ScalarsEnums['String']>;
-  className?: Maybe<ScalarsEnums['String']>;
-  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
-  slug?: Maybe<ScalarsEnums['String']>;
-  tagName?: Maybe<ScalarsEnums['String']>;
-  theme?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -26716,6 +24977,7 @@ export interface CoreTermDescriptionBlockAttributes {
   align?: Maybe<ScalarsEnums['String']>;
   backgroundColor?: Maybe<ScalarsEnums['String']>;
   className?: Maybe<ScalarsEnums['String']>;
+  fontFamily?: Maybe<ScalarsEnums['String']>;
   fontSize?: Maybe<ScalarsEnums['String']>;
   lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
@@ -26885,7 +25147,7 @@ export interface CoreVerseBlockDeprecatedV2Attributes {
  */
 export interface CoreVideoBlock {
   __typename?: 'CoreVideoBlock';
-  attributes?: Maybe<CoreVideoBlockAttributes>;
+  attributes?: Maybe<CoreVideoBlockAttributesUnion>;
   /**
    * Block attributes, JSON encoded
    */
@@ -26941,7 +25203,153 @@ export interface CoreVideoBlockAttributes {
   poster?: Maybe<ScalarsEnums['String']>;
   preload: ScalarsEnums['String'];
   src?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
   tracks: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
+}
+
+export interface CoreVideoBlockAttributesUnion {
+  __typename?:
+    | 'CoreVideoBlockAttributes'
+    | 'CoreVideoBlockDeprecatedV1Attributes';
+  $on: $CoreVideoBlockAttributesUnion;
+}
+
+export interface CoreVideoBlockDeprecatedV1Attributes {
+  __typename?: 'CoreVideoBlockDeprecatedV1Attributes';
+  align?: Maybe<ScalarsEnums['String']>;
+  anchor?: Maybe<ScalarsEnums['String']>;
+  autoplay?: Maybe<ScalarsEnums['Boolean']>;
+  caption?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  controls: ScalarsEnums['Boolean'];
+  id?: Maybe<ScalarsEnums['Float']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  loop?: Maybe<ScalarsEnums['Boolean']>;
+  muted?: Maybe<ScalarsEnums['Boolean']>;
+  playsInline?: Maybe<ScalarsEnums['Boolean']>;
+  poster?: Maybe<ScalarsEnums['String']>;
+  preload: ScalarsEnums['String'];
+  src?: Maybe<ScalarsEnums['String']>;
+  style?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  tracks: Array<Maybe<ScalarsEnums['BlockAttributesObject']>>;
+}
+
+/**
+ * core/widget-area block
+ */
+export interface CoreWidgetAreaBlock {
+  __typename?: 'CoreWidgetAreaBlock';
+  attributes?: Maybe<CoreWidgetAreaBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreWidgetAreaBlockAttributes {
+  __typename?: 'CoreWidgetAreaBlockAttributes';
+  id?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  name?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * core/widget-group block
+ */
+export interface CoreWidgetGroupBlock {
+  __typename?: 'CoreWidgetGroupBlock';
+  attributes?: Maybe<CoreWidgetGroupBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreWidgetGroupBlockAttributes {
+  __typename?: 'CoreWidgetGroupBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  title?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface CoreWidgetGroupBlockAttributesUnion {
+  __typename?:
+    | 'CoreWidgetGroupBlockAttributes'
+    | 'CoreWidgetGroupBlockDeprecatedV1Attributes';
+  $on: $CoreWidgetGroupBlockAttributesUnion;
+}
+
+export interface CoreWidgetGroupBlockDeprecatedV1Attributes {
+  __typename?: 'CoreWidgetGroupBlockDeprecatedV1Attributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  title?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -28433,7 +26841,16 @@ export interface MediaDetails {
   /**
    * The available sizes of the mediaItem
    */
-  sizes?: Maybe<Array<Maybe<MediaSize>>>;
+  sizes: (args?: {
+    /**
+     * The sizes to exclude. Will take precedence over `include`.
+     */
+    exclude?: Maybe<Array<Maybe<MediaItemSizeEnum>>>;
+    /**
+     * The sizes to include. Can be overridden by `exclude`.
+     */
+    include?: Maybe<Array<Maybe<MediaItemSizeEnum>>>;
+  }) => Maybe<Array<Maybe<MediaSize>>>;
   /**
    * The width of the mediaItem
    */
@@ -28529,7 +26946,7 @@ export interface MediaItem {
    */
   commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the mediaItem type and the Comment type
+   * Connection between the MediaItem type and the Comment type
    */
   comments: (args?: {
     /**
@@ -28841,7 +27258,7 @@ export interface MediaItemMeta {
 }
 
 /**
- * Connection between the mediaItem type and the Comment type
+ * Connection between the MediaItem type and the Comment type
  */
 export interface MediaItemToCommentConnection {
   __typename?: 'MediaItemToCommentConnection';
@@ -29287,6 +27704,10 @@ export interface NodeWithAuthor {
    * The globally unique identifier of the author of the node
    */
   authorId?: Maybe<ScalarsEnums['ID']>;
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   $on: $NodeWithAuthor;
 }
 
@@ -29314,6 +27735,10 @@ export interface NodeWithComments {
    * Whether the comments are open or closed for this particular post.
    */
   commentStatus?: Maybe<ScalarsEnums['String']>;
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   $on: $NodeWithComments;
 }
 
@@ -29337,6 +27762,10 @@ export interface NodeWithContentEditor {
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
   }) => Maybe<ScalarsEnums['String']>;
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   $on: $NodeWithContentEditor;
 }
 
@@ -29354,6 +27783,10 @@ export interface NodeWithExcerpt {
      */
     format?: Maybe<PostObjectFieldFormatEnum>;
   }) => Maybe<ScalarsEnums['String']>;
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   $on: $NodeWithExcerpt;
 }
 
@@ -29362,84 +27795,6 @@ export interface NodeWithExcerpt {
  */
 export interface NodeWithFeaturedImage {
   __typename?: 'AcalogProgram' | 'Page' | 'Post' | 'Program';
-  /**
-   * @deprecated Deprecated in favor of using Next.js pages
-   */
-  conditionalTags?: Maybe<ConditionalTags>;
-  /**
-   * Connection between the ContentNode type and the ContentType type
-   */
-  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
-  /**
-   * The name of the Content Type the node belongs to
-   */
-  contentTypeName: ScalarsEnums['String'];
-  /**
-   * The unique identifier stored in the database
-   */
-  databaseId: ScalarsEnums['Int'];
-  /**
-   * Post publishing date.
-   */
-  date?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The publishing date set in GMT.
-   */
-  dateGmt?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The desired slug of the post
-   */
-  desiredSlug?: Maybe<ScalarsEnums['String']>;
-  /**
-   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
-   */
-  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
-  /**
-   * The RSS enclosure for the object
-   */
-  enclosure?: Maybe<ScalarsEnums['String']>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedScript type
-   */
-  enqueuedScripts: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars['String']>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars['String']>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars['Int']>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars['Int']>;
-  }) => Maybe<ContentNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedStylesheet type
-   */
-  enqueuedStylesheets: (args?: {
-    /**
-     * Cursor used along with the "first" argument to reference where in the dataset to get data
-     */
-    after?: Maybe<Scalars['String']>;
-    /**
-     * Cursor used along with the "last" argument to reference where in the dataset to get data
-     */
-    before?: Maybe<Scalars['String']>;
-    /**
-     * The number of items to return after the referenced "after" cursor
-     */
-    first?: Maybe<Scalars['Int']>;
-    /**
-     * The number of items to return before the referenced "before" cursor
-     */
-    last?: Maybe<Scalars['Int']>;
-  }) => Maybe<ContentNodeToEnqueuedStylesheetConnection>;
   /**
    * Connection between the NodeWithFeaturedImage type and the MediaItem type
    */
@@ -29453,70 +27808,9 @@ export interface NodeWithFeaturedImage {
    */
   featuredImageId?: Maybe<ScalarsEnums['ID']>;
   /**
-   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
-   */
-  guid?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The unique resource identifier path
+   * The globally unique ID for the object
    */
   id: ScalarsEnums['ID'];
-  /**
-   * Whether the node is a Content Node
-   */
-  isContentNode: ScalarsEnums['Boolean'];
-  /**
-   * Whether the object is a node in the preview state
-   */
-  isPreview?: Maybe<ScalarsEnums['Boolean']>;
-  /**
-   * Whether the object is restricted from the current viewer
-   */
-  isRestricted?: Maybe<ScalarsEnums['Boolean']>;
-  /**
-   * Whether the node is a Term
-   */
-  isTermNode: ScalarsEnums['Boolean'];
-  /**
-   * The user that most recently edited the node
-   */
-  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
-  /**
-   * The permalink of the post
-   */
-  link?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
-   */
-  modified?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
-   */
-  modifiedGmt?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The database id of the preview node
-   */
-  previewRevisionDatabaseId?: Maybe<ScalarsEnums['Int']>;
-  /**
-   * Whether the object is a node in the preview state
-   */
-  previewRevisionId?: Maybe<ScalarsEnums['ID']>;
-  /**
-   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
-   */
-  slug?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The current status of the object
-   */
-  status?: Maybe<ScalarsEnums['String']>;
-  /**
-   * The template assigned to a node of content
-   */
-  template?: Maybe<ContentTemplate>;
-  templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
-  /**
-   * The unique resource identifier path
-   */
-  uri?: Maybe<ScalarsEnums['String']>;
   $on: $NodeWithFeaturedImage;
 }
 
@@ -29537,6 +27831,10 @@ export interface NodeWithFeaturedImageToMediaItemConnectionEdge {
 export interface NodeWithPageAttributes {
   __typename?: 'Page';
   /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
+  /**
    * A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.
    */
   menuOrder?: Maybe<ScalarsEnums['Int']>;
@@ -29548,6 +27846,10 @@ export interface NodeWithPageAttributes {
  */
 export interface NodeWithRevisions {
   __typename?: 'Page' | 'Post' | 'ReusableBlock';
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   /**
    * True if the node is a revision of another node
    */
@@ -29584,6 +27886,10 @@ export interface NodeWithTemplate {
     | 'Program'
     | 'ReusableBlock';
   /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
+  /**
    * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
@@ -29604,6 +27910,10 @@ export interface NodeWithTitle {
     | 'Program'
     | 'ReusableBlock';
   /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
+  /**
    * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
    */
   title: (args?: {
@@ -29620,6 +27930,10 @@ export interface NodeWithTitle {
  */
 export interface NodeWithTrackbacks {
   __typename?: 'Post';
+  /**
+   * The globally unique ID for the object
+   */
+  id: ScalarsEnums['ID'];
   /**
    * Whether the pings are open or closed for this particular post.
    */
@@ -29719,7 +28033,7 @@ export interface Page {
    */
   commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the page type and the Comment type
+   * Connection between the Page type and the Comment type
    */
   comments: (args?: {
     /**
@@ -29920,7 +28234,7 @@ export interface Page {
    */
   parentId?: Maybe<ScalarsEnums['ID']>;
   /**
-   * Connection between the page type and the page type
+   * Connection between the Page type and the page type
    */
   preview?: Maybe<PageToPreviewConnectionEdge>;
   /**
@@ -29944,7 +28258,7 @@ export interface Page {
    */
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
   /**
-   * Connection between the page type and the page type
+   * Connection between the Page type and the page type
    */
   revisions: (args?: {
     /**
@@ -29969,6 +28283,10 @@ export interface Page {
     where?: Maybe<PageToRevisionConnectionWhereArgs>;
   }) => Maybe<PageToRevisionConnection>;
   /**
+   * Whether or not to show the title area.
+   */
+  showsHeadline?: Maybe<ScalarsEnums['Boolean']>;
+  /**
    * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
    */
   slug?: Maybe<ScalarsEnums['String']>;
@@ -29977,7 +28295,7 @@ export interface Page {
    */
   status?: Maybe<ScalarsEnums['String']>;
   /**
-   * The template assigned to a node of content
+   * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
   templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
@@ -29997,7 +28315,7 @@ export interface Page {
 }
 
 /**
- * Connection between the page type and the Comment type
+ * Connection between the Page type and the Comment type
  */
 export interface PageToCommentConnection {
   __typename?: 'PageToCommentConnection';
@@ -30031,7 +28349,7 @@ export interface PageToCommentConnectionEdge {
 }
 
 /**
- * Connection between the page type and the page type
+ * Connection between the Page type and the page type
  */
 export interface PageToPreviewConnectionEdge {
   __typename?: 'PageToPreviewConnectionEdge';
@@ -30042,12 +28360,12 @@ export interface PageToPreviewConnectionEdge {
 }
 
 /**
- * Connection between the page type and the page type
+ * Connection between the Page type and the page type
  */
 export interface PageToRevisionConnection {
   __typename?: 'PageToRevisionConnection';
   /**
-   * Edges for the pageToRevisionConnection connection
+   * Edges for the PageToRevisionConnection connection
    */
   edges?: Maybe<Array<Maybe<PageToRevisionConnectionEdge>>>;
   /**
@@ -30144,7 +28462,7 @@ export interface Post {
    */
   blocksJSON?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the post type and the category type
+   * Connection between the Post type and the category type
    */
   categories: (args?: {
     /**
@@ -30177,7 +28495,7 @@ export interface Post {
    */
   commentStatus?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the post type and the Comment type
+   * Connection between the Post type and the Comment type
    */
   comments: (args?: {
     /**
@@ -30366,7 +28684,7 @@ export interface Post {
    */
   pinged?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
-   * Connection between the post type and the postFormat type
+   * Connection between the Post type and the postFormat type
    */
   postFormats: (args?: {
     /**
@@ -30396,7 +28714,7 @@ export interface Post {
    */
   postId: ScalarsEnums['Int'];
   /**
-   * Connection between the post type and the post type
+   * Connection between the Post type and the post type
    */
   preview?: Maybe<PostToPreviewConnectionEdge>;
   /**
@@ -30420,7 +28738,7 @@ export interface Post {
    */
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
   /**
-   * Connection between the post type and the post type
+   * Connection between the Post type and the post type
    */
   revisions: (args?: {
     /**
@@ -30453,7 +28771,7 @@ export interface Post {
    */
   status?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the post type and the tag type
+   * Connection between the Post type and the tag type
    */
   tags: (args?: {
     /**
@@ -30478,12 +28796,12 @@ export interface Post {
     where?: Maybe<PostToTagConnectionWhereArgs>;
   }) => Maybe<PostToTagConnection>;
   /**
-   * The template assigned to a node of content
+   * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
   templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
   /**
-   * Connection between the post type and the TermNode type
+   * Connection between the Post type and the TermNode type
    */
   terms: (args?: {
     /**
@@ -30536,7 +28854,7 @@ export interface PostFormat {
    */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
-   * Connection between the postFormat type and the ContentNode type
+   * Connection between the PostFormat type and the ContentNode type
    */
   contentNodes: (args?: {
     /**
@@ -30644,7 +28962,7 @@ export interface PostFormat {
    */
   postFormatId?: Maybe<ScalarsEnums['Int']>;
   /**
-   * Connection between the postFormat type and the post type
+   * Connection between the PostFormat type and the post type
    */
   posts: (args?: {
     /**
@@ -30673,7 +28991,7 @@ export interface PostFormat {
    */
   slug?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the postFormat type and the Taxonomy type
+   * Connection between the PostFormat type and the Taxonomy type
    */
   taxonomy?: Maybe<PostFormatToTaxonomyConnectionEdge>;
   /**
@@ -30696,7 +29014,7 @@ export interface PostFormat {
 }
 
 /**
- * Connection between the postFormat type and the ContentNode type
+ * Connection between the PostFormat type and the ContentNode type
  */
 export interface PostFormatToContentNodeConnection {
   __typename?: 'PostFormatToContentNodeConnection';
@@ -30730,7 +29048,7 @@ export interface PostFormatToContentNodeConnectionEdge {
 }
 
 /**
- * Connection between the postFormat type and the post type
+ * Connection between the PostFormat type and the post type
  */
 export interface PostFormatToPostConnection {
   __typename?: 'PostFormatToPostConnection';
@@ -30764,7 +29082,7 @@ export interface PostFormatToPostConnectionEdge {
 }
 
 /**
- * Connection between the postFormat type and the Taxonomy type
+ * Connection between the PostFormat type and the Taxonomy type
  */
 export interface PostFormatToTaxonomyConnectionEdge {
   __typename?: 'PostFormatToTaxonomyConnectionEdge';
@@ -30775,7 +29093,7 @@ export interface PostFormatToTaxonomyConnectionEdge {
 }
 
 /**
- * Connection between the post type and the category type
+ * Connection between the Post type and the category type
  */
 export interface PostToCategoryConnection {
   __typename?: 'PostToCategoryConnection';
@@ -30809,7 +29127,7 @@ export interface PostToCategoryConnectionEdge {
 }
 
 /**
- * Connection between the post type and the Comment type
+ * Connection between the Post type and the Comment type
  */
 export interface PostToCommentConnection {
   __typename?: 'PostToCommentConnection';
@@ -30843,7 +29161,7 @@ export interface PostToCommentConnectionEdge {
 }
 
 /**
- * Connection between the post type and the postFormat type
+ * Connection between the Post type and the postFormat type
  */
 export interface PostToPostFormatConnection {
   __typename?: 'PostToPostFormatConnection';
@@ -30877,7 +29195,7 @@ export interface PostToPostFormatConnectionEdge {
 }
 
 /**
- * Connection between the post type and the post type
+ * Connection between the Post type and the post type
  */
 export interface PostToPreviewConnectionEdge {
   __typename?: 'PostToPreviewConnectionEdge';
@@ -30888,12 +29206,12 @@ export interface PostToPreviewConnectionEdge {
 }
 
 /**
- * Connection between the post type and the post type
+ * Connection between the Post type and the post type
  */
 export interface PostToRevisionConnection {
   __typename?: 'PostToRevisionConnection';
   /**
-   * Edges for the postToRevisionConnection connection
+   * Edges for the PostToRevisionConnection connection
    */
   edges?: Maybe<Array<Maybe<PostToRevisionConnectionEdge>>>;
   /**
@@ -30922,7 +29240,7 @@ export interface PostToRevisionConnectionEdge {
 }
 
 /**
- * Connection between the post type and the tag type
+ * Connection between the Post type and the tag type
  */
 export interface PostToTagConnection {
   __typename?: 'PostToTagConnection';
@@ -30956,7 +29274,7 @@ export interface PostToTagConnectionEdge {
 }
 
 /**
- * Connection between the post type and the TermNode type
+ * Connection between the Post type and the TermNode type
  */
 export interface PostToTermNodeConnection {
   __typename?: 'PostToTermNodeConnection';
@@ -31386,7 +29704,7 @@ export interface Program {
    */
   status?: Maybe<ScalarsEnums['String']>;
   /**
-   * The template assigned to a node of content
+   * The template assigned to the node
    */
   template?: Maybe<ContentTemplate>;
   templates?: Maybe<Array<Maybe<ScalarsEnums['String']>>>;
@@ -33008,7 +31326,12 @@ export interface SendPasswordResetEmailPayload {
    */
   clientMutationId?: Maybe<ScalarsEnums['String']>;
   /**
+   * Whether the mutation completed successfully. This does NOT necessarily mean that an email was sent.
+   */
+  success?: Maybe<ScalarsEnums['Boolean']>;
+  /**
    * The user that the password reset email was sent to
+   * @deprecated This field will be removed in a future version of WPGraphQL
    */
   user?: Maybe<User>;
 }
@@ -33100,7 +31423,7 @@ export interface Tag {
    */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
-   * Connection between the tag type and the ContentNode type
+   * Connection between the Tag type and the ContentNode type
    */
   contentNodes: (args?: {
     /**
@@ -33203,7 +31526,7 @@ export interface Tag {
    */
   name?: Maybe<ScalarsEnums['String']>;
   /**
-   * Connection between the tag type and the post type
+   * Connection between the Tag type and the post type
    */
   posts: (args?: {
     /**
@@ -33237,7 +31560,7 @@ export interface Tag {
    */
   tagId?: Maybe<ScalarsEnums['Int']>;
   /**
-   * Connection between the tag type and the Taxonomy type
+   * Connection between the Tag type and the Taxonomy type
    */
   taxonomy?: Maybe<TagToTaxonomyConnectionEdge>;
   /**
@@ -33260,7 +31583,7 @@ export interface Tag {
 }
 
 /**
- * Connection between the tag type and the ContentNode type
+ * Connection between the Tag type and the ContentNode type
  */
 export interface TagToContentNodeConnection {
   __typename?: 'TagToContentNodeConnection';
@@ -33294,7 +31617,7 @@ export interface TagToContentNodeConnectionEdge {
 }
 
 /**
- * Connection between the tag type and the post type
+ * Connection between the Tag type and the post type
  */
 export interface TagToPostConnection {
   __typename?: 'TagToPostConnection';
@@ -33328,7 +31651,7 @@ export interface TagToPostConnectionEdge {
 }
 
 /**
- * Connection between the tag type and the Taxonomy type
+ * Connection between the Tag type and the Taxonomy type
  */
 export interface TagToTaxonomyConnectionEdge {
   __typename?: 'TagToTaxonomyConnectionEdge';
@@ -35471,6 +33794,229 @@ export interface WritingSettings {
   useSmilies?: Maybe<ScalarsEnums['Boolean']>;
 }
 
+/**
+ * yoast/faq-block block
+ */
+export interface YoastFaqBlock {
+  __typename?: 'YoastFaqBlock';
+  attributes?: Maybe<YoastFaqBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface YoastFaqBlockAttributes {
+  __typename?: 'YoastFaqBlockAttributes';
+  additionalListCssClasses?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  questions?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+}
+
+export interface YoastFaqBlockAttributesUnion {
+  __typename?:
+    | 'YoastFaqBlockAttributes'
+    | 'YoastFaqBlockDeprecatedV1Attributes';
+  $on: $YoastFaqBlockAttributesUnion;
+}
+
+export interface YoastFaqBlockDeprecatedV1Attributes {
+  __typename?: 'YoastFaqBlockDeprecatedV1Attributes';
+  additionalListCssClasses?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  questions?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+}
+
+/**
+ * yoast/how-to-block block
+ */
+export interface YoastHowToBlock {
+  __typename?: 'YoastHowToBlock';
+  attributes?: Maybe<YoastHowToBlockAttributesUnion>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface YoastHowToBlockAttributes {
+  __typename?: 'YoastHowToBlockAttributes';
+  additionalListCssClasses?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  days?: Maybe<ScalarsEnums['String']>;
+  defaultDurationText?: Maybe<ScalarsEnums['String']>;
+  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  durationText?: Maybe<ScalarsEnums['String']>;
+  hasDuration?: Maybe<ScalarsEnums['Boolean']>;
+  hours?: Maybe<ScalarsEnums['String']>;
+  jsonDescription?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minutes?: Maybe<ScalarsEnums['String']>;
+  steps?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  unorderedList?: Maybe<ScalarsEnums['Boolean']>;
+}
+
+export interface YoastHowToBlockAttributesUnion {
+  __typename?:
+    | 'YoastHowToBlockAttributes'
+    | 'YoastHowToBlockDeprecatedV1Attributes'
+    | 'YoastHowToBlockDeprecatedV2Attributes';
+  $on: $YoastHowToBlockAttributesUnion;
+}
+
+export interface YoastHowToBlockDeprecatedV1Attributes {
+  __typename?: 'YoastHowToBlockDeprecatedV1Attributes';
+  additionalListCssClasses?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  days?: Maybe<ScalarsEnums['String']>;
+  defaultDurationText?: Maybe<ScalarsEnums['String']>;
+  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  durationText?: Maybe<ScalarsEnums['String']>;
+  hasDuration?: Maybe<ScalarsEnums['Boolean']>;
+  hours?: Maybe<ScalarsEnums['String']>;
+  jsonDescription?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minutes?: Maybe<ScalarsEnums['String']>;
+  steps?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  unorderedList?: Maybe<ScalarsEnums['Boolean']>;
+}
+
+export interface YoastHowToBlockDeprecatedV2Attributes {
+  __typename?: 'YoastHowToBlockDeprecatedV2Attributes';
+  additionalListCssClasses?: Maybe<ScalarsEnums['String']>;
+  className?: Maybe<ScalarsEnums['String']>;
+  days?: Maybe<ScalarsEnums['String']>;
+  defaultDurationText?: Maybe<ScalarsEnums['String']>;
+  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  durationText?: Maybe<ScalarsEnums['String']>;
+  hasDuration?: Maybe<ScalarsEnums['Boolean']>;
+  hours?: Maybe<ScalarsEnums['String']>;
+  jsonDescription?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+  minutes?: Maybe<ScalarsEnums['String']>;
+  steps?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  unorderedList?: Maybe<ScalarsEnums['Boolean']>;
+}
+
+/**
+ * yoast-seo/breadcrumbs block
+ */
+export interface YoastSeoBreadcrumbsBlock {
+  __typename?: 'YoastSeoBreadcrumbsBlock';
+  attributes?: Maybe<YoastSeoBreadcrumbsBlockAttributes>;
+  /**
+   * Block attributes, JSON encoded
+   */
+  attributesJSON?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Server side rendered content.
+   */
+  dynamicContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Gutenberg blocks
+   */
+  innerBlocks?: Maybe<Array<Block>>;
+  /**
+   * Is block rendered server side.
+   */
+  isDynamic: ScalarsEnums['Boolean'];
+  /**
+   * Name of the block.
+   */
+  name: ScalarsEnums['String'];
+  order: ScalarsEnums['Int'];
+  /**
+   * Original HTML content.
+   */
+  originalContent?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Parent post.
+   */
+  parentNode: Node;
+  /**
+   * Parent post id.
+   */
+  parentNodeDatabaseId: ScalarsEnums['Int'];
+  /**
+   * Original HTML content with inner blocks.
+   */
+  saveContent?: Maybe<ScalarsEnums['String']>;
+}
+
+export interface YoastSeoBreadcrumbsBlockAttributes {
+  __typename?: 'YoastSeoBreadcrumbsBlockAttributes';
+  className?: Maybe<ScalarsEnums['String']>;
+  lock?: Maybe<ScalarsEnums['BlockAttributesObject']>;
+}
+
 export interface Mutation {
   __typename?: 'Mutation';
   createAToZ: (args: { input: CreateAToZInput }) => Maybe<CreateAToZPayload>;
@@ -35722,7 +34268,10 @@ export interface Query {
     last?: Maybe<Scalars['Int']>;
     where?: Maybe<RootQueryToCollegeConnectionWhereArgs>;
   }) => Maybe<RootQueryToCollegeConnection>;
-  comment: (args: { id: Scalars['ID'] }) => Maybe<Comment>;
+  comment: (args: {
+    id: Scalars['ID'];
+    idType?: Maybe<CommentNodeIdTypeEnum>;
+  }) => Maybe<Comment>;
   comments: (args?: {
     after?: Maybe<Scalars['String']>;
     before?: Maybe<Scalars['String']>;
@@ -36070,11 +34619,10 @@ export interface SchemaObjectTypes {
   CoreAudioBlockDeprecatedV1Attributes: CoreAudioBlockDeprecatedV1Attributes;
   CoreAvatarBlock: CoreAvatarBlock;
   CoreAvatarBlockAttributes: CoreAvatarBlockAttributes;
-  CoreBlock: CoreBlock;
-  CoreBlockAttributes: CoreBlockAttributes;
   CoreButtonBlock: CoreButtonBlock;
   CoreButtonBlockAttributes: CoreButtonBlockAttributes;
   CoreButtonBlockDeprecatedV10Attributes: CoreButtonBlockDeprecatedV10Attributes;
+  CoreButtonBlockDeprecatedV11Attributes: CoreButtonBlockDeprecatedV11Attributes;
   CoreButtonBlockDeprecatedV1Attributes: CoreButtonBlockDeprecatedV1Attributes;
   CoreButtonBlockDeprecatedV2Attributes: CoreButtonBlockDeprecatedV2Attributes;
   CoreButtonBlockDeprecatedV3Attributes: CoreButtonBlockDeprecatedV3Attributes;
@@ -36116,6 +34664,9 @@ export interface SchemaObjectTypes {
   CoreCommentReplyLinkBlockAttributes: CoreCommentReplyLinkBlockAttributes;
   CoreCommentTemplateBlock: CoreCommentTemplateBlock;
   CoreCommentTemplateBlockAttributes: CoreCommentTemplateBlockAttributes;
+  CoreCommentsBlock: CoreCommentsBlock;
+  CoreCommentsBlockAttributes: CoreCommentsBlockAttributes;
+  CoreCommentsBlockDeprecatedV1Attributes: CoreCommentsBlockDeprecatedV1Attributes;
   CoreCommentsPaginationBlock: CoreCommentsPaginationBlock;
   CoreCommentsPaginationBlockAttributes: CoreCommentsPaginationBlockAttributes;
   CoreCommentsPaginationNextBlock: CoreCommentsPaginationNextBlock;
@@ -36124,13 +34675,12 @@ export interface SchemaObjectTypes {
   CoreCommentsPaginationNumbersBlockAttributes: CoreCommentsPaginationNumbersBlockAttributes;
   CoreCommentsPaginationPreviousBlock: CoreCommentsPaginationPreviousBlock;
   CoreCommentsPaginationPreviousBlockAttributes: CoreCommentsPaginationPreviousBlockAttributes;
-  CoreCommentsQueryLoopBlock: CoreCommentsQueryLoopBlock;
-  CoreCommentsQueryLoopBlockAttributes: CoreCommentsQueryLoopBlockAttributes;
   CoreCommentsTitleBlock: CoreCommentsTitleBlock;
   CoreCommentsTitleBlockAttributes: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes: CoreCommentsTitleBlockDeprecatedV1Attributes;
   CoreCoverBlock: CoreCoverBlock;
   CoreCoverBlockAttributes: CoreCoverBlockAttributes;
+  CoreCoverBlockDeprecatedV10Attributes: CoreCoverBlockDeprecatedV10Attributes;
   CoreCoverBlockDeprecatedV1Attributes: CoreCoverBlockDeprecatedV1Attributes;
   CoreCoverBlockDeprecatedV2Attributes: CoreCoverBlockDeprecatedV2Attributes;
   CoreCoverBlockDeprecatedV3Attributes: CoreCoverBlockDeprecatedV3Attributes;
@@ -36143,11 +34693,12 @@ export interface SchemaObjectTypes {
   CoreEmbedBlock: CoreEmbedBlock;
   CoreEmbedBlockAttributes: CoreEmbedBlockAttributes;
   CoreEmbedBlockDeprecatedV1Attributes: CoreEmbedBlockDeprecatedV1Attributes;
+  CoreEmbedBlockDeprecatedV2Attributes: CoreEmbedBlockDeprecatedV2Attributes;
   CoreFileBlock: CoreFileBlock;
   CoreFileBlockAttributes: CoreFileBlockAttributes;
   CoreFileBlockDeprecatedV1Attributes: CoreFileBlockDeprecatedV1Attributes;
-  CoreFreeformBlock: CoreFreeformBlock;
-  CoreFreeformBlockAttributes: CoreFreeformBlockAttributes;
+  CoreFileBlockDeprecatedV2Attributes: CoreFileBlockDeprecatedV2Attributes;
+  CoreFileBlockDeprecatedV3Attributes: CoreFileBlockDeprecatedV3Attributes;
   CoreGalleryBlock: CoreGalleryBlock;
   CoreGalleryBlockAttributes: CoreGalleryBlockAttributes;
   CoreGalleryBlockAttributesImages: CoreGalleryBlockAttributesImages;
@@ -36163,12 +34714,15 @@ export interface SchemaObjectTypes {
   CoreGalleryBlockDeprecatedV5AttributesImages: CoreGalleryBlockDeprecatedV5AttributesImages;
   CoreGalleryBlockDeprecatedV6Attributes: CoreGalleryBlockDeprecatedV6Attributes;
   CoreGalleryBlockDeprecatedV6AttributesImages: CoreGalleryBlockDeprecatedV6AttributesImages;
+  CoreGalleryBlockDeprecatedV7Attributes: CoreGalleryBlockDeprecatedV7Attributes;
+  CoreGalleryBlockDeprecatedV7AttributesImages: CoreGalleryBlockDeprecatedV7AttributesImages;
   CoreGroupBlock: CoreGroupBlock;
   CoreGroupBlockAttributes: CoreGroupBlockAttributes;
   CoreGroupBlockDeprecatedV1Attributes: CoreGroupBlockDeprecatedV1Attributes;
   CoreGroupBlockDeprecatedV2Attributes: CoreGroupBlockDeprecatedV2Attributes;
   CoreGroupBlockDeprecatedV3Attributes: CoreGroupBlockDeprecatedV3Attributes;
   CoreGroupBlockDeprecatedV4Attributes: CoreGroupBlockDeprecatedV4Attributes;
+  CoreGroupBlockDeprecatedV5Attributes: CoreGroupBlockDeprecatedV5Attributes;
   CoreHeadingBlock: CoreHeadingBlock;
   CoreHeadingBlockAttributes: CoreHeadingBlockAttributes;
   CoreHeadingBlockDeprecatedV1Attributes: CoreHeadingBlockDeprecatedV1Attributes;
@@ -36185,14 +34739,20 @@ export interface SchemaObjectTypes {
   CoreImageBlockDeprecatedV2Attributes: CoreImageBlockDeprecatedV2Attributes;
   CoreImageBlockDeprecatedV3Attributes: CoreImageBlockDeprecatedV3Attributes;
   CoreImageBlockDeprecatedV4Attributes: CoreImageBlockDeprecatedV4Attributes;
+  CoreImageBlockDeprecatedV5Attributes: CoreImageBlockDeprecatedV5Attributes;
   CoreLatestCommentsBlock: CoreLatestCommentsBlock;
   CoreLatestCommentsBlockAttributes: CoreLatestCommentsBlockAttributes;
   CoreLatestPostsBlock: CoreLatestPostsBlock;
   CoreLatestPostsBlockAttributes: CoreLatestPostsBlockAttributes;
   CoreLatestPostsBlockDeprecatedV1Attributes: CoreLatestPostsBlockDeprecatedV1Attributes;
+  CoreLegacyWidgetBlock: CoreLegacyWidgetBlock;
+  CoreLegacyWidgetBlockAttributes: CoreLegacyWidgetBlockAttributes;
   CoreListBlock: CoreListBlock;
   CoreListBlockAttributes: CoreListBlockAttributes;
   CoreListBlockDeprecatedV1Attributes: CoreListBlockDeprecatedV1Attributes;
+  CoreListBlockDeprecatedV2Attributes: CoreListBlockDeprecatedV2Attributes;
+  CoreListItemBlock: CoreListItemBlock;
+  CoreListItemBlockAttributes: CoreListItemBlockAttributes;
   CoreLoginoutBlock: CoreLoginoutBlock;
   CoreLoginoutBlockAttributes: CoreLoginoutBlockAttributes;
   CoreMediaTextBlock: CoreMediaTextBlock;
@@ -36200,23 +34760,10 @@ export interface SchemaObjectTypes {
   CoreMediaTextBlockDeprecatedV1Attributes: CoreMediaTextBlockDeprecatedV1Attributes;
   CoreMediaTextBlockDeprecatedV2Attributes: CoreMediaTextBlockDeprecatedV2Attributes;
   CoreMediaTextBlockDeprecatedV3Attributes: CoreMediaTextBlockDeprecatedV3Attributes;
+  CoreMediaTextBlockDeprecatedV4Attributes: CoreMediaTextBlockDeprecatedV4Attributes;
+  CoreMediaTextBlockDeprecatedV5Attributes: CoreMediaTextBlockDeprecatedV5Attributes;
   CoreMissingBlock: CoreMissingBlock;
   CoreMissingBlockAttributes: CoreMissingBlockAttributes;
-  CoreMoreBlock: CoreMoreBlock;
-  CoreMoreBlockAttributes: CoreMoreBlockAttributes;
-  CoreNavigationBlock: CoreNavigationBlock;
-  CoreNavigationBlockAttributes: CoreNavigationBlockAttributes;
-  CoreNavigationBlockDeprecatedV1Attributes: CoreNavigationBlockDeprecatedV1Attributes;
-  CoreNavigationBlockDeprecatedV2Attributes: CoreNavigationBlockDeprecatedV2Attributes;
-  CoreNavigationBlockDeprecatedV3Attributes: CoreNavigationBlockDeprecatedV3Attributes;
-  CoreNavigationBlockDeprecatedV4Attributes: CoreNavigationBlockDeprecatedV4Attributes;
-  CoreNavigationBlockDeprecatedV5Attributes: CoreNavigationBlockDeprecatedV5Attributes;
-  CoreNavigationBlockDeprecatedV6Attributes: CoreNavigationBlockDeprecatedV6Attributes;
-  CoreNavigationLinkBlock: CoreNavigationLinkBlock;
-  CoreNavigationLinkBlockAttributes: CoreNavigationLinkBlockAttributes;
-  CoreNavigationLinkBlockDeprecatedV1Attributes: CoreNavigationLinkBlockDeprecatedV1Attributes;
-  CoreNavigationSubmenuBlock: CoreNavigationSubmenuBlock;
-  CoreNavigationSubmenuBlockAttributes: CoreNavigationSubmenuBlockAttributes;
   CoreNextpageBlock: CoreNextpageBlock;
   CoreNextpageBlockAttributes: CoreNextpageBlockAttributes;
   CorePageListBlock: CorePageListBlock;
@@ -36230,32 +34777,6 @@ export interface SchemaObjectTypes {
   CoreParagraphBlockDeprecatedV5Attributes: CoreParagraphBlockDeprecatedV5Attributes;
   CorePatternBlock: CorePatternBlock;
   CorePatternBlockAttributes: CorePatternBlockAttributes;
-  CorePostAuthorBiographyBlock: CorePostAuthorBiographyBlock;
-  CorePostAuthorBiographyBlockAttributes: CorePostAuthorBiographyBlockAttributes;
-  CorePostAuthorBlock: CorePostAuthorBlock;
-  CorePostAuthorBlockAttributes: CorePostAuthorBlockAttributes;
-  CorePostCommentsBlock: CorePostCommentsBlock;
-  CorePostCommentsBlockAttributes: CorePostCommentsBlockAttributes;
-  CorePostCommentsFormBlock: CorePostCommentsFormBlock;
-  CorePostCommentsFormBlockAttributes: CorePostCommentsFormBlockAttributes;
-  CorePostContentBlock: CorePostContentBlock;
-  CorePostContentBlockAttributes: CorePostContentBlockAttributes;
-  CorePostDateBlock: CorePostDateBlock;
-  CorePostDateBlockAttributes: CorePostDateBlockAttributes;
-  CorePostDateBlockDeprecatedV1Attributes: CorePostDateBlockDeprecatedV1Attributes;
-  CorePostExcerptBlock: CorePostExcerptBlock;
-  CorePostExcerptBlockAttributes: CorePostExcerptBlockAttributes;
-  CorePostFeaturedImageBlock: CorePostFeaturedImageBlock;
-  CorePostFeaturedImageBlockAttributes: CorePostFeaturedImageBlockAttributes;
-  CorePostNavigationLinkBlock: CorePostNavigationLinkBlock;
-  CorePostNavigationLinkBlockAttributes: CorePostNavigationLinkBlockAttributes;
-  CorePostTemplateBlock: CorePostTemplateBlock;
-  CorePostTemplateBlockAttributes: CorePostTemplateBlockAttributes;
-  CorePostTermsBlock: CorePostTermsBlock;
-  CorePostTermsBlockAttributes: CorePostTermsBlockAttributes;
-  CorePostTitleBlock: CorePostTitleBlock;
-  CorePostTitleBlockAttributes: CorePostTitleBlockAttributes;
-  CorePostTitleBlockDeprecatedV1Attributes: CorePostTitleBlockDeprecatedV1Attributes;
   CorePreformattedBlock: CorePreformattedBlock;
   CorePreformattedBlockAttributes: CorePreformattedBlockAttributes;
   CorePullquoteBlock: CorePullquoteBlock;
@@ -36265,29 +34786,13 @@ export interface SchemaObjectTypes {
   CorePullquoteBlockDeprecatedV3Attributes: CorePullquoteBlockDeprecatedV3Attributes;
   CorePullquoteBlockDeprecatedV4Attributes: CorePullquoteBlockDeprecatedV4Attributes;
   CorePullquoteBlockDeprecatedV5Attributes: CorePullquoteBlockDeprecatedV5Attributes;
-  CoreQueryBlock: CoreQueryBlock;
-  CoreQueryBlockAttributes: CoreQueryBlockAttributes;
-  CoreQueryBlockDeprecatedV1Attributes: CoreQueryBlockDeprecatedV1Attributes;
-  CoreQueryBlockDeprecatedV2Attributes: CoreQueryBlockDeprecatedV2Attributes;
-  CoreQueryNoResultsBlock: CoreQueryNoResultsBlock;
-  CoreQueryNoResultsBlockAttributes: CoreQueryNoResultsBlockAttributes;
-  CoreQueryPaginationBlock: CoreQueryPaginationBlock;
-  CoreQueryPaginationBlockAttributes: CoreQueryPaginationBlockAttributes;
-  CoreQueryPaginationBlockDeprecatedV1Attributes: CoreQueryPaginationBlockDeprecatedV1Attributes;
-  CoreQueryPaginationNextBlock: CoreQueryPaginationNextBlock;
-  CoreQueryPaginationNextBlockAttributes: CoreQueryPaginationNextBlockAttributes;
-  CoreQueryPaginationNumbersBlock: CoreQueryPaginationNumbersBlock;
-  CoreQueryPaginationNumbersBlockAttributes: CoreQueryPaginationNumbersBlockAttributes;
-  CoreQueryPaginationPreviousBlock: CoreQueryPaginationPreviousBlock;
-  CoreQueryPaginationPreviousBlockAttributes: CoreQueryPaginationPreviousBlockAttributes;
-  CoreQueryTitleBlock: CoreQueryTitleBlock;
-  CoreQueryTitleBlockAttributes: CoreQueryTitleBlockAttributes;
-  CoreQueryTitleBlockDeprecatedV1Attributes: CoreQueryTitleBlockDeprecatedV1Attributes;
+  CorePullquoteBlockDeprecatedV6Attributes: CorePullquoteBlockDeprecatedV6Attributes;
   CoreQuoteBlock: CoreQuoteBlock;
   CoreQuoteBlockAttributes: CoreQuoteBlockAttributes;
   CoreQuoteBlockDeprecatedV1Attributes: CoreQuoteBlockDeprecatedV1Attributes;
   CoreQuoteBlockDeprecatedV2Attributes: CoreQuoteBlockDeprecatedV2Attributes;
   CoreQuoteBlockDeprecatedV3Attributes: CoreQuoteBlockDeprecatedV3Attributes;
+  CoreQuoteBlockDeprecatedV4Attributes: CoreQuoteBlockDeprecatedV4Attributes;
   CoreReadMoreBlock: CoreReadMoreBlock;
   CoreReadMoreBlockAttributes: CoreReadMoreBlockAttributes;
   CoreRssBlock: CoreRssBlock;
@@ -36299,14 +34804,6 @@ export interface SchemaObjectTypes {
   CoreSeparatorBlockDeprecatedV1Attributes: CoreSeparatorBlockDeprecatedV1Attributes;
   CoreShortcodeBlock: CoreShortcodeBlock;
   CoreShortcodeBlockAttributes: CoreShortcodeBlockAttributes;
-  CoreSiteLogoBlock: CoreSiteLogoBlock;
-  CoreSiteLogoBlockAttributes: CoreSiteLogoBlockAttributes;
-  CoreSiteTaglineBlock: CoreSiteTaglineBlock;
-  CoreSiteTaglineBlockAttributes: CoreSiteTaglineBlockAttributes;
-  CoreSiteTaglineBlockDeprecatedV1Attributes: CoreSiteTaglineBlockDeprecatedV1Attributes;
-  CoreSiteTitleBlock: CoreSiteTitleBlock;
-  CoreSiteTitleBlockAttributes: CoreSiteTitleBlockAttributes;
-  CoreSiteTitleBlockDeprecatedV1Attributes: CoreSiteTitleBlockDeprecatedV1Attributes;
   CoreSocialLinkBlock: CoreSocialLinkBlock;
   CoreSocialLinkBlockAttributes: CoreSocialLinkBlockAttributes;
   CoreSocialLinksBlock: CoreSocialLinksBlock;
@@ -36337,10 +34834,15 @@ export interface SchemaObjectTypes {
   CoreTableBlockDeprecatedV2AttributesFootCells: CoreTableBlockDeprecatedV2AttributesFootCells;
   CoreTableBlockDeprecatedV2AttributesHead: CoreTableBlockDeprecatedV2AttributesHead;
   CoreTableBlockDeprecatedV2AttributesHeadCells: CoreTableBlockDeprecatedV2AttributesHeadCells;
+  CoreTableBlockDeprecatedV3Attributes: CoreTableBlockDeprecatedV3Attributes;
+  CoreTableBlockDeprecatedV3AttributesBody: CoreTableBlockDeprecatedV3AttributesBody;
+  CoreTableBlockDeprecatedV3AttributesBodyCells: CoreTableBlockDeprecatedV3AttributesBodyCells;
+  CoreTableBlockDeprecatedV3AttributesFoot: CoreTableBlockDeprecatedV3AttributesFoot;
+  CoreTableBlockDeprecatedV3AttributesFootCells: CoreTableBlockDeprecatedV3AttributesFootCells;
+  CoreTableBlockDeprecatedV3AttributesHead: CoreTableBlockDeprecatedV3AttributesHead;
+  CoreTableBlockDeprecatedV3AttributesHeadCells: CoreTableBlockDeprecatedV3AttributesHeadCells;
   CoreTagCloudBlock: CoreTagCloudBlock;
   CoreTagCloudBlockAttributes: CoreTagCloudBlockAttributes;
-  CoreTemplatePartBlock: CoreTemplatePartBlock;
-  CoreTemplatePartBlockAttributes: CoreTemplatePartBlockAttributes;
   CoreTermDescriptionBlock: CoreTermDescriptionBlock;
   CoreTermDescriptionBlockAttributes: CoreTermDescriptionBlockAttributes;
   CoreTextColumnsBlock: CoreTextColumnsBlock;
@@ -36352,6 +34854,12 @@ export interface SchemaObjectTypes {
   CoreVerseBlockDeprecatedV2Attributes: CoreVerseBlockDeprecatedV2Attributes;
   CoreVideoBlock: CoreVideoBlock;
   CoreVideoBlockAttributes: CoreVideoBlockAttributes;
+  CoreVideoBlockDeprecatedV1Attributes: CoreVideoBlockDeprecatedV1Attributes;
+  CoreWidgetAreaBlock: CoreWidgetAreaBlock;
+  CoreWidgetAreaBlockAttributes: CoreWidgetAreaBlockAttributes;
+  CoreWidgetGroupBlock: CoreWidgetGroupBlock;
+  CoreWidgetGroupBlockAttributes: CoreWidgetGroupBlockAttributes;
+  CoreWidgetGroupBlockDeprecatedV1Attributes: CoreWidgetGroupBlockDeprecatedV1Attributes;
   CreateAToZCategoryPayload: CreateAToZCategoryPayload;
   CreateAToZPayload: CreateAToZPayload;
   CreateAcalogProgramPayload: CreateAcalogProgramPayload;
@@ -36620,6 +35128,15 @@ export interface SchemaObjectTypes {
   UtkwdsTabsBlockAttributes: UtkwdsTabsBlockAttributes;
   WPPageInfo: WPPageInfo;
   WritingSettings: WritingSettings;
+  YoastFaqBlock: YoastFaqBlock;
+  YoastFaqBlockAttributes: YoastFaqBlockAttributes;
+  YoastFaqBlockDeprecatedV1Attributes: YoastFaqBlockDeprecatedV1Attributes;
+  YoastHowToBlock: YoastHowToBlock;
+  YoastHowToBlockAttributes: YoastHowToBlockAttributes;
+  YoastHowToBlockDeprecatedV1Attributes: YoastHowToBlockDeprecatedV1Attributes;
+  YoastHowToBlockDeprecatedV2Attributes: YoastHowToBlockDeprecatedV2Attributes;
+  YoastSeoBreadcrumbsBlock: YoastSeoBreadcrumbsBlock;
+  YoastSeoBreadcrumbsBlockAttributes: YoastSeoBreadcrumbsBlockAttributes;
 }
 export type SchemaObjectTypesNames =
   | 'AToZ'
@@ -36697,11 +35214,10 @@ export type SchemaObjectTypesNames =
   | 'CoreAudioBlockDeprecatedV1Attributes'
   | 'CoreAvatarBlock'
   | 'CoreAvatarBlockAttributes'
-  | 'CoreBlock'
-  | 'CoreBlockAttributes'
   | 'CoreButtonBlock'
   | 'CoreButtonBlockAttributes'
   | 'CoreButtonBlockDeprecatedV10Attributes'
+  | 'CoreButtonBlockDeprecatedV11Attributes'
   | 'CoreButtonBlockDeprecatedV1Attributes'
   | 'CoreButtonBlockDeprecatedV2Attributes'
   | 'CoreButtonBlockDeprecatedV3Attributes'
@@ -36743,6 +35259,9 @@ export type SchemaObjectTypesNames =
   | 'CoreCommentReplyLinkBlockAttributes'
   | 'CoreCommentTemplateBlock'
   | 'CoreCommentTemplateBlockAttributes'
+  | 'CoreCommentsBlock'
+  | 'CoreCommentsBlockAttributes'
+  | 'CoreCommentsBlockDeprecatedV1Attributes'
   | 'CoreCommentsPaginationBlock'
   | 'CoreCommentsPaginationBlockAttributes'
   | 'CoreCommentsPaginationNextBlock'
@@ -36751,13 +35270,12 @@ export type SchemaObjectTypesNames =
   | 'CoreCommentsPaginationNumbersBlockAttributes'
   | 'CoreCommentsPaginationPreviousBlock'
   | 'CoreCommentsPaginationPreviousBlockAttributes'
-  | 'CoreCommentsQueryLoopBlock'
-  | 'CoreCommentsQueryLoopBlockAttributes'
   | 'CoreCommentsTitleBlock'
   | 'CoreCommentsTitleBlockAttributes'
   | 'CoreCommentsTitleBlockDeprecatedV1Attributes'
   | 'CoreCoverBlock'
   | 'CoreCoverBlockAttributes'
+  | 'CoreCoverBlockDeprecatedV10Attributes'
   | 'CoreCoverBlockDeprecatedV1Attributes'
   | 'CoreCoverBlockDeprecatedV2Attributes'
   | 'CoreCoverBlockDeprecatedV3Attributes'
@@ -36770,11 +35288,12 @@ export type SchemaObjectTypesNames =
   | 'CoreEmbedBlock'
   | 'CoreEmbedBlockAttributes'
   | 'CoreEmbedBlockDeprecatedV1Attributes'
+  | 'CoreEmbedBlockDeprecatedV2Attributes'
   | 'CoreFileBlock'
   | 'CoreFileBlockAttributes'
   | 'CoreFileBlockDeprecatedV1Attributes'
-  | 'CoreFreeformBlock'
-  | 'CoreFreeformBlockAttributes'
+  | 'CoreFileBlockDeprecatedV2Attributes'
+  | 'CoreFileBlockDeprecatedV3Attributes'
   | 'CoreGalleryBlock'
   | 'CoreGalleryBlockAttributes'
   | 'CoreGalleryBlockAttributesImages'
@@ -36790,12 +35309,15 @@ export type SchemaObjectTypesNames =
   | 'CoreGalleryBlockDeprecatedV5AttributesImages'
   | 'CoreGalleryBlockDeprecatedV6Attributes'
   | 'CoreGalleryBlockDeprecatedV6AttributesImages'
+  | 'CoreGalleryBlockDeprecatedV7Attributes'
+  | 'CoreGalleryBlockDeprecatedV7AttributesImages'
   | 'CoreGroupBlock'
   | 'CoreGroupBlockAttributes'
   | 'CoreGroupBlockDeprecatedV1Attributes'
   | 'CoreGroupBlockDeprecatedV2Attributes'
   | 'CoreGroupBlockDeprecatedV3Attributes'
   | 'CoreGroupBlockDeprecatedV4Attributes'
+  | 'CoreGroupBlockDeprecatedV5Attributes'
   | 'CoreHeadingBlock'
   | 'CoreHeadingBlockAttributes'
   | 'CoreHeadingBlockDeprecatedV1Attributes'
@@ -36812,14 +35334,20 @@ export type SchemaObjectTypesNames =
   | 'CoreImageBlockDeprecatedV2Attributes'
   | 'CoreImageBlockDeprecatedV3Attributes'
   | 'CoreImageBlockDeprecatedV4Attributes'
+  | 'CoreImageBlockDeprecatedV5Attributes'
   | 'CoreLatestCommentsBlock'
   | 'CoreLatestCommentsBlockAttributes'
   | 'CoreLatestPostsBlock'
   | 'CoreLatestPostsBlockAttributes'
   | 'CoreLatestPostsBlockDeprecatedV1Attributes'
+  | 'CoreLegacyWidgetBlock'
+  | 'CoreLegacyWidgetBlockAttributes'
   | 'CoreListBlock'
   | 'CoreListBlockAttributes'
   | 'CoreListBlockDeprecatedV1Attributes'
+  | 'CoreListBlockDeprecatedV2Attributes'
+  | 'CoreListItemBlock'
+  | 'CoreListItemBlockAttributes'
   | 'CoreLoginoutBlock'
   | 'CoreLoginoutBlockAttributes'
   | 'CoreMediaTextBlock'
@@ -36827,23 +35355,10 @@ export type SchemaObjectTypesNames =
   | 'CoreMediaTextBlockDeprecatedV1Attributes'
   | 'CoreMediaTextBlockDeprecatedV2Attributes'
   | 'CoreMediaTextBlockDeprecatedV3Attributes'
+  | 'CoreMediaTextBlockDeprecatedV4Attributes'
+  | 'CoreMediaTextBlockDeprecatedV5Attributes'
   | 'CoreMissingBlock'
   | 'CoreMissingBlockAttributes'
-  | 'CoreMoreBlock'
-  | 'CoreMoreBlockAttributes'
-  | 'CoreNavigationBlock'
-  | 'CoreNavigationBlockAttributes'
-  | 'CoreNavigationBlockDeprecatedV1Attributes'
-  | 'CoreNavigationBlockDeprecatedV2Attributes'
-  | 'CoreNavigationBlockDeprecatedV3Attributes'
-  | 'CoreNavigationBlockDeprecatedV4Attributes'
-  | 'CoreNavigationBlockDeprecatedV5Attributes'
-  | 'CoreNavigationBlockDeprecatedV6Attributes'
-  | 'CoreNavigationLinkBlock'
-  | 'CoreNavigationLinkBlockAttributes'
-  | 'CoreNavigationLinkBlockDeprecatedV1Attributes'
-  | 'CoreNavigationSubmenuBlock'
-  | 'CoreNavigationSubmenuBlockAttributes'
   | 'CoreNextpageBlock'
   | 'CoreNextpageBlockAttributes'
   | 'CorePageListBlock'
@@ -36857,32 +35372,6 @@ export type SchemaObjectTypesNames =
   | 'CoreParagraphBlockDeprecatedV5Attributes'
   | 'CorePatternBlock'
   | 'CorePatternBlockAttributes'
-  | 'CorePostAuthorBiographyBlock'
-  | 'CorePostAuthorBiographyBlockAttributes'
-  | 'CorePostAuthorBlock'
-  | 'CorePostAuthorBlockAttributes'
-  | 'CorePostCommentsBlock'
-  | 'CorePostCommentsBlockAttributes'
-  | 'CorePostCommentsFormBlock'
-  | 'CorePostCommentsFormBlockAttributes'
-  | 'CorePostContentBlock'
-  | 'CorePostContentBlockAttributes'
-  | 'CorePostDateBlock'
-  | 'CorePostDateBlockAttributes'
-  | 'CorePostDateBlockDeprecatedV1Attributes'
-  | 'CorePostExcerptBlock'
-  | 'CorePostExcerptBlockAttributes'
-  | 'CorePostFeaturedImageBlock'
-  | 'CorePostFeaturedImageBlockAttributes'
-  | 'CorePostNavigationLinkBlock'
-  | 'CorePostNavigationLinkBlockAttributes'
-  | 'CorePostTemplateBlock'
-  | 'CorePostTemplateBlockAttributes'
-  | 'CorePostTermsBlock'
-  | 'CorePostTermsBlockAttributes'
-  | 'CorePostTitleBlock'
-  | 'CorePostTitleBlockAttributes'
-  | 'CorePostTitleBlockDeprecatedV1Attributes'
   | 'CorePreformattedBlock'
   | 'CorePreformattedBlockAttributes'
   | 'CorePullquoteBlock'
@@ -36892,29 +35381,13 @@ export type SchemaObjectTypesNames =
   | 'CorePullquoteBlockDeprecatedV3Attributes'
   | 'CorePullquoteBlockDeprecatedV4Attributes'
   | 'CorePullquoteBlockDeprecatedV5Attributes'
-  | 'CoreQueryBlock'
-  | 'CoreQueryBlockAttributes'
-  | 'CoreQueryBlockDeprecatedV1Attributes'
-  | 'CoreQueryBlockDeprecatedV2Attributes'
-  | 'CoreQueryNoResultsBlock'
-  | 'CoreQueryNoResultsBlockAttributes'
-  | 'CoreQueryPaginationBlock'
-  | 'CoreQueryPaginationBlockAttributes'
-  | 'CoreQueryPaginationBlockDeprecatedV1Attributes'
-  | 'CoreQueryPaginationNextBlock'
-  | 'CoreQueryPaginationNextBlockAttributes'
-  | 'CoreQueryPaginationNumbersBlock'
-  | 'CoreQueryPaginationNumbersBlockAttributes'
-  | 'CoreQueryPaginationPreviousBlock'
-  | 'CoreQueryPaginationPreviousBlockAttributes'
-  | 'CoreQueryTitleBlock'
-  | 'CoreQueryTitleBlockAttributes'
-  | 'CoreQueryTitleBlockDeprecatedV1Attributes'
+  | 'CorePullquoteBlockDeprecatedV6Attributes'
   | 'CoreQuoteBlock'
   | 'CoreQuoteBlockAttributes'
   | 'CoreQuoteBlockDeprecatedV1Attributes'
   | 'CoreQuoteBlockDeprecatedV2Attributes'
   | 'CoreQuoteBlockDeprecatedV3Attributes'
+  | 'CoreQuoteBlockDeprecatedV4Attributes'
   | 'CoreReadMoreBlock'
   | 'CoreReadMoreBlockAttributes'
   | 'CoreRssBlock'
@@ -36926,14 +35399,6 @@ export type SchemaObjectTypesNames =
   | 'CoreSeparatorBlockDeprecatedV1Attributes'
   | 'CoreShortcodeBlock'
   | 'CoreShortcodeBlockAttributes'
-  | 'CoreSiteLogoBlock'
-  | 'CoreSiteLogoBlockAttributes'
-  | 'CoreSiteTaglineBlock'
-  | 'CoreSiteTaglineBlockAttributes'
-  | 'CoreSiteTaglineBlockDeprecatedV1Attributes'
-  | 'CoreSiteTitleBlock'
-  | 'CoreSiteTitleBlockAttributes'
-  | 'CoreSiteTitleBlockDeprecatedV1Attributes'
   | 'CoreSocialLinkBlock'
   | 'CoreSocialLinkBlockAttributes'
   | 'CoreSocialLinksBlock'
@@ -36964,10 +35429,15 @@ export type SchemaObjectTypesNames =
   | 'CoreTableBlockDeprecatedV2AttributesFootCells'
   | 'CoreTableBlockDeprecatedV2AttributesHead'
   | 'CoreTableBlockDeprecatedV2AttributesHeadCells'
+  | 'CoreTableBlockDeprecatedV3Attributes'
+  | 'CoreTableBlockDeprecatedV3AttributesBody'
+  | 'CoreTableBlockDeprecatedV3AttributesBodyCells'
+  | 'CoreTableBlockDeprecatedV3AttributesFoot'
+  | 'CoreTableBlockDeprecatedV3AttributesFootCells'
+  | 'CoreTableBlockDeprecatedV3AttributesHead'
+  | 'CoreTableBlockDeprecatedV3AttributesHeadCells'
   | 'CoreTagCloudBlock'
   | 'CoreTagCloudBlockAttributes'
-  | 'CoreTemplatePartBlock'
-  | 'CoreTemplatePartBlockAttributes'
   | 'CoreTermDescriptionBlock'
   | 'CoreTermDescriptionBlockAttributes'
   | 'CoreTextColumnsBlock'
@@ -36979,6 +35449,12 @@ export type SchemaObjectTypesNames =
   | 'CoreVerseBlockDeprecatedV2Attributes'
   | 'CoreVideoBlock'
   | 'CoreVideoBlockAttributes'
+  | 'CoreVideoBlockDeprecatedV1Attributes'
+  | 'CoreWidgetAreaBlock'
+  | 'CoreWidgetAreaBlockAttributes'
+  | 'CoreWidgetGroupBlock'
+  | 'CoreWidgetGroupBlockAttributes'
+  | 'CoreWidgetGroupBlockDeprecatedV1Attributes'
   | 'CreateAToZCategoryPayload'
   | 'CreateAToZPayload'
   | 'CreateAcalogProgramPayload'
@@ -37246,7 +35722,16 @@ export type SchemaObjectTypesNames =
   | 'UtkwdsTabsBlock'
   | 'UtkwdsTabsBlockAttributes'
   | 'WPPageInfo'
-  | 'WritingSettings';
+  | 'WritingSettings'
+  | 'YoastFaqBlock'
+  | 'YoastFaqBlockAttributes'
+  | 'YoastFaqBlockDeprecatedV1Attributes'
+  | 'YoastHowToBlock'
+  | 'YoastHowToBlockAttributes'
+  | 'YoastHowToBlockDeprecatedV1Attributes'
+  | 'YoastHowToBlockDeprecatedV2Attributes'
+  | 'YoastSeoBreadcrumbsBlock'
+  | 'YoastSeoBreadcrumbsBlockAttributes';
 
 export interface $AcfFieldGroup {
   AToZ_Atozfields?: AToZ_Atozfields;
@@ -37260,7 +35745,6 @@ export interface $Block {
   CoreArchivesBlock?: CoreArchivesBlock;
   CoreAudioBlock?: CoreAudioBlock;
   CoreAvatarBlock?: CoreAvatarBlock;
-  CoreBlock?: CoreBlock;
   CoreButtonBlock?: CoreButtonBlock;
   CoreButtonsBlock?: CoreButtonsBlock;
   CoreCalendarBlock?: CoreCalendarBlock;
@@ -37274,16 +35758,15 @@ export interface $Block {
   CoreCommentEditLinkBlock?: CoreCommentEditLinkBlock;
   CoreCommentReplyLinkBlock?: CoreCommentReplyLinkBlock;
   CoreCommentTemplateBlock?: CoreCommentTemplateBlock;
+  CoreCommentsBlock?: CoreCommentsBlock;
   CoreCommentsPaginationBlock?: CoreCommentsPaginationBlock;
   CoreCommentsPaginationNextBlock?: CoreCommentsPaginationNextBlock;
   CoreCommentsPaginationNumbersBlock?: CoreCommentsPaginationNumbersBlock;
   CoreCommentsPaginationPreviousBlock?: CoreCommentsPaginationPreviousBlock;
-  CoreCommentsQueryLoopBlock?: CoreCommentsQueryLoopBlock;
   CoreCommentsTitleBlock?: CoreCommentsTitleBlock;
   CoreCoverBlock?: CoreCoverBlock;
   CoreEmbedBlock?: CoreEmbedBlock;
   CoreFileBlock?: CoreFileBlock;
-  CoreFreeformBlock?: CoreFreeformBlock;
   CoreGalleryBlock?: CoreGalleryBlock;
   CoreGroupBlock?: CoreGroupBlock;
   CoreHeadingBlock?: CoreHeadingBlock;
@@ -37292,58 +35775,35 @@ export interface $Block {
   CoreImageBlock?: CoreImageBlock;
   CoreLatestCommentsBlock?: CoreLatestCommentsBlock;
   CoreLatestPostsBlock?: CoreLatestPostsBlock;
+  CoreLegacyWidgetBlock?: CoreLegacyWidgetBlock;
   CoreListBlock?: CoreListBlock;
+  CoreListItemBlock?: CoreListItemBlock;
   CoreLoginoutBlock?: CoreLoginoutBlock;
   CoreMediaTextBlock?: CoreMediaTextBlock;
   CoreMissingBlock?: CoreMissingBlock;
-  CoreMoreBlock?: CoreMoreBlock;
-  CoreNavigationBlock?: CoreNavigationBlock;
-  CoreNavigationLinkBlock?: CoreNavigationLinkBlock;
-  CoreNavigationSubmenuBlock?: CoreNavigationSubmenuBlock;
   CoreNextpageBlock?: CoreNextpageBlock;
   CorePageListBlock?: CorePageListBlock;
   CoreParagraphBlock?: CoreParagraphBlock;
   CorePatternBlock?: CorePatternBlock;
-  CorePostAuthorBiographyBlock?: CorePostAuthorBiographyBlock;
-  CorePostAuthorBlock?: CorePostAuthorBlock;
-  CorePostCommentsBlock?: CorePostCommentsBlock;
-  CorePostCommentsFormBlock?: CorePostCommentsFormBlock;
-  CorePostContentBlock?: CorePostContentBlock;
-  CorePostDateBlock?: CorePostDateBlock;
-  CorePostExcerptBlock?: CorePostExcerptBlock;
-  CorePostFeaturedImageBlock?: CorePostFeaturedImageBlock;
-  CorePostNavigationLinkBlock?: CorePostNavigationLinkBlock;
-  CorePostTemplateBlock?: CorePostTemplateBlock;
-  CorePostTermsBlock?: CorePostTermsBlock;
-  CorePostTitleBlock?: CorePostTitleBlock;
   CorePreformattedBlock?: CorePreformattedBlock;
   CorePullquoteBlock?: CorePullquoteBlock;
-  CoreQueryBlock?: CoreQueryBlock;
-  CoreQueryNoResultsBlock?: CoreQueryNoResultsBlock;
-  CoreQueryPaginationBlock?: CoreQueryPaginationBlock;
-  CoreQueryPaginationNextBlock?: CoreQueryPaginationNextBlock;
-  CoreQueryPaginationNumbersBlock?: CoreQueryPaginationNumbersBlock;
-  CoreQueryPaginationPreviousBlock?: CoreQueryPaginationPreviousBlock;
-  CoreQueryTitleBlock?: CoreQueryTitleBlock;
   CoreQuoteBlock?: CoreQuoteBlock;
   CoreReadMoreBlock?: CoreReadMoreBlock;
   CoreRssBlock?: CoreRssBlock;
   CoreSearchBlock?: CoreSearchBlock;
   CoreSeparatorBlock?: CoreSeparatorBlock;
   CoreShortcodeBlock?: CoreShortcodeBlock;
-  CoreSiteLogoBlock?: CoreSiteLogoBlock;
-  CoreSiteTaglineBlock?: CoreSiteTaglineBlock;
-  CoreSiteTitleBlock?: CoreSiteTitleBlock;
   CoreSocialLinkBlock?: CoreSocialLinkBlock;
   CoreSocialLinksBlock?: CoreSocialLinksBlock;
   CoreSpacerBlock?: CoreSpacerBlock;
   CoreTableBlock?: CoreTableBlock;
   CoreTagCloudBlock?: CoreTagCloudBlock;
-  CoreTemplatePartBlock?: CoreTemplatePartBlock;
   CoreTermDescriptionBlock?: CoreTermDescriptionBlock;
   CoreTextColumnsBlock?: CoreTextColumnsBlock;
   CoreVerseBlock?: CoreVerseBlock;
   CoreVideoBlock?: CoreVideoBlock;
+  CoreWidgetAreaBlock?: CoreWidgetAreaBlock;
+  CoreWidgetGroupBlock?: CoreWidgetGroupBlock;
   UtkwdsAccordionBlock?: UtkwdsAccordionBlock;
   UtkwdsAccordionFoldBlock?: UtkwdsAccordionFoldBlock;
   UtkwdsAlertBlock?: UtkwdsAlertBlock;
@@ -37356,6 +35816,9 @@ export interface $Block {
   UtkwdsSocialsBlock?: UtkwdsSocialsBlock;
   UtkwdsTabBlock?: UtkwdsTabBlock;
   UtkwdsTabsBlock?: UtkwdsTabsBlock;
+  YoastFaqBlock?: YoastFaqBlock;
+  YoastHowToBlock?: YoastHowToBlock;
+  YoastSeoBreadcrumbsBlock?: YoastSeoBreadcrumbsBlock;
 }
 
 export interface $BlockEditorContentNode {
@@ -37411,6 +35874,7 @@ export interface $CoreButtonBlockAttributesUnion {
   CoreButtonBlockDeprecatedV8Attributes?: CoreButtonBlockDeprecatedV8Attributes;
   CoreButtonBlockDeprecatedV9Attributes?: CoreButtonBlockDeprecatedV9Attributes;
   CoreButtonBlockDeprecatedV10Attributes?: CoreButtonBlockDeprecatedV10Attributes;
+  CoreButtonBlockDeprecatedV11Attributes?: CoreButtonBlockDeprecatedV11Attributes;
 }
 
 export interface $CoreButtonsBlockAttributesUnion {
@@ -37441,6 +35905,11 @@ export interface $CoreCommentDateBlockAttributesUnion {
   CoreCommentDateBlockDeprecatedV1Attributes?: CoreCommentDateBlockDeprecatedV1Attributes;
 }
 
+export interface $CoreCommentsBlockAttributesUnion {
+  CoreCommentsBlockAttributes?: CoreCommentsBlockAttributes;
+  CoreCommentsBlockDeprecatedV1Attributes?: CoreCommentsBlockDeprecatedV1Attributes;
+}
+
 export interface $CoreCommentsTitleBlockAttributesUnion {
   CoreCommentsTitleBlockAttributes?: CoreCommentsTitleBlockAttributes;
   CoreCommentsTitleBlockDeprecatedV1Attributes?: CoreCommentsTitleBlockDeprecatedV1Attributes;
@@ -37457,16 +35926,20 @@ export interface $CoreCoverBlockAttributesUnion {
   CoreCoverBlockDeprecatedV7Attributes?: CoreCoverBlockDeprecatedV7Attributes;
   CoreCoverBlockDeprecatedV8Attributes?: CoreCoverBlockDeprecatedV8Attributes;
   CoreCoverBlockDeprecatedV9Attributes?: CoreCoverBlockDeprecatedV9Attributes;
+  CoreCoverBlockDeprecatedV10Attributes?: CoreCoverBlockDeprecatedV10Attributes;
 }
 
 export interface $CoreEmbedBlockAttributesUnion {
   CoreEmbedBlockAttributes?: CoreEmbedBlockAttributes;
   CoreEmbedBlockDeprecatedV1Attributes?: CoreEmbedBlockDeprecatedV1Attributes;
+  CoreEmbedBlockDeprecatedV2Attributes?: CoreEmbedBlockDeprecatedV2Attributes;
 }
 
 export interface $CoreFileBlockAttributesUnion {
   CoreFileBlockAttributes?: CoreFileBlockAttributes;
   CoreFileBlockDeprecatedV1Attributes?: CoreFileBlockDeprecatedV1Attributes;
+  CoreFileBlockDeprecatedV2Attributes?: CoreFileBlockDeprecatedV2Attributes;
+  CoreFileBlockDeprecatedV3Attributes?: CoreFileBlockDeprecatedV3Attributes;
 }
 
 export interface $CoreGalleryBlockAttributesUnion {
@@ -37477,6 +35950,7 @@ export interface $CoreGalleryBlockAttributesUnion {
   CoreGalleryBlockDeprecatedV4Attributes?: CoreGalleryBlockDeprecatedV4Attributes;
   CoreGalleryBlockDeprecatedV5Attributes?: CoreGalleryBlockDeprecatedV5Attributes;
   CoreGalleryBlockDeprecatedV6Attributes?: CoreGalleryBlockDeprecatedV6Attributes;
+  CoreGalleryBlockDeprecatedV7Attributes?: CoreGalleryBlockDeprecatedV7Attributes;
 }
 
 export interface $CoreGroupBlockAttributesUnion {
@@ -37485,6 +35959,7 @@ export interface $CoreGroupBlockAttributesUnion {
   CoreGroupBlockDeprecatedV2Attributes?: CoreGroupBlockDeprecatedV2Attributes;
   CoreGroupBlockDeprecatedV3Attributes?: CoreGroupBlockDeprecatedV3Attributes;
   CoreGroupBlockDeprecatedV4Attributes?: CoreGroupBlockDeprecatedV4Attributes;
+  CoreGroupBlockDeprecatedV5Attributes?: CoreGroupBlockDeprecatedV5Attributes;
 }
 
 export interface $CoreHeadingBlockAttributesUnion {
@@ -37501,6 +35976,7 @@ export interface $CoreImageBlockAttributesUnion {
   CoreImageBlockDeprecatedV2Attributes?: CoreImageBlockDeprecatedV2Attributes;
   CoreImageBlockDeprecatedV3Attributes?: CoreImageBlockDeprecatedV3Attributes;
   CoreImageBlockDeprecatedV4Attributes?: CoreImageBlockDeprecatedV4Attributes;
+  CoreImageBlockDeprecatedV5Attributes?: CoreImageBlockDeprecatedV5Attributes;
 }
 
 export interface $CoreLatestPostsBlockAttributesUnion {
@@ -37511,6 +35987,7 @@ export interface $CoreLatestPostsBlockAttributesUnion {
 export interface $CoreListBlockAttributesUnion {
   CoreListBlockAttributes?: CoreListBlockAttributes;
   CoreListBlockDeprecatedV1Attributes?: CoreListBlockDeprecatedV1Attributes;
+  CoreListBlockDeprecatedV2Attributes?: CoreListBlockDeprecatedV2Attributes;
 }
 
 export interface $CoreMediaTextBlockAttributesUnion {
@@ -37518,21 +35995,8 @@ export interface $CoreMediaTextBlockAttributesUnion {
   CoreMediaTextBlockDeprecatedV1Attributes?: CoreMediaTextBlockDeprecatedV1Attributes;
   CoreMediaTextBlockDeprecatedV2Attributes?: CoreMediaTextBlockDeprecatedV2Attributes;
   CoreMediaTextBlockDeprecatedV3Attributes?: CoreMediaTextBlockDeprecatedV3Attributes;
-}
-
-export interface $CoreNavigationBlockAttributesUnion {
-  CoreNavigationBlockAttributes?: CoreNavigationBlockAttributes;
-  CoreNavigationBlockDeprecatedV1Attributes?: CoreNavigationBlockDeprecatedV1Attributes;
-  CoreNavigationBlockDeprecatedV2Attributes?: CoreNavigationBlockDeprecatedV2Attributes;
-  CoreNavigationBlockDeprecatedV3Attributes?: CoreNavigationBlockDeprecatedV3Attributes;
-  CoreNavigationBlockDeprecatedV4Attributes?: CoreNavigationBlockDeprecatedV4Attributes;
-  CoreNavigationBlockDeprecatedV5Attributes?: CoreNavigationBlockDeprecatedV5Attributes;
-  CoreNavigationBlockDeprecatedV6Attributes?: CoreNavigationBlockDeprecatedV6Attributes;
-}
-
-export interface $CoreNavigationLinkBlockAttributesUnion {
-  CoreNavigationLinkBlockAttributes?: CoreNavigationLinkBlockAttributes;
-  CoreNavigationLinkBlockDeprecatedV1Attributes?: CoreNavigationLinkBlockDeprecatedV1Attributes;
+  CoreMediaTextBlockDeprecatedV4Attributes?: CoreMediaTextBlockDeprecatedV4Attributes;
+  CoreMediaTextBlockDeprecatedV5Attributes?: CoreMediaTextBlockDeprecatedV5Attributes;
 }
 
 export interface $CoreParagraphBlockAttributesUnion {
@@ -37544,16 +36008,6 @@ export interface $CoreParagraphBlockAttributesUnion {
   CoreParagraphBlockDeprecatedV5Attributes?: CoreParagraphBlockDeprecatedV5Attributes;
 }
 
-export interface $CorePostDateBlockAttributesUnion {
-  CorePostDateBlockAttributes?: CorePostDateBlockAttributes;
-  CorePostDateBlockDeprecatedV1Attributes?: CorePostDateBlockDeprecatedV1Attributes;
-}
-
-export interface $CorePostTitleBlockAttributesUnion {
-  CorePostTitleBlockAttributes?: CorePostTitleBlockAttributes;
-  CorePostTitleBlockDeprecatedV1Attributes?: CorePostTitleBlockDeprecatedV1Attributes;
-}
-
 export interface $CorePullquoteBlockAttributesUnion {
   CorePullquoteBlockAttributes?: CorePullquoteBlockAttributes;
   CorePullquoteBlockDeprecatedV1Attributes?: CorePullquoteBlockDeprecatedV1Attributes;
@@ -37561,22 +36015,7 @@ export interface $CorePullquoteBlockAttributesUnion {
   CorePullquoteBlockDeprecatedV3Attributes?: CorePullquoteBlockDeprecatedV3Attributes;
   CorePullquoteBlockDeprecatedV4Attributes?: CorePullquoteBlockDeprecatedV4Attributes;
   CorePullquoteBlockDeprecatedV5Attributes?: CorePullquoteBlockDeprecatedV5Attributes;
-}
-
-export interface $CoreQueryBlockAttributesUnion {
-  CoreQueryBlockAttributes?: CoreQueryBlockAttributes;
-  CoreQueryBlockDeprecatedV1Attributes?: CoreQueryBlockDeprecatedV1Attributes;
-  CoreQueryBlockDeprecatedV2Attributes?: CoreQueryBlockDeprecatedV2Attributes;
-}
-
-export interface $CoreQueryPaginationBlockAttributesUnion {
-  CoreQueryPaginationBlockAttributes?: CoreQueryPaginationBlockAttributes;
-  CoreQueryPaginationBlockDeprecatedV1Attributes?: CoreQueryPaginationBlockDeprecatedV1Attributes;
-}
-
-export interface $CoreQueryTitleBlockAttributesUnion {
-  CoreQueryTitleBlockAttributes?: CoreQueryTitleBlockAttributes;
-  CoreQueryTitleBlockDeprecatedV1Attributes?: CoreQueryTitleBlockDeprecatedV1Attributes;
+  CorePullquoteBlockDeprecatedV6Attributes?: CorePullquoteBlockDeprecatedV6Attributes;
 }
 
 export interface $CoreQuoteBlockAttributesUnion {
@@ -37584,21 +36023,12 @@ export interface $CoreQuoteBlockAttributesUnion {
   CoreQuoteBlockDeprecatedV1Attributes?: CoreQuoteBlockDeprecatedV1Attributes;
   CoreQuoteBlockDeprecatedV2Attributes?: CoreQuoteBlockDeprecatedV2Attributes;
   CoreQuoteBlockDeprecatedV3Attributes?: CoreQuoteBlockDeprecatedV3Attributes;
+  CoreQuoteBlockDeprecatedV4Attributes?: CoreQuoteBlockDeprecatedV4Attributes;
 }
 
 export interface $CoreSeparatorBlockAttributesUnion {
   CoreSeparatorBlockAttributes?: CoreSeparatorBlockAttributes;
   CoreSeparatorBlockDeprecatedV1Attributes?: CoreSeparatorBlockDeprecatedV1Attributes;
-}
-
-export interface $CoreSiteTaglineBlockAttributesUnion {
-  CoreSiteTaglineBlockAttributes?: CoreSiteTaglineBlockAttributes;
-  CoreSiteTaglineBlockDeprecatedV1Attributes?: CoreSiteTaglineBlockDeprecatedV1Attributes;
-}
-
-export interface $CoreSiteTitleBlockAttributesUnion {
-  CoreSiteTitleBlockAttributes?: CoreSiteTitleBlockAttributes;
-  CoreSiteTitleBlockDeprecatedV1Attributes?: CoreSiteTitleBlockDeprecatedV1Attributes;
 }
 
 export interface $CoreSocialLinksBlockAttributesUnion {
@@ -37615,12 +36045,23 @@ export interface $CoreTableBlockAttributesUnion {
   CoreTableBlockAttributes?: CoreTableBlockAttributes;
   CoreTableBlockDeprecatedV1Attributes?: CoreTableBlockDeprecatedV1Attributes;
   CoreTableBlockDeprecatedV2Attributes?: CoreTableBlockDeprecatedV2Attributes;
+  CoreTableBlockDeprecatedV3Attributes?: CoreTableBlockDeprecatedV3Attributes;
 }
 
 export interface $CoreVerseBlockAttributesUnion {
   CoreVerseBlockAttributes?: CoreVerseBlockAttributes;
   CoreVerseBlockDeprecatedV1Attributes?: CoreVerseBlockDeprecatedV1Attributes;
   CoreVerseBlockDeprecatedV2Attributes?: CoreVerseBlockDeprecatedV2Attributes;
+}
+
+export interface $CoreVideoBlockAttributesUnion {
+  CoreVideoBlockAttributes?: CoreVideoBlockAttributes;
+  CoreVideoBlockDeprecatedV1Attributes?: CoreVideoBlockDeprecatedV1Attributes;
+}
+
+export interface $CoreWidgetGroupBlockAttributesUnion {
+  CoreWidgetGroupBlockAttributes?: CoreWidgetGroupBlockAttributes;
+  CoreWidgetGroupBlockDeprecatedV1Attributes?: CoreWidgetGroupBlockDeprecatedV1Attributes;
 }
 
 export interface $DatabaseIdentifier {
@@ -37822,6 +36263,17 @@ export interface $UniformResourceIdentifiable {
   User?: User;
 }
 
+export interface $YoastFaqBlockAttributesUnion {
+  YoastFaqBlockAttributes?: YoastFaqBlockAttributes;
+  YoastFaqBlockDeprecatedV1Attributes?: YoastFaqBlockDeprecatedV1Attributes;
+}
+
+export interface $YoastHowToBlockAttributesUnion {
+  YoastHowToBlockAttributes?: YoastHowToBlockAttributes;
+  YoastHowToBlockDeprecatedV1Attributes?: YoastHowToBlockDeprecatedV1Attributes;
+  YoastHowToBlockDeprecatedV2Attributes?: YoastHowToBlockDeprecatedV2Attributes;
+}
+
 export interface GeneratedSchema {
   query: Query;
   mutation: Mutation;
@@ -37841,6 +36293,7 @@ export interface ScalarsEnums extends MakeNullable<Scalars> {
   BlockEditorPreviewIdType: BlockEditorPreviewIdType | undefined;
   CategoryIdType: CategoryIdType | undefined;
   CollegeIdType: CollegeIdType | undefined;
+  CommentNodeIdTypeEnum: CommentNodeIdTypeEnum | undefined;
   CommentsConnectionOrderbyEnum: CommentsConnectionOrderbyEnum | undefined;
   ContentNodeIdTypeEnum: ContentNodeIdTypeEnum | undefined;
   ContentTypeEnum: ContentTypeEnum | undefined;

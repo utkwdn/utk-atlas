@@ -21,6 +21,10 @@ module.exports = withFaust({
         source: '/meet',
         destination: '/meet.html',
       },
+      {
+        source: '/vision',
+        destination: '/vision.html',
+      },
     ];
   },
 });
