@@ -16,6 +16,7 @@ export function PageComponent({ page }: PageProps) {
 
   const pageSlug = page?.slug;
   const yoastHead = parse(page?.seo?.fullHead || '');
+  const showPageTitle = page?.showsHeadline || false;
   // console.log(yoastHead);
   console.log(
     'My custom identifier class is based on slug: ' + (pageSlug || '')
@@ -27,10 +28,15 @@ export function PageComponent({ page }: PageProps) {
 
       <Head>{yoastHead}</Head>
 
-      <PageTitle
-        title={page?.title() || ''}
-        bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
-      />
+      {showPageTitle ? (
+        <PageTitle
+          title={page?.title() || ''}
+          bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
+        />
+      ) : (
+        ''
+      )}
+
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
