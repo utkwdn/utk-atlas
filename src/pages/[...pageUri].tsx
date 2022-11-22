@@ -4,6 +4,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
 import ParsedMarkup from 'components/ParsedMarkup';
+import parse from 'html-react-parser';
 
 export interface PageProps {
   page: PageType | null | undefined;
@@ -14,6 +15,9 @@ export function PageComponent({ page }: PageProps) {
   const generalSettings = useQuery().generalSettings;
 
   const pageSlug = page?.slug;
+  const yoastHead = parse(page?.seo?.fullHead || '');
+  const showPageTitle = page?.showsHeadline || false;
+  // console.log(yoastHead);
   console.log(
     'My custom identifier class is based on slug: ' + (pageSlug || '')
   );
@@ -22,16 +26,17 @@ export function PageComponent({ page }: PageProps) {
     <>
       <Header />
 
-      <Head>
-        <title>
-          {page?.title()} - {generalSettings?.title}
-        </title>
-      </Head>
+      <Head>{yoastHead}</Head>
 
-      <PageTitle
-        title={page?.title() || ''}
-        bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
-      />
+      {showPageTitle ? (
+        <PageTitle
+          title={page?.title() || ''}
+          bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
+        />
+      ) : (
+        ''
+      )}
+
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
