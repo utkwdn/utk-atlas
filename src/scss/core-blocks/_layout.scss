@@ -105,13 +105,16 @@ body {
   }
   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-    max-width: var(--wp--style--global--content-size);
+    // max-width: var(--wp--style--global--content-size);
+    max-width: $global-layout-content;
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: 1500px;
   }
 
   .is-layout-constrained > .alignwide {
-    max-width: var(--wp--style--global--wide-size);
+    // max-width: var(--wp--style--global--wide-size);
+    max-width: $gloabl-layout-wide;
   }
   .is-layout-flex {
     display: flex;

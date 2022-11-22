@@ -417,6 +417,15 @@ $paragraph-margin-bottom: 1rem !default;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
+// Theme.json layout variables
+// New variables to recreate ones generated from theme.json
+// Need to make sure if theme.json changes settings for layout or
+// if we change this width here – both places get updated! 
+// var(--wp--style--global--content-size)
+$global-layout-content: 1500px;
+// var(--wp--style--global--wide-size)
+$gloabl-layout-wide: 80vw;
+
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
