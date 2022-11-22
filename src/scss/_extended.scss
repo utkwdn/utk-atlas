@@ -41,7 +41,7 @@ body {
   width: 100vw;
   max-width: 100vw;
   margin: 0 calc(50% - 50vw);
-  display: block;
+  // display: block; /* this is breaking things. This is in genesis */
   position: relative;
   // border: 2px solid blue;
   & img {
@@ -377,13 +377,20 @@ Buttons with Chevrons – pulled from ExpressionEngine
   z-index: 0;
 }
 
-.orange-dot-strip img {
-  /* fixes the background applied in Wordpress */
-  /* orange stripe with dot pattern aligned left */
-  background-position: left;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-color: $utorange;
+.orange-dot-strip {
+  // used on a group element with an image inside.
+  max-height: 5vw;
+  overflow: hidden;
+  padding: 0;
+  img {
+    /* fixes the background applied in Wordpress */
+    /* orange stripe with dot pattern aligned left */
+    left: 0;
+    top: 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 30vw;
+  }
 }
 
 .grey-dot-strip {
@@ -418,9 +425,13 @@ Buttons with Chevrons – pulled from ExpressionEngine
   display: inline-block;
   width: auto;
   margin-left: 2rem;
-  padding-left: 0;
+  padding: 0;
   z-index: 4;
   margin-bottom: 2rem;
+  img {
+    padding: 0;
+    margin-right: 0;
+  }
   &::before {
     position: absolute;
     content: ' ';
@@ -431,6 +442,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
     border-left: 1.25rem solid $utorange;
     border-bottom: 1.25rem solid $utorange;
     z-index: -1;
+
     @include media-breakpoint-up(md) {
       bottom: -1.25rem;
       left: -1.25rem;
@@ -627,7 +639,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   position: absolute;
   object-fit: cover;
   top: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 @media screen and (min-width: 1200px) {
@@ -664,9 +676,13 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-.strip-card {
-  border: 2px solid red;
+.card {
+  overflow: hidden;
+  transition: all 0.2s ease;
+  background: rgba(49, 62, 72, 0.9);
+  border: 0;
 }
+
 .grey-dot-overlay .strip.p-lg {
   // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
   // Currently set to  only work with a strip using Large Padding and 0 spacing
