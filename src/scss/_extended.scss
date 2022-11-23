@@ -348,20 +348,28 @@ Buttons with Chevrons – pulled from ExpressionEngine
   z-index: 0;
 }
 
-.orange-dot-strip > div {
-  /* fixes the background applied in Wordpress */
-  /* orange stripe with dot pattern aligned left */
-  background-position: left;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-color: $utorange;
+.orange-dot-strip {
+  // used on a group element with an image inside.
+  max-height: 5vw;
+  overflow: hidden;
+  padding: 0;
+  img {
+    /* fixes the background applied in Wordpress */
+    /* orange stripe with dot pattern aligned left */
+    left: 0;
+    top: 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 30vw;
+  }
 }
 
-.grey-dot-strip > div {
+.grey-dot-strip {
   background-image: url('//images.utk.edu/designsystem/www2021/v1/i/dots_vertical_1.gif');
   background-position: bottom left;
   background-size: auto;
   background-repeat: repeat-x;
+  padding: 4vw 0 3vw 0;
 }
 .icon-torch {
   margin-left: auto;
@@ -373,7 +381,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
     width: 10vw;
   }
 }
-.icon-torch > div[class$='__inner-container'] {
+.icon-torch {
   background-image: url('//images.utk.edu/images/www/home/icon-light-the-way.svg');
   background-repeat: no-repeat;
   object-fit: cover;
@@ -388,9 +396,13 @@ Buttons with Chevrons – pulled from ExpressionEngine
   display: inline-block;
   width: auto;
   margin-left: 2rem;
-  padding-left: 0;
+  padding: 0;
   z-index: 4;
   margin-bottom: 2rem;
+  img {
+    padding: 0;
+    margin-right: 0;
+  }
   &::before {
     position: absolute;
     content: ' ';
@@ -401,6 +413,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
     border-left: 1.25rem solid $utorange;
     border-bottom: 1.25rem solid $utorange;
     z-index: -1;
+
     @include media-breakpoint-up(md) {
       bottom: -1.25rem;
       left: -1.25rem;
@@ -450,11 +463,11 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 
-.futureStat > div[class$='__inner-container'] {
+.futureStat {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  .statRow > div[class$='__inner-container'] {
+  .statRow {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -567,12 +580,13 @@ Buttons with Chevrons – pulled from ExpressionEngine
 /* Flex Video HOME */
 /* –––––––––––––––––––––––––––– */
 
-.flex-video-container .strip {
+.flex-video-container {
   position: relative;
   width: 100vw;
   // margin-left: calc(-50vw + 748px);
   display: block;
   left: 0;
+  padding: 0;
   @media (min-width: 500px) {
     padding-top: 25rem;
   }
@@ -596,11 +610,11 @@ Buttons with Chevrons – pulled from ExpressionEngine
   position: absolute;
   object-fit: cover;
   top: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 @media screen and (min-width: 1200px) {
-  .flex-video-container .strip {
+  .flex-video-container {
     position: relative;
     width: 100vw;
     display: block;
@@ -608,7 +622,7 @@ Buttons with Chevrons – pulled from ExpressionEngine
   }
 }
 @media screen and (min-width: 2000px) {
-  .flex-video-container .strip {
+  .flex-video-container {
     padding-top: 35rem;
   }
 }
@@ -632,6 +646,14 @@ Buttons with Chevrons – pulled from ExpressionEngine
     }
   }
 }
+
+.card {
+  overflow: hidden;
+  transition: all 0.2s ease;
+  background: rgba(49, 62, 72, 0.9);
+  border: 0;
+}
+
 .grey-dot-overlay .strip.p-lg {
   // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
   // Currently set to  only work with a strip using Large Padding and 0 spacing
