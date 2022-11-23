@@ -5,16 +5,6 @@ import {
   UtkwdsAccordionBlockAttributes,
   UtkwdsAccordionFoldBlockAttributes,
   UtkwdsAlertBlockAttributes,
-  UtkwdsColumnsBlockAttributes,
-  UtkwdsColumnBlockAttributes,
-  UtkwdsCardTopcapBlockAttributes,
-  UtkwdsCardMainBlockAttributes,
-  UtkwdsCardHeaderBlockAttributes,
-  UtkwdsCardHeadingBlockAttributes,
-  UtkwdsCardImageBlockAttributes,
-  UtkwdsCardFooterBlockAttributes,
-  UtkwdsCardBodyBlockAttributes,
-  UtkwdsCardBlockAttributes,
   UtkwdsContactBlockAttributes,
   UtkwdsHorizontalRuleBlockAttributes,
   UtkwdsCalendarBlockAttributes,
@@ -24,7 +14,6 @@ import {
   UtkwdsPhonesBlockAttributes,
   UtkwdsSocialsBlockAttributes,
   CoreSocialLinksBlockAttributes,
-  UtkwdsStripBlockAttributes,
   UtkwdsTabsBlockAttributes,
   UtkwdsTabBlockAttributes,
   // CoreSocialLinkBlockAttributes,
@@ -32,16 +21,6 @@ import {
 
 import Accordion from './blocks/Accordion';
 import Alert from './blocks/Alert';
-import Columns from './blocks/Columns';
-import Column from './blocks/Column';
-import CardTopcap from './blocks/CardTopcap';
-import CardMain from './blocks/CardMain';
-import CardHeader from './blocks/CardHeader';
-import CardHeading from './blocks/CardHeading';
-import CardImage from './blocks/CardImage';
-import CardFooter from './blocks/CardFooter';
-import CardBody from './blocks/CardBody';
-import Card from './blocks/Card';
 import Contact from './blocks/Contact';
 import Calendar from './blocks/Calendar';
 import HorizontalRule from './blocks/HorizontalRule';
@@ -51,7 +30,6 @@ import Phone from './blocks/Phone';
 import Phones from './blocks/Phones';
 import SocialLinks from './blocks/core/SocialLinks';
 import Socials from './blocks/Socials';
-import Strip from './blocks/Strip';
 import Tabs from './blocks/Tabs';
 // import SocialLink from './blocks/core/SocialLink';
 
@@ -112,94 +90,6 @@ const BlockRouter = ({ block }: Props) => {
       );
     }
 
-    case 'utkwds/card': {
-      return (
-        <Card
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-body': {
-      return (
-        <CardBody
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardBodyBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-footer': {
-      return (
-        <CardFooter
-          attributes={attributes as UtkwdsCardFooterBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-header': {
-      return (
-        <CardHeader
-          attributes={attributes as UtkwdsCardHeaderBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-heading': {
-      return (
-        <CardHeading
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardHeadingBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-image': {
-      return (
-        <CardImage
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardImageBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-main': {
-      return (
-        <CardMain
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardMainBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/card-topcap': {
-      return (
-        <CardTopcap
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsCardTopcapBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/column': {
-      return (
-        <Column
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsColumnBlockAttributes}
-        />
-      );
-    }
-
-    case 'utkwds/columns': {
-      return (
-        <Columns
-          innerBlocks={innerBlocks || []}
-          attributes={attributes as UtkwdsColumnsBlockAttributes}
-        />
-      );
-    }
-
     case 'utkwds/contact': {
       return (
         <Contact
@@ -238,15 +128,6 @@ const BlockRouter = ({ block }: Props) => {
       return (
         <Socials
           attributes={attributes as UtkwdsSocialsBlockAttributes}
-          innerBlocks={innerBlocks || []}
-        />
-      );
-    }
-
-    case 'utkwds/strip': {
-      return (
-        <Strip
-          attributes={attributes as UtkwdsStripBlockAttributes}
           innerBlocks={innerBlocks || []}
         />
       );

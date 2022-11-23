@@ -17,7 +17,6 @@ export function PageComponent({ page }: PageProps) {
   const pageSlug = page?.slug;
   const yoastHead = parse(page?.seo?.fullHead || '');
   const showPageTitle = page?.showsHeadline || false;
-  // console.log(yoastHead);
   console.log(
     'My custom identifier class is based on slug: ' + (pageSlug || '')
   );
