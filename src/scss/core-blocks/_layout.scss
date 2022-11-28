@@ -63,6 +63,7 @@ body {
   .is-layout-flow > * + * {
     margin-block-start: 1.5rem;
     margin-block-end: 0;
+    // border: 1px solid blue;
   }
   .is-layout-constrained > * {
     margin-block-start: 0;

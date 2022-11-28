@@ -67,7 +67,7 @@ body {
 .home-card {
   //used on dark grey cards on home
   transition: all 0.2s ease;
-  color: $utsmokeytext;
+  // color: $utsmokeytext;
   background: RGB(49, 62, 72) !important;
   background: RGBA(49, 62, 72, 0.9) !important;
   padding: calc($spacer * 2);
@@ -466,115 +466,122 @@ Buttons with Chevrons – pulled from ExpressionEngine
 .futureStat {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 5vw;
   .statRow {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    align-content: center;
 
-    column-gap: 2rem;
+    column-gap: 2vw;
     :nth-child(odd) {
       text-shadow: 2px 2px 0px #f6f6f6, 4px 4px 0px #ff8200;
       //   font-size: 2rem;
-      flex-basis: 20%;
+      flex-basis: 30%;
       flex-grow: 1;
       align-self: flex-end;
+      border: 1px solid red;
+      align-self: flex-end;
+      text-align: right;
     }
     :nth-child(even) {
-      flex-basis: 70%;
+      flex-basis: 65%;
+      border: 1px solid blue;
     }
     .text-data {
       font-size: calc(2rem + 2.25vw);
+      font-size: $h2-font-size;
       text-align: center;
     }
   }
 }
 
-/* - - - - - - - - - - - - */
-/* profileCard */
-/* - - - - - - - - - - - - */
-.profileCardContainer {
-  position: relative;
-  width: 100%;
-}
-.profileCardContainer > div[class$='__inner-container'] {
-  display: flex;
-  align-items: stretch;
-  align-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 3rem;
-  position: relative;
-}
-.profileCardContainer > div[class$='__inner-container'] > * {
-  flex-basis: 100%;
-}
+// /* - - - - - - - - - - - - */
+// /* profileCard */
+// /* - - - - - - - - - - - - */
+// .profileCardContainer {
+//   position: relative;
+//   width: 100%;
+// }
+// .profileCardContainer > div[class$='__inner-container'] {
+//   display: flex;
+//   align-items: stretch;
+//   align-content: space-around;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   row-gap: 3rem;
+//   position: relative;
+// }
+// .profileCardContainer > div[class$='__inner-container'] > * {
+//   flex-basis: 100%;
+// }
 
-.profileCard {
-  /* border:1px solid #707070; */
-}
+// .profileCard {
+//   /* border:1px solid #707070; */
+// }
 
-.profileCard div[class$='__inner-container'] {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  align-content: stretch;
-  background-color: #fafafa;
-  border-radius: 0 30px 30px 0;
-}
+// .profileCard div[class$='__inner-container'] {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: stretch;
+//   align-content: stretch;
+//   background-color: #fafafa;
+//   border-radius: 0 30px 30px 0;
+// }
 
-.profileCard div[class$='__inner-container'] > * {
-  flex-basis: 50%;
-}
+// .profileCard div[class$='__inner-container'] > * {
+//   flex-basis: 50%;
+// }
 
-.profileHeadshot div[class$='__inner-container'] {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  align-content: stretch;
-}
-.profileHeadshot div[class$='__inner-container'] figure {
-  object-fit: cover;
-  padding: 0;
-  margin: 0;
-}
+// .profileHeadshot div[class$='__inner-container'] {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: stretch;
+//   align-content: stretch;
+// }
+// .profileHeadshot div[class$='__inner-container'] figure {
+//   object-fit: cover;
+//   padding: 0;
+//   margin: 0;
+// }
 
-.profileInfo div[class$='__inner-container'] {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  align-items: center;
-  margin: 0;
-  padding: 2rem;
-  text-align: center;
-}
-.profileTitle {
-  font-style: italic;
-}
+// .profileInfo div[class$='__inner-container'] {
+//   display: flex;
+//   flex-direction: column;
+//   align-self: flex-end;
+//   align-items: center;
+//   margin: 0;
+//   padding: 2rem;
+//   text-align: center;
+// }
+// .profileTitle {
+//   font-style: italic;
+// }
 
-.profileName {
-  font-size: 1.75rem;
-  width: auto;
-  box-shadow: inset 0 -1px #ff8200;
-  padding-bottom: 5px;
-  margin-bottom: 1rem;
-  a {
-    text-decoration: none;
-  }
-}
-.profilePhone {
-  font-size: 1.75rem;
-}
-.profileIntro {
-  font-size: 1.2rem;
-  line-height: 1.7rem;
-}
-@media (min-width: 900px) {
-  .profileCardContainer > div[class$='__inner-container'] > * {
-    flex-basis: 49%;
-  }
-}
+// .profileName {
+//   font-size: 1.75rem;
+//   width: auto;
+//   box-shadow: inset 0 -1px #ff8200;
+//   padding-bottom: 5px;
+//   margin-bottom: 1rem;
+//   a {
+//     text-decoration: none;
+//   }
+// }
+// .profilePhone {
+//   font-size: 1.75rem;
+// }
+// .profileIntro {
+//   font-size: 1.2rem;
+//   line-height: 1.7rem;
+// }
+// @media (min-width: 900px) {
+//   .profileCardContainer > div[class$='__inner-container'] > * {
+//     flex-basis: 49%;
+//   }
+// }
 
 /* ––––––––––––––––––––––––––––––––––––– */
 /* Flex Video HOME */
@@ -626,24 +633,35 @@ Buttons with Chevrons – pulled from ExpressionEngine
     padding-top: 35rem;
   }
 }
+.mobile-push-down {
+  margin-top: 500px;
+  border: 2px solid red;
+  @media screen and (min-width: 700px) {
+    margin-top: 0;
+  }
+}
+
 .home-alumni-strip,
 .strip-with-card {
   position: relative;
-  .strip {
-    @media (max-width: 600px) {
-      background-size: cover;
-      padding-top: 5rem;
-      background-position: -20rem 0;
-    }
+  > div[class$='__inner-container'] {
+    // @media (max-width: 600px) {
+    //   background-size: cover;
+    //   padding-top: 5rem;
+    //   background-position: -20rem 0;
+    // }
     .home-card {
-      margin-top: 20rem;
+      margin-top: 60vw;
       margin-bottom: 0;
+      @media screen and (min-width: 950px) {
+        margin-top: 0;
+      }
     }
-    @media (max-width: 800px) {
-      background-size: cover;
-      padding-top: 5rem;
-      background-position: center;
-    }
+    // @media (max-width: 800px) {
+    //   background-size: cover;
+    //   padding-top: 5rem;
+    //   background-position: center;
+    // }
   }
 }
 
@@ -789,7 +807,7 @@ body.academics {
   }
 }
 
-.fake-d-flex > div[class$='__inner-container'] {
+.fake-d-flex {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
@@ -847,7 +865,7 @@ body.academics {
   }
 }
 
-.third-split-visual > div[class$='__inner-container'] {
+.third-split-visual {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -877,7 +895,7 @@ body.academics {
 
 .intro-flex {
   // temporary fix until we have the framework in place
-  //parent flexbox group for .page-title-group and .hero-img-group
+  //parent flexbox group for .page-title-group and .intro-img-group
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -888,6 +906,7 @@ body.academics {
   @media screen and (min-width: 1200px) {
     flex-direction: row;
     flex-wrap: nowrap;
+    border: 2px solid blue;
   }
 }
 
@@ -901,40 +920,51 @@ body.academics {
     // max-width: 500px;
     flex-basis: 32vw;
     flex-basis: 66vw;
+    flex-basis: 50%;
     margin-bottom: 4rem;
+    border: 1px solid purple;
+    background-color: pink;
     // flex-grow: 1;
   }
 }
-.hero-img-group > div[class$='__inner-container'] {
-  flex-basis: 50vw;
-  // border: 2px solid red;
-  display: flex;
 
-  @media screen and (min-width: 800px) {
-    justify-content: center;
-  }
-}
-.hero-img-group {
-  width: 84vw;
+.intro-img-group {
+  flex: 1 0 50%;
+  display: flex;
   // border: 2px solid purple;
   margin: 0 8vw 2rem 8vw;
   @media screen and (min-width: 800px) {
     position: relative;
-    max-width: 40vw;
+    max-width: 80vw;
     top: 0;
     right: 0;
+    border: 2px solid red;
   }
   @media screen and (min-width: 1200px) {
-    flex-basis: 50vw;
+    // flex-basis: 50vw;
+    // flex-basis: 50%;
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
     max-width: none;
     position: relative;
-    // border: 6px solid green;
-    margin-left: 2rem;
+    border: 6px solid green;
+    margin-left: calc($spacer * 2);
   }
   .img {
     flex-shrink: 1;
     flex-grow: 1;
-    max-width: 803px;
+    // max-width: 803px;
+  }
+}
+
+.intro-img-group > div {
+  width: 84vw;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    justify-content: center;
   }
 }
 
@@ -1038,6 +1068,7 @@ hr.oa-thick-bar {
     width: 24rem;
   }
 }
+
 .title-container {
 }
 
