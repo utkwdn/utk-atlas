@@ -18,7 +18,7 @@ const RequestInfoTabs = () => {
       <Tab
         title="Undergraduate Information"
         eventKey="undergraduate"
-        className="nav-item"
+        className="nav-item my-4"
       >
         <SlateFormEmbed
           id={UNDERGRAD_ID}
@@ -33,7 +33,7 @@ const RequestInfoTabs = () => {
       <Tab
         title="Graduate Information"
         eventKey="graduate"
-        className="nav-item"
+        className="nav-item my-4"
       >
         <SlateFormEmbed
           id={GRAD_ID}

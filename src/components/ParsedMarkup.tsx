@@ -1,9 +1,9 @@
-// import { isText } from 'domhandler';
 import parse, {
   type HTMLReactParserOptions,
   domToReact,
-  Element as DOMHandlerElement,
   DOMNode,
+  Element as DOMHandlerElement,
+  Comment as DOMHandlerComment,
 } from 'html-react-parser';
 
 import Link from 'next/link';
@@ -14,17 +14,20 @@ import RequestInfoTabs from './RequestInfoTabs';
 const isElement = (domNode: DOMNode): domNode is DOMHandlerElement =>
   domNode.type === 'tag';
 
-const toReactNode = ({
-  content,
-  isRequestInfo,
-}: {
-  content: string;
-  isRequestInfo?: boolean;
-}) => {
-  let needsRequestInfoTabs = !!isRequestInfo;
+const isComment = (domNode: DOMNode): domNode is DOMHandlerComment =>
+  domNode.type === 'comment';
 
+const toReactNode = ({ content }: { content: string }) => {
   const parserConfig: HTMLReactParserOptions = {
     replace(domNode) {
+      if (isComment(domNode)) {
+        const trimmedCommentValue = domNode.data.trim();
+
+        if (trimmedCommentValue === 'REQUEST-INFO-TABS') {
+          return <RequestInfoTabs />;
+        }
+      }
+
       if (!isElement(domNode)) return;
 
       const attribs: Partial<typeof domNode.attribs> = domNode.attribs;
@@ -32,30 +35,32 @@ const toReactNode = ({
       switch (domNode.name) {
         // use `next/link` for internal-links
         case 'a': {
-          // not yet finalized, but we want a flag set up on the server to indicate that a link is internal
-          const { href, 'data-internal-link': dataInternalLink } = attribs;
+          const { href: rawHref, 'data-internal-link': dataInternalLink } =
+            attribs;
 
-          if (href && dataInternalLink === 'true') {
+          if (rawHref && dataInternalLink === 'true') {
+            /** Root-relative path. */
+            let href: string | undefined;
+
+            if (
+              rawHref.startsWith('https://') ||
+              rawHref.startsWith('http://') ||
+              rawHref.startsWith('//')
+            ) {
+              // `rawHref` *should* come in as an absolute path, so this code should be executed
+              href = `/${rawHref.split('/').slice(3).join('/')}`;
+            } else if (rawHref.startsWith('/')) {
+              // in case `rawHref` arrives as a root-relative path already (it shouldn't)
+              href = rawHref;
+            } else {
+              // otherwise, do nothing (though we can come back and add other conditions if needed)
+              return;
+            }
+
             delete attribs.href;
             return (
               <Link href={href}>{domToReact([domNode], parserConfig)}</Link>
             );
-          }
-        }
-
-        /*
-          Temporary hacky way of inserting `RequestInfoTabs` into `/requestinfo` page.
-          Eventually we'll want to use an HTML comment on the WP side to flag where the
-          `RequestInfoTabs` component should be inserted (and we shouldn't need an `isRequestInfo`
-          boolean at all, then).
-        */
-        case 'div': {
-          if (!isRequestInfo) return;
-          if (needsRequestInfoTabs) {
-            needsRequestInfoTabs = false;
-            return <RequestInfoTabs />;
-          } else {
-            return <></>;
           }
         }
       }
@@ -70,14 +75,10 @@ const toReactNode = ({
 interface Props {
   /** The HTML content to parse. */
   content: string;
-  /** Page slug. */
-  slug?: string;
 }
 
-const ParsedMarkup = ({ content, slug }: Props) => {
-  const isRequestInfo = slug === 'requestinfo';
-
-  const parsedContent = toReactNode({ content, isRequestInfo });
+const ParsedMarkup = ({ content }: Props) => {
+  const parsedContent = toReactNode({ content });
 
   return parsedContent;
 };

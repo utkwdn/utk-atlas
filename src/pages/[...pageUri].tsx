@@ -34,10 +34,7 @@ export function PageComponent({ page }: PageProps) {
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
-            <ParsedMarkup
-              content={page?.content() || ''}
-              slug={pageSlug || undefined}
-            />
+            <ParsedMarkup content={page?.content() || ''} />
           </div>
         </div>
       </main>
