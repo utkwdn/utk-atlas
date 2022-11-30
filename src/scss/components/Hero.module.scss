@@ -1,5 +1,11 @@
-// @import './src/scss/common';
-
+.hero202112Container {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: fit-content;
+  pointer-events: none;
+  z-index: 0;
+}
 .hero202112A {
   position: relative;
   display: block;
