@@ -4,22 +4,20 @@ import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
 import Intro from '../components/Intro';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustjs/next';
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { matchSorter } from 'match-sorter';
 import {
+  ChangeEventHandler,
   FormEventHandler,
-  memo,
-  MutableRefObject,
   useCallback,
   useMemo,
   useRef,
   useState,
 } from 'react';
-import { FilterOptionsState, UseAutocompleteProps } from '@mui/material';
 import debounce from 'lodash/debounce';
-import { useRouter } from 'next/router';
+import { Button } from 'react-bootstrap';
+
+const NO_RESULTS = 'No results found';
 
 const upperLetters = [
   'A',
@@ -58,51 +56,12 @@ type Character = typeof chars[number];
 
 const upperLetterRegExp = /^[A-Z]$/;
 const isUpperLetter = (s: string): s is UpperLetter =>
-  !!s.match(upperLetterRegExp);
+  upperLetterRegExp.test(s);
 
 const digitRegExp = /^\d$/;
-const isDigit = (s: string) => !!s.match(digitRegExp);
+const isDigit = (s: string) => digitRegExp.test(s);
 
 const toDomId = (char: Character) => (char === '#' ? 'num' : char);
-
-type ItemAutocompleteProps = UseAutocompleteProps<
-  Item,
-  undefined,
-  undefined,
-  true
->;
-
-const MemoizedAutocomplete = memo(
-  ({ filterOptions, options /* onInputChange */ }: ItemAutocompleteProps) => {
-    const router = useRouter();
-
-    return (
-      <Autocomplete
-        style={{ flexGrow: 1 }}
-        options={options}
-        renderInput={(params) => <TextField {...params} label="Find a Site" />}
-        filterOptions={filterOptions}
-        // onInputChange={onInputChange}
-        onChange={(_, value) => {
-          if (value && typeof value !== 'string') {
-            const el = document.getElementById(value.id);
-            if (el) {
-              // first navigate to item by id
-              void router.push(`#${value.id}`);
-
-              // then focus on item's link (for benefit of screen-readers)
-              const link = el.querySelector('a');
-              if (link) {
-                link.focus();
-              }
-            }
-          }
-        }}
-      />
-    );
-  }
-);
-MemoizedAutocomplete.displayName = 'MemoizedAutocomplete';
 
 const Alpha = () => {
   const { useQuery } = client;
@@ -160,42 +119,72 @@ const Alpha = () => {
 
   const [activeItems, setActiveItems] = useState(allItems.current);
 
-  const activeChars =
-    activeItems.length > 0
-      ? allChars.current.filter((char) => {
-          if (char === '#') {
-            return activeItems.some(({ label }) => isDigit(label[0]));
-          } else {
-            return activeItems.some(({ label }) =>
-              label.toUpperCase().startsWith(char)
-            );
-          }
-        })
-      : allChars.current;
+  const activeChars = allChars.current.filter((char) => {
+    if (char === '#') {
+      return activeItems.some(({ label }) => isDigit(label[0]));
+    } else {
+      return activeItems.some(({ label }) =>
+        label.toUpperCase().startsWith(char)
+      );
+    }
+  });
 
-  const activeItemsRef = useRef(allItems.current);
+  const _handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
+    (e) => {
+      const { value } = e.target;
 
-  const filterOptions = useCallback<
-    NonNullable<ItemAutocompleteProps['filterOptions']>
-  >((options, { inputValue }) => {
-    const results = matchSorter(options, inputValue, { keys: ['label'] });
-    activeItemsRef.current = results;
-    return results;
-  }, []);
+      if (!value) return setActiveItems(allItems.current);
 
-  const debouncedSetActiveItems = useMemo(
-    () =>
-      debounce(() => {
-        setActiveItems(activeItemsRef.current);
-      }, 250),
+      const results = matchSorter(allItems.current, value, {
+        keys: ['label'],
+        threshold: matchSorter.rankings.CONTAINS,
+      });
+
+      setActiveItems(results);
+    },
     []
   );
 
-  const handleInputChange = useCallback<
-    NonNullable<ItemAutocompleteProps['onInputChange']>
-  >(() => {
-    debouncedSetActiveItems();
-  }, [debouncedSetActiveItems]);
+  const handleChange = useMemo(
+    () => debounce(_handleChange, 250),
+    [_handleChange]
+  );
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const resultsNavRef = useRef<HTMLElement>(null);
+  const noResultsRef = useRef<HTMLHeadingElement>(null);
+
+  const handleSubmit = useCallback<FormEventHandler<HTMLFormElement>>((e) => {
+    e.preventDefault();
+
+    const input = inputRef.current;
+    if (!input) return;
+
+    /*
+      Because of the the debounced change-handler (see `handleChange` above), we need to
+      wait 250ms here to ensure that the results are up to date.
+
+      To prevent changes in these 250ms, we temporarily make the input readonly.
+
+      After the wait:
+        - "Un-readonly" the input.
+        - If there are results, move keyboard-focus to results alpha-nav.
+        - If there are no results, have the screen-reader announce that (but keep focus on input).
+    */
+
+    input.readOnly = true;
+
+    setTimeout(() => {
+      input.readOnly = false;
+
+      if (resultsNavRef.current) {
+        resultsNavRef.current.focus();
+      } else if (noResultsRef.current) {
+        noResultsRef.current.textContent = '';
+        noResultsRef.current.textContent = NO_RESULTS;
+      }
+    }, 250);
+  }, []);
 
   return (
     <Layout>
@@ -206,31 +195,44 @@ const Alpha = () => {
         <div className={styles['search-container']}>
           <h3>Browse the site index</h3>
           <div>
-            <MemoizedAutocomplete
-              filterOptions={filterOptions}
-              options={allItems.current}
-              onInputChange={handleInputChange}
-            />
-            {/* <input
-                className={styles['form-control']}
-                type="text"
-                list="alphaDataList"
-                placeholder="Type to search..."
+            <form onSubmit={handleSubmit}>
+              <TextField
+                onChange={handleChange}
+                type="search"
+                label="Find a Site"
+                inputRef={inputRef}
               />
-              <button> Search </button>
-
-              <datalist id="alphaDataList" /> */}
+              <Button type="submit">Search</Button>
+            </form>
           </div>
+
           <section className={styles['alpha-container']}>
-            <div className={styles.alpha}>
-              {activeChars.map((char) => {
-                return (
-                  <a key={char} href={`#${toDomId(char)}`}>
-                    {char}
-                  </a>
-                );
-              })}
-            </div>
+            {activeChars.length > 0 ? (
+              <nav
+                className={styles.alpha}
+                ref={resultsNavRef}
+                tabIndex={-1}
+                /* Can we come up with a better label for this? */
+                aria-label="Jump to search results by starting character"
+              >
+                {activeChars.map((char) => {
+                  return (
+                    <a key={char} href={`#${toDomId(char)}`}>
+                      {char}
+                    </a>
+                  );
+                })}
+              </nav>
+            ) : (
+              /*
+                Use assertive so that screen-readers announce "No results found" as soon as possible
+                while user is typing in search-box. In the form-submit handler, we also trigger
+                a re-announcement if needed (see `handleSubmit` above).
+              */
+              <h3 aria-live="assertive" aria-relevant="all" ref={noResultsRef}>
+                {NO_RESULTS}
+              </h3>
+            )}
           </section>
           <a
             href="https://communications.utk.edu/a-z-index-update-request/"
@@ -249,13 +251,8 @@ const Alpha = () => {
               </div>
               <ul>
                 {itemsByChar.current.get(char)?.flatMap((item) =>
-                  !activeItems.length ||
-                  (activeItems.length > 0 && activeItems.includes(item)) ? (
-                    <li
-                      key={item.id}
-                      id={item.id}
-                      className={styles['result-title']}
-                    >
+                  activeItems.includes(item) ? (
+                    <li key={item.id} className={styles['result-title']}>
                       <a href={item.url}>{item.label}</a>
                       <br />
                       <span className={styles['result-url']}>
