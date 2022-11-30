@@ -79,7 +79,15 @@ p.title {
     font-size: 1.35rem;
   }
 }
-
+.container {
+  position: relative;
+  max-width: 1920px;
+  margin: auto auto;
+}
+.alpha-search {
+  margin-bottom: 5rem;
+  border: 1px solid green;
+}
 .alpha-container {
   background-color: #f6f6f6;
   display: block;
@@ -89,6 +97,7 @@ p.title {
   border-top: 0.6rem solid $utorange;
   border-bottom: 0.6rem solid $utorange;
   margin: 2rem 0;
+  height: auto;
   // Playing with having the alpha stick too
   // position: -webkit-sticky;
   // position: sticky;
@@ -104,33 +113,36 @@ p.title {
   gap: 0.5rem 2rem;
   margin: 0 auto;
   // border: 2px solid green;
-  width: 90vw;
+  width: 100%;
 
   > a {
     padding: 0;
     color: #454647;
     text-align: center;
-    flex: 0 27%;
+    flex: 0 6%;
     display: inline-block;
     // border: 2px solid red;
-    font-size: 3.7rem;
-    font-weight: 600;
+    // font-size: 3.7rem;
+    font-size: $h3-font-size;
+    font-weight: $font-weight-bold;
     text-decoration: none;
     &:hover {
       // background-color: green;
       color: $utlinkriver;
     }
     @media screen and (min-width: 800px) {
-      font-size: 4.7rem;
-      flex: 0 1 5vw;
+      // font-size: 4.7rem;
+      // flex: 0 1 5vw;
+      font-size: $h3-font-size;
+      flex: 0 1 6%;
     }
   }
 }
 .results {
-  width: 90vw;
-  margin: 8rem auto;
+  width: 100%;
+  // margin: 8rem auto;
   @media screen and (min-width: 800px) {
-    width: 70vw;
+    width: 100%;
   }
 }
 .letter-group {
@@ -145,7 +157,7 @@ p.title {
   }
   .letter-container {
     text-align: center;
-    width: 100vw;
+    width: 100%;
     position: -webkit-sticky;
     position: sticky;
     display: block;
@@ -237,6 +249,45 @@ p.title {
     &:hover {
       background-color: $utsmokey;
       color: white;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for modern browsers:
+--------------------------------------------------------------*/
+/* Check for CSS Grid support: */
+@supports (grid-area: auto) {
+  .container {
+    width: 100vw;
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: 1fr;
+  }
+  .search-container {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .results {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  @media screen and (min-width: 800px) {
+    .container {
+      grid-template-columns: 1.7fr 1fr;
+    }
+    .search-container {
+      grid-column: 2 / 3;
+      align-self: start;
+      position: sticky;
+      top: 0;
+    }
+
+    .results {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
     }
   }
 }
