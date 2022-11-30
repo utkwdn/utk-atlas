@@ -137,9 +137,8 @@ const Alpha = () => {
 
       const results = matchSorter(allItems.current, value, {
         keys: ['label'],
-        threshold: matchSorter.rankings.CONTAINS,
+        threshold: matchSorter.rankings.ACRONYM,
       });
-
       setActiveItems(results);
     },
     []
@@ -212,8 +211,7 @@ const Alpha = () => {
                 className={styles.alpha}
                 ref={resultsNavRef}
                 tabIndex={-1}
-                /* Can we come up with a better label for this? */
-                aria-label="Jump to search results by starting character"
+                aria-label="Results by letter"
               >
                 {activeChars.map((char) => {
                   return (
