@@ -150,18 +150,33 @@ const Alpha = () => {
     [_handleChange]
   );
 
+  const inputRef = useRef<HTMLInputElement>(null);
   const resultsNavRef = useRef<HTMLElement>(null);
   const noResultsRef = useRef<HTMLHeadingElement>(null);
 
   const handleSubmit = useCallback<FormEventHandler<HTMLFormElement>>((e) => {
     e.preventDefault();
 
+    const input = inputRef.current;
+    if (!input) return;
+
     /*
-      Wait to ensure that results are up to date (because of debounced change-handler).
-      If there are results, move keyboard-focus to results alpha-nav.
-      If there are no results, announce that to screen-readers (but leave focus in input box).
+      Because of the the debounced change-handler (see `handleChange` above), we need to
+      wait 250ms here to ensure that the results are up to date.
+
+      To prevent changes in these 250ms, we temporarily make the input readonly.
+
+      After the wait:
+        - "Un-readonly" the input.
+        - If there are results, move keyboard-focus to results alpha-nav.
+        - If there are no results, have the screen-reader announce that (but keep focus on input).
     */
+
+    input.readOnly = true;
+
     setTimeout(() => {
+      input.readOnly = false;
+
       if (resultsNavRef.current) {
         resultsNavRef.current.focus();
       } else if (noResultsRef.current) {
@@ -185,6 +200,7 @@ const Alpha = () => {
                 onChange={handleChange}
                 type="search"
                 label="Find a Site"
+                inputRef={inputRef}
               />
               <Button type="submit">Search</Button>
             </form>
