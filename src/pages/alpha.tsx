@@ -234,9 +234,9 @@ const Alpha = () => {
           </section>
           <a
             href="https://communications.utk.edu/a-z-index-update-request/"
-            className="fancyLink"
+            className={styles.fancyLink}
           >
-            Request an edit
+            Request an update to the index
           </a>
         </div>
         <section className={styles.results}>

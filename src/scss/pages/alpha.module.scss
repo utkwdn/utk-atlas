@@ -162,6 +162,8 @@ p.title {
 
   @media screen and (min-width: 800px) {
     flex-direction: row;
+
+    overflow: visible;
   }
   .letter-container {
     text-align: center;
@@ -298,5 +300,51 @@ CSS Grid layout for modern browsers:
       grid-column: 1 / 2;
       grid-row: 1 / 2;
     }
+  }
+}
+.fancyLink {
+  // font-size: 1.2rem;
+  /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
+  line-height: 1.3rem; // keeps > in correct alignment
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin: calc($spacer * 0.5) 0;
+  padding: 0 0 0.5rem 0;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.01rem;
+  text-align: rileght;
+  color: $utsmokey;
+
+  * {
+    display: inline-flex;
+  }
+
+  &:after {
+    content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+
+    transform: scale(0.25);
+    // margin-left: -1.5rem;
+    margin-left: calc($spacer * 0.7);
+    transform-origin: top left;
+    // top: -1.4rem;
+    // top: calc($spacer * 0.2);
+    display: inline-block;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    padding-top: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $utlinkriver;
+    // box-shadow: inset 0px -1px $utlinkriver;
+  }
+  &:hover:after {
+    // margin-left: -1.2rem;
+    margin-left: calc($spacer * 1.1);
+  }
+  .bi {
+    /* turning off any chosen icons */
+    display: none;
   }
 }
