@@ -53,8 +53,6 @@ hr.oa-thick-bar {
     width: 70%;
   }
 }
-.title-container {
-}
 
 p.title {
   font-size: 4.7rem;
@@ -84,15 +82,20 @@ p.title {
   max-width: 1920px;
   margin: auto auto;
 }
-.alpha-search {
-  margin-bottom: 5rem;
-  border: 1px solid green;
+.search-container {
+  width: 90%;
+  margin: 3rem auto;
+  h3 {
+    margin-top: 0;
+  }
 }
+
 .alpha-container {
   background-color: #f6f6f6;
   display: block;
-
-  padding: 3rem 0;
+  width: 110%;
+  left: -5%;
+  padding: 3rem 5%;
   position: relative;
   border-top: 0.6rem solid $utorange;
   border-bottom: 0.6rem solid $utorange;
@@ -102,6 +105,10 @@ p.title {
   // position: -webkit-sticky;
   // position: sticky;
   // top: 0;
+  @media screen and (min-width: 800px) {
+    left: 0;
+    width: 100%;
+  }
 }
 
 .alpha {
@@ -139,8 +146,9 @@ p.title {
   }
 }
 .results {
-  width: 100%;
-  // margin: 8rem auto;
+  width: 90%;
+
+  margin: 3rem auto;
   @media screen and (min-width: 800px) {
     width: 100%;
   }
@@ -161,7 +169,6 @@ p.title {
     position: -webkit-sticky;
     position: sticky;
     display: block;
-    background-color: white;
     top: -1px;
     text-align: left;
     @media screen and (min-width: 800px) {
@@ -263,6 +270,7 @@ CSS Grid layout for modern browsers:
     display: grid;
     gap: 2vw;
     grid-template-columns: 1fr;
+    overflow: auto;
   }
   .search-container {
     grid-column: 1 / 2;
@@ -277,6 +285,7 @@ CSS Grid layout for modern browsers:
   @media screen and (min-width: 800px) {
     .container {
       grid-template-columns: 1.7fr 1fr;
+      padding: 2vw;
     }
     .search-container {
       grid-column: 2 / 3;
