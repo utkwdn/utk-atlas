@@ -18,8 +18,8 @@ const Hero = () => {
     <>
       <Head></Head>
 
-      <div className="hero202112Container">
-        <div className="hero202112A ">
+      <div className="container-fluid">
+        <div className="hero202112A col-6">
           <div className="heroHolderA layoutA ">
             <div className="angleBracketDown "></div>
             <div className="heroSquareA ">
@@ -35,28 +35,11 @@ const Hero = () => {
                 <Image
                   src="https://images.utk.edu/images/www/hero202203/vols-trio-hero-a1.jpg"
                   alt="several smiling students walk together through campus"
-                  height="1500"
-                  width="1366"
+                  width="1500"
+                  height="1366"
                 />
               </picture>
             </div>
-          </div>
-          <div className="heroRainHolderA layoutA ">
-            <picture>
-              <source
-                media="(max-width:767px)"
-                srcSet="https://images.utk.edu/images/www/hero202112/rain-double-01.svg"
-              />
-              <source
-                media="(min-width:768px)"
-                srcSet="https://images.utk.edu/images/www/hero202112/rain-single-01.svg"
-              />
-              <Image
-                src="https://images.utk.edu/images/www/hero202112/rain-double-01.svg"
-                alt=""
-                layout="fill"
-              />
-            </picture>
           </div>
           <div className="heroRectangleHolderA layoutA ">
             <div className="heroRectangleA ">
@@ -115,19 +98,6 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="heroRainHolderTripleA layoutA ">
-            <picture>
-              <source
-                media="(min-width:828px)"
-                srcSet="https://images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-              />
-              <Image
-                src="https://images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-                alt=""
-                layout="fill"
-              />
-            </picture>
-          </div>
           <div className="orangeBarHolderA layoutA ">
             <div className="ginghamChunkA"></div>
             <div className="orangeBarChunkA"></div>
@@ -157,7 +127,7 @@ const Hero = () => {
                   type="image/jpeg"
                 />
                 <Image
-                  src="https://images.utk.edu/images/www/hero202112/hero202112/river-aerial-mobile-02.jpg"
+                  src="https://images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
                   alt="sunset over the Tennessee River that surrounds campus"
                   height="926"
                   width="1686"
@@ -188,13 +158,7 @@ const Hero = () => {
               </picture>
             </div>
           </div>
-          <div className="heroRainHolderB layoutB ">
-            <Image
-              src="https://images.utk.edu/images/www/hero202112/rain-double-01.svg"
-              alt=""
-              layout="fill"
-            />
-          </div>
+
           <div className="heroRectangleHolderB layoutB ">
             <div className="heroRectangleB layoutB">
               <picture>
