@@ -201,27 +201,17 @@ const Alpha = () => {
     <Layout>
       {/* TODO: Provide meta/title stuff in Head here */}
       {/* <Head></Head> */}
-      <Intro
-        title={'A-Z Index'}
-        theme={'Locate the Sites You Need'}
-        intro={
+      <Intro title={'A-Z Index'} theme={''} intro={<div></div>} />
+      <section className={styles['container']}>
+        <div className={styles['search-container']}>
+          <h3>Browse the site index</h3>
           <div>
-            <p className="lead">
-              This tool will help you locate the sites you’re looking for and
-              more. If you find a broken link or would like to add or update an
-              existing link,{' '}
-              <a href="https://communications.utk.edu/a-z-index-update-request/">
-                please let us know
-              </a>
-              .
-            </p>
-            <div>
-              <MemoizedAutocomplete
-                filterOptions={filterOptions}
-                options={allItems.current}
-                onInputChange={handleInputChange}
-              />
-              {/* <input
+            <MemoizedAutocomplete
+              filterOptions={filterOptions}
+              options={allItems.current}
+              onInputChange={handleInputChange}
+            />
+            {/* <input
                 className={styles['form-control']}
                 type="text"
                 list="alphaDataList"
@@ -230,52 +220,56 @@ const Alpha = () => {
               <button> Search </button>
 
               <datalist id="alphaDataList" /> */}
-            </div>
           </div>
-        }
-      />
-
-      <section className={styles['alpha-container']}>
-        <div className={styles.alpha}>
-          {activeChars.map((char) => {
-            return (
-              <a key={char} href={`#${toDomId(char)}`}>
-                {char}
-              </a>
-            );
-          })}
+          <section className={styles['alpha-container']}>
+            <div className={styles.alpha}>
+              {activeChars.map((char) => {
+                return (
+                  <a key={char} href={`#${toDomId(char)}`}>
+                    {char}
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+          <a
+            href="https://communications.utk.edu/a-z-index-update-request/"
+            className={styles.fancyLink}
+          >
+            Request an update to the index
+          </a>
         </div>
-      </section>
-      <section className={styles.results}>
-        {activeChars.map((char) => (
-          <div key={char} className={styles['letter-group']}>
-            <div className={styles['letter-container']}>
-              <h2 id={toDomId(char)} className={styles.letter}>
-                {char}
-              </h2>
+        <section className={styles.results}>
+          {activeChars.map((char) => (
+            <div key={char} className={styles['letter-group']}>
+              <div className={styles['letter-container']}>
+                <h2 id={toDomId(char)} className={styles.letter}>
+                  {char}
+                </h2>
+              </div>
+              <ul>
+                {itemsByChar.current.get(char)?.flatMap((item) =>
+                  !activeItems.length ||
+                  (activeItems.length > 0 && activeItems.includes(item)) ? (
+                    <li
+                      key={item.id}
+                      id={item.id}
+                      className={styles['result-title']}
+                    >
+                      <a href={item.url}>{item.label}</a>
+                      <br />
+                      <span className={styles['result-url']}>
+                        {item.url.replace(/^https?:\/\//, '')}
+                      </span>
+                    </li>
+                  ) : (
+                    []
+                  )
+                )}
+              </ul>
             </div>
-            <ul>
-              {itemsByChar.current.get(char)?.flatMap((item) =>
-                !activeItems.length ||
-                (activeItems.length > 0 && activeItems.includes(item)) ? (
-                  <li
-                    key={item.id}
-                    id={item.id}
-                    className={styles['result-title']}
-                  >
-                    <a href={item.url}>{item.label}</a>
-                    <br />
-                    <span className={styles['result-url']}>
-                      {item.url.replace(/^https?:\/\//, '')}
-                    </span>
-                  </li>
-                ) : (
-                  []
-                )
-              )}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </section>
       </section>
     </Layout>
   );
