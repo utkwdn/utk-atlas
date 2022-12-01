@@ -790,7 +790,7 @@ body.academics {
   }
 }
 
-.fake-d-flex > div[class$='__inner-container'] {
+.fake-d-flex {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
@@ -806,7 +806,7 @@ body.academics {
   }
 }
 
-.fake-d-flex-end > div[class$='__inner-container'] {
+.fake-d-flex-end {
   // temporary fix until we have the framework in place
   //parent flexbox group for .page-title-group and .hero-img-group
   display: flex;
