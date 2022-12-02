@@ -111,7 +111,8 @@
 @import '@wordpress/block-library/build-style/video/style.css';
 
 // ------  Gutenberg Core Blocks than need styling
-@import './core-blocks/layout';
+// This may not be necessary. Commenting out temporarily to see.
+// './core-blocks/layout';
 
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';
