@@ -31,6 +31,11 @@
   }
 }
 
+// basic alignment needed
+.has-text-align-left {
+  text-align: left;
+}
+
 .wp-site-blocks {
   > .alignleft {
     float: left;
