@@ -191,6 +191,9 @@
   > .is-layout-flow {
     margin-block-start: 0 !important; // this overrides the default spacing set by WP is-layout-flow
   }
+  > .is-layout-flow > * {
+    margin-block-start: 4rem;
+  }
 }
 .profileCardContainer > *,
 .subjectCardContainer > * {
@@ -400,5 +403,18 @@
   }
   p + .wp-block-buttons {
     margin: calc($spacer * 3) 0 calc($spacer * 4);
+  }
+}
+
+.thirds {
+  justify-content: space-between;
+  gap: 3rem;
+  & > *,
+  & > :first-child,
+  & > :nth-child(2) {
+    flex: 1 1 100%;
+    @media screen and (min-width: 800px) {
+      flex: 1 1 25%;
+    }
   }
 }
