@@ -191,6 +191,9 @@
   > .is-layout-flow {
     margin-block-start: 0 !important; // this overrides the default spacing set by WP is-layout-flow
   }
+  > .is-layout-flow > * {
+    margin-block-start: 4rem;
+  }
 }
 .profileCardContainer > *,
 .subjectCardContainer > * {
