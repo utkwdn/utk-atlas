@@ -1649,6 +1649,7 @@ p.theme {
   }
 }
 // settings needed – pulled from chancellor
-.has-white-background-color {
-  background-color: $white !important;
+
+.whiteOpacity {
+  background-color: RGBA(255, 255, 255, 0.8) !important;
 }

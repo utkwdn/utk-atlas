@@ -31,6 +31,11 @@
   }
 }
 
+// basic alignment needed
+.has-text-align-left {
+  text-align: left;
+}
+
 .wp-site-blocks {
   > .alignleft {
     float: left;
@@ -127,6 +132,7 @@ body {
   .is-layout-flex > * {
     margin: 0;
   }
+  order: 2px solid;
 }
 
 // This stolen from editor.css in wordpress core

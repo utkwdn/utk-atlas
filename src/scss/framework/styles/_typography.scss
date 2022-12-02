@@ -95,6 +95,9 @@ h6 {
 p.lead + p {
   margin-top: calc($spacer * 2);
 }
+p strong {
+  font-weight: $font-weight-bold;
+}
 
 h2.heading-oa-bar {
   // adds a thick bar under h2 headings
