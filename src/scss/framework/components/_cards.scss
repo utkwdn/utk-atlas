@@ -195,7 +195,7 @@
     margin-left: 0 !important; /* this overrides the   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) margin-left:auto on _layout.scss */
   }
-  > .is-layout-flow > * {
+  > .is-layout-flow > *:first-child {
     margin-block-start: 4rem;
   }
 }
