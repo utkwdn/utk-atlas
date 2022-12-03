@@ -189,7 +189,10 @@ const Alpha = () => {
     <Layout>
       {/* TODO: Provide meta/title stuff in Head here */}
       {/* <Head></Head> */}
-      <Intro title={'A-Z Index'} theme={''} intro={<div></div>} />
+      {/*<Intro title={'A-Z Index'} theme={''} intro={<div></div>} />*/}
+      <div className={styles['h1Container']}>
+        <h1>A-Z Index</h1>
+      </div>
       <section className={styles['container']}>
         <div className={styles['search-container']}>
           <h3>Browse the site index</h3>
