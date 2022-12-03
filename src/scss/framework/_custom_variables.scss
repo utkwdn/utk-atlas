@@ -141,10 +141,6 @@ $theme-colors: map-merge(
 color:$utsmokey;
 }
 
-.has-white-background-color {
-  background-color: $white !important;
-}
-
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark: $utsmokeytext;
 $color-contrast-light: $white !default;
