@@ -3,19 +3,154 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect } from 'react';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
 
 const Hero = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.saveStyles('.hero202112Container, .layoutB'); // stores the css information before in-line styles from animation are put in place
+
+    ScrollTrigger.matchMedia({
+      // desktop
+      '(min-width: 768px)': function () {
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+        Pinning Section – .pointer-events: none; // must be added to the container in css, otherwise it won't scroll!!
+        ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+        gsap.to('.hero202112Container', {
+          scrollTrigger: {
+            trigger: '.hero202112A',
+            start: 'top top',
+            scrub: true,
+            end: () =>
+              `+=${document.querySelector('.hero202112A').offsetHeight}`,
+            pin: true,
+          },
+        });
+
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+        Timeline for hero image animations
+        ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+        var tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.hero202112A',
+            start: 'top top',
+            scrub: true,
+            toggleActions: 'start pause reverse pause',
+          },
+        });
+
+        tl.addLabel('layoutA', 0);
+        tl.addLabel('layoutB', 0.2);
+
+        tl.to(
+          '.heroHolderA',
+          {
+            y: -500,
+            duration: 2,
+            opacity: 0,
+          },
+          'layoutA'
+        );
+
+        tl.from(
+          '.heroHolderB',
+          {
+            y: '240%',
+            duration: 2,
+          },
+          'layoutB'
+        );
+
+        tl.to(
+          '.heroRainHolderA',
+          {
+            y: -400,
+            duration: 2,
+            opacity: 0,
+          },
+          'layoutA+=.5'
+        );
+
+        tl.to(
+          '.heroRainHolderTripleA',
+          {
+            y: -500,
+            duration: 2,
+            opacity: 0,
+          },
+          'layoutA+=.75'
+        );
+
+        tl.to(
+          '.orangeBarHolderA',
+          {
+            y: -400,
+            duration: 2,
+            opacity: 0,
+          },
+          'layoutA+=1'
+        );
+
+        tl.to(
+          '.heroRectangleA',
+          {
+            y: -500,
+            duration: 2,
+            opacity: 0,
+          },
+          'layoutA+=.75'
+        );
+
+        tl.from(
+          '.heroRainHolderB',
+          {
+            y: '1150%',
+            duration: 2.2,
+            delay: 1,
+          },
+          'layoutB+=.25'
+        );
+
+        tl.from(
+          '.riverAerialHolder',
+          {
+            y: '65%',
+            duration: 2.2,
+          },
+          'layoutB+=1.25'
+        );
+
+        tl.from(
+          '.heroRectangleHolderB',
+          {
+            y: '165%',
+            duration: 2.5,
+          },
+          'layoutB+=.75'
+        );
+        tl.from(
+          '.orangeBarHolderB',
+          {
+            y: '1400%',
+            duration: 2.2,
+          },
+          'layoutB+=.5'
+        );
+      },
+      '(max-width: 799px)': function () {},
+    });
+  }, []);
+
   return (
     <>
       {/* <Head></Head> */}
-
-      {/* Update to use gsap node module (https://github.com/greensock/GSAP) */}
-      <Script src="./js/gsap.min.js" strategy="beforeInteractive" />
-      <Script src="./js/scrollTrigger.min.js" strategy="beforeInteractive" />
-      <Script src="./js/hero.js" />
 
       <div className="hero202112Container">
         <div className="hero202112A ">
@@ -234,7 +369,7 @@ const Hero = () => {
         </div>
         {/* end hero202112A */}
       </div>
-
+      {/* end hero202112Container */}
       <div className="container">
         <ul className="nav nav-fill internal-links py-4 row">
           <li className="nav-item col-md-4">
