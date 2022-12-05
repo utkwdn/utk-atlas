@@ -42,7 +42,7 @@ body {
 
   width: 100vw;
 }
-.campus-gallery > div {
+.campus-gallery {
   background-image: url('https://images.utk.edu/designsystem/www2021/v1/i/knoxville_illustration_3.svg');
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -52,20 +52,26 @@ body {
   }
 }
 
+.fix-align {
+  &.is-layout-constrained > * {
+    margin-left: 0 !important; /* this overrides the   .is-layout-constrained */
+  }
+}
 // HOME CARDS
 .cta-offset {
   // used on white CTA home cards to overlap next item
-  margin-bottom: -8rem !important;
+  margin-bottom: -5rem !important;
   h3 {
     margin-top: calc($spacer * 1.25);
   }
   // background-color: white !important;
 }
 
-.cta-card-flex > div[class$='__inner-container'] {
+.cta-card-flex {
   display: flex;
 }
 .home-card {
+  margin: 0;
   //used on dark grey cards on home
   transition: all 0.2s ease;
   color: $utsmokeytext;
@@ -74,15 +80,24 @@ body {
   padding: calc($spacer * 2);
   //  $utcoolsmokey: #313e48;
   //  $utcoolrock: #d9dfe3;
+  @include media-breakpoint-up(lg) {
+    margin: calc($spacer * 2);
+  }
   .lead {
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     strong {
-      font-weight: 900;
+      font-weight: $font-weight-bolder;
     }
   }
 
   img {
     transition: all 0.4s ease-out;
+  }
+  &.push-down {
+    margin-top: 50vw;
+    @media screen and (min-width: 800px) {
+      margin-top: 0;
+    }
   }
 }
 .strip-orange .btn-link {
@@ -100,7 +115,10 @@ body {
       margin-top: calc($spacer * 2);
     }
   }
-
+  .gallery-img-card img {
+    // this makes the cards appear in the group.
+    position: relative;
+  }
   .gallery-card {
     // controls the animated cards used on the home for HOME SWEET HOME Section
     overflow: hidden;
@@ -467,27 +485,54 @@ Buttons with Chevrons – pulled from ExpressionEngine
 .futureStat {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  @media screen and (min-width: 1300px) {
+    gap: 0;
+  }
+  gap: $spacer;
   .statRow {
+    // border: 2px solid blue;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-
-    column-gap: 2rem;
+    @media screen and (min-width: 1300px) {
+      flex-direction: row;
+      gap: $spacer;
+    }
+    @media screen and (min-width: 1430px) {
+      max-width: 90%;
+    }
     :nth-child(odd) {
       text-shadow: 2px 2px 0px #f6f6f6, 4px 4px 0px #ff8200;
+
       //   font-size: 2rem;
-      flex-basis: 20%;
-      flex-grow: 1;
-      align-self: flex-end;
+      flex: 1 0 450%;
+      @media screen and (min-width: 1300px) {
+        flex: 1 0 30%;
+      }
+      align-self: flex-start;
     }
     :nth-child(even) {
-      flex-basis: 70%;
+      flex: 1 1 55%;
+      align-self: flex-start;
+      // border: 2px solid green;
+      @media screen and (min-width: 1300px) {
+        flex: 1 1 70%;
+        align-self: center;
+      }
     }
-    .text-data {
+    p.text-data {
       font-size: calc(2rem + 2.25vw);
-      text-align: center;
+      font-size: $h1-font-size;
+      text-align: left;
+      margin-top: 0;
+
+      @media screen and (min-width: 1300px) {
+        text-align: right;
+      }
     }
+  }
+  .is-layout-flow > * {
+    margin-block-start: 0;
   }
 }
 
@@ -627,26 +672,26 @@ Buttons with Chevrons – pulled from ExpressionEngine
     padding-top: 35rem;
   }
 }
-.home-alumni-strip,
-.strip-with-card {
-  position: relative;
-  .strip {
-    @media (max-width: 600px) {
-      background-size: cover;
-      padding-top: 5rem;
-      background-position: -20rem 0;
-    }
-    .home-card {
-      margin-top: 20rem;
-      margin-bottom: 0;
-    }
-    @media (max-width: 800px) {
-      background-size: cover;
-      padding-top: 5rem;
-      background-position: center;
-    }
-  }
-}
+// .home-alumni-strip,
+// .strip-with-card {
+//   position: relative;
+//   .strip {
+//     @media (max-width: 600px) {
+//       background-size: cover;
+//       padding-top: 5rem;
+//       background-position: -20rem 0;
+//     }
+//     .home-card {
+//       margin-top: 20rem;
+//       margin-bottom: 0;
+//     }
+//     @media (max-width: 800px) {
+//       background-size: cover;
+//       padding-top: 5rem;
+//       background-position: center;
+//     }
+//   }
+// }
 
 .card {
   overflow: hidden;
