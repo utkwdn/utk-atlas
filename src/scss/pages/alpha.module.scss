@@ -43,7 +43,6 @@
 
 h1.area {
   font-size: 2.6rem;
-  font-weight: 600;
   font-weight: $font-weight-bold;
   font-style: italic;
   color: #9d9d9d;
@@ -71,7 +70,6 @@ hr.oa-thick-bar {
 
 p.title {
   font-size: 4.7rem;
-  font-weight: 600;
   font-weight: $font-weight-bold;
   max-width: 10ch;
   line-height: 4.6rem;
@@ -87,7 +85,6 @@ p.title {
     // background-color: green;
   }
   p {
-    font-weight: 600;
     font-weight: $font-weight-bold;
     color: #707070;
     font-size: 1.35rem;
@@ -219,7 +216,6 @@ p.title {
 
     h2.letter {
       font-size: 4rem;
-      font-weight: 600;
       font-weight: $font-weight-bold;
       margin-top: 2rem;
       @media screen and (min-width: 800px) {
@@ -247,7 +243,6 @@ p.title {
       padding: 0 0.5rem 0.2rem 0;
       margin-bottom: 0.1rem;
       display: inline-block;
-      font-weight: 600;
       font-weight: $font-weight-bold;
       color: $utlinkriver;
       .result-search-term {
