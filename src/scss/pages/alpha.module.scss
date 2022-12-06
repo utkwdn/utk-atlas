@@ -121,15 +121,17 @@ p.title {
   display: block;
   width: 110%;
   left: -5%;
-  padding: 3rem 5%;
   position: relative;
   border-top: 0.6rem solid $utorange;
   border-bottom: 0.6rem solid $utorange;
   margin: 2rem 0;
   height: auto;
+  padding: 0.5rem 5%;
   @media screen and (min-width: 800px) {
     left: 0;
     width: 100%;
+
+    padding: 3rem 5%;
   }
 }
 
@@ -258,7 +260,8 @@ p.title {
   }
 }
 
-.input-wrapper {
+.input-wrapper,
+.alpha-form {
   margin: 2rem 0;
   border-left: 0.6rem solid $utorange;
   // margin-left: -0.25rem;
@@ -269,19 +272,23 @@ p.title {
   position: relative;
   &:focus {
   }
-  .form-control {
+  [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
+    border-radius: 0 !important;
+  }
+  .MuiTextField-root {
     width: 80%;
-    border-radius: 0;
-    border: none;
-    padding: 0.25rem 1rem;
-    border-top: 1px solid $utgray4;
-    border-bottom: 1px solid $utgray4;
-    border-left: none;
-    color: $utsmokey;
-    &:focus {
-      outline: none !important;
-      border: 2px solid $utlinkriver;
-    }
+    // border: none;
+    // padding: 0.25rem 1rem;
+
+    padding: 16.5px 14px;
+    // border-top: 1px solid $utgray4;
+    // border-bottom: 1px solid $utgray4;
+    // border-left: none;
+    // color: $utsmokey;
+    // &:focus {
+    //   outline: none !important;
+    //   border: 2px solid $utlinkriver;
+    // }
   }
   button {
     color: #707070;

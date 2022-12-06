@@ -197,12 +197,14 @@ const Alpha = () => {
         <div className={styles['search-container']}>
           <h3>Browse the site index</h3>
           <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles['alpha-form']}>
               <TextField
                 onChange={handleChange}
                 type="search"
                 label="Find a Site"
                 inputRef={inputRef}
+                fullWidth
+                id="fullWidth"
               />
               <Button type="submit">Search</Button>
             </form>
@@ -235,12 +237,6 @@ const Alpha = () => {
               </h3>
             )}
           </section>
-          <a
-            href="https://communications.utk.edu/a-z-index-update-request/"
-            className={styles.fancyLink}
-          >
-            Request an update to the index
-          </a>
         </div>
         <section className={styles.results}>
           {activeChars.map((char) => (
@@ -268,6 +264,12 @@ const Alpha = () => {
             </div>
           ))}
         </section>
+        <a
+          href="https://communications.utk.edu/a-z-index-update-request/"
+          className={styles.fancyLink}
+        >
+          Request an update to the index
+        </a>
       </section>
     </Layout>
   );
