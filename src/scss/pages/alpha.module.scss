@@ -102,10 +102,9 @@ p.title {
   margin: 3rem auto 0 auto;
   align-self: flex-start;
   position: sticky;
-  top: -11rem;
+  top: -9rem;
   background-color: $white;
   z-index: 2;
-  padding-bottom: 2rem;
   @media screen and (min-width: 800px) {
     margin: 3rem auto;
     position: sticky;
@@ -119,8 +118,8 @@ p.title {
 .alpha-container {
   background-color: #f6f6f6;
   display: block;
-  width: 110%;
-  left: -5%;
+  width: 112%;
+  left: -6%;
   position: relative;
   border-top: 0.6rem solid $utorange;
   border-bottom: 0.6rem solid $utorange;
@@ -130,8 +129,10 @@ p.title {
   @media screen and (min-width: 800px) {
     left: 0;
     width: 100%;
-
     padding: 3rem 5%;
+  }
+  h3 {
+    margin-top: $spacer;
   }
 }
 
@@ -156,7 +157,7 @@ p.title {
     align-self: center;
     // border: 2px solid red;
     // font-size: 3.7rem;
-    font-size: $h3-font-size;
+    font-size: $h4-font-size;
     font-weight: $font-weight-bold;
     text-decoration: none;
     &:hover {
@@ -176,14 +177,15 @@ p.title {
 
   margin: 0 auto;
   [id] {
-    @media (min-height: 400px) {
-      scroll-margin-top: 400px;
+    /* sets the space the top needs to make sure letters are visible on jump */
+    @media (min-height: 200px) {
+      scroll-margin-top: 210px;
     }
   }
   @media screen and (min-width: 800px) {
     width: 100%;
     [id] {
-      @media (min-height: 400px) {
+      @media (min-height: 200px) {
         scroll-margin-top: 0;
       }
     }
@@ -301,47 +303,10 @@ p.title {
     border-right: 1px solid $utgray4;
     text-transform: uppercase;
     font-weight: $font-weight-bolder;
-    font-size: 1.2rem;
+    font-size: $h6-font-size;
     &:hover {
       background-color: $utsmokey;
       color: white;
-    }
-  }
-}
-
-/*--------------------------------------------------------------
-CSS Grid layout for modern browsers:
---------------------------------------------------------------*/
-/* Check for CSS Grid support: */
-@supports (grid-area: auto) {
-  .container {
-    width: 100vw;
-    display: grid;
-    gap: 2vw;
-    grid-template-columns: 1fr;
-  }
-  .search-container {
-    grid-column: 1 / 2;
-    grid-row: 1;
-  }
-
-  .results {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  @media screen and (min-width: 800px) {
-    .container {
-      grid-template-columns: 1.7fr 1fr;
-      padding: 0 2vw;
-    }
-    .search-container {
-      grid-column: 2 / 3;
-    }
-
-    .results {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
     }
   }
 }
@@ -389,5 +354,42 @@ CSS Grid layout for modern browsers:
   .bi {
     /* turning off any chosen icons */
     display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for modern browsers:
+--------------------------------------------------------------*/
+/* Check for CSS Grid support: */
+@supports (grid-area: auto) {
+  .container {
+    width: 100vw;
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: 1fr;
+  }
+  .search-container {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .results {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  @media screen and (min-width: 800px) {
+    .container {
+      grid-template-columns: 1.7fr 1fr;
+      padding: 0 2vw;
+    }
+    .search-container {
+      grid-column: 2 / 3;
+    }
+
+    .results {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
   }
 }
