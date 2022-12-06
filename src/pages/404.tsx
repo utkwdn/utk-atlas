@@ -24,9 +24,9 @@ export default function Page(): JSX.Element {
                 Not Found
               </h1>
               <p>
-                We're sorry. It looks like nothing was found at this location.
-                Try re-entering the address or search our site using the options
-                below.
+                We&apos;re sorry. It looks like nothing was found at this
+                location. Try re-entering the address or search our site using
+                the options below.
               </p>
             </div>
           </div>
