@@ -243,7 +243,7 @@ const Header = () => {
 
               <Navbar.Offcanvas
                 id="main-menu"
-                placement="start"
+                placement="end"
                 aria-label="Menu"
               >
                 <Offcanvas.Header
