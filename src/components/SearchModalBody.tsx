@@ -1,17 +1,27 @@
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import SiteSearch from './SiteSearch';
+import { display } from '@mui/system';
+import JSXStyle from 'styled-jsx/style';
 
-const SearchModalBody = () => (
+interface Props {
+  displayTitle?: boolean;
+}
+
+const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
   <div className="modal-body">
     <div className="container-xxl">
-      <div className="row justify-content-center">
-        <div className="col-12 col-md-10 col-lg-6">
-          <h1 className="text-center mt-md-5 mb-2 mb-md-5 fw-lighter">
-            Search
-          </h1>
+      {displayTitle ? (
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-6">
+            <h1 className="text-center mt-md-5 mb-2 mb-md-5 fw-lighter">
+              Search
+            </h1>
+          </div>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
       <div className="row justify-content-center">
         <div className="col-12 col-xl-8">
           <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">

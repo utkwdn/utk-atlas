@@ -1,0 +1,27 @@
+.four-oh-four-content {
+  text-align: center;
+  background-color: #f6f6f6;
+  margin-top: 3em;
+  margin-bottom: 4em;
+  padding-bottom: 3em;
+}
+
+.search-container {
+  background-color: #ffffff;
+  width: 66%;
+  margin: 0px auto;
+  border: 1px solid #d4d4d4;
+  text-align: left;
+  @media screen and (max-width: 1600px) {
+    width: 100%;
+  }
+}
+
+.heading-seperator::before {
+  font-weight: 400;
+  content: '|';
+  @media screen and (max-width: 800px) {
+    content: '\A';
+    white-space: pre-wrap;
+  }
+}
