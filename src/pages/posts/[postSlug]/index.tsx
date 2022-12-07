@@ -1,11 +1,12 @@
 import { getNextStaticProps, is404 } from '@faustjs/next';
 import { client, Post } from 'client';
-import { Footer, Header, Hero } from 'components';
+import { Footer, Header, PageTitle } from 'components';
+import ParsedMarkup from 'components/ParsedMarkup';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 export interface PostProps {
-  post: Post | Post['preview']['node'] | null | undefined;
+  post: Post | null | undefined;
 }
 
 export function PostComponent({ post }: PostProps) {
@@ -14,29 +15,28 @@ export function PostComponent({ post }: PostProps) {
 
   return (
     <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
+      <Header />
 
       <Head>
         <title>
-          {post?.title()} - {generalSettings.title}
+          {post?.title()} - {generalSettings?.title}
         </title>
       </Head>
 
-      <Hero
-        title={post?.title()}
-        bgImage={post?.featuredImage?.node?.sourceUrl()}
+      <PageTitle
+        title={post?.title() || ''}
+        bgImage={post?.featuredImage?.node?.sourceUrl() || undefined}
       />
 
       <main className="content content-single">
-        <div className="wrap">
-          <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
+        <div className="container-xxl py-5">
+          <div>
+            <ParsedMarkup content={post?.content() || ''} />
+          </div>
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings.title} />
+      <Footer copyrightHolder={generalSettings?.title || undefined} />
     </>
   );
 }

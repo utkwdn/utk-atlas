@@ -5,21 +5,21 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="icon" href="/images/favicons/favicon.ico" sizes="any" />
           <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
+            rel="icon"
+            href="/images/favicons/icon.svg"
+            type="image/svg+xml"
           />
           <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public%20Sans%3Aital%2Cwght%400%2C100..900%3B1%2C100..900&amp;subset=latin%2Clatin-ext"
+            rel="apple-touch-icon"
+            href="/images/favicons/apple-touch-icon.png"
           />
+          <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public%20Sans%3Aital%2Cwght%400%2C100..900%3B1%2C100..900&amp;subset=latin%2Clatin-ext"
             type="text/css"
-            media="all"
+            href="https://cloud.typography.com/6831932/6125612/css/fonts.css"
           />
         </Head>
         <body>

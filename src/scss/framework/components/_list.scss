@@ -1,0 +1,58 @@
+.listGroup {
+  ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    li {
+      border-bottom: none;
+      text-align: left;
+      padding: calc($spacer * 1.5) 0;
+      margin: $spacer;
+
+      width: fit-content;
+      //   border: 1px solid red;
+
+      position: relative;
+      a {
+        // font-size: $h4-font-size;
+        font-size: calc($h2-font-size * 0.4);
+        // line-height: 90%;
+        line-height: $p-font-size;
+        font-weight: $font-weight-bold;
+        color: $utsmokey;
+        text-decoration: none;
+        &:before {
+          content: '';
+          position: absolute;
+
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+        &:hover {
+          color: $utlinkriver;
+        }
+      }
+      &:before {
+        // using arrow made from squares – rocky top arrow.
+        content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+        transform: scale(0.3);
+        // transform: scale(0.25); */ size used for fancyLink */
+        transition: all 0.2s ease-out;
+        font-size: var(--wp--custom--typography--tiny);
+        transform-origin: calc($spacer * 0.3) center;
+        position: absolute;
+        bottom: calc($spacer * -1.9);
+        display: block;
+        width: 100%;
+        left: 0;
+      }
+      &:hover:before {
+        margin-left: 0.7rem;
+      }
+    }
+  }
+}

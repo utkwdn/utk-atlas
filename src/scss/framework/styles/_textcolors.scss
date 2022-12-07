@@ -1,0 +1,22 @@
+.has-light-color {
+  @extend .text-light;
+}
+.has-smokey-color {
+  @extend .text-smokey;
+}
+.has-dark-color {
+  @extend .text-dark;
+}
+
+.has-orange-color {
+  @extend .text-orange;
+}
+.has-white-color {
+  @extend .text-white;
+}
+.has-smokey-x-color {
+  @extend .text-dark;
+}
+.has-gray-2-color {
+  @extend .text-gray2;
+}

@@ -1,0 +1,132 @@
+@import 'scss/common';
+//custom
+.fullscreen-bg {
+  width: 100%;
+  background-size: cover;
+  display: block;
+  video.fullscreen-bg__video {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.st0 {
+  fill: none;
+  stroke: #ff8200;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+// pulled from ExpressionEngine css_itavhomegraphic.css
+.box-itav {
+  grid-column: 1 / 13;
+  -ms-grid-column-span: 24;
+  -ms-grid-column: 1;
+  grid-column: 1 / 13;
+  color: #58595b;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.box-itav:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.box-itav .box-itav-image {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  padding: 1rem;
+  background-position: -125px top;
+  box-shadow: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+@media (min-width: 576px) {
+  .box-itav .box-itav-image {
+    background-position: 0px top;
+    padding: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .box-itav .box-itav-image {
+    background-position: left top;
+    padding: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .box-itav .box-itav-image {
+    padding: 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .box-itav .box-itav-image {
+    padding: 6rem;
+  }
+}
+.box-itav .box-itav-image svg {
+  width: 55%;
+  max-width: 100px;
+  height: auto;
+  margin: auto;
+  float: none;
+}
+.box-itav .box-itav-image h1 {
+  background-repeat: no-repeat;
+}
+.box-itav img {
+  width: 100%;
+  height: auto;
+}
+.box-itav .box-itav-meta {
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  margin-top: 20rem;
+}
+@media (min-width: 768px) {
+  .box-itav .box-itav-meta {
+    width: 50%;
+    margin-top: 0;
+    margin-left: calc(50% - 2rem);
+  }
+}
+.box-itav .btn-smokey {
+  background: #58595b;
+  color: white;
+  border-radius: 0;
+}
+.box-itav .btn-smokey:hover {
+  background: #3f4041;
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: '';
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.box-anniversary {
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.box-anniversary:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

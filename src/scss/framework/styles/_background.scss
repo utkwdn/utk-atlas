@@ -1,0 +1,29 @@
+// Here we extend wordpress's classes to use bootstraps as well
+
+.has-orange-background-color {
+  @extend .bg-orange;
+}
+.has-smokey-background-color {
+  @extend .bg-smokey;
+}
+.has-gray-2-background-color {
+  @extend .bg-gray2;
+}
+.has-smokey-background-color {
+  @extend .bg-smokey;
+}
+.has-dark-background-color,
+.has-smokey-x-background-color {
+  @extend .bg-dark;
+}
+.has-light-background-color {
+  @extend .bg-light;
+}
+
+.has-white-background-color {
+  @extend .bg-white;
+}
+
+.has-background {
+  // padding: $spacer * 2;
+}

@@ -31,8 +31,8 @@ export interface PaginationProps {
 }
 
 export default function Pagination({ pageInfo, basePath }: PaginationProps) {
-  const previousPageUrl = `${basePath}/before/${pageInfo?.startCursor}`;
-  const nextPageUrl = `${basePath}/after/${pageInfo?.endCursor}`;
+  const previousPageUrl = `${basePath}/before/${pageInfo?.startCursor || ''}`;
+  const nextPageUrl = `${basePath}/after/${pageInfo?.endCursor || ''}`;
 
   return (
     <nav className="pagination" aria-label="Pagination">
