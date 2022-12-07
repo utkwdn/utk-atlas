@@ -239,7 +239,7 @@ const Hero = () => {
               <li>
                 <a
                   className="btn btn-chevron text-uppercase mb-3 hero-cta"
-                  href="https://admissions.utk.edu/visit/"
+                  href="https://staging.cms.utk.edu/visit/"
                 >
                   visit campus
                 </a>
