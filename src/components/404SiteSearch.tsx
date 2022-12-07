@@ -31,7 +31,7 @@ interface Google {
   };
 }
 
-const GNAME = 'this-site-results';
+const GNAME = '404-this-site-results';
 
 const SiteSearch = () => {
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,6 @@ const SiteSearch = () => {
     so we use an empty dependency array in this `useEffect()`.
   */
   useEffect(() => {
-    console.log(resultsRef.current);
     if (!resultsRef.current) {
       console.error(
         '`resultsRef.current` should be assigned to the search-results div but was not.'
@@ -78,7 +77,7 @@ const SiteSearch = () => {
     <div>
       <form
         className="form-inline hidden-print mt-4"
-        id="cse-searchbox-form"
+        id="404-cse-searchbox-form"
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -119,7 +118,7 @@ const SiteSearch = () => {
             title="Search utk.edu"
             placeholder="Example: Apply, Payroll, Provost, English Department"
             name="q"
-            id="q"
+            id="404-q"
           />
           <button type="submit" className="btn btn-secondary">
             <svg

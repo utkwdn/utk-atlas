@@ -1,42 +1,22 @@
-
-
-
 .has-light-color {
   @extend .text-light;
 }
-
-
+.has-smokey-color {
+  @extend .text-smokey;
+}
 .has-dark-color {
   @extend .text-dark;
 }
 
-
 .has-orange-color {
   @extend .text-orange;
 }
-
-
-////.has-globe-color {
-////  @extend .text-globe;
-////}
-////
-////
-////.has-success-color {
-////  @extend .text-success;
-////}
-
-
-.has-primary-color {
-  @extend .text-utlink;
+.has-white-color {
+  @extend .text-white;
 }
-
-
-//.has-info-color {
-//  @extend .text-info;
-//}
-//.has-warning-color {
-//  @extend .text-warning;
-//}
-//.has-danger-color {
-//  @extend .text-danger;
-//}
+.has-smokey-x-color {
+  @extend .text-dark;
+}
+.has-gray-2-color {
+  @extend .text-gray2;
+}

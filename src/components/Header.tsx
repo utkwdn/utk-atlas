@@ -213,9 +213,9 @@ const Header = () => {
         >
           <div className="container-xxl">
             <div className="row justify-content-between py-3 py-md-4 py-lg-0 w-100">
-              <div className="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-3 align-items-center">
+              <div className="site-logo">
                 <Link href="/">
-                  <a className="d-grid h-100 mt-lg-2">
+                  <a className="d-grid h-100">
                     <img
                       src="/images/chrome/logo-horizontal-left-smokey.svg"
                       alt="University of Tennessee, Knoxville"
@@ -243,7 +243,7 @@ const Header = () => {
 
               <Navbar.Offcanvas
                 id="main-menu"
-                placement="start"
+                placement="end"
                 aria-label="Menu"
               >
                 <Offcanvas.Header

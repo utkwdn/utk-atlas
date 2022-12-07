@@ -1,27 +1,12 @@
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import SiteSearch from './SiteSearch';
+import SiteSearch from './404SiteSearch';
 import { display } from '@mui/system';
 import JSXStyle from 'styled-jsx/style';
 
-interface Props {
-  displayTitle?: boolean;
-}
-
-const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
+const SearchModalBody = () => (
   <div className="modal-body">
     <div className="container-xxl">
-      {displayTitle ? (
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-6">
-            <h1 className="text-center mt-md-5 mb-2 mb-md-5 fw-lighter">
-              Search
-            </h1>
-          </div>
-        </div>
-      ) : (
-        <></>
-      )}
       <div className="row justify-content-center">
         <div className="col-12 col-xl-8">
           <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
@@ -32,7 +17,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
               <div>
                 <form
                   className="form-inline hidden-print mt-4"
-                  id="events-searchbox-form"
+                  id="404-events-searchbox-form"
                   action="https://calendar.utk.edu/search"
                 >
                   <div className="mb-3 input-group">
@@ -48,7 +33,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
                       title="Search events"
                       placeholder="Example: Orientation, Art Show, Yoga Session"
                       name="search"
-                      id="q-events"
+                      id="404-q-events"
                     />
                     <button type="submit" className="btn btn-secondary">
                       <svg
@@ -72,7 +57,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
               <div>
                 <form
                   className="form-inline hidden-print mt-4"
-                  id="news-searchbox-form"
+                  id="404-news-searchbox-form"
                   action="https://news.utk.edu/"
                 >
                   <div className="mb-3 input-group">
@@ -85,7 +70,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
                       title="Search news"
                       placeholder="Example: Dean's List, ORNL, Capstone Project"
                       name="s"
-                      id="q-news"
+                      id="404-q-news"
                     />
                     <button type="submit" className="btn btn-secondary">
                       <svg
@@ -108,7 +93,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
               <div>
                 <form
                   className="form-inline hidden-print mt-4"
-                  id="dir-searchbox-form"
+                  id="404-dir-searchbox-form"
                   action="https://directory.utk.edu/search"
                 >
                   <div className="mb-3 input-group">
@@ -121,7 +106,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
                       title="Search directory"
                       placeholder="Example: Jane Doe, NetID, email@utk.edu"
                       name="query"
-                      id="search-bar"
+                      id="404-search-bar"
                     />
                     <button type="submit" className="btn btn-secondary">
                       <svg

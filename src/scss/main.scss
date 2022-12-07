@@ -111,6 +111,7 @@
 @import '@wordpress/block-library/build-style/video/style.css';
 
 // ------  Gutenberg Core Blocks than need styling
+// This may not be necessary.
 @import './core-blocks/layout';
 
 // ------  UT Regions – LOCAL
@@ -137,8 +138,10 @@
 @import './framework/components/accordion_folds';
 @import './framework/components/calendars';
 @import './framework/components/cards';
+@import './framework/components/columns';
 @import './framework/components/forms';
 @import './framework/components/gallery';
+@import './framework/components/list';
 @import './framework/components/jumbotron';
 @import './framework/components/latest_posts';
 @import './framework/components/profiles';
@@ -169,4 +172,5 @@
 
 // Main Site
 
+@import './components/Hero.module.scss';
 @import '_extended';
