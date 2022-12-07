@@ -59,7 +59,8 @@ const SiteSearch = () => {
     try {
       const { google } = window as typeof window & { google?: Google };
       if (!google) {
-        console.error('`window.google` should exist but does not');
+        console.log(window);
+        console.error('`window.google` should exist but does not (useEffect)');
         return;
       }
 
@@ -85,7 +86,8 @@ const SiteSearch = () => {
           try {
             const { google } = window as typeof window & { google?: Google };
             if (!google) {
-              console.error('`window.google` should exist but does not');
+              console.log(window);
+              console.error('`window.google` should exist but does not (form)');
               return;
             }
 
