@@ -20,13 +20,7 @@ interface CSEElement {
 interface Google {
   search: {
     cse: {
-      element: {
-        render: (
-          componentConfig: ComponentConfig,
-          opt_componentConfig?: ComponentConfig
-        ) => void;
-        getElement: (gname: string) => CSEElement;
-      };
+      element: any;
     };
   };
 }
@@ -58,7 +52,7 @@ const SiteSearch = () => {
 
     try {
       console.log(window);
-      const { google } = window as typeof window & { google?: any };
+      const { google } = window as typeof window & { google?: Google };
       if (!google) {
         console.error('`window.google` should exist but does not (useEffect)');
         return;
