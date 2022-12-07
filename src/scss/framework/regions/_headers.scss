@@ -6,8 +6,8 @@
   // main site logo for utk.edu
   padding: calc($spacer * 0.5) $spacer;
   display: grid;
-  align-self: flex-start;
-  flex: 0 1 80%;
+  flex: 0 1 50%;
+
   @include media-breakpoint-up(sm) {
     flex: 0 1 40%;
   }
@@ -22,11 +22,14 @@
     padding: $spacer 0;
   }
 
-  a img {
-    max-height: 50px;
-    @include media-breakpoint-up(sm) {
-      max-width: 100%;
-      max-height: 60px;
+  a {
+    width: auto;
+    img {
+      max-height: 50px;
+      @include media-breakpoint-up(sm) {
+        max-width: 100%;
+        max-height: 60px;
+      }
     }
   }
 }
