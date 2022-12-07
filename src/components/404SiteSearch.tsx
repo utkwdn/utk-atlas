@@ -20,7 +20,13 @@ interface CSEElement {
 interface Google {
   search: {
     cse: {
-      element: any;
+      element: {
+        render: (
+          componentConfig: ComponentConfig,
+          opt_componentConfig?: ComponentConfig
+        ) => void;
+        getElement: (gname: string) => CSEElement;
+      };
     };
   };
 }
@@ -42,7 +48,6 @@ const SiteSearch = () => {
     so we use an empty dependency array in this `useEffect()`.
   */
   useEffect(() => {
-    console.log(resultsRef.current);
     if (!resultsRef.current) {
       console.error(
         '`resultsRef.current` should be assigned to the search-results div but was not.'
@@ -51,10 +56,9 @@ const SiteSearch = () => {
     }
 
     try {
-      console.log(window);
       const { google } = window as typeof window & { google?: Google };
       if (!google) {
-        console.error('`window.google` should exist but does not (useEffect)');
+        console.error('`window.google` should exist but does not');
         return;
       }
 
@@ -80,8 +84,7 @@ const SiteSearch = () => {
           try {
             const { google } = window as typeof window & { google?: Google };
             if (!google) {
-              console.log(window);
-              console.error('`window.google` should exist but does not (form)');
+              console.error('`window.google` should exist but does not');
               return;
             }
 
