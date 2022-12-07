@@ -57,9 +57,9 @@ const SiteSearch = () => {
     }
 
     try {
-      const { google } = window as typeof window & { google?: Google };
+      console.log(window);
+      const { google } = window as typeof window & { google?: any };
       if (!google) {
-        console.log(window);
         console.error('`window.google` should exist but does not (useEffect)');
         return;
       }
