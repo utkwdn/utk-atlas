@@ -218,9 +218,8 @@ used on Traditions */
 //     }
 //   }
 // }
-/*
 
-Buttons with Chevrons – pulled from ExpressionEngine
+/* Buttons with Chevrons – pulled from ExpressionEngine */
 .ctaHolder .btn-chevron {
   width: auto !important;
   pointer-events: visible;
@@ -235,16 +234,15 @@ Buttons with Chevrons – pulled from ExpressionEngine
   position: relative;
   width: 100%;
   font-size: 0.95rem;
-  border: 6px solid blue;
   &:after {
-    content: " ";
+    content: ' ';
     background: #ff8200;
     background-position-x: 0%;
     background-position-y: 0%;
     background-repeat: repeat;
     background-image: none;
     background-size: auto;
-    background-image: url("https://images.utk.edu/designsystem/www2021/v1/i/chevron-right.svg");
+    background-image: url('https://images.utk.edu/designsystem/www2021/v1/i/chevron-right.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
@@ -257,9 +255,12 @@ Buttons with Chevrons – pulled from ExpressionEngine
     bottom: 0;
     width: 2.5rem;
   }
+  &:hover {
+    &:after {
+      background-position: right center;
+    }
+  }
 }
-
-*/
 
 /*Not working Yet */
 
@@ -346,17 +347,17 @@ Buttons with Chevrons – pulled from ExpressionEngine
 //   }
 // }
 
-@keyframes chevronSlide {
-  0% {
-    margin-left: 1.4rem;
-  }
-  50% {
-    margin-left: 2rem;
-  }
-  100% {
-    margin-left: 1.9rem;
-  }
-}
+// @keyframes chevronSlide {
+//   0% {
+//     margin-left: 1.4rem;
+//   }
+//   50% {
+//     margin-left: 2rem;
+//   }
+//   100% {
+//     margin-left: 1.9rem;
+//   }
+// }
 
 .flexVideo {
   width: 100%;
