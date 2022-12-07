@@ -99,9 +99,9 @@ p strong {
   font-weight: $font-weight-bold;
 }
 a {
-  color: currentColor;
+  // color: currentColor;
   &:hover {
-    color: $utlinkriver;
+    color: $utlinkhover;
   }
 }
 
