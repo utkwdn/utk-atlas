@@ -15,6 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Script
         src="https://cse.google.com/cse.js?cx=da48cf0836de1c946"
         strategy="beforeInteractive"
+        onReady={() => console.log('Google CSE Loaded')}
       />
       <FaustProvider
         client={client}
