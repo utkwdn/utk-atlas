@@ -7,11 +7,41 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
 
+const MAIN_MENU_ID = 'main-menu';
+
+/**
+ * Closes the mobile menu if open. Not a very elegant or "React-y" way
+ * of doing this, but it's simple and effective, and we're a bit limited
+ * by the React-Bootstrap API here.
+ */
+const closeMenuIfOpen = () => {
+  const mainMenu = document.querySelector(`#${MAIN_MENU_ID}`);
+  if (!(mainMenu instanceof HTMLElement)) return;
+
+  const mainMenuIsModal = mainMenu.hasAttribute('aria-modal');
+  if (!mainMenuIsModal) return;
+
+  const closeButton = mainMenu.querySelector(`.offcanvas-header button`);
+  if (!(closeButton instanceof HTMLButtonElement)) return;
+
+  closeButton.click();
+};
+
 const Header = () => {
   const [alertDisplay, setAlertDisplay] = useState('none');
   const [alertDescription, setAlertDescription] = useState('');
   const [alertDate, setAlertDate] = useState('');
-  const { asPath } = useRouter();
+
+  const { asPath, events: routerEvents } = useRouter();
+
+  // make sure that the mobile menu closes upon internal navigation
+  useEffect(() => {
+    routerEvents.on('routeChangeStart', closeMenuIfOpen);
+    return () => {
+      routerEvents.off('routeChangeStart', closeMenuIfOpen);
+    };
+  });
+
   const uri =
     asPath && asPath !== '/' ? asPath.split('?')[0].split('#')[0] + '/' : null;
 
@@ -225,7 +255,7 @@ const Header = () => {
               </div>
 
               <Navbar.Toggle
-                aria-controls="main-menu"
+                aria-controls={MAIN_MENU_ID}
                 className="navbar-toggler col-auto mr-auto"
                 id="mobile-menu-open"
                 label="Open menu"
@@ -242,7 +272,7 @@ const Header = () => {
               </Navbar.Toggle>
 
               <Navbar.Offcanvas
-                id="main-menu"
+                id={MAIN_MENU_ID}
                 placement="end"
                 aria-label="Menu"
               >
