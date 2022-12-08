@@ -1,3 +1,10 @@
+.btn {
+  color: #1a73c5;
+  &:hover {
+    color: #114c81 !important;
+  }
+}
+
 .fancyLink a {
   pointer-events: visible;
   cursor: pointer;

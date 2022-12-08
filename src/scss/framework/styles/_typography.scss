@@ -98,12 +98,13 @@ p.lead + p {
 p strong {
   font-weight: $font-weight-bold;
 }
-a {
-  // color: currentColor;
-  &:hover {
-    color: $utlinkhover;
-  }
-}
+// a {
+//   // color: currentColor;
+//   color: $utlinkriver;
+//   &:hover {
+//     color: $utlinkhover;
+//   }
+// }
 
 h2.heading-oa-bar {
   // adds a thick bar under h2 headings

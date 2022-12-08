@@ -391,6 +391,7 @@ used on Traditions */
   background-repeat: repeat-x;
   padding: 4vw 0 3vw 0;
 }
+
 .icon-torch {
   margin-left: auto;
   margin-right: auto;
@@ -409,6 +410,16 @@ used on Traditions */
   height: 100%;
   background-position: center;
 }
+
+.icon-225 {
+  background-image: url('https://timeline.utk.edu/images/i/timeline/225th_Anniversary_Logo_(RGB)_2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
 .card-oa-frame
 /* orangeFramedCard */ {
   /* Used on Home to add angle to card */
