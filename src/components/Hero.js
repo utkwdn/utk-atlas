@@ -235,16 +235,9 @@ const Hero = () => {
               <br />
               Rocky Top
             </h2>
-            <ul className="list-unstyled">
-              <li>
-                <a
-                  className="btn btn-chevron text-uppercase mb-3 hero-cta"
-                  href="https://staging.cms.utk.edu/visit/"
-                >
-                  visit campus
-                </a>
-              </li>
-            </ul>
+            <p className="fancyLink">
+              <a href="/visit/">Visit campus</a>
+            </p>
             <p>
               Feel the energy of Big Orange Country and find out more about
               living and learning at the University of Tennessee.

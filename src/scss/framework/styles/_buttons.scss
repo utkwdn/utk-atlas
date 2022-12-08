@@ -250,16 +250,22 @@
 //     }
 //   }
 // }
-
-.is-style-outline a {
-  border: 0.125rem solid $utorange !important;
-  background-color: white !important;
-  text-decoration: none;
-  border-radius: 0.45rem;
-
-  &:hover {
+.wp-block-button > * {
+  padding: 0.6em 1.3em !important;
+  color: $utlinkriver;
+}
+.is-style-outline {
+  a {
+    border: 0.125rem solid $utorange !important;
+    background-color: white !important;
     text-decoration: none;
+    border-radius: 0.45rem;
     color: $utlinkriver !important;
+
+    &:hover {
+      text-decoration: none;
+      color: $utlinkhover !important;
+    }
   }
 }
 
