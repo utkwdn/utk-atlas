@@ -1,0 +1,63 @@
+.soc-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.twitter {
+  @extend .soc-icon;
+  fill: #55acee;
+}
+
+.facebook {
+  @extend .soc-icon;
+  fill: #3b5998;
+}
+
+.youtube {
+  @extend .soc-icon;
+  fill: #e52d27;
+}
+
+.instagram {
+  @extend .soc-icon;
+  fill: #58595b;
+}
+
+.linkedin {
+  @extend .soc-icon;
+  fill: #0077b5;
+}
+
+.pinterest {
+  @extend .soc-icon;
+  fill: #bd081c;
+}
+
+.snapchat {
+  @extend .soc-icon;
+  fill: #58595b;
+}
+
+.table-striped {
+  border-color: #e7e7e7;
+}
+
+.table-striped tbody {
+  border-top: 1px solid #e7e7e7 !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
