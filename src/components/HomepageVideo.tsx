@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 interface Props {
-  figureClasses?: string;
   outerDivClasses?: string;
+  figureClasses?: string;
   innerDivClasses?: string;
-  imgAttributes: Record<string, string>;
+  imgAttributes: Partial<Record<string, string>>;
 }
 
 const HomepageVideo = ({
-  imgAttributes,
+  outerDivClasses,
   figureClasses,
   innerDivClasses,
-  outerDivClasses,
+  imgAttributes,
 }: Props) => {
   const [isHydrated, setIsHydrated] = useState(false);
   const [videoHasBeenRequested, setVideoHasBeenRequested] = useState(false);
@@ -25,11 +25,11 @@ const HomepageVideo = ({
   return (
     <div
       className={outerDivClasses || ''}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: '100%', height: '100%', float: 'none' }}
     >
       <figure
         className={figureClasses || ''}
-        style={{ width: '100%', height: '100%' }}
+        style={{ height: '100%', float: 'none' }}
       >
         <div className={innerDivClasses || ''} style={{ width: '100%' }}>
           <div

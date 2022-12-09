@@ -66,10 +66,10 @@ const toReactNode = ({ content }: { content: string }) => {
         }
 
         case 'div': {
-          const { class: className } = attribs;
+          const { class: outerDivClasses } = attribs;
 
           // insert HomepageVideo (target is `div.homepageVideo`)
-          if (className && /\bhomepageVideo\b/g.test(className)) {
+          if (outerDivClasses && /\bhomepageVideo\b/g.test(outerDivClasses)) {
             const figure = domNode.children.find(
               (child): child is DOMHandlerElement =>
                 isElement(child) && child.name === 'figure'
@@ -82,19 +82,27 @@ const toReactNode = ({ content }: { content: string }) => {
               return;
             }
 
-            const div = figure.children.find(
+            const figureAttribs: Partial<typeof figure.attribs> =
+              figure.attribs;
+            const figureClasses = figureAttribs.class;
+
+            const innerDiv = figure.children.find(
               (child): child is DOMHandlerElement =>
                 isElement(child) && child.name === 'div'
             );
 
-            if (!div) {
+            if (!innerDiv) {
               console.error(
                 'The `figure` in `div.homepageVideo` did not have the expected child-div.'
               );
               return;
             }
 
-            const img = div.children.find(
+            const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+              innerDiv.attribs;
+            const innerDivClasses = innerDivAttribs.class;
+
+            const img = innerDiv.children.find(
               (child): child is DOMHandlerElement =>
                 isElement(child) && child.name === 'img'
             );
@@ -106,29 +114,31 @@ const toReactNode = ({ content }: { content: string }) => {
               return;
             }
 
-            if (!img.attribs.src) {
+            const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+
+            if (!imgAttribs.src) {
               console.error(
                 'The `img` in `figure.homepageVideo` is missing a `src`.'
               );
               return;
             }
 
-            if (img.attribs.class) {
-              img.attribs.className = img.attribs.class;
-              delete img.attribs.class;
+            if (imgAttribs.class) {
+              imgAttribs.className = imgAttribs.class;
+              delete imgAttribs.class;
             }
 
-            if (img.attribs.srcset) {
-              img.attribs.srcSet = img.attribs.srcset;
-              delete img.attribs.srcset;
+            if (imgAttribs.srcset) {
+              imgAttribs.srcSet = imgAttribs.srcset;
+              delete imgAttribs.srcset;
             }
 
             return (
               <HomepageVideo
-                imgAttributes={img.attribs}
-                figureClasses={className}
-                innerDivClasses={div.attribs.class}
-                outerDivClasses={domNode.attribs.class}
+                outerDivClasses={outerDivClasses}
+                figureClasses={figureClasses}
+                innerDivClasses={innerDivClasses}
+                imgAttributes={imgAttribs}
               />
             );
           }
