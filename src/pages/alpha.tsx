@@ -210,7 +210,7 @@ const Alpha = () => {
       </div>
       <section className={styles['container']}>
         <div className={styles['search-container']}>
-          <h3>Browse the site index</h3>
+          <h2>Browse the site index</h2>
           <div>
             <form onSubmit={handleSubmit} className={styles['alpha-form']}>
               <TextField
@@ -257,9 +257,9 @@ const Alpha = () => {
           {activeChars.map((char) => (
             <div key={char} className={styles['letter-group']}>
               <div className={styles['letter-container']}>
-                <h2 id={toDomId(char)} className={styles.letter}>
+                <h3 id={toDomId(char)} className={styles.letter}>
                   {char}
-                </h2>
+                </h3>
               </div>
               <ul>
                 {itemsByChar.current.get(char)?.flatMap((item) =>

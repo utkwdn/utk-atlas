@@ -110,8 +110,9 @@ p.title {
     position: sticky;
     top: 8rem;
   }
-  h3 {
+  h2 {
     margin-top: 0;
+    font-size: $h3-font-size;
   }
 }
 
@@ -218,7 +219,7 @@ p.title {
       margin-right: 2rem;
     }
 
-    h2.letter {
+    h3.letter {
       font-size: 4rem;
       font-weight: $font-weight-bold;
       margin-top: 2rem;
