@@ -32,8 +32,8 @@ export default function Page() {
       <main className="content content-single">
         <div className="wrap">
           <h2>Category: {category?.name}</h2>
-          {/* probably tweak `Posts` to avoid the `as` here */}
-          <Posts posts={(posts?.nodes || []) as Post[]} />
+
+          <Posts posts={posts?.nodes} />
 
           {posts?.pageInfo && (
             <Pagination
