@@ -114,3 +114,23 @@ h2.heading-oa-bar {
   position: relative;
   width: fit-content;
 }
+
+// adding special case for h1 that appear inside columns. clamp is based off body width
+// must account for the container being a different width so VAL must be adjusted for scaling
+// to take place inside containers. Otherwise words break oddly.
+
+.wp-block-columns h1 {
+  font-size: clamp(
+    (calc($font-size-base * 2.24)),
+    3vw + 1rem,
+    (calc($font-size-base * 3.7224))
+  );
+}
+
+.wp-block-columns h2 {
+  font-size: clamp(
+    (calc($font-size-base * 1.647)),
+    2vw + 1rem,
+    (calc($font-size-base * 2.7368))
+  );
+}

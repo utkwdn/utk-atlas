@@ -56,3 +56,65 @@
     }
   }
 }
+
+.listGroup-long {
+  ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      border-bottom: none;
+      text-align: left;
+      // padding: calc($spacer * 1.5) 0;
+      // margin: $spacer;
+      width: fit-content;
+      border-bottom: 1px solid $utgray1;
+      width: 100%;
+      //   border: 1px solid red;
+
+      position: relative;
+      a {
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        grid-template-rows: auto;
+        // font-size: $h4-font-size;
+        font-size: $p-font-size;
+        // line-height: 90%;
+        line-height: $p-font-size;
+        font-weight: $font-weight-normal;
+        color: $utlinkriver !important;
+        text-decoration: none;
+        justify-self: center;
+        align-items: center;
+        gap: $spacer;
+        padding: 0;
+
+        &:hover {
+          color: $utlinkriver;
+          background-color: green;
+        }
+        &:after {
+          // using arrow made from squares – rocky top arrow.
+          content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+          transform: scale(0.2);
+          // transform: scale(0.25); */ size used for fancyLink */
+          transition: all 0.2s ease-out;
+          font-size: var(--wp--custom--typography--tiny);
+          transform-origin: calc($spacer * 0.3) center;
+          transform-origin: left center;
+          position: relative;
+          // bottom: calc($spacer * -1.9);
+          display: block;
+          justify-self: end;
+          align-self: center;
+        }
+        &:hover:after {
+          margin-left: 0.7rem;
+          align-self: end;
+        }
+      }
+    }
+  }
+}
