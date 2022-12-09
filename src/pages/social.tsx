@@ -169,8 +169,8 @@ function Social() {
               const linkedinLink = this_unit?.socialUnitURLs?.linkedin;
               return (
                 <tr key={this_unit?.id}>
-                  <td>{title}</td>
-                  <td>
+                  <td data-label="Unit">{title}</td>
+                  <td data-label="Twitter">
                     {twitterLink ? (
                       <a href={twitterLink} target="_blank" rel="noreferrer">
                         <svg
@@ -190,7 +190,7 @@ function Social() {
                       ''
                     )}
                   </td>
-                  <td>
+                  <td data-label="Facebook">
                     {facebookLink ? (
                       <a href={facebookLink} target="_blank" rel="noreferrer">
                         <svg
@@ -211,7 +211,7 @@ function Social() {
                       ''
                     )}
                   </td>
-                  <td>
+                  <td data-label="Instagram">
                     {instagramLink ? (
                       <a href={instagramLink} target="_blank" rel="noreferrer">
                         <svg
@@ -233,7 +233,7 @@ function Social() {
                       ''
                     )}
                   </td>
-                  <td>
+                  <td data-label="YouTube">
                     {youtubeLink ? (
                       <a href={youtubeLink} target="_blank" rel="noreferrer">
                         <svg
@@ -253,7 +253,7 @@ function Social() {
                       ''
                     )}
                   </td>
-                  <td>
+                  <td data-label="LinkedIn">
                     {linkedinLink ? (
                       <a href={linkedinLink} target="_blank" rel="noreferrer">
                         <svg
