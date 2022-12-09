@@ -25,10 +25,10 @@ const UniversalHeader = () => {
       href: '/give',
     },
   ].map(({ label, href }, i) => (
-    <li className="col-auto" key={i}>
+    <li className="uni-nav-item" key={i}>
       <small>
         <Link href={href}>
-          <a className="nav-link px-0 text-light text-uppercase">{label}</a>
+          <a className="menu-item text-light text-uppercase">{label}</a>
         </Link>
       </small>
     </li>
@@ -38,9 +38,9 @@ const UniversalHeader = () => {
     <>
       <div id="universal-header">
         <div className="container-xxl">
-          <ul className="row justify-content-end list-inline mb-0">
+          <ul className="menu-universal">
             {linkItems}
-            <li className="col-auto">
+            <li className="uni-nav-item">
               {' '}
               <button
                 type="button"
@@ -80,12 +80,12 @@ const UniversalHeader = () => {
       >
         <div id="universal-header">
           <div className="container">
-            <ul className="row justify-content-end list-inline mb-0">
+            <ul className="menu-universal">
               {linkItems}
-              <li className="col-auto">
+              <li className="uni-nav-item">
                 <button
                   type="button"
-                  className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed"
+                  className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed px-0"
                   aria-label="Close search"
                   onClick={() => setShowSearchModal(false)}
                 >
