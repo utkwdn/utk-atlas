@@ -14,9 +14,9 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
       {displayTitle ? (
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-6">
-            <h1 className="text-center mt-md-5 mb-2 mb-md-5 fw-lighter">
+            <h2 className="text-center mt-md-5 mb-2 mb-md-5 fw-lighter">
               Search
-            </h1>
+            </h2>
           </div>
         </div>
       ) : (
