@@ -1,8 +1,4 @@
-import styles from 'scss/components/Hero.module.scss';
-import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect } from 'react';
@@ -15,13 +11,12 @@ const Hero = () => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.saveStyles('.hero202112Container, .layoutB'); // stores the css information before in-line styles from animation are put in place
 
-    ScrollTrigger.matchMedia({
+    const heroAnimation = ScrollTrigger.matchMedia({
       // desktop
       '(min-width: 768px)': function () {
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
         Pinning Section – .pointer-events: none; // must be added to the container in css, otherwise it won't scroll!!
         ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-
         gsap.to('.hero202112Container', {
           scrollTrigger: {
             trigger: '.hero202112A',
@@ -146,6 +141,11 @@ const Hero = () => {
       },
       '(max-width: 799px)': function () {},
     });
+
+    // Cleaning up animation on page exit
+    return () => {
+      heroAnimation.kill();
+    };
   }, []);
 
   return (
