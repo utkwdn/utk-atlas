@@ -7,6 +7,7 @@ import parse, {
 } from 'html-react-parser';
 
 import Link from 'next/link';
+import HomepageVideo from './HomepageVideo';
 import RequestInfoTabs from './RequestInfoTabs';
 // import Image from 'next/image';
 
@@ -60,6 +61,75 @@ const toReactNode = ({ content }: { content: string }) => {
             delete attribs.href;
             return (
               <Link href={href}>{domToReact([domNode], parserConfig)}</Link>
+            );
+          }
+        }
+
+        case 'div': {
+          const { class: className } = attribs;
+
+          // insert HomepageVideo (target is `div.homepageVideo`)
+          if (className && /\bhomepageVideo\b/g.test(className)) {
+            const figure = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'figure'
+            );
+
+            if (!figure) {
+              console.error(
+                'The `div.homepageVideo` did not have the expected child-figure.'
+              );
+              return;
+            }
+
+            const div = figure.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'div'
+            );
+
+            if (!div) {
+              console.error(
+                'The `figure` in `div.homepageVideo` did not have the expected child-div.'
+              );
+              return;
+            }
+
+            const img = div.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'img'
+            );
+
+            if (!img) {
+              console.error(
+                'The child-div of the child-figure of `div.homepageVideo` did not have the expected child-img.'
+              );
+              return;
+            }
+
+            if (!img.attribs.src) {
+              console.error(
+                'The `img` in `figure.homepageVideo` is missing a `src`.'
+              );
+              return;
+            }
+
+            if (img.attribs.class) {
+              img.attribs.className = img.attribs.class;
+              delete img.attribs.class;
+            }
+
+            if (img.attribs.srcset) {
+              img.attribs.srcSet = img.attribs.srcset;
+              delete img.attribs.srcset;
+            }
+
+            return (
+              <HomepageVideo
+                imgAttributes={img.attribs}
+                figureClasses={className}
+                innerDivClasses={div.attribs.class}
+                outerDivClasses={domNode.attribs.class}
+              />
             );
           }
         }
