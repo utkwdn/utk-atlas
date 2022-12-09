@@ -61,3 +61,24 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+@media screen and (max-width: 800px) {
+  .table-striped thead {
+    display: none;
+  }
+
+  .table-striped td {
+    display: flex;
+  }
+
+  .table-striped td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .table-striped tr td:first-child {
+    border-top: 2px solid #d1d1d1;
+  }
+}
