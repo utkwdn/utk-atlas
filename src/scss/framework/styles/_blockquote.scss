@@ -85,6 +85,7 @@
 
     em {
       font-size: 80%;
+      padding-top: 0.5rem;
       // line-height: 85%;
       // margin-top: 0;
     }
@@ -130,6 +131,16 @@
       line-height: calc($line-height-base * 1.2) !important;
       margin: 0;
       padding: 0;
+    }
+  }
+}
+.wp-block-media-text {
+  .blockquote {
+    & > p {
+      font-size: calc($p-font-size * 1);
+      @media screen and (min-width: 1200px) {
+        font-size: calc($p-font-size * 1.3);
+      }
     }
   }
 }
