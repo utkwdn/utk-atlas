@@ -27,7 +27,11 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
       <div className="row justify-content-center">
         <div className="col-12 col-xl-8">
           <Tab.Container id="left-tabs-example" defaultActiveKey="main">
-            <Nav variant="pills" defaultActiveKey="main">
+            <Nav
+              variant="pills"
+              className="justify-content-center"
+              defaultActiveKey="main"
+            >
               <Nav.Item>
                 <Nav.Link eventKey="main">Search www.utk.edu</Nav.Link>
               </Nav.Item>
