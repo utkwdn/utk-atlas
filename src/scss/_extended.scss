@@ -712,11 +712,13 @@ used on Traditions */
   border: 0;
 }
 
-.grey-dot-overlay .strip.p-lg {
-  // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
+.grey-dot-overlay-left {
+  position: relative;
+  // used on Acadmemics page. Added to a cover. Adds the dot overlay over content wtithin.
   // Currently set to  only work with a strip using Large Padding and 0 spacing
   &:before {
     content: '';
+    z-index: 10;
     width: 100vw;
     height: 100%;
     // @media screen and (min-width: 800px) {
@@ -733,8 +735,15 @@ used on Traditions */
       background-repeat: repeat-y;
     }
     opacity: 0.25;
-    margin: -6rem 0 0;
+    margin: -0.5rem 0 0;
     padding: 0;
+  }
+}
+.grey-dot-overlay-right {
+  @extend .grey-dot-overlay-left;
+  &:before {
+    transform: scaleX(-1);
+    background-position: bottom left; /* this is opposite since the image is being flipped */
   }
 }
 
@@ -765,7 +774,7 @@ used on Traditions */
 //   }
 // }
 
-.orange-border-bottom .strip {
+.orange-border-bottom {
   border-bottom: 4rem solid $utorange;
 }
 /* ––––––––––––––––––––––––––––––––––––– */
@@ -1708,5 +1717,5 @@ p.theme {
 // settings needed – pulled from chancellor
 
 .whiteOpacity {
-  background-color: RGBA(255, 255, 255, 0.8) !important;
+  background-color: RGBA(255, 255, 255, 0.9) !important;
 }
