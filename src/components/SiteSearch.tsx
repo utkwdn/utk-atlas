@@ -48,7 +48,6 @@ const SiteSearch = () => {
     so we use an empty dependency array in this `useEffect()`.
   */
   useEffect(() => {
-    console.log(resultsRef.current);
     if (!resultsRef.current) {
       console.error(
         '`resultsRef.current` should be assigned to the search-results div but was not.'
