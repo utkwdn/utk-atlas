@@ -242,7 +242,10 @@ p.title {
     padding: 0 0 0 2%;
 
     @media screen and (min-width: 800px) {
-      width: 8vw;
+      // width: 8vw;
+      flex-basis: 10vw;
+      min-width: 10vw;
+      // border: 2px solid pink;
       text-align: right;
       margin-right: 1rem;
       text-align: center;
@@ -357,7 +360,7 @@ p.title {
     font-size: $h6-font-size;
     &:hover {
       background-color: $utsmokey;
-      color: white;
+      color: white !important;
     }
   }
 }
