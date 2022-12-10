@@ -196,12 +196,12 @@ p.title {
   }
   @media screen and (min-width: 800px) {
     width: 100%;
+    margin: 3rem auto;
     [id] {
       @media (min-height: 200px) {
         scroll-margin-top: 0;
       }
     }
-    margin: 3rem auto;
   }
 }
 .letter-group {
@@ -224,7 +224,6 @@ p.title {
     background-color: white;
     text-align: left;
     align-self: flex-start;
-    border: 1px solid blue;
     @media screen and (min-width: 800px) {
       width: 10vw;
       text-align: right;
