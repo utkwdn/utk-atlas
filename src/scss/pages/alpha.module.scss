@@ -90,13 +90,12 @@ p.title {
     font-size: 1.35rem;
   }
 }
-.container,
-.request-container {
+.container {
   position: relative;
   max-width: 1820px;
   margin: 0 auto;
   height: fit-content;
-  overflow: visible;
+  overflow: visible !important;
 }
 .request-container {
   width: 98vw;
@@ -111,8 +110,9 @@ p.title {
   top: -9rem;
   background-color: $white;
   z-index: 2;
+  // background-color: pink; /* for mobile this is above the results as they slide up */
   @media screen and (min-width: 800px) {
-    margin: 3rem auto;
+    // margin: 3rem auto;
     position: sticky;
     top: 8rem;
   }
@@ -130,16 +130,14 @@ p.title {
   position: relative;
   border-top: 0.6rem solid $utorange;
   border-bottom: 0.6rem solid $utorange;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   height: auto;
-  padding: 0.5rem 5%;
+  padding: 0.5rem 8%;
   @media screen and (min-width: 800px) {
     left: 0;
     width: 100%;
     padding: 3rem 5%;
-  }
-  h3 {
-    margin-top: $spacer;
+    margin: 2rem 0;
   }
 }
 
@@ -188,6 +186,7 @@ p.title {
 .results {
   width: 90%;
   margin: 0 auto;
+  // border: 1px solid green;
   [id] {
     /* sets the space the top needs to make sure letters are visible on jump */
     @media (min-height: 200px) {
@@ -209,25 +208,37 @@ p.title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 1rem 0 4rem 0;
+  margin: 1rem 0 1rem 0;
+  // border: 1px solid green;
 
   @media screen and (min-width: 800px) {
     flex-direction: row;
+
+    margin: 1rem 0 4rem 0;
   }
   .letter-container {
     text-align: center;
-    width: 100%;
+    width: 112%;
+    margin-left: -6%;
     position: -webkit-sticky;
     position: sticky;
-    display: inline-block;
+    display: block;
     top: -1px;
-    background-color: white;
+    top: 11rem;
+    // border: 1px solid red;
+    // z-index: 2;
+    background-color: white; /* keeps results from appearing under the letter on scroll */
+    // border: 1px solid blue;
     text-align: left;
     align-self: flex-start;
+    padding: 0 0 0 2%;
+
     @media screen and (min-width: 800px) {
-      width: 10vw;
+      width: 8vw;
       text-align: right;
-      margin-right: 2rem;
+      margin-right: 1rem;
+      text-align: center;
+      top: -1px;
     }
     @media screen and (min-width: 1500px) {
       width: 18%;
@@ -236,13 +247,15 @@ p.title {
     }
 
     h3.letter {
-      font-size: 4rem;
+      font-size: $h4-font-size;
       font-weight: $font-weight-bold;
       margin-top: 2rem;
       @media screen and (min-width: 800px) {
         width: auto;
         font-size: 5rem;
-        padding-right: 2rem;
+        font-size: calc($h3-font-size * 1.8);
+        font-size: $h2-font-size;
+        // padding-right: 2rem;
         margin-top: 1rem;
       }
       @media screen and (min-width: 1200px) {
@@ -418,7 +431,6 @@ CSS Grid layout for modern browsers:
     }
     .search-container {
       grid-column: 3 / 4;
-      width: auto;
     }
 
     .results {
