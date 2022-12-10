@@ -279,6 +279,8 @@ const Alpha = () => {
             </div>
           ))}
         </section>
+      </section>
+      <section className={styles['request-container']}>
         <a
           href="https://communications.utk.edu/a-z-index-update-request/"
           className={styles.fancyLink}
