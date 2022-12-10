@@ -119,12 +119,12 @@ module.exports = withFaust({
         destination: 'https://therock.utk.edu/',
         permanent: true,
       },
-      {
-        source: '/give',
-        destination:
-          'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto/',
-        permanent: false,
-      },
+      // {
+      //   source: '/give',
+      //   destination:
+      //     'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto/',
+      //   permanent: false,
+      // },
     ];
   },
 });

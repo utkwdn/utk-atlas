@@ -22,7 +22,7 @@ const UniversalHeader = () => {
     },
     {
       label: 'Give',
-      href: '/give',
+      href: 'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto',
     },
   ].map(({ label, href }, i) => (
     <li className="uni-nav-item" key={i}>
