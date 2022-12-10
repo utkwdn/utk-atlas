@@ -133,11 +133,18 @@ p.title {
   margin: 2rem 0 0 0;
   height: auto;
   padding: 0.5rem 8%;
+  min-height: 185px;
+  display: flex;
+  align-content: center;
+  align-items: center;
   @media screen and (min-width: 800px) {
     left: 0;
     width: 100%;
     padding: 3rem 5%;
     margin: 2rem 0;
+  }
+  h3 {
+    margin: 0;
   }
 }
 
