@@ -50,6 +50,23 @@ module.exports = withFaust({
         source: '/aboutut/knoxville',
         destination: '/about/knoxville',
       },
+      {
+        source: '/apply',
+        destination: 'https://admissions.utk.edu/apply/',
+      },
+      {
+        source: '/tours',
+        destination: 'https://admissions.utk.edu/visit/',
+      },
+      {
+        source: '/visit',
+        destination: 'https://admissions.utk.edu/visit/',
+      },
+      {
+        source: '/give',
+        destination:
+          'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto',
+      },
     ];
   },
 
@@ -72,21 +89,7 @@ module.exports = withFaust({
         destination: 'https://diversity.utk.edu/',
         permanent: true,
       },
-      {
-        source: '/apply',
-        destination: 'https://admissions.utk.edu/apply/',
-        permanent: true,
-      },
-      {
-        source: '/tours',
-        destination: 'https://admissions.utk.edu/visit/',
-        permanent: true,
-      },
-      {
-        source: '/visit',
-        destination: 'https://admissions.utk.edu/visit/',
-        permanent: true,
-      },
+
       {
         source: '/status',
         destination: 'https://safety.utk.edu/status/',
@@ -115,12 +118,6 @@ module.exports = withFaust({
       {
         source: '/history',
         destination: 'https://timeline.utk.edu/',
-        permanent: true,
-      },
-      {
-        source: '/give',
-        destination:
-          'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto',
         permanent: true,
       },
       {
