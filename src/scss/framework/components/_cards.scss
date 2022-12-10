@@ -380,7 +380,7 @@
 
 .subjectCard {
   border-top: 6px solid $utorange;
-  padding: 0 calc($spacer * 3);
+  padding: 0 calc($spacer * 3) calc($spacer * 3);
   display: flex;
   flex-direction: column;
   // gap: 2%;
@@ -407,7 +407,7 @@
     font-size: calc($h3-font-size * 0.6);
   }
   p + .wp-block-buttons {
-    margin: calc($spacer * 3) 0 calc($spacer * 4);
+    margin: calc($spacer * 3) 0 calc($spacer * 1);
   }
 }
 
