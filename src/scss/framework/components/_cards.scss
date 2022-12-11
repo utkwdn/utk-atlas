@@ -196,7 +196,7 @@
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) margin-left:auto on _layout.scss */
   }
   > .is-layout-flow > *:first-child {
-    margin-block-start: 4rem;
+    // margin-block-start: 4rem; */ not using this. Instead adding padding to individual cards */
   }
 }
 .profileCardContainer > *,
@@ -233,6 +233,15 @@
     align-items: stretch;
   }
 }
+.nameCardContainer {
+  &.half-screen > * {
+    @media (min-width: 1200px) {
+      flex-basis: 45%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
 .profileCard,
 .bioCard,
 .nameCard {
@@ -247,6 +256,7 @@
   // border-radius is being overwritten below. We might use this instead of the angle in WDS?
   // height: 100%;   // breaks equal height cards. no good.
 }
+
 .nameCard {
   padding: 2rem;
   flex-direction: column;
@@ -261,6 +271,7 @@
     margin-bottom: 1rem;
   }
 }
+
 .profileCard {
   flex-direction: column;
   @media screen and (min-width: 550px) {
@@ -380,7 +391,7 @@
 
 .subjectCard {
   border-top: 6px solid $utorange;
-  padding: 0 calc($spacer * 3);
+  padding: calc($spacer * 3);
   display: flex;
   flex-direction: column;
   // gap: 2%;
@@ -407,7 +418,7 @@
     font-size: calc($h3-font-size * 0.6);
   }
   p + .wp-block-buttons {
-    margin: calc($spacer * 3) 0 calc($spacer * 4);
+    margin: calc($spacer * 3) 0 calc($spacer * 1);
   }
 }
 

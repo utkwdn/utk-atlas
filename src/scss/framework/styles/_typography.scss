@@ -127,10 +127,20 @@ h2.heading-oa-bar {
   );
 }
 
-.wp-block-columns h2 {
+.h2-scale h2 {
+  // add to containers that are not full width to better control the scaling of h2 elements.
+  // used to be based on .wp-block-columns but was too general
   font-size: clamp(
     (calc($font-size-base * 1.647)),
     2vw + 1rem,
     (calc($font-size-base * 2.7368))
   );
+}
+
+section[class^='PageTitle_hero'] {
+  position: relative;
+  h1 {
+    margin: 0;
+    font-weight: $font-weight-bold;
+  }
 }
