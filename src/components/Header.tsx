@@ -200,14 +200,12 @@ const Header = () => {
           const formattedAlertDate = `${m + 1}/${d}/${y}`;
           // Don't display alert if title includes 'RSS All Clear' or is blank
           if (alertTitle.includes('RSS All Clear') || alertTitle === '') {
-            console.log('No Current Alerts');
+            // console.log('No Current Alerts');
           } else {
             setAlertDisplay('block');
             setAlertDescription(alertDescription);
             setAlertDate(formattedAlertDate);
           }
-        } else {
-          console.log('No Current Alerts');
         }
       })
       .catch((error) => {
@@ -313,24 +311,26 @@ const Header = () => {
         role="alert"
         style={{
           display: alertDisplay, // Using state to show or hide alert
-          backgroundColor: '#dedede', // Pull out once stylesheet is finalized
+          backgroundColor: '#eaf0f3', // Pull out once stylesheet is finalized
           borderColor: '#cdcdcd', // Pull out once stylesheet is finalized
           zIndex: 999, // Prevents .video-flex element from overlaying and blocking interactivity
         }}
       >
-        <button
-          type="button"
-          className="btn-close"
-          aria-label="Close"
-          onClick={() => setAlertDisplay('none')}
-        ></button>
-        <p className="alert-heading">{alertDescription}</p>
-        <small>Posted on {alertDate}</small>
-        <p>
-          <a className="alert-link" href="https://safety.utk.edu">
-            See campus status.
-          </a>
-        </p>
+        <div className="container">
+          <button
+            type="button"
+            className="btn-close"
+            aria-label="Close"
+            onClick={() => setAlertDisplay('none')}
+          ></button>
+          <p className="alert-heading">{alertDescription}</p>
+          <small>Posted on {alertDate}</small>
+          <p>
+            <a className="alert-link" href="https://safety.utk.edu/status/">
+              See campus status.
+            </a>
+          </p>
+        </div>
       </div>
     </>
   );
