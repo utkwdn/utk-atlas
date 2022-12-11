@@ -233,6 +233,15 @@
     align-items: stretch;
   }
 }
+.nameCardContainer {
+  &.half-screen > * {
+    @media (min-width: 1200px) {
+      flex-basis: 45%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
 .profileCard,
 .bioCard,
 .nameCard {
@@ -247,6 +256,7 @@
   // border-radius is being overwritten below. We might use this instead of the angle in WDS?
   // height: 100%;   // breaks equal height cards. no good.
 }
+
 .nameCard {
   padding: 2rem;
   flex-direction: column;
@@ -261,6 +271,7 @@
     margin-bottom: 1rem;
   }
 }
+
 .profileCard {
   flex-direction: column;
   @media screen and (min-width: 550px) {

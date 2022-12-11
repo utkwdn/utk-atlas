@@ -134,7 +134,8 @@
     }
   }
 }
-.wp-block-media-text {
+.wp-block-media-text,
+.quote-scale {
   .blockquote {
     & > p {
       font-size: calc($p-font-size * 1);
