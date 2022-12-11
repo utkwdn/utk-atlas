@@ -119,6 +119,7 @@ const SiteSearch = () => {
             placeholder="Example: Apply, Payroll, Provost, English Department"
             name="q"
             id="q"
+            autoFocus
           />
           <button type="submit" className="btn btn-secondary">
             <svg
