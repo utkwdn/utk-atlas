@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from 'components/Layout';
-import SearchBody from '../components/SearchModalBody';
+import SearchBody from '../components/404SearchBody';
 import { SSRProvider } from 'react-bootstrap';
 import styles from 'scss/pages/404.module.scss';
 
@@ -27,7 +27,7 @@ export default function Page(): JSX.Element {
               </div>
             </div>
             <div className={styles['search-container']}>
-              <SearchBody displayTitle={false} />
+              <SearchBody />
             </div>
           </div>
         </main>
