@@ -8,7 +8,7 @@ module.exports = withFaust({
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 
-    domains: ['images.utk.edu'],
+    domains: ['images.utk.edu', 'content.cms.utk.edu'],
   },
   /** allowing static public file to render without having to add the .html **/
   // redirects with masked url

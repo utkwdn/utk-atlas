@@ -49,7 +49,7 @@ class MyDocument extends Document {
           />
           {/* Monsido Web Optimization Scripts */}
           <Script id="Monsido" strategy="afterInteractive">
-            {`window._monsido = window._monsido || {token: "oVQzcnTw65oGJbvLxauRcw",}; console.log('monsido')`}
+            {`window._monsido = window._monsido || {token: "oVQzcnTw65oGJbvLxauRcw",};`}
           </Script>
           <Script
             src="https://app-script.monsido.com/v2/monsido-script.js"
