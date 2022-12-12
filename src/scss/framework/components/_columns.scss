@@ -3,8 +3,20 @@
   @media (min-width: 600px) and (max-width: 900px) {
     display: flex;
     flex-direction: column;
+    display: block;
   }
   @media screen and (min-width: 900px) {
     flex-direction: row;
+  }
+}
+
+.mobileWrap-col-4060 {
+  @media (min-width: 600px) and (max-width: 1000px) {
+    display: grid;
+    display: block;
+  }
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+    border: none;
   }
 }

@@ -7,6 +7,7 @@ import parse, {
 } from 'html-react-parser';
 
 import Link from 'next/link';
+import HomepageVideo from './HomepageVideo';
 import RequestInfoTabs from './RequestInfoTabs';
 // import Image from 'next/image';
 
@@ -60,6 +61,85 @@ const toReactNode = ({ content }: { content: string }) => {
             delete attribs.href;
             return (
               <Link href={href}>{domToReact([domNode], parserConfig)}</Link>
+            );
+          }
+        }
+
+        case 'div': {
+          const { class: outerDivClasses } = attribs;
+
+          // insert HomepageVideo (target is `div.homepageVideo`)
+          if (outerDivClasses && /\bhomepageVideo\b/g.test(outerDivClasses)) {
+            const figure = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'figure'
+            );
+
+            if (!figure) {
+              console.error(
+                'The `div.homepageVideo` did not have the expected child-figure.'
+              );
+              return;
+            }
+
+            const figureAttribs: Partial<typeof figure.attribs> =
+              figure.attribs;
+            const figureClasses = figureAttribs.class;
+
+            const innerDiv = figure.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'div'
+            );
+
+            if (!innerDiv) {
+              console.error(
+                'The `figure` in `div.homepageVideo` did not have the expected child-div.'
+              );
+              return;
+            }
+
+            const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+              innerDiv.attribs;
+            const innerDivClasses = innerDivAttribs.class;
+
+            const img = innerDiv.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'img'
+            );
+
+            if (!img) {
+              console.error(
+                'The child-div of the child-figure of `div.homepageVideo` did not have the expected child-img.'
+              );
+              return;
+            }
+
+            const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+
+            if (!imgAttribs.src) {
+              console.error(
+                'The `img` in `figure.homepageVideo` is missing a `src`.'
+              );
+              return;
+            }
+
+            if (imgAttribs.class) {
+              imgAttribs.className = imgAttribs.class;
+              delete imgAttribs.class;
+            }
+
+            if (imgAttribs.srcset) {
+              imgAttribs.srcSet = imgAttribs.srcset;
+              delete imgAttribs.srcset;
+            }
+
+            return (
+              <HomepageVideo
+                outerDivClasses={outerDivClasses}
+                figureClasses={figureClasses}
+                innerDivClasses={innerDivClasses}
+                imgAttributes={imgAttribs}
+              />
             );
           }
         }

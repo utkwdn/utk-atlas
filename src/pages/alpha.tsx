@@ -61,6 +61,17 @@ const isUpperLetter = (s: string): s is UpperLetter =>
 const digitRegExp = /^\d$/;
 const isDigit = (s: string) => digitRegExp.test(s);
 
+/**
+ * If `'#'` is in `arr`, returns a new array that's the same as `arr` but with `'#'` moved to the very end.
+ * Otherwise, just returns `arr`.
+ */
+const poundToEnd = (arr: Character[]) => {
+  if (arr.includes('#')) {
+    return arr.filter((e) => e !== '#').concat('#');
+  }
+  return arr;
+};
+
 const toDomId = (char: Character) => (char === '#' ? 'num' : char);
 
 const Alpha = () => {
@@ -114,7 +125,13 @@ const Alpha = () => {
     }, new Map<Character, Item[]>())
   );
 
-  const allChars = useRef(Array.from(itemsByChar.current.keys()));
+  /**
+   * All characters represented in the fetched data, sorted alphabetically (with `'#'` at the end, if present).
+   * Will never change.
+   */
+  const allChars = useRef(poundToEnd(Array.from(itemsByChar.current.keys())));
+
+  /** All items represented in the fetched data. Will never change. */
   const allItems = useRef(Array.from(itemsByChar.current.values()).flat());
 
   const [activeItems, setActiveItems] = useState(allItems.current);
@@ -123,9 +140,7 @@ const Alpha = () => {
     if (char === '#') {
       return activeItems.some(({ label }) => isDigit(label[0]));
     } else {
-      return activeItems.some(({ label }) =>
-        label.toUpperCase().startsWith(char)
-      );
+      return activeItems.some(({ label }) => label[0].toUpperCase() === char);
     }
   });
 
@@ -195,7 +210,7 @@ const Alpha = () => {
       </div>
       <section className={styles['container']}>
         <div className={styles['search-container']}>
-          <h3>Browse the site index</h3>
+          <h2>Browse the site index</h2>
           <div>
             <form onSubmit={handleSubmit} className={styles['alpha-form']}>
               <TextField
@@ -242,9 +257,9 @@ const Alpha = () => {
           {activeChars.map((char) => (
             <div key={char} className={styles['letter-group']}>
               <div className={styles['letter-container']}>
-                <h2 id={toDomId(char)} className={styles.letter}>
+                <h3 id={toDomId(char)} className={styles.letter}>
                   {char}
-                </h2>
+                </h3>
               </div>
               <ul>
                 {itemsByChar.current.get(char)?.flatMap((item) =>
@@ -264,6 +279,8 @@ const Alpha = () => {
             </div>
           ))}
         </section>
+      </section>
+      <section className={styles['request-container']}>
         <a
           href="https://communications.utk.edu/a-z-index-update-request/"
           className={styles.fancyLink}

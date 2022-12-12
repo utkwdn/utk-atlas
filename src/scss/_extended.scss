@@ -22,7 +22,7 @@
 }
 .container-fluid {
   // fixes random white margins caused by gutters on the left side at narrow widths
-  padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2);
+  // padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2); */ this started causing small white vertical line on right. Removing for now */
   @media (min-width: 1600px) {
     //recalculated at wider screens to fix spacing that was appearing on right
     // might look at updating the mixin container in framework. Need to experiment more.
@@ -391,6 +391,7 @@ used on Traditions */
   background-repeat: repeat-x;
   padding: 4vw 0 3vw 0;
 }
+
 .icon-torch {
   margin-left: auto;
   margin-right: auto;
@@ -409,6 +410,16 @@ used on Traditions */
   height: 100%;
   background-position: center;
 }
+
+.icon-225 {
+  background-image: url('https://timeline.utk.edu/images/i/timeline/225th_Anniversary_Logo_(RGB)_2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
 .card-oa-frame
 /* orangeFramedCard */ {
   /* Used on Home to add angle to card */
@@ -701,11 +712,13 @@ used on Traditions */
   border: 0;
 }
 
-.grey-dot-overlay .strip.p-lg {
-  // used on Acadmemics page. Added to a content-strip. Adds the dot overlay over content wtithin.
+.grey-dot-overlay-left {
+  position: relative;
+  // used on Acadmemics page. Added to a cover. Adds the dot overlay over content wtithin.
   // Currently set to  only work with a strip using Large Padding and 0 spacing
   &:before {
     content: '';
+    z-index: 10;
     width: 100vw;
     height: 100%;
     // @media screen and (min-width: 800px) {
@@ -722,8 +735,15 @@ used on Traditions */
       background-repeat: repeat-y;
     }
     opacity: 0.25;
-    margin: -6rem 0 0;
+    margin: -0.5rem 0 0;
     padding: 0;
+  }
+}
+.grey-dot-overlay-right {
+  @extend .grey-dot-overlay-left;
+  &:before {
+    transform: scaleX(-1);
+    background-position: bottom left; /* this is opposite since the image is being flipped */
   }
 }
 
@@ -754,7 +774,7 @@ used on Traditions */
 //   }
 // }
 
-.orange-border-bottom .strip {
+.orange-border-bottom {
   border-bottom: 4rem solid $utorange;
 }
 /* ––––––––––––––––––––––––––––––––––––– */
@@ -1698,5 +1718,5 @@ p.theme {
 // settings needed – pulled from chancellor
 
 .whiteOpacity {
-  background-color: RGBA(255, 255, 255, 0.8) !important;
+  background-color: RGBA(255, 255, 255, 0.9) !important;
 }

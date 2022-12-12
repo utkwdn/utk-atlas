@@ -261,7 +261,7 @@ $link-hover-decoration: underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
-$list-group-color: null;
+$list-group-color: $utlinkriver;
 $list-group-bg: transparent;
 $list-group-border-color: rgba($black, 0.125);
 $list-group-border-width: $border-width;

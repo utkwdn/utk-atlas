@@ -1,9 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link rel="icon" href="/images/favicons/favicon.ico" sizes="any" />
           <link
@@ -25,6 +26,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {/* used in `SiteSearch.tsx`. Loading beforeInteractive to insure 404 page search works */}
+          <Script
+            src="https://cse.google.com/cse.js?cx=da48cf0836de1c946"
+            strategy="beforeInteractive"
+          />
         </body>
       </Html>
     );

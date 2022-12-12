@@ -1,10 +1,12 @@
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import SiteSearch from './404SiteSearch';
-import { display } from '@mui/system';
-import JSXStyle from 'styled-jsx/style';
 
-const SearchModalBody = () => (
+interface Props {
+  displayTitle?: boolean;
+}
+
+const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
   <div className="modal-body">
     <div className="container-xxl">
       <div className="row justify-content-center">
