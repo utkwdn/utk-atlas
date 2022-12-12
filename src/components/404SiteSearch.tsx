@@ -31,7 +31,7 @@ interface Google {
   };
 }
 
-const GNAME = '404-this-site-results';
+const GNAME = 'this-site-results';
 
 const SiteSearch = () => {
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -73,11 +73,41 @@ const SiteSearch = () => {
     }
   }, []);
 
+  const attemptRerender = () => {
+    try {
+      const { google } = window as typeof window & { google?: Google };
+      if (!google) {
+        console.error('`window.google` should exist but does not');
+        return;
+      }
+      if (!resultsRef.current) {
+        console.error(
+          '`resultsRef.current` should be assigned to the search-results div but was not.'
+        );
+        return;
+      }
+      google.search.cse.element.render({
+        div: resultsRef.current,
+        tag: 'searchresults-only',
+        gname: GNAME,
+      });
+
+      const resultsEl = google.search.cse.element.getElement(GNAME);
+      if (value) {
+        resultsEl.execute(value);
+      } else {
+        resultsEl.clearAllResults();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div>
       <form
         className="form-inline hidden-print mt-4"
-        id="404-cse-searchbox-form"
+        id="cse-searchbox-form"
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -91,16 +121,13 @@ const SiteSearch = () => {
             const resultsEl = google.search.cse.element.getElement(GNAME);
 
             if (!resultsEl) {
-              console.error(
-                `The Google CSE library could not find the element with gname ${GNAME}`
-              );
-              return;
-            }
-
-            if (value) {
-              resultsEl.execute(value);
+              attemptRerender();
             } else {
-              resultsEl.clearAllResults();
+              if (value) {
+                resultsEl.execute(value);
+              } else {
+                resultsEl.clearAllResults();
+              }
             }
           } catch (err) {
             console.error(err);
@@ -118,7 +145,7 @@ const SiteSearch = () => {
             title="Search utk.edu"
             placeholder="Example: Apply, Payroll, Provost, English Department"
             name="q"
-            id="404-q"
+            id="q"
           />
           <button type="submit" className="btn btn-secondary">
             <svg

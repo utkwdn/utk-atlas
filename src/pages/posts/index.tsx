@@ -42,9 +42,8 @@ export default function Page() {
       </Head>
 
       <main className="content content-index">
-        {/* probably tweak `Posts` to avoid the `as` here */}
         <Posts
-          posts={(posts?.nodes || []) as Post[]}
+          posts={posts?.nodes}
           heading="Blog Posts"
           headingLevel="h2"
           postTitleLevel="h3"
