@@ -13,7 +13,7 @@ class MyDocument extends Document {
           />
 
           {/* Google Tag Manager */}
-          <Script id="google-tag-manager" strategy="afterInteractive">
+          <Script id="google-tag-manager" strategy="beforeInteractive">
             {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -48,10 +48,13 @@ class MyDocument extends Document {
             }}
           />
           {/* Monsido Web Optimization Scripts */}
-          <Script id="Monsido">
+          <Script id="Monsido" strategy="afterInteractive">
             {`window._monsido = window._monsido || {token: "oVQzcnTw65oGJbvLxauRcw",}; console.log('monsido')`}
           </Script>
-          <Script src="https://app-script.monsido.com/v2/monsido-script.js" />
+          <Script
+            src="https://app-script.monsido.com/v2/monsido-script.js"
+            strategy="afterInteractive"
+          />
 
           <Main />
           <NextScript />
