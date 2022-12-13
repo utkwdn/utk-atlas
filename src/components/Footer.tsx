@@ -29,7 +29,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
               <div className="col-auto">
                 <div className="row">
                   <div className="col-6">
-                    <h4 className="text-white">Tools</h4>
+                    <h3 className="text-white h4">Tools</h3>
                     <ul id="list-unstyled" className="list-unstyled">
                       {tools.flatMap((tool) => {
                         const label = tool?.label;
@@ -51,7 +51,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                     </ul>
                   </div>
                   <div className="col-6">
-                    <h4 className="text-white">Campus Links</h4>
+                    <h3 className="text-white h4">Campus Links</h3>
                     <ul className="list-unstyled">
                       {links.flatMap((link) => {
                         const label = link?.label;
