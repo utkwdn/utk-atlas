@@ -4,12 +4,15 @@
   margin-top: $spacer;
 }
 .comment-form {
-
 }
 
-.comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url, .form-submit {
-
-  input, textarea {
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.form-submit {
+  input,
+  textarea {
     @extend .form-control;
   }
 }
@@ -17,5 +20,73 @@
   @extend .form-check;
   input {
     @extend .form-check-input;
+  }
+}
+
+// Request Info Slate Forms, styling the inputs
+.form_container,
+.form_action,
+.action {
+  @extend .container;
+  max-width: 1100px;
+  button {
+    @extend .btn;
+    @extend .btn-white;
+    @extend .btn-outline-gray2;
+  }
+}
+.form_text,
+.form_select,
+.form_responses,
+.form_question fieldset div {
+  @extend .mb-3;
+  @extend .row;
+  input[type='text'],
+  input[type='email'] {
+    @extend .form-control;
+  }
+  label,
+  div .form_label {
+    @extend .col-lg-2;
+    @extend .col-form-label;
+  }
+  select {
+    @extend .form-select;
+  }
+  select[aria-label='Month'],
+  select[aria-label='Day'],
+  select[aria-label='Year'] {
+    @extend .col;
+    @extend .col-auto;
+  }
+  .form_responses {
+    @extend .col-lg-10;
+  }
+}
+.form_question fieldset {
+  div {
+    @extend .mx-0;
+  }
+  .form_response {
+    @extend .row;
+    @extend .mx-3;
+    @extend .form-check;
+    input[type='checkbox'],
+    input[type='radio'] {
+      @extend .form-check-input;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    label {
+      @extend .form-check-label;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+  > .form_label {
+    font-weight: bold;
+    @extend .mb-3;
+    @extend .ms-3;
+    @extend .row;
   }
 }
