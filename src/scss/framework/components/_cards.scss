@@ -242,7 +242,9 @@
 .nameCardContainer,
 .programCardContainer {
   &.half-screen > * {
-    @media (min-width: 1200px) {
+    /* adds control to this pattern when used in 50/50 containers with style .half-screen applied */
+    flex-basis: 100%;
+    @media (min-width: 1355px) {
       flex-basis: 45%;
       flex-direction: row;
       flex-wrap: wrap;
