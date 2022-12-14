@@ -950,11 +950,13 @@ body.academics {
   align-items: flex-start;
   align-content: flex-start;
   position: relative;
-
+  // border: 1px solid blue;
+  margin-top: 1vw;
   @media screen and (min-width: 1200px) {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 2vw;
+    margin-top: 2vw;
   }
 }
 
@@ -979,13 +981,17 @@ body.academics {
   display: flex;
   width: 84vw;
   margin: 0 8vw 2rem 8vw;
+  // border: 1px solid green;
 
   @media screen and (min-width: 1200px) {
     // flex-basis: 50vw;
     max-width: none;
     width: auto;
     position: relative;
-    margin: 5rem 0 2rem 2rem !important;
+    margin: 0 0 2rem 2rem !important;
+  }
+  @media screen and (min-width: 1500px) {
+    margin: 1vw 0 2rem 2rem !important;
   }
   & > div {
     width: 100% !important;
