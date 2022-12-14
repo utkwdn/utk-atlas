@@ -6,6 +6,7 @@ import { getNextStaticProps } from '@faustjs/next';
 import styles from 'scss/pages/social-hub.module.scss';
 import { link } from 'fs/promises';
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Social() {
   const { useQuery } = client;
@@ -25,6 +26,9 @@ function Social() {
 
   return (
     <Layout>
+      <Head>
+        <title>Social Media Hub</title>
+      </Head>
       <PageTitle title={'Social'} />
       <div className="container-xxl" style={{ padding: '3rem 0' }}>
         <div className="is-content-justification-center is-layout-flex wp-block-buttons">
