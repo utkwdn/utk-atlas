@@ -1,5 +1,39 @@
 const { withFaust } = require('@faustjs/next');
 
+// Wiring up Redirection plugin to work with Next
+async function fetchWordPressRedirects() {
+  if (
+    !process.env.WORDPRESS_USERNAME ||
+    !process.env.WORDPRESS_PASSWORD ||
+    !process.env.REDIRECTION_API_ENDPOINT
+  ) {
+    return [];
+  }
+
+  const base64UsernamePasswordToken = Buffer.from(
+    process.env.WORDPRESS_USERNAME + ':' + process.env.WORDPRESS_PASSWORD
+  ).toString('base64');
+
+  const resp = await fetch(process.env.REDIRECTION_API_ENDPOINT, {
+    headers: {
+      Authorization: `Basic ${base64UsernamePasswordToken}`,
+    },
+  });
+  const data = await resp.json();
+
+  if (!Array.isArray(data.items)) {
+    return [];
+  }
+
+  return data.items
+    .filter((redirection) => redirection.action_type === 'url')
+    .map((redirection) => ({
+      source: redirection.url,
+      destination: redirection.action_data.url,
+      permanent: redirection.action_code === 301,
+    }));
+}
+
 /**
  * @type {import('next').NextConfig}
  **/
@@ -8,7 +42,7 @@ module.exports = withFaust({
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 
-    domains: ['images.utk.edu'],
+    domains: ['images.utk.edu', 'content.cms.utk.edu'],
   },
   /** allowing static public file to render without having to add the .html **/
   // redirects with masked url
@@ -30,101 +64,11 @@ module.exports = withFaust({
         source: '/social/emojis',
         destination: '/emojis',
       },
-      {
-        source: '/mobile/alpha',
-        destination: '/alpha',
-      },
-      {
-        source: '/mobile/contact',
-        destination: '/contact',
-      },
-      {
-        source: '/aboutut',
-        destination: '/about',
-      },
-      {
-        source: '/aboutut/numbers',
-        destination: '/about/numbers',
-      },
-      {
-        source: '/aboutut/knoxville',
-        destination: '/about/knoxville',
-      },
-      {
-        source: '/apply',
-        destination: 'https://admissions.utk.edu/apply/',
-      },
-      {
-        source: '/tours',
-        destination: 'https://admissions.utk.edu/visit/',
-      },
-      {
-        source: '/visit',
-        destination: 'https://admissions.utk.edu/visit/',
-      },
     ];
   },
 
-  // redirects without masking url
-  redirects: async () => {
-    return [
-      {
-        source: '/meet',
-        destination:
-          '/meet.html?utm_campaign=meet-ut-2022&utm_id=0&utm_medium=direct-mail&utm_source=meet-mailer-2022',
-        permanent: true,
-      },
-      {
-        source: '/research',
-        destination: 'https://research.utk.edu/',
-        permanent: true,
-      },
-      {
-        source: '/diversity',
-        destination: 'https://diversity.utk.edu/',
-        permanent: true,
-      },
-      {
-        source: '/status',
-        destination: 'https://safety.utk.edu/status/',
-        permanent: true,
-      },
-      {
-        source: '/mobile/dining',
-        destination: 'https://ut.campusdish.com/',
-        permanent: true,
-      },
-      {
-        source: '/utalert',
-        destination: 'https://safety.utk.edu/ut-alert/',
-        permanent: true,
-      },
-      {
-        source: '/volunteer_stories',
-        destination: 'https://volunteerstories.utk.edu',
-        permanent: true,
-      },
-      {
-        source: '/coronavirus',
-        destination: 'https://studenthealth.utk.edu/covid-19',
-        permanent: true,
-      },
-      {
-        source: '/history',
-        destination: 'https://timeline.utk.edu/',
-        permanent: true,
-      },
-      {
-        source: '/therock',
-        destination: 'https://therock.utk.edu/',
-        permanent: true,
-      },
-      // {
-      //   source: '/give',
-      //   destination:
-      //     'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto/',
-      //   permanent: false,
-      // },
-    ];
+  async redirects() {
+    const wordPressRedirects = await fetchWordPressRedirects();
+    return wordPressRedirects;
   },
 });

@@ -22,14 +22,17 @@ const UniversalHeader = () => {
     },
     {
       label: 'Give',
-      href: 'https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto',
+      href: '/give',
     },
   ].map(({ label, href }, i) => (
     <li className="uni-nav-item" key={i}>
       <small>
-        <Link href={href}>
-          <a className="menu-item text-light text-uppercase">{label}</a>
-        </Link>
+        {/* Removing <Link> in favor of <a> because of CORS issues with redirected links */}
+        {/* <Link href={href}> */}
+        <a href={href} className="menu-item text-light text-uppercase">
+          {label}
+        </a>
+        {/* </Link> */}
       </small>
     </li>
   ));

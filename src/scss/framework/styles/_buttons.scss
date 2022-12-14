@@ -276,10 +276,14 @@
   gap: 0.25vw;
   margin-bottom: $spacer;
   align-items: flex-end;
+  justify-content: flex-start;
   > * {
     width: auto;
     display: flex;
     margin-right: calc($spacer * 4.25);
+  }
+  &.is-layout-constrained > * {
+    margin-left: 0;
   }
 }
 
