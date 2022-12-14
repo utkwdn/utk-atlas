@@ -1079,12 +1079,15 @@ body.academics {
 
 h1.area {
   font-size: 2.6rem;
-  font-weight: 600;
+  font-weight: $font-weight-normal;
   font-style: italic;
   color: #9d9d9d;
   color: #918e8e;
   letter-spacing: 0.26rem;
   text-transform: uppercase;
+  // line-height: calc($headings-line-height * 0.2);
+  margin-bottom: calc($spacer * 0.6);
+
   &:before {
     content: '';
     position: absolute;
@@ -1105,7 +1108,8 @@ hr.oa-thick-bar {
     width: 24rem;
   }
 }
-.title-container {
+.is-layout-flow > .title-container {
+  margin-block-start: 0;
 }
 
 p.theme {
@@ -1117,7 +1121,7 @@ p.theme {
   font-size: $h1-font-size;
   // line-height: 6rem;
   // line-height: 4.8rem; // need to figure out how to get bootstrap variables used here
-  line-height: $headings-line-height;
+  line-height: calc($headings-line-height * 1.1);
   font-weight: $font-weight-ultra;
   margin-bottom: 2rem;
   text-transform: uppercase;
