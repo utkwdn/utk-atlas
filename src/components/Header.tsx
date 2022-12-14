@@ -306,6 +306,7 @@ const Header = () => {
       )}
 
       {/* UT Alert Banner */}
+      {/* Possibly add timer to refresh status at some point */}
       <div
         className="alert alert-primary alert-dismissible"
         role="alert"
@@ -317,12 +318,12 @@ const Header = () => {
         }}
       >
         <div className="container">
-          <button
+          {/* <button
             type="button"
             className="btn-close"
             aria-label="Close"
             onClick={() => setAlertDisplay('none')}
-          ></button>
+          ></button> */}
           <p className="alert-heading">{alertDescription}</p>
           <small>Posted on {alertDate}</small>
           <p>
