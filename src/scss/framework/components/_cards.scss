@@ -226,6 +226,15 @@
   column-gap: 5%;
   justify-content: flex-start;
   margin-bottom: calc($spacer * 6);
+  &.no-cta .programCard {
+    &:before {
+      content: none;
+    }
+    &:hover {
+      color: currentColor;
+      cursor: inherit;
+    }
+  }
 }
 .nameCardContainer > *,
 .programCardContainer > * {
@@ -317,9 +326,13 @@
         bottom: 0;
         left: 0;
         z-index: 1;
+        &:hover {
+          cursor: pointer;
+        }
       }
       &:hover {
         color: $utlinkriver;
+        cursor: pointer;
       }
     }
   }
@@ -457,6 +470,11 @@
   // column-gap: 2%;
   width: 100%;
   //Need to FIX for responsive
+  &.subject3up > * {
+    @media screen and (min-width: 900px) {
+      flex-basis: 30% !important;
+    }
+  }
 }
 
 .subjectCard {
