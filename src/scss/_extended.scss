@@ -1251,10 +1251,14 @@ p.theme {
 }
 .fortysixty-forty {
   flex-basis: 60%;
+  // This causes an error: "40% is not a flex value : 20vw 1 40%"
+  // Not sure what it should be.
   flex: 20vw 1 40%;
   padding: 2rem;
 
   @include media-breakpoint-up(xl) {
+    // This causes an error: "40% is not a flex value : 20vw 1 40%"
+    // Not sure what it should be.
     flex: 20vw 1 40%;
   }
 }
@@ -1274,7 +1278,7 @@ p.theme {
     // object-fit: cover;
     // max-width: 1064px;
     // max-height: 666px;
-    position: realtive;
+    position: relative;
   }
   > div[class$='__inner-container'] {
     height: 100%;
