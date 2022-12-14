@@ -19,21 +19,30 @@ const UniversalHeader = () => {
       {/* Using <a> instead of <Link> for next 3 links to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
-          <a href="/visit" className="menu-item text-light text-uppercase">
+          <a
+            href="https://admissions.utk.edu/visit/"
+            className="menu-item text-light text-uppercase"
+          >
             Visit
           </a>
         </small>
       </li>
       <li className="uni-nav-item">
         <small>
-          <a href="/apply" className="menu-item text-light text-uppercase">
+          <a
+            href="https://admissions.utk.edu/apply/"
+            className="menu-item text-light text-uppercase"
+          >
             Apply
           </a>
         </small>
       </li>
       <li className="uni-nav-item">
         <small>
-          <a href="/give" className="menu-item text-light text-uppercase">
+          <a
+            href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
+            className="menu-item text-light text-uppercase"
+          >
             Give
           </a>
         </small>

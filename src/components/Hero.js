@@ -236,7 +236,7 @@ const Hero = () => {
               Rocky Top
             </h2>
             <p className="fancyLink">
-              <a href="/visit/">Visit campus</a>
+              <a href="https://admissions.utk.edu/visit/">Visit campus</a>
             </p>
             <p>
               Feel the energy of Big Orange Country and find out more about
