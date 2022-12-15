@@ -1403,12 +1403,14 @@ p.theme {
 }
 
 .push-up {
-  margin-top: -4rem;
+  margin-top: -4rem !important;
   position: absolute;
 }
 .push-down {
   bottom: -4rem;
   position: relative;
+}
+.mobile-fix {
 }
 
 .clear-image {
