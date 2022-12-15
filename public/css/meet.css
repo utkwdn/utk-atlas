@@ -781,14 +781,14 @@ textarea.form-control.is-invalid {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjIuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI3M3B4IiBoZWlnaHQ9IjYzLjVweCIgdmlld0JveD0iMCAwIDczIDYzLjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDczIDYzLjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO30KCS5zdDF7ZmlsbDpub25lO3N0cm9rZTojNTg1OTVCO30KCS5zdDJ7Zm9udC1mYW1pbHk6J0dvdGhhbS1VbHRyYUl0YWxpYyc7fQoJLnN0M3tmb250LXNpemU6NjVweDt9Cgkuc3Q0e2xldHRlci1zcGFjaW5nOjY7fQoJLnN0NXtmaWxsOm5vbmU7c3Ryb2tlOiNGRjgyMDA7c3Ryb2tlLXdpZHRoOjIuNTt9Cgkuc3Q2e2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQo8L3N0eWxlPgo8cmVjdCB4PSItNTczLjYiIHk9IjE5IiBjbGFzcz0ic3QwIiB3aWR0aD0iNjY2LjQiIGhlaWdodD0iMTkyLjUiLz4KPHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAtNTczLjY0MjYgNjYuNDU0NCkiPjx0c3BhbiB4PSIwIiB5PSIwIiBjbGFzcz0ic3QxIHN0MiBzdDMgc3Q0Ij5FWFBFUklFTkNFIDwvdHNwYW4+PHRzcGFuIHg9IjAiIHk9Ijc2IiBjbGFzcz0ic3QxIHN0MiBzdDMgc3Q0Ij5DQU1QVVM8L3RzcGFuPjwvdGV4dD4KPGc+Cgk8ZGVmcz4KCQk8cmVjdCBpZD0iU1ZHSURfMV8iIHk9IjYuNSIgd2lkdGg9IjczIiBoZWlnaHQ9IjU3Ii8+Cgk8L2RlZnM+Cgk8Y2xpcFBhdGggaWQ9IlNWR0lEXzJfIj4KCQk8dXNlIHhsaW5rOmhyZWY9IiNTVkdJRF8xXyIgIHN0eWxlPSJvdmVyZmxvdzp2aXNpYmxlOyIvPgoJPC9jbGlwUGF0aD4KPC9nPgo8ZyBjbGFzcz0ic3Q2Ij4KCTxwYXRoIGNsYXNzPSJzdDUiIGQ9Ik0yLjgsMzQuN2MwLTE5LjQsMTEtMjYsMjYuOC0yNi43bDIuMiwxMC4xQzIzLjksMTkuMSwyMCwyMi44LDIwLDI5aDEwLjVWNTdIMi44VjM0Ljd6IE0zNi42LDM0LjcKCQljMC0xOS40LDExLTI2LDI2LjgtMjYuN2wyLjIsMTAuMWMtNy45LDEtMTEuOCw0LjYtMTEuOCwxMC45aDEwLjVWNTdIMzYuNlYzNC43eiIvPgo8L2c+Cjwvc3ZnPgo=');
 }
 .bg-aerial {
-  background-image: url(https://www.utk.edu/images/i/warmers/aerial_1.jpg);
+  background-image: url(https://prod.ws.utk.edu/images/i/warmers/aerial_1.jpg);
 }
 .bg-campus {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(https://www.utk.edu/images/i/warmers/studentsoncampus_1.jpg);
+  background-image: url(https://prod.ws.utk.edu/images/i/warmers/studentsoncampus_1.jpg);
 }
 .bg-homesweet {
   padding-top: 25rem;
@@ -800,7 +800,7 @@ textarea.form-control.is-invalid {
   background-size: cover;
 }
 .framed::after {
-  background-image: url(https://www.utk.edu/images/i/warmers/strip_gingham.gif);
+  background-image: url(https://prod.ws.utk.edu/images/i/warmers/strip_gingham.gif);
 }
 .site-title {
   font-size: 1.5625rem;
