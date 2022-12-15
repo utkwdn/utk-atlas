@@ -89,6 +89,16 @@
   }
 }
 
+.twoUp-gallery {
+  margin: 0 auto;
+  // border: 2px solid red;
+  max-width: 1854px;
+  padding: 0;
+  & .is-layout-flow > .alignleft {
+    margin-inline-end: 0;
+  }
+}
+
 // Two up Gallery (large first) Forces image to overlap with orange bar on mobile. Grounds the image.
 .twoUp-gallery-lgsm figure:first-of-type {
   margin-bottom: -5rem;
@@ -103,16 +113,22 @@
   }
 }
 
+// .colA {
+//   border: 1px solid green;
+// }
+// .coldB {
+//   border: 1px solid blue;
+// }
 /* TN */
 
 /* TN */
 
 // experimental TN Section
-// Still in process and not functionging 100% yet
+// Still in process and not functionging 100% yet NOT USED YET.
 .tnDivider {
   position: absolute;
   top: 0;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   width: 100vw;
   // height: auto;
   // height: 100%;

@@ -7,35 +7,48 @@ import SearchModalFooter from './SearchModalFooter';
 const UniversalHeader = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
 
-  const linkItems = [
-    {
-      label: 'Request Info',
-      href: '/requestinfo',
-    },
-    {
-      label: 'Visit',
-      href: '/visit',
-    },
-    {
-      label: 'Apply',
-      href: '/apply',
-    },
-    {
-      label: 'Give',
-      href: '/give',
-    },
-  ].map(({ label, href }, i) => (
-    <li className="uni-nav-item" key={i}>
-      <small>
-        {/* Removing <Link> in favor of <a> because of CORS issues with redirected links */}
-        {/* <Link href={href}> */}
-        <a href={href} className="menu-item text-light text-uppercase">
-          {label}
-        </a>
-        {/* </Link> */}
-      </small>
-    </li>
-  ));
+  const linkItems = (
+    <>
+      <li className="uni-nav-item">
+        <small>
+          <Link href="/requestinfo">
+            <a className="menu-item text-light text-uppercase">Request Info</a>
+          </Link>
+        </small>
+      </li>
+      {/* Using <a> instead of <Link> for next 3 links to prevent CORS issues with redirects */}
+      <li className="uni-nav-item">
+        <small>
+          <a
+            href="https://admissions.utk.edu/visit/"
+            className="menu-item text-light text-uppercase"
+          >
+            Visit
+          </a>
+        </small>
+      </li>
+      <li className="uni-nav-item">
+        <small>
+          <a
+            href="https://admissions.utk.edu/apply/"
+            className="menu-item text-light text-uppercase"
+          >
+            Apply
+          </a>
+        </small>
+      </li>
+      <li className="uni-nav-item">
+        <small>
+          <a
+            href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
+            className="menu-item text-light text-uppercase"
+          >
+            Give
+          </a>
+        </small>
+      </li>
+    </>
+  );
 
   return (
     <>
