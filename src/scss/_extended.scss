@@ -30,7 +30,8 @@
   @media screen and (min-width: 1600px) {
     //recalculated at wider screens to fix spacing that was appearing on right
     // might look at updating the mixin container in framework. Need to experiment more.
-    padding: 0 0 0 calc(var(--bs-gutter-x, 0.75rem));
+    // padding: 0 0 0 calc(var(--bs-gutter-x, 0.75rem));
+    padding: 0;
   }
 }
 html,
