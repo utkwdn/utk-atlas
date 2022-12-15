@@ -6,6 +6,7 @@ import { getNextStaticProps } from '@faustjs/next';
 import styles from 'scss/pages/social-hub.module.scss';
 import { link } from 'fs/promises';
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Social() {
   const { useQuery } = client;
@@ -25,9 +26,35 @@ function Social() {
 
   return (
     <Layout>
+      <Head>
+        <title>Social Media Hub</title>
+      </Head>
       <PageTitle title={'Social'} />
       <div className="container-xxl" style={{ padding: '3rem 0' }}>
-        <div className="is-content-justification-center is-layout-flex wp-container-1 wp-block-buttons">
+        <div className="is-content-justification-center is-layout-flex wp-block-buttons">
+          <div className="wp-block-button is-style-outline">
+            <Link className="wp-block-button__link wp-element-button" href="#">
+              Hub
+            </Link>
+          </div>
+          <div className="wp-block-button is-style-outline">
+            <Link
+              className="wp-block-button__link wp-element-button"
+              href="/social/hashtags/"
+            >
+              Hashtag Guide
+            </Link>
+          </div>
+          <div className="wp-block-button is-style-outline">
+            <Link
+              className="wp-block-button__link wp-element-button"
+              href="/social/emojis/"
+            >
+              Emojis
+            </Link>
+          </div>
+        </div>
+        {/* <div className="is-content-justification-center is-layout-flex wp-container-1 wp-block-buttons">
           <div className="wp-block-button">
             <Link className="wp-block-button__link wp-element-button" href="#">
               Hub
@@ -51,7 +78,7 @@ function Social() {
               Emojis
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div
           className="getconnected is-content-justification-center is-layout-flex"
@@ -141,11 +168,11 @@ function Social() {
         </div>
         <div
           className="getconnected is-content-justification-center is-layout-flex"
-          style={{ justifyContent: 'center', marginBottom: '2rem;' }}
+          style={{ justifyContent: 'center', margin: '2rem 0' }}
         >
-          <p className="lead text-xs-center is-content-justification-center">
-            Social media accounts across UT.
-          </p>
+          <h3 className="is-content-justification-center">
+            Social Media Accounts Across UT.
+          </h3>
         </div>
 
         <table className={`table ${styles['table-striped']}`}>
@@ -160,7 +187,7 @@ function Social() {
             </tr>
           </thead>
           <tbody>
-            {socialUnits?.map((this_unit) => {
+            {socialUnits?.map((this_unit, i) => {
               const title = this_unit?.title() || '';
               const twitterLink = this_unit?.socialUnitURLs?.twitter;
               const facebookLink = this_unit?.socialUnitURLs?.facebook;
@@ -174,7 +201,7 @@ function Social() {
                     {twitterLink ? (
                       <a href={twitterLink} target="_blank" rel="noreferrer">
                         <svg
-                          id="soc-twitter"
+                          id={`soc-twitter-${i}`}
                           viewBox="0 0 24 24"
                           width="25px"
                           height="25px"
@@ -194,7 +221,7 @@ function Social() {
                     {facebookLink ? (
                       <a href={facebookLink} target="_blank" rel="noreferrer">
                         <svg
-                          id="soc-facebook"
+                          id={`soc-facebook-${i}`}
                           viewBox="0 0 24 24"
                           width="100%"
                           height="100%"
@@ -215,7 +242,7 @@ function Social() {
                     {instagramLink ? (
                       <a href={instagramLink} target="_blank" rel="noreferrer">
                         <svg
-                          id="soc-instagram"
+                          id={`soc-instagram-${i}`}
                           viewBox="0 0 512 512"
                           width="100%"
                           height="100%"
@@ -237,7 +264,7 @@ function Social() {
                     {youtubeLink ? (
                       <a href={youtubeLink} target="_blank" rel="noreferrer">
                         <svg
-                          id="soc-youtube"
+                          id={`soc-youtube-${i}`}
                           viewBox="0 0 24 24"
                           width="100%"
                           height="100%"
@@ -257,7 +284,7 @@ function Social() {
                     {linkedinLink ? (
                       <a href={linkedinLink} target="_blank" rel="noreferrer">
                         <svg
-                          id="soc-linkedin"
+                          id={`soc-linkedin-${i}`}
                           viewBox="0 0 24 24"
                           width="100%"
                           height="100%"
