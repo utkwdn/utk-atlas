@@ -61,6 +61,7 @@ h1 {
 h2 {
   margin-top: calc($spacer * 5);
   margin-bottom: calc($spacer * 2.2);
+  word-wrap: normal !important;
 }
 
 h3 {
@@ -144,4 +145,9 @@ section[class^='PageTitle_hero'] {
     font-size: $h1-font-size;
     font-weight: $font-weight-bolder;
   }
+}
+#this-isrocky-top {
+  /* think there is some global setting set to word-break: all. Need to find this and correct.
+  This is causing words to wrap at strange points */
+  word-break: normal;
 }
