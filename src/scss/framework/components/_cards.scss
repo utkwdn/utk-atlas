@@ -171,18 +171,18 @@
     position: relative;
   }
 }
-h2:has(+ .profileCardContainer),
-h2:has(+ .bioCardContainer),
-h2:has(+ .subjectCardContainer),
-h2:has(+ .nameCardContainer),
-h2:has(+ .programCardContainer) {
-  /* adding padding to match the card container that follows */
-  padding: calc($spacer * 1.5);
+// h2:has(+ .profileCardContainer),
+// h2:has(+ .bioCardContainer),
+// h2:has(+ .subjectCardContainer),
+// h2:has(+ .nameCardContainer),
+// h2:has(+ .programCardContainer) {
+//   /* adding padding to match the card container that follows */
+//   padding: calc($spacer * 1.5);
 
-  @media screen and (min-width: 1500px) {
-    padding: 0;
-  }
-}
+//   @media screen and (min-width: 1500px) {
+//     padding: 0;
+//   }
+// }
 
 /* - - - - - - - - - - - - */
 /* profileCard */
@@ -203,10 +203,10 @@ h2:has(+ .programCardContainer) {
   row-gap: calc($spacer * 4);
   position: relative;
   margin-left: 0;
-  padding: calc($spacer * 1.5);
+  // padding: calc($spacer * 1.5);
 
   @media screen and (min-width: 1500px) {
-    padding: 0;
+    // padding: 0;
   }
   > .is-layout-flow {
     margin-block-start: 0 !important; /* this overrides the default spacing set by WP is-layout-flow */
