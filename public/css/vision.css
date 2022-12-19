@@ -304,9 +304,12 @@ body {
   padding: 0;
   margin-top: 10vh;
   /* margin-bottom: -0.45rem; */
-  margin-bottom: -1.3rem; /* hack for atlas */
+  /* margin-bottom: -1.3rem; hack for atlas */
   z-index: 1;
   position: relative;
+}
+.site-info {
+  padding-top: 3rem;
 }
 .heroImg {
   width: 100%;
