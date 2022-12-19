@@ -1,7 +1,5 @@
-
-
 // Contact site-info
- .wp-block-social-links {
+.wp-block-social-links {
   @extend .list-inline;
   li {
     @extend .list-inline-item;
@@ -9,4 +7,10 @@
       fill: $white;
     }
   }
+}
+
+#utk_footer_logo {
+  max-width: 300px;
+  margin-bottom: $spacer * 2;
+  border: 2px solid red;
 }
