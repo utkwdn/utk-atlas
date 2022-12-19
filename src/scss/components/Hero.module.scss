@@ -433,8 +433,6 @@
       display: none;
     }
     .layoutB {
-      // This causes an error: "40% is not a flex value : 20vw 1 40%"
-      // Not sure what it should be.
       transform: translateY(500px);
     }
   }
