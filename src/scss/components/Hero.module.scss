@@ -433,7 +433,10 @@
       display: none;
     }
     .layoutB {
-      transform: translateY(500px);
+      // removing transform for now.
+      // Adding pixel units actually breaks this. It used to be the code that pushed the second group down initially to the right start position
+      // wondering if this changed in the react refactor and is no longer necessary
+      // transform: translateY(500);
     }
   }
   @media screen and (min-width: 829px) {
