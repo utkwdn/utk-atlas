@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Head from 'next/head';
 import Layout from 'components/Layout';
 import SearchBody from '../components/404SearchBody';
 import { SSRProvider } from 'react-bootstrap';
@@ -9,6 +9,9 @@ export default function Page(): JSX.Element {
   return (
     <SSRProvider>
       <Layout>
+        <Head>
+          <title>404 | Page Not Found</title>
+        </Head>
         <main className="content content-page">
           <div
             className={`container-xxl justify-content-center ${styles['four-oh-four-content']}`}
