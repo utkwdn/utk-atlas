@@ -6,6 +6,7 @@ import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustjs/next';
 import TextField from '@mui/material/TextField';
 import { matchSorter } from 'match-sorter';
+import Head from 'next/head';
 import {
   ChangeEventHandler,
   FormEventHandler,
@@ -202,8 +203,9 @@ const Alpha = () => {
 
   return (
     <Layout>
-      {/* TODO: Provide meta/title stuff in Head here */}
-      {/* <Head></Head> */}
+      <Head>
+        <title>A-Z Index</title>
+      </Head>
       {/*<Intro title={'A-Z Index'} theme={''} intro={<div></div>} />*/}
       <div className={styles['h1Container']}>
         <h1>A-Z Index</h1>
