@@ -60,7 +60,7 @@
 }
 
 body {
-  --wp--style--block-gap: $spacer;
+  --wp--style--block-gap: 1rem;
   .is-layout-flow > * {
     margin-block-start: 0;
     margin-block-end: 0;
