@@ -319,7 +319,7 @@
     position: relative;
     background-image: url('//images.utk.edu/images/www/hero202112/square-dots-01.svg');
     background-repeat: repeat-x;
-    scale: 1.5;
+    transform: scale(1.5);
     opacity: 0.3;
     display: block;
     z-index: 2;
@@ -433,7 +433,9 @@
       display: none;
     }
     .layoutB {
-      transform: translateY(500);
+      // removing transform for now.
+      // Adding pixel units actually breaks this. Removing for now. Not sure this is necessary anymore.
+      // transform: translateY(500);
     }
   }
   @media screen and (min-width: 829px) {
