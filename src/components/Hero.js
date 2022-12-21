@@ -236,7 +236,9 @@ const Hero = () => {
               Rocky Top
             </h2>
             <p className="fancyLink">
-              <a href="https://admissions.utk.edu/visit/">Visit campus</a>
+              <a href="https://admissions.utk.edu/visit/" className="hero-cat">
+                Visit campus
+              </a>
             </p>
             <p>
               Feel the energy of Big Orange Country and find out more about
@@ -289,7 +291,7 @@ const Hero = () => {
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202112/hero202112/river-aerial-mobile-02.jpg"
+                  src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
                   alt="sunset over the Tennessee River that surrounds campus"
                 />
               </picture>
