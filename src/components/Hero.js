@@ -289,7 +289,7 @@ const Hero = () => {
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202112/hero202112/river-aerial-mobile-02.jpg"
+                  src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
                   alt="sunset over the Tennessee River that surrounds campus"
                 />
               </picture>
