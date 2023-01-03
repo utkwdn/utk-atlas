@@ -259,11 +259,9 @@ const Alpha = () => {
           {activeChars.map((char) => (
             <div key={char} className={styles['letter-group']}>
               <div className={styles['letter-container']}>
-                <h3 id={toDomId(char)} className={styles.letter}>
-                  {char}
-                </h3>
+                <h3 className={styles.letter}>{char}</h3>
               </div>
-              <ul>
+              <ul id={toDomId(char)}>
                 {itemsByChar.current.get(char)?.flatMap((item) =>
                   activeItems.includes(item) ? (
                     <li key={item.id} className={styles['result-title']}>

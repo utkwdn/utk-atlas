@@ -4,7 +4,7 @@ import Script from 'next/script';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={{ scrollBehavior: 'auto' }}>
         <Head>
           {/* used in `SiteSearch.tsx`. Loading beforeInteractive to insure 404 page search works */}
           <Script
