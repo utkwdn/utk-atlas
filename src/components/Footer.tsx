@@ -37,11 +37,12 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                         if (label && url) {
                           return (
                             <li key={`${label}$-menu`}>
-                              <Link href={url}>
-                                <a className="text-white footer-links">
-                                  {label}
-                                </a>
-                              </Link>
+                              {/* Using <a> instead of <Link> to prevent scrolling issue in Firefox and Edge */}
+                              {/* <Link href={url}> */}
+                              <a href={url} className="text-white footer-links">
+                                {label}
+                              </a>
+                              {/* </Link> */}
                             </li>
                           );
                         } else {
@@ -59,11 +60,12 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                         if (label && url) {
                           return (
                             <li key={`${label}$-menu`}>
-                              <Link href={url}>
-                                <a className="text-white footer-links">
-                                  {label}
-                                </a>
-                              </Link>
+                              {/* Using <a> instead of <Link> to prevent scrolling issue in Firefox and Edge */}
+                              {/* <Link href={url}> */}
+                              <a href={url} className="text-white footer-links">
+                                {label}
+                              </a>
+                              {/* </Link> */}
                             </li>
                           );
                         } else {
