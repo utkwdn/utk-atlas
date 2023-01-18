@@ -331,6 +331,8 @@ used on utk.edu home specifically */
   // border-radius: 0 0 30px 0;
   // border-radius is being overwritten below. We might use this instead of the angle in WDS?
   // height: 100%;   // breaks equal height cards. no good.
+
+  @extend .card-flexGapFix;
 }
 
 .nameCard {
@@ -556,6 +558,7 @@ used on utk.edu home specifically */
   // height: 100%; // breaks equal height cards. no good.
 
   // border-radius: 0 0 30px 0;
+  @extend .card-flexGapFix;
   @media screen and (min-width: 800px) {
     flex-basis: 46%;
     flex-basis: calc((98% - 3rem) / 2);
