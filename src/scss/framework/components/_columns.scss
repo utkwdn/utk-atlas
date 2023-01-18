@@ -31,3 +31,6 @@
     border: none;
   }
 }
+.wp-block-column {
+  word-break: normal !important; /* overrides wp default of break-word which was causing weird orphaned letters */
+}

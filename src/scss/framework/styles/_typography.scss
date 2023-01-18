@@ -82,6 +82,9 @@ h6 {
   margin-top: calc($spacer * 2.8);
   margin-bottom: calc($spacer * 1);
 }
+p {
+  font-size: $p-font-size;
+}
 
 // h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
 //   margin-top:0;
@@ -93,8 +96,27 @@ h6 {
   font-size: $h2-font-size;
   padding: 0;
 }
+
+h1.area {
+  font-size: clamp(1.51375rem, 6.2175vw, 2.6rem);
+  font-weight: $font-weight-normal;
+  font-style: italic;
+  color: #9d9d9d;
+  color: #918e8e;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  // line-height: calc($headings-line-height * 0.2);
+  margin-bottom: calc($spacer * 0.6);
+
+  &:before {
+    content: '';
+    position: absolute;
+    color: $utorange;
+  }
+}
+
 p.lead + p {
-  margin-top: calc($spacer * 2);
+  margin-top: clamp($spacer, 3vw, calc($spacer * 2));
 }
 p strong {
   font-weight: $font-weight-bold;
@@ -150,4 +172,17 @@ section[class^='PageTitle_hero'] {
   /* think there is some global setting set to word-break: all. Need to find this and correct.
   This is causing words to wrap at strange points */
   word-break: normal;
+}
+
+// control width of content based on character widths
+.ch-med {
+  max-width: 45ch;
+}
+.ch-lg {
+  max-width: 60ch;
+}
+
+.message-big {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  // color: #ed7002;
 }
