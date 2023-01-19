@@ -201,3 +201,286 @@
 //     left: 0;
 //   }
 // }
+
+// .fortysixty-forty {
+//   flex-basis: 60%;
+//   // This causes an error: "40% is not a flex value : 20vw 1 40%"
+//   // Not sure what it should be.
+//   flex: 20vw 1 40%;
+//   padding: 2rem;
+
+//   @include media-breakpoint-up(xl) {
+//     // This causes an error: "40% is not a flex value : 20vw 1 40%"
+//     // Not sure what it should be.
+//     flex: 20vw 1 40%;
+//     border: 2px solid red;
+//   }
+// }
+
+// .fortysixty-sixty {
+//   flex-basis: 40%;
+//   position: relative;
+
+//   @include media-breakpoint-up(xl) {
+//     flex-basis: 60%;
+//   }
+//   h2 {
+//     margin-top: 0;
+//   }
+
+//   img {
+//     // object-fit: cover;
+//     // max-width: 1064px;
+//     // max-height: 666px;
+//     position: relative;
+//   }
+//   > div[class$='__inner-container'] {
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-content: center;
+//     align-items: flex-end;
+//     & > * {
+//       flex: 1 1 auto;
+//       min-width: 300px;
+//     }
+//     figure {
+//       // margin-left: calc($spacer * 2);
+//     }
+//     @include media-breakpoint-up(xl) {
+//       flex-direction: row;
+//       align-items: center;
+//     }
+//   }
+// }
+
+/* - - - - - - - - - - - - */
+/* fiftyFiftyCard */
+/* - - - - - - - - - - - - */
+
+.fiftyFifityCardContainer > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fiftyFifityCardContainer > div[class$='__inner-container'] > * {
+  flex-basis: 98%;
+  /* border:2px solid blue; */
+}
+
+.fiftyFiftyCard {
+  border: 1px solid #707070;
+}
+
+.fiftyFiftyCard div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.fiftyFiftyCard div[class$='__inner-container'] > * {
+  flex-basis: 50%;
+}
+
+.areaCardTop > div[class$='__inner-container'] {
+  /* This surrounds image, and group areaCardText */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* border:1px solid red; */
+}
+
+.areaCardTop > div[class$='__inner-container'] > * {
+  flex-basis: 50%;
+  /* border:2px solid green; */
+}
+
+.areaCardText div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.areaCardText div[class$='__inner-container'] > * {
+  /* all children */
+}
+
+.areaCardText .titleWithBar {
+  margin-top: 3rem;
+}
+
+.fiftyImage {
+  width: 90%;
+  padding-right: 2rem;
+  height: auto;
+  position: relative;
+}
+
+.fiftyFiftyCard .areaCardReadMore {
+  /* border:2px solid green; */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 900px) {
+  .fiftyFifityCardContainer > div[class$='__inner-container'] > * {
+    flex-basis: 49%;
+    /* border:2px solid green; */
+  }
+}
+
+// .halfGroup > div[class$='__inner-container'] {
+//   display: flex;
+//   position: relative;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   @media screen and (min-width: 1200px) {
+//     margin-bottom: 4rem;
+//   }
+//   @media screen and (min-width: 800px) {
+//     flex-direction: row;
+//     // flex-wrap: nowrap;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     margin-bottom: 4rem;
+//     // border: 2px solid green;
+//     // flex-grow: 1;
+//   }
+//   & > * {
+//     flex: 1 1 50%;
+//     // border: 1px solid blue;
+//   }
+// }
+
+// .twoThirdsGroup {
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
+//   align-content: stretch;
+//   gap: 2rem;
+
+//   position: relative;
+//   width: 100%;
+//   display: flex;
+//   align-items: stretch;
+//   align-content: space-around;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   row-gap: calc($spacer * 4);
+//   position: relative;
+
+//   @media screen and (min-width: 1200px) {
+//     margin-bottom: 4rem;
+//   }
+//   @media screen and (min-width: 800px) {
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     margin-bottom: 4rem;
+//     // border: 2px solid green;
+//     // flex-grow: 1;
+//   }
+//   & > * {
+//     border-top: 6px solid $utorange;
+//   }
+//   & > :first-child {
+//     flex: 0 1 66%;
+//     padding-right: calc($spacer * 2);
+//   }
+//   & > :nth-child(2) {
+//     flex: 0 1 33%;
+//     // border: 2px solid red;
+//   }
+// }
+
+// .twoThirdsGroup--reverse {
+//   @extend .twoThirdsGroup;
+// }
+
+// .twoThirdsGroup--reverse {
+//   // border: 2px solid green;
+//   & > :first-child {
+//     flex: 0 1 33%;
+//   }
+//   & > :nth-child(2) {
+//     flex: 0 1 66%;
+//     // border: 2px solid purple;
+//   }
+// }
+// .thirdsGroup {
+//   @extend .twoThirdsGroup;
+// }
+// .thirdsGroup {
+//   & > *,
+//   & > :first-child,
+//   & > :nth-child(2) {
+//     flex: 1 1 33%;
+//     border-top: 6px solid $utorange;
+//   }
+// }
+// .tripleCalendar {
+//   position: relative;
+//   &::before {
+//     position: absolute;
+//     content: ' ';
+//     width: 60%;
+//     height: calc(100% - 2rem);
+//     bottom: -$container-padding-x;
+//     left: -$container-padding-x;
+//     border-left: 1.25rem solid $utorange;
+//     border-bottom: 1.25rem solid $utorange;
+//     z-index: -1;
+//     @include media-breakpoint-up(md) {
+//       bottom: -1.25rem;
+//       left: -1.25rem;
+//     }
+//   }
+// }
+// .tripleCalendar > div[class$='__inner-container'] {
+//   display: flex;
+//   flex-direction: row;
+//   column-gap: calc($spacer * 2);
+//   row-gap: calc($spacer * 1);
+//   flex-wrap: wrap;
+//   & > * {
+//     align-items: stretch;
+//     flex: 1 1 98%;
+//     @media screen and (min-width: 800px) {
+//       flex: 1 1 30%;
+//     }
+//   }
+//   margin: 0 0 calc($spacer * 2) 0;
+// }
+// .event {
+//   border: 1px solid #333333;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+
+//   // padding: $spacer;
+//   @extend .twoThirdsGroup--reverse;
+//   & > div[class$='__inner-container'] {
+//     align-items: stretch;
+//     height: 100%;
+//   }
+
+//   .datesGroup > div[class$='__inner-container'] {
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+//     align-items: center;
+//     align-content: center;
+//     justify-content: center;
+//     position: relative;
+//     > :first-child {
+//       font-size: calc($spacer * 3);
+//       font-weight: $font-weight-bold;
+//       position: relative;
+//       margin-bottom: 0;
+//     }
+//   }
+// }

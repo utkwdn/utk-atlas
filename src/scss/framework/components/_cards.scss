@@ -90,8 +90,9 @@
     padding-bottom: 3rem !important; //bootstrap variables only allows top and bottom to be the same. Want more space on bottom.
     h2.card-title {
       font-weight: $font-weight-normal;
-      font-size: 1.8rem;
+      font-size: $h4-font-size;
       line-height: 1.95rem;
+      word-break: normal;
       margin-top: 0; // override _typography
     }
     h2.card-title a {
@@ -185,6 +186,43 @@
 // }
 
 /* - - - - - - - - - - - - */
+/* home-card 
+used on utk.edu home specifically */
+/* - - - - - - - - - - - - */
+.home-card {
+  margin: 0;
+  //used on dark grey cards on home
+  transition: all 0.2s ease;
+  color: $utsmokeytext;
+  background: RGB(49, 62, 72) !important;
+  background: RGBA(49, 62, 72, 0.9) !important;
+  padding: calc($spacer * 2);
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  //  $utcoolsmokey: #313e48;
+  //  $utcoolrock: #d9dfe3;
+  @include media-breakpoint-up(lg) {
+    margin: calc($spacer * 2);
+  }
+  .lead {
+    font-weight: $font-weight-normal;
+    strong {
+      font-weight: $font-weight-bolder;
+    }
+  }
+
+  img {
+    transition: all 0.4s ease-out;
+  }
+  &.push-down {
+    margin-top: 50vw;
+    @media screen and (min-width: 800px) {
+      margin-top: 0;
+    }
+  }
+}
+/* - - - - - - - - - - - - */
 /* profileCard */
 /* - - - - - - - - - - - - */
 .profileCardContainer,
@@ -240,6 +278,7 @@
 
 .nameCardContainer,
 .programCardContainer {
+  word-break: normal;
   column-gap: 5%;
   justify-content: flex-start;
   margin-bottom: calc($spacer * 6);
@@ -270,8 +309,9 @@
   &.half-screen > * {
     /* adds control to this pattern when used in 50/50 containers with style .half-screen applied */
     flex-basis: 100%;
-    @media (min-width: 1355px) {
-      flex-basis: 45%;
+    @media (min-width: 800px) {
+      flex: 0 1 45%;
+      // flex-basis: 45%;
       flex-direction: row;
       flex-wrap: wrap;
     }
@@ -291,6 +331,8 @@
   // border-radius: 0 0 30px 0;
   // border-radius is being overwritten below. We might use this instead of the angle in WDS?
   // height: 100%;   // breaks equal height cards. no good.
+
+  @extend .card-flexGapFix;
 }
 
 .nameCard {
@@ -310,8 +352,10 @@
 .programCard {
   /* used on academics and outreach. Based on nameCard 
   Full card activated on hover with animated bottom rocky top arrow for h3 links */
-  padding: 3rem;
-  padding-bottom: 3.5rem;
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  // padding-bottom: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
   flex-direction: column;
   align-items: flex-start;
   border-top: 2px solid $utorange;
@@ -365,7 +409,8 @@
     bottom: calc($spacer * -0.5);
     display: block;
     width: 100%;
-    left: 3rem;
+    left: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5))
+      /* must match padding of container card for proper alignment */;
   }
   &:hover:before {
     margin-left: 0.7rem;
@@ -496,7 +541,10 @@
 
 .subjectCard {
   border-top: 6px solid $utorange;
-  padding: calc($spacer * 3);
+  // padding: calc($spacer * 3);
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
   display: flex;
   flex-direction: column;
   // gap: 2%;
@@ -510,7 +558,8 @@
   // height: 100%; // breaks equal height cards. no good.
 
   // border-radius: 0 0 30px 0;
-  @media screen and (min-width: 900px) {
+  @extend .card-flexGapFix;
+  @media screen and (min-width: 800px) {
     flex-basis: 46%;
     flex-basis: calc((98% - 3rem) / 2);
     //subtracting 3rem due to bs-gutter-x which was breaking the smallest of this view
@@ -538,4 +587,220 @@
       flex: 1 1 25%;
     }
   }
+}
+
+/* Card Image Based. Not currently used – was designed for academics. 
+   based on utk blocks. Needs to be udpated to work with core blocks */
+
+.card-imagebased-container > div[class$='__inner-container'] {
+  display: flex;
+  gap: 5rem 3rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+  }
+}
+.card-imgbased {
+  flex-basis: 100%;
+  border: 0.5rem solid white;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: 992px) {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+.card-imgbased > div[class$='__inner-container'] {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  figure {
+    margin: 0;
+  }
+  .link-function-only {
+    color: white;
+    font-size: 0;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  &:hover {
+    // opacity: 0.8;
+    cursor: pointer;
+
+    .card-imgbased-title {
+      h3 {
+        transition: all 0.2s ease-in;
+        color: $utsmokeytext !important;
+      }
+      &:after {
+        transition: all 0.2s ease-in;
+        width: 50%;
+        height: 60%;
+      }
+    }
+  }
+
+  .card-imgbased-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .card-imgbased-title {
+    position: absolute;
+    margin: 0;
+    width: 86%;
+    z-index: 10;
+    height: auto;
+    bottom: 0.1vh;
+    bottom: -3rem;
+    right: 0;
+    left: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    &:after {
+      content: '';
+      background-color: $utorange;
+      background-image: url('//images.utk.edu/designsystem/patterns/gingham40.svg');
+
+      transition: all 0.2s ease-in;
+      right: -1rem;
+      bottom: -1rem;
+      display: block;
+      width: 46%;
+      height: 60%;
+      z-index: -3;
+      position: absolute;
+    }
+  }
+
+  .card-imgbased-title > div[class$='__inner-container'] {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    background-color: $white;
+
+    padding: 1rem 1rem 1rem 0;
+    h3 {
+      transition: all 0.2s ease-in;
+      // filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
+      position: relative;
+      width: auto;
+      // color: white;
+
+      color: #707070;
+      font-size: clamp(2.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+      // text-transform: uppercase;
+      vertical-align: top;
+    }
+    p {
+      // color: white;
+      color: $utsmokey;
+      color: #707070;
+      font-weight: 700;
+      line-height: clamp(1rem, 10vw, 1.3rem);
+      margin-top: 0.74rem;
+
+      // filter: drop-shadow(1px 1px $utsmokey) drop-shadow(-1px -1px $utsmokey);
+    }
+    // &:before {
+    //   position: relative;
+    //   content: " ";
+    //   flex-basis: 5%;
+    //   margin-right: 0.5rem;
+    //   display: flex;
+
+    //   height: inherit;
+    //   justify-content: flex-start;
+    //   align-items: flex-start;
+    //   align-content: flex-start;
+    //   background-color: #ff8200;
+    //   // height: clamp(0.5rem, 10vw, 3.5rem);
+    //   width: clamp(0.5rem, 10vw, 3.5rem);
+
+    //   content: "\25AA";
+    //   content: "\25FC";
+    //   content: " ";
+    //   // font-size: clamp(1rem, 20vw, 3rem);
+    //   // font-size: clamp(6rem, 30vw, 12rem);
+    //   margin-top: 0;
+    //   margin-bottom: 0;
+    //   text-align: left;
+    //   color: $utorange;
+    //   vertical-align: top;
+    //   margin-top: 1.2rem;
+    // }
+  }
+}
+
+.squareBlock {
+  // width: clamp(0.5rem, 10vw, 3.5rem);
+  display: flex;
+  flex-basis: 14%;
+  flex: 1 0 14%;
+  max-width: 2.5rem;
+  @media screen and (min-width: 992px) {
+    flex-basis: 10%;
+  }
+  margin-right: 0.5rem;
+  background-color: #ff8200;
+  display: inline-block;
+  margin-top: 0.6rem;
+  margin-left: -1rem;
+  &:after {
+    padding-bottom: 100%;
+    // padding bottom makes this have perfect square proportions relative to the width
+    display: block;
+    content: '';
+  }
+}
+
+.push-up {
+  margin-top: -4rem !important;
+  position: absolute;
+}
+.push-down {
+  bottom: -4rem;
+  position: relative;
+}
+
+/* Add to card container group to allow for a more random pattern of big/little cards
+was used on Traditions before switch to core blocks. Needs to be updated to work with core. */
+.card-variety-A > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 50%;
+  }
+}
+.card-variety-B > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 60%;
+  }
+}
+
+// HOME CARDS
+.cta-offset {
+  // used on white CTA home cards to overlap next item
+  margin-bottom: -5rem !important;
+  h3 {
+    margin-top: calc($spacer * 1.25);
+  }
+  // background-color: white !important;
+}
+
+.cta-card-flex {
+  display: flex;
 }
