@@ -378,6 +378,7 @@ $hr-border-color: rgba($utsmokey, 0.25) !default;
 
 // scss-docs-start type-variables
 $lead-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
+// $lead-font-size: $h4-font-size;
 $lead-font-weight: $font-weight-light;
 
 $small-font-size: 0.875em !default;
