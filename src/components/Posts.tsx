@@ -52,8 +52,8 @@ function Posts({
                     }
                   />
                   <Heading level={postTitleLevel} className={styles.title}>
-                    <Link href={`/posts/${post.slug || ''}`}>
-                      <a className="stretched-link">{post.title()}</a>
+                    <Link href={`/posts/${post.slug || ''}`} className="stretched-link">
+                      {post.title()}
                     </Link>
                   </Heading>
                   <div

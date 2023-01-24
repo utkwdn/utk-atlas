@@ -39,9 +39,12 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                             <li key={`${label}$-menu`}>
                               {/* Using <a> instead of <Link> to prevent scrolling issue in Firefox and Edge */}
                               {/* <Link href={url}> */}
-                              <a href={url} className="text-white footer-links">
+                              <Link
+                                href={url}
+                                className="text-white footer-links"
+                              >
                                 {label}
-                              </a>
+                              </Link>
                               {/* </Link> */}
                             </li>
                           );
@@ -62,9 +65,12 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                             <li key={`${label}$-menu`}>
                               {/* Using <a> instead of <Link> to prevent scrolling issue in Firefox and Edge */}
                               {/* <Link href={url}> */}
-                              <a href={url} className="text-white footer-links">
+                              <Link
+                                href={url}
+                                className="text-white footer-links"
+                              >
                                 {label}
-                              </a>
+                              </Link>
                               {/* </Link> */}
                             </li>
                           );
@@ -139,13 +145,11 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
             </div>
 
             <div className="utk-identifier col-12 col-md-5 col-lg-4 ms-lg-auto mt-md-n5 p-4">
-              <Link href="/">
-                <a className="mb-4 d-block">
-                  <img
-                    src="/images/chrome/logo-horizontal-left-white.svg"
-                    alt="University of Tennessee, Knoxville"
-                  />
-                </a>
+              <Link href="/" className="mb-4 d-block">
+                <img
+                  src="/images/chrome/logo-horizontal-left-white.svg"
+                  alt="University of Tennessee, Knoxville"
+                />
               </Link>
 
               <p className="text-white small">
@@ -183,8 +187,11 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                 >
                   ADA
                 </a>
-                <Link href="/about/privacy/">
-                  <a className="text-white me-3 footer-links">Privacy</a>
+                <Link
+                  href="/about/privacy/"
+                  className="text-white me-3 footer-links"
+                >
+                  Privacy
                 </Link>{' '}
                 <a
                   className="text-white me-3 footer-links"
