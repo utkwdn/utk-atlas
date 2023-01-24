@@ -227,6 +227,8 @@ outline-offset: calc(-1 * ($spacer / 2));
 
 .framedOrangeShadow {
   filter: drop-shadow(1.25rem 1.25rem 0px $utorange);
+  @extend .hardware-excelerated;
+
   margin: 1rem;
   .wp-element-caption {
     // filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.5)) !important;

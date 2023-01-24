@@ -1,0 +1,32 @@
+.spacer-responsive-lg {
+  height: 2vw !important;
+
+  @media screen and (min-width: 800px) {
+    height: 3vw !important;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 5vw !important;
+  }
+}
+
+.spacer-responsive-md {
+  height: 1vw !important;
+
+  @media screen and (min-width: 800px) {
+    height: 1.5vw !important;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 3.5 !important;
+  }
+}
+
+.spacer-responsive-sm {
+  height: 0.5vw !important;
+
+  @media screen and (min-width: 800px) {
+    height: 0.75vw !important;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 2.5vw !important;
+  }
+}
