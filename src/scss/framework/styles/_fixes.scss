@@ -21,6 +21,7 @@ iPad ios 14.4 and earlier
 – – - – - */
 
 .column-flexGapFix {
+  /* does this need a new name – since this fixes flex items, not just columns */
   @supports (-webkit-touch-callout: none) and (not (translate: none)) {
     & *:not(:last-child) {
       margin-right: clamp(calc($spacer * 1.5), 2%, calc($spacer * 3));
