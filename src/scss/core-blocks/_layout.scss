@@ -19,13 +19,35 @@
     margin-left: 0;
   }
   > .alignfull:where(:not(.has-global-padding))
-    > :where([class*='wp-block-']:not(.alignfull):not([class*='__']), p, h1, h2, h3, h4, h5, h6, ul, ol) {
+    > :where(
+      [class*='wp-block-']:not(.alignfull):not([class*='__']),
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol
+    ) {
     padding-right: var(--wp--style--root--padding-right);
     padding-left: var(--wp--style--root--padding-left);
   }
   :where(.has-global-padding)
     > .alignfull:where(:not(.has-global-padding))
-    > :where([class*='wp-block-']:not(.alignfull):not([class*='__']), p, h1, h2, h3, h4, h5, h6, ul, ol) {
+    > :where(
+      [class*='wp-block-']:not(.alignfull):not([class*='__']),
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol
+    ) {
     padding-right: 0;
     padding-left: 0;
   }
@@ -80,6 +102,7 @@ body {
   }
   .is-layout-flex {
     gap: 1.5rem;
+    @extend .column-flexGapFix;
   }
   .is-layout-flow > .alignleft {
     float: left;
