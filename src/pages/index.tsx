@@ -51,6 +51,8 @@ export default function Page() {
 export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
     Page,
+    // Refresh WP content after 2 min. Default is 900 seconds (15 min.)
+    revalidate: 120,
     client,
   });
 }
