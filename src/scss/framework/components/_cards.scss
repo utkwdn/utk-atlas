@@ -331,7 +331,6 @@ used on utk.edu home specifically */
   // border-radius: 0 0 30px 0;
   // border-radius is being overwritten below. We might use this instead of the angle in WDS?
   // height: 100%;   // breaks equal height cards. no good.
-
   @extend .card-flexGapFix;
 }
 
@@ -421,6 +420,10 @@ used on utk.edu home specifically */
   flex-direction: column;
   @media screen and (min-width: 550px) {
     flex-direction: row;
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+      /* makes sure cards aren't having padding added by fix */
+      margin-right: 0 !important;
+    }
   }
 }
 .bioCard {
@@ -553,12 +556,14 @@ used on utk.edu home specifically */
   align-content: stretch;
   background-color: #fafafa;
   background-color: $utgray1;
+
   // border-radius: 0 0 30px 0;
   // border-radius is being overwritten with clip corner – might use rounded in WDS instead?
   // height: 100%; // breaks equal height cards. no good.
 
   // border-radius: 0 0 30px 0;
-  @extend .card-flexGapFix;
+  @extend .card-flexGapFix; /* fix for gap in older safari ios */
+
   @media screen and (min-width: 800px) {
     flex-basis: 46%;
     flex-basis: calc((98% - 3rem) / 2);
@@ -569,7 +574,7 @@ used on utk.edu home specifically */
     font-size: calc($h2-font-size * 0.6);
   }
   h3 {
-    font-size: calc($h3-font-size * 0.6);
+    font-size: calc($h3-font-size * 0.8);
   }
   p + .wp-block-buttons {
     margin: calc($spacer * 3) 0 calc($spacer * 1);

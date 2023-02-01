@@ -40,7 +40,7 @@ function Social() {
           <div className="wp-block-button is-style-outline">
             <Link
               className="wp-block-button__link wp-element-button"
-              href="/social/hashtags/"
+              href="/hashtags"
             >
               Hashtag Guide
             </Link>
@@ -48,37 +48,12 @@ function Social() {
           <div className="wp-block-button is-style-outline">
             <Link
               className="wp-block-button__link wp-element-button"
-              href="/social/emojis/"
+              href="/emojis"
             >
               Emojis
             </Link>
           </div>
         </div>
-        {/* <div className="is-content-justification-center is-layout-flex wp-container-1 wp-block-buttons">
-          <div className="wp-block-button">
-            <Link className="wp-block-button__link wp-element-button" href="#">
-              Hub
-            </Link>
-          </div>
-
-          <div className="wp-block-button">
-            <Link
-              className="wp-block-button__link wp-element-button"
-              href="/social/hashtags/"
-            >
-              Hashtag Guide
-            </Link>
-          </div>
-
-          <div className="wp-block-button">
-            <Link
-              className="wp-block-button__link wp-element-button"
-              href="/social/emojis/"
-            >
-              Emojis
-            </Link>
-          </div>
-        </div> */}
 
         <div
           className="getconnected is-content-justification-center is-layout-flex"

@@ -56,14 +56,6 @@ module.exports = withFaust({
         source: '/vision',
         destination: '/vision.html',
       },
-      {
-        source: '/social/hashtags',
-        destination: '/hashtags',
-      },
-      {
-        source: '/social/emojis',
-        destination: '/emojis',
-      },
     ];
   },
 
