@@ -152,13 +152,13 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                 />
               </Link>
 
-              <p className="text-white small">
+              <p className="text-white small" style={{ margin: 0 }}>
                 The University of Tennessee
-                <br />
-                Knoxville, Tennessee 37996
-                <br />
-                865-974-1000
               </p>
+              <p className="text-white small" style={{ margin: 0 }}>
+                Knoxville, Tennessee 37996
+              </p>
+              <p className="text-white small">865-974-1000</p>
               <p className="text-white small">
                 The flagship campus of the{' '}
                 <a
