@@ -11,8 +11,8 @@ const UniversalHeader = () => {
     <>
       <li className="uni-nav-item">
         <small>
-          <Link href="/requestinfo">
-            <a className="menu-item text-light text-uppercase">Request Info</a>
+          <Link href="/requestinfo" className="menu-item text-light text-uppercase">
+            Request Info
           </Link>
         </small>
       </li>

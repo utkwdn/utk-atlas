@@ -60,7 +60,9 @@ const toReactNode = ({ content }: { content: string }) => {
 
             delete attribs.href;
             return (
-              <Link href={href}>{domToReact([domNode], parserConfig)}</Link>
+              <Link href={href} legacyBehavior>
+                {domToReact([domNode], parserConfig)}
+              </Link>
             );
           }
         }
