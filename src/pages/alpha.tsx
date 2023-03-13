@@ -52,8 +52,8 @@ const upperLetters = [
 const chars = ['#', ...upperLetters] as const;
 
 type Item = { label: string; url: string; id: string };
-type UpperLetter = typeof upperLetters[number];
-type Character = typeof chars[number];
+type UpperLetter = (typeof upperLetters)[number];
+type Character = (typeof chars)[number];
 
 const upperLetterRegExp = /^[A-Z]$/;
 const isUpperLetter = (s: string): s is UpperLetter =>
@@ -96,6 +96,7 @@ const Alpha = () => {
       if (!item) return map;
 
       const label = item.title();
+      const tags = item.aToZFields?.tags || '';
       const url = item.aToZFields?.url;
       const id = item.id;
 
@@ -113,7 +114,7 @@ const Alpha = () => {
         return map;
       }
 
-      const value = { label, url, id };
+      const value = { label, url, id, tags };
 
       const values = map.get(key);
       if (values) {
@@ -152,7 +153,7 @@ const Alpha = () => {
       if (!value) return setActiveItems(allItems.current);
 
       const results = matchSorter(allItems.current, value, {
-        keys: ['label'],
+        keys: ['label', 'tags'],
         threshold: matchSorter.rankings.ACRONYM,
       });
       setActiveItems(results);
