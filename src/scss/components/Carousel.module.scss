@@ -1,0 +1,130 @@
+//// CSS for the Carousel component in (location here)
+
+@import 'scss/variables';
+
+.carouselContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.carouselOuterCardContainer {
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.carouselOuterCardContainer::-webkit-scrollbar {
+  display: none;
+}
+.carouselInnerCardContainer {
+  display: flex;
+  // transition: 0.5s ease-in-out;
+}
+.carouselContainer .videoCard {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+}
+.carouselContainer .videoCard:last-child {
+  margin-right: 0 !important;
+}
+.carouselContainer .videoCard:hover {
+  background-size: 102%;
+  filter: grayscale(30%);
+  cursor: pointer;
+}
+.carouselTopButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 1vw;
+  margin-right: 2vw;
+}
+.carouselTopButton {
+  background: #ff8200;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 15px;
+}
+.carouselTopButton:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+.diabledCarouselButton {
+  background: #e3e3e3;
+  color: #b1b1b1;
+}
+.diabledCarouselButton:hover {
+  background: #e3e3e3;
+  color: #b1b1b1;
+  cursor: default;
+}
+
+.youtubeButton {
+  width: 50px;
+  height: 36px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding-top: 3px;
+  box-shadow: rgb(0 0 0 / 50%) 0 0 10px;
+}
+
+.modalVideoContainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalVideoContainer iframe {
+  width: 95vw;
+  height: 80vw;
+}
+
+.carouselSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.leftForty {
+  width: 40%;
+}
+.rightSixty {
+  width: 60%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .carouselSection {
+    flex-direction: column;
+  }
+  .leftForty {
+    width: 100%;
+  }
+  .rightSixty {
+    width: 100%;
+  }
+}
