@@ -1,4 +1,4 @@
-//// CSS for the Carousel component in (location here)
+//// CSS for the Carousel component in components/YoutubeCarousel.tsx
 
 @import 'scss/variables';
 
@@ -20,7 +20,6 @@
 }
 .carouselInnerCardContainer {
   display: flex;
-  // transition: 0.5s ease-in-out;
 }
 .carouselContainer .videoCard {
   background-repeat: no-repeat;
@@ -105,6 +104,7 @@
   height: 80vw;
 }
 
+// Below only used for visit-test page
 .carouselSection {
   width: 100%;
   display: flex;
