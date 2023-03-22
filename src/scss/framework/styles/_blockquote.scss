@@ -1,25 +1,31 @@
-.blockquote {
-  padding-left: $spacer * 4;
-  //  color: $utsmokey;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkY4MjAwO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0LDIxdi03LjRDMTQsNy45LDE3LjcsNCwyMywzbDEsMi4yYy0yLjQsMC45LTQsMy42LTQsNS44aDR2MTBIMTR6IE0wLDIxdi03LjRDMCw3LjksMy43LDQsOSwzbDEsMi4yCglDNy42LDYuMSw2LDguOCw2LDExaDR2MTBIMHoiLz4KPC9zdmc+Cg==');
-  background-repeat: no-repeat;
-  background-size: $spacer * 3 $spacer * 3;
-}
+// .blockquote {
+//   padding-left: $spacer * 4;
+//   //  color: $utsmokey;
+//   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkY4MjAwO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0LDIxdi03LjRDMTQsNy45LDE3LjcsNCwyMywzbDEsMi4yYy0yLjQsMC45LTQsMy42LTQsNS44aDR2MTBIMTR6IE0wLDIxdi03LjRDMCw3LjksMy43LDQsOSwzbDEsMi4yCglDNy42LDYuMSw2LDguOCw2LDExaDR2MTBIMHoiLz4KPC9zdmc+Cg==');
+//   background-repeat: no-repeat;
+//   background-size: $spacer * 3 $spacer * 3;
+// }
 .wp-block-quote {
   @extend .blockquote;
 }
 
 .blockquote {
-  // background-color: white;
   background-image: none;
   display: flex;
   flex-direction: column;
-  margin: calc($spacer * 3) auto;
-  width: 94%;
+  margin: 0 0;
   padding: 0;
-  // padding-top: calc($spacer * 4);
-  // position: relative;
   border-left: none;
+  position: relative;
+  word-break: normal;
+  overflow-wrap: normal;
+  // @media screen and (min-width: 1500px) {
+  //   margin-left: calc($spacer * -3);
+  // }
+}
+
+.blockquote-style-1 {
+  // style with bar on let side, quote mark outside bar
   @media screen and (min-width: 1500px) {
     margin-left: calc($spacer * -3);
   }
@@ -28,8 +34,7 @@
     border-left: 2px solid $utorange;
     padding-left: calc($spacer * 2);
     padding: $spacer calc($spacer * 3);
-
-    font-size: calc($p-font-size * 2);
+    font-size: calc($p-font-size * 1.2);
   }
 
   &:before {
@@ -37,7 +42,8 @@
     // animation-play-state: paused;
     // animation-delay: calc(var(scroll) * -1s);
     content: open-quote;
-    left: calc($spacer * -0.9);
+    // left: calc($spacer * -0.9);
+    left: calc($spacer * -5);
     top: calc($spacer * 2);
     font-family: $font-family-sans-serif;
     // font-weight: $font-weight-ultra;
@@ -71,6 +77,131 @@
     flex-wrap: wrap;
     line-height: 90%;
 
+    // &:before {
+    //   content: " ";
+    //   position: relative;
+    //   background-color: $utorange;
+    //   height: 3rem;
+    //   width: 100%;
+    //   display: inline-block;
+    //   flex-basis: 40%;
+    //   right: 0;
+    // }
+
+    em {
+      font-size: 80%;
+      padding-top: 0.5rem;
+      // line-height: 85%;
+      // margin-top: 0;
+    }
+    p:first-of-type {
+      padding-bottom: 0.5rem;
+      box-shadow: inset 0px -1px $utorange;
+      flex-basis: 60%;
+      width: fit-content;
+    }
+    p + p {
+      font-size: 70%;
+
+      flex-basis: 80%;
+    }
+    margin-top: calc($spacer * 2);
+    // &:before {
+    //   content: "";
+    //   background-color: $utorange;
+    //   width: 80vw;
+    //   height: 2rem;
+    //   display: aboslute;
+    // }
+  }
+}
+.background-blur {
+  backdrop-filter: blur(10px);
+}
+.blockquote-style-2 {
+  // quote style above the text. Long vertical line infront of cite
+  display: flex;
+  flex-direction: column;
+  top: clamp(calc($spacer * -1.5), -3%, calc($spacer * -3));
+  margin: 0 0;
+  padding: 0;
+  position: relative;
+  word-break: normal;
+  overflow-wrap: normal;
+
+  & > p {
+    border-left: none;
+    padding: 0;
+    font-size: calc($p-font-size * 1.2);
+  }
+
+  &:before {
+    content: open-quote;
+    left: 0;
+    top: -3rem;
+    width: fit-content;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-ultra;
+    font-size: calc($h1-font-size * 2);
+    line-height: calc($h1-font-size * 1);
+    display: block;
+    color: $utorange;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    @media screen and (min-width: 700px) {
+      line-height: calc($line-height-base * 0.2) !important;
+    }
+  }
+  &:after {
+    visibility: hidden;
+    content: close-quote;
+    // must close quote or else, netxt instance of quote will use a single quote
+  }
+  p {
+    margin-top: 0;
+  }
+
+  cite {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 90%;
+    justify-content: flex-end;
+    font-size: clamp(calc($p-font-size * 0.6), 2vw, calc($p-font-size * 0.7));
+    line-height: clamp(calc($p-font-size * 0.8), 2vw, calc($p-font-size * 0.9));
+    font-weight: $font-weight-normal;
+    color: $utsmokey;
+    width: fit-content;
+    align-self: flex-end;
+    position: relative;
+    &:before {
+      content: '';
+      width: 5rem;
+      border-bottom: solid 2px $utorange;
+      position: absolute;
+      left: -6.25rem;
+      top: 13%;
+      z-index: 1;
+    }
+    mark {
+      color: $utsmokey;
+      width: fit-content;
+      text-transform: uppercase;
+      background-color: transparent !important;
+      font-weight: $font-weight-bold;
+      font-size: clamp(calc($p-font-size * 0.7), 2vw, calc($p-font-size * 0.9));
+      line-height: clamp(
+        calc($p-font-size * 0.7),
+        2vw,
+        calc($p-font-size * 0.9)
+      );
+      &.has-inline-color {
+        padding: 0;
+        width: fit-content;
+        display: inline-block;
+      }
+    }
     // &:before {
     //   content: " ";
     //   position: relative;
