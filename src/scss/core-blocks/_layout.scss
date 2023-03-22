@@ -155,6 +155,14 @@ body {
   .is-layout-flex > * {
     margin: 0;
   }
+  // .is-layout-flow .is-layout-constrained {
+  /* working on making child-child things still have constrained when nesting column in group. */
+  //   border: 1px solid blue;
+  //   max-width: $global-layout-content;
+  //   width: 1500px;
+  //   margin-left: auto !important;
+  //   margin-right: auto !important;
+  // }
 }
 
 // This stolen from editor.css in wordpress core

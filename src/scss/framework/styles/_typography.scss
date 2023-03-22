@@ -186,3 +186,60 @@ section[class^='PageTitle_hero'] {
   font-size: clamp(1.8rem, 4vw, 3rem);
   // color: #ed7002;
 }
+
+.text-outline-stylized {
+  // filter: drop-shadow(-0.5rem 0.5rem 0px $utorange);
+  @extend .hardware-excelerated;
+  // text-shadow: -0.5rem 0.5rem 0 #000;
+  text-transform: uppercase;
+  color: white;
+  top: 4rem;
+  font-weight: $font-weight-ultra;
+  font-size: clamp(4rem, 11vw, 12rem);
+
+  &:before {
+    content: 'VISIT CAMPUS';
+    -webkit-text-fill-color: RGBA(
+      255,
+      255,
+      255,
+      0
+    ); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $utorange;
+    -webkit-text-stroke-color: $utsmokey;
+    z-index: -2;
+    margin-left: -0.25rem;
+    margin-top: 0.25rem;
+    position: absolute;
+    font-weight: $font-weight-ultra;
+  }
+}
+
+.heading-box {
+  position: relative;
+  margin-left: 0;
+  height: 60vh;
+  display: block;
+  width: auto;
+  left: 0 !important;
+}
+
+.text-with-max-width {
+  max-width: 80ch;
+}
+
+.bkg-purple {
+  background-color: purple;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.space-above {
+  margin-top: 5rem;
+  @media screen and (min-width: 800px) {
+    margin-top: 10rem;
+  }
+}
