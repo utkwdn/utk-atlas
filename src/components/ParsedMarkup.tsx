@@ -25,7 +25,6 @@ const toReactNode = ({ content }: { content: string }) => {
   const parserConfig: HTMLReactParserOptions = {
     replace(domNode) {
       if (isComment(domNode)) {
-        console.log(domNode);
         const trimmedCommentValue = domNode.data.trim();
 
         if (trimmedCommentValue === 'REQUEST-INFO-TABS') {
