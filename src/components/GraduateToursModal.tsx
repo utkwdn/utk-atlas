@@ -22,13 +22,24 @@ function VisitModalButton() {
 
   return isHydrated ? (
     <>
-      <div className="wp-block-button is-style-outline">
-        <a
-          className="wp-block-button__link wp-element-button"
-          onClick={(e) => handleShowModal(e)}
-        >
-          Graduate tours
-        </a>
+      <div className="is-content-justification-right is-layout-flex wp-container-3 wp-block-buttons">
+        <div className="wp-block-button is-style-outline">
+          <a
+            className="wp-block-button__link wp-element-button"
+            href="https://admissions.utk.edu/visit/campus-tours/"
+          >
+            Undergraduate tours
+          </a>
+        </div>
+
+        <div className="wp-block-button is-style-outline">
+          <a
+            className="wp-block-button__link wp-element-button"
+            onClick={(e) => handleShowModal(e)}
+          >
+            Graduate tours
+          </a>
+        </div>
       </div>
       <Modal
         size={'xl'}
