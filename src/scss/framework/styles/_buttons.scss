@@ -312,7 +312,8 @@
   font-weight: $font-weight-bold;
   letter-spacing: 0.01rem;
   text-align: left;
-  color: $utsmokey !important;
+  // color: $utsmokey !important;
+  color: #1a73c5;
   // &:first-letter {
   //   color: $utlinkriver;
   // }
@@ -337,7 +338,7 @@
   &:hover {
     text-decoration: none;
     color: $utlinkhover;
-    color: $utlinkriver;
+    // color: $utlinkriver;
     // box-shadow: inset 0px -1px $utlinkriver;
   }
   &:hover:after {
@@ -356,5 +357,13 @@ h3.link-fancy a {
   font-weight: $font-weight-bold;
   &:after {
     padding-top: 2.5rem;
+  }
+}
+
+.link-white a {
+  color: white !important;
+  &:hover {
+    // color: $utlinkhover !important;
+    color: $utorange !important;
   }
 }
