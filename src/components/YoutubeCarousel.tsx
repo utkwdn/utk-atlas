@@ -1,4 +1,5 @@
-import { useState, useRef, useLayoutEffect, useEffect } from 'react';
+// import React from 'react';
+import { useState, useRef, useLayoutEffect, useEffect, UIEvent } from 'react';
 import styles from 'scss/components/Carousel.module.scss';
 import Modal from 'react-bootstrap/Modal';
 
@@ -99,8 +100,8 @@ function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
     youtubeArray.length * youtubeCardWidth +
     (youtubeArray.length - 1) * youtubeCardMargin;
 
-  const handleScroll = (e: any) => {
-    const scrollLeftAmount = e.target.scrollLeft;
+  const handleScroll = (e: UIEvent) => {
+    const scrollLeftAmount = e.currentTarget.scrollLeft;
     // Determine card number visible based on left scroll position
     const currentCard = Math.round(
       scrollLeftAmount / (youtubeCardWidth + youtubeCardMargin) + 1

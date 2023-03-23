@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import SlateFormEmbed from 'components/SlateFormEmbed';
 import styles from 'scss/components/ModalButton.module.scss';
@@ -21,12 +21,12 @@ function VisitModalButton() {
       setShowButtons(true);
     }, 500);
   };
-  const handleShowModal = (e: any) => {
+  const handleShowModal = (e: MouseEvent) => {
     e.preventDefault();
     setShowModal(true);
   };
 
-  const handleFormChoice = (e: any, formChoice: string) => {
+  const handleFormChoice = (e: MouseEvent, formChoice: string) => {
     e.preventDefault();
 
     if (formChoice === 'undergrad') {
