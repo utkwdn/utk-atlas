@@ -291,6 +291,9 @@
   &.is-layout-constrained > * {
     margin-left: 0;
   }
+  &.is-layout-flow > * {
+    margin-block-start: 0;
+  }
 }
 
 // styling to add to text that has been linked in the page. Adds animated --> on hover
