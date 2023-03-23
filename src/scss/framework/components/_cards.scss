@@ -245,6 +245,14 @@ used on utk.edu home specifically */
       margin-top: 0;
     }
   }
+  &.push-card-down {
+    // this is used specifically on visit textural video.
+    // The class of .push-down was also manipulating the box positioning on home.
+    margin-top: 50vw;
+    @media screen and (min-width: 800px) {
+      margin-top: 0;
+    }
+  }
 }
 /* - - - - - - - - - - - - */
 /* profileCard */
