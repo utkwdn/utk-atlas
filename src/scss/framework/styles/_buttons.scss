@@ -274,7 +274,8 @@
   }
 }
 
-.fancyLinkGroup {
+.fancyLinkGroup,
+.link-fancy-group {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -293,7 +294,8 @@
 }
 
 // styling to add to text that has been linked in the page. Adds animated --> on hover
-.fancyLink a {
+.fancyLink a,
+.link-fancy a {
   // font-size: 1.2rem;
   /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
   line-height: 1.3rem; // keeps > in correct alignment
@@ -310,7 +312,8 @@
   font-weight: $font-weight-bold;
   letter-spacing: 0.01rem;
   text-align: left;
-  color: $utsmokey;
+  // color: $utsmokey !important;
+  color: #1a73c5;
   // &:first-letter {
   //   color: $utlinkriver;
   // }
@@ -335,7 +338,7 @@
   &:hover {
     text-decoration: none;
     color: $utlinkhover;
-    color: $utlinkriver;
+    // color: $utlinkriver;
     // box-shadow: inset 0px -1px $utlinkriver;
   }
   &:hover:after {
@@ -348,10 +351,19 @@
   }
 }
 
-h3.fancyLink a {
+h3.fancyLink a,
+h3.link-fancy a {
   line-height: calc($headings-line-height * 1.3);
   font-weight: $font-weight-bold;
   &:after {
     padding-top: 2.5rem;
+  }
+}
+
+.link-white a {
+  color: white !important;
+  &:hover {
+    // color: $utlinkhover !important;
+    color: $utorange !important;
   }
 }
