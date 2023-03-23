@@ -9,3 +9,9 @@
       ($modal-header-padding-y * -0.5) auto;
   }
 }
+.modal-title {
+  margin-bottom: clamp(2rem, 10vw, 5rem) !important;
+  margin-left: clamp(2rem, 10vw, 5rem) !important;
+  line-height: $modal-title-line-height;
+  text-transform: uppercase;
+}
