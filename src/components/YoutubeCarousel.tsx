@@ -145,20 +145,22 @@ function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
             }`}
             onClick={scrollLeft}
           >
-            {' '}
-            &lt;{' '}
+            {/* {' '}
+            &lt;{' '} */}
           </div>
           <div
             // Grey out next button if on last card
-            className={`${styles['carouselTopButton']} ${
+            className={`${
+              styles['carouselTopButton'] + ' ' + styles['reflect']
+            } ${
               currentCarouselCard === youtubeArray.length
                 ? styles['diabledCarouselButton']
                 : ''
             }`}
             onClick={scrollRight}
           >
-            {' '}
-            &gt;{' '}
+            {/* {' '}
+            &gt;{' '} */}
           </div>
         </div>
         <div
@@ -196,7 +198,9 @@ function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
                   }}
                   onClick={() => handleShowVideo(this_video)}
                 >
-                  <div className={styles['youtubeButton']}>&#8227; </div>
+                  <div className={styles['youtubeButtonContainer']}>
+                    <div className={styles['youtubeButton']}></div>
+                  </div>
                 </div>
               );
             })}
