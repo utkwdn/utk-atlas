@@ -11,6 +11,7 @@ import HomepageVideo from './HomepageVideo';
 import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
 import VisitModalButton from './VisitModalButton';
+import GraduateToursModal from './GraduateToursModal';
 // import Image from 'next/image';
 
 // workaround b/c of this bug: https://github.com/remarkablemark/html-react-parser/issues/633
@@ -24,7 +25,6 @@ const toReactNode = ({ content }: { content: string }) => {
   const parserConfig: HTMLReactParserOptions = {
     replace(domNode) {
       if (isComment(domNode)) {
-        console.log(domNode);
         const trimmedCommentValue = domNode.data.trim();
 
         if (trimmedCommentValue === 'REQUEST-INFO-TABS') {
@@ -37,6 +37,10 @@ const toReactNode = ({ content }: { content: string }) => {
 
         if (trimmedCommentValue === 'VISIT-MODAL-BUTTON') {
           return <VisitModalButton />;
+        }
+
+        if (trimmedCommentValue === 'GRADUATE-TOURS-MODAL') {
+          return <GraduateToursModal />;
         }
       }
 
