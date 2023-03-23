@@ -45,15 +45,11 @@ function VisitModalButton() {
   return isHydrated ? (
     <>
       <div className="is-layout-flex wp-block-buttons">
-        <div className="wp-block-button is-style-outline">
-          <a
-            className="wp-block-button__link wp-element-button"
-            href="#"
-            onClick={(e) => handleShowModal(e)}
-          >
-            Request Info
+        <p className="fancyLink">
+          <a href="#" onClick={(e) => handleShowModal(e)}>
+            Request info
           </a>
-        </div>
+        </p>
       </div>
       <Modal
         size={showButtons ? 'lg' : 'xl'}
@@ -64,6 +60,7 @@ function VisitModalButton() {
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           <div style={{ display: showUndergradForm ? 'block' : 'none' }}>
+            <Modal.Title>Tell us about yourself!</Modal.Title>
             <SlateFormEmbed
               id={UNDERGRAD_ID}
               scriptSrc={
@@ -75,6 +72,7 @@ function VisitModalButton() {
             />
           </div>
           <div style={{ display: showGradForm ? 'block' : 'none' }}>
+            <Modal.Title>Tell us about yourself!</Modal.Title>
             <SlateFormEmbed
               id={GRAD_ID}
               scriptSrc={
@@ -91,7 +89,7 @@ function VisitModalButton() {
             }}
             className={styles['formChoiceButtons']}
           >
-            <h4>GET INFORMATION ON VISITING UT FOR:</h4>
+            <h2 className="h3">Request information</h2>
             <div
               className={`is-layout-flex wp-block-buttons ${styles['modalButtons']}`}
             >
@@ -101,7 +99,7 @@ function VisitModalButton() {
                   href="#"
                   onClick={(e) => handleFormChoice(e, 'undergrad')}
                 >
-                  Incoming undergraduate or transfers
+                  Undergraduate visit
                 </a>
               </div>
               <div className="wp-block-button is-style-outline">
@@ -110,7 +108,7 @@ function VisitModalButton() {
                   href="#"
                   onClick={(e) => handleFormChoice(e, 'grad')}
                 >
-                  Incoming graduate students
+                  Graduate visit
                 </a>
               </div>
             </div>

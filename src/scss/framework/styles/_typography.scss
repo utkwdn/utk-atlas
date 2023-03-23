@@ -186,3 +186,13 @@ section[class^='PageTitle_hero'] {
   font-size: clamp(1.8rem, 4vw, 3rem);
   // color: #ed7002;
 }
+
+/* heading used in Executive sites - small all caps with tracking */
+.quiet-heading {
+  font-size: 80%;
+  // font-size: var(--wp--custom--typography--small);
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  margin-bottom: 1.7vw;
+}
