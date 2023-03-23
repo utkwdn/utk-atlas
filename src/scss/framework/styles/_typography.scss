@@ -187,6 +187,17 @@ section[class^='PageTitle_hero'] {
   // color: #ed7002;
 }
 
+
+/* heading used in Executive sites - small all caps with tracking */
+.quiet-heading {
+  font-size: 80%;
+  // font-size: var(--wp--custom--typography--small);
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  margin-bottom: 1.7vw;
+}
+
 .text-outline-stylized {
   // filter: drop-shadow(-0.5rem 0.5rem 0px $utorange);
   @extend .hardware-excelerated;
@@ -242,4 +253,5 @@ section[class^='PageTitle_hero'] {
   @media screen and (min-width: 800px) {
     margin-top: 10rem;
   }
+
 }
