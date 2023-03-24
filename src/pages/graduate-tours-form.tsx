@@ -21,7 +21,7 @@ function GraduateToursForm() {
       <Head>
         <title>Graduate Tours Form</title>
       </Head>
-      <PageTitle title={'Graduate Tours Form'} />
+      <PageTitle title={'Graduate Tours'} />
       <div className="container-xxl" style={{ padding: '3rem 0' }}>
         <SlateFormEmbed
           id={GRAD_ID}
