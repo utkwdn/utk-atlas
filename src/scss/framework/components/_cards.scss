@@ -121,6 +121,10 @@
     clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
 }
 
+.card-breathing-room {
+  margin: clamp(3rem, 15vw, 10rem) clamp(3rem, 15vw, 30rem)
+    clamp(3rem, 15vw, 10rem) !important;
+}
 .card-hero {
   padding: clamp(calc($spacer * 3), 3%, calc($spacer * 5))
     clamp(calc($spacer * 3), 3%, calc($spacer * 5))
