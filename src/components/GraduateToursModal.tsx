@@ -35,7 +35,7 @@ function VisitModalButton() {
         <div className="wp-block-button is-style-outline">
           <a
             className="wp-block-button__link wp-element-button"
-            href="/graduate-tours-form"
+            href="/graduate-tours"
           >
             Graduate tours
           </a>
