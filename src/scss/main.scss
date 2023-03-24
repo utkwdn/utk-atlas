@@ -136,6 +136,7 @@
 
 // ------  UT Components – LOCAL
 @import './framework/components/accordion_folds';
+@import './framework/components/cover';
 @import './framework/components/calendars';
 @import './framework/components/cards';
 @import './framework/components/columns';
@@ -162,8 +163,10 @@
 @import './framework/styles/highlight_boxes';
 @import './framework/styles/images';
 @import './framework/styles/logos';
+@import './framework/styles/modals';
 @import './framework/styles/orange_hr';
 @import './framework/styles/orange_mark';
+@import './framework/styles/orange-accents';
 @import './framework/styles/pagination';
 @import './framework/styles/patterns';
 @import './framework/styles/search_forms';
