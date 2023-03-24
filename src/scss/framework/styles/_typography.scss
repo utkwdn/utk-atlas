@@ -61,6 +61,7 @@ h1 {
 h2 {
   margin-top: calc($spacer * 5);
   margin-bottom: calc($spacer * 2.2);
+  line-height: calc($headings-line-height * 1.2);
   word-wrap: normal !important;
 }
 
@@ -187,7 +188,6 @@ section[class^='PageTitle_hero'] {
   // color: #ed7002;
 }
 
-
 /* heading used in Executive sites - small all caps with tracking */
 .quiet-heading {
   font-size: 80%;
@@ -253,5 +253,4 @@ section[class^='PageTitle_hero'] {
   @media screen and (min-width: 800px) {
     margin-top: 10rem;
   }
-
 }
