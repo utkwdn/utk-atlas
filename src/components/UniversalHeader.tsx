@@ -11,7 +11,10 @@ const UniversalHeader = () => {
     <>
       <li className="uni-nav-item">
         <small>
-          <Link href="/requestinfo" className="menu-item text-light text-uppercase">
+          <Link
+            href="/requestinfo"
+            className="menu-item text-light text-uppercase"
+          >
             Request Info
           </Link>
         </small>
@@ -19,10 +22,7 @@ const UniversalHeader = () => {
       {/* Using <a> instead of <Link> for next 3 links to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
-          <a
-            href="https://admissions.utk.edu/visit/"
-            className="menu-item text-light text-uppercase"
-          >
+          <a href="/visit" className="menu-item text-light text-uppercase">
             Visit
           </a>
         </small>
