@@ -60,7 +60,9 @@ function VisitModalButton() {
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           <div style={{ display: showUndergradForm ? 'block' : 'none' }}>
-            <Modal.Title>We can&apos;t wait to see you!</Modal.Title>
+            <Modal.Title>
+              Undergrads, we can&apos;t wait to see you!
+            </Modal.Title>
             <SlateFormEmbed
               id={UNDERGRAD_ID}
               scriptSrc={
@@ -72,7 +74,9 @@ function VisitModalButton() {
             />
           </div>
           <div style={{ display: showGradForm ? 'block' : 'none' }}>
-            <Modal.Title>We can&apos;t wait to see you!</Modal.Title>
+            <Modal.Title>
+              Grad students, we can&apos;t wait to see you!
+            </Modal.Title>
             <SlateFormEmbed
               id={GRAD_ID}
               scriptSrc={

@@ -49,7 +49,9 @@ function VisitModalButton() {
       >
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <Modal.Title>Tell us about yourself!</Modal.Title>
+          <Modal.Title>
+            Grad students, we can&apos;t wait to see you!
+          </Modal.Title>
           <SlateFormEmbed
             id={GRAD_ID}
             scriptSrc={
