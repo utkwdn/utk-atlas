@@ -19,7 +19,7 @@ function GraduateToursForm() {
   return isHydrated ? (
     <Layout>
       <Head>
-        <title>Graduate Tours Form</title>
+        <title>Graduate Tours</title>
       </Head>
       <PageTitle title={'Graduate Tours'} />
       <div className="container-xxl" style={{ padding: '3rem 0' }}>
