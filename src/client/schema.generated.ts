@@ -5671,6 +5671,7 @@ export const generatedSchema = {
   AToZ_Atozfields: {
     __typename: { __type: 'String!' },
     fieldGroupName: { __type: 'String' },
+    tags: { __type: 'String' },
     url: { __type: 'String' },
   },
   AcalogApiProgramsBlock: {
@@ -15356,6 +15357,9 @@ export const generatedSchema = {
     fullHead: { __type: 'String' },
     hasArchive: { __type: 'Boolean' },
     metaDesc: { __type: 'String' },
+    metaRobotsFollow: { __type: 'String' },
+    metaRobotsIndex: { __type: 'String' },
+    metaRobotsNofollow: { __type: 'Boolean' },
     metaRobotsNoindex: { __type: 'Boolean' },
     title: { __type: 'String' },
   },
@@ -15375,6 +15379,7 @@ export const generatedSchema = {
     __typename: { __type: 'String!' },
     author: { __type: 'SEOGlobalMetaAuthor' },
     config: { __type: 'SEOGlobalMetaConfig' },
+    date: { __type: 'SEOGlobalMetaDate' },
     homepage: { __type: 'SEOGlobalMetaHome' },
     notFound: { __type: 'SEOGlobalMeta404' },
   },
@@ -15391,6 +15396,11 @@ export const generatedSchema = {
   SEOGlobalMetaConfig: {
     __typename: { __type: 'String!' },
     separator: { __type: 'String' },
+  },
+  SEOGlobalMetaDate: {
+    __typename: { __type: 'String!' },
+    description: { __type: 'String' },
+    title: { __type: 'String' },
   },
   SEOGlobalMetaHome: {
     __typename: { __type: 'String!' },
@@ -17070,7 +17080,7 @@ export const generatedSchema = {
     className: { __type: 'String' },
     days: { __type: 'String' },
     defaultDurationText: { __type: 'String' },
-    description: { __type: 'BlockAttributesArray' },
+    description: { __type: 'String' },
     durationText: { __type: 'String' },
     hasDuration: { __type: 'Boolean' },
     hours: { __type: 'String' },
@@ -17090,7 +17100,7 @@ export const generatedSchema = {
     className: { __type: 'String' },
     days: { __type: 'String' },
     defaultDurationText: { __type: 'String' },
-    description: { __type: 'BlockAttributesArray' },
+    description: { __type: 'String' },
     durationText: { __type: 'String' },
     hasDuration: { __type: 'Boolean' },
     hours: { __type: 'String' },
@@ -17106,7 +17116,7 @@ export const generatedSchema = {
     className: { __type: 'String' },
     days: { __type: 'String' },
     defaultDurationText: { __type: 'String' },
-    description: { __type: 'BlockAttributesArray' },
+    description: { __type: 'String' },
     durationText: { __type: 'String' },
     hasDuration: { __type: 'Boolean' },
     hours: { __type: 'String' },
@@ -19568,6 +19578,10 @@ export interface AToZ_Atozfields {
    * The name of the ACF Field Group
    */
   fieldGroupName?: Maybe<ScalarsEnums['String']>;
+  /**
+   * Add searchable tags that should be associated with the item, separated by a space
+   */
+  tags?: Maybe<ScalarsEnums['String']>;
   url?: Maybe<ScalarsEnums['String']>;
 }
 
@@ -37844,7 +37858,7 @@ export interface SEOContentType {
 }
 
 /**
- * he Yoast SEO search appearance content types fields
+ * The Yoast SEO search appearance content types fields
  */
 export interface SEOContentTypeArchive {
   __typename?: 'SEOContentTypeArchive';
@@ -37853,6 +37867,9 @@ export interface SEOContentTypeArchive {
   fullHead?: Maybe<ScalarsEnums['String']>;
   hasArchive?: Maybe<ScalarsEnums['Boolean']>;
   metaDesc?: Maybe<ScalarsEnums['String']>;
+  metaRobotsFollow?: Maybe<ScalarsEnums['String']>;
+  metaRobotsIndex?: Maybe<ScalarsEnums['String']>;
+  metaRobotsNofollow?: Maybe<ScalarsEnums['Boolean']>;
   metaRobotsNoindex?: Maybe<ScalarsEnums['Boolean']>;
   title?: Maybe<ScalarsEnums['String']>;
 }
@@ -37880,6 +37897,7 @@ export interface SEOGlobalMeta {
   __typename?: 'SEOGlobalMeta';
   author?: Maybe<SEOGlobalMetaAuthor>;
   config?: Maybe<SEOGlobalMetaConfig>;
+  date?: Maybe<SEOGlobalMetaDate>;
   homepage?: Maybe<SEOGlobalMetaHome>;
   notFound?: Maybe<SEOGlobalMeta404>;
 }
@@ -37908,6 +37926,15 @@ export interface SEOGlobalMetaAuthor {
 export interface SEOGlobalMetaConfig {
   __typename?: 'SEOGlobalMetaConfig';
   separator?: Maybe<ScalarsEnums['String']>;
+}
+
+/**
+ * The Yoast SEO Date data
+ */
+export interface SEOGlobalMetaDate {
+  __typename?: 'SEOGlobalMetaDate';
+  description?: Maybe<ScalarsEnums['String']>;
+  title?: Maybe<ScalarsEnums['String']>;
 }
 
 /**
@@ -41237,7 +41264,7 @@ export interface YoastHowToBlockAttributes {
   className?: Maybe<ScalarsEnums['String']>;
   days?: Maybe<ScalarsEnums['String']>;
   defaultDurationText?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  description?: Maybe<ScalarsEnums['String']>;
   durationText?: Maybe<ScalarsEnums['String']>;
   hasDuration?: Maybe<ScalarsEnums['Boolean']>;
   hours?: Maybe<ScalarsEnums['String']>;
@@ -41262,7 +41289,7 @@ export interface YoastHowToBlockDeprecatedV1Attributes {
   className?: Maybe<ScalarsEnums['String']>;
   days?: Maybe<ScalarsEnums['String']>;
   defaultDurationText?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  description?: Maybe<ScalarsEnums['String']>;
   durationText?: Maybe<ScalarsEnums['String']>;
   hasDuration?: Maybe<ScalarsEnums['Boolean']>;
   hours?: Maybe<ScalarsEnums['String']>;
@@ -41279,7 +41306,7 @@ export interface YoastHowToBlockDeprecatedV2Attributes {
   className?: Maybe<ScalarsEnums['String']>;
   days?: Maybe<ScalarsEnums['String']>;
   defaultDurationText?: Maybe<ScalarsEnums['String']>;
-  description?: Maybe<ScalarsEnums['BlockAttributesArray']>;
+  description?: Maybe<ScalarsEnums['String']>;
   durationText?: Maybe<ScalarsEnums['String']>;
   hasDuration?: Maybe<ScalarsEnums['Boolean']>;
   hours?: Maybe<ScalarsEnums['String']>;
@@ -42475,6 +42502,7 @@ export interface SchemaObjectTypes {
   SEOGlobalMeta404: SEOGlobalMeta404;
   SEOGlobalMetaAuthor: SEOGlobalMetaAuthor;
   SEOGlobalMetaConfig: SEOGlobalMetaConfig;
+  SEOGlobalMetaDate: SEOGlobalMetaDate;
   SEOGlobalMetaHome: SEOGlobalMetaHome;
   SEOOpenGraph: SEOOpenGraph;
   SEOOpenGraphFrontPage: SEOOpenGraphFrontPage;
@@ -43176,6 +43204,7 @@ export type SchemaObjectTypesNames =
   | 'SEOGlobalMeta404'
   | 'SEOGlobalMetaAuthor'
   | 'SEOGlobalMetaConfig'
+  | 'SEOGlobalMetaDate'
   | 'SEOGlobalMetaHome'
   | 'SEOOpenGraph'
   | 'SEOOpenGraphFrontPage'

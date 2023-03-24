@@ -115,6 +115,43 @@
   }
 }
 
+.card-base {
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+}
+
+.card-breathing-room {
+  margin: clamp(3rem, 15vw, 10rem) clamp(3rem, 15vw, 30rem)
+    clamp(3rem, 15vw, 10rem) clamp(3rem, 10vw, 5rem) !important;
+}
+.card-hero {
+  padding: clamp(calc($spacer * 3), 3%, calc($spacer * 5))
+    clamp(calc($spacer * 3), 3%, calc($spacer * 5))
+    clamp(calc($spacer * 2.5), 3%, calc($spacer * 5.5));
+  width: min(72%, 500px);
+}
+.card-quote {
+  width: min(90%, 500px);
+  position: relative;
+  padding: clamp(calc($spacer * 2), 3%, calc($spacer * 5))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 5))
+    clamp(calc($spacer * 2.5), 3%, calc($spacer * 5.5));
+  margin: 0 auto;
+  @media screen and (min-width: 500px) {
+    margin: 0 0 0 2vw;
+  }
+}
+
+.max-content-600 {
+  max-width: 600px;
+}
+.video-side-text {
+  @media screen and (max-width: 800px) {
+    float: left;
+    width: 90%;
+  }
+}
 /* - - - - - - - - - - - - */
 /* Orange Accent (oa) Flex Cards */
 /* Cards are designed to be added inside a group block
@@ -216,6 +253,14 @@ used on utk.edu home specifically */
     transition: all 0.4s ease-out;
   }
   &.push-down {
+    margin-top: 50vw;
+    @media screen and (min-width: 800px) {
+      margin-top: 0;
+    }
+  }
+  &.push-card-down {
+    // this is used specifically on visit textural video.
+    // The class of .push-down was also manipulating the box positioning on home.
     margin-top: 50vw;
     @media screen and (min-width: 800px) {
       margin-top: 0;
