@@ -35,10 +35,16 @@ function VisitModalButton() {
         <div className="wp-block-button is-style-outline">
           <a
             className="wp-block-button__link wp-element-button"
-            onClick={(e) => handleShowModal(e)}
+            href="/graduate-tours-form"
           >
             Graduate tours
           </a>
+          {/* <a
+            className="wp-block-button__link wp-element-button"
+            onClick={(e) => handleShowModal(e)}
+          >
+            Graduate tours
+          </a> */}
         </div>
       </div>
       <Modal
