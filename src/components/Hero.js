@@ -230,20 +230,25 @@ const Hero = () => {
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
               <span className="text-condensed text-letterspaced fst-italic fs-2">
-                Discover
+                Welcome to
               </span>
               <br />
               Rocky Top
             </h2>
             <p className="fancyLink">
-              <a href="https://admissions.utk.edu/visit/" className="hero-cat">
-                Visit campus
+              <a href="/requestinfo" className="hero-cat">
+                Request more info
               </a>
             </p>
-            <p>
-              Feel the energy of Big Orange Country and find out more about
-              living and learning at the University of Tennessee.
-            </p>
+            <p>Discover countless opportunities in the classroom and beyond.</p>
+            <div className="wp-block-button is-style-outline">
+              <a
+                href="//admissions.utk.edu/confirm/"
+                className="wp-block-button__link wp-element-button hero-cat pointer-event-visible"
+              >
+                Confirm enrollment
+              </a>
+            </div>
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
           </div>

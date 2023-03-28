@@ -177,6 +177,9 @@
   width: auto !important;
   pointer-events: visible; /* need this to make the links work with gsap */
 }
+.pointer-event-visible {
+  pointer-events: visible; /* need this to make the links work with gsap – adding as a utility class for ease of use */
+}
 .ctaHolder h3.subCta {
   font-size: 1.5rem;
   margin-top: 2rem;
