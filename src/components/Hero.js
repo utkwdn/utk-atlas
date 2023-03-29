@@ -235,8 +235,9 @@ const Hero = () => {
               <br />
               Rocky Top
             </h2>
+
             <p className="fancyLink">
-              <a href="/requestinfo" className="hero-cat">
+              <a href="//requestinfo" className="hero-cat">
                 Request more info
               </a>
             </p>
