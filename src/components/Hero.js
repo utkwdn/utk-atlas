@@ -237,7 +237,7 @@ const Hero = () => {
             </h2>
 
             <p className="fancyLink">
-              <a href="//requestinfo" className="hero-cat">
+              <a href="https://utk.edu/requestinfo" className="hero-cat">
                 Request more info
               </a>
             </p>
@@ -247,7 +247,7 @@ const Hero = () => {
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
             <h3 className="subCta">Accepted to UT?</h3>
             <a
-              href="//admissions.utk.edu/confirm/"
+              href="https://admissions.utk.edu/confirm/"
               className="subLink  pointer-event-visible"
               // orange underline
               // className="subLink text-decoration-none link-underline  pointer-event-visible"
