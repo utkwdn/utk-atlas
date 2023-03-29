@@ -159,16 +159,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.webp"
+                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.jpg"
-                  alt="several smiling students walk together through campus"
+                  src="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
+                  alt="two smiling students sit outside on campus on a beautiful day"
                 />
               </picture>
             </div>
@@ -241,16 +241,18 @@ const Hero = () => {
               </a>
             </p>
             <p>Discover countless opportunities in the classroom and beyond.</p>
-            <div className="wp-block-button is-style-outline">
-              <a
-                href="//admissions.utk.edu/confirm/"
-                className="wp-block-button__link wp-element-button hero-cat pointer-event-visible"
-              >
-                Confirm enrollment
-              </a>
-            </div>
+
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
+            <h3 className="subCta">Accepted to UT?</h3>
+            <a
+              href="//admissions.utk.edu/confirm/"
+              className="subLink  pointer-event-visible"
+              // orange underline
+              // className="subLink text-decoration-none link-underline  pointer-event-visible"
+            >
+              Confirm enrollment now
+            </a>
           </div>
           {/* End CTA */}
 

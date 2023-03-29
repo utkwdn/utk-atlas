@@ -370,3 +370,17 @@ h3.link-fancy a {
     color: $utorange !important;
   }
 }
+
+.link-underline {
+  box-shadow: inset 0 -1px $utorange;
+  padding-bottom: clamp(0.25rem, 0.3vw, 2rem);
+  // border-bottom: 1px solid $utorange;
+  width: fit-content;
+  &:hover {
+    box-shadow: inset 0 -1px $utlinkhover;
+  }
+}
+
+.subLink {
+  font-size: 90%;
+}
