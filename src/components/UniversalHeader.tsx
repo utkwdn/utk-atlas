@@ -7,6 +7,18 @@ import SearchModalFooter from './SearchModalFooter';
 const UniversalHeader = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
 
+  const handleShowSearchModal = () => {
+    setShowSearchModal(true);
+    // Hide overflow on <html> element to prevent scrolling background instead of modal content
+    document.documentElement.style.overflowY = 'hidden';
+  };
+
+  const handleHideSearchModal = () => {
+    setShowSearchModal(false);
+    // Re-enable <html> scrolling
+    document.documentElement.style.removeProperty('overflow-y');
+  };
+
   const linkItems = (
     <>
       <li className="uni-nav-item">
@@ -65,7 +77,7 @@ const UniversalHeader = () => {
                 // data-bs-toggle="modal"
                 // data-bs-target="#searchModal"
                 aria-label="Open search"
-                onClick={() => setShowSearchModal(true)}
+                onClick={() => handleShowSearchModal()}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +102,7 @@ const UniversalHeader = () => {
         className="modal fade"
         fullscreen
         /* explicit escape-handler shouldn't be necessary here but for some reason it is */
-        onEscapeKeyDown={() => setShowSearchModal(false)}
+        onEscapeKeyDown={() => handleHideSearchModal()}
         /* needs to beat an element on `/meet` page */
         style={{ zIndex: 999999 }}
       >
@@ -103,7 +115,7 @@ const UniversalHeader = () => {
                   type="button"
                   className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed px-0"
                   aria-label="Close search"
-                  onClick={() => setShowSearchModal(false)}
+                  onClick={() => handleHideSearchModal()}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

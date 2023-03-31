@@ -159,16 +159,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.webp"
+                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202203/vols-trio-hero-a1.jpg"
-                  alt="several smiling students walk together through campus"
+                  src="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
+                  alt="two smiling students sit outside on campus on a beautiful day"
                 />
               </picture>
             </div>
@@ -230,22 +230,30 @@ const Hero = () => {
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
               <span className="text-condensed text-letterspaced fst-italic fs-2">
-                Discover
+                Welcome to
               </span>
               <br />
               Rocky Top
             </h2>
+
             <p className="fancyLink">
-              <a href="https://admissions.utk.edu/visit/" className="hero-cat">
-                Visit campus
+              <a href="https://utk.edu/requestinfo" className="hero-cat">
+                Request more info
               </a>
             </p>
-            <p>
-              Feel the energy of Big Orange Country and find out more about
-              living and learning at the University of Tennessee.
-            </p>
+            <p>Discover countless opportunities in the classroom and beyond.</p>
+
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
+            <h3 className="subCta">Accepted to UT?</h3>
+            <a
+              href="https://admissions.utk.edu/confirm/"
+              className="subLink  pointer-event-visible"
+              // orange underline
+              // className="subLink text-decoration-none link-underline  pointer-event-visible"
+            >
+              Confirm enrollment now
+            </a>
           </div>
           {/* End CTA */}
 

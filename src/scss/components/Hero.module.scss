@@ -177,11 +177,18 @@
   width: auto !important;
   pointer-events: visible; /* need this to make the links work with gsap */
 }
+.pointer-event-visible {
+  pointer-events: visible; /* need this to make the links work with gsap – adding as a utility class for ease of use */
+}
 .ctaHolder h3.subCta {
-  font-size: 1.5rem;
-  margin-top: 2rem;
+  font-size: $h6-font-size;
+  font-weight: $font-weight-bold;
+  line-height: $headings-line-height;
+  margin-top: clamp(2rem, 5vw, 3rem);
   margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   color: #58595b;
+  text-transform: uppercase;
 }
 .ctaHolder .accentLink {
   pointer-events: auto;
