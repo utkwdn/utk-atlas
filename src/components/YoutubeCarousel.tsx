@@ -210,8 +210,9 @@ function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
       </div>
       <Modal
         show={showVideo}
-        fullscreen={true}
         onHide={() => setShowVideo(false)}
+        dialogClassName={styles['modal-80w']}
+        centered={true}
       >
         <Modal.Header closeButton>
           {/* <Modal.Title>{modalVideoTitle}</Modal.Title> */}
@@ -226,6 +227,7 @@ function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              autoFocus
             ></iframe>
           </div>
         </Modal.Body>
