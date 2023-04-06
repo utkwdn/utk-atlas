@@ -12,7 +12,6 @@ import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
 import VisitModalButton from './VisitModalButton';
 import GraduateToursModal from './GraduateToursModal';
-// import SlateFormEmbed from './SlateFormEmbed';
 import SlateFormReplace from './SlateFormReplace';
 // import Image from 'next/image';
 
@@ -46,33 +45,7 @@ const toReactNode = ({ content }: { content: string }) => {
         }
 
         if (trimmedCommentValue.includes('SLATE-FORM')) {
-          // console.log(trimmedCommentValue);
           return <SlateFormReplace commentString={trimmedCommentValue} />;
-          //   const hasData = trimmedCommentValue.match(/\[(.*?)\]/);
-
-          //   if (hasData) {
-          //     const slateRawData = hasData[1];
-          //     const slateDataObject = JSON.parse(slateRawData);
-
-          //     if (slateDataObject.scriptSrc) {
-          //       const slateId = slateDataObject.scriptSrc.split('div=form_')[1];
-          //       return (
-          //         <SlateFormEmbed
-          //           id={slateId}
-          //           scriptSrc={
-          //             slateDataObject.scriptSrc +
-          //             (location.search.length > 1
-          //               ? '&' + location.search.substring(1)
-          //               : '')
-          //           }
-          //         />
-          //       );
-          //     } else {
-          //       console.log('Please include script.src URL');
-          //     }
-          //   } else {
-          //     console.log('Please include script.src URL');
-          //   }
         }
       }
 
