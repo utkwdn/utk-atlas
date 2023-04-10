@@ -49,3 +49,9 @@
 .slate-modal-header button:focus {
   background-color: #fff;
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .slate-dialog-container {
+    padding-bottom: 5rem;
+  }
+}
