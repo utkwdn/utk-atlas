@@ -11,6 +11,7 @@ interface SlateData {
   scriptSrc: string;
   modal: boolean;
   buttonText?: string;
+  buttonStyle?: string;
 }
 
 // function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
@@ -19,6 +20,7 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
   const [slateId, setSlateId] = useState('');
   const [slateScriptSrc, setSlateScriptSrc] = useState('');
   const [slateButtonText, setSlateButtonText] = useState('');
+  const [slateButtonStyle, setSlateButtonStyle] = useState('');
   const [useModal, setUseModal] = useState(false);
   const [modalOpacity, setModalOpacity] = useState(0);
 
@@ -57,6 +59,7 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
       if (slateDataObject.modal && slateDataObject.modal === true) {
         setUseModal(true);
         setSlateButtonText(slateDataObject.buttonText || 'No button text');
+        setSlateButtonStyle(slateDataObject.buttonStyle || 'fancy');
       }
     } else {
       console.log('No form data found');
@@ -69,13 +72,24 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     <>
       {useModal ? (
         <>
-          <div className="is-layout-flex wp-block-buttons">
-            <p className="fancyLink">
-              <a href="#" onClick={() => handleShowModal()}>
+          {slateButtonStyle === 'fancy' ? (
+            <div className="is-layout-flex wp-block-buttons">
+              <p className="fancyLink">
+                <a href="#" onClick={() => handleShowModal()}>
+                  {slateButtonText}
+                </a>
+              </p>
+            </div>
+          ) : (
+            <div className="wp-block-button is-style-outline">
+              <a
+                className="wp-block-button__link wp-element-button"
+                onClick={() => handleShowModal()}
+              >
                 {slateButtonText}
               </a>
-            </p>
-          </div>
+            </div>
+          )}
 
           <div
             style={{
