@@ -11,6 +11,8 @@
   z-index: 1040;
   transition: all 0.22s;
   overflow-x: hidden;
+  // Removes top margin if parent element is a column
+  margin-block-start: unset !important;
 }
 
 .slate-modal-backdrop {
