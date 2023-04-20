@@ -94,10 +94,23 @@
 // Bring slate dialogs in front of modal
 .suggest {
   z-index: 1050 !important;
+  max-height: 120px;
+  overflow-y: scroll !important;
 }
 .progress_dialog_div {
   z-index: 1055 !important;
 }
 .dialog_host {
   z-index: 1060 !important;
+}
+@media screen and (max-width: 550px) {
+  // .suggest {
+  //   display: none !important;
+  // }
+  .dialog_host .dialog {
+    position: fixed;
+    max-width: 100%;
+    left: 0;
+    top: calc(50% - 280px);
+  }
 }
