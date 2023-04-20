@@ -145,18 +145,35 @@
 .modalVideoContainer {
   position: absolute;
   width: 100%;
+  margin: 0 auto;
   height: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
 
 .modalVideoContainer iframe {
-  width: 95vw;
-  height: 80vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-80w {
+  width: 96%;
+  margin: 0 auto;
+  max-width: none !important;
+  @media screen and (min-width: 640px) {
+    width: 80%;
+  }
 }
