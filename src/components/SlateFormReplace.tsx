@@ -13,6 +13,9 @@ interface SlateData {
   buttonText?: string;
   buttonStyle?: string;
 }
+interface KeyboardEvent {
+  keyCode: number;
+}
 
 // function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
 function SlateFormReplace({ commentString }: Props): JSX.Element {
@@ -43,8 +46,16 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     document.documentElement.style.overflowY = 'hidden';
   };
 
+  const escCloseModal = (event: KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      handleCloseModal();
+    }
+  };
+
   useEffect(() => {
     const hasData = commentString.match(/\[(.*?)\]/);
+
+    document.addEventListener('keydown', escCloseModal);
 
     if (hasData) {
       const slateRawData = hasData[1];
@@ -61,10 +72,14 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
         setSlateButtonText(slateDataObject.buttonText || 'No button text');
         setSlateButtonStyle(slateDataObject.buttonStyle || 'fancy');
       }
+
+      return () => {
+        document.removeEventListener('keydown', escCloseModal);
+      };
     } else {
       console.log('No form data found');
     }
-  }, [showModal]);
+  }, [showModal, escCloseModal]);
 
   return slateId === '' ? (
     <></>
