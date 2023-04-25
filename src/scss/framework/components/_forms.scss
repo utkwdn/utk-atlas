@@ -96,6 +96,10 @@
   z-index: 1050 !important;
   max-height: 120px;
   overflow-y: scroll !important;
+  font-size: 12px !important;
+}
+.suggest_data {
+  font-size: 11px !important;
 }
 .progress_dialog_div {
   z-index: 1055 !important;
@@ -103,6 +107,18 @@
 .dialog_host {
   z-index: 1060 !important;
 }
+
+// Make clearer that slate continue button is interactive and seperate from results
+#suggest_item_more {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+#suggest_item_more .suggest_name {
+  color: #1a73c5;
+  font-weight: bold;
+}
+
+// Make sure slate 'continue...' options don't exceed page width for smaller screens
 @media screen and (max-width: 550px) {
   // .suggest {
   //   display: none !important;
