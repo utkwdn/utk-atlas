@@ -35,6 +35,7 @@
     @extend .btn-outline-gray2;
   }
 }
+
 .form_text,
 .form_select,
 .form_responses,
@@ -47,7 +48,7 @@
   }
   label,
   div .form_label {
-    @extend .col-lg-2;
+    // @extend .col-lg-2;
     @extend .col-form-label;
   }
   select {
@@ -60,16 +61,30 @@
     @extend .col-auto;
   }
   .form_responses {
-    @extend .col-lg-10;
+    // @extend .col-lg-10;
+    @extend .g-0;
   }
 }
+
+// div.form_question fieldset {
+//   // for some reason legends are set to display none in slate's styling....
+//   // if we change that we can use the following and remove the random fake question being used as a legend in the Request info Form
+//   legend {
+//     border: 2px solid red;
+//     font-weight: $font-weight-bold;
+//     display: unset !important;
+//   }
+// }
 .form_question fieldset {
   div {
     @extend .mx-0;
   }
+  .form_responses {
+    padding: 0;
+  }
   .form_response {
     @extend .row;
-    @extend .mx-3;
+    // @extend .mx-3;
     @extend .form-check;
     input[type='checkbox'],
     input[type='radio'] {
@@ -84,10 +99,27 @@
     }
   }
   > .form_label {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     @extend .mb-3;
-    @extend .ms-3;
+    // @extend .ms-3;
     @extend .row;
+  }
+}
+
+// div.form_question fieldset > legend {
+//   border: 1px solid red;
+//   display: block !important;
+// }
+
+.form_question {
+  label.form_label {
+    color: $utsmokey;
+    padding-left: 0;
+    font-weight: $font-weight-bold;
+    font-size: calc($p-font-size * 0.88);
+    // &:required {
+    //   color: $utalert;
+    // }
   }
 }
 
@@ -128,5 +160,124 @@
     max-width: 100%;
     left: 0;
     top: calc(50% - 280px);
+  }
+}
+// .action {
+//   button.form_button_submit {
+//     @extend .wp-block-button;
+//     &:hover {
+//       text-decoration: none;
+//       color: $utlinkhover !important;
+//     }
+//   }
+// }
+
+// style the submit button to look like orange outline button that goes to solid blue on hover
+.action button {
+  @extend .wp-block-button;
+
+  border: 0.125rem solid $utorange !important;
+  background-color: white !important;
+  text-decoration: none;
+  border-radius: 0.45rem;
+  color: $utlinkriver !important;
+  &.form_button_submit {
+    &:hover {
+      text-decoration: none;
+      background-color: $utlinkriver !important;
+      color: white !important;
+      border: 0.125rem solid $utlinkriver !important;
+    }
+  }
+}
+
+/* - - - - - - - - - 
+Error Message Styling
+- - - - - - - - - */
+
+// .form_container {
+//   &:before {
+//     // message about all items are required unless marked optional being marked added above the form
+//     content: 'all fields are required unless marked optional';
+//     margin-bottom: $spacer;
+//     display: block;
+//     font-style: italic;
+//     // border-left: calc($spacer * 0.5) solid $utalert;
+//   }
+// }
+
+// adds 'please complete this field' to all required elements not filled in after submit is clicked
+div.form_question {
+  &.required {
+    background-color: transparent !important;
+    // border: 1px solid $utalert;
+    // padding: 0 0 1rem;
+    display: flex;
+    flex-direction: row;
+    label {
+      &:after {
+        // option 2
+        content: 'required';
+        background-color: $utalert;
+        color: white;
+        letter-spacing: 0.03rem;
+        padding: 0.1rem 0.5rem 0.2rem;
+        // text-transform: uppercase;
+        font-size: calc($p-font-size * 0.7);
+        border-radius: 0.3rem;
+        margin-left: calc($spacer * 0.5);
+
+        // // option 1
+        // content: 'please complete this field';
+        // font-style: italic;
+        // color: $utalert;
+        // font-weight: $font-weight-normal;
+        // border-radius: 0.2rem;
+      }
+    }
+  }
+}
+
+// // adding a visual bar to the left of required forms. Not using now, flipped to show optional instead.
+// .form_responses {
+//   input:required,
+//   select:required {
+//     border-left: calc($spacer * 0.5) solid $utalert;
+//   }
+// }
+
+// Add 'optional' to the end of labels that are not required for submission
+.form_question:not([data-required='1']) .form_label::after {
+  color: $utsmokey;
+  content: 'optional';
+  margin-left: calc($spacer * 0.5);
+  font-style: italic;
+  font-weight: $font-weight-normal;
+  font-size: calc($p-font-size * 0.7);
+}
+
+// .form_question:not([data-required='1']):nth-child:not(div.form_responses)
+//   .form_label::after {
+//   border: 2px solid red;
+// }
+// change color of invalid responses inside input boxes to match other error messaging
+input:invalid {
+  color: $utalert !important;
+}
+
+/* - - - - - - - - - 
+Dialog Box Message Styling
+- - - - - - - - - */
+
+// classes that are added on the fly when error dialog is open,
+// body.progress_dialog_0, .progress_box, .progress_dialog_div, .ui-draggable, .dialog .dialog_closable {
+// }
+
+// this is the slate dialog box that pops up with errors
+.dialog_host {
+  // border: 2px solid $utalert !important;
+  div {
+    // change the color of the alert message
+    color: $utalert !important;
   }
 }
