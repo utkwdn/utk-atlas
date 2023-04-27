@@ -35,6 +35,7 @@
     @extend .btn-outline-gray2;
   }
 }
+
 .form_text,
 .form_select,
 .form_responses,
@@ -47,7 +48,7 @@
   }
   label,
   div .form_label {
-    @extend .col-lg-2;
+    // @extend .col-lg-2;
     @extend .col-form-label;
   }
   select {
@@ -60,16 +61,19 @@
     @extend .col-auto;
   }
   .form_responses {
-    @extend .col-lg-10;
+    // @extend .col-lg-10;
   }
 }
 .form_question fieldset {
   div {
     @extend .mx-0;
   }
+  .form_responses {
+    padding: 0;
+  }
   .form_response {
     @extend .row;
-    @extend .mx-3;
+    // @extend .mx-3;
     @extend .form-check;
     input[type='checkbox'],
     input[type='radio'] {
@@ -84,10 +88,29 @@
     }
   }
   > .form_label {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     @extend .mb-3;
-    @extend .ms-3;
+    // @extend .ms-3;
     @extend .row;
+  }
+
+  // // for some reason legends are set to display none....
+  // // if we change that we can use the following and remove the random fake question being used as a legend in the Request info Form
+  // legend {
+  //   font-weight: $font-weight-bold;
+  //   display: block !important;
+  // }
+}
+
+.form_question {
+  label.form_label {
+    color: $utsmokey;
+    padding-left: 0;
+    font-weight: $font-weight-bold;
+    font-size: calc($p-font-size * 0.88);
+    // &:required {
+    //   color: $utenergy;
+    // }
   }
 }
 
@@ -129,4 +152,107 @@
     left: 0;
     top: calc(50% - 280px);
   }
+}
+// .action {
+//   button.form_button_submit {
+//     @extend .wp-block-button;
+//     &:hover {
+//       text-decoration: none;
+//       color: $utlinkhover !important;
+//     }
+//   }
+// }
+
+// style teh submit button to look like orange outline button that goes to solid blue on hover
+.action button {
+  @extend .wp-block-button;
+
+  border: 0.125rem solid $utorange !important;
+  background-color: white !important;
+  text-decoration: none;
+  border-radius: 0.45rem;
+  color: $utlinkriver !important;
+  &.form_button_submit {
+    &:hover {
+      text-decoration: none;
+      background-color: $utlinkriver !important;
+      color: white !important;
+      border: 0.125rem solid $utlinkriver !important;
+    }
+  }
+}
+
+/* - - - - - - - - - 
+Error Message Styling
+- - - - - - - - - */
+
+// .form_container {
+//   &:before {
+//     // message about all items are required unless marked optional being marked added above the form
+//     content: 'all fields are required unless marked optional';
+//     margin-bottom: $spacer;
+//     display: block;
+//     font-style: italic;
+//     padding-left: $spacer;
+//     // border-left: calc($spacer * 0.5) solid $utenergy;
+//   }
+// }
+
+// adds 'please complete this field' to all required elements not filled in after submit is clicked
+div.form_question {
+  &.required {
+    background-color: transparent !important;
+    // border: 1px solid $uttorch;
+    // padding: 0 0 1rem;
+    display: flex;
+    flex-direction: row;
+    label {
+      &:after {
+        content: 'please complete this field';
+        font-style: italic;
+        color: $utenergy;
+        font-weight: $font-weight-normal;
+        margin-left: 1rem;
+
+        font-size: calc($p-font-size * 0.8);
+      }
+    }
+  }
+}
+
+//   // adding a visual bar to the left of required forms. Not using now, flipped to show optional instead.
+//   .form_responses {
+//     input:required,
+//     select:required {
+//       border-left: calc($spacer * 0.5) solid $utenergy;
+//     }
+//   }
+// }
+
+// Add 'optional' to the end of labels that are not required for submission
+.form_question:not([data-required='1']) .form_label::after {
+  color: $utsmokey;
+  content: 'optional';
+  margin-left: calc($spacer * 0.5);
+  font-style: italic;
+  font-weight: $font-weight-normal;
+  font-size: calc($p-font-size * 0.7);
+}
+
+// change color of invalid responses inside input boxes to match other error messaging
+input:invalid {
+  color: $utenergy !important;
+}
+
+/* - - - - - - - - - 
+Dialog Box Message Styling
+- - - - - - - - - */
+
+// classes that are added on the fly when error dialog is open,
+// body.progress_dialog_0, .progress_box, .progress_dialog_div, .ui-draggable, .dialog .dialog_closable {
+// }
+
+// this is the dialog box – able to add a border, not figured out the text yet
+.dialog_host {
+  border: 2px solid $utenergy !important;
 }
