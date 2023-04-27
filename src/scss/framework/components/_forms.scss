@@ -62,8 +62,19 @@
   }
   .form_responses {
     // @extend .col-lg-10;
+    @extend .g-0;
   }
 }
+
+// div.form_question fieldset {
+//   // for some reason legends are set to display none in slate's styling....
+//   // if we change that we can use the following and remove the random fake question being used as a legend in the Request info Form
+//   legend {
+//     border: 2px solid red;
+//     font-weight: $font-weight-bold;
+//     display: unset !important;
+//   }
+// }
 .form_question fieldset {
   div {
     @extend .mx-0;
@@ -93,14 +104,12 @@
     // @extend .ms-3;
     @extend .row;
   }
-
-  // // for some reason legends are set to display none....
-  // // if we change that we can use the following and remove the random fake question being used as a legend in the Request info Form
-  // legend {
-  //   font-weight: $font-weight-bold;
-  //   display: block !important;
-  // }
 }
+
+// div.form_question fieldset > legend {
+//   border: 1px solid red;
+//   display: block !important;
+// }
 
 .form_question {
   label.form_label {
@@ -109,7 +118,7 @@
     font-weight: $font-weight-bold;
     font-size: calc($p-font-size * 0.88);
     // &:required {
-    //   color: $utenergy;
+    //   color: $utalert;
     // }
   }
 }
@@ -163,7 +172,7 @@
 //   }
 // }
 
-// style teh submit button to look like orange outline button that goes to solid blue on hover
+// style the submit button to look like orange outline button that goes to solid blue on hover
 .action button {
   @extend .wp-block-button;
 
@@ -193,8 +202,7 @@ Error Message Styling
 //     margin-bottom: $spacer;
 //     display: block;
 //     font-style: italic;
-//     padding-left: $spacer;
-//     // border-left: calc($spacer * 0.5) solid $utenergy;
+//     // border-left: calc($spacer * 0.5) solid $utalert;
 //   }
 // }
 
@@ -202,30 +210,39 @@ Error Message Styling
 div.form_question {
   &.required {
     background-color: transparent !important;
-    // border: 1px solid $uttorch;
+    // border: 1px solid $utalert;
     // padding: 0 0 1rem;
     display: flex;
     flex-direction: row;
     label {
       &:after {
-        content: 'please complete this field';
-        font-style: italic;
-        color: $utenergy;
-        font-weight: $font-weight-normal;
-        margin-left: 1rem;
+        // option 2
+        content: 'required';
+        background-color: $utalert;
+        color: white;
+        letter-spacing: 0.03rem;
+        padding: 0.1rem 0.5rem 0.2rem;
+        // text-transform: uppercase;
+        font-size: calc($p-font-size * 0.7);
+        border-radius: 0.3rem;
+        margin-left: calc($spacer * 0.5);
 
-        font-size: calc($p-font-size * 0.8);
+        // // option 1
+        // content: 'please complete this field';
+        // font-style: italic;
+        // color: $utalert;
+        // font-weight: $font-weight-normal;
+        // border-radius: 0.2rem;
       }
     }
   }
 }
 
-//   // adding a visual bar to the left of required forms. Not using now, flipped to show optional instead.
-//   .form_responses {
-//     input:required,
-//     select:required {
-//       border-left: calc($spacer * 0.5) solid $utenergy;
-//     }
+// // adding a visual bar to the left of required forms. Not using now, flipped to show optional instead.
+// .form_responses {
+//   input:required,
+//   select:required {
+//     border-left: calc($spacer * 0.5) solid $utalert;
 //   }
 // }
 
@@ -239,9 +256,13 @@ div.form_question {
   font-size: calc($p-font-size * 0.7);
 }
 
+// .form_question:not([data-required='1']):nth-child:not(div.form_responses)
+//   .form_label::after {
+//   border: 2px solid red;
+// }
 // change color of invalid responses inside input boxes to match other error messaging
 input:invalid {
-  color: $utenergy !important;
+  color: $utalert !important;
 }
 
 /* - - - - - - - - - 
@@ -252,7 +273,11 @@ Dialog Box Message Styling
 // body.progress_dialog_0, .progress_box, .progress_dialog_div, .ui-draggable, .dialog .dialog_closable {
 // }
 
-// this is the dialog box – able to add a border, not figured out the text yet
+// this is the slate dialog box that pops up with errors
 .dialog_host {
-  border: 2px solid $utenergy !important;
+  // border: 2px solid $utalert !important;
+  div {
+    // change the color of the alert message
+    color: $utalert !important;
+  }
 }
