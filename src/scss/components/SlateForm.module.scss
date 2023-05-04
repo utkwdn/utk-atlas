@@ -1,6 +1,6 @@
 //// CSS for the Carousel component in components/SlateFormReplace.tsx
 
-@import 'scss/variables';
+@import 'scss/common';
 
 .slate-modal-container {
   position: fixed;
@@ -17,7 +17,7 @@
 
 .slate-modal-backdrop {
   z-index: 1050;
-  background: #313e48;
+  background: $modal-backdrop-bg;
   opacity: 0.9;
   position: fixed;
   width: 100%;
@@ -36,24 +36,55 @@
 .slate-dialog {
   z-index: 1060;
   width: 100%;
-  background: #fff;
-}
-
-.slate-modal-header {
-  padding: 1rem;
-  text-align: right;
+  background: $white;
+  background: $utgray1;
 }
 
 .slate-modal-body {
-  padding: 0 1rem 2rem 1rem;
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
 }
 
-.slate-modal-header button:focus {
-  background-color: #fff;
+.slate-modal-header {
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3)) 0;
+  text-align: right;
+
+  button {
+    transition: all 0.2s ease-out;
+    &:focus {
+      background-color: $white;
+    }
+    &:hover {
+      transform: scale(1.4);
+      transition: all 0.2s ease-out;
+    }
+  }
 }
 
-@media screen and (max-width: $breakpoint-small) {
+@media screen and (max-width: 600px) {
   .slate-dialog-container {
     padding-bottom: 5rem;
   }
+}
+
+.form_container .form_question {
+  &.required {
+    display: block;
+  }
+  .form_responses {
+    input {
+      background-color: green;
+    }
+  }
+}
+.form_question {
+  .form_responses > input:required {
+    border: 2px solid red !important;
+  }
+}
+
+div .form_label {
+  border: 2px solid red;
 }

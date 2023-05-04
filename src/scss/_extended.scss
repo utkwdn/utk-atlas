@@ -27,7 +27,7 @@ Working on logically integrating this into the framework */
 .container-fluid {
   padding: 0 calc($spacer * 1);
   // fixes random white margins caused by gutters on the left side at narrow widths
-  // padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2); */ this started causing small white vertical line on right. Removing for now */
+  // padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2); /* this started causing small white vertical line on right. Removing for now */
   @media screen and (min-width: 800px) {
     padding: 0 calc($spacer * 2);
   }
