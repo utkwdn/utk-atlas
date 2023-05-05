@@ -13,6 +13,7 @@ import YoutubeCarousel from './YoutubeCarousel';
 import VisitModalButton from './VisitModalButton';
 import GraduateToursModal from './GraduateToursModal';
 import SlateFormReplace from './SlateFormReplace';
+import SlateModalTabs from './SlateModalTabs';
 // import Image from 'next/image';
 
 // workaround b/c of this bug: https://github.com/remarkablemark/html-react-parser/issues/633
@@ -46,6 +47,10 @@ const toReactNode = ({ content }: { content: string }) => {
 
         if (trimmedCommentValue.includes('SLATE-FORM')) {
           return <SlateFormReplace commentString={trimmedCommentValue} />;
+        }
+
+        if (trimmedCommentValue.includes('SLATE-MODAL-TABS')) {
+          return <SlateModalTabs commentString={trimmedCommentValue} />;
         }
       }
 
