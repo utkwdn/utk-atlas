@@ -854,3 +854,114 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .cta-card-flex {
   display: flex;
 }
+
+/* – – – – –
+Card Flip 
+
+– – – – */
+
+.cards-grid-2up {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  position: relative;
+  flex: 1;
+  gap: 1rem;
+}
+.card-span-2 {
+  grid-column: span 2 / 3;
+}
+.card-flip-container {
+  flex-grow: 1;
+  width: 100%;
+  min-height: 300px;
+
+  &:hover .card-flip {
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+  }
+  @media (hover: none) {
+    // target touch screen – working on turning flip card into a click object for mobile devices
+    &:active .card-flip,
+    &:focus .card-flip,
+    &:hover .card-flip {
+      transition: transform 0.5s;
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  backface-visibility: hidden;
+  border-top: 5px solid $utorange;
+  margin-block-start: 0 !important;
+
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  h4 {
+    font-size: calc($h3-font-size);
+    width: auto;
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+}
+.card-flip-front {
+  background-color: $utgray1;
+  color: $utsmokeytext;
+
+  &:before {
+    // using arrow made from squares – rocky top arrow.
+    content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+    transform: scale(0.3);
+    // transform: scale(0.25); */ size used for fancyLink */
+    transition: all 0.2s ease-out;
+    font-size: var(--wp--custom--typography--tiny);
+    transform-origin: left center;
+    position: absolute;
+    bottom: calc($spacer * -0.5);
+    display: block;
+    width: 100%;
+    left: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+    /* must match padding of container card for proper alignment */
+  }
+  &:hover:before {
+    margin-left: 0.7rem;
+  }
+}
+.card-flip-back {
+  background-color: $utsmokey;
+  color: $white;
+  transform: rotateY(180deg);
+}
+
+.card-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.has-clear-to-orange-gradient-background {
+  background: linear-gradient(rgb(255, 255, 255) 43%, rgb(255, 130, 0) 43%);
+}
+
+.has-clear-to-orange-gradient-background-83 {
+  background: linear-gradient(rgb(255, 255, 255) 83%, rgb(255, 130, 0) 17%);
+}
