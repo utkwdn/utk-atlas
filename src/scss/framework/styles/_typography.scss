@@ -176,6 +176,9 @@ section[class^='PageTitle_hero'] {
 }
 
 // control width of content based on character widths
+.ch-sm {
+  max-width: 30ch !important;
+}
 .ch-med {
   max-width: 45ch;
 }
@@ -195,6 +198,7 @@ section[class^='PageTitle_hero'] {
   line-height: 120%;
   text-transform: uppercase;
   letter-spacing: 0.5vw;
+  letter-spacing: 0.3vw;
   margin-bottom: 1.7vw;
 }
 
@@ -252,5 +256,18 @@ section[class^='PageTitle_hero'] {
   margin-top: 5rem;
   @media screen and (min-width: 800px) {
     margin-top: 10rem;
+  }
+}
+
+.text-data {
+  font-size: calc(2rem + 2.25vw);
+  font-size: $h1-font-size;
+  font-weight: $font-weight-bolder;
+  text-align: left;
+  margin-top: 0;
+  text-shadow: 2px 2px 0px $utsmokey, 4px 4px 0px $utorange;
+
+  @media screen and (min-width: 1300px) {
+    text-align: right;
   }
 }
