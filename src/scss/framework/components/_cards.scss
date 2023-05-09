@@ -880,6 +880,15 @@ Card Flip
     transition: transform 0.5s;
     transform: rotateY(180deg);
   }
+  @media (hover: none) {
+    // target touch screen – working on turning flip card into a click object for mobile devices
+    &:active .card-flip,
+    &:focus .card-flip,
+    &:hover .card-flip {
+      transition: transform 0.5s;
+      transform: rotateY(180deg);
+    }
+  }
 }
 
 .card-flip {
@@ -917,6 +926,7 @@ Card Flip
 .card-flip-front {
   background-color: $utgray1;
   color: $utsmokeytext;
+
   &:before {
     // using arrow made from squares – rocky top arrow.
     content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
