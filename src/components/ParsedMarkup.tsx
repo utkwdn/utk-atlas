@@ -8,6 +8,7 @@ import parse, {
 
 import Link from 'next/link';
 import HomepageVideo from './HomepageVideo';
+import ApplyPageVideo from './ApplyPageVideo';
 import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
 import VisitModalButton from './VisitModalButton';
@@ -162,6 +163,81 @@ const toReactNode = ({ content }: { content: string }) => {
 
             return (
               <HomepageVideo
+                outerDivClasses={outerDivClasses}
+                figureClasses={figureClasses}
+                innerDivClasses={innerDivClasses}
+                imgAttributes={imgAttribs}
+              />
+            );
+          }
+
+          // insert ApplyPageVideo (target is `div.applyPageVideo`)
+          if (outerDivClasses && /\bapplyPageVideo\b/g.test(outerDivClasses)) {
+            const figure = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'figure'
+            );
+
+            if (!figure) {
+              console.error(
+                'The `div.applyPageVideo` did not have the expected child-figure.'
+              );
+              return;
+            }
+
+            const figureAttribs: Partial<typeof figure.attribs> =
+              figure.attribs;
+            const figureClasses = figureAttribs.class;
+
+            const innerDiv = figure.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'div'
+            );
+
+            if (!innerDiv) {
+              console.error(
+                'The `figure` in `div.applyPageVideo` did not have the expected child-div.'
+              );
+              return;
+            }
+
+            const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+              innerDiv.attribs;
+            const innerDivClasses = innerDivAttribs.class;
+
+            const img = innerDiv.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'img'
+            );
+
+            if (!img) {
+              console.error(
+                'The child-div of the child-figure of `div.applyPageVideo` did not have the expected child-img.'
+              );
+              return;
+            }
+
+            const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+
+            if (!imgAttribs.src) {
+              console.error(
+                'The `img` in `figure.applyPageVideo` is missing a `src`.'
+              );
+              return;
+            }
+
+            if (imgAttribs.class) {
+              imgAttribs.className = imgAttribs.class;
+              delete imgAttribs.class;
+            }
+
+            if (imgAttribs.srcset) {
+              imgAttribs.srcSet = imgAttribs.srcset;
+              delete imgAttribs.srcset;
+            }
+
+            return (
+              <ApplyPageVideo
                 outerDivClasses={outerDivClasses}
                 figureClasses={figureClasses}
                 innerDivClasses={innerDivClasses}
