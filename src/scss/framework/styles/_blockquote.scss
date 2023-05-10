@@ -330,7 +330,6 @@
   }
 
   & > p {
-    border-left: 2px solid $utorange;
     padding-left: calc($spacer * 2);
     padding: $spacer calc($spacer * 3);
     font-size: calc($p-font-size * 1.2);
@@ -342,7 +341,7 @@
     // animation-delay: calc(var(scroll) * -1s);
     content: open-quote;
     // left: calc($spacer * -0.9);
-    left: calc($spacer * -5);
+    left: calc($spacer * 2);
     top: calc($spacer * 2);
     font-family: $font-family-sans-serif;
     // font-weight: $font-weight-ultra;
@@ -355,10 +354,7 @@
     padding: 0;
     margin: 0;
     position: relative;
-    @media screen and (min-width: 700px) {
-      left: calc($spacer * -5);
-      line-height: calc($line-height-base * 0.2) !important;
-    }
+
     // top: (-1 * ($spacer * 0.5));
   }
   &:after {
