@@ -983,3 +983,13 @@ Card Flip
 .has-clear-to-orange-gradient-background-83 {
   background: linear-gradient(rgb(255, 255, 255) 83%, rgb(255, 130, 0) 17%);
 }
+
+.orange-background-mobile-lg {
+  @media screen and (max-width: 712px) {
+    background: linear-gradient(rgb(255, 255, 255) 40%, rgb(255, 130, 0) 40%);
+  }
+}
+
+.border-top-md {
+  border-top: 5px solid $utorange;
+}
