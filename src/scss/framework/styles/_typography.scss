@@ -260,14 +260,9 @@ section[class^='PageTitle_hero'] {
 }
 
 .text-data {
-  font-size: calc(2rem + 2.25vw);
   font-size: $h1-font-size;
   font-weight: $font-weight-bolder;
   text-align: left;
   margin-top: 0;
   text-shadow: 2px 2px 0px $utsmokey, 4px 4px 0px $utorange;
-
-  @media screen and (min-width: 1300px) {
-    text-align: right;
-  }
 }
