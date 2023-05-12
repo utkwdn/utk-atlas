@@ -866,10 +866,10 @@ Card Flip
 
 .cards-grid-2up {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
-  @media screen and (min-width: 712px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  @media screen and (min-width: 671px) {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
   grid-auto-rows: auto;
   position: relative;
@@ -877,7 +877,7 @@ Card Flip
   gap: 1rem;
 }
 .card-span-2 {
-  @media screen and (min-width: 712px) {
+  @media screen and (min-width: 671px) {
     grid-column: span 2 / 3;
   }
 }
@@ -885,7 +885,7 @@ Card Flip
   // this is created to fix margin issue of first child that is set in theme.json
   // container for all card-flip-container (s)
   & > :nth-child(2) {
-    @media screen and (min-width: 712px) {
+    @media screen and (min-width: 671px) {
       margin-block-start: 0;
     }
   }
@@ -936,7 +936,7 @@ Card Flip
     clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
     clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
   h4 {
-    font-size: calc($h3-font-size);
+    font-size: calc($h3-font-size * 0.8);
     width: auto;
     display: block;
     margin-bottom: 1rem;
@@ -949,7 +949,7 @@ Card Flip
 
   &:before {
     // using arrow made from squares – rocky top arrow.
-    content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+    content: url('//images.utk.edu/wds/rocky-top-arrow-02.svg');
     transform: scale(0.3);
     // transform: scale(0.25); */ size used for fancyLink */
     transition: all 0.2s ease-out;
@@ -985,8 +985,8 @@ Card Flip
 }
 
 .orange-background-mobile-lg {
-  @media screen and (max-width: 712px) {
-    background: linear-gradient(rgb(255, 255, 255) 40%, rgb(255, 130, 0) 40%);
+  @media screen and (max-width: 670px) {
+    background: linear-gradient(rgb(255, 255, 255) 42%, rgb(255, 130, 0) 42%);
   }
 }
 

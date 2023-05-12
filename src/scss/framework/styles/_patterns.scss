@@ -525,3 +525,41 @@
 //     }
 //   }
 // }
+
+.checker-chunk {
+  background-image: url('//images.utk.edu/wds/checker-chunk-01.svg');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: auto;
+}
+
+.checker-chunk-overlay {
+  position: relative;
+
+  &:before {
+    content: '';
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    margin: -1.25em -2.375em; //match padding on group
+    position: absolute;
+    background-image: url('//images.utk.edu/wds/checker-chunk-01.svg');
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+}
+
+.rocky-top-tn-after {
+  position: relative;
+
+  transform: scale(1.3);
+  &:after {
+    content: url('//images.utk.edu/wds/rocky-top-tn-01.svg');
+
+    display: inline-block;
+    position: relative;
+    margin-left: calc($spacer * 2);
+    transform: scale(0.6);
+  }
+}

@@ -10,7 +10,7 @@
 }
 
 .mobileWrap-col-apply {
-  @media (min-width: 712px) and (max-width: 1350px) {
+  @media (min-width: 712px) and (max-width: 1220px) {
     display: flex;
     flex-direction: column;
     & > * {
