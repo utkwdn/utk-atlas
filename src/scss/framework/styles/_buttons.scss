@@ -301,7 +301,8 @@
 .link-fancy a {
   // font-size: 1.2rem;
   /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
-  line-height: 1.3rem; // keeps > in correct alignment
+  // line-height: 1.3rem; // keeps > in correct alignment
+  line-height: 1.5rem !important;
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -315,11 +316,8 @@
   font-weight: $font-weight-bold;
   letter-spacing: 0.01rem;
   text-align: left;
-  // color: $utsmokey !important;
   color: #1a73c5;
-  // &:first-letter {
-  //   color: $utlinkriver;
-  // }
+
   * {
     display: inline-flex;
   }
@@ -330,13 +328,14 @@
     transform: scale(0.25);
     // margin-left: -1.5rem;
     margin-left: calc($spacer * 0.7);
+    margin-top: 0.2rem;
     transform-origin: top left;
     // top: -1.4rem;
     // top: calc($spacer * 0.2);
     display: inline-block;
     position: absolute;
     transition: all 0.2s ease-out;
-    padding-top: 1rem;
+    // padding-top: 2rem;
   }
   &:hover {
     text-decoration: none;
@@ -405,7 +404,7 @@ h3.link-fancy a {
   }
 
   &:after {
-    content: url('https://images.utk.edu/wds/rocky-top-carrot-01.svg');
+    content: url('//images.utk.edu/wds/rocky-top-carrot-01.svg');
 
     // transform: scale(0.25);
     // margin-left: -1.5rem;

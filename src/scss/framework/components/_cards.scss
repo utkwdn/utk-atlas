@@ -894,7 +894,7 @@ Card Flip
 .card-flip-container {
   flex-grow: 1;
   width: 100%;
-  min-height: 300px;
+  min-height: 320px;
 
   &:hover .card-flip {
     transition: transform 0.5s;
@@ -992,4 +992,70 @@ Card Flip
 
 .border-top-md {
   border-top: 5px solid $utorange;
+}
+
+.stat-container {
+  // width: 100%;
+  // @media screen and (min-width: 980px) {
+  //   width: 70%;
+  //   max-width: 940px;
+  // }
+  display: grid;
+  width: 100%;
+  @media screen and (min-width: 763px) {
+    width: 80%;
+  }
+  grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
+  gap: 2rem;
+  justify-items: stretch;
+  align-items: start;
+  // border: 2px solid red;
+
+  > * {
+    padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+      clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+      clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+    align-content: start;
+  }
+  > * + * {
+    margin-block-start: 0 !important;
+  }
+}
+.stat-group-container {
+  // border: 1px solid green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: 930px) {
+    &:after {
+      position: absolute;
+      content: '';
+      height: 6rem;
+      background-color: $utorange;
+      width: 2px;
+      margin-left: 0;
+      top: 3rem;
+      right: -1.1rem;
+    }
+    &:last-child {
+      &:after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+}
+.stat-group {
+  min-width: min-content;
+  width: 18ch;
+  :first-child {
+    text-align: center;
+  }
+  & > * {
+    margin-block-start: 0 !important;
+  }
+  // border: 1px solid yellowgreen;
+}
+.stat-description {
+  font-size: calc($p-font-size * 0.8);
 }
