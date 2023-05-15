@@ -438,14 +438,16 @@ h3.link-fancy a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: fit-content;
   gap: 0.25vw;
   margin-bottom: $spacer;
+  padding-right: calc($spacer * 1.89); // encompasses the down carrot
   align-items: flex-end;
   justify-content: flex-start;
-  > *:nth-child(2n) {
+  > *:nth-child(n + 2) {
     width: auto;
     display: flex;
-    margin-left: calc($spacer * 3);
+    margin-left: calc($spacer * 4);
   }
   &.is-layout-constrained > * {
     margin-left: 0;
