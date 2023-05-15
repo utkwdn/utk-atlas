@@ -137,12 +137,25 @@
   padding: clamp(calc($spacer * 2), 3%, calc($spacer * 5))
     clamp(calc($spacer * 2), 3%, calc($spacer * 5))
     clamp(calc($spacer * 2.5), 3%, calc($spacer * 5.5));
-  margin: 0 auto;
+  margin: $spacer auto;
   @media screen and (min-width: 500px) {
     margin: 0 0 0 2vw;
   }
+  &.push-card-down {
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      margin-top: 80vw;
+      margin-bottom: 4rem;
+    }
+  }
 }
 
+.space-above {
+  margin-top: 5rem;
+  @media screen and (min-width: 800px) {
+    margin-top: 10rem;
+  }
+}
 .max-content-600 {
   max-width: 600px;
 }
@@ -896,6 +909,9 @@ Card Flip
   width: 100%;
   min-height: 320px;
 
+  &:active .card-flip,
+  &:focus-within .card-flip, // add tab control for card-flip
+  &:focus .card-flip,
   &:hover .card-flip {
     transition: transform 0.5s;
     transform: rotateY(180deg);
@@ -903,6 +919,7 @@ Card Flip
   @media (hover: none) {
     // target touch screen – working on turning flip card into a click object for mobile devices
     &:active .card-flip,
+    &:focus-within .card-flip,
     &:focus .card-flip,
     &:hover .card-flip {
       transition: transform 0.5s;
