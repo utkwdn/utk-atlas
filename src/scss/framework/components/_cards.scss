@@ -897,6 +897,8 @@ Card Flip
 .cards-flip-container {
   // this is created to fix margin issue of first child that is set in theme.json
   // container for all card-flip-container (s)
+
+  height: 100%;
   & > :nth-child(2) {
     @media screen and (min-width: 671px) {
       margin-block-start: 0;
@@ -908,6 +910,8 @@ Card Flip
   flex-grow: 1;
   width: 100%;
   min-height: 320px;
+
+  height: 100%;
 
   &:active .card-flip,
   &:focus-within .card-flip, // add tab control for card-flip
