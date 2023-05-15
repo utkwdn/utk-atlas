@@ -896,6 +896,9 @@ Card Flip
   width: 100%;
   min-height: 320px;
 
+  &:active .card-flip,
+  &:focus-within .card-flip, // add tab control for card-flip
+  &:focus .card-flip,
   &:hover .card-flip {
     transition: transform 0.5s;
     transform: rotateY(180deg);
@@ -903,6 +906,7 @@ Card Flip
   @media (hover: none) {
     // target touch screen – working on turning flip card into a click object for mobile devices
     &:active .card-flip,
+    &:focus-within .card-flip,
     &:focus .card-flip,
     &:hover .card-flip {
       transition: transform 0.5s;
