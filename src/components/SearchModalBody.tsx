@@ -18,19 +18,6 @@ const SearchModalBody = () => (
       </div>
       <div className="row justify-content-center">
         <div className="col-12 col-xl-8">
-          {/* <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
-            <Tab
-              title={slateOneTitle}
-              eventKey="undergraduate"
-              className="nav-item my-4"
-            ></Tab>
-            <Tab
-              title={slateTwoTitle}
-              eventKey="graduate"
-              className="nav-item my-4"
-            ></Tab>
-          </Tabs> */}
-
           <Tab.Container id="left-tabs-example" defaultActiveKey="main">
             <Nav
               variant="pills"
