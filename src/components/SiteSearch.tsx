@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, FormEvent } from 'react';
 
 /*
   See https://developers.google.com/custom-search/docs/element#cse-element
@@ -17,6 +17,10 @@ interface CSEElement {
   execute: (value: string) => void;
 }
 
+interface Props {
+  searchTerm?: string;
+}
+
 interface Google {
   search: {
     cse: {
@@ -33,7 +37,7 @@ interface Google {
 
 const GNAME = 'this-site-results';
 
-const SiteSearch = () => {
+const SiteSearch = ({ searchTerm }: Props) => {
   const resultsRef = useRef<HTMLDivElement>(null);
   const [value, setValue] = useState('');
 
@@ -73,38 +77,55 @@ const SiteSearch = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (searchTerm) {
+      setValue(searchTerm);
+      handleGoogleSearch(searchTerm);
+    }
+  }, [searchTerm]);
+
+  const handleGoogleSearch = (searchQuery?: string) => {
+    try {
+      const { google } = window as typeof window & { google?: Google };
+      if (!google) {
+        console.error('`window.google` should exist but does not');
+        return;
+      }
+
+      const resultsEl = google.search.cse.element.getElement(GNAME);
+
+      if (!resultsEl) {
+        console.error(
+          `The Google CSE library could not find the element with gname ${GNAME}`
+        );
+        return;
+      }
+      if (searchQuery) {
+        resultsEl.execute(searchQuery);
+      } else if (value) {
+        console.log('handling google search');
+        resultsEl.execute(value);
+      } else {
+        console.log(typeof value);
+        resultsEl.clearAllResults();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleGoogleSearch();
+  };
+
   return (
     <div>
       <form
         className="form-inline hidden-print mt-4"
         id="cse-searchbox-form"
         onSubmit={(e) => {
-          e.preventDefault();
-
-          try {
-            const { google } = window as typeof window & { google?: Google };
-            if (!google) {
-              console.error('`window.google` should exist but does not');
-              return;
-            }
-
-            const resultsEl = google.search.cse.element.getElement(GNAME);
-
-            if (!resultsEl) {
-              console.error(
-                `The Google CSE library could not find the element with gname ${GNAME}`
-              );
-              return;
-            }
-
-            if (value) {
-              resultsEl.execute(value);
-            } else {
-              resultsEl.clearAllResults();
-            }
-          } catch (err) {
-            console.error(err);
-          }
+          handleSubmit(e);
         }}
       >
         <div className="mb-3 input-group">
@@ -112,6 +133,7 @@ const SiteSearch = () => {
             Search
           </label>
           <input
+            value={value}
             onChange={(e) => setValue(e.target.value)}
             type="search"
             className="form-control"

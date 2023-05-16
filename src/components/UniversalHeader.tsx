@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import SearchModalBody from './SearchModalBody';
@@ -6,6 +7,11 @@ import SearchModalFooter from './SearchModalFooter';
 
 const UniversalHeader = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
+  const [showNavSearch, setShowNavSearch] = useState(false);
+  const [animateNavSearch, setAnimateNavSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const router = useRouter();
 
   const handleShowSearchModal = () => {
     setShowSearchModal(true);
@@ -17,6 +23,24 @@ const UniversalHeader = () => {
     setShowSearchModal(false);
     // Re-enable <html> scrolling
     document.documentElement.style.removeProperty('overflow-y');
+  };
+
+  const handleShowNavSearch = () => {
+    setShowNavSearch(true);
+    setTimeout(() => {
+      setAnimateNavSearch(true);
+    }, 20);
+  };
+
+  const handleHideNavSearch = () => {
+    setShowNavSearch(false);
+    setTimeout(() => {
+      setAnimateNavSearch(false);
+    }, 20);
+  };
+
+  const handleSearchSubmit = () => {
+    router.push(`/search/${searchQuery}`);
   };
 
   const linkItems = (
@@ -77,7 +101,7 @@ const UniversalHeader = () => {
                 // data-bs-toggle="modal"
                 // data-bs-target="#searchModal"
                 aria-label="Open search"
-                onClick={() => handleShowSearchModal()}
+                onClick={() => handleShowNavSearch()}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +117,67 @@ const UniversalHeader = () => {
               </button>
             </li>
           </ul>
+          <div
+            className="nav-search-overlay"
+            style={{
+              display: showNavSearch ? 'flex' : 'none',
+            }}
+          >
+            <div
+              className="nav-search-inner"
+              style={{ opacity: animateNavSearch ? 1 : 0 }}
+            >
+              <div className="input-group">
+                <label className="sr-only visually-hidden" htmlFor="nav-search">
+                  Search
+                </label>
+                <input
+                  type="search"
+                  title="Search utk.edu"
+                  placeholder="search utk.edu"
+                  name="search"
+                  id="nav-search"
+                  style={{
+                    width: animateNavSearch ? '350px' : 0,
+                    padding: animateNavSearch ? '0 0.5rem' : 0,
+                  }}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button type="button" onClick={() => handleSearchSubmit()}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#58595b"
+                    className="bi bi-search"
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                  </svg>{' '}
+                  <span>Search</span>
+                </button>
+              </div>
+              <button
+                type="submit"
+                className="btn nav-search-close text-uppercase text-light navbar-toggler col-auto collapsed"
+                aria-label="Close search"
+                onClick={() => handleHideNavSearch()}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  id="searchHeader-close"
+                >
+                  <path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
