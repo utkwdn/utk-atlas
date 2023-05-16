@@ -150,7 +150,6 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
                   title={slateOneTitle}
                   eventKey="undergraduate"
                   className="nav-item my-4"
-                  tabIndex={0}
                 >
                   <SlateFormEmbed
                     id={slateOneId}
@@ -166,7 +165,6 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
                   title={slateTwoTitle}
                   eventKey="graduate"
                   className="nav-item my-4"
-                  tabIndex={-1}
                 >
                   <SlateFormEmbed
                     id={slateTwoId}
