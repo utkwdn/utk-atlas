@@ -1,7 +1,12 @@
 .nav-pills .nav-link {
-  background: #00000012;
+  background: rgb(0 0 0 / 10%);
   border: 1px solid #b3b3b3;
   margin-right: 10px;
+  color: #4b4b4b;
+}
+
+.nav-pills .nav-link:hover {
+  color: #114c81;
 }
 
 .nav-pills .nav-link.active {
@@ -21,6 +26,10 @@
 
 .search-tab-pane {
   padding: 1.5rem !important;
+}
+
+button.form_button_submit:focus {
+  box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
 }
 
 @media screen and (max-width: 800px) {

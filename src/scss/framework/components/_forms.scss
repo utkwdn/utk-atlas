@@ -276,8 +276,11 @@ Dialog Box Message Styling
 // this is the slate dialog box that pops up with errors
 .dialog_host {
   // border: 2px solid $utalert !important;
-  div {
+  div:not(.header) {
     // change the color of the alert message
     color: $utalert !important;
+  }
+  .row_hover td div {
+    color: black !important;
   }
 }
