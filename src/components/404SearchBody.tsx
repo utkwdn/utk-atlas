@@ -11,7 +11,10 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
   <div className="modal-body">
     <div className="container-xxl">
       <div className="row justify-content-center">
-        <div className="col-12 col-xl-8" style={{ padding: 0 }}>
+        <div
+          className="col-12 col-xl-8"
+          style={{ padding: 0, textAlign: 'left' }}
+        >
           <Tab.Container id="left-tabs-example" defaultActiveKey="main">
             <Nav
               variant="pills"
