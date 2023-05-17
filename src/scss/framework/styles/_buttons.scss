@@ -456,3 +456,10 @@ h3.link-fancy a {
     margin-block-start: 0;
   }
 }
+
+.anchor-context {
+  transform: scale(1.3);
+  @media screen and (min-width: 800px) {
+    transform: none;
+  }
+}
