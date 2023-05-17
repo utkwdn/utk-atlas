@@ -873,6 +873,11 @@ Card Flip
 
 – – – – */
 
+/* – – – – –
+Card Flip 
+
+– – – – */
+
 .card-group-max-width {
   // max-width: 880px;
 }
@@ -880,14 +885,18 @@ Card Flip
 .cards-grid-2up {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
+  grid-auto-rows: max-content;
+  // position: relative;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 1rem;
   @media screen and (min-width: 671px) {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
-  grid-auto-rows: auto;
-  position: relative;
-  flex: 1;
-  gap: 1rem;
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    //fix for ios 13 and lower to make cards full height
+    height: 100%;
+  }
 }
 .card-span-2 {
   @media screen and (min-width: 671px) {
@@ -898,10 +907,6 @@ Card Flip
   // this is created to fix margin issue of first child that is set in theme.json
   // container for all card-flip-container (s)
 
-  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    //fix for ios 13 and lower to make cards full height
-    height: 100%;
-  }
   & > :nth-child(2) {
     @media screen and (min-width: 671px) {
       margin-block-start: 0;
@@ -910,11 +915,13 @@ Card Flip
 }
 
 .card-flip-container {
-  flex-grow: 1;
+  position: relative;
   width: 100%;
-  min-height: 320px;
+  display: flex;
+  align-items: stretch;
+  // min-height: 320px;
   @supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    // fix for ios 13 and lower to make cards full height
+    // fix for ios 14 and lower to make cards full height
     height: 100%;
   }
   &:active .card-flip,
@@ -936,26 +943,30 @@ Card Flip
 }
 
 .card-flip {
+  display: flex;
   position: relative;
+  justify-content: flex-start;
+  align-items: stretch;
   width: 100%;
-  height: 100%;
+  flex: 1;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
 
 .card-flip-front,
 .card-flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   backface-visibility: hidden;
+  min-width: 100%;
+  -webkit-backface-visibility: hidden;
   border-top: 5px solid $utorange;
   margin-block-start: 0 !important;
-
+  box-sizing: border-box;
   padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
     clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
     clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
@@ -970,6 +981,7 @@ Card Flip
 .card-flip-front {
   background-color: $utgray1;
   color: $utsmokeytext;
+  padding-bottom: 4rem;
 
   &:before {
     // using arrow made from squares – rocky top arrow.
@@ -982,7 +994,7 @@ Card Flip
     position: absolute;
     bottom: calc($spacer * -0.5);
     display: block;
-    width: 100%;
+    min-width: 100%;
     left: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
     /* must match padding of container card for proper alignment */
   }
@@ -994,7 +1006,9 @@ Card Flip
   background-color: $utsmokey;
   background-color: $utcoolsmokey;
   color: $white;
-  transform: rotateY(180deg);
+  border: 1px solid purple;
+  // transform: rotateY(180deg);
+  transform: rotateY(180deg) translate(100%, 0);
 }
 
 .card-action {
