@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import SearchModalBody from './SearchModalBody';
 import SearchModalFooter from './SearchModalFooter';
@@ -39,7 +39,12 @@ const UniversalHeader = () => {
     }, 20);
   };
 
-  const handleSearchSubmit = () => {
+  // const handleSearchSubmit = () => {
+  //   router.push(`/search/${searchQuery}`);
+  // };
+
+  const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     router.push(`/search/${searchQuery}`);
   };
 
@@ -127,37 +132,49 @@ const UniversalHeader = () => {
               className="nav-search-inner"
               style={{ opacity: animateNavSearch ? 1 : 0 }}
             >
-              <div className="input-group">
-                <label className="sr-only visually-hidden" htmlFor="nav-search">
-                  Search
-                </label>
-                <input
-                  type="search"
-                  title="Search utk.edu"
-                  placeholder="search utk.edu"
-                  name="search"
-                  id="nav-search"
-                  style={{
-                    width: animateNavSearch ? '350px' : 0,
-                    padding: animateNavSearch ? '0 0.5rem' : 0,
-                  }}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button type="button" onClick={() => handleSearchSubmit()}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="#58595b"
-                    className="bi bi-search"
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
+              <form
+                className="form-inline hidden-print"
+                id="cse-searchbox-form"
+                style={{ display: 'flex' }}
+                onSubmit={(e) => {
+                  handleSearchSubmit(e);
+                }}
+              >
+                <div className="input-group">
+                  <label
+                    className="sr-only visually-hidden"
+                    htmlFor="nav-search"
                   >
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                  </svg>{' '}
-                  <span>Search</span>
-                </button>
-              </div>
+                    Search
+                  </label>
+                  <input
+                    type="search"
+                    title="Search utk.edu"
+                    placeholder="search utk.edu"
+                    name="search"
+                    id="nav-search"
+                    style={{
+                      width: animateNavSearch ? '350px' : 0,
+                      padding: animateNavSearch ? '0 0.5rem' : 0,
+                    }}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                  <button type="submit">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="#58595b"
+                      className="bi bi-search"
+                      aria-hidden="true"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>{' '}
+                    <span>Search</span>
+                  </button>
+                </div>
+              </form>
               <button
                 type="submit"
                 className="btn nav-search-close text-uppercase text-light navbar-toggler col-auto collapsed"

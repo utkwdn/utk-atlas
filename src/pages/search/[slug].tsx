@@ -19,7 +19,7 @@ function Search() {
     if (router.query.slug) {
       setSearchQuery(router.query.slug as string);
     }
-  }, []);
+  }, [router.query.slug]);
 
   return (
     <Layout>
