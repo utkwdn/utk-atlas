@@ -168,6 +168,7 @@
     flex-wrap: wrap;
     line-height: 90%;
     justify-content: flex-end;
+    max-width: 50%;
     font-size: clamp(calc($p-font-size * 0.6), 2vw, calc($p-font-size * 0.7));
     line-height: clamp(calc($p-font-size * 0.8), 2vw, calc($p-font-size * 0.9));
     font-weight: $font-weight-normal;
@@ -322,3 +323,91 @@
 //     transform: rotate(0deg);
 //   }
 // }
+
+.quote-wide {
+  // style with bar on let side, quote mark outside bar
+  @media screen and (min-width: 1500px) {
+    margin-left: calc($spacer * -3);
+  }
+
+  & > p {
+    padding-left: calc($spacer * 2);
+    padding: $spacer calc($spacer * 3);
+    font-size: calc($p-font-size * 1.2);
+  }
+
+  &:before {
+    // animation: quoteMarks 1s linear infinite;
+    // animation-play-state: paused;
+    // animation-delay: calc(var(scroll) * -1s);
+    content: open-quote;
+    // left: calc($spacer * -0.9);
+    left: calc($spacer * 2);
+    top: calc($spacer * 2);
+    font-family: $font-family-sans-serif;
+    // font-weight: $font-weight-ultra;
+    font-weight: $font-weight-bolder;
+    font-size: calc($h1-font-size * 1.6);
+    line-height: calc($line-height-base * 1.2) !important;
+    // font-size: clamp(8rem, 20vw, 13rem);
+    display: block;
+    color: $utorange;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    // top: (-1 * ($spacer * 0.5));
+  }
+  &:after {
+    visibility: hidden;
+    content: close-quote;
+    // must close quote or else, netxt instance of quote will use a single quote
+  }
+  p {
+    margin-top: 0;
+  }
+
+  cite {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 90%;
+
+    // &:before {
+    //   content: " ";
+    //   position: relative;
+    //   background-color: $utorange;
+    //   height: 3rem;
+    //   width: 100%;
+    //   display: inline-block;
+    //   flex-basis: 40%;
+    //   right: 0;
+    // }
+
+    em {
+      font-size: 80%;
+      padding-top: 0.5rem;
+      // line-height: 85%;
+      // margin-top: 0;
+    }
+    p:first-of-type {
+      padding-bottom: 0.5rem;
+      box-shadow: inset 0px -1px $utorange;
+      flex-basis: 60%;
+      width: fit-content;
+    }
+    p + p {
+      font-size: 70%;
+
+      flex-basis: 80%;
+    }
+    margin-top: calc($spacer * 2);
+    // &:before {
+    //   content: "";
+    //   background-color: $utorange;
+    //   width: 80vw;
+    //   height: 2rem;
+    //   display: aboslute;
+    // }
+  }
+}

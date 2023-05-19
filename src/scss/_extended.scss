@@ -583,9 +583,10 @@ body {
   // Currently set to  only work with a strip using Large Padding and 0 spacing
   &:before {
     content: '';
-    z-index: 10;
-    width: 100vw;
-    height: 100%;
+    z-index: 1;
+    width: 100%;
+    height: 98%;
+    bottom: 0;
     // @media screen and (min-width: 800px) {
     //   width: 60vw;
     //   left: 0;
@@ -596,6 +597,7 @@ body {
     background-size: 40%;
     background-position: bottom left;
     background-repeat: repeat-y;
+    padding-top: 1rem;
     @media screen and (min-width: 800px) {
       background-repeat: repeat-y;
     }

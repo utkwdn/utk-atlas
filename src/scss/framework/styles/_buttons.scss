@@ -301,7 +301,8 @@
 .link-fancy a {
   // font-size: 1.2rem;
   /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
-  line-height: 1.3rem; // keeps > in correct alignment
+  // line-height: 1.3rem; // keeps > in correct alignment
+  line-height: 1.5rem !important;
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -315,11 +316,9 @@
   font-weight: $font-weight-bold;
   letter-spacing: 0.01rem;
   text-align: left;
-  // color: $utsmokey !important;
   color: #1a73c5;
-  // &:first-letter {
-  //   color: $utlinkriver;
-  // }
+  padding-right: 3rem !important; // incorporates the width of the :after arrow
+
   * {
     display: inline-flex;
   }
@@ -330,16 +329,18 @@
     transform: scale(0.25);
     // margin-left: -1.5rem;
     margin-left: calc($spacer * 0.7);
+    margin-top: 0.2rem;
     transform-origin: top left;
     // top: -1.4rem;
     // top: calc($spacer * 0.2);
     display: inline-block;
     position: absolute;
     transition: all 0.2s ease-out;
-    padding-top: 1rem;
+    // padding-top: 2rem;
   }
   &:hover {
     text-decoration: none;
+    cursor: pointer;
     color: $utlinkhover;
     // color: $utlinkriver;
     // box-shadow: inset 0px -1px $utlinkriver;
@@ -383,4 +384,95 @@ h3.link-fancy a {
 
 .subLink {
   font-size: 90%;
+}
+
+.fancyAnchor a,
+.anchor-fancy a {
+  // font-size: 1.2rem;
+  /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
+  line-height: 1.3rem; // keeps > in correct alignment
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin: calc($spacer * 0.5) 0;
+  padding: 0 2rem 0.5rem 0;
+  font-weight: $font-weight-normal;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  color: #1a73c5;
+
+  * {
+    display: inline-flex;
+  }
+
+  &:after {
+    content: url('//images.utk.edu/wds/rocky-top-carrot-01.svg');
+
+    // transform: scale(0.25);
+    // margin-left: -1.5rem;
+    margin-left: calc($spacer * 0.7);
+    margin-top: calc($spacer * 0.1);
+    // transform-origin: top left;
+    // top: -1.4rem;
+    // top: calc($spacer * 0.2);
+    display: inline-block;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    // padding-top: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $utlinkhover;
+    // color: $utlinkriver;
+    // box-shadow: inset 0px -1px $utlinkriver;
+  }
+  &:hover:after {
+    // margin-left: -1.2rem;
+    margin-top: calc($spacer * 0.25);
+  }
+  .bi {
+    /* turning off any chosen icons */
+    display: none;
+  }
+}
+
+.anchor-fancy-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 0.25vw;
+  margin-bottom: $spacer;
+  padding-right: calc($spacer * 1.89); // encompasses the down carrot
+  align-items: flex-end;
+  justify-content: flex-start;
+  > *:nth-child(n + 2) {
+    width: auto;
+    display: flex;
+    margin-left: 0;
+    @media (min-width: 390px) {
+      margin-left: min(2rem, calc($spacer * 4));
+    }
+  }
+  &.is-layout-constrained > * {
+    margin-left: 0;
+  }
+  &.is-layout-flow > * {
+    margin-block-start: 0;
+  }
+}
+
+.apply-anchors-mobile {
+  @media screen and (max-width: 443px) {
+    justify-content: center;
+    > * {
+      align-self: center !important;
+    }
+  }
+}
+.anchor-context {
+  transform: scale(1.3);
+  @media screen and (min-width: 1221px) {
+    transform: none;
+  }
 }
