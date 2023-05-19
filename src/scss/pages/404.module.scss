@@ -1,21 +1,18 @@
 .four-oh-four-content {
   text-align: center;
-  background-color: #f6f6f6;
-  margin-top: 3em;
-  margin-bottom: 4em;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
 }
 
-.search-container {
-  background-color: #ffffff;
-  width: 85%;
-  margin: 0px auto;
-  border: 1px solid #d4d4d4;
-  text-align: left;
-  @media screen and (max-width: 1600px) {
-    width: 100%;
-  }
-}
+// .search-container {
+//   background-color: #ffffff;
+//   width: 85%;
+//   margin: 0px auto;
+//   border: 1px solid #d4d4d4;
+//   text-align: left;
+//   @media screen and (max-width: 1600px) {
+//     width: 100%;
+//   }
+// }
 
 .heading-seperator::before {
   font-weight: 400;

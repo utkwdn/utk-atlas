@@ -55,6 +55,7 @@
     transition: all 0.2s ease-out;
     &:focus {
       background-color: $white;
+      box-shadow: 0 0 0 0.25rem rgb(88 89 91 / 50%);
     }
     &:hover {
       transform: scale(1.4);

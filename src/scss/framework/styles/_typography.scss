@@ -73,6 +73,7 @@ h3 {
 h4 {
   margin-top: calc($spacer * 3.2);
   margin-bottom: calc($spacer * 1.2);
+  line-height: calc($headings-line-height * 1.2);
 }
 
 h5 {
@@ -176,7 +177,11 @@ section[class^='PageTitle_hero'] {
 }
 
 // control width of content based on character widths
-.ch-med {
+.ch-sm {
+  max-width: 30ch !important;
+}
+.ch-med,
+.ch-md {
   max-width: 45ch;
 }
 .ch-lg {
@@ -195,6 +200,7 @@ section[class^='PageTitle_hero'] {
   line-height: 120%;
   text-transform: uppercase;
   letter-spacing: 0.5vw;
+  letter-spacing: 0.3vw;
   margin-bottom: 1.7vw;
 }
 
@@ -248,9 +254,10 @@ section[class^='PageTitle_hero'] {
   position: sticky;
 }
 
-.space-above {
-  margin-top: 5rem;
-  @media screen and (min-width: 800px) {
-    margin-top: 10rem;
-  }
+.text-data {
+  font-size: $h1-font-size;
+  font-weight: $font-weight-bolder;
+  text-align: left;
+  margin-top: 0;
+  text-shadow: 2px 2px 0px $utsmokey, 4px 4px 0px $utorange;
 }

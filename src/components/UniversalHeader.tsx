@@ -31,24 +31,24 @@ const UniversalHeader = () => {
           </Link>
         </small>
       </li>
-      {/* Using <a> instead of <Link> for next 3 links to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
-          <a href="/visit" className="menu-item text-light text-uppercase">
+          <Link href="/visit" className="menu-item text-light text-uppercase">
             Visit
-          </a>
+          </Link>
         </small>
       </li>
       <li className="uni-nav-item">
         <small>
-          <a
-            href="https://admissions.utk.edu/apply/"
+          <Link
+            href="/admissions"
             className="menu-item text-light text-uppercase"
           >
             Apply
-          </a>
+          </Link>
         </small>
       </li>
+      {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
           <a

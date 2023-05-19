@@ -1,0 +1,47 @@
+.nav-pills .nav-link {
+  background: rgb(0 0 0 / 10%);
+  border: 1px solid #b3b3b3;
+  margin-right: 10px;
+  color: #4b4b4b;
+}
+
+.nav-pills .nav-link:hover {
+  color: #114c81;
+}
+
+.nav-pills .nav-link.active {
+  border-bottom: 1px solid #f6f6f6;
+  font-weight: bold;
+}
+
+.tab-pane {
+  padding: 1.5rem 0.5rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: #f6f6f6;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.search-tab-pane {
+  padding: 1.5rem !important;
+}
+
+button.form_button_submit:focus {
+  box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
+}
+
+@media screen and (max-width: 800px) {
+  .nav-pills .nav-link {
+    border-radius: 0.45rem;
+    margin-bottom: 10px;
+    background: #f6f6f6;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #1a73c5 !important;
+    color: white !important;
+    border: 0.125rem solid #1a73c5 !important;
+  }
+}
