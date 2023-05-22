@@ -1,29 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, FormEvent } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import SearchModalBody from './SearchModalBody';
-import SearchModalFooter from './SearchModalFooter';
 
 const UniversalHeader = () => {
-  const [showSearchModal, setShowSearchModal] = useState(false);
   const [showNavSearch, setShowNavSearch] = useState(false);
   const [animateNavSearch, setAnimateNavSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const router = useRouter();
-
-  const handleShowSearchModal = () => {
-    setShowSearchModal(true);
-    // Hide overflow on <html> element to prevent scrolling background instead of modal content
-    document.documentElement.style.overflowY = 'hidden';
-  };
-
-  const handleHideSearchModal = () => {
-    setShowSearchModal(false);
-    // Re-enable <html> scrolling
-    document.documentElement.style.removeProperty('overflow-y');
-  };
 
   const handleShowNavSearch = () => {
     setShowNavSearch(true);
@@ -39,13 +23,14 @@ const UniversalHeader = () => {
     }, 20);
   };
 
-  // const handleSearchSubmit = () => {
-  //   router.push(`/search/${searchQuery}`);
-  // };
-
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/search/${searchQuery}`);
+    // Encode HTML Entities
+    const encodedQuery = searchQuery.replace(
+      /[\u00A0-\u9999<>\&]/g,
+      (i) => '&#' + i.charCodeAt(0) + ';'
+    );
+    router.push(`/search/${encodedQuery}`);
   };
 
   const linkItems = (
@@ -67,17 +52,17 @@ const UniversalHeader = () => {
           </Link>
         </small>
       </li>
-      {/* Using <a> instead of <Link> for external links to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
-          <a
-            href="https://admissions.utk.edu/apply/"
+          <Link
+            href="/admissions"
             className="menu-item text-light text-uppercase"
           >
             Apply
-          </a>
+          </Link>
         </small>
       </li>
+      {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
       <li className="uni-nav-item">
         <small>
           <a
@@ -101,10 +86,7 @@ const UniversalHeader = () => {
               {' '}
               <button
                 type="button"
-                // id="btn-searchopen"
                 className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed px-0"
-                // data-bs-toggle="modal"
-                // data-bs-target="#searchModal"
                 aria-label="Open search"
                 onClick={() => handleShowNavSearch()}
               >
@@ -122,6 +104,7 @@ const UniversalHeader = () => {
               </button>
             </li>
           </ul>
+          {/* Begin Search Overlay  */}
           <div
             className="nav-search-overlay"
             style={{
@@ -153,6 +136,7 @@ const UniversalHeader = () => {
                     placeholder="search utk.edu"
                     name="search"
                     id="nav-search"
+                    autoFocus={showNavSearch}
                     style={{
                       width: animateNavSearch ? '350px' : 0,
                       padding: animateNavSearch ? '0 0.5rem' : 0,
@@ -175,8 +159,9 @@ const UniversalHeader = () => {
                   </button>
                 </div>
               </form>
+              {/* Hide Search Overlay Button */}
               <button
-                type="submit"
+                type="button"
                 className="btn nav-search-close text-uppercase text-light navbar-toggler col-auto collapsed"
                 aria-label="Close search"
                 onClick={() => handleHideNavSearch()}
@@ -195,50 +180,9 @@ const UniversalHeader = () => {
               </button>
             </div>
           </div>
+          {/* End Search Overlay */}
         </div>
       </div>
-
-      <Modal
-        show={showSearchModal}
-        aria-label="Search dialog"
-        className="modal fade"
-        fullscreen
-        /* explicit escape-handler shouldn't be necessary here but for some reason it is */
-        onEscapeKeyDown={() => handleHideSearchModal()}
-        /* needs to beat an element on `/meet` page */
-        style={{ zIndex: 999999 }}
-      >
-        <div id="universal-header">
-          <div className="container">
-            <ul className="menu-universal">
-              {linkItems}
-              <li className="uni-nav-item">
-                <button
-                  type="button"
-                  className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed px-0"
-                  aria-label="Close search"
-                  onClick={() => handleHideSearchModal()}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    id="searchHeader-close"
-                  >
-                    <path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"></path>
-                  </svg>
-                  <span>Close</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <SearchModalBody />
-        <SearchModalFooter />
-      </Modal>
     </>
   );
 };
