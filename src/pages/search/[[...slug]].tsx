@@ -58,7 +58,9 @@ function Search() {
           <div className="row">
             <div className="col-12 col-xl-8">
               <div className={styles['search-title-buttons']}>
-                <h1 style={{ marginBottom: 0 }}>SEARCH</h1>
+                <h1 className={'text-uppercase'} style={{ marginBottom: 0 }}>
+                  Search
+                </h1>
                 <div className={styles['search-buttons']}>
                   <Button
                     className={`${styles['search-button']} ${

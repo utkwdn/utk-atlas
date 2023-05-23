@@ -1,3 +1,5 @@
+@import './src/scss/common';
+
 .search-title-buttons {
   display: flex;
   align-items: flex-end;
@@ -10,21 +12,31 @@
 }
 
 .search-button {
-  border: 0.125rem solid #ff8200;
+  border: 0.125rem solid $utorange;
   background-color: #fff;
   text-decoration: none;
-  border-radius: 0.45rem;
-  color: #1a73c5 !important;
+  border-radius: 0.3rem;
+  color: $utlinkriver;
   margin-right: 0.75rem;
-  padding: 0 0.5rem;
+  padding: 0.3rem 0.5rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  white-space: no-wrap;
+
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: $utlinkriver;
+    background-color: $utlinkriver;
+    color: $white !important;
+    transition: all 0.3s ease;
+  }
 }
 
 .selected {
-  background-color: #154b80;
+  background-color: $utlinkhover;
   color: #fff !important;
-
+  border: 0.125rem solid $utlinkhover;
   &:hover {
-    color: #f0f0f0 !important;
+    pointer-events: none;
   }
 }
 
@@ -35,7 +47,7 @@
 }
 
 .form-and-results {
-  width: 75%;
+  width: min(100%, 60vw);
   margin-bottom: 3rem;
 }
 
@@ -46,7 +58,53 @@
 .search-link {
   margin-left: 30px;
   text-decoration: none;
-  border-bottom: 2px solid #ff8200;
-  padding-bottom: 5px;
+  padding-bottom: calc($spacer * 0.5);
   font-weight: bold;
+  box-shadow: inset 0 -2px $utorange;
+  &:hover {
+    box-shadow: inset 0 -2px $utlinkhover;
+    text-decoration: none;
+  }
 }
+
+.input-group-text {
+  color: red !important;
+}
+// .input-search-utk {
+//   margin: 2rem 0;
+//   border-left: 0.6rem solid $utorange !important;
+//   border: 2px solid red;
+//   // margin-left: -0.25rem;
+//   display: block;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: stretch;
+//   position: relative;
+//   &:focus {
+//   }
+//   [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
+//     border-radius: 0 !important;
+//   }
+//   .MuiTextField-root {
+//     width: 80%;
+
+//     padding: 16.5px 14px;
+//   }
+//   button {
+//     color: #707070;
+//     background-color: #f1f1f1;
+//     padding: 0.8rem 1rem;
+//     margin: 0;
+//     border: 0;
+//     border-top: 1px solid $utgray4;
+//     border-bottom: 1px solid $utgray4;
+//     border-right: 1px solid $utgray4;
+//     text-transform: uppercase;
+//     font-weight: $font-weight-bolder;
+//     font-size: $h6-font-size;
+//     &:hover {
+//       background-color: $utsmokey;
+//       color: white !important;
+//     }
+//   }
+// }
