@@ -384,3 +384,62 @@ h3.link-fancy a {
 .subLink {
   font-size: 90%;
 }
+
+// button.btn-utsearch {
+//   svg {
+//     transition: all 0.2s ease-out;
+//     fill: $utsmokeytext;
+//     transform: scale(0.8);
+//   }
+
+//   &:hover {
+//     background: #445562;
+//     cursor: pointer;
+//     // color: 'var(--wp--preset--color--smokeyX)';
+//     // color: $utsmokeytext;
+//     color: $white !important;
+
+//     svg {
+//       transform: scale(1.4);
+//     }
+//   }
+//   &:focus {
+//     box-shadow: none;
+//   }
+// }
+
+button.btn-utsearch {
+  // this is used for search buttons attached to input
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: $spacer !important;
+  gap: calc($spacer * 0.3);
+  height: 100%;
+  span {
+    // font-size: 0.8rem;
+    color: $utsmokeytext;
+  }
+  svg {
+    transition: all 0.2s ease-out;
+    fill: $utsmokeytext;
+  }
+
+  &:hover {
+    // background: #445562;
+    background: $utsmokey;
+    cursor: pointer;
+    // color: 'var(--wp--preset--color--smokeyX)';
+    // color: $utsmokeytext;
+    span {
+      color: white !important;
+    }
+    svg {
+      transform: scale(1.4);
+      fill: $white;
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
