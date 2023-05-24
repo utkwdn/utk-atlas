@@ -38,16 +38,31 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
   const [slateButtonStyle, setSlateButtonStyle] = useState('');
   const [modalOpacity, setModalOpacity] = useState(0);
 
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const handleCloseModal = () => {
-    // Fade out with opacity before hiding
+    // Re-enabling .framedOrangeShadow class
+    if (modalRef?.current) {
+      const modalParent = modalRef.current.parentElement;
+      modalParent?.classList.replace(
+        'framedOrangeShadowDisabled',
+        'framedOrangeShadow'
+      );
+    }
     setModalOpacity(0);
-    setTimeout(() => {
-      setShowModal(false);
-    }, 220);
+    setShowModal(false);
     // Re-enable <html> scrolling
     document.documentElement.style.removeProperty('overflow-y');
   };
   const handleShowModal = () => {
+    // Disabling .framedOrangeShadow class because transforms prevent fixed position modal from displaying correctly
+    if (modalRef?.current) {
+      const modalParent = modalRef.current.parentElement;
+      modalParent?.classList.replace(
+        'framedOrangeShadow',
+        'framedOrangeShadowDisabled'
+      );
+    }
     // Show, then fade in with opacity
     setShowModal(true);
     setTimeout(() => {
@@ -125,6 +140,7 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
           opacity: modalOpacity,
         }}
         className={`${styles['slate-modal-container']}`}
+        ref={modalRef}
       >
         <div
           className={styles['slate-modal-backdrop']}
