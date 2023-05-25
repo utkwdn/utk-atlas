@@ -136,26 +136,26 @@ const SiteSearch = ({ searchTerm }: Props) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             type="search"
-            className="form-control"
+            className="form-control left-border"
             title="Search utk.edu"
             placeholder="Example: Apply, Payroll, Provost, English Department"
             name="q"
             id="q"
             autoFocus
           />
-          <button type="submit" className="btn btn-utlink">
+
+          <button type="submit" className="btn btn-utsearch">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              className="bi bi-search"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              id="searchHeader-open"
             >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>{' '}
-            <span className="text-white">Search</span>
+              <path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+            </svg>
+            <span className="text-uppercase">Search</span>
           </button>
         </div>
       </form>
