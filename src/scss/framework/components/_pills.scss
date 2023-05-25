@@ -1,26 +1,35 @@
 .nav-pills .nav-link {
   background: #00000012;
-  border: 1px solid #b3b3b3;
-  margin-right: 10px;
+  background-color: #d9d9d9;
+  // border: 1px solid #b3b3b3;
+  margin-right: 0.6rem;
+  border-radius: 0.45rem 0.45rem 0 0;
 }
 
 .nav-pills .nav-link.active {
-  border-bottom: 1px solid #f6f6f6;
+  // border-bottom: 1px solid #f6f6f6;
   font-weight: bold;
+  font-size: 110%;
+
+  box-shadow: 0.25rem -0.2rem 0.4rem $utgray3;
+  border-radius: 0.45rem 0.45rem 0 0;
 }
 
 .tab-pane {
   padding: 1.5rem 0.5rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  background: #f6f6f6;
-  border-left: 1px solid #b3b3b3;
-  border-right: 1px solid #b3b3b3;
-  border-bottom: 1px solid #b3b3b3;
+  // background: #f6f6f6;
+  background: $utgray1;
+
+  // border-left: 1px solid #b3b3b3;
+  // border-right: 1px solid #b3b3b3;
+  // border-bottom: 1px solid #b3b3b3;
 }
 
 .search-tab-pane {
   padding: 1.5rem !important;
+  box-shadow: 0.25rem -0.2rem 0.4rem $utgray3;
 }
 
 @media screen and (max-width: 800px) {

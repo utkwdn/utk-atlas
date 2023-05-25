@@ -1,5 +1,8 @@
 @import './src/scss/common';
 
+.search-chunk {
+  margin-top: 2rem;
+}
 .search-title-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +11,9 @@
   gap: 1rem;
 }
 
+.search-tabs-links {
+  // display: flex;
+}
 .search-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -65,9 +71,12 @@
   margin-bottom: 3rem;
   grid-row: 2;
 }
+.search-tab-navigation {
+  display: inline-block;
+}
 
 .search-external-links {
-  margin-top: 23px;
+  // margin-top: 23px;
   // grid-column: 3 / 4;
   // grid-row: 2;
 }
