@@ -1,17 +1,19 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useRef } from 'react';
 
 const UniversalHeader = () => {
   const [showNavSearch, setShowNavSearch] = useState(false);
   const [animateNavSearch, setAnimateNavSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const navSearchInputRef = useRef<HTMLInputElement>(null);
 
   const router = useRouter();
 
   const handleShowNavSearch = () => {
     setShowNavSearch(true);
     setTimeout(() => {
+      navSearchInputRef?.current?.focus();
       setAnimateNavSearch(true);
     }, 20);
   };
@@ -23,14 +25,14 @@ const UniversalHeader = () => {
     }, 20);
   };
 
-  const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSearchSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Encode HTML Entities
     const encodedQuery = searchQuery.replace(
       /[\u00A0-\u9999<>\&]/g,
-      (i) => '&#' + i.charCodeAt(0) + ';'
+      (i) => `&#${i.charCodeAt(0)};`
     );
-    router.push(`/search/${encodedQuery}`);
+    await router.push(`/search/${encodedQuery}`);
   };
 
   const linkItems = (
@@ -120,7 +122,7 @@ const UniversalHeader = () => {
                 id="cse-searchbox-form"
                 style={{ display: 'flex' }}
                 onSubmit={(e) => {
-                  handleSearchSubmit(e);
+                  void handleSearchSubmit(e);
                 }}
               >
                 <div className="input-group">
@@ -136,7 +138,7 @@ const UniversalHeader = () => {
                     placeholder="search utk.edu"
                     name="search"
                     id="nav-search"
-                    autoFocus={showNavSearch}
+                    ref={navSearchInputRef}
                     style={{
                       width: animateNavSearch ? '350px' : 0,
                       padding: animateNavSearch ? '0 0.5rem' : 0,
