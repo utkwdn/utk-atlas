@@ -125,7 +125,7 @@ const UniversalHeader = () => {
                   void handleSearchSubmit(e);
                 }}
               >
-                <div className="input-group">
+                <div className="input-group flex-nowrap">
                   <label
                     className="sr-only visually-hidden"
                     htmlFor="nav-search"
@@ -140,31 +140,35 @@ const UniversalHeader = () => {
                     id="nav-search"
                     ref={navSearchInputRef}
                     style={{
-                      width: animateNavSearch ? '350px' : 0,
+                      width: animateNavSearch ? '270px' : 0,
                       padding: animateNavSearch ? '0 0.5rem' : 0,
                     }}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
-                  <button type="submit">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="#58595b"
-                      className="bi bi-search"
-                      aria-hidden="true"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>{' '}
-                    <span>Search</span>
+                  <button
+                    type="submit"
+                    className="btn-utsearch btn-utsearch-tiny"
+                  >
+                    <div className="button-inner">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        id="searchHeader-open"
+                      >
+                        <path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+                      </svg>
+                      <span className="text-uppercase">Search</span>
+                    </div>
                   </button>
                 </div>
               </form>
               {/* Hide Search Overlay Button */}
               <button
                 type="button"
-                className="btn nav-search-close text-uppercase text-light navbar-toggler col-auto collapsed"
+                className="btn btn-close nav-search-close text-uppercase text-light navbar-toggler col-auto collapsed"
                 aria-label="Close search"
                 onClick={() => handleHideNavSearch()}
               >
