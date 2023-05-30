@@ -1,24 +1,44 @@
 .nav-pills .nav-link {
-  background: rgb(0 0 0 / 10%);
-  border: 1px solid #b3b3b3;
-  margin-right: 10px;
-  color: #4b4b4b;
+  background: #00000012;
+  background-color: #d9d9d9;
+  background-color: #e5e5e5;
+  margin-right: 0.3rem;
+  border-radius: 0.45rem 0.45rem 0 0;
+  border-top: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  margin-bottom: 1px;
 }
-
-.nav-pills .nav-link:hover {
-  color: #114c81;
+.nav-pills {
+  font-size: calc($p-font-size * 0.8);
+  display: flex;
+  align-items: flex-end;
 }
-
 .nav-pills .nav-link.active {
-  border-bottom: 1px solid #f6f6f6;
-  font-weight: bold;
+  // border-bottom: 1px solid #f6f6f6;
+  font-weight: $font-weight-bold;
+  font-size: 120%;
+  border-top: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
+  font-size: $p-font-size;
+  color: $utsmokeytext;
+  border-right: 1px solid #b3b3b3;
+  // box-shadow: 0.25rem -0.2rem 0.05rem $utgray3;
+  // box-shadow: 0.1rem -0.2rem 0 $utgray2;
+  border-radius: 0.45rem 0.45rem 0 0;
+  margin-bottom: -1px;
+  // border: 1px solid #b3b3b3;
+  // border-bottom: 1px solid $utgray2;
+  // box-shadow: 0.05rem -2px 0 $utgray3;
 }
 
 .tab-pane {
   padding: 1.5rem 0.5rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  background: #f6f6f6;
+  // background: #f6f6f6;
+  background: $utgray1;
+
   border-left: 1px solid #b3b3b3;
   border-right: 1px solid #b3b3b3;
   border-bottom: 1px solid #b3b3b3;
@@ -26,22 +46,35 @@
 
 .search-tab-pane {
   padding: 1.5rem !important;
+  // box-shadow: 0.05rem -2px 0 $utgray3;
+  // box-shadow: 0 -0.2rem 0 $utgray2;
 }
 
 button.form_button_submit:focus {
   box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 450px) {
   .nav-pills .nav-link {
-    border-radius: 0.45rem;
+    border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
     margin-bottom: 10px;
     background: #f6f6f6;
+    border: 1px solid #b3b3b3;
+    justify-content: flex-start;
   }
 
   .nav-pills .nav-link.active {
     background-color: #1a73c5 !important;
+    background-color: $utlinkhover !important;
     color: white !important;
-    border: 0.125rem solid #1a73c5 !important;
+    font-size: 100%;
+    margin-bottom: 1px;
+    border: none;
+    border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
+  }
+  .nav-pills {
+    font-size: calc($p-font-size * 0.8);
+    display: flex;
+    align-items: flex-start;
   }
 }

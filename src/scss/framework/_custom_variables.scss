@@ -123,6 +123,7 @@ $theme-colors: map-merge(
     'gray2': $utgray2,
     'summitt': $utsummitt,
     'utlink': $utlinkriver,
+    'utsearch' : $utgray2,
     'dark': $dark,
     'light': $utgray1,
    // 'torch': $uttorchweb,
@@ -292,7 +293,7 @@ $nav-link-padding-y: 0.5rem !default;
 $nav-link-padding-x: 1rem !default;
 $nav-link-font-size: null !default;
 $nav-link-font-weight: null !default;
-$nav-link-color: $link-color !default;
+$nav-link-color: $utsmokeytext;
 $nav-link-hover-color: $link-hover-color !default;
 $nav-link-transition: color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
@@ -306,8 +307,8 @@ $nav-tabs-link-active-color: $gray-700 !default;
 $nav-tabs-link-active-bg: $body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 
-$nav-pills-border-radius: $border-radius !default;
-$nav-pills-link-active-color: $utsmokeytext !default;
+$nav-pills-border-radius: $border-radius 0.45rem 0.45rem 0 0;
+$nav-pills-link-active-color: $utsmokeytext ;
 $nav-pills-link-active-bg: $utgray1 !default;
 
 // Typography
@@ -813,7 +814,7 @@ $input-group-addon-padding-y: $input-padding-y !default;
 $input-group-addon-padding-x: $input-padding-x !default;
 $input-group-addon-font-weight: $input-font-weight !default;
 $input-group-addon-color: $input-color !default;
-$input-group-addon-bg: $gray-200 !default;
+$input-group-addon-bg: $utorange ;
 $input-group-addon-border-color: $input-border-color !default;
 // scss-docs-end input-group-variables
 

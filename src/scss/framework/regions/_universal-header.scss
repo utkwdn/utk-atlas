@@ -94,7 +94,53 @@
             transform: scale(1.4);
           }
         }
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
   } // end ul
+}
+.nav-search-overlay {
+  position: absolute;
+  top: 0.45rem;
+  right: 0;
+  background: #313e48;
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  font-size: 0.875em;
+  height: 52px;
+  align-items: center;
+
+  .nav-search-inner {
+    width: 100%;
+    max-width: 1520px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    transition: 0.2s ease-in-out;
+  }
+
+  .nav-search-close:hover {
+    color: #e0e0e0 !important;
+  }
+
+  .input-group {
+    justify-content: flex-end;
+
+    #nav-search {
+      border: none;
+      border-left: 6px solid #ff8200;
+      transition: 0.25s ease-in-out;
+    }
+
+    button {
+      background: #ebebeb;
+      color: #58595b;
+      border: none;
+      padding: 0 0.75rem;
+      font-size: 1.15em;
+    }
+  }
 }
