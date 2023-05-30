@@ -62,7 +62,7 @@ const SiteSearch = ({ searchTerm }: Props) => {
     try {
       const { google } = window as typeof window & { google?: Google };
       if (!google) {
-        console.error('`window.google` should exist but does not');
+        console.error('`window.google` should exist but does not - useEffect');
         return;
       }
 
@@ -84,30 +84,59 @@ const SiteSearch = ({ searchTerm }: Props) => {
     }
   }, [searchTerm]);
 
+  const attemptRerender = () => {
+    try {
+      const { google } = window as typeof window & { google?: Google };
+      if (!google) {
+        console.error('`window.google` should exist but does not - rerender');
+        return;
+      }
+      if (!resultsRef.current) {
+        console.error(
+          '`resultsRef.current` should be assigned to the search-results div but was not.'
+        );
+        return;
+      }
+      google.search.cse.element.render({
+        div: resultsRef.current,
+        tag: 'searchresults-only',
+        gname: GNAME,
+      });
+
+      const resultsEl = google.search.cse.element.getElement(GNAME);
+      if (value) {
+        resultsEl.execute(value);
+      } else {
+        resultsEl.clearAllResults();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleGoogleSearch = (searchQuery?: string) => {
     try {
       const { google } = window as typeof window & { google?: Google };
       if (!google) {
-        console.error('`window.google` should exist but does not');
+        console.error(
+          '`window.google` should exist but does not - handleGoogleSearch'
+        );
         return;
       }
 
       const resultsEl = google.search.cse.element.getElement(GNAME);
 
+      // If google isn't ready on page load and results div isn't initialized, retry initialization on form submit
       if (!resultsEl) {
-        console.error(
-          `The Google CSE library could not find the element with gname ${GNAME}`
-        );
-        return;
-      }
-      if (searchQuery) {
-        resultsEl.execute(searchQuery);
-      } else if (value) {
-        console.log('handling google search');
-        resultsEl.execute(value);
+        attemptRerender();
       } else {
-        console.log(typeof value);
-        resultsEl.clearAllResults();
+        if (searchQuery) {
+          resultsEl.execute(searchQuery);
+        } else if (value) {
+          resultsEl.execute(value);
+        } else {
+          resultsEl.clearAllResults();
+        }
       }
     } catch (err) {
       console.error(err);
