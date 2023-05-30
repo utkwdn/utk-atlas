@@ -416,18 +416,25 @@ button.btn-utsearch {
   padding: $spacer !important;
   gap: calc($spacer * 0.3);
   height: 100%;
+  background-color: $utcoolsmokey;
   span {
     // font-size: 0.8rem;
-    color: $utsmokeytext;
+    // color: $utsmokeytext;
+    color: $white;
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
   }
   svg {
     transition: all 0.2s ease-out;
     fill: $utsmokeytext;
+    fill: $white;
   }
 
   &:hover {
     // background: #445562;
     background: $utsmokey;
+    background: #445562;
     cursor: pointer;
     // color: 'var(--wp--preset--color--smokeyX)';
     // color: $utsmokeytext;
@@ -441,5 +448,29 @@ button.btn-utsearch {
   }
   &:focus {
     box-shadow: none;
+  }
+}
+
+button.btn-utsearch-tiny {
+  //used in hover overlay search bar
+  padding: 0.4rem !important;
+  height: 100%;
+
+  background-color: $utgray2;
+  span {
+    color: $utsmokey;
+  }
+  svg {
+    fill: $utsmokey;
+    height: 0.95rem;
+    width: 0.95rem;
+  }
+  .button-inner {
+    transform: scale(0.9);
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    gap: calc($spacer * 0.2);
   }
 }

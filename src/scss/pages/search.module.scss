@@ -2,6 +2,7 @@
 
 .search-chunk {
   margin-top: 2rem;
+  position: relative;
 }
 .search-title-buttons {
   display: flex;
@@ -71,19 +72,25 @@
   margin-bottom: 3rem;
   grid-row: 2;
 }
-.search-tab-navigation {
-  display: inline-block;
-}
 
 .search-external-links {
   // margin-top: 23px;
   // grid-column: 3 / 4;
   // grid-row: 2;
+  display: flex;
+  margin-left: 2rem;
+  gap: 1.5rem;
+  margin-bottom: calc($spacer * 0.7);
+  @media screen and (max-width: 650px) {
+    order: -1;
+    margin-left: 0;
+    flex-basis: 100%;
+  }
 }
 
 .search-link {
   // bold text links with offset orange underline
-  margin-left: 30px;
+
   text-decoration: none;
   padding-bottom: calc($spacer * 0.5);
   font-weight: bold;
@@ -92,9 +99,6 @@
     box-shadow: inset 0 -2px $utlinkhover;
     text-decoration: none;
   }
-}
-
-.input-group-text {
 }
 
 button .btn-utk-search {

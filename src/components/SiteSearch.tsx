@@ -121,6 +121,7 @@ const SiteSearch = ({ searchTerm }: Props) => {
 
   return (
     <div>
+      <p className="d-block d-sm-none ">Search utk.edu</p>
       <form
         className="form-inline hidden-print mt-4"
         id="cse-searchbox-form"
