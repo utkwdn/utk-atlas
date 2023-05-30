@@ -51,3 +51,8 @@ The column-flexGapFix replaces the need for this since wordpress puts buttons in
     }
   }
 }
+
+// Fixes the issue of navigation appearing above modal if inside a div with class .wp-block-cover__inner-container
+.wp-block-cover__inner-container {
+  z-index: 1000 !important;
+}

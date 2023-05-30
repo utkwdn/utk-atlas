@@ -11,11 +11,14 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
   <div className="modal-body">
     <div className="container-xxl">
       <div className="row justify-content-center">
-        <div className="col-12 col-xl-8">
+        <div
+          className="col-12 col-xl-8"
+          style={{ padding: 0, textAlign: 'left' }}
+        >
           <Tab.Container id="left-tabs-example" defaultActiveKey="main">
             <Nav
               variant="pills"
-              className="justify-content-center"
+              className="nav nav-pills nav-tabs justify-content-center justify-content-lg-start"
               defaultActiveKey="main"
             >
               <Nav.Item>
@@ -39,10 +42,10 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
             </Nav>
 
             <Tab.Content>
-              <Tab.Pane eventKey="main">
+              <Tab.Pane eventKey="main" className="search-tab-pane">
                 <SiteSearch />
               </Tab.Pane>
-              <Tab.Pane eventKey="events">
+              <Tab.Pane eventKey="events" className="search-tab-pane">
                 <div>
                   <form
                     className="form-inline hidden-print mt-4"
@@ -82,7 +85,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
                   </form>
                 </div>
               </Tab.Pane>
-              <Tab.Pane eventKey="news">
+              <Tab.Pane eventKey="news" className="search-tab-pane">
                 <div>
                   <form
                     className="form-inline hidden-print mt-4"
@@ -121,7 +124,7 @@ const SearchModalBody = ({ displayTitle = true }: Props): JSX.Element => (
                   </form>
                 </div>
               </Tab.Pane>
-              <Tab.Pane eventKey="directory">
+              <Tab.Pane eventKey="directory" className="search-tab-pane">
                 <div>
                   <form
                     className="form-inline hidden-print mt-4"

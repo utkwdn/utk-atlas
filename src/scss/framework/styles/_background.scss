@@ -27,3 +27,17 @@
 .has-background {
   // padding: $spacer * 2;
 }
+
+.has-clear-to-orange-gradient-background {
+  background: linear-gradient(rgb(255, 255, 255) 43%, rgb(255, 130, 0) 43%);
+}
+
+.has-clear-to-orange-gradient-background-83 {
+  background: linear-gradient(rgb(255, 255, 255) 83%, rgb(255, 130, 0) 17%);
+}
+
+.orange-background-mobile-lg {
+  @media screen and (max-width: 670px) {
+    background: linear-gradient(rgb(255, 255, 255) 42%, rgb(255, 130, 0) 42%);
+  }
+}
