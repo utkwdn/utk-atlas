@@ -41,7 +41,7 @@ function Search() {
                 <div className={styles['search-chunk']}>
                   <Tab.Container
                     id="left-tabs-example"
-                    className={'nav'}
+                    // className={'nav'}
                     defaultActiveKey="main"
                   >
                     <Nav
