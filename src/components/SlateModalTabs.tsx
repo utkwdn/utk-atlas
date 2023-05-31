@@ -44,11 +44,16 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     // Re-enabling .framedOrangeShadow class
     if (modalRef?.current) {
       const modalParent = modalRef.current.parentElement;
+      const modalGrandparent = modalParent?.parentElement;
       modalParent?.classList.replace(
         'framedOrangeShadowDisabled',
         'framedOrangeShadow'
       );
+      if (modalGrandparent) {
+        modalGrandparent.classList.remove('modal-parent-container');
+      }
     }
+
     setModalOpacity(0);
     setShowModal(false);
     // Re-enable <html> scrolling
@@ -58,10 +63,14 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     // Disabling .framedOrangeShadow class because transforms prevent fixed position modal from displaying correctly
     if (modalRef?.current) {
       const modalParent = modalRef.current.parentElement;
+      const modalGrandparent = modalParent?.parentElement;
       modalParent?.classList.replace(
         'framedOrangeShadow',
         'framedOrangeShadowDisabled'
       );
+      if (modalGrandparent) {
+        modalGrandparent.classList.add('modal-parent-container');
+      }
     }
     // Show, then fade in with opacity
     setShowModal(true);
@@ -160,6 +169,12 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
               ></button>
             </div>
             <div className={styles['slate-modal-body']}>
+              <h3 style={{ marginTop: 0 }}>Request Info</h3>
+              <p>
+                We&apos;re excited you want to know more about the University of
+                Tennessee! Let us know what kind of information you&apos;re
+                looking for by choosing one of the options below.
+              </p>
               {/* TABS  */}
               <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
                 <Tab
