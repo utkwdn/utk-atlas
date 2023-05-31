@@ -129,6 +129,14 @@
   .input-group {
     justify-content: flex-end;
 
+    // remove curved corners from ios
+    input {
+      border-radius: 0;
+    }
+    input[type='search'] {
+      -webkit-appearance: none;
+    }
+
     #nav-search {
       border: none;
       border-left: 6px solid #ff8200;
