@@ -61,7 +61,7 @@ function Search() {
                       <Nav.Item>
                         <Nav.Link eventKey="directory">Directory</Nav.Link>
                       </Nav.Item>
-                      <div className={styles['search-external-links']}>
+                      {/* <div className={styles['search-external-links']}>
                         <Link href="/alpha" className={styles['search-link']}>
                           A-Z Index
                         </Link>
@@ -71,7 +71,7 @@ function Search() {
                         >
                           Maps
                         </a>
-                      </div>
+                      </div> */}
                     </Nav>
                     <Tab.Content>
                       <Tab.Pane eventKey="main" className="search-tab-pane">

@@ -8,11 +8,19 @@
   border-left: 1px solid #b3b3b3;
   border-right: 1px solid #b3b3b3;
   margin-bottom: 1px;
+
+  @media screen and (max-width: 410px) {
+    margin-bottom: 0px;
+  }
 }
 .nav-pills {
   font-size: calc($p-font-size * 0.8);
   display: flex;
   align-items: flex-end;
+  @media screen and (max-width: 410px) {
+    //     font-size: calc($p-font-size * 0.8);
+    font-size: calc($p-font-size * 0.7);
+  }
 }
 .nav-pills .nav-link.active {
   // border-bottom: 1px solid #f6f6f6;
@@ -30,6 +38,11 @@
   // border: 1px solid #b3b3b3;
   // border-bottom: 1px solid $utgray2;
   // box-shadow: 0.05rem -2px 0 $utgray3;
+  @media screen and (max-width: 410px) {
+    padding-top: 0.7rem;
+    margin-bottom: -1.2px;
+    font-size: 115%;
+  }
 }
 
 .tab-pane {
@@ -54,27 +67,32 @@ button.form_button_submit:focus {
   box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
 }
 
-@media screen and (max-width: 410px) {
-  .nav-pills .nav-link {
-    border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
-    margin-bottom: 10px;
-    background: #f6f6f6;
-    border: 1px solid #b3b3b3;
-    justify-content: flex-start;
-  }
+// // switching to buttons at the smallest of screens. Killed for now. have reduced type size above to fix tabs.
+// // This will break for WDS
+// @media screen and (max-width: 380px) {
+//   .nav-pills .nav-link {
+//     border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
+//     margin-bottom: 10px;
+//     background: #f6f6f6;
+//     border: 1px solid #b3b3b3;
+//     justify-content: flex-start;
+//   }
 
-  .nav-pills .nav-link.active {
-    background-color: #1a73c5 !important;
-    background-color: $utlinkhover !important;
-    color: white !important;
-    font-size: 100%;
-    margin-bottom: 1px;
-    border: none;
-    border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
-  }
-  .nav-pills {
-    font-size: calc($p-font-size * 0.8);
-    display: flex;
-    align-items: flex-start;
-  }
-}
+//   .nav-pills .nav-link.active {
+//     // background-color: #1a73c5 !important;
+//     // background-color: $utlinkhover !important;
+//     // color: white !important;
+
+//     background: #f6f6f6;
+//     font-size: 100%;
+//     border: none;
+//     border-radius: 0.45rem 0.45rem 0.45rem 0.45rem;
+//     border: 1px solid #b3b3b3;
+//     margin-bottom: 10px;
+//   }
+//   .nav-pills {
+//     font-size: calc($p-font-size * 0.8);
+//     display: flex;
+//     align-items: flex-start;
+//   }
+// }
