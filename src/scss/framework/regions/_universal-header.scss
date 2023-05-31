@@ -151,4 +151,13 @@
       font-size: 1.15em;
     }
   }
+  .btn-close {
+    transition: all 0.2s ease-out;
+    transform: scale(0.8);
+
+    &:hover {
+      transition: all 0.2s ease-out;
+      transform: scale(1.2);
+    }
+  }
 }
