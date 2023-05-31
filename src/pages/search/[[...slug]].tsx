@@ -35,9 +35,7 @@ function Search() {
           <div className={`container-xxl`}>
             <div className="row">
               <div className="col-12 col-xl-10 mb-5">
-                <h1 className={'text-uppercase'} style={{ marginBottom: 0 }}>
-                  Search
-                </h1>
+                <h1>Search</h1>
                 <div className={styles['search-chunk']}>
                   <Tab.Container
                     id="left-tabs-example"
