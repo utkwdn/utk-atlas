@@ -9,7 +9,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 import SiteSearch from '../../components/SiteSearch';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from 'scss/pages/search.module.scss';
 import { SSRProvider } from 'react-bootstrap';
 
@@ -18,11 +18,36 @@ function Search() {
 
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  const eventsInputRef = useRef<HTMLInputElement>(null);
+  const newsInputRef = useRef<HTMLInputElement>(null);
+  const directoryInputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     if (router.query.slug) {
       setSearchQuery(router.query.slug as string);
     }
   }, [router.query.slug]);
+
+  const focusInput = (searchType: string) => {
+    setTimeout(() => {
+      switch (searchType) {
+        case 'events':
+          if (eventsInputRef?.current) {
+            eventsInputRef?.current.focus();
+          }
+          break;
+        case 'news':
+          if (newsInputRef?.current) {
+            newsInputRef?.current.focus();
+          }
+          break;
+        case 'directory':
+          if (directoryInputRef?.current) {
+            directoryInputRef?.current.focus();
+          }
+      }
+    }, 20);
+  };
 
   return (
     <SSRProvider>
@@ -51,13 +76,28 @@ function Search() {
                         <Nav.Link eventKey="main">utk.edu</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="events">Events</Nav.Link>
+                        <Nav.Link
+                          eventKey="events"
+                          onClick={() => focusInput('events')}
+                        >
+                          Events
+                        </Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="news">News</Nav.Link>
+                        <Nav.Link
+                          eventKey="news"
+                          onClick={() => focusInput('news')}
+                        >
+                          News
+                        </Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="directory">Directory</Nav.Link>
+                        <Nav.Link
+                          eventKey="directory"
+                          onClick={() => focusInput('directory')}
+                        >
+                          Directory
+                        </Nav.Link>
                       </Nav.Item>
                       {/* <div className={styles['search-external-links']}>
                         <Link href="/alpha" className={styles['search-link']}>
@@ -97,6 +137,7 @@ function Search() {
                                 placeholder="Example: Orientation, Art Show, Yoga Session"
                                 name="search"
                                 id="q-events"
+                                ref={eventsInputRef}
                               />
                               <button
                                 type="submit"
@@ -140,6 +181,7 @@ function Search() {
                                 placeholder="Example: Dean's List, ORNL, Capstone Project"
                                 name="s"
                                 id="q-news"
+                                ref={newsInputRef}
                               />
                               <button
                                 type="submit"
@@ -186,6 +228,7 @@ function Search() {
                                 placeholder="Example: Jane Doe, NetID, email@utk.edu"
                                 name="query"
                                 id="search-bar"
+                                ref={directoryInputRef}
                               />
                               <button
                                 type="submit"
