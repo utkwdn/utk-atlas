@@ -87,6 +87,16 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     }
   };
 
+  const capButtonText = (buttonText: string) => {
+    const wordArray = buttonText.split(' ');
+    const cappedText = wordArray
+      .map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+      })
+      .join(' ');
+    return cappedText;
+  };
+
   useEffect(() => {
     const hasData = commentString.match(/\[(.*?)\]/);
 
@@ -169,12 +179,12 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
               ></button>
             </div>
             <div className={styles['slate-modal-body']}>
-              <h3 style={{ marginTop: 0 }}>Request Info</h3>
-              <p>
+              <h3 style={{ marginTop: 0 }}>{capButtonText(slateButtonText)}</h3>
+              {/* <p>
                 We&apos;re excited you want to know more about the University of
                 Tennessee! Let us know what kind of information you&apos;re
                 looking for by choosing one of the options below.
-              </p>
+              </p> */}
               {/* TABS  */}
               <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
                 <Tab
