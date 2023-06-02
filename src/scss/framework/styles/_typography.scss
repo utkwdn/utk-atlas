@@ -54,7 +54,7 @@ h1,
 }
 
 h1 {
-  margin-top: calc($spacer * 6);
+  margin-top: clamp($spacer, 5vw, calc($spacer * 6));
   margin-bottom: calc($spacer * 2);
   font-weight: 900; // think it needs to be heavier like this here
 }
