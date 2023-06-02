@@ -38,16 +38,40 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
   const [slateButtonStyle, setSlateButtonStyle] = useState('');
   const [modalOpacity, setModalOpacity] = useState(0);
 
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const handleCloseModal = () => {
-    // Fade out with opacity before hiding
+    // Re-enabling .framedOrangeShadow class
+    if (modalRef?.current) {
+      const modalParent = modalRef.current.parentElement;
+      const modalGrandparent = modalParent?.parentElement;
+      modalParent?.classList.replace(
+        'framedOrangeShadowDisabled',
+        'framedOrangeShadow'
+      );
+      if (modalGrandparent) {
+        modalGrandparent.classList.remove('modal-parent-container');
+      }
+    }
+
     setModalOpacity(0);
-    setTimeout(() => {
-      setShowModal(false);
-    }, 220);
+    setShowModal(false);
     // Re-enable <html> scrolling
     document.documentElement.style.removeProperty('overflow-y');
   };
   const handleShowModal = () => {
+    // Disabling .framedOrangeShadow class because transforms prevent fixed position modal from displaying correctly
+    if (modalRef?.current) {
+      const modalParent = modalRef.current.parentElement;
+      const modalGrandparent = modalParent?.parentElement;
+      modalParent?.classList.replace(
+        'framedOrangeShadow',
+        'framedOrangeShadowDisabled'
+      );
+      if (modalGrandparent) {
+        modalGrandparent.classList.add('modal-parent-container');
+      }
+    }
     // Show, then fade in with opacity
     setShowModal(true);
     setTimeout(() => {
@@ -61,6 +85,16 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
     if (event.keyCode === 27) {
       handleCloseModal();
     }
+  };
+
+  const capButtonText = (buttonText: string) => {
+    const wordArray = buttonText.split(' ');
+    const cappedText = wordArray
+      .map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+      })
+      .join(' ');
+    return cappedText;
   };
 
   useEffect(() => {
@@ -125,6 +159,7 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
           opacity: modalOpacity,
         }}
         className={`${styles['slate-modal-container']}`}
+        ref={modalRef}
       >
         <div
           className={styles['slate-modal-backdrop']}
@@ -144,6 +179,12 @@ function SlateFormReplace({ commentString }: Props): JSX.Element {
               ></button>
             </div>
             <div className={styles['slate-modal-body']}>
+              <h3 style={{ marginTop: 0 }}>{capButtonText(slateButtonText)}</h3>
+              {/* <p>
+                We&apos;re excited you want to know more about the University of
+                Tennessee! Let us know what kind of information you&apos;re
+                looking for by choosing one of the options below.
+              </p> */}
               {/* TABS  */}
               <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
                 <Tab

@@ -16,7 +16,7 @@ const RequestInfoTabs = () => {
   return isHydrated ? (
     <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
       <Tab
-        title="Undergraduate Information"
+        title="Undergraduate"
         eventKey="undergraduate"
         className="nav-item my-4"
       >
@@ -30,11 +30,7 @@ const RequestInfoTabs = () => {
           }
         />
       </Tab>
-      <Tab
-        title="Graduate Information"
-        eventKey="graduate"
-        className="nav-item my-4"
-      >
+      <Tab title="Graduate" eventKey="graduate" className="nav-item my-4">
         <SlateFormEmbed
           id={GRAD_ID}
           scriptSrc={

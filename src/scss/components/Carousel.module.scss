@@ -54,16 +54,21 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 1vw;
+  margin-bottom: 3vw;
   margin-right: 2vw;
+  @media screen and (min-width: 782px) {
+    margin-bottom: 1vw;
+  }
 }
 .carouselTopButton {
-  background: $utorange;
+  // background: $utorange;
+  // background: $utcoolsmokey;
+  background: $utsmokey;
   color: #ffffff;
   // width: 30px;
   // height: 30px;
-  width: clamp(1.5rem, 3vw, 2.3rem);
-  height: clamp(1.5rem, 3vw, 2.3rem);
+  width: clamp(2rem, 3vw, 2.3rem);
+  height: clamp(2rem, 3vw, 2.3rem);
   border-radius: 50%;
   text-align: center;
   align-items: center;
@@ -93,7 +98,9 @@
 }
 .carouselTopButton:hover {
   cursor: pointer;
-  background-color: $utsmokey;
+  // background-color: $utsmokey;
+  // background-color: #445562;
+  background-color: $utcoolsmokey;
 }
 
 .diabledCarouselButton {

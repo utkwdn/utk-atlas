@@ -386,6 +386,109 @@ h3.link-fancy a {
   font-size: 90%;
 }
 
+// button.btn-utsearch {
+//   svg {
+//     transition: all 0.2s ease-out;
+//     fill: $utsmokeytext;
+//     transform: scale(0.8);
+//   }
+
+//   &:hover {
+//     background: #445562;
+//     cursor: pointer;
+//     // color: 'var(--wp--preset--color--smokeyX)';
+//     // color: $utsmokeytext;
+//     color: $white !important;
+
+//     svg {
+//       transform: scale(1.4);
+//     }
+//   }
+//   &:focus {
+//     box-shadow: none;
+//   }
+// }
+
+button.btn-utsearch {
+  // this is used for search buttons attached to input
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: $spacer !important;
+  gap: calc($spacer * 0.3);
+  height: 100%;
+  background-color: $utcoolsmokey;
+  span {
+    // font-size: 0.8rem;
+    // color: $utsmokeytext;
+    color: $white;
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
+  }
+  svg {
+    transition: all 0.2s ease-out;
+    fill: $utsmokeytext;
+    fill: $white;
+  }
+
+  &:hover {
+    // background: #445562;
+    background: $utsmokey;
+    background: #445562;
+    cursor: pointer;
+    // color: 'var(--wp--preset--color--smokeyX)';
+    // color: $utsmokeytext;
+    span {
+      color: white !important;
+    }
+    svg {
+      transform: scale(1.4);
+      fill: $white;
+    }
+  }
+  &:focus {
+    box-shadow: $btn-focus-box-shadow;
+    background: #445562; // same color as hover in universal nav
+    color: white !important;
+    span {
+      color: white !important;
+    }
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+button.btn-utsearch-tiny {
+  //used in hover overlay search bar
+  padding: 0.4rem !important;
+  height: 100%;
+
+  background-color: $utgray2;
+  span {
+    color: $utsmokey;
+  }
+  svg {
+    fill: $utsmokey;
+    height: 0.95rem;
+    width: 0.95rem;
+  }
+  .button-inner {
+    transform: scale(0.9);
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    gap: calc($spacer * 0.2);
+  }
+  &:focus {
+    span {
+      color: white;
+    }
+  }
+}
+
 .fancyAnchor a,
 .anchor-fancy a {
   // font-size: 1.2rem;
