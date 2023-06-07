@@ -6,6 +6,16 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Set robots to noindex,nofollow if in dev/staging environment */}
+          <meta
+            name="robots"
+            content={
+              process.env.PRIMARY_DOMAIN === 'https://www.utk.edu'
+                ? 'all'
+                : 'noindex,nofollow'
+            }
+          />
+
           {/* used in `SiteSearch.tsx`. Loading beforeInteractive to insure 404 page search works */}
           <Script
             src="https://cse.google.com/cse.js?cx=da48cf0836de1c946"
