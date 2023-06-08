@@ -27,17 +27,5 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         path: '/social',
       },
     ],
-    async robotsTxt(sitemapUrl) {
-      return Promise.resolve(`
-          User-agent: *
-          ${
-            process.env.PRIMARY_DOMAIN === 'https://www.utk.edu'
-              ? 'Allow: /'
-              : 'Disallow: /'
-          }
-  
-          Sitemap: ${sitemapUrl}
-        `);
-    },
   });
 };

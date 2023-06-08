@@ -56,6 +56,10 @@ module.exports = withFaust({
         source: '/vision',
         destination: '/vision.html',
       },
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
     ];
   },
 
