@@ -10,7 +10,7 @@ import { handleSitemapRequests } from '@faustjs/next/middleware';
   instructions are here: https://nextjs.org/docs/messages/nested-middleware#possible-ways-to-fix-it
 */
 
-export async function middleware(req: NextRequest) {
+export function middleware(req: NextRequest) {
   // PRIMARY_DOMAIN should be a full URL including protocol, e.g. https://www.google.com
   const hasEnvVariable = !!process.env.PRIMARY_DOMAIN;
   const isDevelopment = process.env.NODE_ENV === 'development';
@@ -37,43 +37,43 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  const sitemapRequest = await handleSitemapRequests(req, {
-    wpUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL || '',
-    sitemapIndexPath: '/wp-sitemap.xml', // path in WordPress that handles sitemaps
-    sitemapPathsToIgnore: [
-      '/wp-sitemap-users-*',
-      '/wp-sitemap-taxonomies-a_to_z_categories-*',
-    ],
-    replaceUrls: true,
-    pages: [
-      {
-        path: '/alpha',
-      },
-      {
-        path: '/meet',
-      },
-      {
-        path: '/vision',
-      },
-      {
-        path: '/social',
-      },
-    ],
-    async robotsTxt(sitemapUrl) {
-      return Promise.resolve(`
-        User-agent: *
-        ${
-          process.env.PRIMARY_DOMAIN === 'https://www.utk.edu'
-            ? 'Allow: /'
-            : 'Disallow: /'
-        }
+  // const sitemapRequest = await handleSitemapRequests(req, {
+  //   wpUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL || '',
+  //   sitemapIndexPath: '/wp-sitemap.xml', // path in WordPress that handles sitemaps
+  //   sitemapPathsToIgnore: [
+  //     '/wp-sitemap-users-*',
+  //     '/wp-sitemap-taxonomies-a_to_z_categories-*',
+  //   ],
+  //   replaceUrls: true,
+  //   pages: [
+  //     {
+  //       path: '/alpha',
+  //     },
+  //     {
+  //       path: '/meet',
+  //     },
+  //     {
+  //       path: '/vision',
+  //     },
+  //     {
+  //       path: '/social',
+  //     },
+  //   ],
+  //   async robotsTxt(sitemapUrl) {
+  //     return Promise.resolve(`
+  //       User-agent: *
+  //       ${
+  //         process.env.PRIMARY_DOMAIN === 'https://www.utk.edu'
+  //           ? 'Allow: /'
+  //           : 'Disallow: /'
+  //       }
 
-        Sitemap: ${sitemapUrl}
-      `);
-    },
-  });
+  //       Sitemap: ${sitemapUrl}
+  //     `);
+  //   },
+  // });
 
-  if (sitemapRequest) {
-    return sitemapRequest;
-  }
+  // if (sitemapRequest) {
+  //   return sitemapRequest;
+  // }
 }
