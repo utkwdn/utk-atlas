@@ -44,6 +44,7 @@ export async function middleware(req: NextRequest) {
       '/wp-sitemap-users-*',
       '/wp-sitemap-taxonomies-a_to_z_categories-*',
     ],
+    replaceUrls: true,
     pages: [
       {
         path: '/alpha',
