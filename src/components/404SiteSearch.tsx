@@ -141,13 +141,13 @@ const SiteSearch = () => {
           <input
             onChange={(e) => setValue(e.target.value)}
             type="search"
-            className="form-control"
+            className="form-control left-border"
             title="Search utk.edu"
             placeholder="Example: Apply, Payroll, Provost, English Department"
             name="q"
             id="q"
           />
-          <button type="submit" className="btn btn-utlink">
+          <button type="submit" className="btn btn-utsearch">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
