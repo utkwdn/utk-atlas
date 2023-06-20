@@ -786,9 +786,15 @@ textarea.form-control.is-invalid {
 .bg-campus {
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -1000px 0px;
+
   background-size: cover;
   background-image: url(https://devcontent.cms.utk.edu/wp-content/uploads/2023/06/Students-on-Campus-2200x1328-1.jpg);
+}
+@media screen and (min-width: 900px) {
+  .bg-campus {
+    background-position: center;
+  }
 }
 
 .bg-homesweet {
