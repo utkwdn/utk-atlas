@@ -159,16 +159,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.webp"
+                  srcSet="//images.utk.edu/images/www/hero202306/architecture-student-model-02.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202306/architecture-student-model-02.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
-                  alt="two smiling students sit outside on campus on a beautiful day"
+                  src="//images.utk.edu/images/www/hero202306/architecture-student-model-02.jpg"
+                  alt="An architecture student inspects a recently created model of a multi-story building"
                 />
               </picture>
             </div>
