@@ -796,6 +796,16 @@ textarea.form-control.is-invalid {
     background-position: center;
   }
 }
+@supports (-webkit-touch-callout: none) {
+  .bg-campus {
+    background-attachment: scroll;
+    background-size: auto 100vh;
+
+    background-position: -600px center;
+    background-repeat: no-repeat;
+    background-color: red;
+  }
+}
 
 .bg-homesweet {
   padding-top: 25rem;
