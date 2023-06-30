@@ -127,7 +127,7 @@ const HomepageVideo = ({
                   controls
                   width="100%"
                   height="100%"
-                  url="https://www.youtube.com/watch?v=QAS8yNqJj9M"
+                  url="https://www.youtube.com/watch?v=guXcmBdqml0"
                 />
               </div>
             )}
