@@ -15,6 +15,7 @@ import VisitModalButton from './VisitModalButton';
 import GraduateToursModal from './GraduateToursModal';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
+import { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
 // workaround b/c of this bug: https://github.com/remarkablemark/html-react-parser/issues/633
@@ -24,7 +25,82 @@ const isElement = (domNode: DOMNode): domNode is DOMHandlerElement =>
 const isComment = (domNode: DOMNode): domNode is DOMHandlerComment =>
   domNode.type === 'comment';
 
-const toReactNode = ({ content }: { content: string }) => {
+const toReactNode = ({
+  content,
+  collectSlateFormInfo,
+  elevateSlateButtonClick,
+}: {
+  content: string;
+  collectSlateFormInfo: ((object: object) => void) | false;
+  elevateSlateButtonClick: ((modalId: string) => void) | undefined;
+}) => {
+  const handleSlateButtonClick = (modalId: string) => {
+    if (elevateSlateButtonClick) {
+      elevateSlateButtonClick(modalId);
+    }
+  };
+
+  const capButtonText = (buttonText: string) => {
+    const wordArray = buttonText.split(' ');
+    const cappedText = wordArray
+      .map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+      })
+      .join(' ');
+    return cappedText;
+  };
+
+  const processFormInfo = (
+    attribs: Partial<{ [name: string]: string }>,
+    buttonText: string
+  ) => {
+    interface formData {
+      title: string;
+      scriptSrc: string;
+    }
+
+    const modalTitle = capButtonText(buttonText);
+
+    if (attribs['data-forminfo']) {
+      // Parse data-forminfo text into array
+      const inputFormInfoArray = JSON.parse(attribs['data-forminfo']) as [
+        formData
+      ];
+      const processedObject: { [key: string]: object } = {};
+      const outputFormInfoArray: object[] = [];
+      let formInfoId = '';
+
+      // Loop through form info array and organize data
+      inputFormInfoArray.forEach((formObject: formData) => {
+        const formId = formObject.scriptSrc.split('div=form_')[1];
+        outputFormInfoArray.push({
+          tabTitle: formObject.title,
+          formId: formId,
+          scriptSrc: formObject.scriptSrc,
+        });
+        // combine form IDs to create unique key
+        if (formInfoId === '') {
+          formInfoId = formId;
+        } else {
+          formInfoId += `&${formId}`;
+        }
+      });
+
+      // format data as { 'uniqueId': {modalTitle: 'title', formInfo: [formInfo]} }
+      processedObject[formInfoId] = {
+        modalTitle: modalTitle,
+        formInfo: outputFormInfoArray,
+      };
+
+      // Pass formatted data to parent (ParsedMarkup)
+      if (collectSlateFormInfo) {
+        collectSlateFormInfo(processedObject);
+      }
+
+      return formInfoId;
+    }
+  };
+
   const parserConfig: HTMLReactParserOptions = {
     replace(domNode) {
       if (isComment(domNode)) {
@@ -89,6 +165,28 @@ const toReactNode = ({ content }: { content: string }) => {
               <Link href={href} legacyBehavior>
                 {domToReact([domNode], parserConfig)}
               </Link>
+            );
+          }
+          // Handle Slate Form Button (class='slateFormButton')
+          if (
+            attribs.class?.includes('slateFormButton') &&
+            attribs['data-forminfo']
+          ) {
+            const buttonText = domNode.firstChild
+              ? (domToReact([domNode.firstChild]) as string)
+              : 'Button text';
+
+            // Save form info and return unique key to target modal
+            const modalId: string = processFormInfo(attribs, buttonText) || '';
+
+            return (
+              <a
+                role="button"
+                className={attribs.class}
+                onClick={() => handleSlateButtonClick(modalId)}
+              >
+                {buttonText}
+              </a>
             );
           }
         }
@@ -258,10 +356,47 @@ const toReactNode = ({ content }: { content: string }) => {
 interface Props {
   /** The HTML content to parse. */
   content: string;
+  // Function to save form info to page component
+  elevateFormInfo?: (object: object) => void;
+  elevateSlateButtonClick?: (modalId: string) => void;
 }
 
-const ParsedMarkup = ({ content }: Props) => {
-  const parsedContent = toReactNode({ content });
+const ParsedMarkup = ({
+  content,
+  elevateFormInfo,
+  elevateSlateButtonClick,
+}: Props) => {
+  const [slateFormInfo, setSlateFormInfo] = useState<object | boolean>(false);
+
+  const collectSlateFormInfo = (object: object) => {
+    // If some form info has already been saved, append new info to existing object
+    if (typeof slateFormInfo === 'object') {
+      const newObjectKey: string = Object.keys(object)[0];
+      // Check that form group doesn't already exist before adding
+      // Allows multiple buttons that open the same modal on a page
+      if (!(newObjectKey in slateFormInfo)) {
+        const oldSlateFormInfo = slateFormInfo;
+        const newSlateFormInfo = Object.assign(oldSlateFormInfo, object);
+        setSlateFormInfo(newSlateFormInfo);
+      }
+      // If no form info has been saved, save as an object ( format: { uniqueId: {formInfo} } )
+    } else {
+      setSlateFormInfo(object);
+    }
+  };
+
+  // Making sure ParsedMarkup has finished rendering before passing data to page component
+  useEffect(() => {
+    if (elevateFormInfo && typeof slateFormInfo === 'object') {
+      elevateFormInfo(slateFormInfo);
+    }
+  }, [slateFormInfo, elevateFormInfo]);
+
+  const parsedContent = toReactNode({
+    content,
+    collectSlateFormInfo,
+    elevateSlateButtonClick,
+  });
 
   return parsedContent;
 };

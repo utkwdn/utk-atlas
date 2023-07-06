@@ -5,12 +5,17 @@ import Head from 'next/head';
 import { client, Page as PageType } from 'client';
 import ParsedMarkup from 'components/ParsedMarkup';
 import parse from 'html-react-parser';
+import { useState, useEffect, useRef } from 'react';
 
 export interface PageProps {
   page: PageType | null | undefined;
 }
 
 export function PageComponent({ page }: PageProps) {
+  const [dynamicSrc, setDynamicSrc] = useState<string>('');
+  const [slateFormInfo, setSlateFormInfo] = useState<object | boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
@@ -20,6 +25,43 @@ export function PageComponent({ page }: PageProps) {
   console.log(
     'My custom identifier class is based on slug: ' + (pageSlug || '')
   );
+
+  const handleSlateButtonClick = (modalId: string) => {
+    alert(`Page component - slate clicked. ID=${modalId}`);
+  };
+
+  // Slate Form Info Format
+  // {
+  //   "formId1&formId2": {
+  //     "modalTitle": "cap button text",
+  //     "formInfo": [{
+  //       "tabTitle": "title",
+  //       "formId": "xxx-xxx",
+  //       "scriptSrc": "https://xxxxx"
+  //     }, {
+  //       "tabTitle": "title",
+  //       "formId": "xxx-xxx",
+  //       "scriptSrc": "https://xxxxx"
+  //     }]
+  //   },
+  //   "formId3": {
+  //     "modalTitle": "cap button text",
+  //     "formInfo": [{
+  //       "tabTitle": "title",
+  //       "formId": "xxx-xxx",
+  //       "scriptSrc": "https://xxxxx"
+  //     }]
+  //   }
+  // }
+
+  useEffect(() => {
+    // Check if url param 'src' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('src');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
 
   return (
     <>
@@ -39,12 +81,22 @@ export function PageComponent({ page }: PageProps) {
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
-            <ParsedMarkup content={page?.content() || ''} />
+            <div>{dynamicSrc}</div>
+            <ParsedMarkup
+              content={page?.content() || ''}
+              elevateFormInfo={setSlateFormInfo}
+              elevateSlateButtonClick={handleSlateButtonClick}
+            />
           </div>
         </div>
       </main>
 
       <Footer copyrightHolder={generalSettings?.title || undefined} />
+      {typeof slateFormInfo === 'object' ? (
+        <div ref={modalRef}>{JSON.stringify(slateFormInfo)}</div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
