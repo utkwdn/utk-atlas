@@ -25,13 +25,24 @@ const isElement = (domNode: DOMNode): domNode is DOMHandlerElement =>
 const isComment = (domNode: DOMNode): domNode is DOMHandlerComment =>
   domNode.type === 'comment';
 
+interface FormInfoInnerObject {
+  tabTitle: string;
+  formId: string;
+  scriptSrc: string;
+}
+interface FormInfoObject {
+  modalId: string;
+  modalTitle: string;
+  formInfo: FormInfoInnerObject[];
+}
+
 const toReactNode = ({
   content,
   collectSlateFormInfo,
   elevateSlateButtonClick,
 }: {
   content: string;
-  collectSlateFormInfo: ((object: object) => void) | false;
+  collectSlateFormInfo: ((formInfo: FormInfoObject) => void) | false;
   elevateSlateButtonClick: ((modalId: string) => void) | undefined;
 }) => {
   const handleSlateButtonClick = (modalId: string) => {
@@ -54,7 +65,7 @@ const toReactNode = ({
     attribs: Partial<{ [name: string]: string }>,
     buttonText: string
   ) => {
-    interface formData {
+    interface FormData {
       title: string;
       scriptSrc: string;
     }
@@ -64,14 +75,13 @@ const toReactNode = ({
     if (attribs['data-forminfo']) {
       // Parse data-forminfo text into array
       const inputFormInfoArray = JSON.parse(attribs['data-forminfo']) as [
-        formData
+        FormData
       ];
-      const processedObject: { [key: string]: object } = {};
-      const outputFormInfoArray: object[] = [];
+      const outputFormInfoArray: FormInfoInnerObject[] = [];
       let formInfoId = '';
 
       // Loop through form info array and organize data
-      inputFormInfoArray.forEach((formObject: formData) => {
+      inputFormInfoArray.forEach((formObject: FormData) => {
         const formId = formObject.scriptSrc.split('div=form_')[1];
         outputFormInfoArray.push({
           tabTitle: formObject.title,
@@ -86,15 +96,13 @@ const toReactNode = ({
         }
       });
 
-      // format data as { 'uniqueId': {modalTitle: 'title', formInfo: [formInfo]} }
-      processedObject[formInfoId] = {
-        modalTitle: modalTitle,
-        formInfo: outputFormInfoArray,
-      };
-
       // Pass formatted data to parent (ParsedMarkup)
       if (collectSlateFormInfo) {
-        collectSlateFormInfo(processedObject);
+        collectSlateFormInfo({
+          modalId: formInfoId,
+          modalTitle: modalTitle,
+          formInfo: outputFormInfoArray,
+        });
       }
 
       return formInfoId;
@@ -357,7 +365,8 @@ interface Props {
   /** The HTML content to parse. */
   content: string;
   // Function to save form info to page component
-  elevateFormInfo?: (object: object) => void;
+  elevateFormInfo?: (formInfo: FormInfoObject[]) => void;
+  // Function to display modal on page component
   elevateSlateButtonClick?: (modalId: string) => void;
 }
 
@@ -366,28 +375,24 @@ const ParsedMarkup = ({
   elevateFormInfo,
   elevateSlateButtonClick,
 }: Props) => {
-  const [slateFormInfo, setSlateFormInfo] = useState<object | boolean>(false);
+  const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
+  const [savedFormIds, setSavedFormIds] = useState<string[]>([]);
 
-  const collectSlateFormInfo = (object: object) => {
-    // If some form info has already been saved, append new info to existing object
-    if (typeof slateFormInfo === 'object') {
-      const newObjectKey: string = Object.keys(object)[0];
-      // Check that form group doesn't already exist before adding
-      // Allows multiple buttons that open the same modal on a page
-      if (!(newObjectKey in slateFormInfo)) {
-        const oldSlateFormInfo = slateFormInfo;
-        const newSlateFormInfo = Object.assign(oldSlateFormInfo, object);
-        setSlateFormInfo(newSlateFormInfo);
-      }
-      // If no form info has been saved, save as an object ( format: { uniqueId: {formInfo} } )
-    } else {
-      setSlateFormInfo(object);
+  const collectSlateFormInfo = (formInfo: FormInfoObject) => {
+    const oldSlateFormInfo = slateFormInfo;
+    const oldSavedFormIds = savedFormIds;
+
+    if (!oldSavedFormIds.includes(formInfo.modalId)) {
+      oldSlateFormInfo.push(formInfo);
+      oldSavedFormIds.push(formInfo.modalId);
+      setSlateFormInfo(oldSlateFormInfo);
+      setSavedFormIds(oldSavedFormIds);
     }
   };
 
   // Making sure ParsedMarkup has finished rendering before passing data to page component
   useEffect(() => {
-    if (elevateFormInfo && typeof slateFormInfo === 'object') {
+    if (elevateFormInfo && slateFormInfo.length > 0) {
       elevateFormInfo(slateFormInfo);
     }
   }, [slateFormInfo, elevateFormInfo]);

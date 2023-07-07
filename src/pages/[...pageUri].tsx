@@ -4,6 +4,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
 import ParsedMarkup from 'components/ParsedMarkup';
+import SlateModal from 'components/SlateModal';
 import parse from 'html-react-parser';
 import { useState, useEffect, useRef } from 'react';
 
@@ -11,9 +12,21 @@ export interface PageProps {
   page: PageType | null | undefined;
 }
 
+interface FormInfoInnerObject {
+  tabTitle: string;
+  formId: string;
+  scriptSrc: string;
+}
+
+interface FormInfoObject {
+  modalId: string;
+  modalTitle: string;
+  formInfo: FormInfoInnerObject[];
+}
+
 export function PageComponent({ page }: PageProps) {
   const [dynamicSrc, setDynamicSrc] = useState<string>('');
-  const [slateFormInfo, setSlateFormInfo] = useState<object | boolean>(false);
+  const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const { useQuery } = client;
@@ -22,37 +35,10 @@ export function PageComponent({ page }: PageProps) {
   const pageSlug = page?.slug;
   const yoastHead = parse(page?.seo?.fullHead || '');
   const showPageTitle = page?.showsHeadline || false;
-  console.log(
-    'My custom identifier class is based on slug: ' + (pageSlug || '')
-  );
 
   const handleSlateButtonClick = (modalId: string) => {
     alert(`Page component - slate clicked. ID=${modalId}`);
   };
-
-  // Slate Form Info Format
-  // {
-  //   "formId1&formId2": {
-  //     "modalTitle": "cap button text",
-  //     "formInfo": [{
-  //       "tabTitle": "title",
-  //       "formId": "xxx-xxx",
-  //       "scriptSrc": "https://xxxxx"
-  //     }, {
-  //       "tabTitle": "title",
-  //       "formId": "xxx-xxx",
-  //       "scriptSrc": "https://xxxxx"
-  //     }]
-  //   },
-  //   "formId3": {
-  //     "modalTitle": "cap button text",
-  //     "formInfo": [{
-  //       "tabTitle": "title",
-  //       "formId": "xxx-xxx",
-  //       "scriptSrc": "https://xxxxx"
-  //     }]
-  //   }
-  // }
 
   useEffect(() => {
     // Check if url param 'src' is set and save to dynamicSrc if so
@@ -92,8 +78,14 @@ export function PageComponent({ page }: PageProps) {
       </main>
 
       <Footer copyrightHolder={generalSettings?.title || undefined} />
-      {typeof slateFormInfo === 'object' ? (
-        <div ref={modalRef}>{JSON.stringify(slateFormInfo)}</div>
+
+      {/* Slate Form Modal */}
+      {slateFormInfo.length > 0 ? (
+        <div ref={modalRef}>
+          {slateFormInfo?.map((thisForm, i) => {
+            return <SlateModal key={i} formInfo={thisForm} />;
+          })}
+        </div>
       ) : (
         <></>
       )}
