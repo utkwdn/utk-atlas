@@ -9,44 +9,23 @@ interface FormInfoInnerObject {
   formId: string;
   scriptSrc: string;
 }
-
 interface FormInfoObject {
   modalId: string;
   modalTitle: string;
   formInfo: FormInfoInnerObject[];
 }
-
 interface Props {
   formInfo: FormInfoObject;
+  clickedModalId: string;
+  trigger: number;
 }
 
-interface SlateData {
-  buttonText: string;
-  buttonStyle: string;
-  tabOneTitle: string;
-  tabOneScriptSrc: string;
-  tabTwoTitle: string;
-  tabTwoScriptSrc: string;
-}
 interface KeyboardEvent {
   keyCode: number;
 }
 
-//   "formId1&formId2": {
-//     "modalTitle": "cap button text",
-//     "formInfo": [{
-//       "tabTitle": "title",
-//       "formId": "xxx-xxx",
-//       "scriptSrc": "https://xxxxx"
-//     }, {
-//       "tabTitle": "title",
-//       "formId": "xxx-xxx",
-//       "scriptSrc": "https://xxxxx"
-//     }]
-//   },
-
 // function YoutubeCarousel({ cardWidth, cardMargin }: Props): JSX.Element {
-function SlateModal({ formInfo }: Props): JSX.Element {
+function SlateModal({ formInfo, clickedModalId, trigger }: Props): JSX.Element {
   const [showModal, setShowModal] = useState(false);
   const [modalOpacity, setModalOpacity] = useState(0);
 
@@ -75,12 +54,19 @@ function SlateModal({ formInfo }: Props): JSX.Element {
       }
     };
 
+    if (trigger && formInfo.modalId === clickedModalId) {
+      handleShowModal();
+      setTimeout(() => {
+        modalRef.current?.focus();
+      }, 500);
+    }
+
     document.addEventListener('keydown', escCloseModal);
 
     return () => {
       document.removeEventListener('keydown', escCloseModal);
     };
-  }, []);
+  }, [trigger]);
 
   return (
     <>
@@ -92,6 +78,7 @@ function SlateModal({ formInfo }: Props): JSX.Element {
         className={`${styles['slate-modal-container']}`}
         ref={modalRef}
         id={formInfo.modalId}
+        tabIndex={0}
       >
         <div
           className={styles['slate-modal-backdrop']}

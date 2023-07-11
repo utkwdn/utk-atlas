@@ -27,6 +27,8 @@ interface FormInfoObject {
 export function PageComponent({ page }: PageProps) {
   const [dynamicSrc, setDynamicSrc] = useState<string>('');
   const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
+  const [clickedModalId, setClickedModalId] = useState<string>('');
+  const [trigger, setTrigger] = useState<number>(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const { useQuery } = client;
@@ -37,7 +39,9 @@ export function PageComponent({ page }: PageProps) {
   const showPageTitle = page?.showsHeadline || false;
 
   const handleSlateButtonClick = (modalId: string) => {
-    alert(`Page component - slate clicked. ID=${modalId}`);
+    // console.log(modalId);
+    setTrigger((trigger) => trigger + 1);
+    setClickedModalId(modalId);
   };
 
   useEffect(() => {
@@ -67,11 +71,11 @@ export function PageComponent({ page }: PageProps) {
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
-            <div>{dynamicSrc}</div>
             <ParsedMarkup
               content={page?.content() || ''}
               elevateFormInfo={setSlateFormInfo}
               elevateSlateButtonClick={handleSlateButtonClick}
+              dynamicSrc={dynamicSrc || ''}
             />
           </div>
         </div>
@@ -83,7 +87,14 @@ export function PageComponent({ page }: PageProps) {
       {slateFormInfo.length > 0 ? (
         <div ref={modalRef}>
           {slateFormInfo?.map((thisForm, i) => {
-            return <SlateModal key={i} formInfo={thisForm} />;
+            return (
+              <SlateModal
+                key={i}
+                formInfo={thisForm}
+                clickedModalId={clickedModalId}
+                trigger={trigger}
+              />
+            );
           })}
         </div>
       ) : (

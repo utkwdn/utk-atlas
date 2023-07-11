@@ -16,6 +16,7 @@ import GraduateToursModal from './GraduateToursModal';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import { useEffect, useState } from 'react';
+// import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 // import Image from 'next/image';
 
 // workaround b/c of this bug: https://github.com/remarkablemark/html-react-parser/issues/633
@@ -40,10 +41,12 @@ const toReactNode = ({
   content,
   collectSlateFormInfo,
   elevateSlateButtonClick,
+  dynamicSrc,
 }: {
   content: string;
   collectSlateFormInfo: ((formInfo: FormInfoObject) => void) | false;
   elevateSlateButtonClick: ((modalId: string) => void) | undefined;
+  dynamicSrc: string | undefined;
 }) => {
   const handleSlateButtonClick = (modalId: string) => {
     if (elevateSlateButtonClick) {
@@ -51,6 +54,7 @@ const toReactNode = ({
     }
   };
 
+  // Returns Capitalized text from button to use as modal title
   const capButtonText = (buttonText: string) => {
     const wordArray = buttonText.split(' ');
     const cappedText = wordArray
@@ -61,6 +65,8 @@ const toReactNode = ({
     return cappedText;
   };
 
+  // Parse form info string and organize data for mapping to SlateModal component
+  // Also returns formInfoId for button's onClick functionality
   const processFormInfo = (
     attribs: Partial<{ [name: string]: string }>,
     buttonText: string
@@ -184,7 +190,7 @@ const toReactNode = ({
               ? (domToReact([domNode.firstChild]) as string)
               : 'Button text';
 
-            // Save form info and return unique key to target modal
+            // Save form info and return unique key to target modal onClick
             const modalId: string = processFormInfo(attribs, buttonText) || '';
 
             return (
@@ -351,6 +357,30 @@ const toReactNode = ({
               />
             );
           }
+          // Dynamic Content
+          if (outerDivClasses && /\bdynamic-content\b/g.test(outerDivClasses)) {
+            const dynamicKey = dynamicSrc || 'no-dynamic-key';
+            const defaultDiv = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.attribs.class.includes('default')
+            );
+            const matchingDiv = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.attribs.class.includes(dynamicKey)
+            );
+
+            if (matchingDiv) {
+              return <>{domToReact([matchingDiv], parserConfig)}</>;
+            } else if (defaultDiv) {
+              return <>{domToReact([defaultDiv], parserConfig)}</>;
+            } else {
+              return (
+                <>
+                  <p>No Default Content Set</p>
+                </>
+              );
+            }
+          }
         }
       }
     },
@@ -368,12 +398,14 @@ interface Props {
   elevateFormInfo?: (formInfo: FormInfoObject[]) => void;
   // Function to display modal on page component
   elevateSlateButtonClick?: (modalId: string) => void;
+  dynamicSrc?: string;
 }
 
 const ParsedMarkup = ({
   content,
   elevateFormInfo,
   elevateSlateButtonClick,
+  dynamicSrc,
 }: Props) => {
   const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
   const [savedFormIds, setSavedFormIds] = useState<string[]>([]);
@@ -401,6 +433,7 @@ const ParsedMarkup = ({
     content,
     collectSlateFormInfo,
     elevateSlateButtonClick,
+    dynamicSrc,
   });
 
   return parsedContent;
