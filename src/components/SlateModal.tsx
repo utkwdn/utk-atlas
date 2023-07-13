@@ -58,7 +58,7 @@ function SlateModal({ formInfo, clickedModalId, trigger }: Props): JSX.Element {
       handleShowModal();
       setTimeout(() => {
         modalRef.current?.focus();
-      }, 500);
+      }, 20);
     }
 
     document.addEventListener('keydown', escCloseModal);
@@ -66,7 +66,7 @@ function SlateModal({ formInfo, clickedModalId, trigger }: Props): JSX.Element {
     return () => {
       document.removeEventListener('keydown', escCloseModal);
     };
-  }, [trigger]);
+  }, [trigger, clickedModalId, formInfo.modalId]);
 
   return (
     <>
@@ -99,6 +99,7 @@ function SlateModal({ formInfo, clickedModalId, trigger }: Props): JSX.Element {
             </div>
             <div className={styles['slate-modal-body']}>
               <h3 style={{ marginTop: 0 }}>{formInfo.modalTitle}</h3>
+              {/* If multiple forms, use tabs. Otherwise embed directly */}
               {formInfo.formInfo.length > 1 ? (
                 <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
                   {formInfo.formInfo.map((thisForm, i) => {

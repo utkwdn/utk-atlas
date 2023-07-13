@@ -16,7 +16,6 @@ import GraduateToursModal from './GraduateToursModal';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import { useEffect, useState } from 'react';
-// import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 // import Image from 'next/image';
 
 // workaround b/c of this bug: https://github.com/remarkablemark/html-react-parser/issues/633
@@ -398,6 +397,7 @@ interface Props {
   elevateFormInfo?: (formInfo: FormInfoObject[]) => void;
   // Function to display modal on page component
   elevateSlateButtonClick?: (modalId: string) => void;
+  // Dynamic key from URL param, if set (e.g. ?src=campus-visit)
   dynamicSrc?: string;
 }
 

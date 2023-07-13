@@ -39,7 +39,6 @@ export function PageComponent({ page }: PageProps) {
   const showPageTitle = page?.showsHeadline || false;
 
   const handleSlateButtonClick = (modalId: string) => {
-    // console.log(modalId);
     setTrigger((trigger) => trigger + 1);
     setClickedModalId(modalId);
   };
