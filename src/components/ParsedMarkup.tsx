@@ -120,26 +120,32 @@ const toReactNode = ({
         const trimmedCommentValue = domNode.data.trim();
 
         if (trimmedCommentValue === 'REQUEST-INFO-TABS') {
+          console.log('request info tabs');
           return <RequestInfoTabs />;
         }
 
         if (trimmedCommentValue === 'VISIT-YOUTUBE-CAROUSEL') {
+          console.log('visit youtube carousel');
           return <YoutubeCarousel cardWidth={828} cardMargin={20} />;
         }
 
-        if (trimmedCommentValue === 'VISIT-MODAL-BUTTON') {
-          return <VisitModalButton />;
-        }
+        // if (trimmedCommentValue === 'VISIT-MODAL-BUTTON') {
+        //   console.log('visit modal button');
+        //   return <VisitModalButton />;
+        // }
 
-        if (trimmedCommentValue === 'GRADUATE-TOURS-MODAL') {
-          return <GraduateToursModal />;
-        }
+        // if (trimmedCommentValue === 'GRADUATE-TOURS-MODAL') {
+        //   console.log('graduate tours modal');
+        //   return <GraduateToursModal />;
+        // }
 
         if (trimmedCommentValue.includes('SLATE-FORM')) {
+          console.log('slate form replace');
           return <SlateFormReplace commentString={trimmedCommentValue} />;
         }
 
         if (trimmedCommentValue.includes('SLATE-MODAL-TABS')) {
+          console.log('slate modal tabs');
           return <SlateModalTabs commentString={trimmedCommentValue} />;
         }
       }

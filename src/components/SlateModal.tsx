@@ -98,7 +98,7 @@ function SlateModal({ formInfo, clickedModalId, trigger }: Props): JSX.Element {
               ></button>
             </div>
             <div className={styles['slate-modal-body']}>
-              <h3 style={{ marginTop: 0 }}>{formInfo.modalTitle}</h3>
+              <h3 className={styles['heading-text']}>{formInfo.modalTitle}</h3>
               {/* If multiple forms, use tabs. Otherwise embed directly */}
               {formInfo.formInfo.length > 1 ? (
                 <Tabs className="nav nav-pills justify-content-center justify-content-lg-start">
