@@ -45,6 +45,7 @@
   padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
     clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
     clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  font-size: 0.8em;
 }
 
 .slate-modal-header {
@@ -63,6 +64,10 @@
       transition: all 0.2s ease-out;
     }
   }
+}
+.heading-text {
+  margin-top: 0;
+  line-height: 1em;
 }
 
 @media screen and (max-width: 600px) {
