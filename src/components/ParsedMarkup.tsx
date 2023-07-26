@@ -11,8 +11,6 @@ import HomepageVideo from './HomepageVideo';
 import ApplyPageVideo from './ApplyPageVideo';
 import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
-import VisitModalButton from './VisitModalButton';
-import GraduateToursModal from './GraduateToursModal';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import { useEffect, useState } from 'react';
@@ -120,32 +118,18 @@ const toReactNode = ({
         const trimmedCommentValue = domNode.data.trim();
 
         if (trimmedCommentValue === 'REQUEST-INFO-TABS') {
-          console.log('request info tabs');
           return <RequestInfoTabs />;
         }
 
         if (trimmedCommentValue === 'VISIT-YOUTUBE-CAROUSEL') {
-          console.log('visit youtube carousel');
           return <YoutubeCarousel cardWidth={828} cardMargin={20} />;
         }
 
-        // if (trimmedCommentValue === 'VISIT-MODAL-BUTTON') {
-        //   console.log('visit modal button');
-        //   return <VisitModalButton />;
-        // }
-
-        // if (trimmedCommentValue === 'GRADUATE-TOURS-MODAL') {
-        //   console.log('graduate tours modal');
-        //   return <GraduateToursModal />;
-        // }
-
         if (trimmedCommentValue.includes('SLATE-FORM')) {
-          console.log('slate form replace');
           return <SlateFormReplace commentString={trimmedCommentValue} />;
         }
 
         if (trimmedCommentValue.includes('SLATE-MODAL-TABS')) {
-          console.log('slate modal tabs');
           return <SlateModalTabs commentString={trimmedCommentValue} />;
         }
       }
@@ -362,12 +346,12 @@ const toReactNode = ({
               />
             );
           }
-          // Dynamic Content
+          // Dynamic Content - If div has class of 'dynamic-content' return child element based on dynamicKey (from URL param)
           if (outerDivClasses && /\bdynamic-content\b/g.test(outerDivClasses)) {
             const dynamicKey = dynamicSrc || 'no-dynamic-key';
             const defaultDiv = domNode.children.find(
               (child): child is DOMHandlerElement =>
-                isElement(child) && child.attribs.class.includes('default')
+                isElement(child) && child.attribs.class.includes('dmc-default')
             );
             const matchingDiv = domNode.children.find(
               (child): child is DOMHandlerElement =>
@@ -379,11 +363,7 @@ const toReactNode = ({
             } else if (defaultDiv) {
               return <>{domToReact([defaultDiv], parserConfig)}</>;
             } else {
-              return (
-                <>
-                  <p>No Default Content Set</p>
-                </>
-              );
+              return <></>;
             }
           }
         }
