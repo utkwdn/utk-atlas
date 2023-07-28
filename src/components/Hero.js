@@ -229,20 +229,29 @@ const Hero = () => {
           {/* Begin CTA */}
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-              <span className="text-condensed text-letterspaced fst-italic fs-2">
-                Welcome to
+              <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                Find your place on
               </span>
               <br />
               Rocky Top
             </h2>
-
-            <p className="fancyLink">
-              <a href="https://utk.edu/requestinfo" className="hero-cat">
-                Request more info
-              </a>
+            <div className="fancyLinkGroup ch-md is-layout-flow">
+              <p className="fancyLink stack-links">
+                <a href="https://www.utk.edu/admissions" className="hero-cat">
+                  Apply today
+                </a>
+              </p>
+              <br />
+              <p className="fancyLink stack-links">
+                <a href="https://utk.edu/requestinfo" className="hero-cat">
+                  Request more info
+                </a>
+              </p>
+            </div>
+            <p>
+              There’s something for everyone at UT. We can’t wait for you to
+              call our campus home sweet home!
             </p>
-            <p>Discover countless opportunities in the classroom and beyond.</p>
-
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
@@ -313,16 +322,16 @@ const Hero = () => {
             <div className="heroSquareB layoutB">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/student-studying-hero-b2.webp"
+                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/student-studying-hero-b2.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202203/student-studying-hero-b1.jpg"
-                  alt="smiling student works on a laptop in a public space on campus"
+                  src="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
+                  alt="group of students gather on campus in a public green space"
                 />
               </picture>
             </div>
