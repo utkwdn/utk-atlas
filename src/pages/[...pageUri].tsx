@@ -4,22 +4,53 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { client, Page as PageType } from 'client';
 import ParsedMarkup from 'components/ParsedMarkup';
+import SlateModal from 'components/SlateModal';
 import parse from 'html-react-parser';
+import { useState, useEffect, useRef } from 'react';
 
 export interface PageProps {
   page: PageType | null | undefined;
 }
 
+interface FormInfoInnerObject {
+  tabTitle: string;
+  formId: string;
+  scriptSrc: string;
+}
+
+interface FormInfoObject {
+  modalId: string;
+  modalTitle: string;
+  formInfo: FormInfoInnerObject[];
+}
+
 export function PageComponent({ page }: PageProps) {
+  const [dynamicSrc, setDynamicSrc] = useState<string>('');
+  const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
+  const [clickedModalId, setClickedModalId] = useState<string>('');
+  const [trigger, setTrigger] = useState<number>(0);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
 
   const pageSlug = page?.slug;
   const yoastHead = parse(page?.seo?.fullHead || '');
   const showPageTitle = page?.showsHeadline || false;
-  console.log(
-    'My custom identifier class is based on slug: ' + (pageSlug || '')
-  );
+
+  const handleSlateButtonClick = (modalId: string) => {
+    setTrigger((trigger) => trigger + 1);
+    setClickedModalId(modalId);
+  };
+
+  useEffect(() => {
+    // Check if url param 'src' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('src');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
 
   return (
     <>
@@ -39,12 +70,35 @@ export function PageComponent({ page }: PageProps) {
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
           <div>
-            <ParsedMarkup content={page?.content() || ''} />
+            <ParsedMarkup
+              content={page?.content() || ''}
+              elevateFormInfo={setSlateFormInfo}
+              elevateSlateButtonClick={handleSlateButtonClick}
+              dynamicSrc={dynamicSrc || ''}
+            />
           </div>
         </div>
       </main>
 
       <Footer copyrightHolder={generalSettings?.title || undefined} />
+
+      {/* Slate Form Modal */}
+      {slateFormInfo.length > 0 ? (
+        <div ref={modalRef}>
+          {slateFormInfo?.map((thisForm, i) => {
+            return (
+              <SlateModal
+                key={i}
+                formInfo={thisForm}
+                clickedModalId={clickedModalId}
+                trigger={trigger}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

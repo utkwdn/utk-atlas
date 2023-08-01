@@ -177,6 +177,10 @@
   width: auto !important;
   pointer-events: visible; /* need this to make the links work with gsap */
 }
+.italic-leading {
+  line-height: 3rem !important;
+  display: inline-block;
+}
 .pointer-event-visible {
   pointer-events: visible; /* need this to make the links work with gsap – adding as a utility class for ease of use */
 }
@@ -486,8 +490,11 @@
     }
   }
   @media screen and (min-width: 1600px) {
+    .stack-links {
+      flex-basis: 100%;
+    }
     .ctaHolder h2 {
-      max-width: 5ch;
+      // max-width: 5ch;
     }
   }
 } /*# sourceMappingURL=hero202203-visit.css.map */
