@@ -251,7 +251,9 @@ const Hero = () => {
             {dynamicSrc === 'visit-campus' ? (
               <>
                 {/* 'visit-campus' content */}
-                <h5>Request info for your FREE UT sticker!</h5>
+                <p style={{ maxWidth: 'none' }}>
+                  Request info for your FREE UT sticker!
+                </p>
                 <SlateFormEmbed
                   id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
                   scriptSrc={
@@ -282,12 +284,12 @@ const Hero = () => {
                   </p>
                 </div>
                 <p>
-                  There’s something for everyone at UT. We can’t wait for you to
+                  There's something for everyone at UT. We can't wait for you to
                   call our campus home sweet home!
                 </p>
               </>
             )}
-            
+
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
