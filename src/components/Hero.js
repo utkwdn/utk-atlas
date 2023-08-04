@@ -284,8 +284,8 @@ const Hero = () => {
                   </p>
                 </div>
                 <p>
-                  There's something for everyone at UT. We can't wait for you to
-                  call our campus home sweet home!
+                  There&apos;s something for everyone at UT. We can&apos;t wait
+                  for you to call our campus home sweet home!
                 </p>
               </>
             )}
