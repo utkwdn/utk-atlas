@@ -252,7 +252,7 @@ const Hero = () => {
               <>
                 {/* 'visit-campus' content */}
                 <p style={{ maxWidth: 'none' }}>
-                  Request info for your FREE UT sticker!
+                  Get a free sticker when you request info!
                 </p>
                 <SlateFormEmbed
                   id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
@@ -276,7 +276,7 @@ const Hero = () => {
                       Apply today
                     </a>
                   </p>
-                  <br />
+
                   <p className="fancyLink stack-links">
                     <a href="https://utk.edu/requestinfo" className="hero-cat">
                       Request more info
