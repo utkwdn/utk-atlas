@@ -246,6 +246,7 @@ const Hero = () => {
               <br />
               Rocky Top
             </h2>
+
             {/* BEGIN DYNAMIC CONTENT */}
             {dynamicSrc === 'visit-campus' ? (
               <>
@@ -286,7 +287,7 @@ const Hero = () => {
                 </p>
               </>
             )}
-
+            
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
