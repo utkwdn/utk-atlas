@@ -89,7 +89,7 @@ const SlateFormEmbed = memo(({ id, scriptSrc }: Props) => {
     };
   }, [id, scriptSrc]);
 
-  return <div id={`form_${id}`}></div>;
+  return <div id={`form_${id}`} style={{ pointerEvents: 'visible' }}></div>;
 });
 
 SlateFormEmbed.displayName = 'SlateFormEmbed';

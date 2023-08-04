@@ -1,12 +1,23 @@
-import Link from 'next/link';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SlateFormEmbed from './SlateFormEmbed';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
 
 const Hero = () => {
+  const [dynamicSrc, setDynamicSrc] = useState('');
+
+  useEffect(() => {
+    // Check if url param 'src' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('src');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.saveStyles('.hero202112Container, .layoutB'); // stores the css information before in-line styles from animation are put in place
@@ -235,23 +246,48 @@ const Hero = () => {
               <br />
               Rocky Top
             </h2>
-            <div className="fancyLinkGroup ch-md is-layout-flow">
-              <p className="fancyLink stack-links">
-                <a href="https://www.utk.edu/admissions" className="hero-cat">
-                  Apply today
-                </a>
-              </p>
-              <br />
-              <p className="fancyLink stack-links">
-                <a href="https://utk.edu/requestinfo" className="hero-cat">
-                  Request more info
-                </a>
-              </p>
-            </div>
-            <p>
-              There’s something for everyone at UT. We can’t wait for you to
-              call our campus home sweet home!
-            </p>
+
+            {/* BEGIN DYNAMIC CONTENT */}
+            {dynamicSrc === 'visit-campus' ? (
+              <>
+                {/* 'visit-campus' content */}
+                <h5>Request info for your FREE UT sticker!</h5>
+                <SlateFormEmbed
+                  id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
+                  scriptSrc={
+                    `https://govols.utk.edu/register/?id=3efe2258-fe6c-4e5e-a198-faf90c1a3634&output=embed&div=form_3efe2258-fe6c-4e5e-a198-faf90c1a3634` +
+                    (location.search.length > 1
+                      ? '&' + location.search.substring(1)
+                      : '')
+                  }
+                />
+              </>
+            ) : (
+              <>
+                {/* Default content */}
+                <div className="fancyLinkGroup ch-md is-layout-flow">
+                  <p className="fancyLink stack-links">
+                    <a
+                      href="https://www.utk.edu/admissions"
+                      className="hero-cat"
+                    >
+                      Apply today
+                    </a>
+                  </p>
+                  <br />
+                  <p className="fancyLink stack-links">
+                    <a href="https://utk.edu/requestinfo" className="hero-cat">
+                      Request more info
+                    </a>
+                  </p>
+                </div>
+                <p>
+                  There’s something for everyone at UT. We can’t wait for you to
+                  call our campus home sweet home!
+                </p>
+              </>
+            )}
+            
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
