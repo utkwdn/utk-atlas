@@ -1,12 +1,23 @@
-import Link from 'next/link';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SlateFormEmbed from './SlateFormEmbed';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
 
 const Hero = () => {
+  const [dynamicSrc, setDynamicSrc] = useState('');
+
+  useEffect(() => {
+    // Check if url param 'src' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('src');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.saveStyles('.hero202112Container, .layoutB'); // stores the css information before in-line styles from animation are put in place
@@ -159,16 +170,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.webp"
+                  srcSet="//images.utk.edu/images/www/hero202306/architecture-student-model-02.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
+                  srcSet="//images.utk.edu/images/www/hero202306/architecture-student-model-02.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202303/girls-outside-table-hero-a6.jpg"
-                  alt="two smiling students sit outside on campus on a beautiful day"
+                  src="//images.utk.edu/images/www/hero202306/architecture-student-model-02.jpg"
+                  alt="An architecture student inspects a recently created model of a multi-story building"
                 />
               </picture>
             </div>
@@ -229,19 +240,52 @@ const Hero = () => {
           {/* Begin CTA */}
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-              <span className="text-condensed text-letterspaced fst-italic fs-2">
-                Welcome to
+              <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                Find your place on
               </span>
               <br />
               Rocky Top
             </h2>
-
-            <p className="fancyLink">
-              <a href="https://utk.edu/requestinfo" className="hero-cat">
-                Request more info
-              </a>
-            </p>
-            <p>Discover countless opportunities in the classroom and beyond.</p>
+            {/* BEGIN DYNAMIC CONTENT */}
+            {dynamicSrc === 'visit-campus' ? (
+              <>
+                {/* 'visit-campus' content */}
+                <h5>Request info for your FREE UT sticker!</h5>
+                <SlateFormEmbed
+                  id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
+                  scriptSrc={
+                    `https://govols.utk.edu/register/?id=3efe2258-fe6c-4e5e-a198-faf90c1a3634&output=embed&div=form_3efe2258-fe6c-4e5e-a198-faf90c1a3634` +
+                    (location.search.length > 1
+                      ? '&' + location.search.substring(1)
+                      : '')
+                  }
+                />
+              </>
+            ) : (
+              <>
+                {/* Default content */}
+                <div className="fancyLinkGroup ch-md is-layout-flow">
+                  <p className="fancyLink stack-links">
+                    <a
+                      href="https://www.utk.edu/admissions"
+                      className="hero-cat"
+                    >
+                      Apply today
+                    </a>
+                  </p>
+                  <br />
+                  <p className="fancyLink stack-links">
+                    <a href="https://utk.edu/requestinfo" className="hero-cat">
+                      Request more info
+                    </a>
+                  </p>
+                </div>
+                <p>
+                  There’s something for everyone at UT. We can’t wait for you to
+                  call our campus home sweet home!
+                </p>
+              </>
+            )}
 
             {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
           <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
@@ -313,16 +357,16 @@ const Hero = () => {
             <div className="heroSquareB layoutB">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/student-studying-hero-b2.webp"
+                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero202203/student-studying-hero-b2.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero202203/student-studying-hero-b1.jpg"
-                  alt="smiling student works on a laptop in a public space on campus"
+                  src="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
+                  alt="group of students gather on campus in a public green space"
                 />
               </picture>
             </div>

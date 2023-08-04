@@ -3,6 +3,7 @@ import { getNextStaticProps } from '@faustjs/next';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { CTA, Footer, Header, PageTitle, Posts } from 'components';
 import styles from 'scss/pages/home.module.scss';
 import { client, PageIdType } from 'client';
@@ -11,6 +12,17 @@ import Hero from 'components/Hero.js';
 import ParsedMarkup from 'components/ParsedMarkup';
 
 export default function Page() {
+  const [dynamicSrc, setDynamicSrc] = useState<string>('');
+
+  useEffect(() => {
+    // Check if url param 'src' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('src');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
+
   const { useQuery, usePage, usePosts } = client;
   const generalSettings = useQuery().generalSettings;
 
@@ -38,7 +50,10 @@ export default function Page() {
       <div className="container-fluid">
         <main id="content">
           <div className="entry-content container-xxl">
-            <ParsedMarkup content={frontPageContent?.content?.() || ''} />
+            <ParsedMarkup
+              content={frontPageContent?.content?.() || ''}
+              dynamicSrc={dynamicSrc || ''}
+            />
           </div>
         </main>
       </div>
