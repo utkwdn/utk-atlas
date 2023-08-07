@@ -250,9 +250,18 @@ const Alpha = () => {
                 while user is typing in search-box. In the form-submit handler, we also trigger
                 a re-announcement if needed (see `handleSubmit` above).
               */
-              <h3 aria-live="assertive" aria-relevant="all" ref={noResultsRef}>
-                {NO_RESULTS}
-              </h3>
+              <div>
+                <h3
+                  aria-live="assertive"
+                  aria-relevant="all"
+                  ref={noResultsRef}
+                >
+                  {NO_RESULTS}
+                </h3>
+                <p className="fancyLink">
+                  <a href="/search">Search all of utk.edu</a>
+                </p>
+              </div>
             )}
           </section>
         </div>
