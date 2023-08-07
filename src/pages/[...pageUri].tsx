@@ -44,9 +44,9 @@ export function PageComponent({ page }: PageProps) {
   };
 
   useEffect(() => {
-    // Check if url param 'src' is set and save to dynamicSrc if so
+    // Check if url param 'dmc' is set and save to dynamicSrc if so
     const searchParams = new URLSearchParams(document.location.search);
-    const srcParam = searchParams.get('src');
+    const srcParam = searchParams.get('dmc');
     if (srcParam) {
       setDynamicSrc(srcParam);
     }
