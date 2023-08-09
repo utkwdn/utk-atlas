@@ -597,3 +597,17 @@
     margin: -1rem;
   }
 }
+
+.slate-squeeze {
+  .form_container {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+  div.form_question {
+    margin: 0 0 0 0 !important;
+    .form_label {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
