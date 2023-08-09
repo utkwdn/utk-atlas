@@ -564,3 +564,36 @@
     transform: scale(0.6);
   }
 }
+.border-bottom-orange-sm {
+  border-bottom: solid 1.5rem $utorange;
+}
+.border-bottom-orange-md {
+  border-bottom: solid 2rem $utorange;
+}
+.border-bottom-orange-lg {
+  border-bottom: solid 6rem $utorange;
+}
+
+.angle-bracket-down {
+  content: '';
+  width: 8rem;
+  height: auto;
+  border-top: 1rem solid $utorange;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1rem;
+  left: -1.5rem;
+  top: 1.5rem;
+  margin-left: 0;
+
+  &:before {
+    content: '';
+    width: 6.7rem;
+    height: auto;
+    border-left: 1rem solid $utorange;
+    padding: 1.5rem;
+    margin: -1rem;
+  }
+}
