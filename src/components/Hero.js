@@ -251,18 +251,20 @@ const Hero = () => {
             {dynamicSrc === 'visit-campus' ? (
               <>
                 {/* 'visit-campus' content */}
-                <p style={{ maxWidth: 'none' }}>
-                  Get a free sticker when you request info!
-                </p>
-                <SlateFormEmbed
-                  id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
-                  scriptSrc={
-                    `https://govols.utk.edu/register/?id=3efe2258-fe6c-4e5e-a198-faf90c1a3634&output=embed&div=form_3efe2258-fe6c-4e5e-a198-faf90c1a3634` +
-                    (location.search.length > 1
-                      ? '&' + location.search.substring(1)
-                      : '')
-                  }
-                />
+                <div className="slate-squeeze">
+                  <p style={{ maxWidth: 'none' }}>
+                    Get a free sticker when you request info!
+                  </p>
+                  <SlateFormEmbed
+                    id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
+                    scriptSrc={
+                      `https://govols.utk.edu/register/?id=3efe2258-fe6c-4e5e-a198-faf90c1a3634&output=embed&div=form_3efe2258-fe6c-4e5e-a198-faf90c1a3634` +
+                      (location.search.length > 1
+                        ? '&' + location.search.substring(1)
+                        : '')
+                    }
+                  />
+                </div>
               </>
             ) : (
               <>
