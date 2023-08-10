@@ -274,3 +274,7 @@ section[class^='PageTitle_hero'] {
   font-weight: $font-weight-ultra;
   font-size: $h1-font-size;
 }
+
+.word-break-normal {
+  word-break: normal !important;
+}
