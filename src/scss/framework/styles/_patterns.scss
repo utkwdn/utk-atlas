@@ -597,6 +597,17 @@
     margin: -1rem;
   }
 }
+.angle-spacer-horiz {
+  // margin-left: 0.5vw !important;
+
+  // @media screen and (min-width: 800px) {
+  //   margin-left: 0.75vw !important;
+  // }
+  // @media screen and (min-width: 1200px) {
+  //   margin-left: 2.5vw !important;
+  // }
+  margin-left: min(1rem, 2vw);
+}
 
 .slate-squeeze {
   .form_container {
