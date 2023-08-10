@@ -7,6 +7,7 @@ import { getNextStaticProps } from '@faustjs/next';
 import TextField from '@mui/material/TextField';
 import { matchSorter } from 'match-sorter';
 import Head from 'next/head';
+import Link from 'next/link';
 import {
   ChangeEventHandler,
   FormEventHandler,
@@ -260,13 +261,13 @@ const Alpha = () => {
                 </h3>
                 <p className="fancyLink">
                   {/* Pass along search term with link to search page */}
-                  <a
+                  <Link
                     href={`/search${
                       inputRef.current ? `/${inputRef.current.value}` : ''
                     }`}
                   >
                     Search all of utk.edu
-                  </a>
+                  </Link>
                 </p>
               </div>
             )}
