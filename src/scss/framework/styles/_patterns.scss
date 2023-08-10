@@ -622,3 +622,14 @@
     }
   }
 }
+
+// use this when you need media-text block to have an earlier breakpoint due to smaller photo width. Created for 33%
+.media-text-33-stack-early {
+  @media screen and (max-width: 950px) {
+    grid-template-columns: 100% !important;
+    .wp-block-media-text__content {
+      grid-column: 1 !important;
+      grid-row: 2 !important;
+    }
+  }
+}
