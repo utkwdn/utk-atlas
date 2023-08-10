@@ -259,7 +259,14 @@ const Alpha = () => {
                   {NO_RESULTS}
                 </h3>
                 <p className="fancyLink">
-                  <a href="/search">Search all of utk.edu</a>
+                  {/* Pass along search term with link to search page */}
+                  <a
+                    href={`/search${
+                      inputRef.current ? `/${inputRef.current.value}` : ''
+                    }`}
+                  >
+                    Search all of utk.edu
+                  </a>
                 </p>
               </div>
             )}
