@@ -4,6 +4,27 @@
     background-position: 80% bottom !important;
   }
 }
+.flex-a-mobile-cover-tall {
+  @media screen and (max-width: 1240px) {
+    padding-top: 25rem;
+    padding-bottom: 6rem;
+    .card-hero {
+      margin-left: auto;
+      margin-right: auto;
+      width: min(72%, 500px);
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .card-hero {
+      margin-left: auto;
+      margin-right: auto;
+      width: min(90vw, 400px);
+    }
+    .card-breathing-room {
+      margin: clamp(1rem, 8vw, 10rem) auto clamp(1rem, 1vw, 10rem) auto !important;
+    }
+  }
+}
 
 .align-mobile-top {
   // used on a cover item to force the inside element to align to top left on mobile.

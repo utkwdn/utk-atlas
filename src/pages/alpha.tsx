@@ -7,6 +7,7 @@ import { getNextStaticProps } from '@faustjs/next';
 import TextField from '@mui/material/TextField';
 import { matchSorter } from 'match-sorter';
 import Head from 'next/head';
+import Link from 'next/link';
 import {
   ChangeEventHandler,
   FormEventHandler,
@@ -250,9 +251,25 @@ const Alpha = () => {
                 while user is typing in search-box. In the form-submit handler, we also trigger
                 a re-announcement if needed (see `handleSubmit` above).
               */
-              <h3 aria-live="assertive" aria-relevant="all" ref={noResultsRef}>
-                {NO_RESULTS}
-              </h3>
+              <div>
+                <h3
+                  aria-live="assertive"
+                  aria-relevant="all"
+                  ref={noResultsRef}
+                >
+                  {NO_RESULTS}
+                </h3>
+                <p className="fancyLink">
+                  {/* Pass along search term with link to search page */}
+                  <Link
+                    href={`/search${
+                      inputRef.current ? `/${inputRef.current.value}` : ''
+                    }`}
+                  >
+                    Search all of utk.edu
+                  </Link>
+                </p>
+              </div>
             )}
           </section>
         </div>

@@ -564,3 +564,72 @@
     transform: scale(0.6);
   }
 }
+.border-bottom-orange-sm {
+  border-bottom: solid 1.5rem $utorange;
+}
+.border-bottom-orange-md {
+  border-bottom: solid 2rem $utorange;
+}
+.border-bottom-orange-lg {
+  border-bottom: solid 6rem $utorange;
+}
+
+.angle-bracket-down {
+  content: '';
+  width: 8rem;
+  height: auto;
+  border-top: 1rem solid $utorange;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1rem;
+  left: -1.5rem;
+  top: 1.5rem;
+  margin-left: 0;
+
+  &:before {
+    content: '';
+    width: 6.7rem;
+    height: auto;
+    border-left: 1rem solid $utorange;
+    padding: 1.5rem;
+    margin: -1rem;
+  }
+}
+.angle-spacer-horiz {
+  // margin-left: 0.5vw !important;
+
+  // @media screen and (min-width: 800px) {
+  //   margin-left: 0.75vw !important;
+  // }
+  // @media screen and (min-width: 1200px) {
+  //   margin-left: 2.5vw !important;
+  // }
+  margin-left: min(1rem, 2vw);
+}
+
+.slate-squeeze {
+  .form_container {
+    // margin: 0 0 0 0;
+    // padding: 0 0 0 0;
+  }
+  div.form_question {
+    margin: 0 0 0 0 !important;
+    .form_label {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// use this when you need media-text block to have an earlier breakpoint due to smaller photo width. Created for 33%
+.media-text-33-stack-early {
+  @media screen and (max-width: 950px) {
+    grid-template-columns: 100% !important;
+    .wp-block-media-text__content {
+      grid-column: 1 !important;
+      grid-row: 2 !important;
+    }
+  }
+}
