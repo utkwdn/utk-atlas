@@ -75,6 +75,41 @@ const toReactNode = ({
 
     const modalTitle = capButtonText(buttonText);
 
+    // script-src1 and/or script-src2 can be used for up to 2 forms
+    if (attribs['script-src1']) {
+      const formId1 = attribs['script-src1'].split('div=form_')[1];
+      let formInfoId = formId1;
+      const outputFormInfoArray: FormInfoInnerObject[] = [
+        {
+          tabTitle: attribs['tab-title1'] || 'Tab 1',
+          formId: formId1,
+          scriptSrc: attribs['script-src1'],
+        },
+      ];
+      // If 2nd form exists, append to array
+      if (attribs['script-src2']) {
+        const formId2 = attribs['script-src2'].split('div=form_')[1];
+        formInfoId = `${formId1}&${formId2}`;
+        outputFormInfoArray.push({
+          tabTitle: attribs['tab-title2'] || 'Tab 2',
+          formId: formId2,
+          scriptSrc: attribs['script-src2'],
+        });
+      }
+
+      // Pass formatted data to parent (ParsedMarkup)
+      if (collectSlateFormInfo) {
+        collectSlateFormInfo({
+          modalId: formInfoId,
+          modalTitle: modalTitle,
+          formInfo: outputFormInfoArray,
+        });
+      }
+
+      return formInfoId;
+    }
+
+    // data-forminfo can be used if 3 or more forms are needed
     if (attribs['data-forminfo']) {
       // Parse data-forminfo text into array
       const inputFormInfoArray = JSON.parse(attribs['data-forminfo']) as [
@@ -173,7 +208,7 @@ const toReactNode = ({
           // Handle Slate Form Button (class='slateFormButton')
           if (
             attribs.class?.includes('slateFormButton') &&
-            attribs['data-forminfo']
+            (attribs['data-forminfo'] || attribs['script-src1'])
           ) {
             const buttonText = domNode.firstChild
               ? (domToReact([domNode.firstChild]) as string)

@@ -178,15 +178,19 @@ section[class^='PageTitle_hero'] {
 }
 
 // control width of content based on character widths
+.ch-xs {
+  max-width: 20ch !important;
+}
+
 .ch-sm {
   max-width: 30ch !important;
 }
 .ch-med,
 .ch-md {
-  max-width: 45ch;
+  max-width: 45ch !important;
 }
 .ch-lg {
-  max-width: 60ch;
+  max-width: 60ch !important;
 }
 
 .message-big {
@@ -261,4 +265,16 @@ section[class^='PageTitle_hero'] {
   text-align: left;
   margin-top: 0;
   text-shadow: 2px 2px 0px $utsmokey, 4px 4px 0px $utorange;
+}
+
+.somber-headline {
+  font-size: (max(90%, 2rem));
+}
+.loud-headline {
+  font-weight: $font-weight-ultra;
+  font-size: $h1-font-size;
+}
+
+.word-break-normal {
+  word-break: normal !important;
 }
