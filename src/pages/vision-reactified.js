@@ -13,19 +13,19 @@ const cx = (...classNames) => classNames.join(' ');
 // <div className={styles.hero202112A}>
 // <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
-function YoutubeEmbed(embedId) {
-  return (
-    <iframe
-      width="100%"
-      height="100%"
-      src={'https://www.youtube.com/embed/' + embedId}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Play strategic vision video."
-    />
-  );
-}
+// function YoutubeEmbed(embedId) {
+//   return (
+//     <iframe
+//       width="100%"
+//       height="100%"
+//       src={'https://www.youtube.com/embed/' + embedId}
+//       frameBorder="0"
+//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//       allowFullScreen
+//       title="Play strategic vision video."
+//     />
+//   );
+// }
 
 function Vision() {
   const [playVideo, setPlayVideo] = useState(false);
@@ -122,13 +122,19 @@ function Vision() {
             </div>
           </div>
 
-          <div className={styles.angleContainer}>
+          <div className={cx(styles.angleContainer, styles.stepsSlide)}>
             <p className={styles.angleIntro}>
               We know how much is possible when we unite our individual talents
               and aspirations, put compassion front and center, and
             </p>
 
-            <p className={cx(styles.textSteps, styles.textUppercase)}>
+            <p
+              className={cx(
+                styles.textSteps,
+                styles.textUppercase,
+                styles.stepsSlide
+              )}
+            >
               <span className={styles.angleCallout}></span>step forward
               <br />
               together as <br /> Volunteers.
@@ -168,6 +174,7 @@ function Vision() {
         </section>
       </section>
       <div className={styles.skinnyLongImg}></div>
+
       <section className={styles.goalsContainer}>
         <h2 className={styles.nod}>
           <span className={styles.printLineHeader}></span>
@@ -177,12 +184,12 @@ function Vision() {
         <div className={styles.goalsArticleContainer}>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.objTitleL01, styles.textUppercase)}>
+              <h3 className={cx(styles.textUppercase, styles.objTitleL01)}>
                 Cultivating the{' '}
                 <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
               <div
-                className={[styles.printLineComplex, styles.camo01Container]}
+                className={cx(styles.printLineComplex, styles.camo01Container)}
               >
                 <div
                   className={cx(styles.printLinePattern, styles.torchCamo01)}
@@ -234,7 +241,7 @@ function Vision() {
                   </span>
                 </span>
               </h3>
-              <p className={[styles.lead, styles.offset].join(' ')}>
+              <p className={cx(styles.lead, styles.offset)}>
                 Advance the frontiers of knowledge to create a more just,
                 prosperous, and sustainable future through world-class research,
                 scholarship, and creative work
@@ -268,15 +275,10 @@ function Vision() {
                 <span className={styles.boldPunch}>Vol is a Verb</span>
               </h3>
               <div
-                className={[
-                  styles.printLineComplex,
-                  styles.camo02Container,
-                ].join(' ')}
+                className={cx(styles.printLineComplex, styles.camo02Container)}
               >
                 <div
-                  className={[styles.printLinePattern, styles.torchCamo02].join(
-                    ' '
-                  )}
+                  className={cx(styles.printLinePattern, styles.torchCamo02)}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
@@ -384,9 +386,9 @@ function Vision() {
             <p>
               <a
                 href="https://chancellor.utk.edu/vision/envisioning-the-future-of-ut-knoxville/"
-                className="exploreLink"
+                className={styles.exploreLink}
               >
-                <span aria-hidden="true">Explore Our Vision Process</span>
+                <span aria-hidden="true">Explore Our Vision Process</span>{' '}
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -403,18 +405,16 @@ function Vision() {
           </div>
         </div>
       </section>
-      <div
-        className={[styles.skinnyLongImg, styles.visionFooter].join(' ')}
-      ></div>
+      <div className={cx(styles.skinnyLongImg, styles.visionFooter)}></div>
     </Layout>
   );
 }
 
 export default Vision;
 
-// just to get Next.js not to build this page for now
-export async function getStaticProps() {
-  return {
-    notFound: true,
-  };
-}
+// // just to get Next.js not to build this page for now
+// export async function getStaticProps() {
+//   return {
+//     notFound: true,
+//   };
+// }
