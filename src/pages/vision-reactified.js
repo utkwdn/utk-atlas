@@ -30,6 +30,17 @@ const cx = (...classNames) => classNames.join(' ');
 function Vision() {
   const [playVideo, setPlayVideo] = useState(false);
 
+  const myRef = useRef();
+  const [myElementIsVisible, setMyElementIsVisible] = useState();
+  console.log('myElementIsVisible', myElementIsVisible);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setMyElementIsVisible(entry.isIntersecting);
+    });
+    observer.observe(myRef.current);
+  }, []);
+
   useEffect(() => {
     console.log(playVideo);
   });
@@ -192,7 +203,12 @@ function Vision() {
                 className={cx(styles.printLineComplex, styles.camo01Container)}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamo01)}
+                  ref={myRef}
+                  className={cx(
+                    styles.printLinePattern,
+                    styles.torchCamo01,
+                    `${myElementIsVisible ? styles.torchCamoAnimate : ''}`
+                  )}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
