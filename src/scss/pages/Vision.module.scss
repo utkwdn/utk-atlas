@@ -106,10 +106,16 @@ $font-size-base: 100% !important;
   margin: 9vh -12vw 12vh -12vw;
 
   margin: 8vh -12vw 10vh -12vw;
+  @media screen and (min-width: 1880px) {
+    max-width: 1390px;
+  }
   //  margin: 9vh -12vw 12vh -12vw;
   //width: 100vw;
 }
 .video {
+}
+.max-width-1386 {
+  max-width: 1386px;
 }
 .strip.strip-dots,
 .strip-fluid.strip-dots {
@@ -196,7 +202,7 @@ $font-size-base: 100% !important;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .Vision_stepsAnimate {
+  .stepsAnimate {
     animation-name: stepSlide;
     animation-duration: 2s;
   }

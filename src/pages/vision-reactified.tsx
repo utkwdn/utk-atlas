@@ -1,60 +1,45 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
-import Head from 'next/head';
 import styles from 'scss/pages/Vision.module.scss';
-import Script from 'next/script';
-// import ReactPlayer from 'react-player' //maybe we try this
+import { useInView } from 'react-intersection-observer';
+import ReactPlayer from 'react-player/lazy';
 import PropTypes from 'prop-types';
 
-// import cx from 'classnames';
-// create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
-// example use of local styles and joiner class
-// <div className={styles.hero202112A}>
-// <div className={cx(styles.heroHolderA, styles.layoutA)}>
 
-// function YoutubeEmbed(embedId) {
-//   return (
-//     <iframe
-//       width="100%"
-//       height="100%"
-//       src={'https://www.youtube.com/embed/' + embedId}
-//       frameBorder="0"
-//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//       allowFullScreen
-//       title="Play strategic vision video."
-//     />
-//   );
-// }
+function YoutubeEmbed(embedId) {
+  return (
+    <iframe
+      width="100%"
+      height="100%"
+      src={'https://www.youtube.com/embed/' + embedId}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Play strategic vision video."
+    />
+  );
+}
 
 function Vision() {
   const [playVideo, setPlayVideo] = useState(false);
-
-  const myRef = useRef();
-  const [myElementIsVisible, setMyElementIsVisible] = useState();
-  console.log('myElementIsVisible', myElementIsVisible);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setMyElementIsVisible(entry.isIntersecting);
-    });
-    observer.observe(myRef.current);
-  }, []);
 
   useEffect(() => {
     console.log(playVideo);
   });
 
+  const { ref: torchCamo01ref, inView: torchCamo01IsVisible } = useInView();
+  const { ref: torchCamo02ref, inView: torchCamo02IsVisible } = useInView();
+  const { ref: torchCamo03ref, inView: torchCamo03IsVisible } = useInView();
+  const { ref: stepsSlideref, inView: stepsSlideIsVisible } = useInView();
+  const { ref: objTitleL01ref, inView: objTitleL01IsVisible } = useInView();
+  const { ref: objTitleL02ref, inView: objTitleL02IsVisible } = useInView();
+  const { ref: objTitleL03ref, inView: objTitleL03IsVisible } = useInView();
+  const { ref: objTitleR01ref, inView: objTitleR01IsVisible } = useInView();
+  const { ref: objTitleR02ref, inView: objTitleR02IsVisible } = useInView();
+
   return (
     <Layout>
-      <Head>
-        <script
-          strategy="beforeInteractive"
-          type="text/javascript"
-          src="js/vision.js"
-          defer
-        ></script>
-      </Head>
       <section className={styles.hero}>
         <div className={styles.titleBlock}>
           <div
@@ -88,7 +73,7 @@ function Vision() {
             and leadership
           </p>
           <a
-            href="https://www.utk.edu/images/i/warmers/strategic-vision-2021.pdf"
+            href="https://content.cms.utk.edu/wp-content/uploads/2022/12/strategic-vision-2021.pdf"
             className={styles.visionLink}
           >
             <span>Read the full Strategic Vision document</span>
@@ -105,35 +90,30 @@ function Vision() {
               </svg>
             </span>
           </a>
-          <p>{playVideo}</p>
+
           <div className={styles.videoContainer}>
             <div className="container-fluid py-xl-5">
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
-                  <div className="ratio ratio-16x9 yt-container">
-                    {playVideo === false && (
-                      <button
-                        onClick={() => setPlayVideo(true)}
-                        className="btn border-0 yt-play"
-                      >
-                        <img
-                          src="https://www.utk.edu/images/i/warmers/video-1080p-thumb-03.jpg"
-                          async
-                          className="lazyload"
-                          alt="Play strategic vision video."
-                          width="1386"
-                          height="780"
-                        />
-                      </button>
-                    )}
-                    {playVideo === true && YoutubeEmbed('I3H4Po3dFwc')}
+                  <div className="ratio ratio-16x9 yt-container max-width-1386">
+                    <ReactPlayer
+                      url="https://youtu.be/I3H4Po3dFwc"
+                      light="https://content.cms.utk.edu/wp-content/uploads/2022/12/video-1080p-thumb-03.jpg"
+                      playing
+                      controls
+                      width="1386"
+                      height="780"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className={cx(styles.angleContainer, styles.stepsSlide)}>
+          <div
+            ref={stepsSlideref}
+            className={cx(styles.angleContainer, styles.stepsSlide)}
+          >
             <p className={styles.angleIntro}>
               We know how much is possible when we unite our individual talents
               and aspirations, put compassion front and center, and
@@ -143,7 +123,8 @@ function Vision() {
               className={cx(
                 styles.textSteps,
                 styles.textUppercase,
-                styles.stepsSlide
+                styles.stepsSlide,
+                `${stepsSlideIsVisible ? styles.stepsAnimate : ''}`
               )}
             >
               <span className={styles.angleCallout}></span>step forward
@@ -195,19 +176,26 @@ function Vision() {
         <div className={styles.goalsArticleContainer}>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.textUppercase, styles.objTitleL01)}>
+              <h3
+                ref={objTitleL01ref}
+                className={cx(
+                  styles.textUppercase,
+                  styles.objTitleL01,
+                  `${objTitleL01IsVisible ? styles.objTitleAnimate : ''}`
+                )}
+              >
                 Cultivating the{' '}
                 <span className={styles.boldPunch}>Volunteer Experience</span>
               </h3>
               <div
+                ref={torchCamo01ref}
                 className={cx(styles.printLineComplex, styles.camo01Container)}
               >
                 <div
-                  ref={myRef}
                   className={cx(
                     styles.printLinePattern,
                     styles.torchCamo01,
-                    `${myElementIsVisible ? styles.torchCamoAnimate : ''}`
+                    `${torchCamo01IsVisible ? styles.torchCamoAnimate : ''}`
                   )}
                 ></div>
               </div>
@@ -250,7 +238,13 @@ function Vision() {
                   styles.objTitleContainerR01
                 )}
               >
-                <span className={styles.objTitleR01}>
+                <span
+                  ref={objTitleR01ref}
+                  className={cx(
+                    styles.objTitleR01,
+                    `${objTitleR01IsVisible ? styles.objTitleAnimateRight : ''}`
+                  )}
+                >
                   Conducting Research{' '}
                   <span className={styles.boldPunch}>
                     That Makes Life and Lives Better
@@ -285,16 +279,26 @@ function Vision() {
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
               <h3
-                className={[styles.textUppercase, styles.objTitleL02].join('')}
+                ref={objTitleL02ref}
+                className={cx(
+                  styles.textUppercase,
+                  styles.objTitleL02,
+                  `${objTitleL02IsVisible ? styles.objTitleAnimate : ''}`
+                )}
               >
                 Ensuring a Culture Where{' '}
                 <span className={styles.boldPunch}>Vol is a Verb</span>
               </h3>
               <div
+                ref={torchCamo02ref}
                 className={cx(styles.printLineComplex, styles.camo02Container)}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamo02)}
+                  className={cx(
+                    styles.printLinePattern,
+                    styles.torchCamo02,
+                    `${torchCamo02IsVisible ? styles.torchCamoAnimate : ''}`
+                  )}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
@@ -331,7 +335,13 @@ function Vision() {
                   styles.printLineLeft
                 )}
               >
-                <span className={styles.objTitleR02}>
+                <span
+                  ref={objTitleR02ref}
+                  className={cx(
+                    styles.objTitleR02,
+                    `${objTitleR02IsVisible ? styles.objTitleAnimateRight : ''}`
+                  )}
+                >
                   Making Ourselves{' '}
                   <span className={styles.boldPunch}>Nimble and Adaptable</span>
                 </span>
@@ -362,15 +372,27 @@ function Vision() {
           </article>
           <article className={styles.goalsObj}>
             <div className={styles.objLeft}>
-              <h3 className={cx(styles.textUppercase, styles.objTitleL03)}>
+              <h3
+                ref={objTitleL03ref}
+                className={cx(
+                  styles.textUppercase,
+                  styles.objTitleL03,
+                  `${objTitleL03IsVisible ? styles.objTitleAnimate : ''}`
+                )}
+              >
                 Embodying the Modern R1,{' '}
                 <span className={styles.boldPunch}>Land-Grant University</span>
               </h3>
               <div
+                ref={torchCamo03ref}
                 className={cx(styles.printLineComplex, styles.camo03Container)}
               >
                 <div
-                  className={cx(styles.printLinePattern, styles.torchCamo03)}
+                  className={cx(
+                    styles.printLinePattern,
+                    styles.torchCamo03,
+                    `${torchCamo03IsVisible ? styles.torchCamoAnimate : ''}`
+                  )}
                 ></div>
               </div>
               <p className={cx(styles.lead, styles.offset)}>
