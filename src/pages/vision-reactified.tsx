@@ -1,32 +1,36 @@
+// import { client } from 'client';
+// import { GetStaticPropsContext } from 'next';
+// import { getNextStaticProps } from '@faustjs/next';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import styles from 'scss/pages/Vision.module.scss';
 import { useInView } from 'react-intersection-observer';
-import ReactPlayer from 'react-player/lazy';
-import PropTypes from 'prop-types';
+// import ReactPlayer from 'react-player/lazy';
+import YoutubeSwitcher from '../components/YoutubeSwitcher';
+// import PropTypes from 'prop-types';
 
-const cx = (...classNames) => classNames.join(' ');
+const cx = (...classNames: string[]) => classNames.join(' ');
 
-function YoutubeEmbed(embedId) {
-  return (
-    <iframe
-      width="100%"
-      height="100%"
-      src={'https://www.youtube.com/embed/' + embedId}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Play strategic vision video."
-    />
-  );
-}
+// function YoutubeEmbed(embedId: string) {
+//   return (
+//     <iframe
+//       width="100%"
+//       height="100%"
+//       src={'https://www.youtube.com/embed/' + embedId}
+//       frameBorder="0"
+//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//       allowFullScreen
+//       title="Play strategic vision video."
+//     />
+//   );
+// }
 
 function Vision() {
-  const [playVideo, setPlayVideo] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    console.log(playVideo);
-  });
+    setIsHydrated(true);
+  }, []);
 
   const { ref: torchCamo01ref, inView: torchCamo01IsVisible } = useInView();
   const { ref: torchCamo02ref, inView: torchCamo02IsVisible } = useInView();
@@ -38,7 +42,7 @@ function Vision() {
   const { ref: objTitleR01ref, inView: objTitleR01IsVisible } = useInView();
   const { ref: objTitleR02ref, inView: objTitleR02IsVisible } = useInView();
 
-  return (
+  return isHydrated ? (
     <Layout>
       <section className={styles.hero}>
         <div className={styles.titleBlock}>
@@ -96,13 +100,23 @@ function Vision() {
               <div className="row justify-content-center strip-row">
                 <div className="col-12 col-sm-12 col-md-12 col-xl-12 align-self-start align-self-md-center item">
                   <div className="ratio ratio-16x9 yt-container max-width-1386">
-                    <ReactPlayer
+                    {/* <ReactPlayer
                       url="https://youtu.be/I3H4Po3dFwc"
                       light="https://content.cms.utk.edu/wp-content/uploads/2022/12/video-1080p-thumb-03.jpg"
                       playing
                       controls
                       width="1386"
                       height="780"
+                    /> */}
+                    <YoutubeSwitcher
+                      figureClasses={'video-interaction'}
+                      imgAttributes={{
+                        src: 'https://content.cms.utk.edu/wp-content/uploads/2022/12/video-1080p-thumb-03.jpg',
+                        width: '1386',
+                        height: '780',
+                        alt: 'play video',
+                      }}
+                      youtubeId={'I3H4Po3dFwc'}
                     />
                   </div>
                 </div>
@@ -445,8 +459,11 @@ function Vision() {
       </section>
       <div className={cx(styles.skinnyLongImg, styles.visionFooter)}></div>
     </Layout>
+  ) : (
+    <></>
   );
 }
+// }
 
 export default Vision;
 
