@@ -2,15 +2,13 @@ import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 interface Props {
-  outerDivClasses?: string;
   figureClasses?: string;
   innerDivClasses?: string;
   imgAttributes: Partial<Record<string, string>>;
   youtubeId: string;
 }
 
-const HomepageVideo = ({
-  // outerDivClasses,
+const YoutubeSwitcher = ({
   figureClasses,
   innerDivClasses,
   imgAttributes,
@@ -25,31 +23,14 @@ const HomepageVideo = ({
   }, []);
 
   return (
-    // <div
-    //   className={outerDivClasses || ''}
-    //   style={{ width: '100%', height: '100%', float: 'none' }}
-    // >
-    <figure
-      className={figureClasses || ''}
-      // style={{ height: '100%', float: 'none' }}
-    >
+    <figure className={figureClasses || ''}>
       <div className={innerDivClasses || ''} style={{ width: '100%' }}>
         <div
           style={{
             position: 'relative',
-            // paddingTop: '56.25%',
-            // width: '100%',
           }}
         >
-          <div
-          // style={{
-          //   position: 'absolute',
-          //   top: '0',
-          //   bottom: '0',
-          //   left: '0',
-          //   right: '0',
-          // }}
-          >
+          <div>
             {
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -136,8 +117,7 @@ const HomepageVideo = ({
         </div>
       </div>
     </figure>
-    // </div>
   );
 };
 
-export default HomepageVideo;
+export default YoutubeSwitcher;
