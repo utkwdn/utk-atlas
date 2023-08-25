@@ -291,27 +291,29 @@ const Alpha = () => {
               <h3 aria-live="assertive" aria-relevant="all" ref={noResultsRef}>
                 {NO_RESULTS}
               </h3>
-              <p className="fancyLink">
-                {/* Pass along search term with link to search page */}
-                <Link
-                  href={`/search${
-                    inputRef.current ? `/${inputRef.current.value}` : ''
-                  }`}
-                >
-                  Search all of utk.edu
-                </Link>
-              </p>
+
+              {/* Pass along search term with link to search page */}
+              <Link
+                href={`/search${
+                  inputRef.current ? `/${inputRef.current.value}` : ''
+                }`}
+                className={styles.fancyLink}
+              >
+                Search all of utk.edu
+              </Link>
             </div>
           )}
         </section>
       </section>
       <section className={styles['request-container']}>
-        <a
-          href="https://communications.utk.edu/a-z-index-update-request/"
-          className={styles.fancyLink}
-        >
-          Request an update to the index
-        </a>
+        <div className={styles['request-links-container']}>
+          <Link
+            href="https://communications.utk.edu/a-z-index-update-request/"
+            className={styles.fancyLink}
+          >
+            Request an update to the index
+          </Link>
+        </div>
       </section>
     </Layout>
   );

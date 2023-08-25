@@ -17,9 +17,15 @@
 }
 .h1Container {
   max-width: $global-layout-content;
+  max-width: 1500px;
+  width: calc(100% - 2vw);
+  // border: 1px solid blue;
   padding: calc($spacer * 2) calc($spacer * 2) 0 calc($spacer * 2);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  @media screen and (min-width: 800px) {
+    padding: calc($spacer * 2) calc($spacer * 2) 0 calc($spacer * 1);
+  }
+
   @media screen and (min-width: 1600px) {
     padding: calc($spacer * 4) 0 0 0;
   }
@@ -92,29 +98,47 @@ p.title {
 }
 .container {
   position: relative;
-  max-width: 1820px;
+  max-width: 1500px;
   margin: 0 auto;
   height: fit-content;
   overflow: visible !important;
+  // border: 1px solid red;
 }
 .request-container {
-  max-width: 1820px;
-  padding: 4vw 2vw;
+  max-width: 1500px;
+  padding: 4vw 0;
   margin: 0 auto;
+  // border: 1px solid blue;
+  width: calc(100% - 2vw);
+  position: relative;
+  margin: 0 auto;
+  @media screen and (min-width: 800px) {
+    padding: 4vw 1rem;
+  }
+}
+.request-links-container {
+  width: 90%;
+  margin: 0 auto;
+  // border: 1px solid blue;
+  @media screen and (min-width: 800px) {
+    width: 100%;
+  }
 }
 
 .search-container {
-  width: 90%;
+  width: 100%; // this container hides the sticky letters scrolling up on mobile.
   margin: 3rem auto 0 auto;
   align-self: flex-start;
   position: sticky;
   top: -9rem;
   background-color: $white;
   z-index: 2;
+  padding: 0 2rem;
   // background-color: pink; /* for mobile this is above the results as they slide up */
   @media screen and (min-width: 800px) {
     // margin: 3rem auto;
     position: sticky;
+    padding: 0;
     top: 8rem;
   }
   h2 {
@@ -144,6 +168,7 @@ p.title {
     padding: 3rem 5%;
     margin: 2rem 0;
   }
+
   h3 {
     margin-top: 1rem;
   }
@@ -193,6 +218,8 @@ p.title {
 }
 .results {
   width: 90%;
+
+  // border: 1px solid purple;
   margin: 0 auto;
   // border: 1px solid green;
   [id] {
@@ -242,19 +269,27 @@ p.title {
     padding: 0 0 0 2%;
 
     @media screen and (min-width: 800px) {
-      // width: 8vw;
-      flex-basis: 10vw;
-      min-width: 10vw;
+      flex-basis: 10%;
+      min-width: 10%;
       // border: 2px solid pink;
-      text-align: right;
-      margin-right: 1rem;
       text-align: center;
+      margin-left: 0;
+      margin-right: 1rem;
       top: -1px;
     }
+    @media screen and (min-width: 1200px) {
+      flex-basis: 10vw;
+      min-width: 10vw;
+    }
     @media screen and (min-width: 1500px) {
-      width: 18%;
+      width: auto;
       text-align: right;
-      margin-right: 2rem;
+      margin-right: 1rem;
+      min-width: 10rem;
+      margin-left: 0;
+      flex-basis: 10rem;
+      // border: 1px solid green;
+      text-align: center;
     }
 
     h3.letter {
@@ -376,8 +411,7 @@ p.title {
   font-weight: $font-weight-bold;
   letter-spacing: 0.01rem;
   text-align: rileght;
-  color: $utsmokey;
-
+  color: $utlinkriver;
   * {
     display: inline-flex;
   }
@@ -398,7 +432,7 @@ p.title {
   }
   &:hover {
     text-decoration: none;
-    color: $utlinkriver;
+    color: $utlinkhover;
     // box-shadow: inset 0px -1px $utlinkriver;
   }
   &:hover:after {
@@ -435,7 +469,7 @@ CSS Grid layout for modern browsers:
   @media screen and (min-width: 800px) {
     .container {
       grid-template-columns: minmax(calc(55% + 4vw), 1.3fr) 1fr;
-      padding: 0 2vw;
+      padding: 0 1rem;
     }
     .results {
       grid-column: 1 / 2;
@@ -452,7 +486,7 @@ CSS Grid layout for modern browsers:
   @media screen and (min-width: 1300px) {
     .container {
       grid-template-columns: 2fr 1fr;
-      padding: 0 2vw;
+      // padding: 0 2vw;
     }
     .search-container {
       grid-column: 2 / 3;
