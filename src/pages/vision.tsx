@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import styles from 'scss/pages/Vision.module.scss';
+import Head from 'next/head';
 import { useInView } from 'react-intersection-observer';
 // import ReactPlayer from 'react-player/lazy';
 import YoutubeSwitcher from '../components/YoutubeSwitcher';
@@ -44,6 +45,9 @@ function Vision() {
 
   return isHydrated ? (
     <Layout>
+      <Head>
+        <title>Strategic Vision</title>
+      </Head>
       <section className={styles.hero}>
         <div className={styles.titleBlock}>
           <div
