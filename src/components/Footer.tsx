@@ -28,7 +28,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
             <div className="site-info col-12 col-md-7 col-lg-8">
               <div className="col-auto">
                 <div className="row">
-                  <div className="col-6">
+                  <div className="col-6 footer-menu">
                     <h3 className="text-white h4">Tools</h3>
                     <ul id="list-unstyled" className="list-unstyled">
                       {tools.flatMap((tool) => {
@@ -54,7 +54,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                       })}
                     </ul>
                   </div>
-                  <div className="col-6">
+                  <div className="col-6 footer-menu">
                     <h3 className="text-white h4">Campus Links</h3>
                     <ul className="list-unstyled">
                       {links.flatMap((link) => {
@@ -82,7 +82,7 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
                   </div>
                 </div>
               </div>
-              <div className="row row-cols-2 row-cols-sm-4 row-cols-md-2 row-cols-lg-4 g-2  py-5">
+              <div className="row row-cols-2 row-cols-sm-4 row-cols-md-2 row-cols-lg-4 g-2  py-5 social-links">
                 <a
                   className="text-start col twitter text-white footer-links"
                   href="http://twitter.com/utknoxville"

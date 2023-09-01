@@ -1,4 +1,5 @@
 @import './src/scss/common';
+
 // $utorange: #ff8200;
 // $utgray1: #f6f6f6;
 // $utgray2: #e0e0e0;
@@ -34,7 +35,7 @@ $font-size-base: 100% !important;
 // }
 
 .hero {
-  background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') -10vh -30vw
+  background: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/vision-dots-01.png') -10vh -30vw
     no-repeat;
   background-size: contain;
   padding: 4vw;
@@ -105,10 +106,16 @@ $font-size-base: 100% !important;
   margin: 9vh -12vw 12vh -12vw;
 
   margin: 8vh -12vw 10vh -12vw;
+  @media screen and (min-width: 1880px) {
+    max-width: 1390px;
+  }
   //  margin: 9vh -12vw 12vh -12vw;
   //width: 100vw;
 }
 .video {
+}
+.max-width-1386 {
+  max-width: 1386px;
 }
 .strip.strip-dots,
 .strip-fluid.strip-dots {
@@ -128,8 +135,8 @@ $font-size-base: 100% !important;
 .angleContainer,
 .angleContainer02 {
   // special callout
-  background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') 0 0
-    no-repeat;
+  background: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/vision-dots-01.png')
+    0 0 no-repeat;
   background-color: white;
   background-size: 50%;
   background-position: top right;
@@ -168,7 +175,7 @@ $font-size-base: 100% !important;
 
 .angleContainer02 {
   background-color: $dotgrey;
-  background-image: url('https://www.utk.edu/images/i/warmers/torch-camo-white.png');
+  background-image: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/torch-camo-white.png');
   background-position: top left;
   background-size: 50%;
   width: 90vw;
@@ -195,7 +202,7 @@ $font-size-base: 100% !important;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .Vision_stepsAnimate {
+  .stepsAnimate {
     animation-name: stepSlide;
     animation-duration: 2s;
   }
@@ -341,15 +348,15 @@ $font-size-base: 100% !important;
 .missionTorch {
   height: 20vh;
   z-index: 5;
-  background: url('https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg')
-    0 0 no-repeat;
+  background: url('//images.utk.edu/vision/vision-torch-outline-02.svg') 0 0 0 0
+    no-repeat;
   background-size: contain;
   position: relative;
   background-position: left;
   border: 1px solid red;
 }
 .skinnyLongImg {
-  background-image: url('https://www.utk.edu/images/i/warmers/torch-pattern-on-orange-03.jpg');
+  background-image: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/vision-torch-pattern-on-orange-03-scaled.jpg');
   height: 25vh;
   width: auto;
   background-size: cover;
@@ -465,7 +472,7 @@ Treatments
 }
 .greyBkg {
   background-color: $dotgrey;
-  background-image: url('https://www.utk.edu/images/i/warmers/torch-camo-white.png');
+  background-image: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/torch-camo-white.png');
 }
 
 .article {
@@ -512,6 +519,7 @@ Treatments
     padding-top: 2vh;
     position: relative;
     z-index: 4;
+    margin-top: 0;
   }
   ul {
     list-style: none;
@@ -589,6 +597,7 @@ span.objTitleR02 {
   display: block;
   position: relative;
 }
+
 .visionLink,
 .exploreLink {
   /* margin: 1rem 6vw;
@@ -601,7 +610,7 @@ span.objTitleR02 {
   font-family: $font-stack-light;
   color: #1a73c5;
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: none !important;
   text-align: bottom;
   margin-top: 5vh;
   margin-top: 2rem;
@@ -636,6 +645,7 @@ span.objTitleR02 {
   display: inline;
   max-width: 40vw;
 }
+
 /*
 .flameIcon {
   content: "";
@@ -761,7 +771,7 @@ span.objTitleR02 {
   top: 0;
   z-index: 2;
   .printLinePattern {
-    background-image: url('https://www.utk.edu/images/i/warmers/rotated-torch35deg.svg');
+    background-image: url('//images.utk.edu/vision/rotated-torch35deg.svg');
     opacity: 100;
     // pattern was manually rotated to match 35 deg
     background-repeat: no-repeat;
@@ -833,9 +843,8 @@ ul.ObjList {
 .flagshipTorch {
   z-index: 5;
   // background: url("../img/flagship-torch-03.png") 0 0 no-repeat;
-  background: url('https://www.utk.edu/images/i/warmers/vision-torch-outline-02.svg')
-    0 0 no-repeat;
-
+  background-image: url('https://images.utk.edu/vision/vision-torch-outline-02.svg');
+  background-repeat: no-repeat;
   background-size: contain;
   position: relative;
   background-position: right;
@@ -844,6 +853,7 @@ ul.ObjList {
   margin-bottom: -2vh;
   //filter: drop-shadow(0 -30px 10px rgba(230, 89, 51, 0.2));
 }
+
 .triangle-bottomright {
   width: 0;
   height: 0;
@@ -859,7 +869,7 @@ ul.ObjList {
 /* viewports 645px and wider: */
 @media screen and (min-width: 40em) {
   .hero {
-    background: url('https://www.utk.edu/images/i/warmers/vision-dots-01.png') -30vh -30vw
+    background: url('https://content.cms.utk.edu/wp-content/uploads/2022/12/vision-dots-01.png') -30vh -30vw
       no-repeat;
     background-size: contain;
     padding: 4vw;
@@ -997,7 +1007,7 @@ ul.ObjList {
   }
   // FontTWeak
   .vision .lead {
-    font-size: calc(1.1rem + 2vw);
+    font-size: calc(1.1rem + 2vw) !important;
   }
   .angleContainer {
     p.angleIntro {
@@ -1022,6 +1032,11 @@ ul.ObjList {
   }
 }
 
+@media (min-width: 1200px) {
+  .lead {
+    font-size: 1.5625rem;
+  }
+}
 /*--------------------------------------------------------------
 CSS Grid layout for modern browsers:
 --------------------------------------------------------------*/
