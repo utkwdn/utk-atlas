@@ -229,8 +229,8 @@ const Alpha = () => {
             </form>
           </div>
 
-          <section className={styles['alpha-container']}>
-            {activeChars.length > 0 ? (
+          {activeChars.length > 0 ? (
+            <section className={styles['alpha-container']}>
               <nav
                 className={styles.alpha}
                 ref={resultsNavRef}
@@ -245,70 +245,75 @@ const Alpha = () => {
                   );
                 })}
               </nav>
-            ) : (
-              /*
+            </section>
+          ) : (
+            <></>
+          )}
+        </div>
+        <section className={styles.results}>
+          {activeChars.length > 0 ? (
+            <>
+              {activeChars.map((char) => (
+                <div
+                  key={char}
+                  className={styles['letter-group']}
+                  id={toDomId(char)}
+                >
+                  <div className={styles['letter-container']}>
+                    <h3 className={styles.letter}>{char}</h3>
+                  </div>
+                  <ul>
+                    {itemsByChar.current.get(char)?.flatMap((item) =>
+                      activeItems.includes(item) ? (
+                        <li key={item.id} className={styles['result-title']}>
+                          <a href={item.url}>{item.label}</a>
+                          <br />
+                          <span className={styles['result-url']}>
+                            {item.url.replace(/^https?:\/\//, '')}
+                          </span>
+                        </li>
+                      ) : (
+                        []
+                      )
+                    )}
+                  </ul>
+                </div>
+              ))}
+            </>
+          ) : (
+            /*
                 Use assertive so that screen-readers announce "No results found" as soon as possible
                 while user is typing in search-box. In the form-submit handler, we also trigger
                 a re-announcement if needed (see `handleSubmit` above).
               */
-              <div>
-                <h3
-                  aria-live="assertive"
-                  aria-relevant="all"
-                  ref={noResultsRef}
-                >
-                  {NO_RESULTS}
-                </h3>
-                <p className="fancyLink">
-                  {/* Pass along search term with link to search page */}
-                  <Link
-                    href={`/search${
-                      inputRef.current ? `/${inputRef.current.value}` : ''
-                    }`}
-                  >
-                    Search all of utk.edu
-                  </Link>
-                </p>
-              </div>
-            )}
-          </section>
-        </div>
-        <section className={styles.results}>
-          {activeChars.map((char) => (
-            <div
-              key={char}
-              className={styles['letter-group']}
-              id={toDomId(char)}
-            >
-              <div className={styles['letter-container']}>
-                <h3 className={styles.letter}>{char}</h3>
-              </div>
-              <ul>
-                {itemsByChar.current.get(char)?.flatMap((item) =>
-                  activeItems.includes(item) ? (
-                    <li key={item.id} className={styles['result-title']}>
-                      <a href={item.url}>{item.label}</a>
-                      <br />
-                      <span className={styles['result-url']}>
-                        {item.url.replace(/^https?:\/\//, '')}
-                      </span>
-                    </li>
-                  ) : (
-                    []
-                  )
-                )}
-              </ul>
+
+            <div>
+              <h3 aria-live="assertive" aria-relevant="all" ref={noResultsRef}>
+                {NO_RESULTS}
+              </h3>
+
+              {/* Pass along search term with link to search page */}
+              <Link
+                href={`/search${
+                  inputRef.current ? `/${inputRef.current.value}` : ''
+                }`}
+                className={styles.fancyLink}
+              >
+                Search all of utk.edu
+              </Link>
             </div>
-          ))}
+          )}
         </section>
       </section>
       <section className={styles['request-container']}>
-        <a
-          href="https://communications.utk.edu/a-z-index-update-request/"
-          className={styles.fancyLink}
-        >
-          Request an update to the index
-        </a>
+        <div className={styles['request-links-container']}>
+          <Link
+            href="https://communications.utk.edu/a-z-index-update-request/"
+            className={styles.fancyLink}
+          >
+            Request an update to the index
+          </Link>
+        </div>
       </section>
     </Layout>
   );

@@ -8,3 +8,23 @@
     }
   }
 }
+.social-links {
+  a {
+    padding: clamp(calc($spacer * 0.5), 0.2vw, calc($spacer * 1.25)) 0;
+    margin: 0;
+  }
+}
+.footer-menu {
+  li {
+    padding: clamp(calc($spacer * 0.5), 0.2vw, calc($spacer * 1.25)) 0;
+    margin: 0;
+  }
+}
+a.footer-links {
+  text-decoration: none;
+  line-height: 1.25rem;
+  display: inline-block;
+  &:hover {
+    text-decoration: underline;
+  }
+}

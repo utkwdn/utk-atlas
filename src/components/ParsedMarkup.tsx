@@ -9,6 +9,7 @@ import parse, {
 import Link from 'next/link';
 import HomepageVideo from './HomepageVideo';
 import ApplyPageVideo from './ApplyPageVideo';
+import YoutubeSwitcher from './YoutubeSwitcher';
 import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
 import SlateFormReplace from './SlateFormReplace';
@@ -229,158 +230,273 @@ const toReactNode = ({
           }
         }
 
+        case 'figure': {
+          const { class: figureClasses } = attribs;
+
+          // insert youtubeSwitcher
+          if (figureClasses && /\byoutubeSwitcher\b/g.test(figureClasses)) {
+            const figureClassArray = figureClasses.split(' ');
+            let allClasses = '';
+            let youtubeId = '';
+
+            figureClassArray.forEach((figureClass) => {
+              if (figureClass.includes('youtubeSwitcher-')) {
+                // split class on first '-' to get youtube ID
+                const index = figureClass.indexOf('-');
+                allClasses += `${figureClass.slice(0, index)} `;
+                youtubeId = figureClass.slice(index + 1);
+              } else {
+                allClasses += `${figureClass} `;
+              }
+            });
+
+            const innerDiv = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'div'
+            );
+
+            // If figure doesn't include inner div, search for img child
+            if (!innerDiv) {
+              const img = domNode.children.find(
+                (child): child is DOMHandlerElement =>
+                  isElement(child) && child.name === 'img'
+              );
+
+              if (!img) {
+                console.error(
+                  `youtubeSwitcher figure with video ID ${youtubeId} contains no img`
+                );
+                return;
+              }
+
+              const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+
+              if (!imgAttribs.src) {
+                console.error(
+                  `youtubeSwitcher (nid) figure with video ID ${youtubeId} is missing a src.`
+                );
+                return;
+              }
+
+              if (imgAttribs.class) {
+                imgAttribs.className = imgAttribs.class;
+                delete imgAttribs.class;
+              }
+
+              if (imgAttribs.srcset) {
+                imgAttribs.srcSet = imgAttribs.srcset;
+                delete imgAttribs.srcset;
+              }
+
+              return (
+                <YoutubeSwitcher
+                  figureClasses={allClasses}
+                  imgAttributes={imgAttribs}
+                  youtubeId={youtubeId}
+                />
+              );
+              // Otherwise img should be child of inner div
+            } else {
+              const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+                innerDiv.attribs;
+              const innerDivClasses = innerDivAttribs.class || '';
+
+              const img = innerDiv.children.find(
+                (child): child is DOMHandlerElement =>
+                  isElement(child) && child.name === 'img'
+              );
+
+              if (!img) {
+                console.error(
+                  `youtubeSwitcher figure with video ID ${youtubeId} contains no img`
+                );
+                return;
+              }
+
+              const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+
+              if (!imgAttribs.src) {
+                console.error(
+                  `youtubeSwitcher figure with video ID ${youtubeId} is missing a src.`
+                );
+                return;
+              }
+
+              if (imgAttribs.class) {
+                imgAttribs.className = imgAttribs.class;
+                delete imgAttribs.class;
+              }
+
+              if (imgAttribs.srcset) {
+                imgAttribs.srcSet = imgAttribs.srcset;
+                delete imgAttribs.srcset;
+              }
+
+              return (
+                <YoutubeSwitcher
+                  figureClasses={allClasses}
+                  innerDivClasses={innerDivClasses}
+                  imgAttributes={imgAttribs}
+                  youtubeId={youtubeId}
+                />
+              );
+            }
+          }
+        }
+
         case 'div': {
           const { class: outerDivClasses } = attribs;
 
-          // insert HomepageVideo (target is `div.homepageVideo`)
-          if (outerDivClasses && /\bhomepageVideo\b/g.test(outerDivClasses)) {
-            const figure = domNode.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'figure'
-            );
+          // // insert HomepageVideo (target is `div.homepageVideo`)
+          // if (outerDivClasses && /\bhomepageVideo\b/g.test(outerDivClasses)) {
+          //   const figure = domNode.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'figure'
+          //   );
 
-            if (!figure) {
-              console.error(
-                'The `div.homepageVideo` did not have the expected child-figure.'
-              );
-              return;
-            }
+          //   if (!figure) {
+          //     console.error(
+          //       'The `div.homepageVideo` did not have the expected child-figure.'
+          //     );
+          //     return;
+          //   }
 
-            const figureAttribs: Partial<typeof figure.attribs> =
-              figure.attribs;
-            const figureClasses = figureAttribs.class;
+          //   const figureAttribs: Partial<typeof figure.attribs> =
+          //     figure.attribs;
+          //   const figureClasses = figureAttribs.class;
 
-            const innerDiv = figure.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'div'
-            );
+          //   const innerDiv = figure.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'div'
+          //   );
 
-            if (!innerDiv) {
-              console.error(
-                'The `figure` in `div.homepageVideo` did not have the expected child-div.'
-              );
-              return;
-            }
+          //   if (!innerDiv) {
+          //     console.error(
+          //       'The `figure` in `div.homepageVideo` did not have the expected child-div.'
+          //     );
+          //     return;
+          //   }
 
-            const innerDivAttribs: Partial<typeof innerDiv.attribs> =
-              innerDiv.attribs;
-            const innerDivClasses = innerDivAttribs.class;
+          //   const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+          //     innerDiv.attribs;
+          //   const innerDivClasses = innerDivAttribs.class;
 
-            const img = innerDiv.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'img'
-            );
+          //   const img = innerDiv.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'img'
+          //   );
 
-            if (!img) {
-              console.error(
-                'The child-div of the child-figure of `div.homepageVideo` did not have the expected child-img.'
-              );
-              return;
-            }
+          //   if (!img) {
+          //     console.error(
+          //       'The child-div of the child-figure of `div.homepageVideo` did not have the expected child-img.'
+          //     );
+          //     return;
+          //   }
 
-            const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+          //   const imgAttribs: Partial<typeof img.attribs> = img.attribs;
 
-            if (!imgAttribs.src) {
-              console.error(
-                'The `img` in `figure.homepageVideo` is missing a `src`.'
-              );
-              return;
-            }
+          //   if (!imgAttribs.src) {
+          //     console.error(
+          //       'The `img` in `figure.homepageVideo` is missing a `src`.'
+          //     );
+          //     return;
+          //   }
 
-            if (imgAttribs.class) {
-              imgAttribs.className = imgAttribs.class;
-              delete imgAttribs.class;
-            }
+          //   if (imgAttribs.class) {
+          //     imgAttribs.className = imgAttribs.class;
+          //     delete imgAttribs.class;
+          //   }
 
-            if (imgAttribs.srcset) {
-              imgAttribs.srcSet = imgAttribs.srcset;
-              delete imgAttribs.srcset;
-            }
+          //   if (imgAttribs.srcset) {
+          //     imgAttribs.srcSet = imgAttribs.srcset;
+          //     delete imgAttribs.srcset;
+          //   }
 
-            return (
-              <HomepageVideo
-                outerDivClasses={outerDivClasses}
-                figureClasses={figureClasses}
-                innerDivClasses={innerDivClasses}
-                imgAttributes={imgAttribs}
-              />
-            );
-          }
+          //   return (
+          //     <HomepageVideo
+          //       outerDivClasses={outerDivClasses}
+          //       figureClasses={figureClasses}
+          //       innerDivClasses={innerDivClasses}
+          //       imgAttributes={imgAttribs}
+          //     />
+          //   );
+          // }
 
-          // insert ApplyPageVideo (target is `div.applyPageVideo`)
-          if (outerDivClasses && /\bapplyPageVideo\b/g.test(outerDivClasses)) {
-            const figure = domNode.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'figure'
-            );
+          // // insert ApplyPageVideo (target is `div.applyPageVideo`)
+          // if (outerDivClasses && /\bapplyPageVideo\b/g.test(outerDivClasses)) {
+          //   const figure = domNode.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'figure'
+          //   );
 
-            if (!figure) {
-              console.error(
-                'The `div.applyPageVideo` did not have the expected child-figure.'
-              );
-              return;
-            }
+          //   if (!figure) {
+          //     console.error(
+          //       'The `div.applyPageVideo` did not have the expected child-figure.'
+          //     );
+          //     return;
+          //   }
 
-            const figureAttribs: Partial<typeof figure.attribs> =
-              figure.attribs;
-            const figureClasses = figureAttribs.class;
+          //   const figureAttribs: Partial<typeof figure.attribs> =
+          //     figure.attribs;
+          //   const figureClasses = figureAttribs.class;
 
-            const innerDiv = figure.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'div'
-            );
+          //   const innerDiv = figure.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'div'
+          //   );
 
-            if (!innerDiv) {
-              console.error(
-                'The `figure` in `div.applyPageVideo` did not have the expected child-div.'
-              );
-              return;
-            }
+          //   if (!innerDiv) {
+          //     console.error(
+          //       'The `figure` in `div.applyPageVideo` did not have the expected child-div.'
+          //     );
+          //     return;
+          //   }
 
-            const innerDivAttribs: Partial<typeof innerDiv.attribs> =
-              innerDiv.attribs;
-            const innerDivClasses = innerDivAttribs.class;
+          //   const innerDivAttribs: Partial<typeof innerDiv.attribs> =
+          //     innerDiv.attribs;
+          //   const innerDivClasses = innerDivAttribs.class;
 
-            const img = innerDiv.children.find(
-              (child): child is DOMHandlerElement =>
-                isElement(child) && child.name === 'img'
-            );
+          //   const img = innerDiv.children.find(
+          //     (child): child is DOMHandlerElement =>
+          //       isElement(child) && child.name === 'img'
+          //   );
 
-            if (!img) {
-              console.error(
-                'The child-div of the child-figure of `div.applyPageVideo` did not have the expected child-img.'
-              );
-              return;
-            }
+          //   if (!img) {
+          //     console.error(
+          //       'The child-div of the child-figure of `div.applyPageVideo` did not have the expected child-img.'
+          //     );
+          //     return;
+          //   }
 
-            const imgAttribs: Partial<typeof img.attribs> = img.attribs;
+          //   const imgAttribs: Partial<typeof img.attribs> = img.attribs;
 
-            if (!imgAttribs.src) {
-              console.error(
-                'The `img` in `figure.applyPageVideo` is missing a `src`.'
-              );
-              return;
-            }
+          //   if (!imgAttribs.src) {
+          //     console.error(
+          //       'The `img` in `figure.applyPageVideo` is missing a `src`.'
+          //     );
+          //     return;
+          //   }
 
-            if (imgAttribs.class) {
-              imgAttribs.className = imgAttribs.class;
-              delete imgAttribs.class;
-            }
+          //   if (imgAttribs.class) {
+          //     imgAttribs.className = imgAttribs.class;
+          //     delete imgAttribs.class;
+          //   }
 
-            if (imgAttribs.srcset) {
-              imgAttribs.srcSet = imgAttribs.srcset;
-              delete imgAttribs.srcset;
-            }
+          //   if (imgAttribs.srcset) {
+          //     imgAttribs.srcSet = imgAttribs.srcset;
+          //     delete imgAttribs.srcset;
+          //   }
 
-            return (
-              <ApplyPageVideo
-                outerDivClasses={outerDivClasses}
-                figureClasses={figureClasses}
-                innerDivClasses={innerDivClasses}
-                imgAttributes={imgAttribs}
-              />
-            );
-          }
+          //   return (
+          //     <ApplyPageVideo
+          //       outerDivClasses={outerDivClasses}
+          //       figureClasses={figureClasses}
+          //       innerDivClasses={innerDivClasses}
+          //       imgAttributes={imgAttribs}
+          //     />
+          //   );
+          // }
+
           // Dynamic Content - If div has class of 'dynamic-content' return child element based on dynamicKey (from URL param)
           if (outerDivClasses && /\bdynamic-content\b/g.test(outerDivClasses)) {
             const dynamicKey = dynamicSrc || 'no-dynamic-key';

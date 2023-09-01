@@ -52,10 +52,7 @@ module.exports = withFaust({
         source: '/ittakesavolunteer',
         destination: '/ittakesavolunteer.html',
       },
-      {
-        source: '/vision',
-        destination: '/vision.html',
-      },
+
       {
         source: '/robots.txt',
         destination: '/api/robots',
