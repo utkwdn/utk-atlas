@@ -1,11 +1,10 @@
 import Layout from '../../components/Layout';
-import { client } from 'client';
-import { GetStaticPropsContext } from 'next';
+// import { GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
-import { getNextStaticProps } from '@faustjs/next';
+// import { getNextStaticProps } from '@faustwp/core';
 import Head from 'next/head';
-import Link from 'next/link';
-import Tabs from 'react-bootstrap/Tabs';
+// import Link from 'next/link';
+// import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 import SiteSearch from '../../components/SiteSearch';
@@ -264,16 +263,16 @@ function Search() {
 
 export default Search;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page: Search,
-    client,
-  });
-}
+// export async function getStaticProps(context: GetStaticPropsContext) {
+//   return getNextStaticProps(context, {
+//     Page: Search,
+//     client,
+//   });
+// }
 
-export function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  };
-}
+// export function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: 'blocking',
+//   };
+// }

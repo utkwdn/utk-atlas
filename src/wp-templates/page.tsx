@@ -1,16 +1,16 @@
-import { getNextStaticProps, is404 } from '@faustjs/next';
+import { gql } from '../__generated__';
+import { GetPageQuery } from '../__generated__/graphql';
+// import { useQuery } from '@apollo/client';
+import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
 import { Footer, Header, PageTitle } from 'components';
-import { GetStaticPropsContext } from 'next';
+// import { GetStaticPaths, GetStaticProps } from 'next';
+// import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import { client, Page as PageType } from 'client';
 import ParsedMarkup from 'components/ParsedMarkup';
 import SlateModal from 'components/SlateModal';
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 import { useState, useEffect, useRef } from 'react';
-
-export interface PageProps {
-  page: PageType | null | undefined;
-}
+import parse from 'html-react-parser';
 
 interface FormInfoInnerObject {
   tabTitle: string;
@@ -24,19 +24,22 @@ interface FormInfoObject {
   formInfo: FormInfoInnerObject[];
 }
 
-export function PageComponent({ page }: PageProps) {
+const Page: FaustTemplate<GetPageQuery> = (props) => {
   const [dynamicSrc, setDynamicSrc] = useState<string>('');
   const [slateFormInfo, setSlateFormInfo] = useState<FormInfoObject[]>([]);
   const [clickedModalId, setClickedModalId] = useState<string>('');
   const [trigger, setTrigger] = useState<number>(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const { useQuery } = client;
-  const generalSettings = useQuery().generalSettings;
+  const pageData = props.data?.page;
 
-  const pageSlug = page?.slug;
-  const yoastHead = parse(page?.seo?.fullHead || '');
-  const showPageTitle = page?.showsHeadline || false;
+  const pageSlug = pageData?.slug;
+  const yoastString = pageData?.seo?.fullHead || '';
+  const showPageTitle = pageData?.showsHeadline;
+  const pageTitle = pageData?.title || '';
+  const pageContent = pageData?.content || '';
+  const bgImageUrl = pageData?.featuredImage?.node.sourceUrl || undefined;
+  const siteTitle = props.data?.generalSettings?.title || undefined;
 
   const handleSlateButtonClick = (modalId: string) => {
     setTrigger((trigger) => trigger + 1);
@@ -56,13 +59,10 @@ export function PageComponent({ page }: PageProps) {
     <>
       <Header />
 
-      <Head>{yoastHead}</Head>
+      <Head>{parse(yoastString)}</Head>
 
       {showPageTitle ? (
-        <PageTitle
-          title={page?.title() || ''}
-          bgImage={page?.featuredImage?.node?.sourceUrl() || undefined}
-        />
+        <PageTitle title={pageTitle} bgImage={bgImageUrl} />
       ) : (
         ''
       )}
@@ -71,7 +71,7 @@ export function PageComponent({ page }: PageProps) {
         <div className="container-xxl pt-5">
           <div>
             <ParsedMarkup
-              content={page?.content() || ''}
+              content={pageContent}
               elevateFormInfo={setSlateFormInfo}
               elevateSlateButtonClick={handleSlateButtonClick}
               dynamicSrc={dynamicSrc || ''}
@@ -80,7 +80,7 @@ export function PageComponent({ page }: PageProps) {
         </div>
       </main>
 
-      <Footer copyrightHolder={generalSettings?.title || undefined} />
+      <Footer />
 
       {/* Slate Form Modal */}
       {slateFormInfo.length > 0 ? (
@@ -101,28 +101,51 @@ export function PageComponent({ page }: PageProps) {
       )}
     </>
   );
-}
+};
 
-export default function Page() {
-  const { usePage } = client;
-  const page = usePage();
-
-  return <PageComponent page={page} />;
-}
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page,
-    client,
-    // Refresh WP content after 2 min. Default is 900 seconds (15 min.)
-    revalidate: 120,
-    notFound: await is404(context, { client }),
-  });
-}
-
-export function getStaticPaths() {
+Page.variables = ({ databaseId }, ctx) => {
   return {
-    paths: [],
-    fallback: 'blocking',
+    databaseId,
+    asPreview: ctx?.asPreview,
   };
-}
+};
+
+Page.query = gql(`
+  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {
+    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+      content
+      slug
+      seo {
+        fullHead
+      }
+      showsHeadline
+      title
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+    }
+    generalSettings {
+      title
+    }
+  }
+`);
+
+// export function getStaticProps(ctx: GetStaticPropsContext) {
+//   return getNextStaticProps(ctx, {
+//     Page,
+//   });
+// }
+// export const getStaticProps: GetStaticProps = (ctx) => {
+//   return getNextStaticProps(ctx, { Page: Page, revalidate: 120 });
+// };
+
+// export const getStaticPaths: GetStaticPaths = () => {
+//   return {
+//     paths: [],
+//     fallback: 'blocking',
+//   };
+// };
+
+export default Page;
