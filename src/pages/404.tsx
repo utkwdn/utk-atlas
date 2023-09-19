@@ -5,8 +5,7 @@ import SearchBody from '../components/404SearchBody';
 import { SSRProvider } from 'react-bootstrap';
 import styles from 'scss/pages/404.module.scss';
 import { GetStaticPropsContext } from 'next';
-import { getNextStaticProps } from '@faustjs/next';
-import { client } from 'client';
+import { getNextStaticProps } from '@faustwp/core';
 
 const NotFound = () => {
   return (
@@ -44,9 +43,9 @@ const NotFound = () => {
 
 export default NotFound;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page: NotFound,
-    client,
-  });
-}
+// export async function getStaticProps(context: GetStaticPropsContext) {
+//   return getNextStaticProps(context, {
+//     Page: NotFound,
+//     client,
+//   });
+// }

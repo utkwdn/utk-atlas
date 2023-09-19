@@ -11,9 +11,9 @@ export const getStaticProps: GetStaticProps = (ctx) => {
   return getWordPressProps({ ctx });
 };
 
-// export const getStaticPaths: GetStaticPaths = () => {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// };
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};

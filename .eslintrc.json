@@ -1,5 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
+  "ignorePatterns": ["fragment-masking.ts"],
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
