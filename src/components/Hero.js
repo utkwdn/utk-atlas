@@ -256,7 +256,7 @@ const Hero = () => {
             {dynamicSrc === 'visit-campus' ? (
               <>
                 {/* 'visit-campus' content */}
-                <div className="slate-squeeze">
+                <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
                     Get a free sticker when you request info!
                   </p>
@@ -270,6 +270,54 @@ const Hero = () => {
                     }
                   />
                 </div>
+                {/* Start of Q4 November 1st Push */}
+                <a
+                  onClick={handleShow}
+                  className="subLink pointer-event-visible  cursor-pointer"
+                >
+                  Why apply by November 1?
+                </a>
+                <div
+                  className="modal show"
+                  style={{ display: 'block', position: 'initial' }}
+                >
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Body>
+                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <p>
+                        There&apos;s never been a better time to be a Volunteer!
+                        Apply by November 1 to be fully considered for the most
+                        scholarship dollars, the new guaranteed admissions
+                        program, and University Honors.
+                      </p>
+                      <p>
+                        Applications for regular admissions are due December 15.
+                      </p>
+                      <div className="fancyLinkGroup ch-md is-layout-flow">
+                        <p className="fancyLink stack-links">
+                          <a
+                            href="https://www.utk.edu/admissions"
+                            className="hero-cat"
+                          >
+                            Apply today
+                          </a>
+                        </p>
+
+                        <p className="fancyLink stack-links">
+                          <a
+                            href="https://admissions.utk.edu/guaranteed-admission/"
+                            className="hero-cat"
+                          >
+                            Learn more about guaranteed admissions
+                          </a>
+                        </p>
+                      </div>
+                      <div></div>
+                    </Modal.Body>
+                  </Modal>
+                </div>
+                {/* End of Q4 November 1st Push */}
               </>
             ) : (
               <>
@@ -294,6 +342,7 @@ const Hero = () => {
                   There&apos;s something for everyone at UT. We can&apos;t wait
                   for you to call our campus home sweet home!
                 </p>
+                {/* Start of Q4 November 1st Push */}
                 <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
@@ -307,9 +356,7 @@ const Hero = () => {
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton></Modal.Header>
                     <Modal.Body>
-                      <h3 className="mt-0">
-                        November 1 is the early action deadline
-                      </h3>
+                      <h3 className="mt-0">Take early action by November 1</h3>
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
@@ -331,7 +378,7 @@ const Hero = () => {
 
                         <p className="fancyLink stack-links">
                           <a
-                            href="https://utk.edu/requestinfo"
+                            href="https://admissions.utk.edu/guaranteed-admission/"
                             className="hero-cat"
                           >
                             Learn more about guaranteed admissions
@@ -342,6 +389,7 @@ const Hero = () => {
                     </Modal.Body>
                   </Modal>
                 </div>
+                {/* End of Q4 November 1st Push */}
               </>
             )}
 
