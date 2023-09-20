@@ -2,6 +2,7 @@
 // Top section of the modal w/ title and dismiss
 .modal-header {
   border-bottom: none;
+  padding: clamp(1.5rem, 3%, 3rem) clamp(1.5rem, 3%, 3rem) 0;
 
   .btn-close {
     padding: ($modal-header-padding-y * 0.5) ($modal-header-padding-x * 0.5);
@@ -20,4 +21,9 @@
   margin-left: clamp(2rem, 10vw, 5rem) !important;
   line-height: $modal-title-line-height;
   text-transform: uppercase;
+}
+.modal-body {
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
 }
