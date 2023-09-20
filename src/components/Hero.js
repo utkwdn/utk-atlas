@@ -175,15 +175,15 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-01.webp"
+                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-03.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-01.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-03.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero20230922/graduating-students-01.jpg"
+                  src="//images.utk.edu/images/www/hero20230922/graduating-students-03.jpg"
                   alt="Adorned in regalia, graduating students celebrate their academic accomplishments together."
                 />
               </picture>
@@ -282,8 +282,11 @@ const Hero = () => {
                   style={{ display: 'block', position: 'initial' }}
                 >
                   <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
-                    <Modal.Body>
+                    <Modal.Header
+                      closeButton
+                      className="modal-header"
+                    ></Modal.Header>
+                    <Modal.Body className="modal-body">
                       <h3 className="mt-0">Take early action by November 1</h3>
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
