@@ -282,20 +282,21 @@ const Hero = () => {
                   style={{ display: 'block', position: 'initial' }}
                 >
                   <Modal show={show} onHide={handleClose}>
-                    <Modal.Header
-                      closeButton
-                      className="modal-header"
-                    ></Modal.Header>
-                    <Modal.Body className="modal-body">
+                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Body>
                       <h3 className="mt-0">Take early action by November 1</h3>
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new guaranteed admissions
-                        program, and University Honors.
+                        scholarship dollars, the new{' '}
+                        <a href="https://admissions.utk.edu/guaranteed-admission/">
+                          guaranteed admissions program
+                        </a>
+                        , and University Honors.
                       </p>
                       <p>
-                        Applications for regular admissions are due December 15.
+                        The regular admission application deadline is December
+                        15.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
@@ -306,17 +307,7 @@ const Hero = () => {
                             Apply today
                           </a>
                         </p>
-
-                        <p className="fancyLink stack-links">
-                          <a
-                            href="https://admissions.utk.edu/guaranteed-admission/"
-                            className="hero-cat"
-                          >
-                            Learn more about guaranteed admissions
-                          </a>
-                        </p>
                       </div>
-                      <div></div>
                     </Modal.Body>
                   </Modal>
                 </div>
@@ -363,11 +354,15 @@ const Hero = () => {
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new guaranteed admissions
-                        program, and University Honors.
+                        scholarship dollars, the new{' '}
+                        <a href="https://admissions.utk.edu/guaranteed-admission/">
+                          guaranteed admissions program
+                        </a>
+                        , and University Honors.
                       </p>
                       <p>
-                        Applications for regular admissions are due December 15.
+                        The regular admission application deadline is December
+                        15.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
@@ -378,17 +373,7 @@ const Hero = () => {
                             Apply today
                           </a>
                         </p>
-
-                        <p className="fancyLink stack-links">
-                          <a
-                            href="https://admissions.utk.edu/guaranteed-admission/"
-                            className="hero-cat"
-                          >
-                            Learn more about guaranteed admissions
-                          </a>
-                        </p>
                       </div>
-                      <div></div>
                     </Modal.Body>
                   </Modal>
                 </div>
