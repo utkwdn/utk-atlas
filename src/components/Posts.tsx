@@ -1,9 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Post } from 'client';
 import styles from 'scss/components/Posts.module.scss';
 import Heading, { HeadingProps } from './Heading';
 import ImageCap from './ImageCap';
+
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+      title: string;
+    };
+  };
+}
+[];
 
 interface Props {
   posts: Post[] | undefined;
@@ -46,24 +59,18 @@ function Posts({
               >
                 <div>
                   <ImageCap
-                    title={post?.featuredImage?.node?.title() || ''}
-                    bgImage={
-                      post?.featuredImage?.node?.sourceUrl() || undefined
-                    }
+                    title={post?.featuredImage?.node?.title || ''}
+                    bgImage={post?.featuredImage?.node?.sourceUrl || undefined}
                   />
                   <Heading level={postTitleLevel} className={styles.title}>
                     <Link
-                      href={`/posts/${post.slug || ''}`}
+                      href={`/blog/posts/${post.slug || ''}`}
                       className="stretched-link"
                     >
-                      {post.title()}
+                      {post.title}
                     </Link>
                   </Heading>
-                  <div
-                    className={styles.excerpt}
-                    // eslint-disable-next-line react/no-danger
-                    dangerouslySetInnerHTML={{ __html: post.excerpt() ?? '' }}
-                  />
+                  <div className={styles.excerpt}>{post?.excerpt}</div>
                 </div>
               </div>
             </div>

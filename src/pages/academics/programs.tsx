@@ -7,8 +7,6 @@ import { prependOnceListener } from 'process';
 import content from '../../_data/programs.json';
 
 function Programs() {
-  console.log(content);
-
   return (
     <Layout>
       <Intro

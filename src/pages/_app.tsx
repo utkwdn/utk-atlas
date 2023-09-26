@@ -1,22 +1,18 @@
 import 'faust.config';
-import { FaustProvider } from '@faustjs/next';
-//import 'normalize.css/normalize.css';
+import { FaustProvider } from '@faustwp/core';
 import React from 'react';
 import 'scss/main.scss';
-
-import { client } from 'client';
+import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <>
-      <FaustProvider
-        client={client}
-        pageProps={
-          pageProps as Parameters<typeof FaustProvider>[0]['pageProps']
-        }
-      >
-        <Component {...pageProps} />
+      {/* eslint-disable @typescript-eslint/no-unsafe-assignment  */}
+      <FaustProvider pageProps={pageProps}>
+        <Component {...pageProps} key={router.asPath} />
       </FaustProvider>
     </>
   );
