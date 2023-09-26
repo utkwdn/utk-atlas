@@ -1,12 +1,6 @@
-// import { gql } from '@apollo/client';
 import { gql } from '../__generated__';
-import {
-  GetCategoryPageQuery,
-  GetCategoryPageQueryVariables,
-} from '../__generated__/graphql';
-import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
+import { GetCategoryPageQueryVariables } from '../__generated__/graphql';
 import { Footer, Header, Posts, Pagination } from 'components';
-import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 interface PropsObject {

@@ -1,10 +1,8 @@
-// import { gql } from '@apollo/client';
 import { gql } from '../__generated__';
 import { GetPostQuery } from '../__generated__/graphql';
-import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
+import { FaustTemplate } from '@faustwp/core';
 import { Footer, Header, PageTitle } from 'components';
 import ParsedMarkup from 'components/ParsedMarkup';
-// import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 const Post: FaustTemplate<GetPostQuery> = (props) => {
@@ -62,16 +60,5 @@ Post.variables = ({ databaseId }, ctx) => {
     asPreview: ctx?.asPreview,
   };
 };
-
-// export function getStaticProps(ctx: GetStaticPropsContext) {
-//   return getNextStaticProps(ctx, { Page: Post, revalidate: 120 });
-// }
-
-// export function getStaticPaths() {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// }
 
 export default Post;

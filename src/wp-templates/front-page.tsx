@@ -1,14 +1,10 @@
-// import { gql } from '@apollo/client';
 import { gql } from '../__generated__';
 import { GetFrontPageQuery } from '../__generated__/graphql';
-import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
-// import { getNextStaticProps } from '@faustjs/next';
-// import { GetStaticPropsContext } from 'next';
+import { FaustTemplate } from '@faustwp/core';
 import Head from 'next/head';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Footer, Header, PageTitle } from 'components';
-// import styles from 'scss/pages/home.module.scss';
+import { Footer, Header } from 'components';
 import parse from 'html-react-parser';
 import Hero from 'components/Hero.js';
 import ParsedMarkup from 'components/ParsedMarkup';
@@ -72,25 +68,5 @@ FrontPage.query = gql(`
     }
   }
 `);
-
-// export function getStaticProps(ctx: GetStaticPropsContext) {
-//   return getNextStaticProps(ctx, { Page, revalidate: 120 });
-// }
-
-// export function getStaticPaths() {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// }
-
-// export async function getStaticProps(context: GetStaticPropsContext) {
-//   return getNextStaticProps(context, {
-//     Page,
-//     // Refresh WP content after 2 min. Default is 900 seconds (15 min.)
-//     revalidate: 120,
-//     client,
-//   });
-// }
 
 export default FrontPage;

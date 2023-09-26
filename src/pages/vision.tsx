@@ -1,6 +1,3 @@
-// import { client } from 'client';
-// import { GetStaticPropsContext } from 'next';
-// import { getNextStaticProps } from '@faustjs/next';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import styles from 'scss/pages/Vision.module.scss';
@@ -8,7 +5,6 @@ import Head from 'next/head';
 import { useInView } from 'react-intersection-observer';
 // import ReactPlayer from 'react-player/lazy';
 import YoutubeSwitcher from '../components/YoutubeSwitcher';
-// import PropTypes from 'prop-types';
 
 const cx = (...classNames: string[]) => classNames.join(' ');
 
@@ -470,10 +466,3 @@ function Vision() {
 // }
 
 export default Vision;
-
-// // just to get Next.js not to build this page for now
-// export async function getStaticProps() {
-//   return {
-//     notFound: true,
-//   };
-// }
