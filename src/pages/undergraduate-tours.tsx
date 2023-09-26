@@ -1,7 +1,5 @@
 import Layout from '../components/Layout';
 import { PageTitle } from 'components';
-import { GetStaticPropsContext } from 'next';
-import { getNextStaticProps } from '@faustwp/core';
 import Head from 'next/head';
 import SlateFormEmbed from '../components/SlateFormEmbed';
 import { useEffect, useState } from 'react';
@@ -39,10 +37,3 @@ function GraduateToursForm() {
 }
 
 export default GraduateToursForm;
-
-// export async function getStaticProps(context: GetStaticPropsContext) {
-//   return getNextStaticProps(context, {
-//     Page: GraduateToursForm,
-//     client,
-//   });
-// }

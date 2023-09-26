@@ -1,14 +1,10 @@
 import { gql } from '../__generated__';
 import { GetPageQuery } from '../__generated__/graphql';
-// import { useQuery } from '@apollo/client';
-import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
+import { FaustTemplate } from '@faustwp/core';
 import { Footer, Header, PageTitle } from 'components';
-// import { GetStaticPaths, GetStaticProps } from 'next';
-// import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import ParsedMarkup from 'components/ParsedMarkup';
 import SlateModal from 'components/SlateModal';
-// import parse from 'html-react-parser';
 import { useState, useEffect, useRef } from 'react';
 import parse from 'html-react-parser';
 
@@ -39,7 +35,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
   const pageTitle = pageData?.title || '';
   const pageContent = pageData?.content || '';
   const bgImageUrl = pageData?.featuredImage?.node.sourceUrl || undefined;
-  const siteTitle = props.data?.generalSettings?.title || undefined;
+  // const siteTitle = props.data?.generalSettings?.title || undefined;
 
   const handleSlateButtonClick = (modalId: string) => {
     setTrigger((trigger) => trigger + 1);
@@ -131,21 +127,5 @@ Page.query = gql(`
     }
   }
 `);
-
-// export function getStaticProps(ctx: GetStaticPropsContext) {
-//   return getNextStaticProps(ctx, {
-//     Page,
-//   });
-// }
-// export const getStaticProps: GetStaticProps = (ctx) => {
-//   return getNextStaticProps(ctx, { Page: Page, revalidate: 120 });
-// };
-
-// export const getStaticPaths: GetStaticPaths = () => {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// };
 
 export default Page;

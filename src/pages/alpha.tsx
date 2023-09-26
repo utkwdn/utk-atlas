@@ -1,13 +1,9 @@
 import Layout from '../components/Layout';
 import styles from 'scss/pages/alpha.module.scss';
-// import { gql } from '@apollo/client';
 import { gql } from '../__generated__';
-// import { GetAToZQuery } from '../__generated__/graphql';
 import { useQuery } from '@apollo/client';
-// import Intro from '../components/Intro';
 import { GetStaticPropsContext } from 'next';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { getNextStaticProps, FaustTemplate } from '@faustwp/core';
+import { getNextStaticProps } from '@faustwp/core';
 import TextField from '@mui/material/TextField';
 import { matchSorter } from 'match-sorter';
 import Head from 'next/head';
@@ -362,31 +358,6 @@ Alpha.query = gql(`
   }
 `);
 
-// export const getStaticProps: GetStaticProps = (ctx) => {
-//   return getNextStaticProps(ctx, { Alpha, revalidate: 120 });
-// };
-
-// export const getStaticPaths: GetStaticPaths = () => {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// };
-
 export function getStaticProps(ctx: GetStaticPropsContext) {
   return getNextStaticProps(ctx, { Page: Alpha, revalidate: 120 });
 }
-
-// export function getStaticPaths() {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   };
-// }
-
-// export async function getStaticProps(context: GetStaticPropsContext) {
-//   return getNextStaticProps(context, {
-//     Page: Alpha,
-//     client,
-//   });
-// }

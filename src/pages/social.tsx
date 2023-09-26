@@ -2,7 +2,6 @@ import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
 import Layout from '../components/Layout';
 import { PageTitle } from 'components';
-// import { gql } from '@apollo/client';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustwp/core';
 import styles from 'scss/pages/social-hub.module.scss';
