@@ -1,24 +1,17 @@
 import React from 'react';
 // import styles from 'scss/components/Footer.module.scss';
 import Link from 'next/link';
-import { client, MenuLocationEnum } from 'client';
+import { gql } from '../__generated__';
+import { useQuery } from '@apollo/client';
+import { FooterToolsQuery } from '../__generated__/graphql';
 
-interface Props {
-  copyrightHolder?: string;
-}
+// const Footer: FaustTemplate<FooterToolsQuery> = (props) => {
+function Footer(): JSX.Element {
+  const queryResults = useQuery(Footer.query);
+  const footerQueryData: FooterToolsQuery | undefined = queryResults.data;
 
-function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
-  const year = new Date().getFullYear();
-
-  const { menuItems } = client.useQuery();
-  const tools =
-    menuItems({
-      where: { location: MenuLocationEnum.TOOLS },
-    })?.nodes || [];
-  const links =
-    menuItems({
-      where: { location: MenuLocationEnum.LINKS },
-    })?.nodes || [];
+  const tools = footerQueryData?.toolsItems?.nodes || [];
+  const links = footerQueryData?.linksItems?.nodes || [];
 
   return (
     <footer id="colophon" className="site-footer  mt-auto">
@@ -213,5 +206,22 @@ function Footer({ copyrightHolder = 'Company Name' }: Props): JSX.Element {
     </footer>
   );
 }
+
+Footer.query = gql(`
+  query FooterTools {
+    toolsItems: menuItems(where: { location: TOOLS }) {
+      nodes {
+        url
+        label
+      }
+    }
+    linksItems: menuItems(where: { location: LINKS }) {
+      nodes {
+        url
+        label
+      }
+    }
+  }
+`);
 
 export default Footer;

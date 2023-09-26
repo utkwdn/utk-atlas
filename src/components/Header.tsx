@@ -1,7 +1,10 @@
 // import styles from 'scss/components/Header.module.scss';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { client, MenuLocationEnum } from 'client';
+// import { gql, useQuery } from '@apollo/client';
+import { gql } from '../__generated__';
+import { useQuery } from '@apollo/client';
+import { MainNavQuery } from '../__generated__/graphql';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
@@ -53,11 +56,10 @@ const Header = () => {
   const firstTwoUriParts =
     firstUriPart && secondUriPart ? `${firstUriPart}${secondUriPart}` : null;
 
-  const { menuItems } = client.useQuery();
-  const links =
-    menuItems({
-      where: { location: MenuLocationEnum.PRIMARY },
-    })?.nodes || [];
+  const queryResults = useQuery(Header.query);
+  const navQueryData: MainNavQuery | undefined = queryResults.data;
+
+  const links = navQueryData?.menuItems?.nodes || [];
 
   /*
     I *think* these conditional data-selections are okay, because we get all
@@ -82,7 +84,7 @@ const Header = () => {
     /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
     const itemUri = link?.uri;
     const label = link?.label;
-    const children = link?.childItems()?.nodes || [];
+    const children = link?.childItems?.nodes || [];
 
     const hasChildren = children.length > 0;
 
@@ -148,7 +150,7 @@ const Header = () => {
 
   /** Desktop-only section-nav items (will be an empty array if there are none) */
   const secondaryNavItems = (
-    currentTopLevelItem?.childItems()?.nodes || []
+    currentTopLevelItem?.childItems?.nodes || []
   ).flatMap((link) => {
     const url = link?.url;
     /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
@@ -337,5 +339,28 @@ const Header = () => {
     </>
   );
 };
+
+Header.query = gql(`
+  query MainNav {
+    menuItems(where: { location: PRIMARY }) {
+      nodes {
+        id
+        uri
+        url
+        title
+        parentId
+        label
+        childItems {
+          nodes {
+            label
+            id
+            url
+            uri
+          }
+        }
+      }
+    }
+  }
+`);
 
 export default Header;

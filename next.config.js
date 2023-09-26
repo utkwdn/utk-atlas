@@ -1,4 +1,4 @@
-const { withFaust } = require('@faustjs/next');
+const { withFaust } = require('@faustwp/core');
 
 // Wiring up Redirection plugin to work with Next
 async function fetchWordPressRedirects() {

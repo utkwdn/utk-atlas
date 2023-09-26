@@ -1,28 +1,16 @@
+import { gql } from '../__generated__';
+import { useQuery } from '@apollo/client';
 import Layout from '../components/Layout';
 import { PageTitle } from 'components';
-import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
 import { GetStaticPropsContext } from 'next';
-import { getNextStaticProps } from '@faustjs/next';
+import { getNextStaticProps } from '@faustwp/core';
 import styles from 'scss/pages/social-hub.module.scss';
-import { link } from 'fs/promises';
 import Link from 'next/link';
 import Head from 'next/head';
 
 function Social() {
-  const { useQuery } = client;
-
-  const socialUnits =
-    useQuery().socialUnits({
-      first: 1000,
-      where: {
-        orderby: [
-          {
-            field: PostObjectsConnectionOrderbyEnum.TITLE,
-            order: OrderEnum.ASC,
-          },
-        ],
-      },
-    })?.nodes || [];
+  const { data } = useQuery(Social.query);
+  const socialUnits = data?.socialUnits?.nodes;
 
   return (
     <Layout>
@@ -163,7 +151,7 @@ function Social() {
           </thead>
           <tbody>
             {socialUnits?.map((this_unit, i) => {
-              const title = this_unit?.title() || '';
+              const title = this_unit?.title || '';
               const twitterLink = this_unit?.socialUnitURLs?.twitter;
               const facebookLink = this_unit?.socialUnitURLs?.facebook;
               const instagramLink = this_unit?.socialUnitURLs?.instagram;
@@ -287,9 +275,24 @@ function Social() {
 
 export default Social;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page: Social,
-    client,
-  });
+Social.query = gql(`
+  query GetSocials {
+    socialUnits(first: 1000, where: { orderby: { field: TITLE, order: ASC } }) {
+      nodes {
+        id
+        title
+        socialUnitURLs {
+          twitter
+          facebook
+          instagram
+          youtube
+          linkedin
+        }
+      }
+    }
+  }
+`);
+
+export function getStaticProps(ctx: GetStaticPropsContext) {
+  return getNextStaticProps(ctx, { Page: Social, revalidate: 120 });
 }

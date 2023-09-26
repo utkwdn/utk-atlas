@@ -1,9 +1,9 @@
 import Layout from '../components/Layout';
 import styles from 'scss/pages/alpha.module.scss';
-import { client, PostObjectsConnectionOrderbyEnum, OrderEnum } from 'client';
-import Intro from '../components/Intro';
+import { gql } from '../__generated__';
+import { useQuery } from '@apollo/client';
 import { GetStaticPropsContext } from 'next';
-import { getNextStaticProps } from '@faustjs/next';
+import { getNextStaticProps } from '@faustwp/core';
 import TextField from '@mui/material/TextField';
 import { matchSorter } from 'match-sorter';
 import Head from 'next/head';
@@ -76,27 +76,37 @@ const poundToEnd = (arr: Character[]) => {
 
 const toDomId = (char: Character) => (char === '#' ? 'num' : char);
 
-const Alpha = () => {
-  const { useQuery } = client;
+interface PropsObject {
+  data: {
+    allAToZ: {
+      nodes: {
+        id: string;
+        title: string;
+        aToZFields: {
+          tags: string;
+          url: string;
+        };
+      }[];
+    };
+  };
+}
 
-  const rawItems =
-    useQuery().allAToZ({
-      first: 1000, // is this enough?
-      where: {
-        orderby: [
-          {
-            field: PostObjectsConnectionOrderbyEnum.TITLE,
-            order: OrderEnum.ASC,
-          },
-        ],
-      },
-    })?.nodes || [];
+const Alpha = () => {
+  // const rawItems = propsData.data?.allAToZ?.nodes;
+  const { data } = useQuery(Alpha.query);
+  const rawItems = data?.allAToZ?.nodes;
+
+  interface CharItem {
+    title: string;
+    id: string;
+    aToZFields: { tags: string; url: string };
+  }
 
   const itemsByChar = useRef(
-    rawItems.reduce((map, item) => {
+    rawItems?.reduce((map, item) => {
       if (!item) return map;
 
-      const label = item.title();
+      const label = item.title;
       const tags = item.aToZFields?.tags || '';
       const url = item.aToZFields?.url;
       const id = item.id;
@@ -132,10 +142,16 @@ const Alpha = () => {
    * All characters represented in the fetched data, sorted alphabetically (with `'#'` at the end, if present).
    * Will never change.
    */
-  const allChars = useRef(poundToEnd(Array.from(itemsByChar.current.keys())));
+  const itemsByCharKeysArray = itemsByChar.current
+    ? Array.from(itemsByChar.current.keys())
+    : [];
+  const allChars = useRef(poundToEnd(itemsByCharKeysArray));
 
   /** All items represented in the fetched data. Will never change. */
-  const allItems = useRef(Array.from(itemsByChar.current.values()).flat());
+  const itemsByCharValuesArray = itemsByChar.current
+    ? Array.from(itemsByChar.current.values()).flat()
+    : [];
+  const allItems = useRef(itemsByCharValuesArray);
 
   const [activeItems, setActiveItems] = useState(allItems.current);
 
@@ -146,6 +162,8 @@ const Alpha = () => {
       return activeItems.some(({ label }) => label[0].toUpperCase() === char);
     }
   });
+
+  // console.log(activeChars);
 
   const _handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
     (e) => {
@@ -263,18 +281,22 @@ const Alpha = () => {
                     <h3 className={styles.letter}>{char}</h3>
                   </div>
                   <ul>
-                    {itemsByChar.current.get(char)?.flatMap((item) =>
-                      activeItems.includes(item) ? (
-                        <li key={item.id} className={styles['result-title']}>
-                          <a href={item.url}>{item.label}</a>
-                          <br />
-                          <span className={styles['result-url']}>
-                            {item.url.replace(/^https?:\/\//, '')}
-                          </span>
-                        </li>
-                      ) : (
-                        []
+                    {itemsByChar.current ? (
+                      itemsByChar.current.get(char)?.flatMap((item: Item) =>
+                        activeItems.includes(item) ? (
+                          <li key={item.id} className={styles['result-title']}>
+                            <a href={item.url}>{item.label}</a>
+                            <br />
+                            <span className={styles['result-url']}>
+                              {item.url.replace(/^https?:\/\//, '')}
+                            </span>
+                          </li>
+                        ) : (
+                          []
+                        )
                       )
+                    ) : (
+                      <></>
                     )}
                   </ul>
                 </div>
@@ -321,9 +343,21 @@ const Alpha = () => {
 
 export default Alpha;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page: Alpha,
-    client,
-  });
+Alpha.query = gql(`
+  query GetAToZ {
+    allAToZ(first: 1000, where: { orderby: { field: TITLE, order: ASC } }) {
+      nodes {
+        id
+        title(format: RENDERED)
+        aToZFields {
+          tags
+          url
+        }
+      }
+    }
+  }
+`);
+
+export function getStaticProps(ctx: GetStaticPropsContext) {
+  return getNextStaticProps(ctx, { Page: Alpha, revalidate: 120 });
 }
