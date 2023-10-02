@@ -1,5 +1,5 @@
 import { getWordPressProps, WordPressTemplate } from '@faustwp/core';
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 export type WordPressTemplateProps = Parameters<typeof WordPressTemplate>[0];
 
@@ -8,5 +8,5 @@ export default function Page(props: WordPressTemplateProps) {
 }
 
 export const getStaticProps: GetStaticProps = (ctx) => {
-  return getWordPressProps({ ctx });
+  return getWordPressProps({ ctx, revalidate: 120 });
 };
