@@ -21,9 +21,9 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
     }
   }, []);
 
-  const pageData = props.data?.pageBy;
+  const pageData = props.data?.page;
   const generalSettings = props.data?.generalSettings;
-  const yoastString = props.data?.pageBy?.seo?.fullHead || '';
+  const yoastString = props.data?.page?.seo?.fullHead || '';
 
   return (
     <>
@@ -56,8 +56,8 @@ FrontPage.variables = ({ databaseId }, ctx) => {
 };
 
 FrontPage.query = gql(`
-  query GetFrontPage {
-    pageBy(uri: "/") {
+  query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
+    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       content
       seo {
         fullHead
@@ -68,5 +68,26 @@ FrontPage.query = gql(`
     }
   }
 `);
+
+// FrontPage.variables = ({ databaseId }, ctx) => {
+//   return {
+//     databaseId,
+//     asPreview: ctx?.asPreview,
+//   };
+// };
+
+// FrontPage.query = gql(`
+//   query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
+//     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+//       content
+//       seo {
+//         fullHead
+//       }
+//     }
+//     generalSettings {
+//       title
+//     }
+//   }
+// `);
 
 export default FrontPage;
