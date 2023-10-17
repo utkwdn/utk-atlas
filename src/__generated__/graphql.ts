@@ -12819,71 +12819,71 @@ export type MenuToMenuItemConnectionWhereArgs = {
 
 /** The MimeType of the object */
 export enum MimeTypeEnum {
-  /** MimeType application/msword */
+  /** application/msword mime type. */
   ApplicationMsword = 'APPLICATION_MSWORD',
-  /** MimeType application/pdf */
+  /** application/pdf mime type. */
   ApplicationPdf = 'APPLICATION_PDF',
-  /** MimeType application/vnd.apple.keynote */
+  /** application/vnd.apple.keynote mime type. */
   ApplicationVndAppleKeynote = 'APPLICATION_VND_APPLE_KEYNOTE',
-  /** MimeType application/vnd.ms-excel */
+  /** application/vnd.ms-excel mime type. */
   ApplicationVndMsExcel = 'APPLICATION_VND_MS_EXCEL',
-  /** MimeType application/vnd.ms-excel.sheet.binary.macroEnabled.12 */
+  /** application/vnd.ms-excel.sheet.binary.macroEnabled.12 mime type. */
   ApplicationVndMsExcelSheetBinaryMacroenabled_12 = 'APPLICATION_VND_MS_EXCEL_SHEET_BINARY_MACROENABLED_12',
-  /** MimeType application/vnd.ms-excel.sheet.macroEnabled.12 */
+  /** application/vnd.ms-excel.sheet.macroEnabled.12 mime type. */
   ApplicationVndMsExcelSheetMacroenabled_12 = 'APPLICATION_VND_MS_EXCEL_SHEET_MACROENABLED_12',
-  /** MimeType application/vnd.ms-powerpoint */
+  /** application/vnd.ms-powerpoint mime type. */
   ApplicationVndMsPowerpoint = 'APPLICATION_VND_MS_POWERPOINT',
-  /** MimeType application/vnd.ms-powerpoint.presentation.macroEnabled.12 */
+  /** application/vnd.ms-powerpoint.presentation.macroEnabled.12 mime type. */
   ApplicationVndMsPowerpointPresentationMacroenabled_12 = 'APPLICATION_VND_MS_POWERPOINT_PRESENTATION_MACROENABLED_12',
-  /** MimeType application/vnd.ms-powerpoint.slideshow.macroEnabled.12 */
+  /** application/vnd.ms-powerpoint.slideshow.macroEnabled.12 mime type. */
   ApplicationVndMsPowerpointSlideshowMacroenabled_12 = 'APPLICATION_VND_MS_POWERPOINT_SLIDESHOW_MACROENABLED_12',
-  /** MimeType application/vnd.ms-word.document.macroEnabled.12 */
+  /** application/vnd.ms-word.document.macroEnabled.12 mime type. */
   ApplicationVndMsWordDocumentMacroenabled_12 = 'APPLICATION_VND_MS_WORD_DOCUMENT_MACROENABLED_12',
-  /** MimeType application/vnd.oasis.opendocument.text */
+  /** application/vnd.oasis.opendocument.text mime type. */
   ApplicationVndOasisOpendocumentText = 'APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT',
-  /** MimeType application/vnd.openxmlformats-officedocument.presentationml.presentation */
+  /** application/vnd.openxmlformats-officedocument.presentationml.presentation mime type. */
   ApplicationVndOpenxmlformatsOfficedocumentPresentationmlPresentation = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_PRESENTATION',
-  /** MimeType application/vnd.openxmlformats-officedocument.presentationml.slideshow */
+  /** application/vnd.openxmlformats-officedocument.presentationml.slideshow mime type. */
   ApplicationVndOpenxmlformatsOfficedocumentPresentationmlSlideshow = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW',
-  /** MimeType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet */
+  /** application/vnd.openxmlformats-officedocument.spreadsheetml.sheet mime type. */
   ApplicationVndOpenxmlformatsOfficedocumentSpreadsheetmlSheet = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_SPREADSHEETML_SHEET',
-  /** MimeType application/vnd.openxmlformats-officedocument.wordprocessingml.document */
+  /** application/vnd.openxmlformats-officedocument.wordprocessingml.document mime type. */
   ApplicationVndOpenxmlformatsOfficedocumentWordprocessingmlDocument = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT',
-  /** MimeType audio/midi */
+  /** audio/midi mime type. */
   AudioMidi = 'AUDIO_MIDI',
-  /** MimeType audio/mpeg */
+  /** audio/mpeg mime type. */
   AudioMpeg = 'AUDIO_MPEG',
-  /** MimeType audio/ogg */
+  /** audio/ogg mime type. */
   AudioOgg = 'AUDIO_OGG',
-  /** MimeType audio/wav */
+  /** audio/wav mime type. */
   AudioWav = 'AUDIO_WAV',
-  /** MimeType audio/x-ms-wma */
+  /** audio/x-ms-wma mime type. */
   AudioXMsWma = 'AUDIO_X_MS_WMA',
-  /** MimeType image/gif */
+  /** image/gif mime type. */
   ImageGif = 'IMAGE_GIF',
-  /** MimeType image/jpeg */
+  /** image/jpeg mime type. */
   ImageJpeg = 'IMAGE_JPEG',
-  /** MimeType image/png */
+  /** image/png mime type. */
   ImagePng = 'IMAGE_PNG',
-  /** MimeType video/3gpp */
+  /** video/3gpp mime type. */
   Video_3Gpp = 'VIDEO_3GPP',
-  /** MimeType video/3gpp2 */
+  /** video/3gpp2 mime type. */
   Video_3Gpp2 = 'VIDEO_3GPP2',
-  /** MimeType video/avi */
+  /** video/avi mime type. */
   VideoAvi = 'VIDEO_AVI',
-  /** MimeType video/mp4 */
+  /** video/mp4 mime type. */
   VideoMp4 = 'VIDEO_MP4',
-  /** MimeType video/mpeg */
+  /** video/mpeg mime type. */
   VideoMpeg = 'VIDEO_MPEG',
-  /** MimeType video/ogg */
+  /** video/ogg mime type. */
   VideoOgg = 'VIDEO_OGG',
-  /** MimeType video/quicktime */
+  /** video/quicktime mime type. */
   VideoQuicktime = 'VIDEO_QUICKTIME',
-  /** MimeType video/webm */
+  /** video/webm mime type. */
   VideoWebm = 'VIDEO_WEBM',
-  /** MimeType video/x-flv */
+  /** video/x-flv mime type. */
   VideoXFlv = 'VIDEO_X_FLV',
-  /** MimeType video/x-ms-wmv */
+  /** video/x-ms-wmv mime type. */
   VideoXMsWmv = 'VIDEO_X_MS_WMV'
 }
 
@@ -23060,10 +23060,13 @@ export type GetCategoryPageQueryVariables = Exact<{
 
 export type GetCategoryPageQuery = { __typename?: 'RootQuery', nodeByUri?: { __typename?: 'AToZ' } | { __typename?: 'AToZCategory' } | { __typename?: 'AcalogProgram' } | { __typename?: 'AreaOfStudy' } | { __typename?: 'BlockEditorPreview' } | { __typename?: 'Category', name?: string | null, slug?: string | null, posts?: { __typename?: 'CategoryToPostConnection', nodes: Array<{ __typename?: 'Post', id: string, title?: string | null, slug?: string | null, excerpt?: string | null, featuredImage?: { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge', node: { __typename?: 'MediaItem', title?: string | null, sourceUrl?: string | null } } | null }>, pageInfo: { __typename?: 'CategoryToPostConnectionPageInfo', endCursor?: string | null, startCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean } } | null } | { __typename?: 'College' } | { __typename?: 'ContentType' } | { __typename?: 'Degree' } | { __typename?: 'Major' } | { __typename?: 'MediaItem' } | { __typename?: 'Page' } | { __typename?: 'Post' } | { __typename?: 'PostFormat' } | { __typename?: 'Program' } | { __typename?: 'ReusableBlock' } | { __typename?: 'SocialUnit' } | { __typename?: 'Tag' } | { __typename?: 'User' } | null, generalSettings?: { __typename?: 'GeneralSettings', title?: string | null } | null };
 
-export type GetFrontPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetFrontPageQueryVariables = Exact<{
+  databaseId: Scalars['ID']['input'];
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+}>;
 
 
-export type GetFrontPageQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', content?: string | null, seo?: { __typename?: 'PostTypeSEO', fullHead?: string | null } | null } | null, generalSettings?: { __typename?: 'GeneralSettings', title?: string | null } | null };
+export type GetFrontPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Page', content?: string | null, seo?: { __typename?: 'PostTypeSEO', fullHead?: string | null } | null } | null, generalSettings?: { __typename?: 'GeneralSettings', title?: string | null } | null };
 
 export type GetPageQueryVariables = Exact<{
   databaseId: Scalars['ID']['input'];
@@ -23087,6 +23090,6 @@ export const MainNavDocument = {"kind":"Document","definitions":[{"kind":"Operat
 export const GetAToZDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAToZ"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allAToZ"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"orderby"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"TITLE"}},{"kind":"ObjectField","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"ASC"}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"format"},"value":{"kind":"EnumValue","value":"RENDERED"}}]},{"kind":"Field","name":{"kind":"Name","value":"aToZFields"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAToZQuery, GetAToZQueryVariables>;
 export const GetSocialsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSocials"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"socialUnits"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"orderby"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"TITLE"}},{"kind":"ObjectField","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"ASC"}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"socialUnitURLs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"twitter"}},{"kind":"Field","name":{"kind":"Name","value":"facebook"}},{"kind":"Field","name":{"kind":"Name","value":"instagram"}},{"kind":"Field","name":{"kind":"Name","value":"youtube"}},{"kind":"Field","name":{"kind":"Name","value":"linkedin"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetSocialsQuery, GetSocialsQueryVariables>;
 export const GetCategoryPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCategoryPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"uri"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodeByUri"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"uri"},"value":{"kind":"Variable","name":{"kind":"Name","value":"uri"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Category"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"format"},"value":{"kind":"EnumValue","value":"RENDERED"}}]},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"sourceUrl"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"hasPreviousPage"}}]}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetCategoryPageQuery, GetCategoryPageQueryVariables>;
-export const GetFrontPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFrontPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageBy"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"uri"},"value":{"kind":"StringValue","value":"/","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fullHead"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetFrontPageQuery, GetFrontPageQueryVariables>;
+export const GetFrontPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFrontPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}},"defaultValue":{"kind":"BooleanValue","value":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}}},{"kind":"Argument","name":{"kind":"Name","value":"idType"},"value":{"kind":"EnumValue","value":"DATABASE_ID"}},{"kind":"Argument","name":{"kind":"Name","value":"asPreview"},"value":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fullHead"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetFrontPageQuery, GetFrontPageQueryVariables>;
 export const GetPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}},"defaultValue":{"kind":"BooleanValue","value":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}}},{"kind":"Argument","name":{"kind":"Name","value":"idType"},"value":{"kind":"EnumValue","value":"DATABASE_ID"}},{"kind":"Argument","name":{"kind":"Name","value":"asPreview"},"value":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fullHead"}}]}},{"kind":"Field","name":{"kind":"Name","value":"showsHeadline"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sourceUrl"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetPageQuery, GetPageQueryVariables>;
 export const GetPostDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPost"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}},"defaultValue":{"kind":"BooleanValue","value":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"post"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"databaseId"}}},{"kind":"Argument","name":{"kind":"Name","value":"idType"},"value":{"kind":"EnumValue","value":"DATABASE_ID"}},{"kind":"Argument","name":{"kind":"Name","value":"asPreview"},"value":{"kind":"Variable","name":{"kind":"Name","value":"asPreview"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sourceUrl"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetPostQuery, GetPostQueryVariables>;
