@@ -15,7 +15,7 @@ $utsmokeyfade: #696b6d;
 $utsmokeyfademore: #737778;
 $utsmokeytext: #4b4b4b;
 $darkorange: #e07400;
-$font-stack-light: var(--font-montserrat), Helvetica, Arial;
+$font-stack-light: 'Gotham A', 'Gotham B', Helvetica, Arial;
 $font-size-base: 100% !important;
 // $orangeCreamsicle: #ffd4a7;
 
@@ -607,7 +607,7 @@ span.objTitleR02 {
   top: 0;
   right: 0;
   */
-  font-family: '$font-stack-light';
+  font-family: $font-stack-light;
   color: #1a73c5;
   background-color: transparent;
   text-decoration: none !important;
