@@ -341,7 +341,7 @@ const Hero = () => {
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
-                  Why apply by November 1?
+                  Why apply by December 15?
                 </a>
                 <div
                   className="modal show"
@@ -350,20 +350,17 @@ const Hero = () => {
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton></Modal.Header>
                     <Modal.Body>
-                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <h3 className="mt-0">Fall Deadline</h3>
                       <p>
-                        There&apos;s never been a better time to be a Volunteer!
-                        Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new{' '}
-                        <a href="https://admissions.utk.edu/guaranteed-admission/">
-                          guaranteed admissions program
-                        </a>
-                        , and University Honors.
+                        If you’re a high school senior who would like to be a
+                        Vol in fall ’24, apply by December 15.
                       </p>
                       <p>
-                        The regular admission application deadline is December
-                        15.
+                        You’ll be automatically considered for institutional
+                        scholarships if you submit your application by this
+                        date.
                       </p>
+
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
