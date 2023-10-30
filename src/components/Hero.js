@@ -353,7 +353,7 @@ const Hero = () => {
                       <h3 className="mt-0">Fall Deadline</h3>
                       <p>
                         If you’re a high school senior who would like to be a
-                        Vol in fall ’24, apply by December 15.
+                        Vol in fall 2024, apply by December 15.
                       </p>
                       <p>
                         You’ll be automatically considered for institutional
