@@ -61,7 +61,7 @@ h1 {
 }
 h2 {
   margin-top: calc($spacer * 5);
-  margin-bottom: calc($spacer * 2.2);
+  margin-bottom: calc($spacer * 2.2) !important;
   line-height: calc($headings-line-height * 1.2);
   word-wrap: normal !important;
 }
