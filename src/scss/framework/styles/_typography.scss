@@ -70,6 +70,9 @@ h3 {
   margin-top: calc($spacer * 4);
   margin-bottom: calc($spacer * 1.7);
 }
+h2 + h3 {
+  margin-top: calc($spacer * 2.2) !important;
+}
 
 h4 {
   margin-top: calc($spacer * 3.2);

@@ -11,6 +11,7 @@
   top: 0;
   width: 100%;
   margin: 0;
+  margin-top: -1px !important; //fix for thin line of image below showing in certain browsers
   // background-color: $utorange;
   // color of shape is controlled by the group background color in wordpress
   height: 800px;
