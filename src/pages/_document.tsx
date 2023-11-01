@@ -44,11 +44,11 @@ class MyDocument extends Document {
             href="/images/favicons/apple-touch-icon.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <link
+          {/* <link
             rel="stylesheet"
             type="text/css"
             href="https://cloud.typography.com/6831932/6125612/css/fonts.css"
-          />
+          /> */}
         </Head>
         <body>
           {/* Google Tag Manager (noscript) */}
