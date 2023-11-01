@@ -517,7 +517,7 @@ body {
   display: block;
   left: 0;
   padding: 0;
-  @media (min-width: 500px) {
+  @media screen {
     padding-top: 25rem;
   }
   @media screen and (min-width: 1200px) {
