@@ -134,7 +134,7 @@ function Social() {
           style={{ justifyContent: 'center', margin: '2rem 0' }}
         >
           <h3 className="is-content-justification-center">
-            Social Media Accounts Across UT.
+            Social Media Accounts Across UT
           </h3>
         </div>
 

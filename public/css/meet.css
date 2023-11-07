@@ -1,3 +1,7 @@
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, system-ui,
+    -apple-system, sans-serif !important;
+}
 .form-control,
 #form_37fdc06c-875e-4e16-b7ba-f74b4c074deb .form_responses > input,
 #form_37fdc06c-875e-4e16-b7ba-f74b4c074deb .form_responses > select {
