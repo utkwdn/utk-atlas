@@ -18,8 +18,7 @@ h1,
 }
 
 .text-condensed {
-  font-family: 'Gotham Cond SSm A', 'Gotham Cond SSm B', 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
+  font-family: var(--font-sofia), 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -104,7 +103,7 @@ p {
 }
 
 h1.area {
-  font-size: clamp(1.51375rem, 6.2175vw, 2.6rem);
+  font-size: clamp(1.51375rem, 6.2175vw, 2.9rem);
   font-weight: $font-weight-normal;
   font-style: italic;
   color: #9d9d9d;
@@ -142,6 +141,19 @@ h2.heading-oa-bar {
   width: auto;
   position: relative;
   width: fit-content;
+}
+
+// Sophia modifications
+.fs-3 {
+  .text-condensed {
+    font-size: clamp(1.5rem, 6.2vw, 2.65rem) !important;
+  }
+}
+.text-condensed.fs-3 {
+  font-size: clamp(1.5rem, 6.2vw, 2.65rem) !important;
+}
+.text-condensed.fs-2 {
+  font-size: clamp(2.1rem, 8.5vw, 3.65rem) !important;
 }
 
 // adding special case for h1 that appear inside columns. clamp is based off body width
