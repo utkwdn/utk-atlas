@@ -31,7 +31,8 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
 
   const pageSlug = pageData?.slug;
   const yoastString = pageData?.seo?.fullHead || '';
-  const showPageTitle = pageData?.showsHeadline;
+  const showPageTitle =
+    pageData?.template?.templateName === 'No-title' ? false : true;
   const pageTitle = pageData?.title || '';
   const pageContent = pageData?.content || '';
   const bgImageUrl = pageData?.featuredImage?.node.sourceUrl || undefined;
@@ -114,7 +115,9 @@ Page.query = gql(`
       seo {
         fullHead
       }
-      showsHeadline
+      template {
+        templateName
+      }
       title
       featuredImage {
         node {
