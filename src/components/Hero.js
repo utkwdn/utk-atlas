@@ -318,10 +318,7 @@ const Hero = () => {
                 {/* Default content */}
                 <div className="fancyLinkGroup ch-md is-layout-flow">
                   <p className="fancyLink stack-links">
-                    <a
-                      href="https://admissions.utk.edu/tours-and-events/#tours"
-                      className="hero-cat"
-                    >
+                    <a href="https://www.utk.edu/visit" className="hero-cat">
                       Schedule a visit
                     </a>
                   </p>
@@ -342,8 +339,9 @@ const Hero = () => {
                   </p> */}
                 </div>
                 <p>
-                  There&apos;s something for everyone at UT. We can&apos;t wait
-                  for you to call our campus home sweet home!
+                  This is where you&apos;ll make discoveries, memories, and
+                  lifelong connections. Visit campus and picture your life as a
+                  Volunteer.
                 </p>
 
                 {/* Why Apply Format */}
