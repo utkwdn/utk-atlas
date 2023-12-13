@@ -387,7 +387,7 @@ const Hero = () => {
                 {/* End of Q4 November 1st Push */}
               </>
             )}
-            {/* Monday 12/18 Launch Piece */}
+            {/* Wednesday 12/20 Launch Piece */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
             <a
               href="https://admissions.utk.edu/confirm/"
@@ -397,7 +397,7 @@ const Hero = () => {
             >
               Confirm enrollment now
             </a> */}
-            {/* End Monday 12/18 Launch Piece */}
+            {/* End Wednesday 12/20 Launch Piece */}
           </div>
 
           {/* End CTA */}
