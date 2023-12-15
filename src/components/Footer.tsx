@@ -22,7 +22,7 @@ function Footer(): JSX.Element {
               <div className="col-auto">
                 <div className="row">
                   <div className="col-6 footer-menu">
-                    <h3 className="text-white h4">Tools</h3>
+                    <h2 className="text-white h4">Tools</h2>
                     <ul id="list-unstyled" className="list-unstyled">
                       {tools.flatMap((tool) => {
                         const label = tool?.label;
@@ -48,7 +48,7 @@ function Footer(): JSX.Element {
                     </ul>
                   </div>
                   <div className="col-6 footer-menu">
-                    <h3 className="text-white h4">Campus Links</h3>
+                    <h2 className="text-white h4">Campus Links</h2>
                     <ul className="list-unstyled">
                       {links.flatMap((link) => {
                         const label = link?.label;
