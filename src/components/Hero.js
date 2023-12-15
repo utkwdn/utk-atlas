@@ -175,16 +175,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-03.webp"
+                  srcSet="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230922/graduating-students-03.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero20230922/graduating-students-03.jpg"
-                  alt="Adorned in regalia, graduating students celebrate their academic accomplishments together."
+                  src="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.jpg"
+                  alt="Three students hang out while sitting on a bench in the middle of UT' bustling campus."
                 />
               </picture>
             </div>
@@ -318,26 +318,34 @@ const Hero = () => {
                 {/* Default content */}
                 <div className="fancyLinkGroup ch-md is-layout-flow">
                   <p className="fancyLink stack-links">
+                    <a href="https://www.utk.edu/visit" className="hero-cat">
+                      Schedule a visit
+                    </a>
+                  </p>
+
+                  {/* <p className="fancyLink stack-links">
                     <a
                       href="https://www.utk.edu/admissions"
                       className="hero-cat"
                     >
                       Apply today
                     </a>
-                  </p>
+                  </p> */}
 
-                  <p className="fancyLink stack-links">
+                  {/* <p className="fancyLink stack-links">
                     <a href="https://utk.edu/requestinfo" className="hero-cat">
                       Request more info
                     </a>
-                  </p>
+                  </p> */}
                 </div>
                 <p>
-                  There&apos;s something for everyone at UT. We can&apos;t wait
-                  for you to call our campus home sweet home!
+                  This is where you&apos;ll make discoveries, memories, and
+                  lifelong connections. Visit campus and picture your life as a
+                  Volunteer.
                 </p>
-                {/* Start of Q4 November 1st Push */}
-                <a
+
+                {/* Why Apply Format */}
+                {/* <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
@@ -373,13 +381,11 @@ const Hero = () => {
                       </div>
                     </Modal.Body>
                   </Modal>
-                </div>
+                </div> */}
                 {/* End of Q4 November 1st Push */}
               </>
             )}
-
-            {/*<h3 className="text-uppercase subCta">Accepted to UT?</h3>
-          <a href="//admissions.utk.edu/confirm/" className="text-uppercase text-decoration-none accentLink">Confirm Enrollment Now</a> */}
+            {/* Wednesday 12/20 Launch Piece */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
             <a
               href="https://admissions.utk.edu/confirm/"
@@ -389,7 +395,9 @@ const Hero = () => {
             >
               Confirm enrollment now
             </a> */}
+            {/* End Wednesday 12/20 Launch Piece */}
           </div>
+
           {/* End CTA */}
 
           <div className="heroRainHolderTripleA layoutA ">
