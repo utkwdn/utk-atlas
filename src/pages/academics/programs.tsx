@@ -2,11 +2,20 @@ import Layout from '../../components/Layout';
 import Head from 'next/head';
 import Intro from '../../components/Intro';
 import styles from 'scss/pages/Programs.module.scss';
-import Script from 'next/script';
-import { prependOnceListener } from 'process';
-import content from '../../_data/programs.json';
+// import Script from 'next/script';
+// import { prependOnceListener } from 'process';
+// import content from '../../_data/programs.json';
+
+import { gql } from '../../__generated__';
+import { useQuery } from '@apollo/client';
+import { GetStaticPropsContext } from 'next';
+import { getNextStaticProps } from '@faustwp/core';
 
 function Programs() {
+
+  const { data } = useQuery(Programs.query);
+  console.log(data?.programs)
+  // const socialUnits = data?.socialUnits?.nodes;
   return (
     <Layout>
       <Intro
@@ -397,3 +406,33 @@ function Programs() {
 }
 
 export default Programs;
+
+Programs.query = gql(`
+query GetPrograms {
+  programs(first: 1000, where: {orderby: {field: TITLE, order: ASC}}) {
+    nodes {
+      title
+      link
+      colleges {
+        nodes {
+          name
+        }
+      }
+      areasOfStudy {
+        nodes {
+          name
+        }
+      }
+      degrees {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
+`);
+
+export function getStaticProps(ctx: GetStaticPropsContext) {
+  return getNextStaticProps(ctx, { Page: Programs, revalidate: 120 });
+}
