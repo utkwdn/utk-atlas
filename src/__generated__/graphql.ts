@@ -349,7 +349,7 @@ export type AToZCategoryToAToZConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -424,7 +424,7 @@ export type AToZCategoryToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -1099,7 +1099,7 @@ export type AreaOfStudyToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -1172,7 +1172,7 @@ export type AreaOfStudyToProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -1344,7 +1344,7 @@ export type BlockEditorContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -1875,7 +1875,7 @@ export type CategoryToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -1973,7 +1973,7 @@ export type CategoryToPostConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -2206,7 +2206,7 @@ export type CollegeToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -2279,7 +2279,7 @@ export type CollegeToProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -3265,7 +3265,7 @@ export type ContentTypeToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -3573,10 +3573,12 @@ export type CoreButtonBlockAttributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3597,10 +3599,12 @@ export type CoreButtonBlockDeprecatedV1Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3619,10 +3623,12 @@ export type CoreButtonBlockDeprecatedV2Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3641,10 +3647,12 @@ export type CoreButtonBlockDeprecatedV3Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3663,10 +3671,12 @@ export type CoreButtonBlockDeprecatedV4Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3685,10 +3695,12 @@ export type CoreButtonBlockDeprecatedV5Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3707,10 +3719,12 @@ export type CoreButtonBlockDeprecatedV6Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3729,10 +3743,12 @@ export type CoreButtonBlockDeprecatedV7Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3751,10 +3767,12 @@ export type CoreButtonBlockDeprecatedV8Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3773,10 +3791,12 @@ export type CoreButtonBlockDeprecatedV9Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3795,10 +3815,12 @@ export type CoreButtonBlockDeprecatedV10Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -3817,10 +3839,12 @@ export type CoreButtonBlockDeprecatedV11Attributes = {
   placeholder?: Maybe<Scalars['String']['output']>;
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tagName: Scalars['String']['output'];
   text?: Maybe<Scalars['String']['output']>;
   textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
   width?: Maybe<Scalars['Float']['output']>;
 };
@@ -5174,6 +5198,7 @@ export type CoreDetailsBlockAttributes = {
   fontFamily?: Maybe<Scalars['String']['output']>;
   fontSize?: Maybe<Scalars['String']['output']>;
   gradient?: Maybe<Scalars['String']['output']>;
+  layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   showContent: Scalars['Boolean']['output'];
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
@@ -5395,8 +5420,14 @@ export type CoreFootnotesBlock = Block & {
 
 export type CoreFootnotesBlockAttributes = {
   __typename?: 'CoreFootnotesBlockAttributes';
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  borderColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  fontFamily?: Maybe<Scalars['String']['output']>;
+  fontSize?: Maybe<Scalars['String']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** core/freeform block */
@@ -5768,6 +5799,7 @@ export type CoreGroupBlockAttributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -5790,6 +5822,7 @@ export type CoreGroupBlockDeprecatedV1Attributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -5810,6 +5843,7 @@ export type CoreGroupBlockDeprecatedV2Attributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -5830,6 +5864,7 @@ export type CoreGroupBlockDeprecatedV3Attributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -5850,6 +5885,7 @@ export type CoreGroupBlockDeprecatedV4Attributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -5870,6 +5906,7 @@ export type CoreGroupBlockDeprecatedV5Attributes = {
   gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   settings?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tagName: Scalars['String']['output'];
@@ -6111,9 +6148,10 @@ export type CoreImageBlockAttributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6124,10 +6162,10 @@ export type CoreImageBlockAttributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
-export type CoreImageBlockAttributesUnion = CoreImageBlockAttributes | CoreImageBlockDeprecatedV1Attributes | CoreImageBlockDeprecatedV2Attributes | CoreImageBlockDeprecatedV3Attributes | CoreImageBlockDeprecatedV4Attributes | CoreImageBlockDeprecatedV5Attributes | CoreImageBlockDeprecatedV6Attributes;
+export type CoreImageBlockAttributesUnion = CoreImageBlockAttributes | CoreImageBlockDeprecatedV1Attributes | CoreImageBlockDeprecatedV2Attributes | CoreImageBlockDeprecatedV3Attributes | CoreImageBlockDeprecatedV4Attributes | CoreImageBlockDeprecatedV5Attributes | CoreImageBlockDeprecatedV6Attributes | CoreImageBlockDeprecatedV7Attributes | CoreImageBlockDeprecatedV8Attributes;
 
 export type CoreImageBlockDeprecatedV1Attributes = {
   __typename?: 'CoreImageBlockDeprecatedV1Attributes';
@@ -6138,9 +6176,10 @@ export type CoreImageBlockDeprecatedV1Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6151,7 +6190,7 @@ export type CoreImageBlockDeprecatedV1Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 export type CoreImageBlockDeprecatedV2Attributes = {
@@ -6163,9 +6202,10 @@ export type CoreImageBlockDeprecatedV2Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6176,7 +6216,7 @@ export type CoreImageBlockDeprecatedV2Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 export type CoreImageBlockDeprecatedV3Attributes = {
@@ -6188,9 +6228,10 @@ export type CoreImageBlockDeprecatedV3Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6201,7 +6242,7 @@ export type CoreImageBlockDeprecatedV3Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 export type CoreImageBlockDeprecatedV4Attributes = {
@@ -6213,9 +6254,10 @@ export type CoreImageBlockDeprecatedV4Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6226,7 +6268,7 @@ export type CoreImageBlockDeprecatedV4Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 export type CoreImageBlockDeprecatedV5Attributes = {
@@ -6238,9 +6280,10 @@ export type CoreImageBlockDeprecatedV5Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6251,7 +6294,7 @@ export type CoreImageBlockDeprecatedV5Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 export type CoreImageBlockDeprecatedV6Attributes = {
@@ -6263,9 +6306,10 @@ export type CoreImageBlockDeprecatedV6Attributes = {
   borderColor?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
-  height?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
   href?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
   linkClass?: Maybe<Scalars['String']['output']>;
   linkDestination?: Maybe<Scalars['String']['output']>;
   linkTarget?: Maybe<Scalars['String']['output']>;
@@ -6276,7 +6320,59 @@ export type CoreImageBlockDeprecatedV6Attributes = {
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
-  width?: Maybe<Scalars['Float']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
+};
+
+export type CoreImageBlockDeprecatedV7Attributes = {
+  __typename?: 'CoreImageBlockDeprecatedV7Attributes';
+  align?: Maybe<Scalars['String']['output']>;
+  alt: Scalars['String']['output'];
+  anchor?: Maybe<Scalars['String']['output']>;
+  aspectRatio?: Maybe<Scalars['String']['output']>;
+  borderColor?: Maybe<Scalars['String']['output']>;
+  caption?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  href?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  linkClass?: Maybe<Scalars['String']['output']>;
+  linkDestination?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  rel?: Maybe<Scalars['String']['output']>;
+  scale?: Maybe<Scalars['String']['output']>;
+  sizeSlug?: Maybe<Scalars['String']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
+};
+
+export type CoreImageBlockDeprecatedV8Attributes = {
+  __typename?: 'CoreImageBlockDeprecatedV8Attributes';
+  align?: Maybe<Scalars['String']['output']>;
+  alt: Scalars['String']['output'];
+  anchor?: Maybe<Scalars['String']['output']>;
+  aspectRatio?: Maybe<Scalars['String']['output']>;
+  borderColor?: Maybe<Scalars['String']['output']>;
+  caption?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  href?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Float']['output']>;
+  lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  linkClass?: Maybe<Scalars['String']['output']>;
+  linkDestination?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  rel?: Maybe<Scalars['String']['output']>;
+  scale?: Maybe<Scalars['String']['output']>;
+  sizeSlug?: Maybe<Scalars['String']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['String']['output']>;
 };
 
 /** core/latest-comments block */
@@ -6485,7 +6581,7 @@ export type CoreListBlockAttributes = {
   values: Scalars['String']['output'];
 };
 
-export type CoreListBlockAttributesUnion = CoreListBlockAttributes | CoreListBlockDeprecatedV1Attributes | CoreListBlockDeprecatedV2Attributes;
+export type CoreListBlockAttributesUnion = CoreListBlockAttributes | CoreListBlockDeprecatedV1Attributes | CoreListBlockDeprecatedV2Attributes | CoreListBlockDeprecatedV3Attributes;
 
 export type CoreListBlockDeprecatedV1Attributes = {
   __typename?: 'CoreListBlockDeprecatedV1Attributes';
@@ -6508,6 +6604,25 @@ export type CoreListBlockDeprecatedV1Attributes = {
 
 export type CoreListBlockDeprecatedV2Attributes = {
   __typename?: 'CoreListBlockDeprecatedV2Attributes';
+  anchor?: Maybe<Scalars['String']['output']>;
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  fontFamily?: Maybe<Scalars['String']['output']>;
+  fontSize?: Maybe<Scalars['String']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  ordered: Scalars['Boolean']['output'];
+  placeholder?: Maybe<Scalars['String']['output']>;
+  reversed?: Maybe<Scalars['Boolean']['output']>;
+  start?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<Scalars['String']['output']>;
+  values: Scalars['String']['output'];
+};
+
+export type CoreListBlockDeprecatedV3Attributes = {
+  __typename?: 'CoreListBlockDeprecatedV3Attributes';
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -6941,6 +7056,7 @@ export type CoreNavigationBlock = Block & {
 export type CoreNavigationBlockAttributes = {
   __typename?: 'CoreNavigationBlockAttributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -6972,6 +7088,7 @@ export type CoreNavigationBlockAttributesUnion = CoreNavigationBlockAttributes |
 export type CoreNavigationBlockDeprecatedV1Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV1Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7001,6 +7118,7 @@ export type CoreNavigationBlockDeprecatedV1Attributes = {
 export type CoreNavigationBlockDeprecatedV2Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV2Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7030,6 +7148,7 @@ export type CoreNavigationBlockDeprecatedV2Attributes = {
 export type CoreNavigationBlockDeprecatedV3Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV3Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7059,6 +7178,7 @@ export type CoreNavigationBlockDeprecatedV3Attributes = {
 export type CoreNavigationBlockDeprecatedV4Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV4Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7088,6 +7208,7 @@ export type CoreNavigationBlockDeprecatedV4Attributes = {
 export type CoreNavigationBlockDeprecatedV5Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV5Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7117,6 +7238,7 @@ export type CoreNavigationBlockDeprecatedV5Attributes = {
 export type CoreNavigationBlockDeprecatedV6Attributes = {
   __typename?: 'CoreNavigationBlockDeprecatedV6Attributes';
   align?: Maybe<Scalars['String']['output']>;
+  ariaLabel?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
@@ -7723,12 +7845,15 @@ export type CorePostContentBlock = Block & {
 export type CorePostContentBlockAttributes = {
   __typename?: 'CorePostContentBlockAttributes';
   align?: Maybe<Scalars['String']['output']>;
+  backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   fontFamily?: Maybe<Scalars['String']['output']>;
   fontSize?: Maybe<Scalars['String']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** core/post-date block */
@@ -8285,6 +8410,7 @@ export type CoreQueryBlockAttributes = {
   __typename?: 'CoreQueryBlockAttributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8299,6 +8425,7 @@ export type CoreQueryBlockDeprecatedV1Attributes = {
   __typename?: 'CoreQueryBlockDeprecatedV1Attributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8311,6 +8438,7 @@ export type CoreQueryBlockDeprecatedV2Attributes = {
   __typename?: 'CoreQueryBlockDeprecatedV2Attributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8323,6 +8451,7 @@ export type CoreQueryBlockDeprecatedV3Attributes = {
   __typename?: 'CoreQueryBlockDeprecatedV3Attributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8335,6 +8464,7 @@ export type CoreQueryBlockDeprecatedV4Attributes = {
   __typename?: 'CoreQueryBlockDeprecatedV4Attributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8347,6 +8477,7 @@ export type CoreQueryBlockDeprecatedV5Attributes = {
   __typename?: 'CoreQueryBlockDeprecatedV5Attributes';
   align?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
+  enhancedPagination: Scalars['Boolean']['output'];
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   namespace?: Maybe<Scalars['String']['output']>;
@@ -8523,6 +8654,7 @@ export type CoreQueryPaginationNumbersBlockAttributes = {
   fontSize?: Maybe<Scalars['String']['output']>;
   gradient?: Maybe<Scalars['String']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  midSize: Scalars['Float']['output'];
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
 };
@@ -10701,7 +10833,7 @@ export type DegreeToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -10774,7 +10906,7 @@ export type DegreeToProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -10814,7 +10946,7 @@ export type DeleteAToZCategoryInput = {
 /** The payload for the deleteAToZCategory mutation. */
 export type DeleteAToZCategoryPayload = {
   __typename?: 'DeleteAToZCategoryPayload';
-  /** The deteted term object */
+  /** The deleted term object */
   aToZCategory?: Maybe<AToZCategory>;
   /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
@@ -10879,7 +11011,7 @@ export type DeleteAreaOfStudyInput = {
 /** The payload for the deleteAreaOfStudy mutation. */
 export type DeleteAreaOfStudyPayload = {
   __typename?: 'DeleteAreaOfStudyPayload';
-  /** The deteted term object */
+  /** The deleted term object */
   areaOfStudy?: Maybe<AreaOfStudy>;
   /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
@@ -10921,7 +11053,7 @@ export type DeleteCategoryInput = {
 /** The payload for the deleteCategory mutation. */
 export type DeleteCategoryPayload = {
   __typename?: 'DeleteCategoryPayload';
-  /** The deteted term object */
+  /** The deleted term object */
   category?: Maybe<Category>;
   /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
@@ -10942,7 +11074,7 @@ export type DeleteCollegePayload = {
   __typename?: 'DeleteCollegePayload';
   /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  /** The deteted term object */
+  /** The deleted term object */
   college?: Maybe<College>;
   /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']['output']>;
@@ -10982,7 +11114,7 @@ export type DeleteDegreePayload = {
   __typename?: 'DeleteDegreePayload';
   /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  /** The deteted term object */
+  /** The deleted term object */
   degree?: Maybe<Degree>;
   /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']['output']>;
@@ -11003,7 +11135,7 @@ export type DeleteMajorPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']['output']>;
-  /** The deteted term object */
+  /** The deleted term object */
   major?: Maybe<Major>;
 };
 
@@ -11066,7 +11198,7 @@ export type DeletePostFormatPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']['output']>;
-  /** The deteted term object */
+  /** The deleted term object */
   postFormat?: Maybe<PostFormat>;
 };
 
@@ -11177,7 +11309,7 @@ export type DeleteTagPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']['output']>;
-  /** The deteted term object */
+  /** The deleted term object */
   tag?: Maybe<Tag>;
 };
 
@@ -11221,11 +11353,23 @@ export type Edge = {
 
 /** Asset enqueued by the CMS */
 export type EnqueuedAsset = {
-  /** @todo */
+  /** The inline code to be run after the asset is loaded. */
+  after?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /**
+   * Deprecated
+   * @deprecated Use `EnqueuedAsset.media` instead.
+   */
   args?: Maybe<Scalars['Boolean']['output']>;
+  /** The inline code to be run before the asset is loaded. */
+  before?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The HTML conditional comment for the enqueued asset. E.g. IE 6, lte IE 7, etc */
+  conditional?: Maybe<Scalars['String']['output']>;
   /** Dependencies needed to use this asset */
-  dependencies?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /** Extra information needed for the script */
+  dependencies?: Maybe<Array<Maybe<EnqueuedAsset>>>;
+  /**
+   * Extra information needed for the script
+   * @deprecated Use `EnqueuedScript.extraData` instead.
+   */
   extra?: Maybe<Scalars['String']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
@@ -11240,19 +11384,35 @@ export type EnqueuedAsset = {
 /** Script enqueued by the CMS */
 export type EnqueuedScript = EnqueuedAsset & Node & {
   __typename?: 'EnqueuedScript';
-  /** @todo */
+  /** The inline code to be run after the asset is loaded. */
+  after?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /**
+   * Deprecated
+   * @deprecated Use `EnqueuedAsset.media` instead.
+   */
   args?: Maybe<Scalars['Boolean']['output']>;
+  /** The inline code to be run before the asset is loaded. */
+  before?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The HTML conditional comment for the enqueued asset. E.g. IE 6, lte IE 7, etc */
+  conditional?: Maybe<Scalars['String']['output']>;
   /** Dependencies needed to use this asset */
   dependencies?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /** Extra information needed for the script */
+  /**
+   * Extra information needed for the script
+   * @deprecated Use `EnqueuedScript.extraData` instead.
+   */
   extra?: Maybe<Scalars['String']['output']>;
+  /** Extra data supplied to the enqueued script */
+  extraData?: Maybe<Scalars['String']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
-  /** The ID of the enqueued asset */
+  /** The global ID of the enqueued script */
   id: Scalars['ID']['output'];
   /** The source of the asset */
   src?: Maybe<Scalars['String']['output']>;
-  /** The version of the enqueued asset */
+  /** The loading strategy to use on the script tag */
+  strategy?: Maybe<ScriptLoadingStrategyEnum>;
+  /** The version of the enqueued script */
   version?: Maybe<Scalars['String']['output']>;
 };
 
@@ -11291,19 +11451,43 @@ export type EnqueuedScriptConnectionPageInfo = {
 /** Stylesheet enqueued by the CMS */
 export type EnqueuedStylesheet = EnqueuedAsset & Node & {
   __typename?: 'EnqueuedStylesheet';
-  /** @todo */
+  /** The inline code to be run after the asset is loaded. */
+  after?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /**
+   * Deprecated
+   * @deprecated Use `EnqueuedAsset.media` instead.
+   */
   args?: Maybe<Scalars['Boolean']['output']>;
+  /** The inline code to be run before the asset is loaded. */
+  before?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The HTML conditional comment for the enqueued asset. E.g. IE 6, lte IE 7, etc */
+  conditional?: Maybe<Scalars['String']['output']>;
   /** Dependencies needed to use this asset */
-  dependencies?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /** Extra information needed for the script */
+  dependencies?: Maybe<Array<Maybe<EnqueuedStylesheet>>>;
+  /**
+   * Extra information needed for the script
+   * @deprecated Use `EnqueuedScript.extraData` instead.
+   */
   extra?: Maybe<Scalars['String']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
-  /** The ID of the enqueued asset */
+  /** The global ID of the enqueued stylesheet */
   id: Scalars['ID']['output'];
+  /** Whether the enqueued style is RTL or not */
+  isRtl?: Maybe<Scalars['Boolean']['output']>;
+  /** The media attribute to use for the link */
+  media?: Maybe<Scalars['String']['output']>;
+  /** The absolute path to the enqueued style. Set when the stylesheet is meant to load inline. */
+  path?: Maybe<Scalars['String']['output']>;
+  /** The `rel` attribute to use for the link */
+  rel?: Maybe<Scalars['String']['output']>;
   /** The source of the asset */
   src?: Maybe<Scalars['String']['output']>;
-  /** The version of the enqueued asset */
+  /** Optional suffix, used in combination with RTL */
+  suffix?: Maybe<Scalars['String']['output']>;
+  /** The title of the enqueued style. Used for preferred/alternate stylesheets. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** The version of the enqueued style */
   version?: Maybe<Scalars['String']['output']>;
 };
 
@@ -11555,7 +11739,7 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -11630,7 +11814,7 @@ export type HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -11924,7 +12108,7 @@ export type MajorToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -11997,7 +12181,7 @@ export type MajorToProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -13468,7 +13652,7 @@ export type PageToRevisionConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -14028,7 +14212,7 @@ export type PostFormatToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -14117,7 +14301,7 @@ export type PostFormatToPostConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -14629,7 +14813,7 @@ export type PostToRevisionConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -16019,7 +16203,7 @@ export type ReusableBlockToRevisionConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -17499,7 +17683,7 @@ export type RootQueryToAToZConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -17572,7 +17756,7 @@ export type RootQueryToAcalogProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -17734,7 +17918,7 @@ export type RootQueryToBlockEditorPreviewConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18070,7 +18254,7 @@ export type RootQueryToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18418,7 +18602,7 @@ export type RootQueryToMediaItemConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18591,7 +18775,7 @@ export type RootQueryToPageConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18725,7 +18909,7 @@ export type RootQueryToPostConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18891,7 +19075,7 @@ export type RootQueryToProgramConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -18964,7 +19148,7 @@ export type RootQueryToReusableBlockConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -19039,7 +19223,7 @@ export type RootQueryToRevisionsConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -19112,7 +19296,7 @@ export type RootQueryToSocialUnitConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -19421,7 +19605,7 @@ export type RootQueryToUserConnectionWhereArgs = {
   nicenameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** An array of nicenames to exclude. Users matching one of these nicenames will not be included in results. */
   nicenameNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<UsersConnectionOrderbyInput>>>;
   /** An array of role names that users must match to be included in results. Note that this is an inclusive list: users must match *each* role. */
   role?: InputMaybe<UserRoleEnum>;
@@ -19766,6 +19950,14 @@ export type SeoWebmaster = {
   msVerify?: Maybe<Scalars['String']['output']>;
   yandexVerify?: Maybe<Scalars['String']['output']>;
 };
+
+/** The strategy to use when loading the script */
+export enum ScriptLoadingStrategyEnum {
+  /** Use the script `async` attribute */
+  Async = 'ASYNC',
+  /** Use the script `defer` attribute */
+  Defer = 'DEFER'
+}
 
 /** Input for the sendPasswordResetEmail mutation. */
 export type SendPasswordResetEmailInput = {
@@ -20182,7 +20374,7 @@ export type TagToContentNodeConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -20271,7 +20463,7 @@ export type TagToPostConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -20317,6 +20509,8 @@ export type Taxonomy = Node & {
   __typename?: 'Taxonomy';
   /** List of Content Types associated with the Taxonomy */
   connectedContentTypes?: Maybe<TaxonomyToContentTypeConnection>;
+  /** List of Term Nodes associated with the Taxonomy */
+  connectedTerms?: Maybe<TaxonomyToTermNodeConnection>;
   /** Description of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;description */
   description?: Maybe<Scalars['String']['output']>;
   /** The plural name of the post type within the GraphQL Schema. */
@@ -20335,7 +20529,7 @@ export type Taxonomy = Node & {
   name?: Maybe<Scalars['String']['output']>;
   /** Whether the taxonomy is publicly queryable */
   public?: Maybe<Scalars['Boolean']['output']>;
-  /** Name of content type to diplay in REST API &quot;wp/v2&quot; namespace. */
+  /** Name of content type to display in REST API &quot;wp/v2&quot; namespace. */
   restBase?: Maybe<Scalars['String']['output']>;
   /** The REST Controller class assigned to handling this content type. */
   restControllerClass?: Maybe<Scalars['String']['output']>;
@@ -20360,6 +20554,15 @@ export type Taxonomy = Node & {
 
 /** A taxonomy object */
 export type TaxonomyConnectedContentTypesArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** A taxonomy object */
+export type TaxonomyConnectedTermsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -20477,6 +20680,41 @@ export type TaxonomyToContentTypeConnectionEdge = ContentTypeConnectionEdge & Ed
 /** Page Info on the &quot;TaxonomyToContentTypeConnection&quot; */
 export type TaxonomyToContentTypeConnectionPageInfo = ContentTypeConnectionPageInfo & PageInfo & WpPageInfo & {
   __typename?: 'TaxonomyToContentTypeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Taxonomy type and the TermNode type */
+export type TaxonomyToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'TaxonomyToTermNodeConnection';
+  /** Edges for the TaxonomyToTermNodeConnection connection */
+  edges: Array<TaxonomyToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: TaxonomyToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type TaxonomyToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'TaxonomyToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;TaxonomyToTermNodeConnection&quot; */
+export type TaxonomyToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'TaxonomyToTermNodeConnectionPageInfo';
   /** When paginating forwards, the cursor to continue. */
   endCursor?: Maybe<Scalars['String']['output']>;
   /** When paginating forwards, are there more items? */
@@ -21501,7 +21739,7 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   locale?: Maybe<Scalars['String']['output']>;
   /** Connection between the User type and the mediaItem type */
   mediaItems?: Maybe<UserToMediaItemConnection>;
-  /** Display name of the user. This is equivalent to the WP_User-&gt;dispaly_name property. */
+  /** Display name of the user. This is equivalent to the WP_User-&gt;display_name property. */
   name?: Maybe<Scalars['String']['output']>;
   /** The nicename for the user. This field is equivalent to WP_User-&gt;user_nicename */
   nicename?: Maybe<Scalars['String']['output']>;
@@ -21807,7 +22045,7 @@ export type UserToBlockEditorPreviewConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -22055,7 +22293,7 @@ export type UserToMediaItemConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -22136,7 +22374,7 @@ export type UserToPageConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -22225,7 +22463,7 @@ export type UserToPostConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -22312,7 +22550,7 @@ export type UserToRevisionsConnectionWhereArgs = {
   nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** What paramater to use to order the objects by. */
+  /** What parameter to use to order the objects by. */
   orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
   parent?: InputMaybe<Scalars['ID']['input']>;
@@ -23043,6 +23281,11 @@ export type MainNavQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type MainNavQuery = { __typename?: 'RootQuery', menuItems?: { __typename?: 'RootQueryToMenuItemConnection', nodes: Array<{ __typename?: 'MenuItem', id: string, uri?: string | null, url?: string | null, title?: string | null, parentId?: string | null, label?: string | null, childItems?: { __typename?: 'MenuItemToMenuItemConnection', nodes: Array<{ __typename?: 'MenuItem', label?: string | null, id: string, url?: string | null, uri?: string | null }> } | null }> } | null };
 
+export type GetProgramsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetProgramsQuery = { __typename?: 'RootQuery', programs?: { __typename?: 'RootQueryToProgramConnection', nodes: Array<{ __typename?: 'Program', title?: string | null, colleges?: { __typename?: 'ProgramToCollegeConnection', nodes: Array<{ __typename?: 'College', name?: string | null }> } | null, areasOfStudy?: { __typename?: 'ProgramToAreaOfStudyConnection', nodes: Array<{ __typename?: 'AreaOfStudy', name?: string | null }> } | null, degrees?: { __typename?: 'ProgramToDegreeConnection', nodes: Array<{ __typename?: 'Degree', name?: string | null }> } | null, majors?: { __typename?: 'ProgramToMajorConnection', nodes: Array<{ __typename?: 'Major', name?: string | null }> } | null, programDetailsFields?: { __typename?: 'Program_Programdetailsfields', url?: string | null } | null }> } | null };
+
 export type GetAToZQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -23087,6 +23330,7 @@ export type GetPostQuery = { __typename?: 'RootQuery', post?: { __typename?: 'Po
 
 export const FooterToolsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"FooterTools"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"toolsItems"},"name":{"kind":"Name","value":"menuItems"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"location"},"value":{"kind":"EnumValue","value":"TOOLS"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"label"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"linksItems"},"name":{"kind":"Name","value":"menuItems"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"location"},"value":{"kind":"EnumValue","value":"LINKS"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"label"}}]}}]}}]}}]} as unknown as DocumentNode<FooterToolsQuery, FooterToolsQueryVariables>;
 export const MainNavDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"MainNav"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"menuItems"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"location"},"value":{"kind":"EnumValue","value":"PRIMARY"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"uri"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"parentId"}},{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"childItems"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"uri"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<MainNavQuery, MainNavQueryVariables>;
+export const GetProgramsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPrograms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"programs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"orderby"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"TITLE"}},{"kind":"ObjectField","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"ASC"}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"colleges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"areasOfStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"degrees"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"majors"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"programDetailsFields"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetProgramsQuery, GetProgramsQueryVariables>;
 export const GetAToZDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAToZ"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allAToZ"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"orderby"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"TITLE"}},{"kind":"ObjectField","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"ASC"}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"format"},"value":{"kind":"EnumValue","value":"RENDERED"}}]},{"kind":"Field","name":{"kind":"Name","value":"aToZFields"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAToZQuery, GetAToZQueryVariables>;
 export const GetSocialsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSocials"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"socialUnits"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1000"}},{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"orderby"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"TITLE"}},{"kind":"ObjectField","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"ASC"}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"socialUnitURLs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"twitter"}},{"kind":"Field","name":{"kind":"Name","value":"facebook"}},{"kind":"Field","name":{"kind":"Name","value":"instagram"}},{"kind":"Field","name":{"kind":"Name","value":"youtube"}},{"kind":"Field","name":{"kind":"Name","value":"linkedin"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetSocialsQuery, GetSocialsQueryVariables>;
 export const GetCategoryPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCategoryPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"uri"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodeByUri"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"uri"},"value":{"kind":"Variable","name":{"kind":"Name","value":"uri"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Category"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"format"},"value":{"kind":"EnumValue","value":"RENDERED"}}]},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"sourceUrl"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"hasPreviousPage"}}]}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"generalSettings"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<GetCategoryPageQuery, GetCategoryPageQueryVariables>;
