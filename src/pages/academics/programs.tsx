@@ -24,13 +24,13 @@ function Programs() {
         <table>
           <thead>
             <tr>
-            <th>Major</th>
-            <th>Concentration</th>
-            <th>College</th>
-            <th>Area of Study</th>
-            <th>Degrees</th>
-            <th>Online</th>
-            <th>Program Link</th>
+              <th style={{padding: '5px 10px'}}>Major</th>
+              <th style={{padding: '5px 10px'}}>Concentration</th>
+              <th style={{padding: '5px 10px'}}>College</th>
+              <th style={{padding: '5px 10px'}}>Area of Study</th>
+              <th style={{padding: '5px 10px'}}>Degrees</th>
+              <th style={{padding: '5px 10px'}}>Online</th>
+              <th style={{padding: '5px 10px'}}>Program Link</th>
             </tr>
           </thead>
           <tbody>
@@ -47,16 +47,16 @@ function Programs() {
 
                 return (
                 <tr key={i} style={{borderBottom: '1px solid black'}}>
-                  <td>{major}</td>
-                  <td>{concentration}</td>
-                  <td>{college}</td>
-                  <td>{areaOfStudy}</td>
-                  <td>{degreeString}</td>
+                  <td style={{padding: '5px 10px'}}>{major}</td>
+                  <td style={{padding: '5px 10px'}}>{concentration}</td>
+                  <td style={{padding: '5px 10px'}}>{college}</td>
+                  <td style={{padding: '5px 10px'}}>{areaOfStudy}</td>
+                  <td style={{padding: '5px 10px'}}>{degreeString}</td>
                   {hasOnline
-                    ? <td style={{fontSize: 'xx-large'}}>&#9989;</td>
-                    : <td></td>
+                    ? <td style={{fontSize: 'xx-large', padding: '5px 10px'}}>&#9989;</td>
+                    : <td style={{padding: '5px 10px'}}></td>
                   }
-                  <td><a href={programLink}>link</a></td>
+                  <td style={{padding: '5px 10px'}}><a href={programLink}>link</a></td>
                 </tr>
                 )
               })}
