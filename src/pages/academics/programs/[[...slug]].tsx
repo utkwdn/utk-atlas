@@ -6,11 +6,6 @@ import { getNextStaticProps } from '@faustwp/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import {
-  // ChangeEventHandler,
-  // FormEventHandler,
-  // useCallback,
-  // useMemo,
-  // useRef,
   useEffect,
   useState,
 } from 'react';
@@ -23,7 +18,7 @@ interface Program {
   major: string
   concentration: string
   college: string
-  areaOfStudy: string
+  'area-of-study': string
   degrees: string
   online: boolean
   programLink: string
@@ -36,7 +31,7 @@ function Programs() {
         major: '',
         concentration: '',
         college: '',
-        areaOfStudy: '',
+        'area-of-study': '',
         degrees: '',
         online: false,
         programLink: '#'
@@ -63,12 +58,17 @@ function Programs() {
 
 
   if(router.query.slug && router.query.slug.length > 1) {
-    if(filterType !== router.query.slug[0]) {
-      setFilterType(router.query.slug[0]);
+    const newFilterType = router.query.slug[0];
+    const newFilterTerm = router.query.slug[1].replaceAll('-',' ');
+
+    console.log(newFilterTerm)
+
+    if(filterType !== newFilterType) {
+      setFilterType(newFilterType);
     }
     
-    if(filterTerm !== router.query.slug[1]) {
-      setFilterTerm(router.query.slug[1]);
+    if(filterTerm !== newFilterTerm) {
+      setFilterTerm(newFilterTerm);
     }
   }
 
@@ -84,7 +84,7 @@ function Programs() {
             major: program.majors?.nodes[0].name || '',
             concentration: program.title || '',
             college: program.colleges?.nodes[0].name || '',
-            areaOfStudy: program.areasOfStudy?.nodes[0].name || '',
+            'area-of-study': program.areasOfStudy?.nodes[0].name || '',
             degrees: degreeString,
             online: hasOnline,
             programLink: program.programDetailsFields?.url || '#'
@@ -105,10 +105,6 @@ function Programs() {
      
     }
   }, [programs]);
-  
-
-  
-
   
 
   return (
@@ -139,7 +135,7 @@ function Programs() {
                       <td style={{padding: '5px 10px'}}>{this_program.major}</td>
                       <td style={{padding: '5px 10px'}}>{this_program.concentration}</td>
                       <td style={{padding: '5px 10px'}}>{this_program.college}</td>
-                      <td style={{padding: '5px 10px'}}>{this_program.areaOfStudy}</td>
+                      <td style={{padding: '5px 10px'}}>{this_program['area-of-study']}</td>
                       <td style={{padding: '5px 10px'}}>{this_program.degrees}</td>
                       {this_program.online
                         ? <td style={{fontSize: 'xx-large', padding: '5px 10px'}}>&#9989;</td>
