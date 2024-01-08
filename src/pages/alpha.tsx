@@ -96,11 +96,11 @@ const Alpha = () => {
   const { data } = useQuery(Alpha.query);
   const rawItems = data?.allAToZ?.nodes;
 
-  interface CharItem {
-    title: string;
-    id: string;
-    aToZFields: { tags: string; url: string };
-  }
+  // interface CharItem {
+  //   title: string;
+  //   id: string;
+  //   aToZFields: { tags: string; url: string };
+  // }
 
   const itemsByChar = useRef(
     rawItems?.reduce((map, item) => {
@@ -137,6 +137,10 @@ const Alpha = () => {
       return map;
     }, new Map<Character, Item[]>())
   );
+
+  console.log(rawItems)
+  console.log('----------')
+  console.log(itemsByChar)
 
   /**
    * All characters represented in the fetched data, sorted alphabetically (with `'#'` at the end, if present).
