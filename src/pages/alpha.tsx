@@ -138,10 +138,6 @@ const Alpha = () => {
     }, new Map<Character, Item[]>())
   );
 
-  console.log(rawItems)
-  console.log('----------')
-  console.log(itemsByChar)
-
   /**
    * All characters represented in the fetched data, sorted alphabetically (with `'#'` at the end, if present).
    * Will never change.
@@ -166,8 +162,6 @@ const Alpha = () => {
       return activeItems.some(({ label }) => label[0].toUpperCase() === char);
     }
   });
-
-  // console.log(activeChars);
 
   const _handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
     (e) => {
