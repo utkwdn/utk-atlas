@@ -38,3 +38,20 @@
   display: block;
   position: relative;
 }
+
+@media screen and (max-width: 1190px) {
+  .wp-block-cover.cover-mobile-thin {
+    // add on to control the height of a cover. WordPress does not scale this well automatically. forcing height to be smaller on smaller screens.
+    height: 30vw !important;
+    min-height: auto;
+  }
+  .wp-block-cover.cover-mobile-thin img,
+  .wp-block-cover.cover-mobile-thin span {
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .fix-ios-cover-mobile {
+    background-attachment: scroll !important;
+    background-size: auto 100%;
+  }
+}
