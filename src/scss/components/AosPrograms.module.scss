@@ -1,0 +1,125 @@
+@import 'scss/common';
+
+.searchContainer {
+  flex-direction: row;
+  max-width: 80vw;
+  margin: 0 auto 2rem auto;
+}
+
+.radioButtonSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.radioButton {
+  margin-right: 20px;
+  font-weight: 500;
+  input {
+    margin-right: 5px;
+  }
+}
+
+.programsContainer {
+  flex-direction: row;
+  max-width: 80vw;
+  margin: 0 auto;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.programsContainerOuter {
+  position: relative;
+  min-height: 100px;
+}
+
+.srollInstructions {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 10px 10px 0;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  span {
+    font-size: 70px;
+    line-height: 1px;
+    margin: 9px 10px 0 0;
+  }
+  p {
+    margin: 5px 2px 0 0;
+  }
+}
+
+.programsContainerInner {
+  overflow-y: scroll;
+  box-sizing: content-box;
+  max-height: 430px;
+  width: 100%;
+  padding-left: 53px;
+}
+
+.programRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+}
+
+.programNameDegree {
+  strong {
+    font-size: 0.7em;
+    font-weight: 700;
+  }
+}
+.programCollege {
+  font-size: 0.7em;
+}
+.input-wrapper,
+.alpha-form {
+  margin: 2rem 0 0 0;
+  border-left: 0.6rem solid $utorange;
+  // margin-left: -0.25rem;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  width: 50%;
+  // &:focus {
+  // }
+  [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
+    border-radius: 0 !important;
+  }
+  .MuiTextField-root {
+    width: 80%;
+    // border: none;
+    // padding: 0.25rem 1rem;
+
+    padding: 16.5px 14px;
+    // border-top: 1px solid $utgray4;
+    // border-bottom: 1px solid $utgray4;
+    // border-left: none;
+    // color: $utsmokey;
+    // &:focus {
+    //   outline: none !important;
+    //   border: 2px solid $utlinkriver;
+    // }
+  }
+  button {
+    color: #707070;
+    background-color: #f1f1f1;
+    padding: 0.8rem 1rem;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $utgray4;
+    border-bottom: 1px solid $utgray4;
+    border-right: 1px solid $utgray4;
+    text-transform: uppercase;
+    font-weight: $font-weight-bolder;
+    font-size: $h6-font-size;
+    &:hover {
+      background-color: $utsmokey;
+      color: white !important;
+    }
+  }
+}

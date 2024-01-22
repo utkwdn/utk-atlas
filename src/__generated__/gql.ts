@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "\n  query GetAosPrograms($aosName: [String]) { \n    areasOfStudy(where: {name: $aosName}) {\n      nodes {\n        name\n        id\n        programs(first: 300) {\n          nodes {\n            title\n            colleges {\n              nodes {\n                name\n              }\n            }\n            degrees {\n              nodes {\n                name\n                description\n              }\n            }\n            programDetailsFields {\n              url\n            }\n          }\n        }\n      }\n    }\n  }\n": types.GetAosProgramsDocument,
     "\n  query FooterTools {\n    toolsItems: menuItems(where: { location: TOOLS }) {\n      nodes {\n        url\n        label\n      }\n    }\n    linksItems: menuItems(where: { location: LINKS }) {\n      nodes {\n        url\n        label\n      }\n    }\n  }\n": types.FooterToolsDocument,
     "\n  query MainNav {\n    menuItems(where: { location: PRIMARY }) {\n      nodes {\n        id\n        uri\n        url\n        title\n        parentId\n        label\n        childItems {\n          nodes {\n            label\n            id\n            url\n            uri\n          }\n        }\n      }\n    }\n  }\n": types.MainNavDocument,
     "\nquery GetPrograms {\n  programs(first: 1000, where: {orderby: {field: TITLE, order: ASC}}) {\n    nodes {\n      title\n      colleges {\n        nodes {\n          name\n        }\n      }\n      areasOfStudy {\n        nodes {\n          name\n        }\n      }\n      degrees {\n        nodes {\n          name\n          description\n        }\n      }\n      majors {\n        nodes {\n          name\n        }\n      }\n      programDetailsFields {\n        url\n      }\n    }\n  }\n}\n": types.GetProgramsDocument,
@@ -38,6 +39,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query GetAosPrograms($aosName: [String]) { \n    areasOfStudy(where: {name: $aosName}) {\n      nodes {\n        name\n        id\n        programs(first: 300) {\n          nodes {\n            title\n            colleges {\n              nodes {\n                name\n              }\n            }\n            degrees {\n              nodes {\n                name\n                description\n              }\n            }\n            programDetailsFields {\n              url\n            }\n          }\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetAosPrograms($aosName: [String]) { \n    areasOfStudy(where: {name: $aosName}) {\n      nodes {\n        name\n        id\n        programs(first: 300) {\n          nodes {\n            title\n            colleges {\n              nodes {\n                name\n              }\n            }\n            degrees {\n              nodes {\n                name\n                description\n              }\n            }\n            programDetailsFields {\n              url\n            }\n          }\n        }\n      }\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

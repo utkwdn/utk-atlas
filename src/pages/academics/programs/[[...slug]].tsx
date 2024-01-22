@@ -122,7 +122,7 @@ function Programs() {
         })
         .sort(alphabetizeByMajor);
 
-      // Apply any College filters
+      // Apply any Search filters
       if (filters.search !== '') {
         flatPrograms = matchSorter(flatPrograms, filters.search, {
           keys: ['major', 'concentration', 'college', 'areaOfStudy', 'degrees'],
