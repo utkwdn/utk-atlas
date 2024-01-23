@@ -176,7 +176,7 @@ function Footer(): JSX.Element {
               <p className="text-white small">
                 <a
                   className="text-white me-3 footer-links"
-                  href="https://oed.utk.edu/ada/"
+                  href="https://dae.utk.edu/eoa/ada/"
                 >
                   ADA
                 </a>
