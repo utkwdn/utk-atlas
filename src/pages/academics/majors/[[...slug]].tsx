@@ -86,6 +86,9 @@ function Programs() {
     degreeTypes: '',
   });
 
+  const [selectAreas, setSelectAreas] = useState(['']);
+  const [selectColleges, setSelectColleges] = useState(['']);
+
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
 
@@ -118,7 +121,7 @@ function Programs() {
     const _filters: Filters = filters;
     _filters[filterType] = value;
     setFilters({ ..._filters });
-    // console.log(filters);
+    console.log(filters);
   };
 
   const handleSearchSubmit = (e: FormEvent) => {
@@ -134,6 +137,9 @@ function Programs() {
       degree: {},
       program: {},
     };
+
+    const allColleges: string[] = [];
+    const allAreas: string[] = [];
 
     const majorArray: MajorArray[] = [
       // {
@@ -162,6 +168,14 @@ function Programs() {
     };
 
     flat.forEach((program) => {
+      // Add college if not added yet
+      if (!allColleges.includes(program.college)) {
+        allColleges.push(program.college);
+      }
+      // Add area of study if not added yet
+      if (!allAreas.includes(program.areaOfStudy)) {
+        allAreas.push(program.areaOfStudy);
+      }
       // If major hasn't been added yet
       if (!(program.major in majorObject)) {
         // Add to object to check against following programs
@@ -222,6 +236,15 @@ function Programs() {
       }
     });
 
+    // Only update areas for select box on initial load
+    if (selectAreas[0] === '') {
+      setSelectAreas(allAreas);
+    }
+    // Only update colleges for select box on initial load
+    if (selectColleges[0] === '') {
+      setSelectColleges(allColleges);
+    }
+
     return majorArray;
 
     // console.log(majorArrayIndexes);
@@ -267,25 +290,17 @@ function Programs() {
       }
       // Apply any Area of Study filters
       if (filters.areaOfStudy !== '') {
-        flatPrograms = matchSorter(
-          flatPrograms,
-          filters.areaOfStudy.replaceAll('-', ' '),
-          {
-            keys: ['areaOfStudy'],
-            threshold: matchSorter.rankings.EQUAL,
-          }
-        );
+        flatPrograms = matchSorter(flatPrograms, filters.areaOfStudy, {
+          keys: ['areaOfStudy'],
+          threshold: matchSorter.rankings.EQUAL,
+        });
       }
       // Apply any College filters
       if (filters.college !== '') {
-        flatPrograms = matchSorter(
-          flatPrograms,
-          filters.college.replaceAll('-', ' '),
-          {
-            keys: ['college'],
-            threshold: matchSorter.rankings.ACRONYM,
-          }
-        );
+        flatPrograms = matchSorter(flatPrograms, filters.college, {
+          keys: ['college'],
+          threshold: matchSorter.rankings.ACRONYM,
+        });
       }
       // Apply any Degree Type filters
       if (filters.degreeTypes !== '') {
@@ -294,6 +309,8 @@ function Programs() {
           threshold: matchSorter.rankings.WORD_STARTS_WITH,
         });
       }
+
+      console.log(`Total Matches - ${flatPrograms.length}`);
 
       // Organize into major/degree/concentration hierarchy then update state
       setActiveItems(organizeByMajor(flatPrograms));
@@ -338,36 +355,14 @@ function Programs() {
             onChange={(e) => handleFilterChange('areaOfStudy', e.target.value)}
           >
             <option value="">All Areas of Study</option>
-            <option value="agriculture-and-natural-resources">
-              Agriculture and Natural Resources
-            </option>
-            <option value="architecture-and-design">
-              Architecture and Design
-            </option>
-            <option value="art-and-performance">Art and Performance</option>
-            <option value="business">Business</option>
-            <option value="communication-and-information-sciences">
-              Communication and Information Sciences
-            </option>
-            <option value="education">Education</option>
-            <option value="engineering-math-and-computers">
-              Engineering, Math and Computers
-            </option>
-            <option value="english-and-literature">
-              English and Literature
-            </option>
-            <option value="health-wellness-and-human-sciences">
-              Health, Wellness and Human Sciences
-            </option>
-            <option value="languages-cultures-and-humanities">
-              Languages, Cultures and Humanities
-            </option>
-            <option value="law-and-justice">Law and Justice</option>
-            <option value="science">Science</option>
-            <option value="social-science-and-social-work">
-              Social Science and Social Work
-            </option>
-            <option value="veterinary">Veterinary</option>
+            {/* Map AOS options from fetched data */}
+            {selectAreas?.map((this_area, i) => {
+              return (
+                <option key={i} value={this_area}>
+                  {this_area}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div>
@@ -381,36 +376,14 @@ function Programs() {
             onChange={(e) => handleFilterChange('college', e.target.value)}
           >
             <option value="">All Colleges</option>
-            <option value="herbert-college-of-agriculture">
-              Herbert College of Agriculture
-            </option>
-            <option value="architecture-and-design">
-              Architecture and Design
-            </option>
-            <option value="arts-and-sciences">Arts and Sciences</option>
-            <option value="baker-school-of-public-policy-and-public-affairs">
-              Baker School of Public Policy and Public Affairs
-            </option>
-            <option value="haslam-college-of-business">
-              Haslam College of Business
-            </option>
-            <option value="communication-and-information">
-              Communication and Information
-            </option>
-            <option value="education-health-and-human-sciences">
-              Education, Health and Human Sciences
-            </option>
-            <option value="emerging-and-collaborative-studies">
-              Emerging and Collaborative Studies
-            </option>
-            <option value="tickle-college-of-engineering">
-              Tickle College of Engineering
-            </option>
-            <option value="law">Law</option>
-            <option value="music">Music</option>
-            <option value="nursing">Nursing</option>
-            <option value="social-work">Social Work</option>
-            <option value="veterinary-medicine">Veterinary Medicine</option>
+            {/* Map college options from fetched data */}
+            {selectColleges?.map((this_college, i) => {
+              return (
+                <option key={i} value={this_college}>
+                  {this_college}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div>
@@ -463,7 +436,7 @@ function Programs() {
             onClick={() => handleFilterChange('areaOfStudy', '')}
           >
             <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
-            {filters.areaOfStudy.replaceAll('-', ' ')}
+            {filters.areaOfStudy}
             &nbsp;&nbsp;&nbsp;<strong>X</strong>
           </div>
         )}
@@ -475,7 +448,7 @@ function Programs() {
             onClick={() => handleFilterChange('college', '')}
           >
             <span className={styles.tagButtonTitle}>College:</span>{' '}
-            {filters.college.replaceAll('-', ' ')}
+            {filters.college}
             &nbsp;&nbsp;&nbsp;<strong>X</strong>
           </div>
         )}
