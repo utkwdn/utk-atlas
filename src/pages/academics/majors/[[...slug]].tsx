@@ -54,19 +54,6 @@ interface MajorObject {
 }
 
 function Programs() {
-  // const searchInputRef = useRef<HTMLInputElement>(null);
-
-  // const [activeItems, setActiveItems] = useState([
-  //   {
-  //     major: '',
-  //     concentration: '',
-  //     college: '',
-  //     areaOfStudy: '',
-  //     degrees: '',
-  //     degreeTypes: '',
-  //     programLink: '#',
-  //   },
-  // ]);
   const [activeItems, setActiveItems] = useState([
     {
       major: 'Major',
@@ -88,6 +75,7 @@ function Programs() {
 
   const [selectAreas, setSelectAreas] = useState(['']);
   const [selectColleges, setSelectColleges] = useState(['']);
+  const [routerQueryOverride, setRouterQueryOverride] = useState(false);
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -102,26 +90,18 @@ function Programs() {
     return 0;
   };
 
-  // const router = useRouter();
-
-  // if(router.query.slug && router.query.slug.length > 1) {
-  //   const newFilterType = router.query.slug[0];
-  //   const newFilterTerm = router.query.slug[1];
-
-  //   if(filterType !== newFilterType) {
-  //     setFilterType(newFilterType);
-  //   }
-
-  //   if(filterTerm !== newFilterTerm) {
-  //     setFilterTerm(newFilterTerm);
-  //   }
-  // }
+  const router = useRouter();
 
   const handleFilterChange = (filterType: string, value: string) => {
+    // Override URL query when on-page filters are changed
+    setRouterQueryOverride(true);
+
     const _filters: Filters = filters;
-    _filters[filterType] = value;
-    setFilters({ ..._filters });
-    console.log(filters);
+    if (_filters[filterType] !== value) {
+      _filters[filterType] = value;
+      setFilters({ ..._filters });
+      console.log(filters);
+    }
   };
 
   const handleSearchSubmit = (e: FormEvent) => {
@@ -253,6 +233,20 @@ function Programs() {
   };
 
   useEffect(() => {
+    if (
+      router.query.slug &&
+      router.query.slug.length > 1 &&
+      routerQueryOverride === false
+    ) {
+      const newFilterType = router.query.slug[0];
+      const newFilterTerm = router.query.slug[1];
+
+      // Only allowing URL search queries for now
+      if (newFilterType === 'search') {
+        handleFilterChange('search', newFilterTerm);
+      }
+    }
+
     if (programs) {
       let flatPrograms = programs
         ?.map((program) => {
