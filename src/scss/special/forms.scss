@@ -1,0 +1,45 @@
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: 1px solid $utorange;
+  padding: 0.6em 1.3em !important;
+  color: $utlinkriver;
+  // padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  border: 0.125rem solid $utorange !important;
+  background-color: white !important;
+  text-decoration: none;
+  border-radius: 0.45rem;
+  color: $utlinkriver !important;
+  &:hover {
+    color: $utlinkhover !important;
+  }
+}
+.select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select::after {
+  display: inline-block;
+  position: absolute;
+  margin-top: 0.5rem;
+  right: 1rem;
+  width: 1.6rem;
+  height: 1.3rem;
+  align-self: center;
+  transform: scale(0.8);
+  transform-origin: top right;
+  content: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%23FF8200' stroke-width='2'/%3E%3C/svg%3E");
+  // background-color: black;
+  // clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  // clip-path: path('M10.552 10.412v-3.24H7.327v3.24h3.225Zm-6.449-6.48V.692H.879v3.24h3.224Z');
+}

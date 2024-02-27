@@ -1,19 +1,71 @@
 @import 'scss/common';
 .areasContainer {
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 3rem 2rem;
-  align-items: stretch;
-  margin: 2rem 0;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  // gap: 3rem 2rem;
+  // align-items: stretch;
+  // margin: 2rem;
+  border: 1px solid pink;
   padding-bottom: 3rem;
   @media (min-width: 800px) {
     flex-direction: row;
-    max-width: 80vw;
+    // max-width: 80vw;
     margin: 0 auto;
   }
+}
+
+.resultsContainer {
+  border: 1px solid blue;
+}
+
+.searchNavContainer {
+  padding: 0 2rem;
+  max-width: 1520px;
+  display: grid;
+  align-items: center;
+  // grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+  // grid-template-columns: minmax(240px, 400px) max-content;
+  grid-template-columns: minmax(240px, auto);
+  // grid-template-columns: minmax(240px, auto) auto;
+  // grid-template-columns: minmax(240px, 1fr) 2fr;
+
+  // grid-template-columns: minmax(240px, 400px) max-content;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  // align-items: center;
+  // gap: 1rem;
+  margin: 0 auto;
+  gap: 1rem;
+  border: 2px solid orchid;
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+
+    grid-template-columns: minmax(100px, auto) auto;
+    border: 3px solid black;
+    padding: 0 2rem;
+  }
+}
+.searchNavFilterContainer {
+  display: grid;
+  // border: 2px solid black;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-template-columns: repeat(4, minmax(200px, auto));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.programsSearch {
+  // min-width: 240px;
+  // max-width: 400px;
+  align-self: center;
+}
+
+.dropdown {
+  border: 1px solid blue;
 }
 .filtersSection {
   width: 100vw;
@@ -44,6 +96,18 @@
       color: #475867;
       background-color: #e2e8eb;
     }
+  }
+}
+.switchButton {
+  width: auto;
+  width: 6rem;
+  [role='switch'][aria-checked='true'] :first-child {
+    background: #red;
+    color: #fff;
+  }
+  [role='switch'][aria-checked='false'] :last-child {
+    background: #000;
+    color: #fff;
   }
 }
 .areaCard {
@@ -165,7 +229,8 @@
 }
 .input-wrapper,
 .alpha-form {
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 0 0; // this is what alpha uses
+  margin: 0 0 0 0;
   border-left: 0.6rem solid $utorange;
   // margin-left: -0.25rem;
   display: block;
@@ -177,7 +242,9 @@
   // &:focus {
   // }
   [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
-    border-radius: 0 !important;
+    border-radius: 0 0.45rem 0.45rem 0 !important;
+    border-left: 0;
+    border: 1px solid #707070;
   }
   .MuiTextField-root {
     width: 80%;
