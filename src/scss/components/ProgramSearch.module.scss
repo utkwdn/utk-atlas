@@ -33,6 +33,8 @@
     text-transform: uppercase;
     font-weight: $font-weight-bolder;
     font-size: $h6-font-size;
+    display: flex;
+    align-items: center;
     &:hover {
       background-color: $utsmokey;
       color: white !important;
