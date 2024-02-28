@@ -13,6 +13,8 @@ import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
 import Intro from '../../../components/Intro';
 import Select from 'react-select';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 interface Program {
   major: string;
@@ -307,15 +309,19 @@ function Programs() {
                 <option value="veterinary-medicine">Veterinary Medicine</option>
               </select>
             </div>
-            <button
-              className={styles.switchButton}
-              role="switch"
-              aria-checked="true"
-              aria-labelledby="online"
-            >
-              <span>on</span>
-              <span>off</span>
-            </button>
+            <FormControlLabel
+              className={'switchButtonLabel'}
+              control={
+                <Switch className={'switchButton'} defaultChecked={false} />
+              }
+              label="Online"
+              labelPlacement="end"
+            />
+
+            {/* <Switch
+              className={'switchButton'}
+              slots={{ root: 'div', track: 'div' }}
+            /> */}
           </section>
         </section>
         {/* Filter Tags */}

@@ -1,7 +1,7 @@
 @import 'scss/common';
 
 .intro-container {
-  border: 2px solid blue;
+  // border: 2px solid blue;
   padding: 4rem 2rem 3rem 2rem;
   position: relative;
   display: grid;
@@ -21,7 +21,7 @@
 }
 .page-title-group {
   // width: 80vw;
-  border: 2px solid purple;
+  // border: 2px solid purple;
   @media screen and (min-width: 1200px) {
     margin: 0 0 4rem 0;
     // width: 40vw;
@@ -75,7 +75,7 @@ p.theme {
 .intro {
   // width: 80vw;
   margin: 2rem auto;
-  border: 2px solid yellowgreen;
+  // border: 2px solid yellowgreen;
   @media screen and (min-width: 800px) {
     margin: 2rem 0.5rem;
     max-width: 60ch;
@@ -95,7 +95,7 @@ p.theme {
   // min-width: 644px;
   // margin: 0 8vw 2rem;
 
-  border: 4px solid rgb(17, 128, 0);
+  // border: 4px solid rgb(17, 128, 0);
 }
 .input-wrapper {
   margin: 2rem 0;

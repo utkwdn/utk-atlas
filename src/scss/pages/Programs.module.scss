@@ -8,7 +8,7 @@
   // gap: 3rem 2rem;
   // align-items: stretch;
   // margin: 2rem;
-  border: 1px solid pink;
+  // border: 1px solid pink;
   padding-bottom: 3rem;
   @media (min-width: 800px) {
     flex-direction: row;
@@ -18,7 +18,7 @@
 }
 
 .resultsContainer {
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 
 .searchNavContainer {
@@ -40,12 +40,12 @@
   // gap: 1rem;
   margin: 0 auto;
   gap: 1rem;
-  border: 2px solid orchid;
+  // border: 2px solid orchid;
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(auto-fit, minmax(180px, auto));
 
     grid-template-columns: minmax(100px, auto) auto;
-    border: 3px solid black;
+    // border: 3px solid black;
     padding: 0 2rem;
   }
 }
@@ -53,7 +53,7 @@
   display: grid;
   // border: 2px solid black;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  grid-template-columns: repeat(4, minmax(200px, auto));
+  // grid-template-columns: repeat(4, minmax(200px, auto));
   gap: 1rem;
   padding: 0;
   margin: 0;
@@ -98,18 +98,7 @@
     }
   }
 }
-.switchButton {
-  width: auto;
-  width: 6rem;
-  [role='switch'][aria-checked='true'] :first-child {
-    background: #red;
-    color: #fff;
-  }
-  [role='switch'][aria-checked='false'] :last-child {
-    background: #000;
-    color: #fff;
-  }
-}
+
 .areaCard {
   flex: 1 1 40%;
   display: flex;
