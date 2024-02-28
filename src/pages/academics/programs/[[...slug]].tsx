@@ -12,7 +12,7 @@ import { matchSorter } from 'match-sorter';
 import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
 import Intro from '../../../components/Intro';
-import Select from 'react-select';
+// import Select from 'react-select';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
@@ -185,9 +185,9 @@ function Programs() {
             </p>
           </div>
         }
-        imagesrc={
-          'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
-        }
+        // imagesrc={
+        //   'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
+        // }
       />
       <section className={styles.areasContainer}>
         {/* parent container */}
