@@ -379,7 +379,38 @@ function Programs() {
               &nbsp;&nbsp;&nbsp;<strong>X</strong>
             </div>
           )}
-        </section>{' '}
+        </section>
+
+        {/* Fake Results for Styling */}
+        <section className={styles.resultsSection}>
+          <ol className={styles.programGrid}>
+            <li className={styles.labelContainer}>
+              <div className={styles.programLabel}>Major</div>
+              <div className={styles.programLabel}>Degree</div>
+              <div className={styles.programLabel}>Concentration</div>
+            </li>
+            <li className={styles.programEntry}>
+              <h2 className={styles.majorName}>Aerospace Engineering</h2>
+              <div className={styles.degreeContainer}>Five-year</div>
+              <div className={styles.concentrationContainer}>Concentration</div>
+            </li>
+            <li className={styles.programEntry}>
+              <h2 className={styles.majorName}>Aerospace Engineering</h2>
+              <div className={styles.degreeContainer}>Five-year</div>
+              <div className={styles.concentrationContainer}>
+                <ol>
+                  <li>Applied Mechanics</li>
+                  <li>Nuclear Space Science and Engineering</li>
+                  <li>
+                    Realiability and Maintainability Engineering{' '}
+                    <span className={styles.onlineTag}>Online</span>
+                  </li>
+                </ol>
+              </div>
+            </li>
+          </ol>
+        </section>
+
         {/* Results Table */}
         <section className={styles.resultsContainer}>
           {activeItems.length > 0 ? (
