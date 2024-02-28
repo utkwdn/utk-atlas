@@ -12,7 +12,6 @@ import { matchSorter } from 'match-sorter';
 import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
 import Intro from '../../../components/Intro';
-import Select from 'react-select';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
@@ -188,6 +187,7 @@ function Programs() {
         imagesrc={
           'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
         }
+        alt={'students'}
       />
       <section className={styles.areasContainer}>
         {/* parent container */}
@@ -317,11 +317,6 @@ function Programs() {
               label="Online"
               labelPlacement="end"
             />
-
-            {/* <Switch
-              className={'switchButton'}
-              slots={{ root: 'div', track: 'div' }}
-            /> */}
           </section>
         </section>
         {/* Filter Tags */}

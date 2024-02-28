@@ -4,6 +4,8 @@ type IntroProps = {
   title: string;
   theme: string;
   intro: object;
+  imagesrc: string;
+  alt: string;
 };
 
 /** Intro component created to be able to easily swap out the main intro chunk of content for a page.
