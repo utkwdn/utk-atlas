@@ -11,6 +11,10 @@ import { useQuery } from '@apollo/client';
 import { matchSorter } from 'match-sorter';
 import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
+import Intro from '../../../components/Intro';
+import Select from 'react-select';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 interface Program {
   major: string;
@@ -168,246 +172,330 @@ function Programs() {
       <Head>
         <title>Programs</title>
       </Head>
-      <PageTitle title={'Programs'} />
+      {/* <PageTitle title={'Programs'} /> */}
 
-      {/* Search Section */}
-      <section className={styles.areasContainer}>
-        <form
-          onSubmit={(e) => handleSearchSubmit(e)}
-          className={styles['alpha-form']}
-        >
-          <TextField
-            onChange={(e) => handleFilterChange('search', e.target.value)}
-            type="search"
-            label="Find a Program"
-            value={filters.search}
-            fullWidth
-            id="fullWidth"
-          />
-          <Button type="submit">Search</Button>
-        </form>
-      </section>
-
-      {/* Filters Section */}
-      <section className={styles.areasContainer}>
-        <div>
-          <p>
-            <strong>Area of Study</strong>
-          </p>
-          <select
-            name="area-of-study"
-            id="area-of-study"
-            value={filters.areaOfStudy}
-            onChange={(e) => handleFilterChange('areaOfStudy', e.target.value)}
-          >
-            <option value="">All Areas of Study</option>
-            <option value="agriculture-and-natural-resources">
-              Agriculture and Natural Resources
-            </option>
-            <option value="architecture-and-design">
-              Architecture and Design
-            </option>
-            <option value="art-and-performance">Art and Performance</option>
-            <option value="business">Business</option>
-            <option value="communication-and-information-sciences">
-              Communication and Information Sciences
-            </option>
-            <option value="education">Education</option>
-            <option value="engineering-math-and-computers">
-              Engineering, Math and Computers
-            </option>
-            <option value="english-and-literature">
-              English and Literature
-            </option>
-            <option value="health-wellness-and-human-sciences">
-              Health, Wellness and Human Sciences
-            </option>
-            <option value="languages-cultures-and-humanities">
-              Languages, Cultures and Humanities
-            </option>
-            <option value="law-and-justice">Law and Justice</option>
-            <option value="science">Science</option>
-            <option value="social-science-and-social-work">
-              Social Science and Social Work
-            </option>
-            <option value="veterinary">Veterinary</option>
-          </select>
-        </div>
-        <div>
-          <p>
-            <strong>College</strong>
-          </p>
-          <select
-            name="area-of-study"
-            id="area-of-study"
-            value={filters.college}
-            onChange={(e) => handleFilterChange('college', e.target.value)}
-          >
-            <option value="">All Colleges</option>
-            <option value="herbert-college-of-agriculture">
-              Herbert College of Agriculture
-            </option>
-            <option value="architecture-and-design">
-              Architecture and Design
-            </option>
-            <option value="arts-and-sciences">Arts and Sciences</option>
-            <option value="baker-school-of-public-policy-and-public-affairs">
-              Baker School of Public Policy and Public Affairs
-            </option>
-            <option value="haslam-college-of-business">
-              Haslam College of Business
-            </option>
-            <option value="communication-and-information">
-              Communication and Information
-            </option>
-            <option value="education-health-and-human-sciences">
-              Education, Health and Human Sciences
-            </option>
-            <option value="emerging-and-collaborative-studies">
-              Emerging and Collaborative Studies
-            </option>
-            <option value="tickle-college-of-engineering">
-              Tickle College of Engineering
-            </option>
-            <option value="law">Law</option>
-            <option value="music">Music</option>
-            <option value="nursing">Nursing</option>
-            <option value="social-work">Social Work</option>
-            <option value="veterinary-medicine">Veterinary Medicine</option>
-          </select>
-        </div>
-        <div>
-          <p>
-            <strong>Degree Type</strong>
-          </p>
-          <select
-            name="area-of-study"
-            id="area-of-study"
-            value={filters.degreeTypes}
-            onChange={(e) => handleFilterChange('degreeTypes', e.target.value)}
-          >
-            <option value="">All Degree Types</option>
-            <option value="undergraduate">Undergraduate</option>
-            <option value="graduate">Graduate</option>
-            <option value="online">Online</option>
-          </select>
-        </div>
-      </section>
-
-      {/* Filter Tags */}
-      <section className={styles.filtersSection}>
-        {filters.search === '' &&
-        filters.areaOfStudy === '' &&
-        filters.college === '' &&
-        filters.degreeTypes === '' ? (
-          <></>
-        ) : (
+      <Intro
+        title={'Academics'}
+        theme={'Find Your Future Program'}
+        intro={
           <div>
-            <strong>Filters:</strong>
+            <p>
+              Donec sed dolor justo. Sed eu diam at velit venenatis and this
+              online courses risusvarius tellus.{' '}
+            </p>
           </div>
-        )}
-        {/* Show tag buttons for any filters that are set */}
-        {filters.search === '' ? (
-          <></>
-        ) : (
-          <div
-            className={styles.tagButton}
-            onClick={() => handleFilterChange('search', '')}
-          >
-            <span className={styles.tagButtonTitle}>Search:</span>{' '}
-            {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
-          </div>
-        )}
-        {filters.areaOfStudy === '' ? (
-          <></>
-        ) : (
-          <div
-            className={styles.tagButton}
-            onClick={() => handleFilterChange('areaOfStudy', '')}
-          >
-            <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
-            {filters.areaOfStudy.replaceAll('-', ' ')}
-            &nbsp;&nbsp;&nbsp;<strong>X</strong>
-          </div>
-        )}
-        {filters.college === '' ? (
-          <></>
-        ) : (
-          <div
-            className={styles.tagButton}
-            onClick={() => handleFilterChange('college', '')}
-          >
-            <span className={styles.tagButtonTitle}>College:</span>{' '}
-            {filters.college.replaceAll('-', ' ')}
-            &nbsp;&nbsp;&nbsp;<strong>X</strong>
-          </div>
-        )}
-        {filters.degreeTypes === '' ? (
-          <></>
-        ) : (
-          <div
-            className={styles.tagButton}
-            onClick={() => handleFilterChange('degreeTypes', '')}
-          >
-            <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-            {filters.degreeTypes}
-            &nbsp;&nbsp;&nbsp;<strong>X</strong>
-          </div>
-        )}
-      </section>
-
-      {/* Results Table */}
+        }
+        imagesrc={
+          'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
+        }
+      />
       <section className={styles.areasContainer}>
-        {activeItems.length > 0 ? (
-          <table>
-            <thead>
-              <tr>
-                <th style={{ padding: '5px 10px' }}>Major</th>
-                <th style={{ padding: '5px 10px' }}>Concentration</th>
-                <th style={{ padding: '5px 10px' }}>College</th>
-                <th style={{ padding: '5px 10px' }}>Area of Study</th>
-                <th style={{ padding: '5px 10px' }}>Degrees</th>
-                <th style={{ padding: '5px 10px' }}>Online</th>
-                <th style={{ padding: '5px 10px' }}>Program Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {activeItems?.map((this_program, i) => {
-                return (
-                  <tr key={i} style={{ borderBottom: '1px solid black' }}>
-                    <td style={{ padding: '5px 10px' }}>
-                      {this_program.major}
-                    </td>
-                    <td style={{ padding: '5px 10px' }}>
-                      {this_program.concentration}
-                    </td>
-                    <td style={{ padding: '5px 10px' }}>
-                      {this_program.college}
-                    </td>
-                    <td style={{ padding: '5px 10px' }}>
-                      {this_program.areaOfStudy}
-                    </td>
-                    <td style={{ padding: '5px 10px' }}>
-                      {this_program.degrees}
-                    </td>
-                    {this_program.degreeTypes.includes('Online') ? (
-                      <td style={{ fontSize: 'xx-large', padding: '5px 10px' }}>
-                        &#9989;
+        {/* parent container */}
+        {/* Search Section */}
+        <section className={styles.searchNavContainer}>
+          <div className={styles.programsSearch}>
+            <form
+              onSubmit={(e) => handleSearchSubmit(e)}
+              className={styles['alpha-form']}
+            >
+              <TextField
+                onChange={(e) => handleFilterChange('search', e.target.value)}
+                type="search"
+                label="keyword search"
+                value={filters.search}
+                fullWidth
+                id="fullWidth"
+              />
+              {/* <Button type="submit">Search</Button> */}
+            </form>
+          </div>
+          {/* Filters Section */}
+          <section className={styles.searchNavFilterContainer}>
+            <div className="select">
+              <select
+                name="area-of-study"
+                className="dropdown"
+                id="area-of-study"
+                value={filters.degreeTypes}
+                onChange={(e) =>
+                  handleFilterChange('degreeTypes', e.target.value)
+                }
+              >
+                <option value="">Degree Type</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
+                <option value="online">Online</option>
+              </select>
+            </div>
+            <div className="select">
+              <select
+                name="area-of-study"
+                id="area-of-study"
+                value={filters.areaOfStudy}
+                onChange={(e) =>
+                  handleFilterChange('areaOfStudy', e.target.value)
+                }
+              >
+                <option value="">Area of Study</option>
+                <option value="agriculture-and-natural-resources">
+                  Agriculture and Natural Resources
+                </option>
+                <option value="architecture-and-design">
+                  Architecture and Design
+                </option>
+                <option value="art-and-performance">Art and Performance</option>
+                <option value="business">Business</option>
+                <option value="communication-and-information-sciences">
+                  Communication and Information Sciences
+                </option>
+                <option value="education">Education</option>
+                <option value="engineering-math-and-computers">
+                  Engineering, Math and Computers
+                </option>
+                <option value="english-and-literature">
+                  English and Literature
+                </option>
+                <option value="health-wellness-and-human-sciences">
+                  Health, Wellness and Human Sciences
+                </option>
+                <option value="languages-cultures-and-humanities">
+                  Languages, Cultures and Humanities
+                </option>
+                <option value="law-and-justice">Law and Justice</option>
+                <option value="science">Science</option>
+                <option value="social-science-and-social-work">
+                  Social Science and Social Work
+                </option>
+                <option value="veterinary">Veterinary</option>
+              </select>
+            </div>
+            <div className="select">
+              <select
+                name="area-of-study"
+                id="area-of-study"
+                value={filters.college}
+                onChange={(e) => handleFilterChange('college', e.target.value)}
+              >
+                <option value="">College</option>
+                <option value="herbert-college-of-agriculture">
+                  Herbert College of Agriculture
+                </option>
+                <option value="architecture-and-design">
+                  Architecture and Design
+                </option>
+                <option value="arts-and-sciences">Arts and Sciences</option>
+                <option value="baker-school-of-public-policy-and-public-affairs">
+                  Baker School of Public Policy and Public Affairs
+                </option>
+                <option value="haslam-college-of-business">
+                  Haslam College of Business
+                </option>
+                <option value="communication-and-information">
+                  Communication and Information
+                </option>
+                <option value="education-health-and-human-sciences">
+                  Education, Health and Human Sciences
+                </option>
+                <option value="emerging-and-collaborative-studies">
+                  Emerging and Collaborative Studies
+                </option>
+                <option value="tickle-college-of-engineering">
+                  Tickle College of Engineering
+                </option>
+                <option value="law">Law</option>
+                <option value="music">Music</option>
+                <option value="nursing">Nursing</option>
+                <option value="social-work">Social Work</option>
+                <option value="veterinary-medicine">Veterinary Medicine</option>
+              </select>
+            </div>
+            <FormControlLabel
+              className={'switchButtonLabel'}
+              control={
+                <Switch className={'switchButton'} defaultChecked={false} />
+              }
+              label="Online"
+              labelPlacement="end"
+            />
+
+            {/* <Switch
+              className={'switchButton'}
+              slots={{ root: 'div', track: 'div' }}
+            /> */}
+          </section>
+        </section>
+        {/* Filter Tags */}
+        <section className={styles.filtersSection}>
+          {filters.search === '' &&
+          filters.areaOfStudy === '' &&
+          filters.college === '' &&
+          filters.degreeTypes === '' ? (
+            <></>
+          ) : (
+            <div>
+              <strong>Filters:</strong>
+            </div>
+          )}
+          {/* Show tag buttons for any filters that are set */}
+          {filters.search === '' ? (
+            <></>
+          ) : (
+            <div
+              className={styles.tagButton}
+              onClick={() => handleFilterChange('search', '')}
+            >
+              <span className={styles.tagButtonTitle}>Search:</span>{' '}
+              {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
+            </div>
+          )}
+          {filters.areaOfStudy === '' ? (
+            <></>
+          ) : (
+            <div
+              className={styles.tagButton}
+              onClick={() => handleFilterChange('areaOfStudy', '')}
+            >
+              <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
+              {filters.areaOfStudy.replaceAll('-', ' ')}
+              &nbsp;&nbsp;&nbsp;<strong>X</strong>
+            </div>
+          )}
+          {filters.college === '' ? (
+            <></>
+          ) : (
+            <div
+              className={styles.tagButton}
+              onClick={() => handleFilterChange('college', '')}
+            >
+              <span className={styles.tagButtonTitle}>College:</span>{' '}
+              {filters.college.replaceAll('-', ' ')}
+              &nbsp;&nbsp;&nbsp;<strong>X</strong>
+            </div>
+          )}
+          {filters.degreeTypes === '' ? (
+            <></>
+          ) : (
+            <div
+              className={styles.tagButton}
+              onClick={() => handleFilterChange('degreeTypes', '')}
+            >
+              <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
+              {filters.degreeTypes}
+              &nbsp;&nbsp;&nbsp;<strong>X</strong>
+            </div>
+          )}
+        </section>{' '}
+        {/* Results Table */}
+        <section className={styles.resultsContainer}>
+          {activeItems.length > 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th style={{ padding: '5px 10px' }}>Major</th>
+                  <th style={{ padding: '5px 10px' }}>Concentration</th>
+                  <th style={{ padding: '5px 10px' }}>College</th>
+                  <th style={{ padding: '5px 10px' }}>Area of Study</th>
+                  <th style={{ padding: '5px 10px' }}>Degrees</th>
+                  <th style={{ padding: '5px 10px' }}>Online</th>
+                  <th style={{ padding: '5px 10px' }}>Program Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeItems?.map((this_program, i) => {
+                  return (
+                    <tr key={i} style={{ borderBottom: '1px solid black' }}>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.major}
                       </td>
-                    ) : (
-                      <td style={{ padding: '5px 10px' }}></td>
-                    )}
-                    <td style={{ padding: '5px 10px' }}>
-                      <a href={this_program.programLink}>link</a>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        ) : (
-          <h3>No matching programs</h3>
-        )}
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.concentration}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.college}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.areaOfStudy}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.degrees}
+                      </td>
+                      {this_program.degreeTypes.includes('Online') ? (
+                        <td
+                          style={{ fontSize: 'xx-large', padding: '5px 10px' }}
+                        >
+                          &#9989;
+                        </td>
+                      ) : (
+                        <td style={{ padding: '5px 10px' }}></td>
+                      )}
+                      <td style={{ padding: '5px 10px' }}>
+                        <a href={this_program.programLink}>link</a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <h3>No matching programs</h3>
+          )}
+        </section>
+        {/* Below is the Table we won't be using */}
+        {/* Results Table */}
+        <section className={styles.areasContainer}>
+          {activeItems.length > 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th style={{ padding: '5px 10px' }}>Major</th>
+                  <th style={{ padding: '5px 10px' }}>Concentration</th>
+                  <th style={{ padding: '5px 10px' }}>College</th>
+                  <th style={{ padding: '5px 10px' }}>Area of Study</th>
+                  <th style={{ padding: '5px 10px' }}>Degrees</th>
+                  <th style={{ padding: '5px 10px' }}>Online</th>
+                  <th style={{ padding: '5px 10px' }}>Program Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeItems?.map((this_program, i) => {
+                  return (
+                    <tr key={i} style={{ borderBottom: '1px solid black' }}>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.major}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.concentration}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.college}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.areaOfStudy}
+                      </td>
+                      <td style={{ padding: '5px 10px' }}>
+                        {this_program.degrees}
+                      </td>
+                      {this_program.degreeTypes.includes('Online') ? (
+                        <td
+                          style={{ fontSize: 'xx-large', padding: '5px 10px' }}
+                        >
+                          &#9989;
+                        </td>
+                      ) : (
+                        <td style={{ padding: '5px 10px' }}></td>
+                      )}
+                      <td style={{ padding: '5px 10px' }}>
+                        <a href={this_program.programLink}>link</a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <h3>No matching programs</h3>
+          )}
+        </section>
       </section>
       {/* End areasContainer */}
     </Layout>

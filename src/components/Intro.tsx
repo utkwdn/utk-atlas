@@ -18,17 +18,22 @@ const Intro: React.FunctionComponent<IntroProps> = ({
   title,
   theme,
   intro,
+  imagesrc,
+  alt,
 }) => {
   return (
     <section className={styles['intro-container']}>
       <div className={styles['page-title-group']}>
-        <hr className={styles['oa-thick-bar']} />
+        {/* <hr className={styles['oa-thick-bar']} /> */}
         <h1 className={[styles.area, 'text-condensed'].join(' ')}>{title}</h1>
         <div className={styles['theme-container']}>
           <p className={styles['theme']}>{theme}</p>
         </div>
+        <div className={styles.intro}>{intro}</div>
       </div>
-      <div className={styles.intro}>{intro}</div>
+      <div className={[styles['intro-img-group'], 'framed'].join(' ')}>
+        <img src={imagesrc} alt={alt} />
+      </div>
     </section>
   );
 };
