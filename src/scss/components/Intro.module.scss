@@ -2,7 +2,7 @@
 
 .intro-container {
   // border: 2px solid blue;
-  padding: 4rem 2rem 3rem 2rem;
+  padding: 4rem 2rem 1rem 2rem;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -88,14 +88,16 @@ p.theme {
   }
 }
 
-.img {
-}
 .intro-img-group {
-  // max-width: 710px;
+  // max-width: 200px;
   // min-width: 644px;
   // margin: 0 8vw 2rem;
 
   // border: 4px solid rgb(17, 128, 0);
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
 }
 .input-wrapper {
   margin: 2rem 0;
