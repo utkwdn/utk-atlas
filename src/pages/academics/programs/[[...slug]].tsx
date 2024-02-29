@@ -185,9 +185,10 @@ function Programs() {
             </p>
           </div>
         }
-        // imagesrc={
-        //   'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
-        // }
+        imagesrc={
+          'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
+        }
+        alt="UT STudents"
       />
       <section className={styles.areasContainer}>
         {/* parent container */}
