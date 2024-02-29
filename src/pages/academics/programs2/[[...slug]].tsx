@@ -415,6 +415,7 @@ function Programs() {
           </select>
         </div>
       </section>
+      {/* End Filters Section */}
 
       {/* Filter Tags */}
       <section className={styles.filtersSection}>
@@ -513,14 +514,14 @@ function Programs() {
                               return (
                                 <li key={k}>
                                   {programName}{' '}
-                                  <a
-                                    // href={this_program.link}
-                                    href="https://volsonline.utk.edu/programs-degrees/"
-                                  >
-                                    <span className={styles.onlineTag}>
+                                  <span className={styles.onlineTag}>
+                                    <a
+                                      // href={this_program.link}
+                                      href="https://volsonline.utk.edu/programs-degrees/"
+                                    >
                                       Online
-                                    </span>
-                                  </a>
+                                    </a>
+                                  </span>
                                 </li>
                               );
                             } else {
@@ -539,7 +540,6 @@ function Programs() {
       ) : (
         <h3>No matching programs</h3>
       )}
-
       {/* End Results Container */}
     </Layout>
   );
