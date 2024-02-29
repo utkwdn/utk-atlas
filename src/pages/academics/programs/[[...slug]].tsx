@@ -188,7 +188,6 @@ function Programs() {
           'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
         }
         alt={'students'}
-
       />
       <section className={styles.areasContainer}>
         {/* parent container */}
