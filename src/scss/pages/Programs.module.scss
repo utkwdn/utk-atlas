@@ -16,6 +16,9 @@
     margin: 0 auto;
   }
 }
+// .Programs2_programsRow__B6xXK:nth-child(2n + 1) {
+//   background: #fbfbfb;
+// }
 
 .resultsSection {
   // setting up default page margins to match Intro Module
@@ -31,34 +34,46 @@
     margin: 0 auto 3rem auto;
   }
 }
-.onlineTag {
+.onlineTag a {
   background-color: RGBA(255, 130, 0, 0.2);
-  padding: 0.2rem 0.5rem;
+  margin-top: 0.2rem;
+  padding: 0.1rem 0.3rem;
   text-transform: uppercase;
-  font-size: $font-size-sm;
+  font-size: calc($font-size-sm * 0.9);
   font-weight: $font-weight-bold;
   letter-spacing: 0.1rem;
   display: block;
   width: fit-content;
+  text-decoration: none;
+  color: $utsmokey;
+  border-radius: 0.2rem;
 }
 .programGrid {
   // display: flex;
   // flex-direction: column;
   grid-template-columns: 1fr;
   display: grid;
+  padding: 0;
   @media screen and (min-width: 940px) {
     grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   }
-  grid-row-gap: 2rem;
+  // grid-row-gap: 2rem;
   align-items: start;
   // grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+  .programEntry:nth-child(2n + 1) {
+    background-color: #fbfbfb;
+  }
 }
-.programEntry,
+
 .labelContainer {
+  @media screen and (max-width: 940px) {
+    display: none;
+  }
   display: grid;
   grid-template-columns: 1fr;
-  padding-bottom: 2rem;
   grid-row-gap: 1rem;
+  padding: 1rem 2rem;
+  letter-spacing: 0.1rem;
   @media screen and (min-width: 940px) {
     grid-column: 1 / 4;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -66,16 +81,31 @@
   }
   justify-items: start;
   align-items: start;
-  border-bottom: 1px solid #333333;
-  > * {
+  border-bottom: 1px solid #dadada;
+}
+
+.programEntry {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  padding: 3rem 2rem;
+  @media screen and (min-width: 940px) {
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-column-gap: 3rem;
   }
+  justify-items: start;
+  align-items: start;
+  border-bottom: 1px solid #dadada;
+
   > h3.programName {
     margin: 0;
+    line-height: 1.35rem;
     @media screen and (min-width: 940px) {
       grid-column: 1 /2;
     }
-    font-size: $font-size-lg;
-    font-weight: $font-weight-normal;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
 
     justify-self: stretch;
   }
@@ -84,7 +114,7 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
@@ -96,9 +126,23 @@
     }
   }
   > .concentrationList {
+    @media screen and (max-width: 940px) {
+      &:before {
+        content: 'concentration';
+        font-size: calc($font-size-sm * 0.9);
+        margin: 0;
+        padding: 0;
+        margin-bottom: -0.3rem;
+        // text-transform: uppercase;
+        color: $utsmokey;
+        // border-bottom: 1px solid $utsmokey;
+        // width: fit-content;
+      }
+    }
     @media screen and (min-width: 940px) {
       grid-column: 3 /4;
     }
+    font-size: calc($font-size-base * 0.8);
     justify-self: stretch;
     list-style: none;
     display: flex;
@@ -151,7 +195,10 @@
   display: grid;
   // border: 2px solid black;
   grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
-  // grid-template-columns: repeat(4, minmax(200px, auto));
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, minmax(200px, auto));
+  }
+
   gap: 1rem;
   padding: 0;
   margin: 0;
@@ -162,9 +209,6 @@
   align-self: center;
 }
 
-.dropdown {
-  // border: 1px solid blue;
-}
 .filtersSection {
   width: 100vw;
   display: flex;
@@ -331,7 +375,7 @@
   [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
     border-radius: 0 0.45rem 0.45rem 0 !important;
     border-left: 0;
-    border: 1px solid #707070;
+    // border: 1px solid #707070;
   }
   .MuiTextField-root {
     width: 80%;
