@@ -50,6 +50,9 @@ select {
     color: $utlinkhover !important;
   }
 }
+.MuiFormControlLabel-root {
+  margin-left: 0;
+}
 .switchButton {
   &.MuiSwitch-switchBase {
     width: 6rem;
@@ -84,6 +87,13 @@ select {
     top: 0;
   }
 
+  .switchButton .Mui-checked {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    color: red !important;
+  }
+
   // .toggle {
   //   display: inline-block;
   //   left: 0;
@@ -95,9 +105,6 @@ select {
   //   position: absolute;
   //   background-color: white;
   // }
-
-  &.Mui-checked {
-  }
 
   // [role='switch'][aria-checked='true'] :first-child {
   //   .toggle {

@@ -23,7 +23,7 @@
 .resultsSection {
   // setting up default page margins to match Intro Module
   // border: 2px solid blue;
-  padding: 4rem 2rem 3rem 2rem;
+  padding: 1rem 2rem 3rem 2rem;
   position: relative;
   margin: 0 0 1.5rem 0;
   justify-items: start;
@@ -180,17 +180,16 @@
     padding: 0 2rem;
   }
 }
-.stickyNav {
-  position: sticky;
-  top: -3rem;
-  // width: 100%;
-  // padding: 3rem 0;
-  padding-top: 3rem;
-  background-color: $white;
-  z-index: 10;
-
-  margin-top: -3rem;
-}
+// .stickyNav {
+//   position: sticky;
+//   top: -3rem;
+//   // width: 100%;
+//   // padding: 3rem 0;
+//   padding-top: 3rem;
+//   background-color: $white;
+//   z-index: 10;
+//   margin-top: -3rem;
+// }
 .searchNavFilterContainer {
   display: grid;
   // border: 2px solid black;
@@ -210,28 +209,41 @@
 }
 
 .filtersSection {
-  width: 100vw;
+  // border: 1px solid green;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
-  margin: 2rem 0;
+  // margin: 2rem 0;
   padding-bottom: 3rem;
-  @media (min-width: 800px) {
-    flex-direction: row;
-    max-width: 80vw;
-    margin: 0 auto;
+  font-size: $font-size-sm;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  & > :first-child {
+    // display: block;
+    // width: 100%;
+    display: none;
   }
   .tagButton {
-    font-size: 16px;
+    font-size: $font-size-sm;
     background: #d9dfe3;
     padding: 5px 15px;
-    border-radius: 20px;
+    border-radius: 0.45rem;
+    width: fit-content;
     color: #4b4b4b;
-    margin: 0 0 0 10px;
+    // margin: 0 0 0 10px;
+
     .tagButtonTitle {
-      font-weight: 600;
+      // font-weight: $font-weight-bold;
+      // font-size: calc($font-size-sm * 0.7);
+      // display: block;
+      // text-transform: uppercase;
+      // position: absolute;
+      // top: -1rem;
+      display: none;
     }
     &:hover {
       cursor: pointer;
