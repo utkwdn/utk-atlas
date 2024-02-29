@@ -20,8 +20,8 @@ const Intro: React.FunctionComponent<IntroProps> = ({
   title,
   theme,
   intro,
-  imagesrc,
-  alt,
+  // imagesrc,
+  // alt,
 }) => {
   return (
     <section className={styles['intro-container']}>
@@ -34,7 +34,7 @@ const Intro: React.FunctionComponent<IntroProps> = ({
         <div className={styles.intro}>{intro}</div>
       </div>
       <div className={[styles['intro-img-group'], 'framed'].join(' ')}>
-        <img src={imagesrc} alt={alt} />
+        {/* <img src={imagesrc} alt={alt} /> */}
       </div>
     </section>
   );

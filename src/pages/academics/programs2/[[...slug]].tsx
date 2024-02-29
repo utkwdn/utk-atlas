@@ -1,5 +1,5 @@
 import Layout from '../../../components/Layout';
-import styles from 'scss/pages/Programs.module.scss';
+import styles from 'scss/pages/Programs2.module.scss';
 import { PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustwp/core';
@@ -42,7 +42,7 @@ interface MajorArray {
   degrees: [
     {
       name: string;
-      programs: [{ name: string }];
+      programs: [{ name: string; link: string; online: boolean }];
     }
   ];
 }
@@ -60,7 +60,7 @@ function Programs() {
       degrees: [
         {
           name: 'Degree',
-          programs: [{ name: 'Program' }],
+          programs: [{ name: 'Program', link: 'Link', online: false }],
         },
       ],
     },
@@ -168,7 +168,13 @@ function Programs() {
           degrees: [
             {
               name: program.degrees,
-              programs: [{ name: program.concentration }],
+              programs: [
+                {
+                  name: program.concentration,
+                  link: program.programLink,
+                  online: program.degreeTypes.includes('Online') ? true : false,
+                },
+              ],
             },
           ],
         });
@@ -190,7 +196,13 @@ function Programs() {
         const majorIndex = majorArrayIndexes.major[program.major];
         majorArray[majorIndex].degrees.push({
           name: program.degrees,
-          programs: [{ name: program.concentration }],
+          programs: [
+            {
+              name: program.concentration,
+              link: program.programLink,
+              online: program.degreeTypes.includes('Online') ? true : false,
+            },
+          ],
         });
 
         // Add array index for degree within major
@@ -212,6 +224,8 @@ function Programs() {
           majorArrayIndexes.degree[`${program.major} - ${program.degrees}`];
         majorArray[majorIndex].degrees[degreeIndex].programs.push({
           name: program.concentration,
+          link: program.programLink,
+          online: program.degreeTypes.includes('Online') ? true : false,
         });
       }
     });
@@ -252,6 +266,9 @@ function Programs() {
         ?.map((program) => {
           const degreeString =
             program.degrees?.nodes
+              ?.filter(function (e) {
+                return e.name !== 'Online';
+              })
               ?.map(function (e) {
                 return e.name;
               })
@@ -308,7 +325,7 @@ function Programs() {
 
       // Organize into major/degree/concentration hierarchy then update state
       setActiveItems(organizeByMajor(flatPrograms));
-      console.log(activeItems);
+      console.log(JSON.stringify(activeItems));
     }
   }, [programs, filters]);
 
@@ -320,10 +337,10 @@ function Programs() {
       <PageTitle title={'Programs'} />
 
       {/* Search Section */}
-      <section className={styles.areasContainer}>
+      <section className={styles.programsContainer}>
         <form
           onSubmit={(e) => handleSearchSubmit(e)}
-          className={styles['alpha-form']}
+          className={styles.programsSearchForm}
         >
           <TextField
             onChange={(e) => handleFilterChange('search', e.target.value)}
@@ -338,7 +355,7 @@ function Programs() {
       </section>
 
       {/* Filters Section */}
-      <section className={styles.areasContainer}>
+      <section className={styles.programsContainer}>
         <div>
           <p>
             <strong>Area of Study</strong>
@@ -462,26 +479,28 @@ function Programs() {
       </section>
       {/* End Filter Tags */}
 
-      {/* Results Container */}
-      <section className={styles.areasContainer}>
+      <section className={styles.programsContainer}>
         <div className={styles.programsHeader}>
-          <div className={styles.programsMajorColumn}>Major</div>
-          <div className={styles.programsDegreeColumn}>Degree</div>
+          <div className={styles.programsMajorColumn}>MAJOR</div>
+          <div className={styles.programsDegreeColumn}>DEGREE</div>
           <div className={styles.programsConcentrationColumn}>
-            Concentration
+            CONCENTRATION
           </div>
         </div>
-        {/* {activeItems.length > 0 ? (
-          <div>
+        {/* Results Container */}
+        {activeItems.length > 0 ? (
+          <>
             {activeItems?.map((this_item, i) => {
               return (
-                <div key={i} className={styles.majorDiv}>
-                  <h4>{this_item.major}</h4>
-                  <ul>
-                    {this_item.degrees?.map((this_degree, j) => {
-                      const degreeNameArray = this_degree.name.split(', ');
-                      return (
-                        <li key={j} className={styles.degreeListItem}>
+                <>
+                  {this_item.degrees?.map((this_degree, j) => {
+                    const degreeNameArray = this_degree.name.split(', ');
+                    return (
+                      <div key={j} className={styles.programsRow}>
+                        <div className={styles.programsMajorColumn}>
+                          {this_item.major}
+                        </div>
+                        <div className={styles.programsDegreeColumn}>
                           {degreeNameArray?.map((this_degree_name, l) => {
                             return (
                               <strong key={l}>
@@ -489,23 +508,44 @@ function Programs() {
                               </strong>
                             );
                           })}
-
-                          <ul className={styles.concentrationList}>
+                        </div>
+                        <div className={styles.programsConcentrationColumn}>
+                          <ul>
                             {this_degree.programs?.map((this_program, k) => {
-                              return <li key={k}>{this_program.name}</li>;
+                              const programName =
+                                this_program.name === 'none'
+                                  ? 'General'
+                                  : this_program.name;
+                              if (this_program.online === true) {
+                                return (
+                                  <li key={k}>
+                                    {programName}
+                                    <br />
+                                    <a
+                                      className={styles.onlineLink}
+                                      // href={this_program.link}
+                                      href="https://volsonline.utk.edu/programs-degrees/"
+                                    >
+                                      ONLINE
+                                    </a>
+                                  </li>
+                                );
+                              } else {
+                                return <li key={k}>{programName}</li>;
+                              }
                             })}
                           </ul>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </>
               );
             })}
-          </div>
+          </>
         ) : (
           <h3>No matching programs</h3>
-        )} */}
+        )}
       </section>
       {/* End Results Container */}
     </Layout>
