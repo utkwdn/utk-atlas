@@ -325,13 +325,14 @@ function Programs() {
       {/* <PageTitle title={'Programs'} /> */}
 
       <Intro
-        title={'Academics'}
-        theme={'Find Your Future Program'}
+        title={'Programs'}
+        theme={'Find your future degree'}
         intro={
           <div>
             <p>
-              Donec sed dolor justo. Sed eu diam at velit venenatis and this
-              online courses risusvarius tellus.{' '}
+              With 900+ undergraduate, graduate, and PhD programs at UT, you can
+              study what you love and be prepared for whatever awaits you after
+              graduation.{' '}
             </p>
           </div>
         }

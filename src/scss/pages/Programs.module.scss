@@ -216,7 +216,6 @@
 }
 
 .filtersSection {
-  // border: 1px solid green;
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -234,13 +233,17 @@
     // width: 100%;
     display: none;
   }
+  @media screen and (min-width: 1200px) {
+    grid-column: 1 / 4;
+  }
   .tagButton {
     font-size: $font-size-sm;
-    background: #d9dfe3;
+    // background: #d9dfe3;
     padding: 5px 15px;
-    border-radius: 0.45rem;
+    // border-radius: 0.45rem;
     width: fit-content;
     color: #4b4b4b;
+    color: $utlinkriver;
     // margin: 0 0 0 10px;
 
     .tagButtonTitle {
@@ -255,7 +258,8 @@
     &:hover {
       cursor: pointer;
       color: #475867;
-      background-color: #e2e8eb;
+      color: $utlinkhover;
+      background-color: #fbfbfb;
     }
   }
 }
