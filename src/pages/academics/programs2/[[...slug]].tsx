@@ -1,5 +1,5 @@
 import Layout from '../../../components/Layout';
-import styles from 'scss/pages/Programs2.module.scss';
+import styles from 'scss/pages/Programs.module.scss';
 import { PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustwp/core';
@@ -479,74 +479,67 @@ function Programs() {
       </section>
       {/* End Filter Tags */}
 
-      <section className={styles.programsContainer}>
-        <div className={styles.programsHeader}>
-          <div className={styles.programsMajorColumn}>MAJOR</div>
-          <div className={styles.programsDegreeColumn}>DEGREE</div>
-          <div className={styles.programsConcentrationColumn}>
-            CONCENTRATION
-          </div>
-        </div>
-        {/* Results Container */}
-        {activeItems.length > 0 ? (
-          <>
+      {/* Results Container */}
+      {activeItems.length > 0 ? (
+        <section className={styles.resultsSection}>
+          <ol className={styles.programGrid}>
+            <li className={styles.labelContainer}>
+              <div className={styles.programLabel}>Major</div>
+              <div className={styles.programLabel}>Degree</div>
+              <div className={styles.programLabel}>Concentration</div>
+            </li>
             {activeItems?.map((this_item, i) => {
               return (
                 <>
                   {this_item.degrees?.map((this_degree, j) => {
                     const degreeNameArray = this_degree.name.split(', ');
                     return (
-                      <div key={j} className={styles.programsRow}>
-                        <div className={styles.programsMajorColumn}>
+                      <li key={j} className={styles.programEntry}>
+                        <h3 className={styles.programName}>
                           {this_item.major}
-                        </div>
-                        <div className={styles.programsDegreeColumn}>
+                        </h3>
+                        <ol className={styles.degreeList}>
                           {degreeNameArray?.map((this_degree_name, l) => {
-                            return (
-                              <strong key={l}>
-                                {this_degree_name}&nbsp;&nbsp;
-                              </strong>
-                            );
+                            return <li key={l}>{this_degree_name}</li>;
                           })}
-                        </div>
-                        <div className={styles.programsConcentrationColumn}>
-                          <ul>
-                            {this_degree.programs?.map((this_program, k) => {
-                              const programName =
-                                this_program.name === 'none'
-                                  ? 'General'
-                                  : this_program.name;
-                              if (this_program.online === true) {
-                                return (
-                                  <li key={k}>
-                                    {programName}
-                                    <br />
-                                    <a
-                                      className={styles.onlineLink}
-                                      // href={this_program.link}
-                                      href="https://volsonline.utk.edu/programs-degrees/"
-                                    >
-                                      ONLINE
-                                    </a>
-                                  </li>
-                                );
-                              } else {
-                                return <li key={k}>{programName}</li>;
-                              }
-                            })}
-                          </ul>
-                        </div>
-                      </div>
+                        </ol>
+                        <ol className={styles.concentrationList}>
+                          {this_degree.programs?.map((this_program, k) => {
+                            const programName =
+                              this_program.name === 'none'
+                                ? 'General'
+                                : this_program.name;
+                            if (this_program.online === true) {
+                              return (
+                                <li key={k}>
+                                  {programName}{' '}
+                                  <a
+                                    // href={this_program.link}
+                                    href="https://volsonline.utk.edu/programs-degrees/"
+                                  >
+                                    <span className={styles.onlineTag}>
+                                      Online
+                                    </span>
+                                  </a>
+                                </li>
+                              );
+                            } else {
+                              return <li key={k}>{programName}</li>;
+                            }
+                          })}
+                        </ol>
+                      </li>
                     );
                   })}
                 </>
               );
             })}
-          </>
-        ) : (
-          <h3>No matching programs</h3>
-        )}
-      </section>
+          </ol>
+        </section>
+      ) : (
+        <h3>No matching programs</h3>
+      )}
+
       {/* End Results Container */}
     </Layout>
   );
