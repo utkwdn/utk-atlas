@@ -192,7 +192,9 @@ function Programs() {
       <section className={styles.areasContainer}>
         {/* parent container */}
         {/* Search Section */}
-        <section className={styles.searchNavContainer}>
+        <section
+          className={[styles.searchNavContainer, styles.stickyNav].join(' ')}
+        >
           <div className={styles.programsSearch}>
             <form
               onSubmit={(e) => handleSearchSubmit(e)}
@@ -318,67 +320,67 @@ function Programs() {
               labelPlacement="end"
             />
           </section>
-        </section>
-        {/* Filter Tags */}
-        <section className={styles.filtersSection}>
-          {filters.search === '' &&
-          filters.areaOfStudy === '' &&
-          filters.college === '' &&
-          filters.degreeTypes === '' ? (
-            <></>
-          ) : (
-            <div>
-              <strong>Filters:</strong>
-            </div>
-          )}
-          {/* Show tag buttons for any filters that are set */}
-          {filters.search === '' ? (
-            <></>
-          ) : (
-            <div
-              className={styles.tagButton}
-              onClick={() => handleFilterChange('search', '')}
-            >
-              <span className={styles.tagButtonTitle}>Search:</span>{' '}
-              {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
-            </div>
-          )}
-          {filters.areaOfStudy === '' ? (
-            <></>
-          ) : (
-            <div
-              className={styles.tagButton}
-              onClick={() => handleFilterChange('areaOfStudy', '')}
-            >
-              <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
-              {filters.areaOfStudy.replaceAll('-', ' ')}
-              &nbsp;&nbsp;&nbsp;<strong>X</strong>
-            </div>
-          )}
-          {filters.college === '' ? (
-            <></>
-          ) : (
-            <div
-              className={styles.tagButton}
-              onClick={() => handleFilterChange('college', '')}
-            >
-              <span className={styles.tagButtonTitle}>College:</span>{' '}
-              {filters.college.replaceAll('-', ' ')}
-              &nbsp;&nbsp;&nbsp;<strong>X</strong>
-            </div>
-          )}
-          {filters.degreeTypes === '' ? (
-            <></>
-          ) : (
-            <div
-              className={styles.tagButton}
-              onClick={() => handleFilterChange('degreeTypes', '')}
-            >
-              <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-              {filters.degreeTypes}
-              &nbsp;&nbsp;&nbsp;<strong>X</strong>
-            </div>
-          )}
+          {/* Filter Tags */}
+          <section className={styles.filtersSection}>
+            {filters.search === '' &&
+            filters.areaOfStudy === '' &&
+            filters.college === '' &&
+            filters.degreeTypes === '' ? (
+              <></>
+            ) : (
+              <div>
+                <strong>Filters:</strong>
+              </div>
+            )}
+            {/* Show tag buttons for any filters that are set */}
+            {filters.search === '' ? (
+              <></>
+            ) : (
+              <div
+                className={styles.tagButton}
+                onClick={() => handleFilterChange('search', '')}
+              >
+                <span className={styles.tagButtonTitle}>Search:</span>{' '}
+                {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
+              </div>
+            )}
+            {filters.areaOfStudy === '' ? (
+              <></>
+            ) : (
+              <div
+                className={styles.tagButton}
+                onClick={() => handleFilterChange('areaOfStudy', '')}
+              >
+                <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
+                {filters.areaOfStudy.replaceAll('-', ' ')}
+                &nbsp;&nbsp;&nbsp;<strong>X</strong>
+              </div>
+            )}
+            {filters.college === '' ? (
+              <></>
+            ) : (
+              <div
+                className={styles.tagButton}
+                onClick={() => handleFilterChange('college', '')}
+              >
+                <span className={styles.tagButtonTitle}>College:</span>{' '}
+                {filters.college.replaceAll('-', ' ')}
+                &nbsp;&nbsp;&nbsp;<strong>X</strong>
+              </div>
+            )}
+            {filters.degreeTypes === '' ? (
+              <></>
+            ) : (
+              <div
+                className={styles.tagButton}
+                onClick={() => handleFilterChange('degreeTypes', '')}
+              >
+                <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
+                {filters.degreeTypes}
+                &nbsp;&nbsp;&nbsp;<strong>X</strong>
+              </div>
+            )}
+          </section>{' '}
         </section>
 
         {/* Fake Results for Styling */}
@@ -390,23 +392,33 @@ function Programs() {
               <div className={styles.programLabel}>Concentration</div>
             </li>
             <li className={styles.programEntry}>
-              <h2 className={styles.majorName}>Aerospace Engineering</h2>
-              <div className={styles.degreeContainer}>Five-year</div>
-              <div className={styles.concentrationContainer}>Concentration</div>
+              <h3 className={styles.programName}>Aerospace Engineering</h3>
+              <ol className={styles.degreeList}>
+                <li>Five-year</li>
+                <li>PhD</li>
+              </ol>
+              <ol className={styles.concentrationList}>
+                <li>Applied Mechanics</li>
+                <li>Nuclear Space Science and Engineering</li>
+                <li>
+                  Realiability and Maintainability Engineering{' '}
+                  <span className={styles.onlineTag}>Online</span>
+                </li>
+              </ol>
             </li>
             <li className={styles.programEntry}>
-              <h2 className={styles.majorName}>Aerospace Engineering</h2>
-              <div className={styles.degreeContainer}>Five-year</div>
-              <div className={styles.concentrationContainer}>
-                <ol>
-                  <li>Applied Mechanics</li>
-                  <li>Nuclear Space Science and Engineering</li>
-                  <li>
-                    Realiability and Maintainability Engineering{' '}
-                    <span className={styles.onlineTag}>Online</span>
-                  </li>
-                </ol>
-              </div>
+              <h3 className={styles.programName}>Aerospace Engineering</h3>
+              <ol className={styles.degreeList}>
+                <li>Five-year</li>
+              </ol>
+              <ol className={styles.concentrationList}>
+                <li>Applied Mechanics</li>
+                <li>Nuclear Space Science and Engineering</li>
+                <li>
+                  Realiability and Maintainability Engineering{' '}
+                  <span className={styles.onlineTag}>Online</span>
+                </li>
+              </ol>
             </li>
           </ol>
         </section>
