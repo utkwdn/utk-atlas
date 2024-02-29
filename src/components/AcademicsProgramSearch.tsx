@@ -16,7 +16,7 @@ function AosPrograms(): JSX.Element {
     setSearchValue(value);
     // prefetching page with search term to speed up load
     router
-      .prefetch(`/academics/majors/search/${value}`)
+      .prefetch(`/academics/programs/search/${value}`)
       .catch((error) => console.error(error));
   };
 
@@ -26,7 +26,7 @@ function AosPrograms(): JSX.Element {
     setIsSearching(true);
 
     router
-      .push(`/academics/majors/search/${searchValue}`)
+      .push(`/academics/programs/search/${searchValue}`)
       .catch((error) => console.log(error));
   };
 

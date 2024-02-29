@@ -104,7 +104,6 @@ function Programs() {
     if (_filters[filterType] !== value) {
       _filters[filterType] = value;
       setFilters({ ..._filters });
-      console.log(filters);
     }
   };
 
@@ -131,31 +130,9 @@ function Programs() {
     const allColleges: string[] = [];
     const allAreas: string[] = [];
 
-    const majorArray: MajorArray[] = [
-      // {
-      //   major: 'Accounting',
-      //   degrees: [
-      //     {
-      //       name: 'BS',
-      //       programs: [
-      //         { name: 'Audit and Controls' },
-      //         { name: 'Information Management' },
-      //       ],
-      //     },
-      //     {
-      //       name: 'MAcc',
-      //       programs: [{ name: 'Finance Collateral' }, { name: 'Taxation' }],
-      //     },
-      //   ],
-      // },
-    ];
+    const majorArray: MajorArray[] = [];
 
-    const majorObject: MajorObject = {
-      // Accounting: {
-      //   BS: ['Audit and Controls', 'Information Management'],
-      //   MAcc: ['Finance Colalteral', 'Taxation'],
-      // },
-    };
+    const majorObject: MajorObject = {};
 
     flat.forEach((program) => {
       // Add college if not added yet
@@ -250,10 +227,6 @@ function Programs() {
     }
 
     return majorArray;
-
-    // console.log(majorArrayIndexes);
-    // console.log(majorArray);
-    // console.log(majorObject);
   };
 
   useEffect(() => {
@@ -332,14 +305,13 @@ function Programs() {
       }
       // Apply online filter if
       if (onlineSwitchChecked) {
-        console.log('filtering online');
         flatPrograms = matchSorter(flatPrograms, 'Online', {
           keys: ['degreeTypes'],
           threshold: matchSorter.rankings.WORD_STARTS_WITH,
         });
       }
 
-      console.log(`Total Matches - ${flatPrograms.length}`);
+      // console.log(`Total Matches - ${flatPrograms.length}`);
 
       // Organize into major/degree/concentration hierarchy then update state
       setActiveItems(organizeByMajor(flatPrograms));
@@ -527,7 +499,7 @@ function Programs() {
                 className={styles.tagButton}
                 onClick={() => handleSwitchChange('on')}
               >
-                <span className={styles.tagButtonTitle}>Online</span>{' '}
+                <span className={styles.tagButtonTitle}>Online</span> Online
                 &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
@@ -538,7 +510,7 @@ function Programs() {
         {activeItems.length > 0 ? (
           <section className={styles.resultsSection}>
             <ol className={styles.programGrid}>
-              <li className={styles.labelContainer}>
+              <li key={'labelContainer'} className={styles.labelContainer}>
                 <div className={styles.programLabel}>Major</div>
                 <div className={styles.programLabel}>Degree</div>
                 <div className={styles.programLabel}>Concentration</div>
@@ -569,12 +541,12 @@ function Programs() {
                                   <li key={k}>
                                     {programName}{' '}
                                     <span className={styles.onlineTag}>
-                                      <a
+                                      {/* <a
                                         // href={this_program.link}
                                         href="https://volsonline.utk.edu/programs-degrees/"
-                                      >
-                                        Online
-                                      </a>
+                                      > */}
+                                      Online
+                                      {/* </a> */}
                                     </span>
                                   </li>
                                 );
