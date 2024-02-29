@@ -398,11 +398,31 @@ function Programs() {
                 <li>PhD</li>
               </ol>
               <ol className={styles.concentrationList}>
+                <li>Applied Mechanics</li>{' '}
+                <li>
+                  Realiability and Maintainability Engineering{' '}
+                  <span className={styles.onlineTag}>
+                    {' '}
+                    <a href="#">Online</a>
+                  </span>
+                </li>
+                <li>Nuclear Space Science and Engineering</li>
+              </ol>
+            </li>
+            <li className={styles.programEntry}>
+              <h3 className={styles.programName}>Aerospace Engineering</h3>
+              <ol className={styles.degreeList}>
+                <li>Five-year</li>
+              </ol>
+              <ol className={styles.concentrationList}>
                 <li>Applied Mechanics</li>
                 <li>Nuclear Space Science and Engineering</li>
                 <li>
                   Realiability and Maintainability Engineering{' '}
-                  <span className={styles.onlineTag}>Online</span>
+                  <span className={styles.onlineTag}>
+                    {' '}
+                    <a href="#">Online</a>
+                  </span>
                 </li>
               </ol>
             </li>
@@ -416,7 +436,26 @@ function Programs() {
                 <li>Nuclear Space Science and Engineering</li>
                 <li>
                   Realiability and Maintainability Engineering{' '}
-                  <span className={styles.onlineTag}>Online</span>
+                  <span className={styles.onlineTag}>
+                    {' '}
+                    <a href="#">Online</a>
+                  </span>
+                </li>
+              </ol>
+            </li>
+            <li className={styles.programEntry}>
+              <h3 className={styles.programName}>Aerospace Engineering</h3>
+              <ol className={styles.degreeList}>
+                <li>Five-year</li>
+              </ol>
+              <ol className={styles.concentrationList}>
+                <li>Applied Mechanics</li>
+                <li>Nuclear Space Science and Engineering</li>
+                <li>
+                  Realiability and Maintainability Engineering{' '}
+                  <span className={styles.onlineTag}>
+                    <a href="#">Online</a>
+                  </span>
                 </li>
               </ol>
             </li>
