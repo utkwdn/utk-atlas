@@ -1,11 +1,11 @@
 select {
   appearance: none;
   background-color: transparent;
-  border: 1px solid $utorange;
-  padding: 0.6em 1.3em !important;
+  padding: 0.6em 2.3em 0.6em 1.3em !important;
   color: $utlinkriver;
   margin: 0;
   width: 100%;
+
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
@@ -15,12 +15,17 @@ select {
   text-decoration: none;
   border-radius: 0.45rem;
   color: $utlinkriver !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (min-width: 1200px) {
+    width: auto;
+    width: 21ch;
+  }
   // option selected {
   //   white-space: nowrap;
   //   overflow: hidden;
   //   text-overflow: ellipsis;
   //   max-width: 10ch;
-  //   border: 1px solid red;
   // }
   &:hover {
     color: $utlinkhover !important;
@@ -61,14 +66,15 @@ select {
   margin-left: 0;
   .switchButton {
     &.MuiSwitch-root {
+      // chunky button A
       width: 6rem;
       height: 2.75rem;
+
+      // smaller button B
+      width: 4.75rem;
+      height: 2.5rem;
     }
     align-self: center;
-
-    // position: relative;
-    // display: inline-block;
-    // width: 6rem !important;
     border-radius: 0.45rem;
     // // padding: 0.6em 1.3em !important;
     padding: 0;
@@ -77,12 +83,18 @@ select {
     .MuiSwitch-switchBase {
       &.Mui-checked {
         // controls the distance the toggle moves
-        transform: translateX(3rem);
+        // chunky button A
+        transform: translateX(
+          3rem
+        ); // should match half the value of the MuiSwitch-root width
+        // smaller button B
+        transform: translateX(2.375rem);
+
         + .MuiSwitch-track {
           opacity: 1 !important;
           background-color: $utlinkriver !important;
 
-          border-radius: 0.45rem;
+          border-radius: 0 !important;
           // padding: 0;
         }
       }
@@ -94,10 +106,16 @@ select {
       .MuiSwitch-thumb {
         position: absolute;
         background-color: white;
+
+        // chunky button A
         height: 2.75rem !important;
         width: 3rem !important;
-        left: -0.125rem;
-        top: -0.125rem;
+
+        // smaller button B
+        height: 2.5rem !important;
+        width: 2.375rem !important;
+        left: -0.125rem; // offset to cover border of parent button
+        top: -0.125rem; // offset to cover border of parent button
         display: inline-block;
         border-radius: 0.45rem;
         border: 0.125rem solid $utorange;
@@ -155,6 +173,7 @@ select {
   .MuiSwitch-track {
     background-color: #f5f5f5;
     opacity: 1;
+    border-radius: 0;
   }
 
   .MuiTypography-root {
