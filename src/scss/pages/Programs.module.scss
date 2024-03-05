@@ -202,7 +202,9 @@
   // border: 2px solid black;
   grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
   @media screen and (min-width: 1200px) {
+    min-width: calc(100% - 400px);
     grid-template-columns: repeat(4, minmax(200px, auto));
+    grid-template-columns: repeat(4, minmax(200px, 22ch));
   }
 
   gap: 1rem;
@@ -212,6 +214,12 @@
 .programsSearch {
   // min-width: 240px;
   // max-width: 400px;
+  @media screen and (min-width: 1200px) {
+    min-width: 300px;
+  }
+  @media screen and (min-width: 1345px) {
+    min-width: 350px;
+  }
   align-self: center;
 }
 
