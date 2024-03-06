@@ -454,7 +454,7 @@ function Programs() {
                 onClick={() => handleFilterChange('search', '')}
               >
                 <span className={styles.tagButtonTitle}>Search:</span>{' '}
-                {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
+                {filters.search}
               </div>
             )}
             {filters.areaOfStudy === '' ? (
@@ -466,7 +466,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
                 {filters.areaOfStudy.replaceAll('-', ' ')}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {filters.college === '' ? (
@@ -478,7 +477,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>College:</span>{' '}
                 {filters.college.replaceAll('-', ' ')}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {filters.degreeTypes === '' ? (
@@ -490,7 +488,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
                 {filters.degreeTypes}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {onlineSwitchChecked === false ? (
@@ -501,7 +498,6 @@ function Programs() {
                 onClick={() => handleSwitchChange('on')}
               >
                 <span className={styles.tagButtonTitle}>Online</span> Online
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
           </section>{' '}
