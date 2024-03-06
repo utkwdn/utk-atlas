@@ -27,8 +27,15 @@ select {
   //   text-overflow: ellipsis;
   //   max-width: 10ch;
   // }
+  // &:hover {
+  //   color: $utlinkhover !important;
+  // }
   &:hover {
-    color: $utlinkhover !important;
+    background-color: $utlinkhover !important;
+    color: $white !important;
+  }
+  [aria-expanded='true'].select::after {
+    transform: rotate(180deg);
   }
 }
 .select {
