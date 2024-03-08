@@ -14,6 +14,7 @@ import { Button } from 'react-bootstrap';
 import Intro from '../../../components/Intro';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 interface Program {
   major: string;
@@ -229,6 +230,13 @@ function Programs() {
     return majorArray;
   };
 
+  // Controls search navigation Offcanvas
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   useEffect(() => {
     if (
       router.query.slug &&
@@ -344,9 +352,7 @@ function Programs() {
       <section className={styles.areasContainer}>
         {/* parent container */}
         {/* Search Section */}
-        <section
-          className={[styles.searchNavContainer, styles.stickyNav].join(' ')}
-        >
+        <section className={styles.searchNavContainer}>
           <div className={styles.programsSearch}>
             <form
               onSubmit={(e) => handleSearchSubmit(e)}
@@ -364,6 +370,11 @@ function Programs() {
             </form>
           </div>
           {/* Filters Section */}
+          {/* <Button className="d-lg-none" onClick={handleShow}>
+            Filter
+          </Button>
+          <Offcanvas show={show} onHide={handleClose} responsive="md">
+            <Offcanvas.Header closeButton></Offcanvas.Header> */}
           <section className={styles.searchNavFilterContainer}>
             <div className="select">
               <select
@@ -432,6 +443,8 @@ function Programs() {
               labelPlacement="end"
             />
           </section>
+          {/* END OF THE MODAL */}
+          {/* </Offcanvas> */}
           {/* Filter Tags */}
           <section className={styles.filtersSection}>
             {filters.search === '' &&
@@ -454,7 +467,7 @@ function Programs() {
                 onClick={() => handleFilterChange('search', '')}
               >
                 <span className={styles.tagButtonTitle}>Search:</span>{' '}
-                {filters.search}&nbsp;&nbsp;&nbsp;<strong>X</strong>
+                {filters.search}
               </div>
             )}
             {filters.areaOfStudy === '' ? (
@@ -466,7 +479,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
                 {filters.areaOfStudy.replaceAll('-', ' ')}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {filters.college === '' ? (
@@ -478,7 +490,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>College:</span>{' '}
                 {filters.college.replaceAll('-', ' ')}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {filters.degreeTypes === '' ? (
@@ -490,7 +501,6 @@ function Programs() {
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
                 {filters.degreeTypes}
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
             {onlineSwitchChecked === false ? (
@@ -501,7 +511,6 @@ function Programs() {
                 onClick={() => handleSwitchChange('on')}
               >
                 <span className={styles.tagButtonTitle}>Online</span> Online
-                &nbsp;&nbsp;&nbsp;<strong>X</strong>
               </div>
             )}
           </section>{' '}
@@ -565,7 +574,9 @@ function Programs() {
             </ol>
           </section>
         ) : (
-          <h3>No matching programs</h3>
+          <section className={styles.resultsSectionMessage}>
+            <h3>No matching programs</h3>
+          </section>
         )}
         {/* End Results Container */}
       </section>

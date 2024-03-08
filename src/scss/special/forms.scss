@@ -5,7 +5,6 @@ select {
   color: $utlinkriver;
   margin: 0;
   width: 100%;
-
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
@@ -17,18 +16,23 @@ select {
   color: $utlinkriver !important;
   overflow: hidden;
   text-overflow: ellipsis;
-  @media screen and (min-width: 1200px) {
-    width: auto;
-    width: 21ch;
-  }
+  // @media screen and (min-width: 1200px) {
+  //   width: auto;
+  //   width: 21ch;
+  // }
   // option selected {
   //   white-space: nowrap;
   //   overflow: hidden;
   //   text-overflow: ellipsis;
   //   max-width: 10ch;
   // }
+
   &:hover {
-    color: $utlinkhover !important;
+    background-color: $utlinkhover !important;
+    color: $white !important;
+  }
+  [aria-expanded='true'].select::after {
+    transform: rotate(180deg);
   }
 }
 .select {
