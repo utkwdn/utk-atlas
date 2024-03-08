@@ -574,7 +574,9 @@ function Programs() {
             </ol>
           </section>
         ) : (
-          <h3>No matching programs</h3>
+          <section className={styles.resultsSectionMessage}>
+            <h3>No matching programs</h3>
+          </section>
         )}
         {/* End Results Container */}
       </section>

@@ -23,15 +23,36 @@
 .resultsSection {
   // setting up default page margins to match Intro Module
   // border: 2px solid blue;
-  padding: 1rem 2rem 3rem 2rem;
+  padding: 1rem 0.5rem 3rem 0.5rem;
   position: relative;
   margin: 0 0 1.5rem 0;
   justify-items: start;
   align-items: start;
+  @media screen and (min-width: 940px) {
+    padding: 1rem 2rem 3rem 2rem;
+  }
   @media screen and (min-width: 1200px) {
     padding: 5rem 2rem 3rem 2rem;
     max-width: 1520px;
     margin: 0 auto 3rem auto;
+  }
+}
+.resultsSectionMessage {
+  padding: 0 2rem;
+  position: relative;
+  margin: 0 0 1.5rem 0;
+  justify-items: start;
+  align-items: start;
+  @media screen and (min-width: 940px) {
+    padding: 1rem 2rem 3rem 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 5rem 2rem 3rem 2rem;
+    max-width: 1520px;
+    margin: 0 auto 3rem auto;
+  }
+  h3 {
+    margin-top: 0;
   }
 }
 .onlineTag {
@@ -104,7 +125,10 @@
   > h3.programName {
     margin: 0;
     line-height: 1.35rem;
-    font-size: $font-size-lg;
+    // line-height: clamp($h5-font-size, 1.3rem, $h4-font-size);
+    line-height: clamp(1.3rem, 3.5vw, 1.63rem);
+    // font-size: $font-size-lg;
+    font-size: $h5-font-size;
     font-weight: $font-weight-bold;
     justify-self: stretch;
     @media screen and (min-width: 940px) {
@@ -120,7 +144,7 @@
     margin: 1rem 0 0 1rem;
     margin: 0 0 0 0.1rem;
     padding: 0;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-weight: $font-weight-bolder;
     font-size: $font-size-sm;
     font-size: calc($font-size-sm * 0.97);
