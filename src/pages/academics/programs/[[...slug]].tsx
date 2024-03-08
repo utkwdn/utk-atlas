@@ -30,9 +30,10 @@ interface Program {
 interface Filters {
   [key: string]: string;
   search: string;
-  areaOfStudy: string;
+  'area-of-study': string;
   college: string;
-  degreeTypes: string;
+  'degree-type': string;
+  online: string;
 }
 
 interface MajorArrayIndexes {
@@ -72,15 +73,24 @@ function Programs() {
 
   const [filters, setFilters] = useState({
     search: '',
-    areaOfStudy: '',
+    'area-of-study': '',
     college: '',
-    degreeTypes: '',
+    'degree-type': '',
+    online: '',
   });
+  // const [searchFilter, setSearchFilter] = useState('');
+  // const [aosFilter, setAosFilter] = useState('');
+  // const [collegeFilter, setCollegeFilter] = useState('');
+  // const [degreeTypeFilter, setDegreeTypeFilter] = useState('');
+  // const [onlineFilter, setOnlineFilter] = useState('');
 
-  const [selectAreas, setSelectAreas] = useState(['']);
-  const [selectColleges, setSelectColleges] = useState(['']);
-  const [routerQueryOverride, setRouterQueryOverride] = useState(false);
-  const [onlineSwitchChecked, setOnlineSwitchChecked] = useState(false);
+  const [selectAreas, setSelectAreas] = useState([{ area: '', slug: '' }]);
+  // const [areasMap, setAreasMap] = useState({});
+  const [selectColleges, setSelectColleges] = useState([
+    { college: '', slug: '' },
+  ]);
+  // const [collegesMap, setCollegesMap] = useState({});
+  // const [selectsPopulated, setSelectPopulated] = useState(false);
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -98,26 +108,63 @@ function Programs() {
   const router = useRouter();
 
   const handleFilterChange = (filterType: string, value: string) => {
-    // Override URL query when on-page filters are changed
-    setRouterQueryOverride(true);
-
     const _filters: Filters = filters;
     if (_filters[filterType] !== value) {
       _filters[filterType] = value;
       setFilters({ ..._filters });
     }
+
+    pushRouter(filterType, value);
   };
 
-  const handleSwitchChange = (value: string) => {
-    const newSwitchValue = onlineSwitchChecked ? false : true;
+  const pushRouter = (filterType: string, value: string) => {
+    const _filters = [
+      {
+        type: 'search',
+        term: filters.search,
+      },
+      {
+        type: 'area-of-study',
+        term: filters['area-of-study'],
+      },
+      {
+        type: 'college',
+        term: filters.college,
+      },
+      {
+        type: 'degree-type',
+        term: filters['degree-type'],
+      },
+      {
+        type: 'online',
+        term: filters.online,
+      },
+    ];
 
-    setOnlineSwitchChecked(newSwitchValue);
+    let queryString = ``;
+
+    _filters.forEach((filter) => {
+      if (filter.term !== '') {
+        queryString += `${filter.type}/${filter.term}/`;
+      }
+    });
+
+    window.history.replaceState('', '', `/academics/programs/${queryString}`);
+  };
+
+  const handleSwitchChange = () => {
+    const newSwitchValue = filters.online === '' ? 'true' : '';
+
+    handleFilterChange('online', newSwitchValue);
   };
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    handleFilterChange('search', filters.search);
+    console.log('search submit');
+
+    // // handleFilterChange('search', filters.search);
+    // pushRouter('search', filters.search);
   };
 
   const organizeByMajor = (flat: Program[]) => {
@@ -218,15 +265,6 @@ function Programs() {
       }
     });
 
-    // Only update areas for select box on initial load
-    if (selectAreas[0] === '') {
-      setSelectAreas(allAreas);
-    }
-    // Only update colleges for select box on initial load
-    if (selectColleges[0] === '') {
-      setSelectColleges(allColleges);
-    }
-
     return majorArray;
   };
 
@@ -237,20 +275,94 @@ function Programs() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    if (
-      router.query.slug &&
-      router.query.slug.length > 1 &&
-      routerQueryOverride === false
-    ) {
-      const newFilterType = router.query.slug[0];
-      const newFilterTerm = router.query.slug[1];
+  const populateSelectBoxes = (flatPrograms: Program[]) => {
+    const uniqueSelectAreas = flatPrograms
+      .map((program) => program.areaOfStudy)
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .map((area) => {
+        const areaSlug = area
+          .toLowerCase()
+          .replace(/[^\w\s]/gi, '')
+          .replaceAll(' ', '-');
+        return {
+          area: area,
+          slug: areaSlug,
+        };
+      });
 
-      // Only allowing URL search queries for now
-      if (newFilterType === 'search') {
-        handleFilterChange('search', newFilterTerm);
+    const uniqueSelectColleges = flatPrograms
+      .map((program) => program.college)
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .map((college) => {
+        const collegeSlug = college
+          .toLowerCase()
+          .replace(/[^\w\s]/gi, '')
+          .replaceAll(' ', '-');
+        return {
+          college: college,
+          slug: collegeSlug,
+        };
+      });
+
+    setSelectAreas(uniqueSelectAreas);
+    setSelectColleges(uniqueSelectColleges);
+  };
+
+  const deslugify = (type: string, slug: string) => {
+    if (type === 'area-of-study') {
+      const deslugged = selectAreas
+        .filter((this_area) => {
+          return this_area.slug === slug;
+        })
+        .map((matchingArea) => {
+          return matchingArea.area;
+        })[0];
+      return deslugged;
+    } else if (type === 'college') {
+      const deslugged = selectColleges
+        .filter((this_area) => {
+          return this_area.slug === slug;
+        })
+        .map((matchingArea) => {
+          return matchingArea.college;
+        })[0];
+      return deslugged;
+    } else {
+      return slug;
+    }
+  };
+
+  useEffect(() => {
+    if (router.query.slug && router.query.slug.length > 1) {
+      for (let i = 0; i < router.query.slug.length; i += 2) {
+        const chunk = router.query.slug.slice(i, i + 2);
+        if (chunk.length === 2) {
+          handleFilterChange(chunk[0], chunk[1]);
+        }
       }
     }
+  }, []);
+
+  useEffect(() => {
+    // console.log(filters);
+    // if (
+    //   router.query.slug &&
+    //   router.query.slug.length > 1
+    //   // routerQueryOverride === false
+    // ) {
+    // console.log(router.query);
+    // const newFilterType = router.query.slug[0];
+    // const newFilterTerm = router.query.slug[1];
+
+    // // Only allowing URL search queries for now
+    // if (newFilterType === 'search') {
+    //   handleFilterChange('search', newFilterTerm);
+    // }
+    // }
+    // if (router.query) {
+    //   handleRouterFilters(router.query);
+    //   // console.log(router.query);
+    // }
 
     if (programs) {
       let flatPrograms = programs
@@ -271,9 +383,12 @@ function Programs() {
               })
               .join(', ') || '';
 
+          const programTitle =
+            program.title === 'none' ? 'General' : program.title;
+
           return {
             major: program.majors?.nodes[0].name || '',
-            concentration: program.title || '',
+            concentration: programTitle || '',
             college: program.colleges?.nodes[0].name || '',
             areaOfStudy: program.areasOfStudy?.nodes[0].name || '',
             degrees: degreeString,
@@ -283,6 +398,10 @@ function Programs() {
         })
         .sort(alphabetizeByMajor);
 
+      populateSelectBoxes(flatPrograms);
+
+      // console.log(filters);
+
       // Apply any Search filters
       if (filters.search !== '') {
         flatPrograms = matchSorter(flatPrograms, filters.search, {
@@ -291,40 +410,48 @@ function Programs() {
         });
       }
       // Apply any Area of Study filters
-      if (filters.areaOfStudy !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters.areaOfStudy, {
-          keys: ['areaOfStudy'],
-          threshold: matchSorter.rankings.EQUAL,
-        });
+      if (filters['area-of-study'] !== '') {
+        flatPrograms = matchSorter(
+          flatPrograms,
+          deslugify('area-of-study', filters['area-of-study']),
+          {
+            keys: ['areaOfStudy'],
+            threshold: matchSorter.rankings.EQUAL,
+          }
+        );
       }
       // Apply any College filters
       if (filters.college !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters.college, {
-          keys: ['college'],
-          threshold: matchSorter.rankings.ACRONYM,
-        });
+        flatPrograms = matchSorter(
+          flatPrograms,
+          deslugify('college', filters.college),
+          {
+            keys: ['college'],
+            threshold: matchSorter.rankings.ACRONYM,
+          }
+        );
       }
       // Apply any Degree Type filters
-      if (filters.degreeTypes !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters.degreeTypes, {
+      if (filters['degree-type'] !== '') {
+        flatPrograms = matchSorter(flatPrograms, filters['degree-type'], {
           keys: ['degreeTypes'],
           threshold: matchSorter.rankings.WORD_STARTS_WITH,
         });
       }
-      // Apply online filter if
-      if (onlineSwitchChecked) {
+      // Apply online filter if set to true
+      if (filters.online === 'true') {
         flatPrograms = matchSorter(flatPrograms, 'Online', {
           keys: ['degreeTypes'],
           threshold: matchSorter.rankings.WORD_STARTS_WITH,
         });
       }
 
-      // console.log(`Total Matches - ${flatPrograms.length}`);
+      console.log(`Total Matches - ${flatPrograms.length}`);
 
       // Organize into major/degree/concentration hierarchy then update state
       setActiveItems(organizeByMajor(flatPrograms));
     }
-  }, [programs, filters, onlineSwitchChecked]);
+  }, [programs, filters]);
   return (
     <Layout>
       <Head>
@@ -378,35 +505,36 @@ function Programs() {
           <section className={styles.searchNavFilterContainer}>
             <div className="select">
               <select
-                name="area-of-study"
+                name="degree-types"
                 className="dropdown"
-                id="area-of-study"
-                value={filters.degreeTypes}
+                id="degree-types"
+                value={filters['degree-type']}
                 onChange={(e) =>
-                  handleFilterChange('degreeTypes', e.target.value)
+                  handleFilterChange('degree-type', e.target.value)
                 }
               >
                 <option value="">Degree Type</option>
-                <option value="undergraduate">Undergraduate</option>
-                <option value="graduate">Graduate</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
                 {/* <option value="online">Online</option> */}
               </select>
             </div>
             <div className="select">
               <select
                 name="area-of-study"
+                className="dropdown"
                 id="area-of-study"
-                value={filters.areaOfStudy}
+                value={filters['area-of-study']}
                 onChange={(e) =>
-                  handleFilterChange('areaOfStudy', e.target.value)
+                  handleFilterChange('area-of-study', e.target.value)
                 }
               >
                 <option value="">Area of Study</option>
                 {/* Map AOS options from fetched data */}
                 {selectAreas?.map((this_area, i) => {
                   return (
-                    <option key={i} value={this_area}>
-                      {this_area}
+                    <option key={i} value={this_area.slug}>
+                      {this_area.area}
                     </option>
                   );
                 })}
@@ -414,8 +542,9 @@ function Programs() {
             </div>
             <div className="select">
               <select
-                name="area-of-study"
-                id="area-of-study"
+                name="college"
+                className="dropdown"
+                id="college"
                 value={filters.college}
                 onChange={(e) => handleFilterChange('college', e.target.value)}
               >
@@ -423,8 +552,8 @@ function Programs() {
                 {/* Map college options from fetched data */}
                 {selectColleges?.map((this_college, i) => {
                   return (
-                    <option key={i} value={this_college}>
-                      {this_college}
+                    <option key={i} value={this_college.slug}>
+                      {this_college.college}
                     </option>
                   );
                 })}
@@ -434,8 +563,8 @@ function Programs() {
               className={'switchButtonLabel'}
               control={
                 <Switch
-                  checked={onlineSwitchChecked}
-                  onChange={(e) => handleSwitchChange(e.target.value)}
+                  checked={filters.online === 'true'}
+                  onChange={() => handleSwitchChange()}
                   className={'switchButton'}
                 />
               }
@@ -448,10 +577,10 @@ function Programs() {
           {/* Filter Tags */}
           <section className={styles.filtersSection}>
             {filters.search === '' &&
-            filters.areaOfStudy === '' &&
+            filters['area-of-study'] === '' &&
             filters.college === '' &&
-            filters.degreeTypes === '' &&
-            onlineSwitchChecked === false ? (
+            filters['degree-type'] === '' &&
+            filters.online === '' ? (
               <></>
             ) : (
               <div>
@@ -470,15 +599,15 @@ function Programs() {
                 {filters.search}
               </div>
             )}
-            {filters.areaOfStudy === '' ? (
+            {filters['area-of-study'] === '' ? (
               <></>
             ) : (
               <div
                 className={styles.tagButton}
-                onClick={() => handleFilterChange('areaOfStudy', '')}
+                onClick={() => handleFilterChange('area-of-study', '')}
               >
                 <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
-                {filters.areaOfStudy.replaceAll('-', ' ')}
+                {deslugify('area-of-study', filters['area-of-study'])}
               </div>
             )}
             {filters.college === '' ? (
@@ -489,26 +618,26 @@ function Programs() {
                 onClick={() => handleFilterChange('college', '')}
               >
                 <span className={styles.tagButtonTitle}>College:</span>{' '}
-                {filters.college.replaceAll('-', ' ')}
+                {deslugify('college', filters.college)}
               </div>
             )}
-            {filters.degreeTypes === '' ? (
+            {filters['degree-type'] === '' ? (
               <></>
             ) : (
               <div
                 className={styles.tagButton}
-                onClick={() => handleFilterChange('degreeTypes', '')}
+                onClick={() => handleFilterChange('degree-type', '')}
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-                {filters.degreeTypes}
+                {filters['degree-type']}
               </div>
             )}
-            {onlineSwitchChecked === false ? (
+            {filters.online === '' ? (
               <></>
             ) : (
               <div
                 className={styles.tagButton}
-                onClick={() => handleSwitchChange('on')}
+                onClick={() => handleFilterChange('online', '')}
               >
                 <span className={styles.tagButtonTitle}>Online</span> Online
               </div>
@@ -542,14 +671,10 @@ function Programs() {
                           </ol>
                           <ol className={styles.concentrationList}>
                             {this_degree.programs?.map((this_program, k) => {
-                              const programName =
-                                this_program.name === 'none'
-                                  ? 'General'
-                                  : this_program.name;
                               if (this_program.online === true) {
                                 return (
                                   <li key={k}>
-                                    {programName}{' '}
+                                    {this_program.name}{' '}
                                     <span className={styles.onlineTag}>
                                       {/* <a
                                         // href={this_program.link}
@@ -561,7 +686,7 @@ function Programs() {
                                   </li>
                                 );
                               } else {
-                                return <li key={k}>{programName}</li>;
+                                return <li key={k}>{this_program.name}</li>;
                               }
                             })}
                           </ol>
