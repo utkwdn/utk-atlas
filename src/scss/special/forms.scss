@@ -67,7 +67,7 @@ select {
 
 .switchButtonLabel {
   gap: 1rem;
-  margin-left: 0;
+  margin-left: 0 !important;
   .switchButton {
     &.MuiSwitch-root {
       // chunky button A
