@@ -437,8 +437,10 @@ function Programs() {
                   checked={onlineSwitchChecked}
                   onChange={(e) => handleSwitchChange(e.target.value)}
                   className={'switchButton'}
+                  value="online only"
                 />
               }
+              inputProps={{ 'aria-label': 'online only' }}
               label="Online"
               labelPlacement="end"
             />
