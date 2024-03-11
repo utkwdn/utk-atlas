@@ -440,7 +440,6 @@ function Programs() {
                   value="online only"
                 />
               }
-              inputProps={{ 'aria-label': 'online only' }}
               label="Online"
               labelPlacement="end"
             />
