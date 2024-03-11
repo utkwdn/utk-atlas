@@ -36,38 +36,41 @@ interface Filters {
   online: string;
 }
 
-interface MajorArrayIndexes {
-  major: { [key: string]: number };
-  degree: { [key: string]: number };
-  program: { [key: string]: number };
-}
+// interface MajorArrayIndexes {
+//   major: { [key: string]: number };
+//   degree: { [key: string]: number };
+//   program: { [key: string]: number };
+// }
 
-interface MajorArray {
+// interface MajorArray {
+//   major: string;
+//   degrees: [
+//     {
+//       name: string;
+//       programs: [{ name: string; link: string; online: boolean }];
+//     }
+//   ];
+// }
+
+// interface MajorObject {
+//   [key: string]: {
+//     [key: string]: string[];
+//   };
+// }
+
+interface OrganizedPrograms {
+  checkKey?: string;
   major: string;
-  degrees: [
-    {
-      name: string;
-      programs: [{ name: string; link: string; online: boolean }];
-    }
-  ];
-}
-
-interface MajorObject {
-  [key: string]: {
-    [key: string]: string[];
-  };
+  degrees: string;
+  concentration: [{ name: string; link: string; online: boolean }];
 }
 
 function Programs() {
   const [activeItems, setActiveItems] = useState([
     {
       major: 'Major',
-      degrees: [
-        {
-          name: 'Degree',
-          programs: [{ name: 'Program', link: 'Link', online: false }],
-        },
-      ],
+      degrees: 'Degree',
+      concentration: [{ name: 'Program', link: 'Link', online: false }],
     },
   ]);
 
@@ -155,71 +158,115 @@ function Programs() {
     handleFilterChange('search', filters.search);
   };
 
-  const organizeByMajor = (flat: Program[]) => {
-    // Keep track of indexes to know where to place new items in majorArray
-    const majorArrayIndexes: MajorArrayIndexes = {
-      major: {},
-      degree: {},
-      program: {},
-    };
+  // const organizeByMajor = (flat: Program[]) => {
+  //   // Keep track of indexes to know where to place new items in majorArray
+  //   const majorArrayIndexes: MajorArrayIndexes = {
+  //     major: {},
+  //     degree: {},
+  //     program: {},
+  //   };
 
-    const allColleges: string[] = [];
-    const allAreas: string[] = [];
+  //   const majorArray: MajorArray[] = [];
+  //   const majorObject: MajorObject = {};
 
-    const majorArray: MajorArray[] = [];
+  //   flat.forEach((program) => {
+  //     // If major hasn't been added yet
+  //     if (!(program.major in majorObject)) {
+  //       // Add to object to check against following programs
+  //       majorObject[program.major] = {};
+  //       majorObject[program.major][program.degrees] = [program.concentration];
 
-    const majorObject: MajorObject = {};
+  //       // Add to array for outputting
+  //       majorArray.push({
+  //         major: program.major,
+  //         degrees: [
+  //           {
+  //             name: program.degrees,
+  //             programs: [
+  //               {
+  //                 name: program.concentration,
+  //                 link: program.programLink,
+  //                 online: program.degreeTypes.includes('Online') ? true : false,
+  //               },
+  //             ],
+  //           },
+  //         ],
+  //       });
+  //       // Add array index for major, degree and program
+  //       const degreesIndex = `${program.major} - ${program.degrees}`;
+  //       const concentrationIndex = `${program.major} - ${program.degrees} - ${program.concentration}`;
+  //       majorArrayIndexes.major[program.major] =
+  //         Object.keys(majorObject).length - 1;
+  //       majorArrayIndexes.degree[degreesIndex] =
+  //         Object.keys(majorObject[program.major]).length - 1;
+  //       majorArrayIndexes.program[concentrationIndex] =
+  //         Object.keys(majorObject[program.major][program.degrees]).length - 1;
+
+  //       // If major has been added but degree hasn't
+  //     } else if (!(program.degrees in majorObject[program.major])) {
+  //       // Add to object to check against following programs
+  //       majorObject[program.major][program.degrees] = [program.concentration];
+  //       // Add to array for outputting
+  //       const majorIndex = majorArrayIndexes.major[program.major];
+  //       majorArray[majorIndex].degrees.push({
+  //         name: program.degrees,
+  //         programs: [
+  //           {
+  //             name: program.concentration,
+  //             link: program.programLink,
+  //             online: program.degreeTypes.includes('Online') ? true : false,
+  //           },
+  //         ],
+  //       });
+
+  //       // Add array index for degree within major
+  //       const degreesIndex = `${program.major} - ${program.degrees}`;
+  //       majorArrayIndexes.degree[degreesIndex] =
+  //         Object.keys(majorObject[program.major]).length - 1;
+
+  //       // If major and degree have been added, but concentration has not
+  //     } else if (
+  //       !majorObject[program.major][program.degrees].includes(
+  //         program.concentration
+  //       )
+  //     ) {
+  //       // Add to object to check against following programs
+  //       majorObject[program.major][program.degrees].push(program.concentration);
+  //       // Add to array for outputting
+  //       const majorIndex = majorArrayIndexes.major[program.major];
+  //       const degreeIndex =
+  //         majorArrayIndexes.degree[`${program.major} - ${program.degrees}`];
+  //       majorArray[majorIndex].degrees[degreeIndex].programs.push({
+  //         name: program.concentration,
+  //         link: program.programLink,
+  //         online: program.degreeTypes.includes('Online') ? true : false,
+  //       });
+  //     }
+  //   });
+  //   return majorArray;
+  // };
+
+  const slugify = (string: string) => {
+    return string
+      .toLowerCase()
+      .replace(/[^\w\s]/gi, '')
+      .replaceAll(' ', '-');
+  };
+
+  const combineConcentrations = (flat: Program[]) => {
+    const organizedPrograms: OrganizedPrograms[] = [];
 
     flat.forEach((program) => {
-      // Add college if not added yet
-      if (!allColleges.includes(program.college)) {
-        allColleges.push(program.college);
-      }
-      // Add area of study if not added yet
-      if (!allAreas.includes(program.areaOfStudy)) {
-        allAreas.push(program.areaOfStudy);
-      }
-      // If major hasn't been added yet
-      if (!(program.major in majorObject)) {
-        // Add to object to check against following programs
-        majorObject[program.major] = {};
-        majorObject[program.major][program.degrees] = [program.concentration];
-
-        // Add to array for outputting
-        majorArray.push({
+      const checkKey = slugify(program.major + ' ' + program.degrees);
+      const programIndex = organizedPrograms
+        .map((e) => e.checkKey)
+        .indexOf(checkKey);
+      if (programIndex === -1) {
+        organizedPrograms.push({
+          checkKey: checkKey,
           major: program.major,
-          degrees: [
-            {
-              name: program.degrees,
-              programs: [
-                {
-                  name: program.concentration,
-                  link: program.programLink,
-                  online: program.degreeTypes.includes('Online') ? true : false,
-                },
-              ],
-            },
-          ],
-        });
-        // Add array index for major, degree and program
-        const degreesIndex = `${program.major} - ${program.degrees}`;
-        const concentrationIndex = `${program.major} - ${program.degrees} - ${program.concentration}`;
-        majorArrayIndexes.major[program.major] =
-          Object.keys(majorObject).length - 1;
-        majorArrayIndexes.degree[degreesIndex] =
-          Object.keys(majorObject[program.major]).length - 1;
-        majorArrayIndexes.program[concentrationIndex] =
-          Object.keys(majorObject[program.major][program.degrees]).length - 1;
-
-        // If major has been added but degree hasn't
-      } else if (!(program.degrees in majorObject[program.major])) {
-        // Add to object to check against following programs
-        majorObject[program.major][program.degrees] = [program.concentration];
-        // Add to array for outputting
-        const majorIndex = majorArrayIndexes.major[program.major];
-        majorArray[majorIndex].degrees.push({
-          name: program.degrees,
-          programs: [
+          degrees: program.degrees,
+          concentration: [
             {
               name: program.concentration,
               link: program.programLink,
@@ -227,32 +274,15 @@ function Programs() {
             },
           ],
         });
-
-        // Add array index for degree within major
-        const degreesIndex = `${program.major} - ${program.degrees}`;
-        majorArrayIndexes.degree[degreesIndex] =
-          Object.keys(majorObject[program.major]).length - 1;
-
-        // If major and degree have been added, but concentration has not
-      } else if (
-        !majorObject[program.major][program.degrees].includes(
-          program.concentration
-        )
-      ) {
-        // Add to object to check against following programs
-        majorObject[program.major][program.degrees].push(program.concentration);
-        // Add to array for outputting
-        const majorIndex = majorArrayIndexes.major[program.major];
-        const degreeIndex =
-          majorArrayIndexes.degree[`${program.major} - ${program.degrees}`];
-        majorArray[majorIndex].degrees[degreeIndex].programs.push({
+      } else {
+        organizedPrograms[programIndex].concentration.push({
           name: program.concentration,
           link: program.programLink,
           online: program.degreeTypes.includes('Online') ? true : false,
         });
       }
     });
-    return majorArray;
+    return organizedPrograms;
   };
 
   // Controls search navigation Offcanvas
@@ -267,13 +297,9 @@ function Programs() {
       .map((program) => program.areaOfStudy)
       .filter((value, index, self) => self.indexOf(value) === index)
       .map((area) => {
-        const areaSlug = area
-          .toLowerCase()
-          .replace(/[^\w\s]/gi, '')
-          .replaceAll(' ', '-');
         return {
           area: area,
-          slug: areaSlug,
+          slug: slugify(area),
         };
       });
 
@@ -281,13 +307,9 @@ function Programs() {
       .map((program) => program.college)
       .filter((value, index, self) => self.indexOf(value) === index)
       .map((college) => {
-        const collegeSlug = college
-          .toLowerCase()
-          .replace(/[^\w\s]/gi, '')
-          .replaceAll(' ', '-');
         return {
           college: college,
-          slug: collegeSlug,
+          slug: slugify(college),
         };
       });
 
@@ -429,7 +451,9 @@ function Programs() {
       console.log(`Total Matches - ${flatPrograms.length}`);
 
       // Organize into major/degree/concentration hierarchy then update state
-      setActiveItems(organizeByMajor(flatPrograms));
+      setActiveItems(combineConcentrations(flatPrograms));
+      // setActiveItems(organizeByMajor(flatPrograms));
+      // console.log(JSON.stringify(activeItems[0]));
     }
   }, [programs, filters]);
   return (
@@ -635,48 +659,46 @@ function Programs() {
                 <div className={styles.programLabel}>Degree</div>
                 <div className={styles.programLabel}>Concentration</div>
               </li>
-              {activeItems?.map((this_item, i) => {
+              {/* {activeItems?.map((this_item, i) => {
                 return (
-                  <>
-                    {this_item.degrees?.map((this_degree, j) => {
-                      const degreeNameArray = this_degree.name.split('/, ');
-                      return (
-                        <li key={j} className={styles.programEntry}>
-                          <h3 className={styles.programName}>
-                            {this_item.major}
-                          </h3>
-                          <ol className={styles.degreeList}>
-                            {degreeNameArray?.map((this_degree_name, l) => {
-                              return <li key={l}>{this_degree_name}</li>;
-                            })}
-                          </ol>
-                          <ol className={styles.concentrationList}>
-                            {this_degree.programs?.map((this_program, k) => {
-                              if (this_program.online === true) {
-                                return (
-                                  <li key={k}>
-                                    {this_program.name}{' '}
-                                    <span className={styles.onlineTag}>
-                                      {/* <a
+                  <> */}
+              {activeItems?.map((this_item, j) => {
+                const degreeNameArray = this_item.degrees.split('/, ');
+                return (
+                  <li key={j} className={styles.programEntry}>
+                    <h3 className={styles.programName}>{this_item.major}</h3>
+                    <ol className={styles.degreeList}>
+                      {degreeNameArray?.map((this_degree_name, l) => {
+                        return <li key={l}>{this_degree_name}</li>;
+                      })}
+                    </ol>
+                    <ol className={styles.concentrationList}>
+                      {this_item.concentration?.map((this_program, k) => {
+                        if (this_program.online === true) {
+                          return (
+                            <li key={k}>
+                              {this_program.name}{' '}
+                              <span className={styles.onlineTag}>
+                                {/* <a
                                         // href={this_program.link}
                                         href="https://volsonline.utk.edu/programs-degrees/"
                                       > */}
-                                      Online
-                                      {/* </a> */}
-                                    </span>
-                                  </li>
-                                );
-                              } else {
-                                return <li key={k}>{this_program.name}</li>;
-                              }
-                            })}
-                          </ol>
-                        </li>
-                      );
-                    })}
-                  </>
+                                Online
+                                {/* </a> */}
+                              </span>
+                            </li>
+                          );
+                        } else {
+                          return <li key={k}>{this_program.name}</li>;
+                        }
+                      })}
+                    </ol>
+                  </li>
                 );
               })}
+              {/* </>
+                );
+              })} */}
             </ol>
           </section>
         ) : (
