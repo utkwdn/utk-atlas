@@ -546,8 +546,10 @@ function Programs() {
                   checked={filters.online === 'true'}
                   onChange={() => handleSwitchChange()}
                   className={'switchButton'}
+                  value="online only"
                 />
               }
+              inputProps={{ 'aria-label': 'online only' }}
               label="Online"
               labelPlacement="end"
             />
