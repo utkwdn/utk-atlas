@@ -78,22 +78,15 @@ function Programs() {
     'degree-type': '',
     online: '',
   });
-  // const [searchFilter, setSearchFilter] = useState('');
-  // const [aosFilter, setAosFilter] = useState('');
-  // const [collegeFilter, setCollegeFilter] = useState('');
-  // const [degreeTypeFilter, setDegreeTypeFilter] = useState('');
-  // const [onlineFilter, setOnlineFilter] = useState('');
 
   const [selectAreas, setSelectAreas] = useState([{ area: '', slug: '' }]);
-  // const [areasMap, setAreasMap] = useState({});
   const [selectColleges, setSelectColleges] = useState([
     { college: '', slug: '' },
   ]);
-  // const [collegesMap, setCollegesMap] = useState({});
-  // const [selectsPopulated, setSelectPopulated] = useState(false);
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
+  const router = useRouter();
 
   const alphabetizeByMajor = (a: Program, b: Program) => {
     if (a.major < b.major) {
@@ -104,8 +97,6 @@ function Programs() {
     }
     return 0;
   };
-
-  const router = useRouter();
 
   const handleFilterChange = (filterType: string, value: string) => {
     const _filters: Filters = filters;
@@ -119,10 +110,6 @@ function Programs() {
 
   const pushRouter = (filterType: string, value: string) => {
     const _filters = [
-      {
-        type: 'search',
-        term: filters.search,
-      },
       {
         type: 'area-of-study',
         term: filters['area-of-study'],
@@ -139,17 +126,21 @@ function Programs() {
         type: 'online',
         term: filters.online,
       },
+      {
+        type: 'search',
+        term: filters.search,
+      },
     ];
 
     let queryString = ``;
 
     _filters.forEach((filter) => {
       if (filter.term !== '') {
-        queryString += `${filter.type}/${filter.term}/`;
+        queryString += `/${filter.type}/${filter.term}`;
       }
     });
 
-    window.history.replaceState('', '', `/academics/programs/${queryString}`);
+    window.history.replaceState('', '', `/academics/programs${queryString}`);
   };
 
   const handleSwitchChange = () => {
@@ -161,10 +152,7 @@ function Programs() {
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    console.log('search submit');
-
-    // // handleFilterChange('search', filters.search);
-    // pushRouter('search', filters.search);
+    handleFilterChange('search', filters.search);
   };
 
   const organizeByMajor = (flat: Program[]) => {
@@ -264,7 +252,6 @@ function Programs() {
         });
       }
     });
-
     return majorArray;
   };
 
@@ -332,6 +319,10 @@ function Programs() {
     }
   };
 
+  const capFirst = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   useEffect(() => {
     if (router.query.slug && router.query.slug.length > 1) {
       for (let i = 0; i < router.query.slug.length; i += 2) {
@@ -344,26 +335,6 @@ function Programs() {
   }, []);
 
   useEffect(() => {
-    // console.log(filters);
-    // if (
-    //   router.query.slug &&
-    //   router.query.slug.length > 1
-    //   // routerQueryOverride === false
-    // ) {
-    // console.log(router.query);
-    // const newFilterType = router.query.slug[0];
-    // const newFilterTerm = router.query.slug[1];
-
-    // // Only allowing URL search queries for now
-    // if (newFilterType === 'search') {
-    //   handleFilterChange('search', newFilterTerm);
-    // }
-    // }
-    // if (router.query) {
-    //   handleRouterFilters(router.query);
-    //   // console.log(router.query);
-    // }
-
     if (programs) {
       let flatPrograms = programs
         ?.map((program) => {
@@ -373,16 +344,25 @@ function Programs() {
                 return e.name !== 'Online';
               })
               ?.map(function (e) {
-                return e.name;
+                let degreeName = e.name;
+                if (e.name === 'C4') {
+                  degreeName = `${
+                    program.majors?.nodes[0].name as string
+                  } Graduate Certificate`;
+                } else if (e.name === 'C3') {
+                  degreeName = `${
+                    program.majors?.nodes[0].name as string
+                  } Undergraduate Certificate`;
+                }
+                return degreeName;
               })
-              .join(', ') || '';
+              .join('/, ') || '';
           const degreeType =
             program.degrees?.nodes
               ?.map(function (e) {
                 return e.description;
               })
               .join(', ') || '';
-
           const programTitle =
             program.title === 'none' ? 'General' : program.title;
 
@@ -514,8 +494,8 @@ function Programs() {
                 }
               >
                 <option value="">Degree Type</option>
-                <option value="Undergraduate">Undergraduate</option>
-                <option value="Graduate">Graduate</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
                 {/* <option value="online">Online</option> */}
               </select>
             </div>
@@ -629,7 +609,7 @@ function Programs() {
                 onClick={() => handleFilterChange('degree-type', '')}
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-                {filters['degree-type']}
+                {capFirst(filters['degree-type'])}
               </div>
             )}
             {filters.online === '' ? (
@@ -658,7 +638,7 @@ function Programs() {
                 return (
                   <>
                     {this_item.degrees?.map((this_degree, j) => {
-                      const degreeNameArray = this_degree.name.split(', ');
+                      const degreeNameArray = this_degree.name.split('/, ');
                       return (
                         <li key={j} className={styles.programEntry}>
                           <h3 className={styles.programName}>
