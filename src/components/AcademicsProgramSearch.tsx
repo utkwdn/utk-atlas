@@ -4,21 +4,13 @@ import { useState, useEffect, FormEvent } from 'react';
 import TextField from '@mui/material/TextField';
 import { Button, Spinner } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-// const Footer: FaustTemplate<FooterToolsQuery> = (props) => {
 function AosPrograms(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
   const [isSearching, setIsSearching] = useState(false);
 
   const router = useRouter();
-
-  const handleSearchChange = (value: string) => {
-    setSearchValue(value);
-    // prefetching page with search term to speed up load
-    router
-      .prefetch(`/academics/programs/search/${value}`)
-      .catch((error) => console.error(error));
-  };
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -30,38 +22,73 @@ function AosPrograms(): JSX.Element {
       .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    // Wait 500 ms to allow user to finish typing before prefetching
+    const timeOutId = setTimeout(() => {
+      router
+        .prefetch(`/academics/programs/search/${searchValue}`)
+        .then((value) => console.log(value))
+        .catch((error) => console.error(error));
+    }, 500);
+    return () => clearTimeout(timeOutId);
+  }, [searchValue]);
+
   return (
-    <section className={styles.searchContainer}>
-      <form
-        onSubmit={(e) => handleSearchSubmit(e)}
-        className={styles.programSearchForm}
-      >
-        <TextField
-          onChange={(e) => handleSearchChange(e.target.value)}
-          type="search"
-          label="Find a Program"
-          value={searchValue}
-          fullWidth
-          id="fullWidth"
-        />
-        <Button type="submit">
-          {isSearching ? (
-            <>
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
-              <span style={{ marginLeft: '10px' }}>Searching</span>
-            </>
-          ) : (
-            <span>Search</span>
-          )}
-        </Button>
-      </form>
-    </section>
+    <div>
+      <section className={styles.searchContainer}>
+        <form
+          onSubmit={(e) => handleSearchSubmit(e)}
+          className={styles.programSearchForm}
+        >
+          <TextField
+            onChange={(e) => setSearchValue(e.target.value)}
+            type="search"
+            label="Find a Program"
+            value={searchValue}
+            fullWidth
+            id="fullWidth"
+          />
+          <Button type="submit">
+            {isSearching ? (
+              <>
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                <span style={{ marginLeft: '10px' }}>Searching</span>
+              </>
+            ) : (
+              <span>Search</span>
+            )}
+          </Button>
+        </form>
+      </section>
+      <div>
+        <ul className={styles.linkList}>
+          <li>
+            <Link href="/academics/programs/degree-type/undergraduate">
+              Undergraduate
+            </Link>
+          </li>
+          <li>
+            <Link href="/academics/programs/degree-type/graduate">
+              Graduate
+            </Link>
+          </li>
+          <li>
+            <Link href="/academics/programs/degree-type/certificate">
+              Certificate
+            </Link>
+          </li>
+          <li>
+            <Link href="/academics/programs">All Programs</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

@@ -36,28 +36,6 @@ interface Filters {
   online: string;
 }
 
-// interface MajorArrayIndexes {
-//   major: { [key: string]: number };
-//   degree: { [key: string]: number };
-//   program: { [key: string]: number };
-// }
-
-// interface MajorArray {
-//   major: string;
-//   degrees: [
-//     {
-//       name: string;
-//       programs: [{ name: string; link: string; online: boolean }];
-//     }
-//   ];
-// }
-
-// interface MajorObject {
-//   [key: string]: {
-//     [key: string]: string[];
-//   };
-// }
-
 interface OrganizedPrograms {
   checkKey?: string;
   major: string;
@@ -73,7 +51,6 @@ function Programs() {
       concentration: [{ name: 'Program', link: 'Link', online: false }],
     },
   ]);
-
   const [filters, setFilters] = useState({
     search: '',
     'area-of-study': '',
@@ -81,7 +58,6 @@ function Programs() {
     'degree-type': '',
     online: '',
   });
-
   const [selectAreas, setSelectAreas] = useState([{ area: '', slug: '' }]);
   const [selectColleges, setSelectColleges] = useState([
     { college: '', slug: '' },
@@ -108,10 +84,11 @@ function Programs() {
       setFilters({ ..._filters });
     }
 
-    pushRouter(filterType, value);
+    updateUrl(filterType, value);
   };
 
-  const pushRouter = (filterType: string, value: string) => {
+  // Update URL as filters and search are adjusted on page
+  const updateUrl = (filterType: string, value: string) => {
     const _filters = [
       {
         type: 'area-of-study',
@@ -158,94 +135,7 @@ function Programs() {
     handleFilterChange('search', filters.search);
   };
 
-  // const organizeByMajor = (flat: Program[]) => {
-  //   // Keep track of indexes to know where to place new items in majorArray
-  //   const majorArrayIndexes: MajorArrayIndexes = {
-  //     major: {},
-  //     degree: {},
-  //     program: {},
-  //   };
-
-  //   const majorArray: MajorArray[] = [];
-  //   const majorObject: MajorObject = {};
-
-  //   flat.forEach((program) => {
-  //     // If major hasn't been added yet
-  //     if (!(program.major in majorObject)) {
-  //       // Add to object to check against following programs
-  //       majorObject[program.major] = {};
-  //       majorObject[program.major][program.degrees] = [program.concentration];
-
-  //       // Add to array for outputting
-  //       majorArray.push({
-  //         major: program.major,
-  //         degrees: [
-  //           {
-  //             name: program.degrees,
-  //             programs: [
-  //               {
-  //                 name: program.concentration,
-  //                 link: program.programLink,
-  //                 online: program.degreeTypes.includes('Online') ? true : false,
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       });
-  //       // Add array index for major, degree and program
-  //       const degreesIndex = `${program.major} - ${program.degrees}`;
-  //       const concentrationIndex = `${program.major} - ${program.degrees} - ${program.concentration}`;
-  //       majorArrayIndexes.major[program.major] =
-  //         Object.keys(majorObject).length - 1;
-  //       majorArrayIndexes.degree[degreesIndex] =
-  //         Object.keys(majorObject[program.major]).length - 1;
-  //       majorArrayIndexes.program[concentrationIndex] =
-  //         Object.keys(majorObject[program.major][program.degrees]).length - 1;
-
-  //       // If major has been added but degree hasn't
-  //     } else if (!(program.degrees in majorObject[program.major])) {
-  //       // Add to object to check against following programs
-  //       majorObject[program.major][program.degrees] = [program.concentration];
-  //       // Add to array for outputting
-  //       const majorIndex = majorArrayIndexes.major[program.major];
-  //       majorArray[majorIndex].degrees.push({
-  //         name: program.degrees,
-  //         programs: [
-  //           {
-  //             name: program.concentration,
-  //             link: program.programLink,
-  //             online: program.degreeTypes.includes('Online') ? true : false,
-  //           },
-  //         ],
-  //       });
-
-  //       // Add array index for degree within major
-  //       const degreesIndex = `${program.major} - ${program.degrees}`;
-  //       majorArrayIndexes.degree[degreesIndex] =
-  //         Object.keys(majorObject[program.major]).length - 1;
-
-  //       // If major and degree have been added, but concentration has not
-  //     } else if (
-  //       !majorObject[program.major][program.degrees].includes(
-  //         program.concentration
-  //       )
-  //     ) {
-  //       // Add to object to check against following programs
-  //       majorObject[program.major][program.degrees].push(program.concentration);
-  //       // Add to array for outputting
-  //       const majorIndex = majorArrayIndexes.major[program.major];
-  //       const degreeIndex =
-  //         majorArrayIndexes.degree[`${program.major} - ${program.degrees}`];
-  //       majorArray[majorIndex].degrees[degreeIndex].programs.push({
-  //         name: program.concentration,
-  //         link: program.programLink,
-  //         online: program.degreeTypes.includes('Online') ? true : false,
-  //       });
-  //     }
-  //   });
-  //   return majorArray;
-  // };
-
+  // Create URL friendly string for URL params and select boxes
   const slugify = (string: string) => {
     return string
       .toLowerCase()
@@ -253,6 +143,7 @@ function Programs() {
       .replaceAll(' ', '-');
   };
 
+  // Combine concentrations with matching major / degree pairs and save to state
   const combineConcentrations = (flat: Program[]) => {
     const organizedPrograms: OrganizedPrograms[] = [];
 
@@ -261,6 +152,8 @@ function Programs() {
       const programIndex = organizedPrograms
         .map((e) => e.checkKey)
         .indexOf(checkKey);
+
+      // If major/degree combo doesn't exist yet, add new object
       if (programIndex === -1) {
         organizedPrograms.push({
           checkKey: checkKey,
@@ -274,6 +167,7 @@ function Programs() {
             },
           ],
         });
+        // If major/degree exists, add concentration to array
       } else {
         organizedPrograms[programIndex].concentration.push({
           name: program.concentration,
@@ -292,6 +186,7 @@ function Programs() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // Save unique areas and colleges to state to populate select boxes
   const populateSelectBoxes = (flatPrograms: Program[]) => {
     const uniqueSelectAreas = flatPrograms
       .map((program) => program.areaOfStudy)
@@ -317,6 +212,7 @@ function Programs() {
     setSelectColleges(uniqueSelectColleges);
   };
 
+  // Look up and return original area / college string using slug
   const deslugify = (type: string, slug: string) => {
     if (type === 'area-of-study') {
       const deslugged = selectAreas
@@ -346,6 +242,7 @@ function Programs() {
   };
 
   useEffect(() => {
+    // Convert any URL params into filters
     if (router.query.slug && router.query.slug.length > 1) {
       for (let i = 0; i < router.query.slug.length; i += 2) {
         const chunk = router.query.slug.slice(i, i + 2);
@@ -358,6 +255,7 @@ function Programs() {
 
   useEffect(() => {
     if (programs) {
+      // Organize fetched programs data into array of simple objects
       let flatPrograms = programs
         ?.map((program) => {
           const degreeString =
@@ -386,7 +284,9 @@ function Programs() {
               })
               .join(', ') || '';
           const programTitle =
-            program.title === 'none' ? 'General' : program.title;
+            program.title === 'none'
+              ? (program.majors?.nodes[0].name as string)
+              : program.title;
 
           return {
             major: program.majors?.nodes[0].name || '',
@@ -400,9 +300,8 @@ function Programs() {
         })
         .sort(alphabetizeByMajor);
 
+      // Populate select boxes using fetched data
       populateSelectBoxes(flatPrograms);
-
-      // console.log(filters);
 
       // Apply any Search filters
       if (filters.search !== '') {
@@ -450,10 +349,8 @@ function Programs() {
 
       console.log(`Total Matches - ${flatPrograms.length}`);
 
-      // Organize into major/degree/concentration hierarchy then update state
+      // Organize by major/degree then update state
       setActiveItems(combineConcentrations(flatPrograms));
-      // setActiveItems(organizeByMajor(flatPrograms));
-      // console.log(JSON.stringify(activeItems[0]));
     }
   }, [programs, filters]);
   return (
@@ -520,6 +417,7 @@ function Programs() {
                 <option value="">Degree Type</option>
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
+                <option value="certificate">Certificate</option>
                 {/* <option value="online">Online</option> */}
               </select>
             </div>
@@ -655,8 +553,8 @@ function Programs() {
           <section className={styles.resultsSection}>
             <ol className={styles.programGrid}>
               <li key={'labelContainer'} className={styles.labelContainer}>
-                <div className={styles.programLabel}>Major</div>
-                <div className={styles.programLabel}>Degree</div>
+                <div className={styles.programLabel}>Program</div>
+                <div className={styles.programLabel}>Degree / Certificate</div>
                 <div className={styles.programLabel}>Concentration</div>
               </li>
               {/* {activeItems?.map((this_item, i) => {
