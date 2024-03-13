@@ -232,13 +232,15 @@ function Programs() {
           return matchingArea.college;
         })[0];
       return deslugged;
+    } else if (slug === 'graduate-certificate') {
+      return 'Graduate Certificate';
+    } else if (slug === 'undergraduate-certificate') {
+      return 'Undergraduate Certificate';
+    } else if (type === 'degree-type') {
+      return slug.charAt(0).toUpperCase() + slug.slice(1);
     } else {
       return slug;
     }
-  };
-
-  const capFirst = (string: string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
   useEffect(() => {
@@ -266,13 +268,9 @@ function Programs() {
               ?.map(function (e) {
                 let degreeName = e.name;
                 if (e.name === 'C4') {
-                  degreeName = `${
-                    program.majors?.nodes[0].name as string
-                  } Graduate Certificate`;
+                  degreeName = `Graduate Certificate`;
                 } else if (e.name === 'C3') {
-                  degreeName = `${
-                    program.majors?.nodes[0].name as string
-                  } Undergraduate Certificate`;
+                  degreeName = `Undergraduate Certificate`;
                 }
                 return degreeName;
               })
@@ -283,10 +281,7 @@ function Programs() {
                 return e.description;
               })
               .join(', ') || '';
-          const programTitle =
-            program.title === 'none'
-              ? (program.majors?.nodes[0].name as string)
-              : program.title;
+          const programTitle = program.title === 'none' ? '' : program.title;
 
           return {
             major: program.majors?.nodes[0].name || '',
@@ -334,10 +329,14 @@ function Programs() {
       }
       // Apply any Degree Type filters
       if (filters['degree-type'] !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters['degree-type'], {
-          keys: ['degreeTypes'],
-          threshold: matchSorter.rankings.WORD_STARTS_WITH,
-        });
+        flatPrograms = matchSorter(
+          flatPrograms,
+          deslugify('degree-type', filters['degree-type']),
+          {
+            keys: ['degreeTypes'],
+            threshold: matchSorter.rankings.WORD_STARTS_WITH,
+          }
+        );
       }
       // Apply online filter if set to true
       if (filters.online === 'true') {
@@ -419,7 +418,12 @@ function Programs() {
                 <option value="">Degree Type</option>
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
-                <option value="certificate">Certificate</option>
+                <option value="graduate-certificate">
+                  Graduate Certificate
+                </option>
+                <option value="undergraduate-certificate">
+                  Undergraduate Certificate
+                </option>
                 {/* <option value="online">Online</option> */}
               </select>
             </div>
@@ -534,7 +538,7 @@ function Programs() {
                 onClick={() => handleFilterChange('degree-type', '')}
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-                {capFirst(filters['degree-type'])}
+                {deslugify('degree-type', filters['degree-type'])}
               </div>
             )}
             {filters.online === '' ? (
