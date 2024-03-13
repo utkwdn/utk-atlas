@@ -361,21 +361,23 @@ function Programs() {
       {/* <PageTitle title={'Programs'} /> */}
 
       <Intro
-        title={'Programs'}
-        theme={'Find your future degree'}
+        title={'Programs and degrees'}
+        theme={'Prepare for your future'}
         intro={
           <div>
             <p>
-              With 900+ undergraduate, graduate, and PhD programs at UT, you can
-              study what you love and be prepared for whatever awaits you after
-              graduation.{' '}
+              With 900+ programs, degrees, and certificates at UT, you can study
+              what you love and be prepared for whatever awaits you after
+              graduation.
             </p>
           </div>
         }
         imagesrc={
-          'https://content.cms.utk.edu/wp-content/uploads/2023/11/hero-campus-life-03.jpg'
+          'https://content.cms.utk.edu/wp-content/uploads/2024/03/hero-programs-shake-table-01.jpg'
         }
-        alt={'students'}
+        alt={
+          'A professor and student install a structure on a 6 degrees-of-freedom shake table, which simulates an earthquake.'
+        }
       />
       <section className={styles.areasContainer}>
         {/* parent container */}
