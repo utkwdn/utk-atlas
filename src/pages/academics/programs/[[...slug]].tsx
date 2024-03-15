@@ -62,6 +62,7 @@ function Programs() {
   const [selectColleges, setSelectColleges] = useState([
     { college: '', slug: '' },
   ]);
+  const [dataUpdatedDate, setDataUpdatedDate] = useState('[date]');
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -243,6 +244,30 @@ function Programs() {
     }
   };
 
+  const setDate = (unformattedDate: string) => {
+    const timestamp = new Date(unformattedDate);
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const month = months[timestamp.getMonth()];
+    const day = timestamp.getDate();
+    const year = timestamp.getFullYear();
+    const formattedDate = `${month} ${day}, ${year}`;
+
+    setDataUpdatedDate(formattedDate);
+  };
+
   useEffect(() => {
     // Convert any URL params into filters
     if (router.query.slug && router.query.slug.length > 1) {
@@ -257,6 +282,8 @@ function Programs() {
 
   useEffect(() => {
     if (programs) {
+      setDate(programs[0].date as string);
+
       // Organize fetched programs data into array of simple objects
       let flatPrograms = programs
         ?.map((program) => {
@@ -623,8 +650,8 @@ function Programs() {
         {/* End Results Container */}
         <section className={styles.disclaimerSection}>
           <p>
-            This database was last updated on [date] and may not reflect the
-            most current offerings.
+            This database was last updated on {dataUpdatedDate} and may not
+            reflect the most current offerings.
           </p>
         </section>
       </section>
@@ -664,6 +691,7 @@ query GetPrograms {
       programDetailsFields {
         url
       }
+      date
     }
   }
 }
