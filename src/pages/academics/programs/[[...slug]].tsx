@@ -416,7 +416,7 @@ function Programs() {
                   handleFilterChange('degree-type', e.target.value)
                 }
               >
-                <option value="">Degree Type</option>
+                <option value="">Degree type</option>
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
                 <option value="certificate">Certificate</option>
@@ -433,7 +433,7 @@ function Programs() {
                   handleFilterChange('area-of-study', e.target.value)
                 }
               >
-                <option value="">Area of Study</option>
+                <option value="">Area of study</option>
                 {/* Map AOS options from fetched data */}
                 {selectAreas?.map((this_area, i) => {
                   return (
@@ -555,9 +555,19 @@ function Programs() {
           <section className={styles.resultsSection}>
             <ol className={styles.programGrid}>
               <li key={'labelContainer'} className={styles.labelContainer}>
-                <div className={styles.programLabel}>Program</div>
-                <div className={styles.programLabel}>Degree / Certificate</div>
-                <div className={styles.programLabel}>Concentration</div>
+                <h2 className={styles.programLabel}>Program</h2>
+                <h2 className={styles.programLabel}>Degree / Certificate</h2>
+                <h2 className={styles.programLabel}>
+                  Concentration
+                  <span className={styles.toolTip} tabIndex={0}>
+                    <span className={styles.messageConcentratation}>
+                      <p>
+                        Be advised that some programs may not offer
+                        concentrations while others may require them.{' '}
+                      </p>
+                    </span>
+                  </span>
+                </h2>
               </li>
               {/* {activeItems?.map((this_item, i) => {
                 return (
@@ -607,6 +617,12 @@ function Programs() {
           </section>
         )}
         {/* End Results Container */}
+        <section className={styles.disclaimerSection}>
+          <p>
+            This database was last updated on [date] and may not reflect the
+            most current offerings.
+          </p>
+        </section>
       </section>
       {/* End areasContainer */}
     </Layout>
