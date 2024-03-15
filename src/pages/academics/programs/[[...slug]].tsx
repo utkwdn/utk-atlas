@@ -555,9 +555,9 @@ function Programs() {
           <section className={styles.resultsSection}>
             <ol className={styles.programGrid}>
               <li key={'labelContainer'} className={styles.labelContainer}>
-                <h2 className={styles.programLabel}>Program</h2>
-                <h2 className={styles.programLabel}>Degree / Certificate</h2>
-                <h2 className={styles.programLabel}>
+                <div className={styles.programLabel}>Program</div>
+                <div className={styles.programLabel}>Degree / Certificate</div>
+                <div className={styles.programLabel}>
                   Concentration
                   <span className={styles.toolTip} tabIndex={0}>
                     <span className={styles.messageConcentratation}>
@@ -567,7 +567,7 @@ function Programs() {
                       </p>
                     </span>
                   </span>
-                </h2>
+                </div>
               </li>
               {/* {activeItems?.map((this_item, i) => {
                 return (
