@@ -62,7 +62,7 @@ function Programs() {
   const [selectColleges, setSelectColleges] = useState([
     { college: '', slug: '' },
   ]);
-  const [dataUpdatedDate, setDataUpdatedDate] = useState('[date]');
+  const [dataUpdated, setDataUpdated] = useState('[date]');
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -265,7 +265,29 @@ function Programs() {
     const year = timestamp.getFullYear();
     const formattedDate = `${month} ${day}, ${year}`;
 
-    setDataUpdatedDate(formattedDate);
+    setDataUpdated(formattedDate);
+  };
+
+  // If one on-ground cencentration is empty string and rest are online, replace empty string with major name
+  const formatConcentrations = (
+    major: string,
+    concentrationArray: { name: string; link: string; online: boolean }[]
+  ) => {
+    console.log(concentrationArray);
+    const onGroundConcentrations = concentrationArray
+      .map((concentration, i) => {
+        if (concentration.online === false && concentration.name === '') {
+          return i;
+        }
+      })
+      .filter((index) => {
+        return typeof index === 'number';
+      });
+    if (onGroundConcentrations.length > 0 && concentrationArray.length > 1) {
+      const concentrationIndex = onGroundConcentrations[0] || 0;
+      concentrationArray[concentrationIndex].name = major;
+    }
+    return concentrationArray;
   };
 
   useEffect(() => {
@@ -605,6 +627,10 @@ function Programs() {
                   <> */}
               {activeItems?.map((this_item, j) => {
                 const degreeNameArray = this_item.degrees.split('/, ');
+                const formattedConcentrations = formatConcentrations(
+                  this_item.major,
+                  this_item.concentration
+                );
                 return (
                   <li key={j} className={styles.programEntry}>
                     <h3 className={styles.programName}>{this_item.major}</h3>
@@ -614,16 +640,16 @@ function Programs() {
                       })}
                     </ol>
                     <ol className={styles.concentrationList}>
-                      {this_item.concentration?.map((this_program, k) => {
+                      {formattedConcentrations?.map((this_program, k) => {
                         if (this_program.online === true) {
                           return (
                             <li key={k}>
                               {this_program.name}{' '}
                               <span className={styles.onlineTag}>
                                 {/* <a
-                                        // href={this_program.link}
-                                        href="https://volsonline.utk.edu/programs-degrees/"
-                                      > */}
+                                  // href={this_program.link}
+                                  href="https://volsonline.utk.edu/programs-degrees/"
+                                > */}
                                 Online
                                 {/* </a> */}
                               </span>
@@ -650,8 +676,8 @@ function Programs() {
         {/* End Results Container */}
         <section className={styles.disclaimerSection}>
           <p>
-            This database was last updated on {dataUpdatedDate} and may not
-            reflect the most current offerings.
+            This database was last updated on {dataUpdated} and may not reflect
+            the most current offerings.
           </p>
         </section>
       </section>
