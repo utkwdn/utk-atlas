@@ -19,6 +19,8 @@ import {
 import debounce from 'lodash/debounce';
 import { Button } from 'react-bootstrap';
 
+import InputAdornment from '@mui/material/InputAdornment';
+
 const NO_RESULTS = 'No results found';
 
 const upperLetters = [
@@ -240,8 +242,15 @@ const Alpha = () => {
                 inputRef={inputRef}
                 fullWidth
                 id="fullWidth"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <span className={styles.magnifyingGlass}></span>
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <Button type="submit">Search</Button>
+              {/* <Button type="submit">Search</Button> */}
             </form>
           </div>
 

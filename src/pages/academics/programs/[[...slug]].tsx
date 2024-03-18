@@ -15,6 +15,7 @@ import Intro from '../../../components/Intro';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import InputAdornment from '@mui/material/InputAdornment';
 
 interface Program {
   major: string;
@@ -395,6 +396,14 @@ function Programs() {
                 value={filters.search}
                 fullWidth
                 id="fullWidth"
+                className={styles.utFilterSearch}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <span className={styles.magnifyingGlass}></span>
+                    </InputAdornment>
+                  ),
+                }}
               />
               {/* <Button type="submit">Search</Button> */}
             </form>
