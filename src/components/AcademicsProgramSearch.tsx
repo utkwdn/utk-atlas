@@ -42,7 +42,7 @@ function AosPrograms(): JSX.Element {
           <TextField
             onChange={(e) => setSearchValue(e.target.value)}
             type="search"
-            label="Find a Program"
+            label="Find your program"
             value={searchValue}
             fullWidth
             id="fullWidth"
@@ -78,12 +78,15 @@ function AosPrograms(): JSX.Element {
             </Link>
           </li>
           <li>
+            <Link href="/academics/programs/degree-type/online">Online</Link>
+          </li>
+          <li>
             <Link href="/academics/programs/degree-type/certificate">
               Certificate
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs">All Programs</Link>
+            <Link href="/academics/programs">All programs</Link>
           </li>
         </ul>
       </div>
