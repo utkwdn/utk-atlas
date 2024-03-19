@@ -78,7 +78,7 @@ function AosPrograms(): JSX.Element {
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs/degree-type/online">Online</Link>
+            <Link href="/academics/programs/online/true">Online</Link>
           </li>
           <li>
             <Link href="/academics/programs/degree-type/certificate">
@@ -86,10 +86,7 @@ function AosPrograms(): JSX.Element {
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs/online/true">Online</Link>
-          </li>
-          <li>
-            <Link href="/academics/programs">All Programs</Link>
+            <Link href="/academics/programs">All programs</Link>
           </li>
         </ul>
       </div>

@@ -330,7 +330,6 @@ function Programs() {
                 return e.description;
               })
               .join(', ') || '';
-          // const programTitle = program.title === 'none' ? '' : program.title;
           let programTitle;
           if (program.title === 'none') {
             programTitle = degreeType.includes('Online')
@@ -447,7 +446,7 @@ function Programs() {
               <TextField
                 onChange={(e) => handleFilterChange('search', e.target.value)}
                 type="search"
-                label="Keyword search"
+                label="keyword search"
                 value={filters.search}
                 fullWidth
                 id="fullWidth"
