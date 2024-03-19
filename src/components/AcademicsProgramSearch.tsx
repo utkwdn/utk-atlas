@@ -27,7 +27,6 @@ function AosPrograms(): JSX.Element {
     const timeOutId = setTimeout(() => {
       router
         .prefetch(`/academics/programs/search/${searchValue}`)
-        .then((value) => console.log(value))
         .catch((error) => console.error(error));
     }, 500);
     return () => clearTimeout(timeOutId);

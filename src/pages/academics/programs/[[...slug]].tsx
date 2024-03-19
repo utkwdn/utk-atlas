@@ -62,6 +62,7 @@ function Programs() {
   const [selectColleges, setSelectColleges] = useState([
     { college: '', slug: '' },
   ]);
+  const [dataUpdated, setDataUpdated] = useState('[date]');
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -232,13 +233,61 @@ function Programs() {
           return matchingArea.college;
         })[0];
       return deslugged;
+    } else if (slug === 'graduate-certificate') {
+      return 'Graduate Certificate';
+    } else if (slug === 'undergraduate-certificate') {
+      return 'Undergraduate Certificate';
+    } else if (type === 'degree-type') {
+      return slug.charAt(0).toUpperCase() + slug.slice(1);
     } else {
       return slug;
     }
   };
 
-  const capFirst = (string: string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  const setDate = (unformattedDate: string) => {
+    const timestamp = new Date(unformattedDate);
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const month = months[timestamp.getMonth()];
+    const day = timestamp.getDate();
+    const year = timestamp.getFullYear();
+    const formattedDate = `${month} ${day}, ${year}`;
+
+    setDataUpdated(formattedDate);
+  };
+
+  // If one on-ground cencentration is empty string and rest are online, replace empty string with major name
+  const formatConcentrations = (
+    major: string,
+    concentrationArray: { name: string; link: string; online: boolean }[]
+  ) => {
+    console.log(concentrationArray);
+    const onGroundConcentrations = concentrationArray
+      .map((concentration, i) => {
+        if (concentration.online === false && concentration.name === '') {
+          return i;
+        }
+      })
+      .filter((index) => {
+        return typeof index === 'number';
+      });
+    if (onGroundConcentrations.length > 0 && concentrationArray.length > 1) {
+      const concentrationIndex = onGroundConcentrations[0] || 0;
+      concentrationArray[concentrationIndex].name = major;
+    }
+    return concentrationArray;
   };
 
   useEffect(() => {
@@ -255,6 +304,8 @@ function Programs() {
 
   useEffect(() => {
     if (programs) {
+      setDate(programs[0].date as string);
+
       // Organize fetched programs data into array of simple objects
       let flatPrograms = programs
         ?.map((program) => {
@@ -266,13 +317,9 @@ function Programs() {
               ?.map(function (e) {
                 let degreeName = e.name;
                 if (e.name === 'C4') {
-                  degreeName = `${
-                    program.majors?.nodes[0].name as string
-                  } Graduate Certificate`;
+                  degreeName = `Graduate Certificate`;
                 } else if (e.name === 'C3') {
-                  degreeName = `${
-                    program.majors?.nodes[0].name as string
-                  } Undergraduate Certificate`;
+                  degreeName = `Undergraduate Certificate`;
                 }
                 return degreeName;
               })
@@ -283,10 +330,7 @@ function Programs() {
                 return e.description;
               })
               .join(', ') || '';
-          const programTitle =
-            program.title === 'none'
-              ? (program.majors?.nodes[0].name as string)
-              : program.title;
+          const programTitle = program.title === 'none' ? '' : program.title;
 
           return {
             major: program.majors?.nodes[0].name || '',
@@ -334,10 +378,14 @@ function Programs() {
       }
       // Apply any Degree Type filters
       if (filters['degree-type'] !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters['degree-type'], {
-          keys: ['degreeTypes'],
-          threshold: matchSorter.rankings.WORD_STARTS_WITH,
-        });
+        flatPrograms = matchSorter(
+          flatPrograms,
+          deslugify('degree-type', filters['degree-type']),
+          {
+            keys: ['degreeTypes'],
+            threshold: matchSorter.rankings.WORD_STARTS_WITH,
+          }
+        );
       }
       // Apply online filter if set to true
       if (filters.online === 'true') {
@@ -427,7 +475,12 @@ function Programs() {
                 <option value="">Degree type</option>
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
-                <option value="certificate">Certificate</option>
+                <option value="graduate-certificate">
+                  Graduate Certificate
+                </option>
+                <option value="undergraduate-certificate">
+                  Undergraduate Certificate
+                </option>
                 {/* <option value="online">Online</option> */}
               </select>
             </div>
@@ -542,7 +595,7 @@ function Programs() {
                 onClick={() => handleFilterChange('degree-type', '')}
               >
                 <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
-                {capFirst(filters['degree-type'])}
+                {deslugify('degree-type', filters['degree-type'])}
               </div>
             )}
             {filters.online === '' ? (
@@ -582,6 +635,10 @@ function Programs() {
                   <> */}
               {activeItems?.map((this_item, j) => {
                 const degreeNameArray = this_item.degrees.split('/, ');
+                const formattedConcentrations = formatConcentrations(
+                  this_item.major,
+                  this_item.concentration
+                );
                 return (
                   <li key={j} className={styles.programEntry}>
                     <h3 className={styles.programName}>{this_item.major}</h3>
@@ -591,16 +648,16 @@ function Programs() {
                       })}
                     </ol>
                     <ol className={styles.concentrationList}>
-                      {this_item.concentration?.map((this_program, k) => {
+                      {formattedConcentrations?.map((this_program, k) => {
                         if (this_program.online === true) {
                           return (
                             <li key={k}>
                               {this_program.name}{' '}
                               <span className={styles.onlineTag}>
                                 {/* <a
-                                        // href={this_program.link}
-                                        href="https://volsonline.utk.edu/programs-degrees/"
-                                      > */}
+                                  // href={this_program.link}
+                                  href="https://volsonline.utk.edu/programs-degrees/"
+                                > */}
                                 Online
                                 {/* </a> */}
                               </span>
@@ -627,8 +684,8 @@ function Programs() {
         {/* End Results Container */}
         <section className={styles.disclaimerSection}>
           <p>
-            This database was last updated on [date] and may not reflect the
-            most current offerings.
+            This database was last updated on {dataUpdated} and may not reflect
+            the most current offerings.
           </p>
         </section>
       </section>
@@ -668,6 +725,7 @@ query GetPrograms {
       programDetailsFields {
         url
       }
+      date
     }
   }
 }
