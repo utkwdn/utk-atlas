@@ -14,8 +14,11 @@
   align-items: stretch;
   position: relative;
   width: 100%;
-  [class$='MuiInputBase-root-MuiOutlinedInput-root'] {
-    border-radius: 0 !important;
+
+  & fieldset {
+    // overwrites MUI radius rules
+    border-radius: 0 0 0 0 !important;
+    border-left: 0 !important;
   }
   .MuiTextField-root {
     width: 80%;
@@ -42,12 +45,27 @@
   }
 }
 .linkList {
+  // background-color: #f1f1f1;
   list-style-type: none;
-  margin: 10px 0 0;
-  padding: 0;
-  font-size: 0.875rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  // margin: 1rem 0;
+  padding: 1rem 1.4rem 1rem 1.4rem;
+  // font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  font-size: calc($p-font-size * 0.73);
+  font-weight: $font-weight-normal;
+  gap: 1rem;
   li {
-    float: left;
-    margin-right: 20px;
+    a {
+      // float: left;
+      // margin-right: 20px;
+
+      color: $utsmokeytext !important;
+      &:hover {
+        color: $utlinkriver !important;
+      }
+    }
   }
 }
