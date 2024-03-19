@@ -439,7 +439,7 @@ function Programs() {
               <TextField
                 onChange={(e) => handleFilterChange('search', e.target.value)}
                 type="search"
-                label="keyword search"
+                label="Keyword search"
                 value={filters.search}
                 fullWidth
                 id="fullWidth"
