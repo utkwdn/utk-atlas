@@ -86,7 +86,10 @@ function AosPrograms(): JSX.Element {
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs">All programs</Link>
+            <Link href="/academics/programs/online/true">Online</Link>
+          </li>
+          <li>
+            <Link href="/academics/programs">All Programs</Link>
           </li>
         </ul>
       </div>

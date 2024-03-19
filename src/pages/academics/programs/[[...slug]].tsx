@@ -273,7 +273,7 @@ function Programs() {
     major: string,
     concentrationArray: { name: string; link: string; online: boolean }[]
   ) => {
-    console.log(concentrationArray);
+    // console.log(concentrationArray);
     const onGroundConcentrations = concentrationArray
       .map((concentration, i) => {
         if (concentration.online === false && concentration.name === '') {
@@ -330,7 +330,15 @@ function Programs() {
                 return e.description;
               })
               .join(', ') || '';
-          const programTitle = program.title === 'none' ? '' : program.title;
+          // const programTitle = program.title === 'none' ? '' : program.title;
+          let programTitle;
+          if (program.title === 'none') {
+            programTitle = degreeType.includes('Online')
+              ? program.majors?.nodes[0].name
+              : '';
+          } else {
+            programTitle = program.title;
+          }
 
           return {
             major: program.majors?.nodes[0].name || '',
