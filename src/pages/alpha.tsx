@@ -237,7 +237,7 @@ const Alpha = () => {
               <TextField
                 onChange={handleChange}
                 type="search"
-                label="Find a Site"
+                label="Find a site"
                 inputRef={inputRef}
                 fullWidth
                 id="fullWidth"
