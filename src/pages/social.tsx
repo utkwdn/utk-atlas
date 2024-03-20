@@ -142,7 +142,7 @@ function Social() {
           <thead>
             <tr>
               <th>Unit Name</th>
-              <th>Twitter</th>
+              <th>X/Twitter</th>
               <th>Facebook</th>
               <th>Instagram</th>
               <th>YouTube</th>
@@ -160,7 +160,7 @@ function Social() {
               return (
                 <tr key={this_unit?.id}>
                   <td data-label="Unit">{title}</td>
-                  <td data-label="Twitter">
+                  <td data-label="X/Twitter">
                     {twitterLink ? (
                       <a href={twitterLink} target="_blank" rel="noreferrer">
                         <svg
@@ -170,11 +170,12 @@ function Social() {
                           height="25px"
                           className={styles['twitter']}
                         >
-                          <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 3.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 4.557z"></path>
+                          <path d="M13.99,10.37L21.76,1.33h-1.84l-6.75,7.85L7.78,1.33H1.56l8.15,11.86L1.56,22.67h1.84l7.13-8.29,5.69,8.29h6.22l-8.45-12.3h0ZM11.46,13.3l-.83-1.18L4.07,2.72h2.83l5.3,7.59.83,1.18,6.89,9.86h-2.83l-5.63-8.05h0Z"></path>
                         </svg>
+
                         <span
                           className={styles['sr-only']}
-                        >{`${title}'s Twitter`}</span>
+                        >{`${title}'s X/Twitter`}</span>
                       </a>
                     ) : (
                       ''
