@@ -567,8 +567,9 @@ function Programs() {
               <div
                 className={styles.tagButton}
                 onClick={() => handleFilterChange('search', '')}
+                tabIndex={0}
               >
-                <span className={styles.tagButtonTitle}>Search:</span>{' '}
+                {/* <span className={styles.tagButtonTitle}>Search:</span>{' '} */}
                 {filters.search}
               </div>
             )}
@@ -578,8 +579,9 @@ function Programs() {
               <div
                 className={styles.tagButton}
                 onClick={() => handleFilterChange('area-of-study', '')}
+                tabIndex={0}
               >
-                <span className={styles.tagButtonTitle}>Area of Study:</span>{' '}
+                {/* <span className={styles.tagButtonTitle}>Area of Study:</span>{' '} */}
                 {deslugify('area-of-study', filters['area-of-study'])}
               </div>
             )}
@@ -589,8 +591,9 @@ function Programs() {
               <div
                 className={styles.tagButton}
                 onClick={() => handleFilterChange('college', '')}
+                tabIndex={0}
               >
-                <span className={styles.tagButtonTitle}>College:</span>{' '}
+                {/* <span className={styles.tagButtonTitle}>College:</span>{' '} */}
                 {deslugify('college', filters.college)}
               </div>
             )}
@@ -600,8 +603,9 @@ function Programs() {
               <div
                 className={styles.tagButton}
                 onClick={() => handleFilterChange('degree-type', '')}
+                tabIndex={0}
               >
-                <span className={styles.tagButtonTitle}>Degree Type:</span>{' '}
+                {/* <span className={styles.tagButtonTitle}>Degree Type:</span>{' '} */}
                 {deslugify('degree-type', filters['degree-type'])}
               </div>
             )}
@@ -611,6 +615,7 @@ function Programs() {
               <div
                 className={styles.tagButton}
                 onClick={() => handleFilterChange('online', '')}
+                tabIndex={0}
               >
                 <span className={styles.tagButtonTitle}>Online</span> Online
               </div>
