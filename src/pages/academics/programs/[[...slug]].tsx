@@ -425,6 +425,13 @@ function Programs() {
               what you love and be prepared for whatever awaits you after
               graduation.
             </p>
+            <div className="fancyLinkGroup ch-md is-layout-flow">
+              <p className="fancyLink stack-links">
+                <a href="https://utk.edu/requestinfo" className="hero-cat">
+                  Request info
+                </a>
+              </p>
+            </div>
           </div>
         }
         imagesrc={
@@ -635,8 +642,8 @@ function Programs() {
                   <span className={styles.toolTip} tabIndex={0}>
                     <span className={styles.messageConcentratation}>
                       <p>
-                        Be advised that some programs may not offer
-                        concentrations while others may require them.{' '}
+                        Some programs may not offer concentrations while others
+                        may require them.{' '}
                       </p>
                     </span>
                   </span>
@@ -696,8 +703,13 @@ function Programs() {
         {/* End Results Container */}
         <section className={styles.disclaimerSection}>
           <p>
-            This database was last updated on {dataUpdated} and may not reflect
-            the most current offerings.
+            Last updated on {dataUpdated}. To view all current programs visit
+            the <a href="https://catalog.utk.edu/">undergraduate catalog</a> or
+            the{' '}
+            <a href="https://catalog.utk.edu/index.php?catoid=44">
+              graduate catalog
+            </a>
+            .
           </p>
         </section>
       </section>
