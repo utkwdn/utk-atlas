@@ -434,7 +434,7 @@ function Programs() {
           'A professor and student install a structure on a 6 degrees-of-freedom shake table, which simulates an earthquake.'
         }
       />
-      <section className={styles.areasContainer}>
+      <section className={styles.areasContainer} id="filters">
         {/* parent container */}
         {/* Search Section */}
         <section className={styles.searchNavContainer}>

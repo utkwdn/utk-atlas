@@ -7,8 +7,23 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 function AosPrograms(): JSX.Element {
+  const baseUrl = '/academics/programs';
+  const anchor = '#filters';
+
   const [searchValue, setSearchValue] = useState('');
   const [isSearching, setIsSearching] = useState(false);
+  const [undergradLink, setUndergradLink] = useState(
+    `${baseUrl}/degree-type/undergraduate${anchor}`
+  );
+  const [gradLink, setGradLink] = useState(
+    `${baseUrl}/degree-type/graduate${anchor}`
+  );
+  const [onlineLink, setOnlineLink] = useState(
+    `${baseUrl}/online/true${anchor}`
+  );
+  const [certificateLink, setCertificateLink] = useState(
+    `${baseUrl}/degree-type/certificate${anchor}`
+  );
 
   const router = useRouter();
 
@@ -18,7 +33,7 @@ function AosPrograms(): JSX.Element {
     setIsSearching(true);
 
     router
-      .push(`/academics/programs/search/${searchValue}`)
+      .push(`${baseUrl}/search/${searchValue}${anchor}`)
       .catch((error) => console.log(error));
   };
 
@@ -26,9 +41,24 @@ function AosPrograms(): JSX.Element {
     // Wait 500 ms to allow user to finish typing before prefetching
     const timeOutId = setTimeout(() => {
       router
-        .prefetch(`/academics/programs/search/${searchValue}`)
+        .prefetch(`${baseUrl}/search/${searchValue}${anchor}`)
         .catch((error) => console.error(error));
     }, 500);
+
+    // Add search query to sub-search links
+    if (searchValue !== '') {
+      setUndergradLink(
+        `${baseUrl}/degree-type/undergraduate/search/${searchValue}${anchor}`
+      );
+      setGradLink(
+        `${baseUrl}/degree-type/graduate/search/${searchValue}${anchor}`
+      );
+      setOnlineLink(`${baseUrl}/online/true/search/${searchValue}${anchor}`);
+      setCertificateLink(
+        `${baseUrl}/degree-type/certificate/search/${searchValue}${anchor}`
+      );
+    }
+
     return () => clearTimeout(timeOutId);
   }, [searchValue]);
 
@@ -68,25 +98,32 @@ function AosPrograms(): JSX.Element {
       <div>
         <ul className={styles.linkList}>
           <li>
-            <Link href="/academics/programs/degree-type/undergraduate">
+            <Link href={undergradLink} onClick={() => setIsSearching(true)}>
               Undergraduate
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs/degree-type/graduate">
+            <Link href={gradLink} onClick={() => setIsSearching(true)}>
               Graduate
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs/online/true">Online</Link>
+            <Link href={onlineLink} onClick={() => setIsSearching(true)}>
+              Online
+            </Link>
           </li>
           <li>
-            <Link href="/academics/programs/degree-type/certificate">
+            <Link href={certificateLink} onClick={() => setIsSearching(true)}>
               Certificate
             </Link>
           </li>
           <li>
-            <Link href="/academics/programs">All programs</Link>
+            <Link
+              href={`${baseUrl}${anchor}`}
+              onClick={() => setIsSearching(true)}
+            >
+              All programs
+            </Link>
           </li>
         </ul>
       </div>
