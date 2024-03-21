@@ -7,48 +7,47 @@
 // 	}
 // }
 
-
-#searchHeader-close svg, #searchHeader-open svg {
- 	fill: $utgray1;
- }
-  .navbar-toggler {
-  		#searchHeader-open {
-  		  display: none;
-  		}
-		#searchHeader-close {
-  		  display: inline-block;
-  		}
-		&.collapsed {
-  		#searchHeader-close {
-    		  display: none;
-    		}
-  		#searchHeader-open {
-    		  display: inline-block;
-    		}
-		  }
+#searchHeader-close svg,
+#searchHeader-open svg {
+  fill: $utgray1;
+}
+.navbar-toggler {
+  #searchHeader-open {
+    display: none;
   }
-
-
+  #searchHeader-close {
+    display: inline-block;
+  }
+  &.collapsed {
+    #searchHeader-close {
+      display: none;
+    }
+    #searchHeader-open {
+      display: inline-block;
+    }
+  }
+}
 
 // Wordpress compatibility
-
 
 #site-horizontal-navigation .menu-item {
   @extend .nav-item;
 }
 #site-horizontal-navigation .menu-item a {
   @extend .nav-link;
-  
 }
-#site-navigation .menu-item.current-menu-item, #site-navigation .menu-item.current-menu-ancestor {
+#site-navigation .menu-item.current-menu-item,
+#site-navigation .menu-item.current-menu-ancestor {
   font-weight: bold;
-   li {
+  li {
     font-weight: normal;
-    &.menu-item.current-menu-item, &.menu-item.current-menu-ancestor {
+    &.menu-item.current-menu-item,
+    &.menu-item.current-menu-ancestor {
       font-weight: bold;
-       li {
+      li {
         font-weight: normal;
-        &.menu-item.current-menu-item, &.menu-item.current-menu-ancestor {
+        &.menu-item.current-menu-item,
+        &.menu-item.current-menu-ancestor {
           font-weight: bold;
         }
       }
@@ -59,13 +58,13 @@
 // We lean on the stying from left rail bellows to style the small screen, off-canvas view.
 // Here we strip that stying and style it as a horizontal dropdown for the XL breakpoint.
 
-
 @include media-breakpoint-up(xl) {
   .navbar-horizontal #bellows {
     .btn-bellows {
       display: none;
     }
-    a, button {
+    a,
+    button {
       color: white;
       &:hover {
         background-color: $utgray1;
@@ -96,14 +95,14 @@
       background: white;
       background-color: white;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 2;
       a:hover {
         background-color: $utgray2;
         color: $white;
-        }
+      }
       .menu-item-has-children > a {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=");
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=');
         background-repeat: no-repeat;
         background-position: calc(100% - 4px) center;
         background-size: $spacer/1.5 $spacer/1.5;
@@ -119,10 +118,9 @@
     }
     .menu-item-has-children:hover > .sub-menu,
     .menu-item-has-children:focus-within > .sub-menu,
-    .dropdown:focus-within  > .sub-menu,
+    .dropdown:focus-within > .sub-menu,
     .dropdown:hover > .sub-menu {
       display: block;
     }
   }
 }
-

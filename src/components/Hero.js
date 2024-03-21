@@ -175,16 +175,16 @@ const Hero = () => {
             <div className="heroSquareA ">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.webp"
+                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero20231208/hero-2024-q1-04.jpg"
-                  alt="Three students hang out while sitting on a bench in the middle of UT' bustling campus."
+                  src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                  alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
                 />
               </picture>
             </div>
@@ -246,10 +246,10 @@ const Hero = () => {
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
               <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                Find your place on
+                Welcome
               </span>
               <br />
-              Rocky Top
+              to Rocky Top
             </h2>
 
             {/* BEGIN DYNAMIC CONTENT */}
@@ -317,11 +317,11 @@ const Hero = () => {
               <>
                 {/* Default content */}
                 <div className="fancyLinkGroup ch-md is-layout-flow">
-                  <p className="fancyLink stack-links">
+                  {/* <p className="fancyLink stack-links">
                     <a href="https://www.utk.edu/visit" className="hero-cat">
                       Schedule a visit
                     </a>
-                  </p>
+                  </p> */}
 
                   {/* <p className="fancyLink stack-links">
                     <a
@@ -332,16 +332,15 @@ const Hero = () => {
                     </a>
                   </p> */}
 
-                  {/* <p className="fancyLink stack-links">
+                  <p className="fancyLink stack-links">
                     <a href="https://utk.edu/requestinfo" className="hero-cat">
                       Request more info
                     </a>
-                  </p> */}
+                  </p>
                 </div>
                 <p>
-                  This is where you&apos;ll make discoveries, memories, and
-                  lifelong connections. Visit campus and picture your life as a
-                  Volunteer.
+                  Unrivaled experiences. Hands-on learning. Caring professors.
+                  UT is the place for you.
                 </p>
 
                 {/* Why Apply Format */}
@@ -386,7 +385,7 @@ const Hero = () => {
               </>
             )}
             {/* Wednesday 12/20 Launch Piece */}
-            {/* <h3 className="subCta">Admitted to UT?</h3>
+            <h3 className="subCta">Admitted to UT?</h3>
             <a
               href="https://admissions.utk.edu/confirm/"
               className="subLink  pointer-event-visible"
@@ -394,7 +393,7 @@ const Hero = () => {
               // className="subLink text-decoration-none link-underline  pointer-event-visible"
             >
               Confirm enrollment now
-            </a> */}
+            </a>
             {/* End Wednesday 12/20 Launch Piece */}
           </div>
 
