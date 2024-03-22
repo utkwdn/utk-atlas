@@ -453,7 +453,7 @@ function Programs() {
               <TextField
                 onChange={(e) => handleFilterChange('search', e.target.value)}
                 type="search"
-                label="keyword search"
+                label="Keyword search"
                 value={filters.search}
                 fullWidth
                 id="fullWidth"
@@ -481,18 +481,25 @@ function Programs() {
                 name="degree-types"
                 className="dropdown"
                 id="degree-types"
+                aria-label="Degree Type"
                 value={filters['degree-type']}
                 onChange={(e) =>
                   handleFilterChange('degree-type', e.target.value)
                 }
               >
-                <option value="">Degree type</option>
-                <option value="undergraduate">Undergraduate</option>
-                <option value="graduate">Graduate</option>
-                <option value="graduate-certificate">
+                <option value="" aria-label="option">
+                  Degree type
+                </option>
+                <option value="undergraduate" aria-label="option">
+                  Undergraduate
+                </option>
+                <option value="graduate" aria-label="option">
+                  Graduate
+                </option>
+                <option value="graduate-certificate" aria-label="option">
                   Graduate Certificate
                 </option>
-                <option value="undergraduate-certificate">
+                <option value="undergraduate-certificate" aria-label="option">
                   Undergraduate Certificate
                 </option>
                 {/* <option value="online">Online</option> */}
@@ -503,6 +510,7 @@ function Programs() {
                 name="area-of-study"
                 className="dropdown"
                 id="area-of-study"
+                aria-label="Area of Study"
                 value={filters['area-of-study']}
                 onChange={(e) =>
                   handleFilterChange('area-of-study', e.target.value)
@@ -524,14 +532,21 @@ function Programs() {
                 name="college"
                 className="dropdown"
                 id="college"
+                aria-label="College"
                 value={filters.college}
                 onChange={(e) => handleFilterChange('college', e.target.value)}
               >
-                <option value="">College</option>
+                <option value="" aria-label="option">
+                  College
+                </option>
                 {/* Map college options from fetched data */}
                 {selectColleges?.map((this_college, i) => {
                   return (
-                    <option key={i} value={this_college.slug}>
+                    <option
+                      key={i}
+                      value={this_college.slug}
+                      aria-label="option"
+                    >
                       {this_college.college}
                     </option>
                   );
@@ -635,9 +650,9 @@ function Programs() {
           <section className={styles.resultsSection}>
             <ol className={styles.programGrid}>
               <li key={'labelContainer'} className={styles.labelContainer}>
-                <div className={styles.programLabel}>Program</div>
-                <div className={styles.programLabel}>Degree / Certificate</div>
-                <div className={styles.programLabel}>
+                <h2 className={styles.programLabel}>Program</h2>
+                <h2 className={styles.programLabel}>Degree / Certificate</h2>
+                <h2 className={styles.programLabel}>
                   Concentration
                   <span className={styles.toolTip} tabIndex={0}>
                     <span className={styles.messageConcentratation}>
@@ -647,7 +662,7 @@ function Programs() {
                       </p>
                     </span>
                   </span>
-                </div>
+                </h2>
               </li>
               {/* {activeItems?.map((this_item, i) => {
                 return (

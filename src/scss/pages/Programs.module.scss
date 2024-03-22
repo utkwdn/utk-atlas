@@ -201,10 +201,11 @@
   border-bottom: 1px solid $utorange;
 }
 
-.programLabel {
+h2.programLabel {
   font-weight: $font-weight-bold;
   text-transform: uppercase;
   font-size: $font-size-sm;
+  margin-bottom: 0;
 }
 
 .searchNavContainer {
