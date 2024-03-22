@@ -95,6 +95,11 @@ function Programs() {
     updateUrl(filterType, value);
   };
 
+  const handleSelectChange = (filterType: string, value: string) => {
+    handleFilterChange(filterType, value);
+    scrollToFilters();
+  };
+
   // Update URL as filters and search are adjusted on page
   const updateUrl = (filterType: string, value: string) => {
     const _filters = [
@@ -135,6 +140,7 @@ function Programs() {
     const newSwitchValue = filters.online === '' ? 'true' : '';
 
     handleFilterChange('online', newSwitchValue);
+    scrollToFilters();
   };
 
   const handleSearchSubmit = (e: FormEvent) => {
@@ -189,11 +195,9 @@ function Programs() {
   };
 
   // Controls search navigation Offcanvas
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   // Save unique areas and colleges to state to populate select boxes
   const populateSelectBoxes = (flatPrograms: Program[]) => {
@@ -492,7 +496,7 @@ function Programs() {
                 aria-label="Degree Type"
                 value={filters['degree-type']}
                 onChange={(e) =>
-                  handleFilterChange('degree-type', e.target.value)
+                  handleSelectChange('degree-type', e.target.value)
                 }
               >
                 <option value="" aria-label="option">
@@ -521,7 +525,7 @@ function Programs() {
                 aria-label="Area of Study"
                 value={filters['area-of-study']}
                 onChange={(e) =>
-                  handleFilterChange('area-of-study', e.target.value)
+                  handleSelectChange('area-of-study', e.target.value)
                 }
               >
                 <option value="">Area of study</option>
@@ -542,7 +546,7 @@ function Programs() {
                 id="college"
                 aria-label="College"
                 value={filters.college}
-                onChange={(e) => handleFilterChange('college', e.target.value)}
+                onChange={(e) => handleSelectChange('college', e.target.value)}
               >
                 <option value="" aria-label="option">
                   College
