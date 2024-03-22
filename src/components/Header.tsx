@@ -158,7 +158,8 @@ const Header = () => {
     const label = link?.label;
     const id = link?.id;
 
-    const isInternal = itemUri !== url;
+    // const isInternal = itemUri !== url;
+    const isInternal = Array.from(itemUri as string)[0] === '/';
     const isCurrent = id === currentSecondLevelItemId;
 
     return url && itemUri && label && id ? (
