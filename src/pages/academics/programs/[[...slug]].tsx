@@ -63,6 +63,13 @@ function Programs() {
     { college: '', slug: '' },
   ]);
   const [dataUpdated, setDataUpdated] = useState('[date]');
+  const filtersRef = useRef<null | HTMLDivElement>(null);
+
+  const scrollToFilters = () => {
+    if (filtersRef.current) {
+      filtersRef.current.scrollIntoView();
+    }
+  };
 
   const { data } = useQuery(Programs.query);
   const programs = data?.programs?.nodes;
@@ -134,6 +141,7 @@ function Programs() {
     e.preventDefault();
 
     handleFilterChange('search', filters.search);
+    scrollToFilters();
   };
 
   // Create URL friendly string for URL params and select boxes
@@ -441,7 +449,7 @@ function Programs() {
           'A professor and student install a structure on a 6 degrees-of-freedom shake table, which simulates an earthquake.'
         }
       />
-      <section className={styles.areasContainer} id="filters">
+      <section className={styles.areasContainer} id="filters" ref={filtersRef}>
         {/* parent container */}
         {/* Search Section */}
         <section className={styles.searchNavContainer}>
