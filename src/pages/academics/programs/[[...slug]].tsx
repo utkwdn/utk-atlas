@@ -1,6 +1,5 @@
 import Layout from '../../../components/Layout';
 import styles from 'scss/pages/Programs.module.scss';
-import { PageTitle } from 'components';
 import { GetStaticPropsContext } from 'next';
 import { getNextStaticProps } from '@faustwp/core';
 import Head from 'next/head';
@@ -92,7 +91,7 @@ function Programs() {
       setFilters({ ..._filters });
     }
 
-    updateUrl(filterType, value);
+    updateUrl();
   };
 
   const handleSelectChange = (filterType: string, value: string) => {
@@ -101,7 +100,7 @@ function Programs() {
   };
 
   // Update URL as filters and search are adjusted on page
-  const updateUrl = (filterType: string, value: string) => {
+  const updateUrl = () => {
     const _filters = [
       {
         type: 'area-of-study',
@@ -414,7 +413,7 @@ function Programs() {
         });
       }
 
-      console.log(`Total Matches - ${flatPrograms.length}`);
+      // console.log(`Total Matches - ${flatPrograms.length}`);
 
       // Organize by major/degree then update state
       setActiveItems(combineConcentrations(flatPrograms));
@@ -423,7 +422,16 @@ function Programs() {
   return (
     <Layout>
       <Head>
-        <title>Programs</title>
+        <title>Programs - University of Tennessee, Knoxville</title>
+        <meta
+          name="description"
+          content="With 900+ programs, degrees, and certificates at UT, you can study what you love and be prepared for whatever awaits you after graduation."
+        />
+        <meta name="keywords" content="Degree Programs" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="30 days" />
+        <link rel="canonical" href="https://www.utk.edu/academics/programs" />
       </Head>
       {/* <PageTitle title={'Programs'} /> */}
 
