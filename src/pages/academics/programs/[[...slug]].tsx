@@ -434,8 +434,6 @@ function Programs() {
         <meta name="revisit-after" content="30 days" />
         <link rel="canonical" href="https://www.utk.edu/academics/programs" />
       </Head>
-      {/* <PageTitle title={'Programs'} /> */}
-
       <Intro
         title={'Programs and degrees'}
         theme={'Prepare for your future'}
@@ -474,7 +472,7 @@ function Programs() {
               <TextField
                 onChange={(e) => handleFilterChange('search', e.target.value)}
                 type="search"
-                label="Keyword search"
+                label="Find a program"
                 value={filters.search}
                 fullWidth
                 id="fullWidth"
