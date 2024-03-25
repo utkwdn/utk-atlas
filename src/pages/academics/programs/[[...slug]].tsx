@@ -67,6 +67,7 @@ function Programs() {
   const scrollToFilters = () => {
     if (filtersRef.current) {
       filtersRef.current.scrollIntoView();
+      filtersRef.current.focus();
     }
   };
 
