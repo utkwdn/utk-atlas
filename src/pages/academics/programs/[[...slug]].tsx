@@ -730,7 +730,7 @@ function Programs() {
         {/* End Results Container */}
         <section className={styles.disclaimerSection}>
           <p>
-            Last updated on {dataUpdated}. To view all current programs visit
+            Last updated on {dataUpdated}. To view all current programs, visit
             the <a href="https://catalog.utk.edu/">undergraduate catalog</a> or
             the{' '}
             <a href="https://catalog.utk.edu/index.php?catoid=44">
