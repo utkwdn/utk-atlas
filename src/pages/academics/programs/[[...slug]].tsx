@@ -203,6 +203,7 @@ function Programs() {
   const populateSelectBoxes = (flatPrograms: Program[]) => {
     const uniqueSelectAreas = flatPrograms
       .map((program) => program.areaOfStudy)
+      .sort()
       .filter((value, index, self) => self.indexOf(value) === index)
       .map((area) => {
         return {
@@ -213,6 +214,7 @@ function Programs() {
 
     const uniqueSelectColleges = flatPrograms
       .map((program) => program.college)
+      .sort()
       .filter((value, index, self) => self.indexOf(value) === index)
       .map((college) => {
         return {
