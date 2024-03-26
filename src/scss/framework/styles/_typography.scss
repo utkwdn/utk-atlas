@@ -106,8 +106,8 @@ h1.area {
   font-size: clamp(1.51375rem, 6.2175vw, 2.9rem);
   font-weight: $font-weight-normal;
   font-style: italic;
-  color: #9d9d9d;
-  color: #918e8e;
+  // color: #9d9d9d;
+  color: #918e8e !important;
   letter-spacing: 0.26rem;
   text-transform: uppercase;
   // line-height: calc($headings-line-height * 0.2);

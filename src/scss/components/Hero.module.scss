@@ -180,6 +180,7 @@
 .italic-leading {
   line-height: 3rem !important;
   display: inline-block;
+  color: #918e8e !important;
 }
 .pointer-event-visible {
   pointer-events: visible; /* need this to make the links work with gsap – adding as a utility class for ease of use */

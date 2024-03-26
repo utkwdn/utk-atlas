@@ -32,7 +32,7 @@
 
 #secondary-menu {
   display: none;
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     display: inline;
     background: $utcoolrock;
     display: flex;
@@ -54,7 +54,7 @@
 
 // Here we put the full navigation off-canvas
 #site-navigation {
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     background: $white;
     position: fixed;
     bottom: 0;
@@ -82,7 +82,7 @@
 
 #mobile-menu-open,
 #mobile-menu-close {
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     display: none;
   }
 }
@@ -140,7 +140,7 @@
 
   // now let's style for bigger screens.
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
