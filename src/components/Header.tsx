@@ -343,7 +343,7 @@ const Header = () => {
 
 Header.query = gql(`
   query MainNav {
-    menuItems(where: { location: PRIMARY }) {
+    menuItems(where: {location: PRIMARY}, first: 20) {
       nodes {
         id
         uri
