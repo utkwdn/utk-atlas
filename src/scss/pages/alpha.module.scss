@@ -51,7 +51,8 @@ h1.area {
   font-size: 2.6rem;
   font-weight: $font-weight-bold;
   font-style: italic;
-  color: #9d9d9d;
+  // color: #9d9d9d;
+  color: #918e8e !important;
   letter-spacing: 0.26rem;
   text-transform: uppercase;
   &:before {
