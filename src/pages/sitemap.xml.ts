@@ -18,6 +18,9 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         path: '/alpha',
       },
       {
+        path: '/academics/programs',
+      },
+      {
         path: '/meet',
       },
       {

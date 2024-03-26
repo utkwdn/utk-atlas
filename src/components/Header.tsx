@@ -158,7 +158,8 @@ const Header = () => {
     const label = link?.label;
     const id = link?.id;
 
-    const isInternal = itemUri !== url;
+    // const isInternal = itemUri !== url;
+    const isInternal = Array.from(itemUri as string)[0] === '/';
     const isCurrent = id === currentSecondLevelItemId;
 
     return url && itemUri && label && id ? (
@@ -239,13 +240,13 @@ const Header = () => {
         to check the behavior of this piece.
       */}
         <Navbar
-          expand="lg" /* important because it matches the breakpoint used for some styling inside */
+          expand="xl" /* important because it matches the breakpoint used for some styling inside */
           as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
           role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
           className="py-0"
         >
           <div className="container-xxl">
-            <div className="row justify-content-between py-3 py-md-4 py-lg-0 w-100">
+            <div className="row justify-content-between py-3 py-md-4 py-lg-4 py-xl-0 w-100">
               <div className="site-logo">
                 <Link href="/" className="d-grid h-100">
                   <img

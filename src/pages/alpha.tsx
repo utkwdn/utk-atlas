@@ -17,7 +17,8 @@ import {
   useState,
 } from 'react';
 import debounce from 'lodash/debounce';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
+import InputAdornment from '@mui/material/InputAdornment';
 
 const NO_RESULTS = 'No results found';
 
@@ -96,11 +97,11 @@ const Alpha = () => {
   const { data } = useQuery(Alpha.query);
   const rawItems = data?.allAToZ?.nodes;
 
-  interface CharItem {
-    title: string;
-    id: string;
-    aToZFields: { tags: string; url: string };
-  }
+  // interface CharItem {
+  //   title: string;
+  //   id: string;
+  //   aToZFields: { tags: string; url: string };
+  // }
 
   const itemsByChar = useRef(
     rawItems?.reduce((map, item) => {
@@ -162,8 +163,6 @@ const Alpha = () => {
       return activeItems.some(({ label }) => label[0].toUpperCase() === char);
     }
   });
-
-  // console.log(activeChars);
 
   const _handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
     (e) => {
@@ -238,12 +237,19 @@ const Alpha = () => {
               <TextField
                 onChange={handleChange}
                 type="search"
-                label="Find a Site"
+                label="Find a site"
                 inputRef={inputRef}
                 fullWidth
                 id="fullWidth"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <span className={styles.magnifyingGlass}></span>
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <Button type="submit">Search</Button>
+              {/* <Button type="submit">Search</Button> */}
             </form>
           </div>
 

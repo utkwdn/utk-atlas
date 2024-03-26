@@ -14,6 +14,7 @@ import RequestInfoTabs from './RequestInfoTabs';
 import YoutubeCarousel from './YoutubeCarousel';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
+import AcademicsProgramSearch from './AcademicsProgramSearch';
 import { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
@@ -167,6 +168,10 @@ const toReactNode = ({
 
         if (trimmedCommentValue.includes('SLATE-MODAL-TABS')) {
           return <SlateModalTabs commentString={trimmedCommentValue} />;
+        }
+
+        if (trimmedCommentValue.includes('ACADEMICS-PROGRAMS-SEARCH')) {
+          return <AcademicsProgramSearch />;
         }
       }
 
