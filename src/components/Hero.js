@@ -246,10 +246,10 @@ const Hero = () => {
           <div className="ctaHolder">
             <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
               <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                Welcome
+                Welcome to
               </span>
               <br />
-              to Rocky Top
+              Rocky Top
             </h2>
 
             {/* BEGIN DYNAMIC CONTENT */}
