@@ -32,6 +32,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
   const pageSlug = pageData?.slug;
   const yoastString = pageData?.seo?.fullHead || '';
   // const showPageTitle = pageData?.showsHeadline;
+  const templateName = pageData?.template?.templateName || '';
   const pageTitle = pageData?.title || '';
   const pageContent = pageData?.content || '';
   const bgImageUrl = pageData?.featuredImage?.node.sourceUrl || undefined;
@@ -43,7 +44,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
   };
 
   useEffect(() => {
-    console.log('non-working version');
+    // console.log('non-working version');
     // Check if url param 'dmc' is set and save to dynamicSrc if so
     const searchParams = new URLSearchParams(document.location.search);
     const srcParam = searchParams.get('dmc');
@@ -58,11 +59,11 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
 
       <Head>{parse(yoastString)}</Head>
 
-      {/* {showPageTitle ? (
+      {templateName !== 'No-title' ? (
         <PageTitle title={pageTitle} bgImage={bgImageUrl} />
       ) : (
         ''
-      )} */}
+      )}
 
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
@@ -110,16 +111,19 @@ Page.variables = ({ databaseId }, ctx) => {
 Page.query = gql(`
   query GetPage($databaseId: ID!, $asPreview: Boolean = false) {
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-      content
-      slug
-      seo {
-        fullHead
-      }
       title
+      slug
+      template {
+        templateName
+      }
       featuredImage {
         node {
           sourceUrl
         }
+      }
+      content
+      seo {
+        fullHead
       }
     }
     generalSettings {
