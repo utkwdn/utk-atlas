@@ -48,26 +48,28 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
   );
 };
 
-FrontPage.variables = ({ databaseId }, ctx) => {
-  return {
-    databaseId,
-    asPreview: ctx?.asPreview,
-  };
-};
+// Temporarily Commenting out – ID! Error
+// FrontPage.variables = ({ databaseId }, ctx) => {
+//   return {
+//     databaseId,
+//     asPreview: ctx?.asPreview,
+//   };
+// };
 
-FrontPage.query = gql(`
-  query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
-    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-      content
-      seo {
-        fullHead
-      }
-    }
-    generalSettings {
-      title
-    }
-  }
-`);
+// FrontPage.query = gql(`
+//   query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
+//     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+//       content
+//       seo {
+//         fullHead
+//       }
+//     }
+//     generalSettings {
+//       title
+//     }
+//   }
+// `);
+// End Temporarily Commenting out – ID! Error
 
 // FrontPage.variables = ({ databaseId }, ctx) => {
 //   return {
