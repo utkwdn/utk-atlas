@@ -180,6 +180,11 @@
 // @import './framework/styles/webfont';
 //webfont was not originally pulled in from the framework, commenting out for now
 
+// Styles brought over manually from WDS
+
+// @import './wds/fake-theme.scss';
+// @import './wds/screen.scss';
+
 // Main Site
 
 @import './components/Hero.module.scss';
