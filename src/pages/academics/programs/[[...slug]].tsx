@@ -10,6 +10,7 @@ import { useQuery } from '@apollo/client';
 import { matchSorter } from 'match-sorter';
 import TextField from '@mui/material/TextField';
 // import { Button } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import Intro from '../../../components/Intro';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -63,6 +64,7 @@ function Programs() {
   ]);
   const [dataUpdated, setDataUpdated] = useState('[date]');
   const filtersRef = useRef<null | HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const scrollToFilters = () => {
     if (filtersRef.current) {
@@ -420,6 +422,7 @@ function Programs() {
 
       // Organize by major/degree then update state
       setActiveItems(combineConcentrations(flatPrograms));
+      setIsLoading(false);
     }
   }, [programs, filters]);
   return (
@@ -667,87 +670,107 @@ function Programs() {
         </section>
 
         {/* Results Container */}
-        {activeItems.length > 0 ? (
-          <section className={styles.resultsSection}>
-            <ol className={styles.programGrid}>
-              <li key={'labelContainer'} className={styles.labelContainer}>
-                <h2 className={styles.programLabel}>Program</h2>
-                <h2 className={styles.programLabel}>Degree / Certificate</h2>
-                <h2 className={styles.programLabel}>
-                  Concentration
-                  <span className={styles.toolTip} tabIndex={0}>
-                    <span className={styles.messageConcentratation}>
-                      <p>
-                        Some programs may not offer concentrations while others
-                        may require them.{' '}
-                      </p>
-                    </span>
-                  </span>
-                </h2>
-              </li>
-              {/* {activeItems?.map((this_item, i) => {
-                return (
-                  <> */}
-              {activeItems?.map((this_item, j) => {
-                const degreeNameArray = this_item.degrees.split('/, ');
-                const formattedConcentrations = formatConcentrations(
-                  this_item.major,
-                  this_item.concentration
-                );
-                return (
-                  <li key={j} className={styles.programEntry}>
-                    <h3 className={styles.programName}>{this_item.major}</h3>
-                    <ol className={styles.degreeList}>
-                      {degreeNameArray?.map((this_degree_name, l) => {
-                        return <li key={l}>{this_degree_name}</li>;
-                      })}
-                    </ol>
-                    <ol className={styles.concentrationList}>
-                      {formattedConcentrations?.map((this_program, k) => {
-                        if (this_program.online === true) {
-                          return (
-                            <li key={k}>
-                              {this_program.name}{' '}
-                              <span className={styles.onlineTag}>
-                                {/* <a
-                                  // href={this_program.link}
-                                  href="https://volsonline.utk.edu/programs-degrees/"
-                                > */}
-                                Online
-                                {/* </a> */}
-                              </span>
-                            </li>
-                          );
-                        } else {
-                          return <li key={k}>{this_program.name}</li>;
-                        }
-                      })}
-                    </ol>
-                  </li>
-                );
-              })}
-              {/* </>
-                );
-              })} */}
-            </ol>
+        {isLoading ? (
+          <section className={styles.loadingContainer}>
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            <span style={{ marginLeft: '10px' }}>Loading Programs</span>
           </section>
         ) : (
-          <section className={styles.resultsSectionMessage}>
-            <h3>No matching programs</h3>
-          </section>
+          <>
+            {activeItems.length > 0 ? (
+              <section className={styles.resultsSection}>
+                <ol className={styles.programGrid}>
+                  <li key={'labelContainer'} className={styles.labelContainer}>
+                    <h2 className={styles.programLabel}>Program</h2>
+                    <h2 className={styles.programLabel}>
+                      Degree / Certificate
+                    </h2>
+                    <h2 className={styles.programLabel}>
+                      Concentration
+                      <span className={styles.toolTip} tabIndex={0}>
+                        <span className={styles.messageConcentratation}>
+                          <p>
+                            Some programs may not offer concentrations while
+                            others may require them.{' '}
+                          </p>
+                        </span>
+                      </span>
+                    </h2>
+                  </li>
+                  {/* {activeItems?.map((this_item, i) => {
+                      return (
+                        <> */}
+                  {activeItems?.map((this_item, j) => {
+                    const degreeNameArray = this_item.degrees.split('/, ');
+                    const formattedConcentrations = formatConcentrations(
+                      this_item.major,
+                      this_item.concentration
+                    );
+                    return (
+                      <li key={j} className={styles.programEntry}>
+                        <h3 className={styles.programName}>
+                          {this_item.major}
+                        </h3>
+                        <ol className={styles.degreeList}>
+                          {degreeNameArray?.map((this_degree_name, l) => {
+                            return <li key={l}>{this_degree_name}</li>;
+                          })}
+                        </ol>
+                        <ol className={styles.concentrationList}>
+                          {formattedConcentrations?.map((this_program, k) => {
+                            if (this_program.online === true) {
+                              return (
+                                <li key={k}>
+                                  {this_program.name}{' '}
+                                  <span className={styles.onlineTag}>
+                                    {/* <a
+                                        // href={this_program.link}
+                                        href="https://volsonline.utk.edu/programs-degrees/"
+                                      > */}
+                                    Online
+                                    {/* </a> */}
+                                  </span>
+                                </li>
+                              );
+                            } else {
+                              return <li key={k}>{this_program.name}</li>;
+                            }
+                          })}
+                        </ol>
+                      </li>
+                    );
+                  })}
+                  {/* </>
+                      );
+                    })} */}
+                </ol>
+              </section>
+            ) : (
+              <section className={styles.resultsSectionMessage}>
+                <h3>No matching programs</h3>
+              </section>
+            )}
+            {/* End Results Container */}
+            <section className={styles.disclaimerSection}>
+              <p>
+                Last updated on {dataUpdated}. To view all current programs,
+                visit the{' '}
+                <a href="https://catalog.utk.edu/">undergraduate catalog</a> or
+                the{' '}
+                <a href="https://catalog.utk.edu/index.php?catoid=44">
+                  graduate catalog
+                </a>
+                .
+              </p>
+            </section>
+          </>
         )}
-        {/* End Results Container */}
-        <section className={styles.disclaimerSection}>
-          <p>
-            Last updated on {dataUpdated}. To view all current programs, visit
-            the <a href="https://catalog.utk.edu/">undergraduate catalog</a> or
-            the{' '}
-            <a href="https://catalog.utk.edu/index.php?catoid=44">
-              graduate catalog
-            </a>
-            .
-          </p>
-        </section>
       </section>
       {/* End areasContainer */}
     </Layout>
@@ -791,13 +814,13 @@ query GetPrograms {
 }
 `);
 
-export function getStaticProps(ctx: GetStaticPropsContext) {
-  return getNextStaticProps(ctx, { Page: Programs, revalidate: 120 });
-}
+// export function getStaticProps(ctx: GetStaticPropsContext) {
+//   return getNextStaticProps(ctx, { Page: Programs, revalidate: 120 });
+// }
 
-export function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  };
-}
+// export function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: 'blocking',
+//   };
+// }
