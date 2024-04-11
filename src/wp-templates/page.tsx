@@ -63,7 +63,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
         <PageTitle title={pageTitle} bgImage={bgImageUrl} />
       ) : (
         ''
-      )} */}
+      )}
 
       <main className={'content content-single ' + (pageSlug || '')}>
         <div className="container-xxl pt-5">
