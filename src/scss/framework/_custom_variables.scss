@@ -44,7 +44,8 @@ $grays: map-merge(
 $white: #fff;
 $utorange: #ff8200;
 $utlimestone: rgb(240, 237, 227);
-$utsmokey: rgb(88, 89, 91);
+// $utsmokey: rgb(88, 89, 91); //  Atlas original setting
+$utsmokey: #4b4b4b; // WDS 1.1.2 change
 $uttorch: rgb(230, 89, 51);
 $uttorchweb: #d5431a;
 $utriver: rgb(81, 124, 150);
@@ -67,7 +68,7 @@ $utcoolsmokey: #313e48;
 $utcoolrock: #d9dfe3;
 $utlinkriver: #1a73c5;
 $utlinkhover: #114c81;
-$utalert: #D31259;
+$utalert: #D31259; // does not exist in WDS 1.1.2
 
 //UT Branding Colors Modify
 $utlimestone-d: rgb(213, 211, 205);
@@ -114,6 +115,8 @@ $danger: $red !default;
 $light: $utgray1 !default;
 $dark: $utsmokeytext !default;
 
+$enable-dark-mode: false; // Added from WDS 1.1.2
+
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
@@ -125,7 +128,8 @@ $theme-colors: map-merge(
     'utlink': $utlinkriver,
     'utsearch' : $utgray2,
     'dark': $dark,
-    'light': $utgray1,
+    // 'light': $utgray1, // Atlas original setting
+    'light': $light, // WDS 1.1.2 difference
    // 'torch': $uttorchweb,
    // 'sunsphere': $utsunsphere,
    // 'fountain': $utfountain,
@@ -293,23 +297,33 @@ $nav-link-padding-y: 0.5rem !default;
 $nav-link-padding-x: 1rem !default;
 $nav-link-font-size: null !default;
 $nav-link-font-weight: null !default;
-$nav-link-color: $utsmokeytext;
+// $nav-link-color: $utsmokeytext; // Atlas original setting
+$nav-link-color: $link-color !default; // WDS 1.1.2 difference
 $nav-link-hover-color: $link-hover-color !default;
 $nav-link-transition: color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 $nav-link-disabled-color: $gray-600 !default;
 
-$nav-tabs-border-color: $gray-300 !default;
-$nav-tabs-border-width: $border-width !default;
-$nav-tabs-border-radius: $border-radius !default;
-$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default;
-$nav-tabs-link-active-color: $gray-700 !default;
-$nav-tabs-link-active-bg: $body-bg !default;
-$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+// $nav-tabs-border-color: $gray-300 !default; // Atlas original setting
+$nav-tabs-border-color: rgb(179, 179, 179); // WDS 1.1.2 difference
+// $nav-tabs-border-width: $border-width !default; // Atlas original setting
+$nav-tabs-border-width: $border-width; // WDS 1.1.2 difference
+// $nav-tabs-border-radius: $border-radius !default; // Atlas original setting
+$nav-tabs-border-radius: 0.45rem; // WDS 1.1.2 difference
+// $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default; // Atlas original setting
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color; // WDS 1.1.2 difference
+// $nav-tabs-link-active-color: $gray-700 !default; // Atlas original setting
+$nav-tabs-link-active-color: $gray-700; // WDS 1.1.2 difference
+// $nav-tabs-link-active-bg: $body-bg !default; // Atlas original setting
+$nav-tabs-link-active-bg: $gray-100; // WDS 1.1.2 difference
+// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default; // Atlas original setting
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
 
-$nav-pills-border-radius: $border-radius 0.45rem 0.45rem 0 0;
+// $nav-pills-border-radius: $border-radius 0.45rem 0.45rem 0 0; // Atlas original setting
+$nav-pills-border-radius: $border-radius; // WDS 1.1.2 difference
 $nav-pills-link-active-color: $utsmokeytext ;
-$nav-pills-link-active-bg: $utgray1 !default;
+$nav-pills-link-active-bg: $utgray1 !default; // Atlas original setting
+$nav-pills-link-active-bg: $utgray1; // WDS 1.1.2 difference
 
 // Typography
 //
@@ -319,6 +333,8 @@ $nav-pills-link-active-bg: $utgray1 !default;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
 sans-serif !default;
+// WDS 1.1.2 difference. WDS still set to use Gotham Line 319 in WDS _custom_variables file
+
 // stylelint-disable value-keyword-case
 // $font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
 //   'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
@@ -1057,6 +1073,23 @@ $modal-show-transform:              none !default;
 $modal-transition:                  transform .3s ease-out !default;
 $modal-scale-transform:             scale(1.02) ;
 // scss-docs-end modal-variables
+
+// scss-docs-start offcanvas-variables
+// This entire offcanvas section is a WDS 1.1.2 difference
+$offcanvas-padding-y: 1rem;
+$offcanvas-padding-x: 1rem;
+$offcanvas-horizontal-width: 80vw;
+$offcanvas-vertical-height: 30vh !default;
+$offcanvas-transition-duration: 0.3s !default;
+$offcanvas-border-color: $modal-content-border-color;
+$offcanvas-border-width: $modal-content-border-width !default;
+$offcanvas-title-line-height: $modal-title-line-height !default;
+$offcanvas-bg-color: $modal-content-bg !default;
+$offcanvas-color: $modal-content-color !default;
+$offcanvas-box-shadow: $modal-content-box-shadow-xs !default;
+$offcanvas-backdrop-bg: $modal-backdrop-bg !default;
+$offcanvas-backdrop-opacity: $modal-backdrop-opacity !default;
+// scss-docs-end offcanvas-variables
 
 // Close
 

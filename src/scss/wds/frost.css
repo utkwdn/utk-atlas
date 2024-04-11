@@ -186,7 +186,7 @@ mark {
 ol li:where(:not([class*='block'])),
 ul li:where(:not([class*='block'])),
 .wp-block-list li {
-  margin-left: 30px;
+  margin-left: 30px; /*  this breaks the in-page links under the hero in atlas */
 }
 
 .is-style-no-disc li {

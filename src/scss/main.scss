@@ -1,11 +1,15 @@
 // CSS for use on every page. Added with normalize.css in pages/_app.tsx.
 
+@import 'wds/frost'; // Configuration from WDS Theme
+
 // @import "variables";
 // @import "typography";
-@import './node_modules/bootstrap/scss/functions';
-@import './framework/custom_variables';
 
+@import './node_modules/bootstrap/scss/functions';
+
+@import './framework/custom_variables'; // custom_variables from WDS have been merged with this file
 @import './node_modules/bootstrap/scss/variables';
+
 @import './node_modules/bootstrap/scss/mixins';
 @import './node_modules/bootstrap/scss/utilities';
 @import './node_modules/bootstrap/scss/root';
