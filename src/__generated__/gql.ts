@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+<<<<<<< HEAD
   '\n  query GetAosPrograms($aosName: [String]) { \n    areasOfStudy(where: {name: $aosName}) {\n      nodes {\n        name\n        id\n        programs(first: 300) {\n          nodes {\n            title\n            colleges {\n              nodes {\n                name\n              }\n            }\n            degrees {\n              nodes {\n                name\n                description\n              }\n            }\n            programDetailsFields {\n              url\n            }\n          }\n        }\n      }\n    }\n  }\n':
     types.GetAosProgramsDocument,
   '\n  query FooterTools {\n    toolsItems: menuItems(where: { location: TOOLS }) {\n      nodes {\n        url\n        label\n      }\n    }\n    linksItems: menuItems(where: { location: LINKS }) {\n      nodes {\n        url\n        label\n      }\n    }\n  }\n':
@@ -33,6 +34,18 @@ const documents = {
     types.GetPageDocument,
   '\n  query GetPost($databaseId: ID!, $asPreview: Boolean = false) {\n    post(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      content\n      title\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n':
     types.GetPostDocument,
+=======
+    "\n  query GetAosPrograms($aosName: [String]) { \n    areasOfStudy(where: {name: $aosName}) {\n      nodes {\n        name\n        id\n        programs(first: 300) {\n          nodes {\n            title\n            colleges {\n              nodes {\n                name\n              }\n            }\n            degrees {\n              nodes {\n                name\n                description\n              }\n            }\n            programDetailsFields {\n              url\n            }\n          }\n        }\n      }\n    }\n  }\n": types.GetAosProgramsDocument,
+    "\n  query FooterTools {\n    toolsItems: menuItems(where: { location: TOOLS }) {\n      nodes {\n        url\n        label\n      }\n    }\n    linksItems: menuItems(where: { location: LINKS }) {\n      nodes {\n        url\n        label\n      }\n    }\n  }\n": types.FooterToolsDocument,
+    "\n  query MainNav {\n    menuItems(where: {location: PRIMARY}, first: 20) {\n      nodes {\n        id\n        uri\n        url\n        title\n        parentId\n        label\n        childItems {\n          nodes {\n            label\n            id\n            url\n            uri\n          }\n        }\n      }\n    }\n  }\n": types.MainNavDocument,
+    "\nquery GetPrograms {\n  programs(first: 1000, where: {orderby: {field: TITLE, order: ASC}}) {\n    nodes {\n      title\n      colleges {\n        nodes {\n          name\n        }\n      }\n      areasOfStudy {\n        nodes {\n          name\n        }\n      }\n      degrees {\n        nodes {\n          name\n          description\n        }\n      }\n      majors {\n        nodes {\n          name\n        }\n      }\n      programDetailsFields {\n        url\n      }\n      date\n    }\n  }\n}\n": types.GetProgramsDocument,
+    "\n  query GetAToZ {\n    allAToZ(first: 1000, where: { orderby: { field: TITLE, order: ASC } }) {\n      nodes {\n        id\n        title(format: RENDERED)\n        aToZFields {\n          tags\n          url\n        }\n      }\n    }\n  }\n": types.GetAToZDocument,
+    "\n  query GetSocials {\n    socialUnits(first: 1000, where: { orderby: { field: TITLE, order: ASC } }) {\n      nodes {\n        id\n        title\n        socialUnitURLs {\n          twitter\n          facebook\n          instagram\n          youtube\n          linkedin\n        }\n      }\n    }\n  }\n": types.GetSocialsDocument,
+    "\n  query GetCategoryPage($uri: String!) {\n    nodeByUri(uri: $uri) {\n      ... on Category {\n        name\n        slug\n        posts {\n          nodes {\n            id\n            title\n            slug\n            excerpt(format: RENDERED)\n            featuredImage {\n              node {\n                title\n                sourceUrl\n              }\n            }\n          }\n          pageInfo {\n            endCursor\n            startCursor\n            hasNextPage\n            hasPreviousPage\n          }\n        }\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n": types.GetCategoryPageDocument,
+    "\n  query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      content\n      seo {\n        fullHead\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n": types.GetFrontPageDocument,
+    "\n  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      title\n      slug\n      template {\n        templateName\n      }\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n      content\n      seo {\n        fullHead\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n": types.GetPageDocument,
+    "\n  query GetPost($databaseId: ID!, $asPreview: Boolean = false) {\n    post(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      content\n      title\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n": types.GetPostDocument,
+>>>>>>> wds-integration
 };
 
 /**
@@ -100,9 +113,13 @@ export function gql(
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+<<<<<<< HEAD
 export function gql(
   source: '\n  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      content\n      slug\n      seo {\n        fullHead\n      }\n      title\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n'
 ): (typeof documents)['\n  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      content\n      slug\n      seo {\n        fullHead\n      }\n      title\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n'];
+=======
+export function gql(source: "\n  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      title\n      slug\n      template {\n        templateName\n      }\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n      content\n      seo {\n        fullHead\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n"): (typeof documents)["\n  query GetPage($databaseId: ID!, $asPreview: Boolean = false) {\n    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {\n      title\n      slug\n      template {\n        templateName\n      }\n      featuredImage {\n        node {\n          sourceUrl\n        }\n      }\n      content\n      seo {\n        fullHead\n      }\n    }\n    generalSettings {\n      title\n    }\n  }\n"];
+>>>>>>> wds-integration
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
