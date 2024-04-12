@@ -359,7 +359,9 @@ function Programs() {
             major: program.majors?.nodes[0].name || '',
             concentration: programTitle || '',
             college: program.colleges?.nodes[0].name || '',
+            collegeSlug: slugify(program.colleges?.nodes[0].name || ''),
             areaOfStudy: program.areasOfStudy?.nodes[0].name || '',
+            areaSlug: slugify(program.areasOfStudy?.nodes[0].name || ''),
             degrees: degreeString,
             degreeTypes: degreeType,
             programLink: program.programDetailsFields?.url || '#',
@@ -379,25 +381,17 @@ function Programs() {
       }
       // Apply any Area of Study filters
       if (filters['area-of-study'] !== '') {
-        flatPrograms = matchSorter(
-          flatPrograms,
-          deslugify('area-of-study', filters['area-of-study']),
-          {
-            keys: ['areaOfStudy'],
-            threshold: matchSorter.rankings.EQUAL,
-          }
-        );
+        flatPrograms = matchSorter(flatPrograms, filters['area-of-study'], {
+          keys: ['areaSlug'],
+          threshold: matchSorter.rankings.EQUAL,
+        });
       }
       // Apply any College filters
       if (filters.college !== '') {
-        flatPrograms = matchSorter(
-          flatPrograms,
-          deslugify('college', filters.college),
-          {
-            keys: ['college'],
-            threshold: matchSorter.rankings.ACRONYM,
-          }
-        );
+        flatPrograms = matchSorter(flatPrograms, filters.college, {
+          keys: ['collegeSlug'],
+          threshold: matchSorter.rankings.ACRONYM,
+        });
       }
       // Apply any Degree Type filters
       if (filters['degree-type'] !== '') {
@@ -619,7 +613,7 @@ function Programs() {
                 {filters.search}
               </div>
             )}
-            {filters['area-of-study'] === '' ? (
+            {filters['area-of-study'] === '' || selectAreas.length === 1 ? (
               <></>
             ) : (
               <div
@@ -631,7 +625,7 @@ function Programs() {
                 {deslugify('area-of-study', filters['area-of-study'])}
               </div>
             )}
-            {filters.college === '' ? (
+            {filters.college === '' || selectColleges.length === 1 ? (
               <></>
             ) : (
               <div
