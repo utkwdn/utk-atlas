@@ -7,7 +7,7 @@
     "clean": "rimraf .next node_modules",
     "dev": "faust dev",
     "build": "faust build",
-    "generate": "graphql-codegen",
+    "generate": "graphql-codegen && faust generateGlobalStylesheet",
     "start": "faust start",
     "lint": "faust lint"
   },
