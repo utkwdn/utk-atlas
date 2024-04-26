@@ -225,9 +225,8 @@ const Header = () => {
 
   return (
     <>
-      <UniversalHeader />
-
       <header className="site-header">
+        <UniversalHeader />
         {/*
         Note: this NavBar was originally entirely non-React markup that came
         from the UTK design-system. However, because of the JavaScript needs of
@@ -239,6 +238,94 @@ const Header = () => {
         if the design-system's main-nav is altered in the future, it will be important
         to check the behavior of this piece.
       */}
+        <div
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
+          tabindex="-1"
+          data-max-breakpoint="600"
+        >
+          <div className="offcanvas-header">
+            <button
+              className="btn-close"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="main-menu offcanvas-body">
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper utility-nav-menu-mobile">
+              <menu id="utility-nav-menu-mobile" className="utk-nav-menu">
+                {primaryNavItems}
+              </menu>
+            </div>
+            <form
+              id="cse-searchbox-form"
+              className="form-inline hidden-print mt-4"
+            >
+              <div className="mb-3 input-group">
+                <label className="sr-only visually-hidden" for="g">
+                  Search
+                </label>
+                <input
+                  id="site-search-field-offcanvas"
+                  className="form-control"
+                  type="search"
+                  title="Search this site"
+                  placeholder="Search"
+                  name="s"
+                ></input>
+                <button className="btn btn-utlink" type="submit">
+                  <svg
+                    width="14"
+                    height="13"
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Search Icon</title>
+                    <circle
+                      cx="6.12"
+                      cy="5.73"
+                      r="4.22"
+                      transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                      stroke-width="2"
+                    ></circle>
+                    <line
+                      x1="9.35"
+                      y1="8.41"
+                      x2="12.71"
+                      y2="11.8"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav-menu-list">
+              <menu id="mobile-nav-menu" className="utk-nav-menu">
+                <li className="collapsible-menu-item">
+                  <a className="" href="#">
+                    <span className="bold-holder">
+                      <span className="real-title">Sample Page</span>
+                      <span className="bold-wrapper" aria-hidden="true">
+                        Sample Page
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              </menu>
+            </div>
+          </div>
+        </div>
+        <div className="wp-block-group header-site-title-wrapper universal-header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
+        <div
+          id="main-nav--large"
+          className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
+        >
+          <menu id="" className="utk-nav-menu">
+            {primaryNavItems}
+          </menu>
+        </div>
         <Navbar
           expand="xl" /* important because it matches the breakpoint used for some styling inside */
           as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */

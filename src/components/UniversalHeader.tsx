@@ -61,7 +61,10 @@ const UniversalHeader = () => {
 
   return (
     <>
-      <div id="universal-header" className="universal-header">
+      <div
+        id="universal-header"
+        className="universal-header wp-block-template-part"
+      >
         <div className="universal-header__inner">
           <div className="universal-header__logo">
             <Link href="/">

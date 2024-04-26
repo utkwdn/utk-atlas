@@ -1,6 +1,8 @@
 // CSS for use on every page. Added with normalize.css in pages/_app.tsx.
 
 // import theme.json global stylesheet from WDS 1.1.2
+
+@import './wds/build/frost';
 @import '/globalStylesheet.css';
 
 // Flattened styles from exported WDS 1.1.2
@@ -88,8 +90,8 @@
 @import './framework/regions/contentarea';
 @import './framework/regions/extended_footer';
 @import './framework/regions/footers';
-@import './framework/regions/headers';
-@import './framework/regions/navigation_horizontal';
+// @import './framework/regions/headers';
+// @import './framework/regions/navigation_horizontal'; // this is overwriting the styles from WDS 1.1.2
 
 @import './framework/regions/navigation_unit';
 @import './framework/regions/navigation_universal';
@@ -162,8 +164,6 @@
 // @import './export-wp/utkwds-screen.css';
 
 //--------------------------------------------------  Recreate the entire stack of imports for WDS 1.1.2
-
-@import './wds/build/frost';
 
 // @import './wds-approx/universal-header-fix.scss';
 @import './wds-approx/site-header.scss';
