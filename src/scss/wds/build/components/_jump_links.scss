@@ -24,7 +24,7 @@ ul.utkwds-in-page-navigation-list a {
 
 ul.utkwds-jump-link-list a::after,
 ul.utkwds-in-page-navigation-list a::after {
-  content: url('./assets/svg/rocky-top-carrot-01.svg');
+  content: src('images/wds/rocky-top-carrot-01.svg');
   display: inline-block;
   position: absolute;
   margin-left: 0.5rem;

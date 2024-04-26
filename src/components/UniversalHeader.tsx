@@ -37,77 +37,201 @@ const UniversalHeader = () => {
 
   const linkItems = (
     <>
-      <li className="uni-nav-item">
-        <small>
-          <Link
-            href="/requestinfo"
-            className="menu-item text-light text-uppercase"
-          >
-            Request Info
-          </Link>
-        </small>
+      <li>
+        <Link href="/requestinfo">Request Info</Link>
       </li>
-      <li className="uni-nav-item">
-        <small>
-          <Link href="/visit" className="menu-item text-light text-uppercase">
-            Visit
-          </Link>
-        </small>
+      <li>
+        <Link href="/visit">Visit</Link>
       </li>
-      <li className="uni-nav-item">
-        <small>
-          <Link
-            href="/admissions"
-            className="menu-item text-light text-uppercase"
-          >
-            Apply
-          </Link>
-        </small>
+      <li>
+        <Link href="/admissions">Apply</Link>
       </li>
       {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
-      <li className="uni-nav-item">
-        <small>
-          <a
-            href="https://give.utk.edu/campaigns/42950/donations/new"
-            //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
-            // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
-            className="menu-item text-light text-uppercase"
-          >
-            Give
-          </a>
-        </small>
+      <li>
+        <a
+          href="https://give.utk.edu/campaigns/42950/donations/new"
+          //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
+          // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
+        >
+          Give
+        </a>
       </li>
     </>
   );
 
   return (
     <>
-      <div id="universal-header">
-        <div className="container-xxl">
-          <ul className="menu-universal">
-            {linkItems}
-            <li className="uni-nav-item">
-              {' '}
-              <button
-                type="button"
-                className="btn btn-search text-uppercase text-light navbar-toggler col-auto collapsed px-0"
-                aria-label="Open search"
-                onClick={() => handleShowNavSearch()}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  id="searchHeader-open"
+      <div id="universal-header" className="universal-header">
+        <div className="universal-header__inner">
+          <div className="universal-header__logo">
+            <Link href="/">
+              <img
+                src="/images/chrome/logo-horizontal-left-smokey.svg"
+                alt="University of Tennessee, Knoxville"
+              />
+            </Link>
+          </div>
+          <div className="universal-header__utility-nav">
+            <div
+              id="utility-nav-menu--large"
+              className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--large"
+            >
+              <menu id="utility-nav-menu--large" className="utk-nav-menu">
+                {linkItems}
+              </menu>{' '}
+              <div className="search-button-wrapper">
+                <button
+                  type="button"
+                  id="search-slider-button"
+                  className="search-button"
+                  aria-label="Open search"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#search-slider"
+                  aria-expanded="false"
+                  aria-controls="search-slider"
+                  onClick={() => handleShowNavSearch()}
                 >
-                  <path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
-                </svg>
-                <span>Search</span>
+                  <div
+                    className="search-icon hide-when-closed"
+                    role="presentation"
+                  >
+                    <svg
+                      width="14"
+                      height="13"
+                      viewBox="0 0 14 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <title>Search Icon</title>
+                      <circle
+                        cx="6.12"
+                        cy="5.73"
+                        r="4.22"
+                        transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                        stroke-width="2"
+                      ></circle>
+                      <line
+                        x1="9.35"
+                        y1="8.41"
+                        x2="12.71"
+                        y2="11.8"
+                        stroke-width="2"
+                      ></line>
+                    </svg>
+                  </div>
+                  <div className="hide-when-closed">Search</div>
+                  <div className="close-icon-when-open" role="presentation">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.0153 2.15711L10.8582 4.18425e-05L6.50716 4.35006L2.15711 0L0 2.15711L4.35001 6.50714L0 10.8572L2.15711 13.0143L6.50716 8.66421L10.8582 13.0142L13.0153 10.8572L8.66525 6.50714L13.0153 2.15711Z"
+                        fill="#4B4B4B"
+                      />
+                    </svg>
+                  </div>
+                  <div className="hide-when-open visually-hidden sr-only">
+                    Close
+                  </div>
+                </button>
+                <div
+                  id="search-slider"
+                  className="search-slider collapse collapse-horizontal"
+                >
+                  <form
+                    className="form-inline hidden-print mt-4"
+                    id="cse-searchbox-form"
+                    style={{ display: 'flex' }}
+                    onSubmit={(e) => {
+                      void handleSearchSubmit(e);
+                    }}
+                  >
+                    <div className="mb-3 input-group">
+                      <label
+                        className="sr-only visually-hidden"
+                        htmlFor="nav-search"
+                        for="q"
+                      >
+                        Search
+                      </label>
+                      <input
+                        type="search"
+                        title="Search utk.edu"
+                        placeholder="search utk.edu"
+                        name="search"
+                        id="site-search-field-slider"
+                        className="form-control"
+                        tabIndex="0"
+                        ref={navSearchInputRef}
+                        style={{
+                          width: animateNavSearch ? '270px' : 0,
+                          padding: animateNavSearch ? '0 0.5rem' : 0,
+                        }}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                      <button type="submit" className=" btn btn-utsearch">
+                        <div className="button-inner">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            id="searchHeader-open"
+                          >
+                            <path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"></path>
+                          </svg>
+                          Search
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className="universal-header__menu-open-button">
+              <button
+                className="menu-search-button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMainNav"
+                aria-controls="mobileMainNav"
+              >
+                <div>
+                  Menu
+                  <span className="visually-hidden">and search</span>
+                </div>
+                <div className="search-icon" role="presentation">
+                  <svg
+                    width="14"
+                    height="13"
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Search Icon</title>
+                    <circle
+                      cx="6.12"
+                      cy="5.73"
+                      r="4.22"
+                      transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                      stroke-width="2"
+                    ></circle>
+                    <line
+                      x1="9.35"
+                      y1="8.41"
+                      x2="12.71"
+                      y2="11.8"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                </div>
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
           {/* Begin Search Overlay  */}
           <div
             className="nav-search-overlay"

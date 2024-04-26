@@ -131,13 +131,13 @@ const Header = () => {
         {isInternal ? (
           <Link
             href={itemUri}
-            className="main-navigation"
+            className="bold-holder"
             {...(isCurrent ? { 'aria-current': 'true' } : {})}
           >
             {label}
           </Link>
         ) : (
-          <a href={itemUri} className="main-navigation">
+          <a href={itemUri} className="bold-holder">
             {label}
           </a>
         )}
@@ -227,7 +227,7 @@ const Header = () => {
     <>
       <UniversalHeader />
 
-      <header id="masthead" className="site-header">
+      <header className="site-header">
         {/*
         Note: this NavBar was originally entirely non-React markup that came
         from the UTK design-system. However, because of the JavaScript needs of
@@ -245,17 +245,12 @@ const Header = () => {
           role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
           className="py-0"
         >
-          <div className="container-xxl">
-            <div className="row justify-content-between py-3 py-md-4 py-lg-4 py-xl-0 w-100">
-              <div className="site-logo">
-                <Link href="/" className="d-grid h-100">
-                  <img
-                    src="/images/chrome/logo-horizontal-left-smokey.svg"
-                    alt="University of Tennessee, Knoxville"
-                  />
-                </Link>
-              </div>
-
+          <div className="wp-block-group header-size-title-wrapper universal header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
+          <div
+            id="main-nav--large"
+            className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
+          >
+            <menu className="utk-nav-menu">
               <Navbar.Toggle
                 aria-controls={MAIN_MENU_ID}
                 className="navbar-toggler col-auto mr-auto"
@@ -296,7 +291,7 @@ const Header = () => {
                   </nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
-            </div>
+            </menu>
           </div>
         </Navbar>
       </header>

@@ -7,7 +7,7 @@ p.wp-block-post-excerpt__more-text a {
   margin-right: 68px;
 
   &::after {
-    content: url('./assets/svg/rocky-top-arrow-02.svg');
+    content: src('images/wds/svg/rocky-top-arrow-02.svg');
     transform: scale(0.25);
     margin-left: 0.7rem;
     transform-origin: top left;

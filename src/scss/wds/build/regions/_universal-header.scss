@@ -1,6 +1,10 @@
 $menu-breakpoint: 1170;
 $menu-max-width: 1500;
 
+:root {
+  --wp--preset--color--orange: #ff8200;
+}
+
 @mixin header_max_width() {
   margin-right: auto;
   margin-left: auto;
