@@ -279,7 +279,7 @@ const Header = () => {
               className="form-inline hidden-print mt-4"
             >
               <div className="mb-3 input-group">
-                <label className="sr-only visually-hidden" for="g">
+                <label className="sr-only visually-hidden" htmlFor="g">
                   Search
                 </label>
                 <input
@@ -342,6 +342,7 @@ const Header = () => {
             {primaryNavItems}
           </menu>
         </div>
+        {/* end manually duplicating WDS 1.1.2 structure */}
         <Navbar
           expand="xl" /* important because it matches the breakpoint used for some styling inside */
           as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */

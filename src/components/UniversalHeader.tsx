@@ -157,7 +157,6 @@ const UniversalHeader = () => {
                       <label
                         className="sr-only visually-hidden"
                         htmlFor="nav-search"
-                        for="q"
                       >
                         Search
                       </label>
@@ -168,7 +167,7 @@ const UniversalHeader = () => {
                         name="search"
                         id="site-search-field-slider"
                         className="form-control"
-                        tabIndex="0"
+                        tabIndex={0}
                         ref={navSearchInputRef}
                         style={{
                           width: animateNavSearch ? '270px' : 0,

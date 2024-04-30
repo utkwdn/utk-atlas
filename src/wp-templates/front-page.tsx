@@ -48,7 +48,7 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
   );
 };
 
-// Temporarily Commenting out – ID! Error
+// // Temporarily Commenting out – ID! Error
 // FrontPage.variables = ({ databaseId }, ctx) => {
 //   return {
 //     databaseId,
@@ -69,7 +69,6 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
 //     }
 //   }
 // `);
-// End Temporarily Commenting out – ID! Error
 
 // FrontPage.variables = ({ databaseId }, ctx) => {
 //   return {
