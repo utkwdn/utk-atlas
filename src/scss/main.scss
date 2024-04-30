@@ -32,8 +32,8 @@
 // Utilities
 @import './node_modules/bootstrap/scss/utilities/api';
 
-@import './node_modules/bootstrap/scss/reboot';
-@import './node_modules/bootstrap/scss/type';
+// @import './node_modules/bootstrap/scss/reboot'; // not used in WDS 1.1.2
+// @import './node_modules/bootstrap/scss/type';  // not used in WDS 1.1.2
 @import './node_modules/bootstrap/scss/images';
 // Layout & components
 @import './node_modules/bootstrap/scss/containers';
@@ -89,14 +89,14 @@
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';
 @import './framework/regions/extended_footer';
-@import './framework/regions/footers';
+// @import './framework/regions/footers'; // not used in WDS 1.1.2
 // @import './framework/regions/headers';
 // @import './framework/regions/navigation_horizontal'; // this is overwriting the styles from WDS 1.1.2
 
 @import './framework/regions/navigation_unit';
 @import './framework/regions/navigation_universal';
 @import './framework/regions/search_area';
-@import './framework/regions/sidebar';
+// @import './framework/regions/sidebar';  // not used in WDS 1.1.2
 @import './framework/regions/universal-footer';
 // @import './framework/regions/universal-header'; // no longer using in WDS 1.1.2
 

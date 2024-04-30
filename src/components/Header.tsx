@@ -9,6 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
+import Button from 'react-bootstrap/Button';
 
 const MAIN_MENU_ID = 'main-menu';
 
@@ -100,7 +101,7 @@ const Header = () => {
       const childIsCurrent = childId === currentSecondLevelItemId;
 
       return childLabel && childUrl && childUri && childId ? (
-        <li key={childId} className={childIsCurrent ? 'current-menu-item' : ''}>
+        <li key={childId} className={childIsCurrent ? 'dropdown' : ''}>
           {childIsInternal ? (
             <Link
               href={childUri}
@@ -120,28 +121,40 @@ const Header = () => {
     const isInternal = url !== itemUri;
 
     const isCurrent = id === currentTopLevelItemId;
-    const currentClasses = isCurrent
-      ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
-      : '';
+    const currentClasses = isCurrent ? '' : '';
 
-    const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
+    const hasChildrenClasses = hasChildren ? '' : '';
 
     return !parentId && id && url && itemUri && label ? (
       <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
         {isInternal ? (
           <Link
             href={itemUri}
-            className="bold-holder"
+            className="dropdown-toggle show"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
             {...(isCurrent ? { 'aria-current': 'true' } : {})}
           >
-            {label}
+            <span className="bold-holder">
+              <span className="real-title">{label}</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                {label}
+              </span>
+            </span>
           </Link>
         ) : (
           <a href={itemUri} className="bold-holder">
-            {label}
+            <span className="bold-holder">
+              {' '}
+              <span className="real-title"> {label}</span>
+            </span>
           </a>
         )}
-        {subNavItems.length > 0 && <ul className="sub-menu">{subNavItems}</ul>}
+        {subNavItems.length > 0 && (
+          <div className="dropdown-menu ">
+            <ul>{subNavItems}</ul>
+          </div>
+        )}
       </li>
     ) : (
       []
@@ -163,18 +176,20 @@ const Header = () => {
     const isCurrent = id === currentSecondLevelItemId;
 
     return url && itemUri && label && id ? (
-      <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
-        {isInternal ? (
-          <Link
-            href={itemUri}
-            {...(isCurrent ? { 'aria-current': 'true' } : {})}
-          >
-            {label}
-          </Link>
-        ) : (
-          <a href={itemUri}>{label}</a>
-        )}
-      </li>
+      <div className={isCurrent ? 'dropdown-menu show' : ''}>
+        <li key={id} className={isCurrent ? 'current-menu-item dropdown' : ''}>
+          {isInternal ? (
+            <Link
+              href={itemUri}
+              {...(isCurrent ? { 'aria-current': 'true' } : {})}
+            >
+              {label}
+            </Link>
+          ) : (
+            <a href={itemUri}>{label}</a>
+          )}
+        </li>
+      </div>
     ) : (
       []
     );
@@ -235,13 +250,14 @@ const Header = () => {
         so we still had to preserve that old markup (with some modifications).
 
         In short: this piece relies in part on CSS from the UTK design-system. So
-        if the design-system's main-nav is altered in the future, it will be important
+        if the design-system'sub main-nav is altered in the future, it will be important
         to check the behavior of this piece.
       */}
+        {/* manually duplicating WDS 1.1.2 structure */}
         <div
           id="mobileMainNav"
           className="main-menu-wrapper offcanvas offcanvas-end"
-          tabindex="-1"
+          // tabindex="-1"
           data-max-breakpoint="600"
         >
           <div className="offcanvas-header">
@@ -308,7 +324,7 @@ const Header = () => {
                     <span className="bold-holder">
                       <span className="real-title">Sample Page</span>
                       <span className="bold-wrapper" aria-hidden="true">
-                        Sample Page
+                        Sample Page 2
                       </span>
                     </span>
                   </a>
@@ -330,7 +346,8 @@ const Header = () => {
           expand="xl" /* important because it matches the breakpoint used for some styling inside */
           as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
           role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
-          className="py-0"
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
         >
           <div className="wp-block-group header-size-title-wrapper universal header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
           <div
@@ -384,8 +401,8 @@ const Header = () => {
       </header>
 
       {secondaryNavItems.length > 0 && (
-        <nav className="navbar-horizontal col-auto">
-          <ul id="secondary-menu" className="nav justify-content-center">
+        <nav className="dropdown-menu">
+          <ul id="" className="">
             {secondaryNavItems}
           </ul>
         </nav>
