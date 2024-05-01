@@ -257,7 +257,7 @@ const Header = () => {
         <div
           id="mobileMainNav"
           className="main-menu-wrapper offcanvas offcanvas-end"
-          // tabindex="-1"
+          tabIndex={-1}
           data-max-breakpoint="600"
         >
           <div className="offcanvas-header">

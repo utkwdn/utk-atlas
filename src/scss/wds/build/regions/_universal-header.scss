@@ -463,3 +463,46 @@ $menu-max-width: 1500;
     padding-top: 1.125rem;
   }
 }
+
+.nav-search-overlay {
+  position: absolute;
+  background: #ffffff;
+  padding-left: 50px;
+
+  .nav-search-inner {
+    display: flex;
+    align-items: center;
+
+    form {
+      display: flex;
+      margin-right: 5px;
+
+      input {
+        padding: 0.7rem 0.875rem;
+      }
+      button {
+        background: #4b4b4b;
+        border: none;
+        padding: 0 10px !important;
+
+        .button-inner {
+          svg {
+            fill: #ffffff;
+          }
+          span {
+            color: #ffffff;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .nav-search-close {
+      transform-origin: center;
+      background: none;
+      &:hover {
+        transition: all 0.2s ease-out;
+        transform: scale(1.3);
+      }
+    }
+  }
+}
