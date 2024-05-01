@@ -241,7 +241,7 @@ const Header = () => {
         <div
           id="mobileMainNav"
           className="main-menu-wrapper offcanvas offcanvas-end"
-          tabindex="-1"
+          tabIndex={-1}
           data-max-breakpoint="600"
         >
           <div className="offcanvas-header">
@@ -263,7 +263,7 @@ const Header = () => {
               className="form-inline hidden-print mt-4"
             >
               <div className="mb-3 input-group">
-                <label className="sr-only visually-hidden" for="g">
+                <label className="sr-only visually-hidden" htmlFor="g">
                   Search
                 </label>
                 <input
