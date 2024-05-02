@@ -101,14 +101,14 @@ const Header = () => {
       const childIsCurrent = childId === currentSecondLevelItemId;
 
       return childLabel && childUrl && childUri && childId ? (
-        <li key={childId} className={childIsCurrent ? 'dropdown' : ''}>
+        <li key={childId} className={childIsCurrent ? 'current' : ''}>
           {childIsInternal ? (
-            <Link
+            <Button
               href={childUri}
               {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
             >
               {childLabel}
-            </Link>
+            </Button>
           ) : (
             <a href={childUri}>{childLabel}</a>
           )}
@@ -130,9 +130,6 @@ const Header = () => {
         {isInternal ? (
           <Link
             href={itemUri}
-            className="dropdown-toggle show"
-            data-bs-toggle="dropdown"
-            data-bs-display="static"
             {...(isCurrent ? { 'aria-current': 'true' } : {})}
           >
             <span className="bold-holder">

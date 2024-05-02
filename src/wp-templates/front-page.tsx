@@ -69,7 +69,6 @@ FrontPage.query = gql(`
     }
   }
 `);
-// End Temporarily Commenting out – ID! Error
 
 FrontPage.variables = ({ databaseId }, ctx) => {
   return {
