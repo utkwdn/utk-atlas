@@ -3,8 +3,6 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-
-
 // UT Grays
 $utgray1: #f6f6f6;
 $utgray2: #e0e0e0;
@@ -46,8 +44,7 @@ $grays: map-merge(
 $white: #fff;
 $utorange: #ff8200;
 $utlimestone: rgb(240, 237, 227);
-// $utsmokey: rgb(88, 89, 91); //  Atlas original setting
-$utsmokey: #4b4b4b; // WDS 1.1.2 change
+$utsmokey: #4b4b4b;
 $uttorch: rgb(230, 89, 51);
 $uttorchweb: #d5431a;
 $utriver: rgb(81, 124, 150);
@@ -70,7 +67,6 @@ $utcoolsmokey: #313e48;
 $utcoolrock: #d9dfe3;
 $utlinkriver: #1a73c5;
 $utlinkhover: #114c81;
-$utalert: #D31259; // does not exist in WDS 1.1.2
 
 //UT Branding Colors Modify
 $utlimestone-d: rgb(213, 211, 205);
@@ -117,7 +113,7 @@ $danger: $red !default;
 $light: $utgray1 !default;
 $dark: $utsmokeytext !default;
 
-$enable-dark-mode: false; // Added from WDS 1.1.2
+$enable-dark-mode: false;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -128,25 +124,22 @@ $theme-colors: map-merge(
     'gray2': $utgray2,
     'summitt': $utsummitt,
     'utlink': $utlinkriver,
-    'utsearch' : $utgray2,
     'dark': $dark,
-    // 'light': $utgray1, // Atlas original setting
-    'light': $light, // WDS 1.1.2 difference
-   // 'torch': $uttorchweb,
-   // 'sunsphere': $utsunsphere,
-   // 'fountain': $utfountain,
-   // 'globe': $utglobe,
-   // 'valley': $utvalley,
-  //  'switchgrass': $utswitchgrass,
-   // 'leconte': $utleconte,
+    'light': $light,
+    // "torch": $uttorchweb,
+    // "sunsphere": $utsunsphere,
+    // "fountain": $utfountain,
+    // "globe": $utglobe,
+    // "valley": $utvalley,
+    // "switchgrass": $utswitchgrass,
+    // "leconte":     $utleconte,
     'white': $white,
   ),
   $theme-colors
 );
-
 // extend wp colors
 .has-smokey-color {
-color:$utsmokey;
+  color: $utsmokey;
 }
 
 // Customize the light and dark text colors for use in our color contrast function.
@@ -192,9 +185,11 @@ $enable-deprecation-messages: true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem;
+$spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
+
+// TTANW-02 due to commenting out @import 'bootstrap/scss/maps in _screen.scss. This can't build.
 $spacers: map-merge(
   (
     0: 0,
@@ -299,33 +294,23 @@ $nav-link-padding-y: 0.5rem !default;
 $nav-link-padding-x: 1rem !default;
 $nav-link-font-size: null !default;
 $nav-link-font-weight: null !default;
-// $nav-link-color: $utsmokeytext; // Atlas original setting
-$nav-link-color: $link-color !default; // WDS 1.1.2 difference
+$nav-link-color: $link-color !default;
 $nav-link-hover-color: $link-hover-color !default;
 $nav-link-transition: color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 $nav-link-disabled-color: $gray-600 !default;
 
-// $nav-tabs-border-color: $gray-300 !default; // Atlas original setting
-$nav-tabs-border-color: rgb(179, 179, 179); // WDS 1.1.2 difference
-// $nav-tabs-border-width: $border-width !default; // Atlas original setting
-$nav-tabs-border-width: $border-width; // WDS 1.1.2 difference
-// $nav-tabs-border-radius: $border-radius !default; // Atlas original setting
-$nav-tabs-border-radius: 0.45rem; // WDS 1.1.2 difference
-// $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default; // Atlas original setting
-$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color; // WDS 1.1.2 difference
-// $nav-tabs-link-active-color: $gray-700 !default; // Atlas original setting
-$nav-tabs-link-active-color: $gray-700; // WDS 1.1.2 difference
-// $nav-tabs-link-active-bg: $body-bg !default; // Atlas original setting
-$nav-tabs-link-active-bg: $gray-100; // WDS 1.1.2 difference
-// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default; // Atlas original setting
+$nav-tabs-border-color: rgb(179, 179, 179);
+$nav-tabs-border-width: $border-width;
+$nav-tabs-border-radius: 0.45rem;
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $gray-700;
+$nav-tabs-link-active-bg: $gray-100;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
 
-// $nav-pills-border-radius: $border-radius 0.45rem 0.45rem 0 0; // Atlas original setting
-$nav-pills-border-radius: $border-radius; // WDS 1.1.2 difference
-$nav-pills-link-active-color: $utsmokeytext ;
-$nav-pills-link-active-bg: $utgray1 !default; // Atlas original setting
-$nav-pills-link-active-bg: $utgray1; // WDS 1.1.2 difference
+$nav-pills-border-radius: $border-radius;
+$nav-pills-link-active-color: $utsmokeytext;
+$nav-pills-link-active-bg: $utgray1;
 
 // Typography
 //
@@ -333,14 +318,9 @@ $nav-pills-link-active-bg: $utgray1; // WDS 1.1.2 difference
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
-sans-serif !default;
-// WDS 1.1.2 difference. WDS still set to use Gotham Line 319 in WDS _custom_variables file
-
-// stylelint-disable value-keyword-case
-// $font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
-//   'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-
+$font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
+  'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
+  sans-serif !default;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
   'Liberation Mono', 'Courier New', monospace !default;
@@ -348,8 +328,11 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 $font-family-base: var(--#{$variable-prefix}font-sans-serif) !default;
 $font-family-code: var(--#{$variable-prefix}font-monospace) !default;
 
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
+  'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
-$font-size-lg: $font-size-base * 1.1;
+$font-size-lg: $font-size-base * 1.1 !default;
 $font-size-xlg: $font-size-base * 1.25;
 $font-size-sm: $font-size-base * 0.875 !default;
 
@@ -367,14 +350,41 @@ $line-height-base: 1.5 !default;
 // VAL determined by 1.36 scale:  H1 VAL / 1.36 = H2 VAL (based on 11.5vw starting point)
 // MAX size determined by 1.36 scale divided by $font-size-base (base h1 is 4.653rem)
 
-$h1-font-size: clamp((calc($font-size-base * 2.24)), 11.5vw, (calc($font-size-base * 3.7224))); //max size is 4.653rem min-size 2.8rem
-$h2-font-size: clamp((calc($font-size-base * 1.647)), 8.4558vw, (calc($font-size-base * 2.7368))); // max size is 3.421rem
-$h3-font-size: clamp((calc($font-size-base * 1.211)), 6.2175vw, (calc($font-size-base * 2.012))); // max size is 2.515rem
-$h4-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
-$h5-font-size: clamp((calc($font-size-base * .9)), 3.362vw, (calc($font-size-base *  1.088))); // max size is  1.36rem
-$h6-font-size: clamp((calc($font-size-base * .8)), 2.661vw, (calc($font-size-base *  0.8))); // max size is  1rem
-$p-font-size: clamp((calc($font-size-base * .9)), 3.362vw, (calc($font-size-base))); // max size is  1rem
-
+$h1-font-size: clamp(
+  (calc($font-size-base * 2.24)),
+  11.5vw,
+  (calc($font-size-base * 3.7224))
+); //max size is 4.653rem min-size 2.8rem
+$h2-font-size: clamp(
+  (calc($font-size-base * 1.647)),
+  8.4558vw,
+  (calc($font-size-base * 2.7368))
+); // max size is 3.421rem
+$h3-font-size: clamp(
+  (calc($font-size-base * 1.211)),
+  6.2175vw,
+  (calc($font-size-base * 2.012))
+); // max size is 2.515rem
+$h4-font-size: clamp(
+  (calc($font-size-base * 1)),
+  4.572vw,
+  (calc($font-size-base * 1.48))
+); // max size is  1.85rem
+$h5-font-size: clamp(
+  (calc($font-size-base * 0.9)),
+  3.362vw,
+  (calc($font-size-base * 1.088))
+); // max size is  1.36rem
+$h6-font-size: clamp(
+  (calc($font-size-base * 0.8)),
+  2.661vw,
+  (calc($font-size-base * 0.8))
+); // max size is  1rem
+$p-font-size: clamp(
+  (calc($font-size-base * 0.9)),
+  3.362vw,
+  (calc($font-size-base))
+); // max size is  1rem
 
 $headings-margin-bottom: calc($spacer / 2) !default;
 $headings-font-family: null !default;
@@ -391,16 +401,20 @@ $display-font-sizes: (
   6: 3.5rem,
 ) !default;
 
-
-
 $display-font-weight: 900 !default;
-$display-line-height: .9 !default;
+$display-line-height: 0.9 !default;
+
+$lead-font-size: $font-size-base * 1.25 !default;
+$lead-font-weight: 200 !default;
 
 $hr-border-color: rgba($utsmokey, 0.25) !default;
 
 // scss-docs-start type-variables
-$lead-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
-// $lead-font-size: $h4-font-size;
+$lead-font-size: clamp(
+  (calc($font-size-base * 1)),
+  4.572vw,
+  (calc($font-size-base * 1.48))
+); // max size is  1.85rem
 $lead-font-weight: $font-weight-light;
 
 $small-font-size: 0.875em !default;
@@ -447,14 +461,14 @@ $paragraph-margin-bottom: 1rem !default;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-// Theme.json layout variables
+// Theme.json layout variables used in atlas
 // New variables to recreate ones generated from theme.json
 // Need to make sure if theme.json changes settings for layout or
-// if we change this width here – both places get updated! 
+// if we change this width here – both places get updated!
 // var(--wp--style--global--content-size)
-$global-layout-content: 1500px;
+// $global-layout-content: 1500px;
 // var(--wp--style--global--wide-size)
-$gloabl-layout-wide: 80vw;
+// $gloabl-layout-wide: 80vw;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -492,7 +506,7 @@ $line-height-sm: 1.5 !default;
 $border-width: $spacer * 0.1 !default; /* 1px */
 $border-color: #555 !default;
 
-$border-radius: 0 !default;
+$border-radius: 0 !default; /* .25rem */
 $border-radius-lg: 0 !default; /* .3rem */
 $border-radius-sm: 0 !default; /* .2rem */
 
@@ -834,7 +848,7 @@ $input-group-addon-padding-y: $input-padding-y !default;
 $input-group-addon-padding-x: $input-padding-x !default;
 $input-group-addon-font-weight: $input-font-weight !default;
 $input-group-addon-color: $input-color !default;
-$input-group-addon-bg: $utorange ;
+$input-group-addon-bg: $gray-200 !default;
 $input-group-addon-border-color: $input-border-color !default;
 // scss-docs-end input-group-variables
 
@@ -1001,7 +1015,7 @@ $card-img-overlay-padding: $spacer !default;
 $accordion-padding-y: 1rem !default;
 $accordion-padding-x: 1.25rem !default;
 $accordion-color: $body-color !default;
-$accordion-bg: null;
+$accordion-bg: nil;
 $accordion-border-width: $border-width !default;
 $accordion-border-color: rgba($black, 0.125) !default;
 $accordion-border-radius: $border-radius !default;
@@ -1034,52 +1048,51 @@ $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/20
 $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
 // scss-docs-end accordion-variables
 
-
-
 // Modals
 
 // scss-docs-start modal-variables
-$modal-inner-padding:               $spacer;
+$modal-inner-padding: $spacer;
 
-$modal-footer-margin-between:       .5rem !default;
+$modal-footer-margin-between: 0.5rem !default;
 
-$modal-dialog-margin:               .5rem !default;
-$modal-dialog-margin-y-sm-up:       1.75rem !default;
+$modal-dialog-margin: 0.5rem !default;
+$modal-dialog-margin-y-sm-up: 1.75rem !default;
 
-$modal-title-line-height:           $line-height-base !default;
+$modal-title-line-height: $line-height-base !default;
 
-$modal-content-color:               $utsmokeytext;
-$modal-content-bg:                  $white !default;
-$modal-content-border-color:        rgba($white, .5) ;
-$modal-content-border-width:        0;
-$modal-content-border-radius:       $border-radius-lg !default;
-$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
-$modal-content-box-shadow-xs:       $box-shadow-sm !default;
-$modal-content-box-shadow-sm-up:    $box-shadow !default;
+$modal-content-color: $utsmokeytext;
+$modal-content-bg: $white !default;
+$modal-content-border-color: rgba($white, 0.5);
+$modal-content-border-width: 0;
+$modal-content-border-radius: $border-radius-lg !default;
+$modal-content-inner-border-radius: subtract(
+  $modal-content-border-radius,
+  $modal-content-border-width
+) !default;
+$modal-content-box-shadow-xs: $box-shadow-sm !default;
+$modal-content-box-shadow-sm-up: $box-shadow !default;
 
-$modal-backdrop-bg:                 $utcoolsmokey;
-$modal-backdrop-opacity:            .9 ;
-$modal-header-border-color:         $border-color !default;
-$modal-footer-border-color:         $modal-header-border-color !default;
-$modal-header-border-width:         $modal-content-border-width !default;
-$modal-footer-border-width:         $modal-header-border-width !default;
-$modal-header-padding-y:            $modal-inner-padding !default;
-$modal-header-padding-x:            $modal-inner-padding !default;
-$modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+$modal-backdrop-bg: $utcoolsmokey;
+$modal-backdrop-opacity: 0.9;
+$modal-header-border-color: $border-color !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-header-border-width: $modal-content-border-width !default;
+$modal-footer-border-width: $modal-header-border-width !default;
+$modal-header-padding-y: $modal-inner-padding !default;
+$modal-header-padding-x: $modal-inner-padding !default;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
 
-$modal-sm:                          300px !default;
-$modal-md:                          500px !default;
-$modal-lg:                          800px !default;
-$modal-xl:                          1140px !default;
+$modal-sm: 300px !default;
+$modal-md: 500px !default;
+$modal-lg: 800px !default;
+$modal-xl: 1140px !default;
 
-$modal-fade-transform:              translate(0, -50px) !default;
-$modal-show-transform:              none !default;
-$modal-transition:                  transform .3s ease-out !default;
-$modal-scale-transform:             scale(1.02) ;
-// scss-docs-end modal-variables
+$modal-fade-transform: translate(0, -50px) !default;
+$modal-show-transform: none !default;
+$modal-transition: transform 0.3s ease-out !default;
+$modal-scale-transform: scale(1.02);
 
 // scss-docs-start offcanvas-variables
-// This entire offcanvas section is a WDS 1.1.2 difference
 $offcanvas-padding-y: 1rem;
 $offcanvas-padding-x: 1rem;
 $offcanvas-horizontal-width: 80vw;
@@ -1094,21 +1107,3 @@ $offcanvas-box-shadow: $modal-content-box-shadow-xs !default;
 $offcanvas-backdrop-bg: $modal-backdrop-bg !default;
 $offcanvas-backdrop-opacity: $modal-backdrop-opacity !default;
 // scss-docs-end offcanvas-variables
-
-// Close
-
-// scss-docs-start close-variables
-$btn-close-width:            1em !default;
-$btn-close-height:           $btn-close-width !default;
-$btn-close-padding-x:        .25em !default;
-$btn-close-padding-y:        $btn-close-padding-x !default;
-$btn-close-color:            $utsmokey;
-$btn-close-bg:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#{$btn-close-color}'> <path d='M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z'/></svg>");
-$btn-close-focus-shadow:     $input-btn-focus-box-shadow !default;
-$btn-close-opacity:          .5 !default;
-$btn-close-hover-opacity:    .75 !default;
-$btn-close-focus-opacity:    1 !default;
-$btn-close-disabled-opacity: .25 !default;
-$btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%) !default;
-// scss-docs-end close-variables
-

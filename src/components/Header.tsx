@@ -9,6 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
+import Button from 'react-bootstrap/Button';
 
 const MAIN_MENU_ID = 'main-menu';
 
@@ -100,14 +101,14 @@ const Header = () => {
       const childIsCurrent = childId === currentSecondLevelItemId;
 
       return childLabel && childUrl && childUri && childId ? (
-        <li key={childId} className={childIsCurrent ? 'current-menu-item' : ''}>
+        <li key={childId} className={childIsCurrent ? 'current' : ''}>
           {childIsInternal ? (
-            <Link
+            <Button
               href={childUri}
               {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
             >
               {childLabel}
-            </Link>
+            </Button>
           ) : (
             <a href={childUri}>{childLabel}</a>
           )}
@@ -120,28 +121,37 @@ const Header = () => {
     const isInternal = url !== itemUri;
 
     const isCurrent = id === currentTopLevelItemId;
-    const currentClasses = isCurrent
-      ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
-      : '';
+    const currentClasses = isCurrent ? '' : '';
 
-    const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
+    const hasChildrenClasses = hasChildren ? '' : '';
 
     return !parentId && id && url && itemUri && label ? (
       <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
         {isInternal ? (
           <Link
             href={itemUri}
-            className="main-navigation"
             {...(isCurrent ? { 'aria-current': 'true' } : {})}
           >
-            {label}
+            <span className="bold-holder">
+              <span className="real-title">{label}</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                {label}
+              </span>
+            </span>
           </Link>
         ) : (
-          <a href={itemUri} className="main-navigation">
-            {label}
+          <a href={itemUri} className="bold-holder">
+            <span className="bold-holder">
+              {' '}
+              <span className="real-title"> {label}</span>
+            </span>
           </a>
         )}
-        {subNavItems.length > 0 && <ul className="sub-menu">{subNavItems}</ul>}
+        {subNavItems.length > 0 && (
+          <div className="dropdown-menu ">
+            <ul>{subNavItems}</ul>
+          </div>
+        )}
       </li>
     ) : (
       []
@@ -163,18 +173,20 @@ const Header = () => {
     const isCurrent = id === currentSecondLevelItemId;
 
     return url && itemUri && label && id ? (
-      <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
-        {isInternal ? (
-          <Link
-            href={itemUri}
-            {...(isCurrent ? { 'aria-current': 'true' } : {})}
-          >
-            {label}
-          </Link>
-        ) : (
-          <a href={itemUri}>{label}</a>
-        )}
-      </li>
+      <div className={isCurrent ? 'dropdown-menu show' : ''}>
+        <li key={id} className={isCurrent ? 'current-menu-item dropdown' : ''}>
+          {isInternal ? (
+            <Link
+              href={itemUri}
+              {...(isCurrent ? { 'aria-current': 'true' } : {})}
+            >
+              {label}
+            </Link>
+          ) : (
+            <a href={itemUri}>{label}</a>
+          )}
+        </li>
+      </div>
     ) : (
       []
     );
@@ -225,9 +237,8 @@ const Header = () => {
 
   return (
     <>
-      <UniversalHeader />
-
-      <header id="masthead" className="site-header">
+      <header className="site-header">
+        <UniversalHeader />
         {/*
         Note: this NavBar was originally entirely non-React markup that came
         from the UTK design-system. However, because of the JavaScript needs of
@@ -236,26 +247,112 @@ const Header = () => {
         so we still had to preserve that old markup (with some modifications).
 
         In short: this piece relies in part on CSS from the UTK design-system. So
-        if the design-system's main-nav is altered in the future, it will be important
+        if the design-system'sub main-nav is altered in the future, it will be important
         to check the behavior of this piece.
       */}
+        {/* manually duplicating WDS 1.1.2 structure */}
+        <div
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
+          tabIndex={-1}
+          data-max-breakpoint="600"
+        >
+          <div className="offcanvas-header">
+            <button
+              className="btn-close"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="main-menu offcanvas-body">
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper utility-nav-menu-mobile">
+              <menu id="utility-nav-menu-mobile" className="utk-nav-menu">
+                {primaryNavItems}
+              </menu>
+            </div>
+            <form
+              id="cse-searchbox-form"
+              className="form-inline hidden-print mt-4"
+            >
+              <div className="mb-3 input-group">
+                <label className="sr-only visually-hidden" htmlFor="g">
+                  Search
+                </label>
+                <input
+                  id="site-search-field-offcanvas"
+                  className="form-control"
+                  type="search"
+                  title="Search this site"
+                  placeholder="Search"
+                  name="s"
+                ></input>
+                <button className="btn btn-utlink" type="submit">
+                  <svg
+                    width="14"
+                    height="13"
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Search Icon</title>
+                    <circle
+                      cx="6.12"
+                      cy="5.73"
+                      r="4.22"
+                      transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                      stroke-width="2"
+                    ></circle>
+                    <line
+                      x1="9.35"
+                      y1="8.41"
+                      x2="12.71"
+                      y2="11.8"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav-menu-list">
+              <menu id="mobile-nav-menu" className="utk-nav-menu">
+                <li className="collapsible-menu-item">
+                  <a className="" href="#">
+                    <span className="bold-holder">
+                      <span className="real-title">Sample Page</span>
+                      <span className="bold-wrapper" aria-hidden="true">
+                        Sample Page 2
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              </menu>
+            </div>
+          </div>
+        </div>
+        <div className="wp-block-group header-site-title-wrapper universal-header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
+        <div
+          id="main-nav--large"
+          className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
+        >
+          <menu id="" className="utk-nav-menu">
+            {primaryNavItems}
+          </menu>
+        </div>
+        {/* end manually duplicating WDS 1.1.2 structure */}
         <Navbar
           expand="xl" /* important because it matches the breakpoint used for some styling inside */
           as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
           role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
-          className="py-0"
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
         >
-          <div className="container-xxl">
-            <div className="row justify-content-between py-3 py-md-4 py-lg-4 py-xl-0 w-100">
-              <div className="site-logo">
-                <Link href="/" className="d-grid h-100">
-                  <img
-                    src="/images/chrome/logo-horizontal-left-smokey.svg"
-                    alt="University of Tennessee, Knoxville"
-                  />
-                </Link>
-              </div>
-
+          <div className="wp-block-group header-size-title-wrapper universal header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
+          <div
+            id="main-nav--large"
+            className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
+          >
+            <menu className="utk-nav-menu">
               <Navbar.Toggle
                 aria-controls={MAIN_MENU_ID}
                 className="navbar-toggler col-auto mr-auto"
@@ -296,14 +393,14 @@ const Header = () => {
                   </nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
-            </div>
+            </menu>
           </div>
         </Navbar>
       </header>
 
       {secondaryNavItems.length > 0 && (
-        <nav className="navbar-horizontal col-auto">
-          <ul id="secondary-menu" className="nav justify-content-center">
+        <nav className="dropdown-menu">
+          <ul id="" className="">
             {secondaryNavItems}
           </ul>
         </nav>
