@@ -35,7 +35,6 @@ const Header = () => {
   const [alertDisplay, setAlertDisplay] = useState('none');
   const [alertDescription, setAlertDescription] = useState('');
   const [alertDate, setAlertDate] = useState('');
-  const [activeSubmenu, setActiveSubmenu] = useState('');
 
   const { asPath, events: routerEvents } = useRouter();
 
@@ -236,110 +235,176 @@ const Header = () => {
     fetchAlert();
   }, []);
 
-  // console.log(links);
-
   return (
     <>
       <header className="site-header">
         <UniversalHeader />
+        {/*
+        Note: this NavBar was originally entirely non-React markup that came
+        from the UTK design-system. However, because of the JavaScript needs of
+        that design-system pattern, we had to "Reactify" it here (which we did
+        with React-Bootstrap). But the styling was largely tied to the old markup,
+        so we still had to preserve that old markup (with some modifications).
 
+        In short: this piece relies in part on CSS from the UTK design-system. So
+        if the design-system'sub main-nav is altered in the future, it will be important
+        to check the behavior of this piece.
+      */}
+        {/* manually duplicating WDS 1.1.2 structure */}
+        <div
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
+          tabIndex={-1}
+          data-max-breakpoint="600"
+        >
+          <div className="offcanvas-header">
+            <button
+              className="btn-close"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="main-menu offcanvas-body">
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper utility-nav-menu-mobile">
+              <menu id="utility-nav-menu-mobile" className="utk-nav-menu">
+                {primaryNavItems}
+              </menu>
+            </div>
+            <form
+              id="cse-searchbox-form"
+              className="form-inline hidden-print mt-4"
+            >
+              <div className="mb-3 input-group">
+                <label className="sr-only visually-hidden" htmlFor="g">
+                  Search
+                </label>
+                <input
+                  id="site-search-field-offcanvas"
+                  className="form-control"
+                  type="search"
+                  title="Search this site"
+                  placeholder="Search"
+                  name="s"
+                ></input>
+                <button className="btn btn-utlink" type="submit">
+                  <svg
+                    width="14"
+                    height="13"
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Search Icon</title>
+                    <circle
+                      cx="6.12"
+                      cy="5.73"
+                      r="4.22"
+                      transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                      stroke-width="2"
+                    ></circle>
+                    <line
+                      x1="9.35"
+                      y1="8.41"
+                      x2="12.71"
+                      y2="11.8"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav-menu-list">
+              <menu id="mobile-nav-menu" className="utk-nav-menu">
+                <li className="collapsible-menu-item">
+                  <a className="" href="#">
+                    <span className="bold-holder">
+                      <span className="real-title">Sample Page</span>
+                      <span className="bold-wrapper" aria-hidden="true">
+                        Sample Page 2
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              </menu>
+            </div>
+          </div>
+        </div>
         <div className="wp-block-group header-site-title-wrapper universal-header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
-
         <div
           id="main-nav--large"
           className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
         >
           <menu id="" className="utk-nav-menu">
-            {links
-              ?.filter((link) => link.parentId === null)
-              ?.map((this_link, i) => {
-                const subItems = this_link.childItems?.nodes;
-                const subItemCount = this_link.childItems?.nodes.length || 0;
-                const hasSubItems = subItemCount > 0;
-                const linkAddress = this_link.uri || '';
-                const linkLabel = this_link.label || '';
-                const isActive = activeSubmenu === linkLabel;
-                return hasSubItems ? (
-                  <li key={this_link.id}>
-                    <button
-                      data-bs-toggle="dropdown"
-                      data-bs-display="static"
-                      aria-expanded={isActive ? 'true' : 'false'}
-                      className={
-                        isActive ? 'dropdown-toggle' : 'dropdown-toggle show'
-                      }
-                      onClick={() =>
-                        setActiveSubmenu(isActive ? '' : linkLabel)
-                      }
-                    >
-                      <span className="bold-holder">
-                        <span className="real-title">{linkLabel}</span>
-                        <span className="bold-wrapper" aria-hidden="true">
-                          {linkLabel}
-                        </span>
-                      </span>
-                    </button>
-                    <div
-                      id={linkLabel}
-                      className="dropdown-menu"
-                      style={{
-                        visibility: isActive ? 'visible' : 'hidden',
-                        opacity: isActive ? 1 : 0,
-                      }}
-                    >
-                      <ul style={{ paddingLeft: 0, marginBottom: 0 }}>
-                        <li className=" dropdown">
-                          <a href={linkAddress}>
-                            <span className="bold-holder">
-                              <span className="real-title">
-                                {linkLabel} Overview
-                              </span>
-                              <span className="bold-wrapper" aria-hidden="true">
-                                {linkLabel} Overview
-                              </span>
-                            </span>
-                          </a>
-                        </li>
-                        {subItems?.map((this_item, i) => {
-                          const subItemLink = this_item.uri || '';
-                          const subItemLabel = this_item.label || '';
-                          return (
-                            <li className=" dropdown" key={this_item.id}>
-                              <a href={subItemLink}>
-                                <span className="bold-holder">
-                                  <span className="real-title">
-                                    {subItemLabel}
-                                  </span>
-                                  <span
-                                    className="bold-wrapper"
-                                    aria-hidden="true"
-                                  >
-                                    {subItemLabel}
-                                  </span>
-                                </span>
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </li>
-                ) : (
-                  <li key={this_link.id}>
-                    <a href={linkAddress}>
-                      <span className="bold-holder">
-                        <span className="real-title">{linkLabel}</span>
-                        <span className="bold-wrapper" aria-hidden="true">
-                          {linkLabel}
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
+            {primaryNavItems}
           </menu>
         </div>
+        {/* end manually duplicating WDS 1.1.2 structure */}
+        <Navbar
+          expand="xl" /* important because it matches the breakpoint used for some styling inside */
+          as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
+          role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
+          id="mobileMainNav"
+          className="main-menu-wrapper offcanvas offcanvas-end"
+        >
+          <div className="wp-block-group header-size-title-wrapper universal header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
+          <div
+            id="main-nav--large"
+            className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
+          >
+            <menu className="utk-nav-menu">
+              <Navbar.Toggle
+                aria-controls={MAIN_MENU_ID}
+                className="navbar-toggler col-auto mr-auto"
+                id="mobile-menu-open"
+                label="Open menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                >
+                  <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+                </svg>
+              </Navbar.Toggle>
+
+              <Navbar.Offcanvas
+                id={MAIN_MENU_ID}
+                placement="end"
+                aria-label="Menu"
+              >
+                <Offcanvas.Header
+                  className="justify-content-end"
+                  closeButton
+                  closeLabel="Close Menu"
+                />
+
+                <Offcanvas.Body className="justify-content-end">
+                  <nav aria-label="Main">
+                    <div className="menu-main-site-container">
+                      {primaryNavItems.length > 0 && (
+                        <ul id="primary-menu" className="list-unstyled mt-0">
+                          {primaryNavItems}
+                        </ul>
+                      )}
+                    </div>
+                  </nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </menu>
+          </div>
+        </Navbar>
       </header>
+
+      {secondaryNavItems.length > 0 && (
+        <nav className="dropdown-menu">
+          <ul id="" className="">
+            {secondaryNavItems}
+          </ul>
+        </nav>
+      )}
 
       {/* UT Alert Banner */}
       {/* Possibly add timer to refresh status at some point */}
