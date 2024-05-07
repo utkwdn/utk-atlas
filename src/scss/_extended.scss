@@ -80,10 +80,14 @@ body {
 }
 .gallery-home {
   .content-card {
+    padding: 0 !important;
     //cards in the corner of HOME SWEET HOME
     h3 {
       margin-top: calc($spacer * 2);
     }
+  }
+  .gallery-img-card {
+    padding: 0 !important;
   }
   .gallery-img-card img {
     // this makes the cards appear in the group.
