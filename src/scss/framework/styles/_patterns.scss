@@ -532,8 +532,18 @@
   height: 100%;
   width: auto;
 }
-
+div:has(> .checker-chunk-overlay) {
+  // find the parent of full width checker-chunk-overlay on /admissions and remove global padding
+  &.has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 .checker-chunk-overlay {
+  &.has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   position: relative;
 
   &:before {
