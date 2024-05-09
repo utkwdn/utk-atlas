@@ -1,35 +1,11 @@
 // import styles from 'scss/components/Header.module.scss';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-// import { gql, useQuery } from '@apollo/client';
 import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
 import { MainNavQuery } from '../__generated__/graphql';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
-import Button from 'react-bootstrap/Button';
-
-const MAIN_MENU_ID = 'main-menu';
-
-/**
- * Closes the mobile menu if open. Not a very elegant or "React-y" way
- * of doing this, but it's simple and effective, and we're a bit limited
- * by the React-Bootstrap API here.
- */
-const closeMenuIfOpen = () => {
-  const mainMenu = document.querySelector(`#${MAIN_MENU_ID}`);
-  if (!(mainMenu instanceof HTMLElement)) return;
-
-  const mainMenuIsModal = mainMenu.hasAttribute('aria-modal');
-  if (!mainMenuIsModal) return;
-
-  const closeButton = mainMenu.querySelector(`.offcanvas-header button`);
-  if (!(closeButton instanceof HTMLButtonElement)) return;
-
-  closeButton.click();
-};
 
 const Header = () => {
   const [alertDisplay, setAlertDisplay] = useState('none');
@@ -37,15 +13,7 @@ const Header = () => {
   const [alertDate, setAlertDate] = useState('');
   const [activeSubmenu, setActiveSubmenu] = useState('');
 
-  const { asPath, events: routerEvents } = useRouter();
-
-  // make sure that the mobile menu closes upon internal navigation
-  useEffect(() => {
-    routerEvents.on('routeChangeStart', closeMenuIfOpen);
-    return () => {
-      routerEvents.off('routeChangeStart', closeMenuIfOpen);
-    };
-  });
+  const { asPath } = useRouter();
 
   const uri =
     asPath && asPath !== '/' ? asPath.split('?')[0].split('#')[0] + '/' : null;
@@ -63,8 +31,6 @@ const Header = () => {
 
   const links = navQueryData?.menuItems?.nodes || [];
 
-  console.log(links);
-
   /*
     I *think* these conditional data-selections are okay, because we get all
     the `link.uri` properties in `primaryNavItems` unconditionally.
@@ -78,122 +44,6 @@ const Header = () => {
   const currentSecondLevelItemId = firstTwoUriParts
     ? links.find((link) => link?.uri === `${firstTwoUriParts}/`)?.id
     : null;
-
-  /** Primary nav items (desktop and mobile) */
-  // const primaryNavItems = links.flatMap((link) => {
-  //   const parentId = link?.parentId;
-
-  //   const id = link?.id;
-  //   const url = link?.url;
-  //   /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-  //   const itemUri = link?.uri;
-  //   const label = link?.label;
-  //   const children = link?.childItems?.nodes || [];
-
-  //   const hasChildren = children.length > 0;
-
-  //   /** mobile-only sub-nav items for this primary-nav item (will be an empty array if there are none) */
-  //   const subNavItems = children.flatMap((child) => {
-  //     const childLabel = child?.label;
-  //     const childUrl = child?.url;
-  //     /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
-  //     const childUri = child?.uri;
-  //     const childId = child?.id;
-
-  //     const childIsInternal = childUrl !== childUri;
-  //     const childIsCurrent = childId === currentSecondLevelItemId;
-
-  //     return childLabel && childUrl && childUri && childId ? (
-  //       <li key={childId} className={childIsCurrent ? 'current' : ''}>
-  //         {childIsInternal ? (
-  //           <Button
-  //             href={childUri}
-  //             {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
-  //           >
-  //             {childLabel}
-  //           </Button>
-  //         ) : (
-  //           <a href={childUri}>{childLabel}</a>
-  //         )}
-  //       </li>
-  //     ) : (
-  //       []
-  //     );
-  //   });
-
-  //   const isInternal = url !== itemUri;
-
-  //   const isCurrent = id === currentTopLevelItemId;
-  //   const currentClasses = isCurrent ? '' : '';
-
-  //   const hasChildrenClasses = hasChildren ? '' : '';
-
-  //   return !parentId && id && url && itemUri && label ? (
-  //     <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
-  //       {isInternal ? (
-  //         <Link
-  //           href={itemUri}
-  //           {...(isCurrent ? { 'aria-current': 'true' } : {})}
-  //         >
-  //           <span className="bold-holder">
-  //             <span className="real-title">{label}</span>
-  //             <span className="bold-wrapper" aria-hidden="true">
-  //               {label}
-  //             </span>
-  //           </span>
-  //         </Link>
-  //       ) : (
-  //         <a href={itemUri} className="bold-holder">
-  //           <span className="bold-holder">
-  //             {' '}
-  //             <span className="real-title"> {label}</span>
-  //           </span>
-  //         </a>
-  //       )}
-  //       {subNavItems.length > 0 && (
-  //         <div className="dropdown-menu ">
-  //           <ul>{subNavItems}</ul>
-  //         </div>
-  //       )}
-  //     </li>
-  //   ) : (
-  //     []
-  //   );
-  // });
-
-  /** Desktop-only section-nav items (will be an empty array if there are none) */
-  // const secondaryNavItems = (
-  //   currentTopLevelItem?.childItems?.nodes || []
-  // ).flatMap((link) => {
-  //   const url = link?.url;
-  //   /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-  //   const itemUri = link?.uri;
-  //   const label = link?.label;
-  //   const id = link?.id;
-
-  //   // const isInternal = itemUri !== url;
-  //   const isInternal = Array.from(itemUri as string)[0] === '/';
-  //   const isCurrent = id === currentSecondLevelItemId;
-
-  //   return url && itemUri && label && id ? (
-  //     <div className={isCurrent ? 'dropdown-menu show' : ''}>
-  //       <li key={id} className={isCurrent ? 'current-menu-item dropdown' : ''}>
-  //         {isInternal ? (
-  //           <Link
-  //             href={itemUri}
-  //             {...(isCurrent ? { 'aria-current': 'true' } : {})}
-  //           >
-  //             {label}
-  //           </Link>
-  //         ) : (
-  //           <a href={itemUri}>{label}</a>
-  //         )}
-  //       </li>
-  //     </div>
-  //   ) : (
-  //     []
-  //   );
-  // });
 
   // Checking UT Alerts RSS and displaying an alert if it exists
   function fetchAlert() {
@@ -237,8 +87,6 @@ const Header = () => {
   useEffect(() => {
     fetchAlert();
   }, []);
-
-  // console.log(links);
 
   return (
     <>
