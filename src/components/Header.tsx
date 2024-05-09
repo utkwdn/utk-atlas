@@ -63,6 +63,8 @@ const Header = () => {
 
   const links = navQueryData?.menuItems?.nodes || [];
 
+  console.log(links);
+
   /*
     I *think* these conditional data-selections are okay, because we get all
     the `link.uri` properties in `primaryNavItems` unconditionally.
@@ -78,120 +80,120 @@ const Header = () => {
     : null;
 
   /** Primary nav items (desktop and mobile) */
-  const primaryNavItems = links.flatMap((link) => {
-    const parentId = link?.parentId;
+  // const primaryNavItems = links.flatMap((link) => {
+  //   const parentId = link?.parentId;
 
-    const id = link?.id;
-    const url = link?.url;
-    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-    const itemUri = link?.uri;
-    const label = link?.label;
-    const children = link?.childItems?.nodes || [];
+  //   const id = link?.id;
+  //   const url = link?.url;
+  //   /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
+  //   const itemUri = link?.uri;
+  //   const label = link?.label;
+  //   const children = link?.childItems?.nodes || [];
 
-    const hasChildren = children.length > 0;
+  //   const hasChildren = children.length > 0;
 
-    /** mobile-only sub-nav items for this primary-nav item (will be an empty array if there are none) */
-    const subNavItems = children.flatMap((child) => {
-      const childLabel = child?.label;
-      const childUrl = child?.url;
-      /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
-      const childUri = child?.uri;
-      const childId = child?.id;
+  //   /** mobile-only sub-nav items for this primary-nav item (will be an empty array if there are none) */
+  //   const subNavItems = children.flatMap((child) => {
+  //     const childLabel = child?.label;
+  //     const childUrl = child?.url;
+  //     /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
+  //     const childUri = child?.uri;
+  //     const childId = child?.id;
 
-      const childIsInternal = childUrl !== childUri;
-      const childIsCurrent = childId === currentSecondLevelItemId;
+  //     const childIsInternal = childUrl !== childUri;
+  //     const childIsCurrent = childId === currentSecondLevelItemId;
 
-      return childLabel && childUrl && childUri && childId ? (
-        <li key={childId} className={childIsCurrent ? 'current' : ''}>
-          {childIsInternal ? (
-            <Button
-              href={childUri}
-              {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
-            >
-              {childLabel}
-            </Button>
-          ) : (
-            <a href={childUri}>{childLabel}</a>
-          )}
-        </li>
-      ) : (
-        []
-      );
-    });
+  //     return childLabel && childUrl && childUri && childId ? (
+  //       <li key={childId} className={childIsCurrent ? 'current' : ''}>
+  //         {childIsInternal ? (
+  //           <Button
+  //             href={childUri}
+  //             {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
+  //           >
+  //             {childLabel}
+  //           </Button>
+  //         ) : (
+  //           <a href={childUri}>{childLabel}</a>
+  //         )}
+  //       </li>
+  //     ) : (
+  //       []
+  //     );
+  //   });
 
-    const isInternal = url !== itemUri;
+  //   const isInternal = url !== itemUri;
 
-    const isCurrent = id === currentTopLevelItemId;
-    const currentClasses = isCurrent ? '' : '';
+  //   const isCurrent = id === currentTopLevelItemId;
+  //   const currentClasses = isCurrent ? '' : '';
 
-    const hasChildrenClasses = hasChildren ? '' : '';
+  //   const hasChildrenClasses = hasChildren ? '' : '';
 
-    return !parentId && id && url && itemUri && label ? (
-      <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
-        {isInternal ? (
-          <Link
-            href={itemUri}
-            {...(isCurrent ? { 'aria-current': 'true' } : {})}
-          >
-            <span className="bold-holder">
-              <span className="real-title">{label}</span>
-              <span className="bold-wrapper" aria-hidden="true">
-                {label}
-              </span>
-            </span>
-          </Link>
-        ) : (
-          <a href={itemUri} className="bold-holder">
-            <span className="bold-holder">
-              {' '}
-              <span className="real-title"> {label}</span>
-            </span>
-          </a>
-        )}
-        {subNavItems.length > 0 && (
-          <div className="dropdown-menu ">
-            <ul>{subNavItems}</ul>
-          </div>
-        )}
-      </li>
-    ) : (
-      []
-    );
-  });
+  //   return !parentId && id && url && itemUri && label ? (
+  //     <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
+  //       {isInternal ? (
+  //         <Link
+  //           href={itemUri}
+  //           {...(isCurrent ? { 'aria-current': 'true' } : {})}
+  //         >
+  //           <span className="bold-holder">
+  //             <span className="real-title">{label}</span>
+  //             <span className="bold-wrapper" aria-hidden="true">
+  //               {label}
+  //             </span>
+  //           </span>
+  //         </Link>
+  //       ) : (
+  //         <a href={itemUri} className="bold-holder">
+  //           <span className="bold-holder">
+  //             {' '}
+  //             <span className="real-title"> {label}</span>
+  //           </span>
+  //         </a>
+  //       )}
+  //       {subNavItems.length > 0 && (
+  //         <div className="dropdown-menu ">
+  //           <ul>{subNavItems}</ul>
+  //         </div>
+  //       )}
+  //     </li>
+  //   ) : (
+  //     []
+  //   );
+  // });
 
   /** Desktop-only section-nav items (will be an empty array if there are none) */
-  const secondaryNavItems = (
-    currentTopLevelItem?.childItems?.nodes || []
-  ).flatMap((link) => {
-    const url = link?.url;
-    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-    const itemUri = link?.uri;
-    const label = link?.label;
-    const id = link?.id;
+  // const secondaryNavItems = (
+  //   currentTopLevelItem?.childItems?.nodes || []
+  // ).flatMap((link) => {
+  //   const url = link?.url;
+  //   /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
+  //   const itemUri = link?.uri;
+  //   const label = link?.label;
+  //   const id = link?.id;
 
-    // const isInternal = itemUri !== url;
-    const isInternal = Array.from(itemUri as string)[0] === '/';
-    const isCurrent = id === currentSecondLevelItemId;
+  //   // const isInternal = itemUri !== url;
+  //   const isInternal = Array.from(itemUri as string)[0] === '/';
+  //   const isCurrent = id === currentSecondLevelItemId;
 
-    return url && itemUri && label && id ? (
-      <div className={isCurrent ? 'dropdown-menu show' : ''}>
-        <li key={id} className={isCurrent ? 'current-menu-item dropdown' : ''}>
-          {isInternal ? (
-            <Link
-              href={itemUri}
-              {...(isCurrent ? { 'aria-current': 'true' } : {})}
-            >
-              {label}
-            </Link>
-          ) : (
-            <a href={itemUri}>{label}</a>
-          )}
-        </li>
-      </div>
-    ) : (
-      []
-    );
-  });
+  //   return url && itemUri && label && id ? (
+  //     <div className={isCurrent ? 'dropdown-menu show' : ''}>
+  //       <li key={id} className={isCurrent ? 'current-menu-item dropdown' : ''}>
+  //         {isInternal ? (
+  //           <Link
+  //             href={itemUri}
+  //             {...(isCurrent ? { 'aria-current': 'true' } : {})}
+  //           >
+  //             {label}
+  //           </Link>
+  //         ) : (
+  //           <a href={itemUri}>{label}</a>
+  //         )}
+  //       </li>
+  //     </div>
+  //   ) : (
+  //     []
+  //   );
+  // });
 
   // Checking UT Alerts RSS and displaying an alert if it exists
   function fetchAlert() {
@@ -258,18 +260,21 @@ const Header = () => {
                 const hasSubItems = subItemCount > 0;
                 const linkAddress = this_link.uri || '';
                 const linkLabel = this_link.label || '';
-                const isActive = activeSubmenu === linkLabel;
+                const isExpanded = activeSubmenu === linkLabel;
+                const isTopLevelActive = this_link.id === currentTopLevelItemId;
+                const isInternalTop = this_link.uri !== this_link.url;
                 return hasSubItems ? (
-                  <li key={this_link.id}>
+                  <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
                     <button
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
-                      aria-expanded={isActive ? 'true' : 'false'}
+                      aria-expanded={isExpanded ? 'true' : 'false'}
+                      aria-current={isTopLevelActive ? 'page' : 'false'}
                       className={
-                        isActive ? 'dropdown-toggle' : 'dropdown-toggle show'
+                        isExpanded ? 'dropdown-toggle' : 'dropdown-toggle show'
                       }
                       onClick={() =>
-                        setActiveSubmenu(isActive ? '' : linkLabel)
+                        setActiveSubmenu(isExpanded ? '' : linkLabel)
                       }
                     >
                       <span className="bold-holder">
@@ -283,41 +288,106 @@ const Header = () => {
                       id={linkLabel}
                       className="dropdown-menu"
                       style={{
-                        visibility: isActive ? 'visible' : 'hidden',
-                        opacity: isActive ? 1 : 0,
+                        visibility: isExpanded ? 'visible' : 'hidden',
+                        opacity: isExpanded ? 1 : 0,
                       }}
                     >
                       <ul style={{ paddingLeft: 0, marginBottom: 0 }}>
                         <li className=" dropdown">
-                          <a href={linkAddress}>
-                            <span className="bold-holder">
-                              <span className="real-title">
-                                {linkLabel} Overview
+                          {isInternalTop ? (
+                            <Link
+                              href={linkAddress}
+                              aria-current={
+                                isTopLevelActive &&
+                                currentSecondLevelItemId === null
+                                  ? 'page'
+                                  : 'false'
+                              }
+                            >
+                              <span className="bold-holder">
+                                <span className="real-title">
+                                  {linkLabel} Overview
+                                </span>
+                                <span
+                                  className="bold-wrapper"
+                                  aria-hidden="true"
+                                >
+                                  {linkLabel} Overview
+                                </span>
                               </span>
-                              <span className="bold-wrapper" aria-hidden="true">
-                                {linkLabel} Overview
+                            </Link>
+                          ) : (
+                            <a
+                              href={linkAddress}
+                              aria-current={
+                                isTopLevelActive &&
+                                currentSecondLevelItemId === null
+                                  ? 'page'
+                                  : 'false'
+                              }
+                            >
+                              <span className="bold-holder">
+                                <span className="real-title">
+                                  {linkLabel} Overview
+                                </span>
+                                <span
+                                  className="bold-wrapper"
+                                  aria-hidden="true"
+                                >
+                                  {linkLabel} Overview
+                                </span>
                               </span>
-                            </span>
-                          </a>
+                            </a>
+                          )}
                         </li>
                         {subItems?.map((this_item, i) => {
                           const subItemLink = this_item.uri || '';
                           const subItemLabel = this_item.label || '';
+                          const isSecondLevelActive =
+                            this_item.id === currentSecondLevelItemId;
+                          const isInternalSecondary =
+                            this_item.uri !== this_item.url;
                           return (
                             <li className=" dropdown" key={this_item.id}>
-                              <a href={subItemLink}>
-                                <span className="bold-holder">
-                                  <span className="real-title">
-                                    {subItemLabel}
+                              {isInternalSecondary ? (
+                                <Link
+                                  href={subItemLink}
+                                  aria-current={
+                                    isSecondLevelActive ? 'page' : 'false'
+                                  }
+                                >
+                                  <span className="bold-holder">
+                                    <span className="real-title">
+                                      {subItemLabel}
+                                    </span>
+                                    <span
+                                      className="bold-wrapper"
+                                      aria-hidden="true"
+                                    >
+                                      {subItemLabel}
+                                    </span>
                                   </span>
-                                  <span
-                                    className="bold-wrapper"
-                                    aria-hidden="true"
-                                  >
-                                    {subItemLabel}
+                                </Link>
+                              ) : (
+                                <a
+                                  href={subItemLink}
+                                  aria-current={
+                                    isSecondLevelActive ? 'page' : 'false'
+                                  }
+                                >
+                                  <span className="bold-holder">
+                                    <span className="real-title">
+                                      {subItemLabel}
+                                    </span>
+                                    <span
+                                      className="bold-wrapper"
+                                      aria-hidden="true"
+                                    >
+                                      {subItemLabel}
+                                    </span>
                                   </span>
-                                </span>
-                              </a>
+                                </a>
+                              )}
                             </li>
                           );
                         })}
@@ -326,14 +396,31 @@ const Header = () => {
                   </li>
                 ) : (
                   <li key={this_link.id}>
-                    <a href={linkAddress}>
-                      <span className="bold-holder">
-                        <span className="real-title">{linkLabel}</span>
-                        <span className="bold-wrapper" aria-hidden="true">
-                          {linkLabel}
+                    {isInternalTop ? (
+                      <Link
+                        href={linkAddress}
+                        aria-current={isTopLevelActive ? 'page' : 'false'}
+                      >
+                        <span className="bold-holder">
+                          <span className="real-title">{linkLabel}</span>
+                          <span className="bold-wrapper" aria-hidden="true">
+                            {linkLabel}
+                          </span>
                         </span>
-                      </span>
-                    </a>
+                      </Link>
+                    ) : (
+                      <a
+                        href={linkAddress}
+                        aria-current={isTopLevelActive ? 'page' : 'false'}
+                      >
+                        <span className="bold-holder">
+                          <span className="real-title">{linkLabel}</span>
+                          <span className="bold-wrapper" aria-hidden="true">
+                            {linkLabel}
+                          </span>
+                        </span>
+                      </a>
+                    )}
                   </li>
                 );
               })}
