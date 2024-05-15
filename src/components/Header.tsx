@@ -91,7 +91,11 @@ const Header = () => {
   return (
     <>
       <header className="site-header">
-        <UniversalHeader />
+        <UniversalHeader
+          links={links}
+          currentTopLevelItemId={currentTopLevelItemId}
+          currentSecondLevelItemId={currentSecondLevelItemId}
+        />
 
         <div className="wp-block-group header-site-title-wrapper universal-header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
 
@@ -102,9 +106,9 @@ const Header = () => {
           <menu id="" className="utk-nav-menu">
             {links
               ?.filter((link) => link.parentId === null)
-              ?.map((this_link, i) => {
+              ?.map((this_link) => {
                 const subItems = this_link.childItems?.nodes;
-                const subItemCount = this_link.childItems?.nodes.length || 0;
+                const subItemCount = subItems?.length || 0;
                 const hasSubItems = subItemCount > 0;
                 const linkAddress = this_link.uri || '';
                 const linkLabel = this_link.label || '';
@@ -188,7 +192,7 @@ const Header = () => {
                             </a>
                           )}
                         </li>
-                        {subItems?.map((this_item, i) => {
+                        {subItems?.map((this_item) => {
                           const subItemLink = this_item.uri || '';
                           const subItemLabel = this_item.label || '';
                           const isSecondLevelActive =
