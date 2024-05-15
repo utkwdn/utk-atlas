@@ -384,8 +384,8 @@ const Hero = () => {
                 {/* End of Q4 November 1st Push */}
               </>
             )}
-            {/* Wednesday 12/20 Launch Piece */}
-            <h3 className="subCta">Admitted to UT?</h3>
+            {/* Confirm Enrollment Link */}
+            {/* <h3 className="subCta">Admitted to UT?</h3>
             <a
               href="https://admissions.utk.edu/confirm/"
               className="subLink  pointer-event-visible"
@@ -393,8 +393,8 @@ const Hero = () => {
               // className="subLink text-decoration-none link-underline  pointer-event-visible"
             >
               Confirm enrollment now
-            </a>
-            {/* End Wednesday 12/20 Launch Piece */}
+            </a> */}
+            {/* End Confirm Enrollment Link */}
           </div>
 
           {/* End CTA */}
