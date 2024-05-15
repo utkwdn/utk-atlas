@@ -238,7 +238,7 @@ const Header = () => {
   return (
     <>
       <header className="site-header">
-        <UniversalHeader />
+        {/* <UniversalHeader /> */}
         {/*
         Note: this NavBar was originally entirely non-React markup that came
         from the UTK design-system. However, because of the JavaScript needs of
@@ -439,7 +439,7 @@ const Header = () => {
 };
 
 Header.query = gql(`
-  query MainNav {
+  query MainNavOld {
     menuItems(where: {location: PRIMARY}, first: 20) {
       nodes {
         id

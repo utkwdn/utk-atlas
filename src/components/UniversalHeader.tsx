@@ -1,12 +1,45 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, FormEvent, useRef } from 'react';
+import { gql } from '../__generated__';
+import { MenuItem } from '__generated__/graphql';
 
-const UniversalHeader = () => {
+interface Props {
+  links: {
+    id: string;
+    uri?: string | null | undefined;
+    url?: string | null | undefined;
+    title?: string | null | undefined;
+    parentId?: string | null | undefined;
+    label?: string | null | undefined;
+    childItems?:
+      | {
+          nodes: {
+            label?: string | null | undefined;
+            id: string;
+            url?: string | null | undefined;
+            uri?: string | null | undefined;
+          }[];
+        }
+      | null
+      | undefined;
+  }[];
+  currentTopLevelItemId: string | undefined;
+  currentSecondLevelItemId: string | null | undefined;
+}
+
+const UniversalHeader = ({
+  links,
+  currentTopLevelItemId,
+  currentSecondLevelItemId,
+}: Props) => {
   const [showNavSearch, setShowNavSearch] = useState(false);
   const [animateNavSearch, setAnimateNavSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navSearchInputRef = useRef<HTMLInputElement>(null);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [animateMobileNav, setAnimateMobileNav] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState('');
 
   const router = useRouter();
 
@@ -23,6 +56,20 @@ const UniversalHeader = () => {
     setTimeout(() => {
       setAnimateNavSearch(false);
     }, 20);
+  };
+
+  const handleShowMobileNav = () => {
+    setShowMobileNav(true);
+    setTimeout(() => {
+      setAnimateMobileNav(true);
+    }, 20);
+  };
+
+  const handleHideMobileNav = () => {
+    setAnimateMobileNav(false);
+    setTimeout(() => {
+      setShowMobileNav(false);
+    }, 400);
   };
 
   const handleSearchSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -205,10 +252,12 @@ const UniversalHeader = () => {
           </div>
           <div className="universal-header__menu-open-button">
             <button
-              className="menu-search-button"
+              className="menu-search-button test"
               data-bs-toggle="offcanvas"
               data-bs-target="#mobileMainNav"
               aria-controls="mobileMainNav"
+              onClick={() => handleShowMobileNav()}
+              style={{ cursor: 'pointer' }}
             >
               <div>
                 Menu
@@ -243,6 +292,270 @@ const UniversalHeader = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Nav */}
+
+      <div
+        className={
+          animateMobileNav
+            ? 'main-menu-wrapper offcanvas offcanvas-end show'
+            : 'main-menu-wrapper offcanvas offcanvas-end'
+        }
+        // className="main-menu-wrapper offcanvas offcanvas-end show"
+        tabIndex={-1}
+        id="mobileMainNav"
+        data-max-breakpoint="600"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div className="offcanvas-header">
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+            onClick={() => handleHideMobileNav()}
+          >
+            Close
+          </button>
+        </div>
+        <div className="main-menu offcanvas-body">
+          <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--mobile">
+            <menu id="utility-nav-menu--mobile" className="utk-nav-menu">
+              {linkItems}
+            </menu>
+          </div>
+          <form
+            className="form-inline hidden-print mt-4"
+            id="cse-searchbox-form"
+            onSubmit={(e) => {
+              void handleSearchSubmit(e);
+            }}
+          >
+            <div className="mb-3 input-group">
+              <label className="sr-only visually-hidden" htmlFor="q">
+                Search
+              </label>
+              <input
+                type="search"
+                className="form-control"
+                title="Search this site"
+                placeholder="Search"
+                name="s"
+                id="site-search-field-offcanvas"
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button type="submit" className="btn btn-utlink">
+                <svg
+                  width="14"
+                  height="13"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Search Icon</title>
+                  <circle
+                    cx="6.12"
+                    cy="5.73"
+                    r="4.22"
+                    transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)"
+                    strokeWidth="2"
+                  ></circle>
+                  <line
+                    x1="9.35"
+                    y1="8.41"
+                    x2="12.71"
+                    y2="11.8"
+                    strokeWidth="2"
+                  ></line>
+                </svg>
+                <span className="visually-hidden">Search</span>
+              </button>
+            </div>
+          </form>
+          <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  main-nav-menu-list">
+            <menu id="mobile-nav-menu" className="utk-nav-menu">
+              {links
+                ?.filter((link) => link.parentId === null)
+                ?.map((this_link) => {
+                  const subItems = this_link.childItems?.nodes;
+                  const subItemCount = subItems?.length || 0;
+                  const hasSubItems = subItemCount > 0;
+                  const linkAddress = this_link.uri || '';
+                  const linkLabel = this_link.label || '';
+                  const isExpanded = activeSubmenu === linkLabel;
+                  const isTopLevelActive =
+                    this_link.id === currentTopLevelItemId;
+                  const isInternalTop = this_link.uri !== this_link.url;
+                  return hasSubItems ? (
+                    <li className=" collapsible-menu-item" key={this_link.id}>
+                      <button
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mobile-nav-menu-submenu-apply"
+                        aria-expanded={isExpanded ? 'true' : 'false'}
+                        aria-controls="mobile-nav-menu-submenu-apply"
+                        className={isExpanded ? '' : 'collapsed'}
+                        onClick={() =>
+                          setActiveSubmenu(isExpanded ? '' : linkLabel)
+                        }
+                      >
+                        <span className="bold-holder">
+                          <span
+                            className="real-title"
+                            style={{ letterSpacing: 0 }}
+                          >
+                            {linkLabel}
+                          </span>
+                          <span className="bold-wrapper" aria-hidden="true">
+                            {linkLabel}
+                          </span>
+                        </span>
+                      </button>
+                      <div
+                        id="mobile-nav-menu-submenu-apply"
+                        className={isExpanded ? 'collapse show' : 'collapse'}
+                      >
+                        <ul>
+                          <li className=" collapsible-menu-item">
+                            {isInternalTop ? (
+                              <Link href={linkAddress}>
+                                <span className="bold-holder">
+                                  <span
+                                    className="real-title"
+                                    style={{ letterSpacing: 0 }}
+                                  >
+                                    {linkLabel} Overview
+                                  </span>
+                                  <span
+                                    className="bold-wrapper"
+                                    aria-hidden="true"
+                                  >
+                                    {linkLabel} Overview
+                                  </span>
+                                </span>
+                              </Link>
+                            ) : (
+                              <a href={linkAddress}>
+                                <span className="bold-holder">
+                                  <span
+                                    className="real-title"
+                                    style={{ letterSpacing: 0 }}
+                                  >
+                                    {linkLabel} Overview
+                                  </span>
+                                  <span
+                                    className="bold-wrapper"
+                                    aria-hidden="true"
+                                  >
+                                    {linkLabel} Overview
+                                  </span>
+                                </span>
+                              </a>
+                            )}
+                          </li>
+                          {subItems?.map((this_item) => {
+                            const subItemLink = this_item.uri || '';
+                            const subItemLabel = this_item.label || '';
+                            const isInternalSecondary =
+                              this_item.uri !== this_item.url;
+                            return (
+                              <li
+                                className=" collapsible-menu-item"
+                                key={this_item.id}
+                              >
+                                {isInternalSecondary ? (
+                                  <Link href={subItemLink}>
+                                    <span className="bold-holder">
+                                      <span
+                                        className="real-title"
+                                        style={{ letterSpacing: 0 }}
+                                      >
+                                        {subItemLabel}
+                                      </span>
+                                      <span
+                                        className="bold-wrapper"
+                                        aria-hidden="true"
+                                      >
+                                        {subItemLabel}
+                                      </span>
+                                    </span>
+                                  </Link>
+                                ) : (
+                                  <a href={subItemLink}>
+                                    <span className="bold-holder">
+                                      <span
+                                        className="real-title"
+                                        style={{ letterSpacing: 0 }}
+                                      >
+                                        {subItemLabel}
+                                      </span>
+                                      <span
+                                        className="bold-wrapper"
+                                        aria-hidden="true"
+                                      >
+                                        {subItemLabel}
+                                      </span>
+                                    </span>
+                                  </a>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </li>
+                  ) : (
+                    <li className=" collapsible-menu-item" key={this_link.id}>
+                      {isInternalTop ? (
+                        <Link href={linkAddress}>
+                          <span className="bold-holder">
+                            <span
+                              className="real-title"
+                              style={{ letterSpacing: 0 }}
+                            >
+                              {linkLabel}
+                            </span>
+                            <span className="bold-wrapper" aria-hidden="true">
+                              {linkLabel}
+                            </span>
+                          </span>
+                        </Link>
+                      ) : (
+                        <a href={linkAddress}>
+                          <span className="bold-holder">
+                            <span
+                              className="real-title"
+                              style={{ letterSpacing: 0 }}
+                            >
+                              {linkLabel}
+                            </span>
+                            <span className="bold-wrapper" aria-hidden="true">
+                              {linkLabel}
+                            </span>
+                          </span>
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
+            </menu>
+          </div>
+        </div>
+      </div>
+
+      {showMobileNav ? (
+        <div
+          className="offcanvas-backdrop fade show"
+          style={{
+            background: '#000',
+            opacity: animateMobileNav ? 0.8 : 0,
+            display: showMobileNav ? 'block' : 'none',
+          }}
+          onClick={() => handleHideMobileNav()}
+        ></div>
+      ) : (
+        ''
+      )}
     </>
   );
 };
