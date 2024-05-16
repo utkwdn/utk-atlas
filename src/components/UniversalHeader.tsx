@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, FormEvent, useRef } from 'react';
-import { gql } from '../__generated__';
-import { MenuItem } from '__generated__/graphql';
+import style from 'scss/components/Header.module.scss';
 
 interface Props {
   links: {
@@ -144,6 +143,7 @@ const UniversalHeader = ({
                     viewBox="0 0 14 13"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    style={{ stroke: '#4b4b4b' }}
                   >
                     <title>Search Icon</title>
                     <circle
@@ -179,7 +179,7 @@ const UniversalHeader = ({
                 }}
               >
                 <form
-                  className="form-inline hidden-print"
+                  className={`${style['form-inline']} hidden-print`}
                   id="cse-searchbox-form"
                   onSubmit={(e) => {
                     void handleSearchSubmit(e);
@@ -326,7 +326,7 @@ const UniversalHeader = ({
             </menu>
           </div>
           <form
-            className="form-inline hidden-print mt-4"
+            className={`${style['form-inline']} hidden-print mt-4`}
             id="cse-searchbox-form"
             onSubmit={(e) => {
               void handleSearchSubmit(e);
@@ -345,13 +345,18 @@ const UniversalHeader = ({
                 id="site-search-field-offcanvas"
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button type="submit" className="btn btn-utlink">
+              <button
+                type="submit"
+                className="btn btn-utlink"
+                style={{ background: '#4b4b4b', width: 'auto' }}
+              >
                 <svg
                   width="14"
                   height="13"
                   viewBox="0 0 14 13"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{ stroke: '#fff', width: '100%', height: '100%' }}
                 >
                   <title>Search Icon</title>
                   <circle
@@ -402,11 +407,19 @@ const UniversalHeader = ({
                         <span className="bold-holder">
                           <span
                             className="real-title"
-                            style={{ letterSpacing: 0 }}
+                            style={{
+                              letterSpacing: 0,
+                              fontSize: '1.05rem',
+                              padding: '2px 0',
+                            }}
                           >
                             {linkLabel}
                           </span>
-                          <span className="bold-wrapper" aria-hidden="true">
+                          <span
+                            className="bold-wrapper"
+                            style={{ fontSize: '1.05rem' }}
+                            aria-hidden="true"
+                          >
                             {linkLabel}
                           </span>
                         </span>
@@ -415,19 +428,23 @@ const UniversalHeader = ({
                         id="mobile-nav-menu-submenu-apply"
                         className={isExpanded ? 'collapse show' : 'collapse'}
                       >
-                        <ul>
+                        <ul style={{ paddingLeft: 'unset' }}>
                           <li className=" collapsible-menu-item">
                             {isInternalTop ? (
                               <Link href={linkAddress}>
                                 <span className="bold-holder">
                                   <span
                                     className="real-title"
-                                    style={{ letterSpacing: 0 }}
+                                    style={{
+                                      letterSpacing: 0,
+                                      fontSize: '1.05rem',
+                                    }}
                                   >
                                     {linkLabel} Overview
                                   </span>
                                   <span
                                     className="bold-wrapper"
+                                    style={{ fontSize: '1.05rem' }}
                                     aria-hidden="true"
                                   >
                                     {linkLabel} Overview
@@ -439,12 +456,16 @@ const UniversalHeader = ({
                                 <span className="bold-holder">
                                   <span
                                     className="real-title"
-                                    style={{ letterSpacing: 0 }}
+                                    style={{
+                                      letterSpacing: 0,
+                                      fontSize: '1.05rem',
+                                    }}
                                   >
                                     {linkLabel} Overview
                                   </span>
                                   <span
                                     className="bold-wrapper"
+                                    style={{ fontSize: '1.05rem' }}
                                     aria-hidden="true"
                                   >
                                     {linkLabel} Overview
@@ -468,12 +489,16 @@ const UniversalHeader = ({
                                     <span className="bold-holder">
                                       <span
                                         className="real-title"
-                                        style={{ letterSpacing: 0 }}
+                                        style={{
+                                          letterSpacing: 0,
+                                          fontSize: '1.05rem',
+                                        }}
                                       >
                                         {subItemLabel}
                                       </span>
                                       <span
                                         className="bold-wrapper"
+                                        style={{ fontSize: '1.05rem' }}
                                         aria-hidden="true"
                                       >
                                         {subItemLabel}
@@ -485,12 +510,16 @@ const UniversalHeader = ({
                                     <span className="bold-holder">
                                       <span
                                         className="real-title"
-                                        style={{ letterSpacing: 0 }}
+                                        style={{
+                                          letterSpacing: 0,
+                                          fontSize: '1.05rem',
+                                        }}
                                       >
                                         {subItemLabel}
                                       </span>
                                       <span
                                         className="bold-wrapper"
+                                        style={{ fontSize: '1.05rem' }}
                                         aria-hidden="true"
                                       >
                                         {subItemLabel}
@@ -511,11 +540,19 @@ const UniversalHeader = ({
                           <span className="bold-holder">
                             <span
                               className="real-title"
-                              style={{ letterSpacing: 0 }}
+                              style={{
+                                letterSpacing: 0,
+                                fontSize: '1.05rem',
+                                padding: '2px 0',
+                              }}
                             >
                               {linkLabel}
                             </span>
-                            <span className="bold-wrapper" aria-hidden="true">
+                            <span
+                              className="bold-wrapper"
+                              style={{ fontSize: '1.05rem' }}
+                              aria-hidden="true"
+                            >
                               {linkLabel}
                             </span>
                           </span>
@@ -525,11 +562,19 @@ const UniversalHeader = ({
                           <span className="bold-holder">
                             <span
                               className="real-title"
-                              style={{ letterSpacing: 0 }}
+                              style={{
+                                letterSpacing: 0,
+                                fontSize: '1.05rem',
+                                padding: '2px 0',
+                              }}
                             >
                               {linkLabel}
                             </span>
-                            <span className="bold-wrapper" aria-hidden="true">
+                            <span
+                              className="bold-wrapper"
+                              style={{ fontSize: '1.05rem' }}
+                              aria-hidden="true"
+                            >
                               {linkLabel}
                             </span>
                           </span>

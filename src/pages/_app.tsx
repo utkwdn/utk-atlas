@@ -2,7 +2,7 @@ import 'faust.config';
 import { FaustProvider } from '@faustwp/core';
 import React from 'react';
 import 'scss/main.scss';
-import '../../globalStylesheet.css';
+// import '../../globalStylesheet.css';
 import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Montserrat, Sofia_Sans_Extra_Condensed } from 'next/font/google';
