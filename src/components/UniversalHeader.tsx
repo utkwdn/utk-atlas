@@ -68,7 +68,7 @@ const UniversalHeader = ({
     setAnimateMobileNav(false);
     setTimeout(() => {
       setShowMobileNav(false);
-    }, 400);
+    }, 800);
   };
 
   const handleSearchSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -201,6 +201,7 @@ const UniversalHeader = ({
                       ref={navSearchInputRef}
                       style={{
                         width: animateNavSearch ? '215px' : 0,
+                        transition: 'all 0.2s ease-in-out',
                       }}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -299,9 +300,8 @@ const UniversalHeader = ({
         className={
           animateMobileNav
             ? 'main-menu-wrapper offcanvas offcanvas-end show'
-            : 'main-menu-wrapper offcanvas offcanvas-end'
+            : 'main-menu-wrapper offcanvas offcanvas-end hiding'
         }
-        // className="main-menu-wrapper offcanvas offcanvas-end show"
         tabIndex={-1}
         id="mobileMainNav"
         data-max-breakpoint="600"
@@ -594,7 +594,7 @@ const UniversalHeader = ({
           style={{
             background: '#000',
             opacity: animateMobileNav ? 0.8 : 0,
-            display: showMobileNav ? 'block' : 'none',
+            // display: showMobileNav ? 'block' : 'none',
           }}
           onClick={() => handleHideMobileNav()}
         ></div>
