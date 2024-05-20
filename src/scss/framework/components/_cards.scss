@@ -902,6 +902,10 @@ Card Flip
   }
   // max-width: 880px;
 }
+.card-fc-chunk {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
 .cards-grid-2up {
   display: grid;
@@ -934,6 +938,23 @@ Card Flip
     }
   }
 }
+
+// fix for WDS 1.1.2 to account for has-global-padding
+
+// .cards-flip-pattern {
+//   // padding-left: 1.25em !important;
+//   // padding-right: 1.25em !important;
+//   padding-left: 0 !important;
+//   padding-right: 0 !important;
+//   border: 1px solid green;
+
+//   // &.has-global-padding {
+//   //   // padding-left: 1.25em !important;
+//   //   // padding-right: 1.25em !important;
+//   //   padding-left: 0 !important;
+//   //   padding-right: 0 !important;
+//   // }
+// }
 
 .card-flip-container {
   position: relative;
