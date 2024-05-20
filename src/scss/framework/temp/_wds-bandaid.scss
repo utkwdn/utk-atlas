@@ -1,0 +1,27 @@
+// After uploaded WDS 1.1.2 to dev, there were a few spacing issues. These temporarily fix those until we have time to go through and fix everything.
+
+.card-body {
+  padding: 2rem !important;
+}
+
+// :where(.wp-block-group.has-background) {
+//   padding: 1.25em 2.375em !important;
+// }
+
+.card {
+  padding: 2rem !important;
+}
+
+.wds-padding-fix {
+  padding: 1.25em 2.375em !important;
+}
+
+.has-global-padding {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+.remove-global-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

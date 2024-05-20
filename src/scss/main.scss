@@ -225,3 +225,6 @@
 // .visually-hidden-focusable {
 //   background-color: aqua;
 // }
+
+// temporary fixes to allow us to run WDS 1.1.2 on Dev
+@import './framework/temp/wds-bandaid.scss';
