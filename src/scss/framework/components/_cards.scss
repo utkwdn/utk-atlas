@@ -891,6 +891,15 @@ Card Flip
 – – – – */
 
 .card-group-max-width {
+  // remove global padding for proper alignment
+  &.has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   // max-width: 880px;
 }
 
