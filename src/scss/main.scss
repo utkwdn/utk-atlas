@@ -89,7 +89,7 @@
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';
 @import './framework/regions/extended_footer';
-// @import './framework/regions/footers'; // not used in WDS 1.1.2
+@import './framework/regions/footers'; // not used in WDS 1.1.2
 // @import './framework/regions/headers';
 // @import './framework/regions/navigation_horizontal'; // this is overwriting the styles from WDS 1.1.2
 
@@ -225,3 +225,6 @@
 // .visually-hidden-focusable {
 //   background-color: aqua;
 // }
+
+// temporary fixes to allow us to run WDS 1.1.2 on Dev
+@import './framework/temp/wds-bandaid.scss';
