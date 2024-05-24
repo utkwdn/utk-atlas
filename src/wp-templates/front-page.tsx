@@ -48,6 +48,7 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
   );
 };
 
+// Temporarily Commenting out – ID! Error
 FrontPage.variables = ({ databaseId }, ctx) => {
   return {
     databaseId,
@@ -69,25 +70,25 @@ FrontPage.query = gql(`
   }
 `);
 
-// FrontPage.variables = ({ databaseId }, ctx) => {
-//   return {
-//     databaseId,
-//     asPreview: ctx?.asPreview,
-//   };
-// };
+FrontPage.variables = ({ databaseId }, ctx) => {
+  return {
+    databaseId,
+    asPreview: ctx?.asPreview,
+  };
+};
 
-// FrontPage.query = gql(`
-//   query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
-//     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-//       content
-//       seo {
-//         fullHead
-//       }
-//     }
-//     generalSettings {
-//       title
-//     }
-//   }
-// `);
+FrontPage.query = gql(`
+  query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
+    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+      content
+      seo {
+        fullHead
+      }
+    }
+    generalSettings {
+      title
+    }
+  }
+`);
 
 export default FrontPage;
