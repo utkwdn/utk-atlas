@@ -1,0 +1,71 @@
+/*!
+Theme Name: University of Tennessee, Knoxville Design System WordPress Theme
+Theme URI: http://www.utk.edu/
+Author: The UT Web Team
+Author URI: http://communications.utk.edu
+Description: The official UT WordPress Design System theme.
+Version: 1.0.2
+*/
+
+// Configuration
+
+@import 'frost';
+
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import 'bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+@import 'bootstrap/scss/variables';
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import 'custom_variables';
+
+// 5. Include remainder of required parts
+
+// @import 'bootstrap/scss/maps'; // TTANW-01 MISSING FROM ATLAS NODE_MODULES
+
+@import 'bootstrap/scss/mixins'; // TTANW-03 Commenting out. Conflicting with original pull
+@import 'bootstrap/scss/utilities';
+
+// 6. Optionally include any other parts as needed
+
+// Layout & components
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/nav';
+
+// UT Components
+
+@import 'components/accordion';
+@import 'components/button';
+@import 'components/cover';
+@import 'components/fancy_link';
+@import 'components/gallery_two_up';
+@import 'components/image';
+@import 'components/jump_links';
+@import 'components/media_text';
+@import 'components/news';
+@import 'components/quotes';
+@import 'components/separator';
+@import 'components/tabs';
+
+// UT Regions
+
+@import 'regions/breadcrumbs';
+@import 'regions/search';
+@import 'regions/universal-header';
+@import 'regions/universal-footer';
+
+// UT Styles
+
+@import 'styles/cards';
+@import 'styles/modals';
+@import 'styles/fixes';
+@import 'styles/orange-accents';
+@import 'styles/patterns';
+
+.visually-hidden-focusable {
+  background-color: aqua;
+}

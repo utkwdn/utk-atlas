@@ -1,0 +1,49 @@
+// NEED TO IMPORT VARIABLES. This page does not know what --orange is.
+@import './src/scss/common';
+
+.universal-header {
+  background-color: #fff;
+  border-top: 6px solid var(--wp--preset--color--orange);
+  border-top: 6px solid $utorange;
+  margin-bottom: 1.155rem;
+}
+
+// pulled from WDS 1.1.2. Preset colors missing. Just grabbed final code below
+// .menu-universal-wrapper {
+//   font-size: 1rem;
+//   border-top: 4px solid var(--wp--preset--color--orange);
+// }
+
+// .utk-nav-menu {
+//   --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
+//   --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
+// }
+.utk-nav-menu {
+  display: flex;
+  flex-direction: var(--utk-nav-menu--direction);
+  gap: var(--utk-nav-menu--item--spacing-y, 0)
+    var(--utk-nav-menu--item--spacing-x, 0);
+  list-style: none;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding: 0;
+  --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
+  --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
+}
+.utk-nav-menu-wrapper {
+  font-size: var(--utk-nav-menu--font-size, inherit);
+}
+.utk-nav-menu button {
+  background-color: transparent;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-decoration: inherit;
+  text-transform: inherit;
+}

@@ -1,49 +1,19 @@
 // import styles from 'scss/components/Header.module.scss';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-// import { gql, useQuery } from '@apollo/client';
 import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
 import { MainNavQuery } from '../__generated__/graphql';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
-
-const MAIN_MENU_ID = 'main-menu';
-
-/**
- * Closes the mobile menu if open. Not a very elegant or "React-y" way
- * of doing this, but it's simple and effective, and we're a bit limited
- * by the React-Bootstrap API here.
- */
-const closeMenuIfOpen = () => {
-  const mainMenu = document.querySelector(`#${MAIN_MENU_ID}`);
-  if (!(mainMenu instanceof HTMLElement)) return;
-
-  const mainMenuIsModal = mainMenu.hasAttribute('aria-modal');
-  if (!mainMenuIsModal) return;
-
-  const closeButton = mainMenu.querySelector(`.offcanvas-header button`);
-  if (!(closeButton instanceof HTMLButtonElement)) return;
-
-  closeButton.click();
-};
 
 const Header = () => {
   const [alertDisplay, setAlertDisplay] = useState('none');
   const [alertDescription, setAlertDescription] = useState('');
   const [alertDate, setAlertDate] = useState('');
+  const [activeSubmenu, setActiveSubmenu] = useState('');
 
-  const { asPath, events: routerEvents } = useRouter();
-
-  // make sure that the mobile menu closes upon internal navigation
-  useEffect(() => {
-    routerEvents.on('routeChangeStart', closeMenuIfOpen);
-    return () => {
-      routerEvents.off('routeChangeStart', closeMenuIfOpen);
-    };
-  });
+  const { asPath } = useRouter();
 
   const uri =
     asPath && asPath !== '/' ? asPath.split('?')[0].split('#')[0] + '/' : null;
@@ -74,111 +44,6 @@ const Header = () => {
   const currentSecondLevelItemId = firstTwoUriParts
     ? links.find((link) => link?.uri === `${firstTwoUriParts}/`)?.id
     : null;
-
-  /** Primary nav items (desktop and mobile) */
-  const primaryNavItems = links.flatMap((link) => {
-    const parentId = link?.parentId;
-
-    const id = link?.id;
-    const url = link?.url;
-    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-    const itemUri = link?.uri;
-    const label = link?.label;
-    const children = link?.childItems?.nodes || [];
-
-    const hasChildren = children.length > 0;
-
-    /** mobile-only sub-nav items for this primary-nav item (will be an empty array if there are none) */
-    const subNavItems = children.flatMap((child) => {
-      const childLabel = child?.label;
-      const childUrl = child?.url;
-      /** Will be same as `childUrl` if external link, but root-relative path (with trailing slash) if internal link. */
-      const childUri = child?.uri;
-      const childId = child?.id;
-
-      const childIsInternal = childUrl !== childUri;
-      const childIsCurrent = childId === currentSecondLevelItemId;
-
-      return childLabel && childUrl && childUri && childId ? (
-        <li key={childId} className={childIsCurrent ? 'current-menu-item' : ''}>
-          {childIsInternal ? (
-            <Link
-              href={childUri}
-              {...(childIsCurrent ? { 'aria-current': 'true' } : {})}
-            >
-              {childLabel}
-            </Link>
-          ) : (
-            <a href={childUri}>{childLabel}</a>
-          )}
-        </li>
-      ) : (
-        []
-      );
-    });
-
-    const isInternal = url !== itemUri;
-
-    const isCurrent = id === currentTopLevelItemId;
-    const currentClasses = isCurrent
-      ? 'current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor'
-      : '';
-
-    const hasChildrenClasses = hasChildren ? 'menu-item-has-children' : '';
-
-    return !parentId && id && url && itemUri && label ? (
-      <li key={id} className={`${currentClasses} ${hasChildrenClasses}`.trim()}>
-        {isInternal ? (
-          <Link
-            href={itemUri}
-            className="main-navigation"
-            {...(isCurrent ? { 'aria-current': 'true' } : {})}
-          >
-            {label}
-          </Link>
-        ) : (
-          <a href={itemUri} className="main-navigation">
-            {label}
-          </a>
-        )}
-        {subNavItems.length > 0 && <ul className="sub-menu">{subNavItems}</ul>}
-      </li>
-    ) : (
-      []
-    );
-  });
-
-  /** Desktop-only section-nav items (will be an empty array if there are none) */
-  const secondaryNavItems = (
-    currentTopLevelItem?.childItems?.nodes || []
-  ).flatMap((link) => {
-    const url = link?.url;
-    /** Will be same as `url` if external link, but root-relative path (with trailing slash) if internal link. */
-    const itemUri = link?.uri;
-    const label = link?.label;
-    const id = link?.id;
-
-    // const isInternal = itemUri !== url;
-    const isInternal = Array.from(itemUri as string)[0] === '/';
-    const isCurrent = id === currentSecondLevelItemId;
-
-    return url && itemUri && label && id ? (
-      <li key={id} className={isCurrent ? 'current-menu-item' : ''}>
-        {isInternal ? (
-          <Link
-            href={itemUri}
-            {...(isCurrent ? { 'aria-current': 'true' } : {})}
-          >
-            {label}
-          </Link>
-        ) : (
-          <a href={itemUri}>{label}</a>
-        )}
-      </li>
-    ) : (
-      []
-    );
-  });
 
   // Checking UT Alerts RSS and displaying an alert if it exists
   function fetchAlert() {
@@ -225,89 +90,195 @@ const Header = () => {
 
   return (
     <>
-      <UniversalHeader />
+      <header className="site-header">
+        <UniversalHeader
+          links={links}
+          currentTopLevelItemId={currentTopLevelItemId}
+          currentSecondLevelItemId={currentSecondLevelItemId}
+        />
 
-      <header id="masthead" className="site-header">
-        {/*
-        Note: this NavBar was originally entirely non-React markup that came
-        from the UTK design-system. However, because of the JavaScript needs of
-        that design-system pattern, we had to "Reactify" it here (which we did
-        with React-Bootstrap). But the styling was largely tied to the old markup,
-        so we still had to preserve that old markup (with some modifications).
+        <div className="wp-block-group header-site-title-wrapper universal-header__inner-blocks is-layout-flow wp-block-group-is-layout-flow"></div>
 
-        In short: this piece relies in part on CSS from the UTK design-system. So
-        if the design-system's main-nav is altered in the future, it will be important
-        to check the behavior of this piece.
-      */}
-        <Navbar
-          expand="xl" /* important because it matches the breakpoint used for some styling inside */
-          as="div" /* otherwise it's `nav` (and we already have a `nav` nested) */
-          role="presentation" /* otherwise it defaults to "navigation" (b/c `as` isn't `nav`) */
-          className="py-0"
+        <div
+          id="main-nav--large"
+          className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
         >
-          <div className="container-xxl">
-            <div className="row justify-content-between py-3 py-md-4 py-lg-4 py-xl-0 w-100">
-              <div className="site-logo">
-                <Link href="/" className="d-grid h-100">
-                  <img
-                    src="/images/chrome/logo-horizontal-left-smokey.svg"
-                    alt="University of Tennessee, Knoxville"
-                  />
-                </Link>
-              </div>
-
-              <Navbar.Toggle
-                aria-controls={MAIN_MENU_ID}
-                className="navbar-toggler col-auto mr-auto"
-                id="mobile-menu-open"
-                label="Open menu"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  aria-hidden
-                >
-                  <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
-                </svg>
-              </Navbar.Toggle>
-
-              <Navbar.Offcanvas
-                id={MAIN_MENU_ID}
-                placement="end"
-                aria-label="Menu"
-              >
-                <Offcanvas.Header
-                  className="justify-content-end"
-                  closeButton
-                  closeLabel="Close Menu"
-                />
-
-                <Offcanvas.Body className="justify-content-end">
-                  <nav aria-label="Main">
-                    <div className="menu-main-site-container">
-                      {primaryNavItems.length > 0 && (
-                        <ul id="primary-menu" className="list-unstyled mt-0">
-                          {primaryNavItems}
-                        </ul>
-                      )}
+          <menu id="" className="utk-nav-menu">
+            {links
+              ?.filter((link) => link.parentId === null)
+              ?.map((this_link) => {
+                const subItems = this_link.childItems?.nodes;
+                const subItemCount = subItems?.length || 0;
+                const hasSubItems = subItemCount > 0;
+                const linkAddress = this_link.uri || '';
+                const linkLabel = this_link.label || '';
+                const isExpanded = activeSubmenu === linkLabel;
+                const isTopLevelActive = this_link.id === currentTopLevelItemId;
+                const isInternalTop = this_link.uri !== this_link.url;
+                return hasSubItems ? (
+                  <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                    <button
+                      data-bs-toggle="dropdown"
+                      data-bs-display="static"
+                      aria-expanded={isExpanded ? 'true' : 'false'}
+                      aria-current={isTopLevelActive ? 'page' : 'false'}
+                      className={
+                        isExpanded ? 'dropdown-toggle' : 'dropdown-toggle show'
+                      }
+                      onClick={() =>
+                        setActiveSubmenu(isExpanded ? '' : linkLabel)
+                      }
+                    >
+                      <span className="bold-holder">
+                        <span className="real-title">{linkLabel}</span>
+                        <span className="bold-wrapper" aria-hidden="true">
+                          {linkLabel}
+                        </span>
+                      </span>
+                    </button>
+                    <div
+                      id={linkLabel}
+                      className="dropdown-menu"
+                      style={{
+                        visibility: isExpanded ? 'visible' : 'hidden',
+                        opacity: isExpanded ? 1 : 0,
+                      }}
+                    >
+                      <ul style={{ paddingLeft: 0, marginBottom: 0 }}>
+                        <li className=" dropdown">
+                          {isInternalTop ? (
+                            <Link
+                              href={linkAddress}
+                              aria-current={
+                                isTopLevelActive &&
+                                currentSecondLevelItemId === null
+                                  ? 'page'
+                                  : 'false'
+                              }
+                            >
+                              <span className="bold-holder">
+                                <span className="real-title">
+                                  {linkLabel} Overview
+                                </span>
+                                <span
+                                  className="bold-wrapper"
+                                  aria-hidden="true"
+                                >
+                                  {linkLabel} Overview
+                                </span>
+                              </span>
+                            </Link>
+                          ) : (
+                            <a
+                              href={linkAddress}
+                              aria-current={
+                                isTopLevelActive &&
+                                currentSecondLevelItemId === null
+                                  ? 'page'
+                                  : 'false'
+                              }
+                            >
+                              <span className="bold-holder">
+                                <span className="real-title">
+                                  {linkLabel} Overview
+                                </span>
+                                <span
+                                  className="bold-wrapper"
+                                  aria-hidden="true"
+                                >
+                                  {linkLabel} Overview
+                                </span>
+                              </span>
+                            </a>
+                          )}
+                        </li>
+                        {subItems?.map((this_item) => {
+                          const subItemLink = this_item.uri || '';
+                          const subItemLabel = this_item.label || '';
+                          const isSecondLevelActive =
+                            this_item.id === currentSecondLevelItemId;
+                          const isInternalSecondary =
+                            this_item.uri !== this_item.url;
+                          return (
+                            <li className=" dropdown" key={this_item.id}>
+                              {isInternalSecondary ? (
+                                <Link
+                                  href={subItemLink}
+                                  aria-current={
+                                    isSecondLevelActive ? 'page' : 'false'
+                                  }
+                                >
+                                  <span className="bold-holder">
+                                    <span className="real-title">
+                                      {subItemLabel}
+                                    </span>
+                                    <span
+                                      className="bold-wrapper"
+                                      aria-hidden="true"
+                                    >
+                                      {subItemLabel}
+                                    </span>
+                                  </span>
+                                </Link>
+                              ) : (
+                                <a
+                                  href={subItemLink}
+                                  aria-current={
+                                    isSecondLevelActive ? 'page' : 'false'
+                                  }
+                                >
+                                  <span className="bold-holder">
+                                    <span className="real-title">
+                                      {subItemLabel}
+                                    </span>
+                                    <span
+                                      className="bold-wrapper"
+                                      aria-hidden="true"
+                                    >
+                                      {subItemLabel}
+                                    </span>
+                                  </span>
+                                </a>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
-                  </nav>
-                </Offcanvas.Body>
-              </Navbar.Offcanvas>
-            </div>
-          </div>
-        </Navbar>
+                  </li>
+                ) : (
+                  <li key={this_link.id}>
+                    {isInternalTop ? (
+                      <Link
+                        href={linkAddress}
+                        aria-current={isTopLevelActive ? 'page' : 'false'}
+                      >
+                        <span className="bold-holder">
+                          <span className="real-title">{linkLabel}</span>
+                          <span className="bold-wrapper" aria-hidden="true">
+                            {linkLabel}
+                          </span>
+                        </span>
+                      </Link>
+                    ) : (
+                      <a
+                        href={linkAddress}
+                        aria-current={isTopLevelActive ? 'page' : 'false'}
+                      >
+                        <span className="bold-holder">
+                          <span className="real-title">{linkLabel}</span>
+                          <span className="bold-wrapper" aria-hidden="true">
+                            {linkLabel}
+                          </span>
+                        </span>
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
+          </menu>
+        </div>
       </header>
-
-      {secondaryNavItems.length > 0 && (
-        <nav className="navbar-horizontal col-auto">
-          <ul id="secondary-menu" className="nav justify-content-center">
-            {secondaryNavItems}
-          </ul>
-        </nav>
-      )}
 
       {/* UT Alert Banner */}
       {/* Possibly add timer to refresh status at some point */}

@@ -1,13 +1,29 @@
 // CSS for use on every page. Added with normalize.css in pages/_app.tsx.
 
+// import theme.json global stylesheet from WDS 1.1.2
+
+// @import './wds/build/frost';
+// @import '/globalStylesheet.css';
+
+// Flattened styles from exported WDS 1.1.2
+// @import './wds/theme/screen';
+
 // @import "variables";
 // @import "typography";
-@import './node_modules/bootstrap/scss/functions';
-@import './framework/custom_variables';
 
+// Configuration
+@import './node_modules/bootstrap/scss/functions';
+@import './framework/custom_variables'; // custom_variables from WDS have been merged with this file
 @import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/variables-dark'; // new for 5.3
+@import './node_modules/bootstrap/scss/maps'; // new for 5.3
 @import './node_modules/bootstrap/scss/mixins';
 @import './node_modules/bootstrap/scss/utilities';
+
+// Shared with WDS 1.1.2
+
+//Layout & components
+
 @import './node_modules/bootstrap/scss/root';
 
 // Helpers
@@ -16,8 +32,8 @@
 // Utilities
 @import './node_modules/bootstrap/scss/utilities/api';
 
-@import './node_modules/bootstrap/scss/reboot';
-@import './node_modules/bootstrap/scss/type';
+@import './node_modules/bootstrap/scss/reboot'; // not used in WDS 1.1.2
+@import './node_modules/bootstrap/scss/type'; // not used in WDS 1.1.2
 @import './node_modules/bootstrap/scss/images';
 // Layout & components
 @import './node_modules/bootstrap/scss/containers';
@@ -47,51 +63,7 @@
 @import './node_modules/bootstrap/scss/spinners';
 @import './node_modules/bootstrap/scss/offcanvas';
 
-// @import './node_modules/utksds-framework/src/scss/regions/contentarea';
-// @import './node_modules/utksds-framework/src/scss/regions/extended_footer';
-// @import './node_modules/utksds-framework/src/scss/regions/footers';
-// @import './node_modules/utksds-framework/src/scss/regions/headers';
-// @import './node_modules/utksds-framework/src/scss/regions/navigation_horizontal';
-// @import './node_modules/utksds-framework/src/scss/regions/navigation_unit';
-// @import './node_modules/utksds-framework/src/scss/regions/navigation_universal';
-// @import "./node_modules/utksds-framework/src/scss/regions/search_area";
-// @import './node_modules/utksds-framework/src/scss/regions/sidebar';
-// @import './node_modules/utksds-framework/src/scss/regions/universal-header';
-// @import './node_modules/utksds-framework/src/scss/regions/universal-footer';
-
-// UT Components
-// @import './node_modules/utksds-framework/src/scss/components/accordion_folds';
-// @import './node_modules/utksds-framework/src/scss/components/calendars';
-// @import './node_modules/utksds-framework/src/scss/components/cards';
-// @import './node_modules/utksds-framework/src/scss/components/forms';
-// @import './node_modules/utksds-framework/src/scss/components/gallery';
-// @import './node_modules/utksds-framework/src/scss/components/latest_posts';
-// @import './node_modules/utksds-framework/src/scss/components/profiles';
-// @import './node_modules/utksds-framework/src/scss/components/promos';
-// @import './node_modules/utksds-framework/src/scss/components/jumbotron';
-// @import './node_modules/utksds-framework/src/scss/components/strip';
-
-// UT Styles
-// @import './node_modules/utksds-framework/src/scss/styles/breadcrumbs';
-// @import './node_modules/utksds-framework/src/scss/styles/buttons';
-// @import './node_modules/utksds-framework/src/scss/styles/blockquote';
-// @import './node_modules/utksds-framework/src/scss/styles/highlight_boxes';
-// @import './node_modules/utksds-framework/src/scss/styles/frame';
-// @import './node_modules/utksds-framework/src/scss/styles/gutenberg';
-// @import './node_modules/utksds-framework/src/scss/styles/images';
-// @import './node_modules/utksds-framework/src/scss/styles/orange_hr';
-// @import './node_modules/utksds-framework/src/scss/styles/orange_mark';
-// @import './node_modules/utksds-framework/src/scss/styles/search_forms';
-// @import './node_modules/utksds-framework/src/scss/styles/typography';
-// @import './node_modules/utksds-framework/src/scss/styles/background';
-// @import './node_modules/utksds-framework/src/scss/styles/textcolors';
-// @import './node_modules/utksds-framework/src/scss/styles/pagination';
-// @import './node_modules/utksds-framework/src/scss/styles/logos';
-// @import './node_modules/utksds-framework/src/scss/styles/wp';
-
 // ------  WP Core Block Styling
-// @import '@wordpress/block-library/build-style/style.css';
-// @import '@wordpress/block-library/build-style/theme.css';
 
 @import '@wordpress/block-library/build-style/style.css';
 @import '@wordpress/block-library/build-style/theme.css';
@@ -117,22 +89,16 @@
 // ------  UT Regions – LOCAL
 @import './framework/regions/contentarea';
 @import './framework/regions/extended_footer';
-@import './framework/regions/footers';
-@import './framework/regions/headers';
-@import './framework/regions/navigation_horizontal';
-
-// several of the navigation styles were not originally pulled in from the framework. Commenting out for now
-// @import './framework/regions/navigation_horizontal_dropdown';
-// @import './framework/regions/navigation_leftrail';
-// @import './framework/regions/navigation_megamenu';
-// @import './framework/regions/navigation_offcanvas';
+@import './framework/regions/footers'; // not used in WDS 1.1.2
+// @import './framework/regions/headers';
+// @import './framework/regions/navigation_horizontal'; // this is overwriting the styles from WDS 1.1.2
 
 @import './framework/regions/navigation_unit';
 @import './framework/regions/navigation_universal';
 @import './framework/regions/search_area';
-@import './framework/regions/sidebar';
+// @import './framework/regions/sidebar';  // not used in WDS 1.1.2
 @import './framework/regions/universal-footer';
-@import './framework/regions/universal-header';
+// @import './framework/regions/universal-header'; // no longer using in WDS 1.1.2
 
 // ------  UT Components – LOCAL
 @import './framework/components/accordion_folds';
@@ -177,15 +143,88 @@
 @import './framework/styles/video';
 @import './framework/styles/wp';
 
-// @import './framework/styles/webfont';
-//webfont was not originally pulled in from the framework, commenting out for now
+//--------------------------------------------------  Experiment brought over manually from WDS
 
+// @import './wds/fake-theme.scss';
+
+// @import './wds-approx/nav-menu.scss';
+// @import './wds/blocks/nav-menu/style.scss';
+// @import './wds/screen.scss';
+
+//--------------------------------------------------  Using static export source files
+
+// @import './static-export/screen.css';
+// @import './static-export/blocks/nav-menu/style-index.css';
+// @import './static-export/blocks/site-header/style-index.css';
+
+// @import './export-wp/utkwds-blocks-nav-menu-style-index.css';
+// @import './export-wp/utkwds-blocks-site-header-style-index.css';
+// @import './export-wp/cover-style.min.css';
+
+// @import './export-wp/utkwds-screen.css';
+
+//--------------------------------------------------  Recreate the entire stack of imports for WDS 1.1.2
+
+// @import './wds-approx/universal-header-fix.scss';
+// @import './wds-approx/site-header.scss';
+// @import './wds-approx/variables-approx.scss';
+
+// @import './wds/build/buttons-and-links';
+// @import './wds/build/screen.scss';
+
+// import block styles
+// @import './wds/build/blocks/accordion/style.scss';
+// @import './wds/build/blocks/accordion-panel/style.scss';
+// @import './wds/build/blocks/breadcrumbs/style.scss';
+@import './wds/build/blocks/nav-menu/style.scss';
+@import './wds/build/blocks/site-header/style.scss';
+// @import './wds/build/blocks/tab/style.scss';
+// @import './wds/build/blocks/tab-group/style.scss';
+// @import './wds/build/blocks/test-block/style.scss';
+
+// import component styles
+// @import './wds/build/components/accordion.scss';
+// @import './wds/build/components/button.scss';
+// @import './wds/build/components/cards.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/components/cover.scss';
+// @import './wds/build/components/fancy_link.scss';
+// @import './wds/build/components/gallery_two_up.scss';
+// @import './wds/build/components/gallery.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/components/image.scss';
+// @import './wds/build/components/jumbotron.scss';
+// @import './wds/build/components/jump_links.scss';
+// @import './wds/build/components/media_text.scss';
+// @import './wds/build/components/news.scss';
+// @import './wds/build/components/quotes.scss';
+// @import './wds/build/components/separator.scss';
+// @import './wds/build/components/sliders.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/components/strip.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/components/tabs.scss';
+
+// import regions styles
+// @import './wds/build/regions/breadcrumbs.scss';
+// @import './wds/build/regions/contentarea.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/regions/navigation_genesis_simple.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/regions/search.scss';
+@import './wds/build/regions/universal-header.scss';
+// @import './wds/build/regions/universal-footer.scss';
+
+// @import './wds/build/styles/cards';
+// @import './wds/build/styles/modals';
+// @import './wds/build/styles/fixes';
+// @import './wds/build/styles/orange-accents';
+// @import './wds/build/styles/patterns';
+
+// utk.edu specific
 // Main Site
-
 @import './components/Hero.module.scss';
 @import '_extended';
 
 @import './special/forms';
+
+// .visually-hidden-focusable {
+//   background-color: aqua;
+// }
 
 // temporary fixes to allow us to run WDS 1.1.2 on Dev
 @import './framework/temp/wds-bandaid.scss';
