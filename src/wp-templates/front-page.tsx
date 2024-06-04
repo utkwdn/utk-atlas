@@ -22,14 +22,20 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
   }, []);
 
   const pageData = props.data?.page;
-  const generalSettings = props.data?.generalSettings;
+  // const generalSettings = props.data?.generalSettings;
+  // const siteTitle = props.data?.generalSettings?.title || undefined;
   const yoastString = props.data?.page?.seo?.fullHead || '';
+  const seoTitle =
+    props.data?.page?.seo?.title || 'University of Tennessee, Knoxville';
 
   return (
     <>
       <Header />
 
-      <Head>{parse(yoastString)}</Head>
+      <Head>
+        <title>{seoTitle}</title>
+        {parse(yoastString)}
+      </Head>
       <Hero />
 
       <div className="container-fluid">
@@ -48,7 +54,6 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
   );
 };
 
-// Temporarily Commenting out – ID! Error
 FrontPage.variables = ({ databaseId }, ctx) => {
   return {
     databaseId,
@@ -61,27 +66,7 @@ FrontPage.query = gql(`
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       content
       seo {
-        fullHead
-      }
-    }
-    generalSettings {
-      title
-    }
-  }
-`);
-
-FrontPage.variables = ({ databaseId }, ctx) => {
-  return {
-    databaseId,
-    asPreview: ctx?.asPreview,
-  };
-};
-
-FrontPage.query = gql(`
-  query GetFrontPage($databaseId: ID!, $asPreview: Boolean = false) {
-    page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-      content
-      seo {
+        title
         fullHead
       }
     }
