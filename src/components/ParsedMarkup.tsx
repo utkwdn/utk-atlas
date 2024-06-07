@@ -185,6 +185,16 @@ const toReactNode = ({
           const { href: rawHref, 'data-internal-link': dataInternalLink } =
             attribs;
 
+          if (
+            rawHref?.startsWith('https://www.utk.edu') ||
+            rawHref?.startsWith('http://www.utk.edu') ||
+            rawHref?.startsWith('https://utk.edu') ||
+            rawHref?.startsWith('http://utk.edu') ||
+            rawHref?.startsWith('/')
+          ) {
+            console.log(JSON.stringify(attribs));
+          }
+
           if (rawHref && dataInternalLink === 'true') {
             /** Root-relative path. */
             let href: string | undefined;

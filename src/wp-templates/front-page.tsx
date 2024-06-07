@@ -30,7 +30,7 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
 
   return (
     <>
-      <Header />
+      <Header dynamicSrc={dynamicSrc} />
 
       <Head>
         <title>{seoTitle}</title>

@@ -57,7 +57,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
 
   return (
     <>
-      <Header />
+      <Header dynamicSrc={dynamicSrc} />
 
       <Head>
         <title>{seoTitle}</title>

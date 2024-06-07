@@ -23,12 +23,14 @@ interface Props {
       | null
       | undefined;
   }[];
+  dynamicSrc?: string;
   currentTopLevelItemId: string | undefined;
   currentSecondLevelItemId: string | null | undefined;
 }
 
 const UniversalHeader = ({
   links,
+  dynamicSrc,
   currentTopLevelItemId,
   currentSecondLevelItemId,
 }: Props) => {
@@ -81,16 +83,22 @@ const UniversalHeader = ({
     await router.push(`/search/${encodedQuery}`);
   };
 
+  const appendDynamicSrc = () => {
+    const appendString =
+      dynamicSrc && dynamicSrc !== '' ? `?dmc=${dynamicSrc}` : '';
+    return appendString;
+  };
+
   const linkItems = (
     <>
       <li>
-        <Link href="/requestinfo">Request Info</Link>
+        <Link href={`/requestinfo${appendDynamicSrc()}`}>Request Info</Link>
       </li>
       <li>
-        <Link href="/visit">Visit</Link>
+        <Link href={`/visit${appendDynamicSrc()}`}>Visit</Link>
       </li>
       <li>
-        <Link href="/admissions">Apply</Link>
+        <Link href={`/admissions${appendDynamicSrc()}`}>Apply</Link>
       </li>
       {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
       <li>
@@ -386,12 +394,16 @@ const UniversalHeader = ({
                   const subItems = this_link.childItems?.nodes;
                   const subItemCount = subItems?.length || 0;
                   const hasSubItems = subItemCount > 0;
-                  const linkAddress = this_link.uri || '';
+                  // const linkAddress = this_link.uri || '';
                   const linkLabel = this_link.label || '';
                   const isExpanded = activeSubmenu === linkLabel;
                   const isTopLevelActive =
                     this_link.id === currentTopLevelItemId;
                   const isInternalTop = this_link.uri !== this_link.url;
+                  const linkAddress =
+                    isInternalTop && dynamicSrc && dynamicSrc !== ''
+                      ? `${this_link.uri}?dmc=${dynamicSrc}`
+                      : this_link.uri || '';
                   return hasSubItems ? (
                     <li className=" collapsible-menu-item" key={this_link.id}>
                       <button
@@ -475,10 +487,17 @@ const UniversalHeader = ({
                             )}
                           </li>
                           {subItems?.map((this_item) => {
-                            const subItemLink = this_item.uri || '';
+                            // const subItemLink = this_item.uri || '';
                             const subItemLabel = this_item.label || '';
                             const isInternalSecondary =
                               this_item.uri !== this_item.url;
+                            // If dynamicSrc is set, append to end of internal links
+                            const subItemLink =
+                              isInternalSecondary &&
+                              dynamicSrc &&
+                              dynamicSrc !== ''
+                                ? `${this_item.uri}?dmc=${dynamicSrc}`
+                                : this_item.uri || '';
                             return (
                               <li
                                 className=" collapsible-menu-item"
