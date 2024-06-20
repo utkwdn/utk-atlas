@@ -49,7 +49,7 @@ const FrontPage: FaustTemplate<GetFrontPageQuery> = (props) => {
         </main>
       </div>
 
-      <Footer />
+      <Footer dynamicSrc={dynamicSrc} />
     </>
   );
 };

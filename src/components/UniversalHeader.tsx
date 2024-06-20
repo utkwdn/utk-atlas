@@ -23,7 +23,7 @@ interface Props {
       | null
       | undefined;
   }[];
-  dynamicSrc?: string;
+  dynamicSrc: string;
   currentTopLevelItemId: string | undefined;
   currentSecondLevelItemId: string | null | undefined;
 }
@@ -73,6 +73,26 @@ const UniversalHeader = ({
     }, 800);
   };
 
+  // const appendDynamicSrc = () => {
+  //   const appendString =
+  //     dynamicSrc && dynamicSrc !== '' ? `?dmc=${dynamicSrc}` : '';
+  //   return appendString;
+  // };
+  const appendDynamicSrc = (linkAddress: string) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
+
   const handleSearchSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Encode HTML Entities
@@ -80,25 +100,19 @@ const UniversalHeader = ({
       /[\u00A0-\u9999<>\&]/g,
       (i) => `&#${i.charCodeAt(0)};`
     );
-    await router.push(`/search/${encodedQuery}`);
-  };
-
-  const appendDynamicSrc = () => {
-    const appendString =
-      dynamicSrc && dynamicSrc !== '' ? `?dmc=${dynamicSrc}` : '';
-    return appendString;
+    await router.push(appendDynamicSrc(`/search/${encodedQuery}`));
   };
 
   const linkItems = (
     <>
       <li>
-        <Link href={`/requestinfo${appendDynamicSrc()}`}>Request Info</Link>
+        <Link href={appendDynamicSrc('/requestinfo')}>Request Info</Link>
       </li>
       <li>
-        <Link href={`/visit${appendDynamicSrc()}`}>Visit</Link>
+        <Link href={appendDynamicSrc('/visit')}>Visit</Link>
       </li>
       <li>
-        <Link href={`/admissions${appendDynamicSrc()}`}>Apply</Link>
+        <Link href={appendDynamicSrc('/admissions')}>Apply</Link>
       </li>
       {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
       <li>
@@ -118,7 +132,7 @@ const UniversalHeader = ({
       <div id="universal-header" className="universal-header">
         <div className="universal-header__inner">
           <div className="universal-header__logo">
-            <Link href="/">
+            <Link href={appendDynamicSrc('/')}>
               <img
                 src="/images/chrome/logo-horizontal-left-smokey.svg"
                 alt="University of Tennessee, Knoxville"
@@ -400,10 +414,7 @@ const UniversalHeader = ({
                   const isTopLevelActive =
                     this_link.id === currentTopLevelItemId;
                   const isInternalTop = this_link.uri !== this_link.url;
-                  const linkAddress =
-                    isInternalTop && dynamicSrc && dynamicSrc !== ''
-                      ? `${this_link.uri}?dmc=${dynamicSrc}`
-                      : this_link.uri || '';
+                  const linkAddress = appendDynamicSrc(this_link.uri || '');
                   return hasSubItems ? (
                     <li className=" collapsible-menu-item" key={this_link.id}>
                       <button
@@ -492,12 +503,9 @@ const UniversalHeader = ({
                             const isInternalSecondary =
                               this_item.uri !== this_item.url;
                             // If dynamicSrc is set, append to end of internal links
-                            const subItemLink =
-                              isInternalSecondary &&
-                              dynamicSrc &&
-                              dynamicSrc !== ''
-                                ? `${this_item.uri}?dmc=${dynamicSrc}`
-                                : this_item.uri || '';
+                            const subItemLink = appendDynamicSrc(
+                              this_item.uri || ''
+                            );
                             return (
                               <li
                                 className=" collapsible-menu-item"

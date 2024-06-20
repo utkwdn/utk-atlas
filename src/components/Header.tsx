@@ -87,6 +87,21 @@ const Header = ({ dynamicSrc }: Props) => {
       });
   }
 
+  const appendDynamicSrc = (linkAddress: string) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
+
   useEffect(() => {
     fetchAlert();
   }, []);
@@ -96,7 +111,7 @@ const Header = ({ dynamicSrc }: Props) => {
       <header className="site-header">
         <UniversalHeader
           links={links}
-          dynamicSrc={dynamicSrc}
+          dynamicSrc={dynamicSrc || ''}
           currentTopLevelItemId={currentTopLevelItemId}
           currentSecondLevelItemId={currentSecondLevelItemId}
         />
@@ -116,10 +131,7 @@ const Header = ({ dynamicSrc }: Props) => {
                 const hasSubItems = subItemCount > 0;
                 const isInternalTop = this_link.uri !== this_link.url;
                 // If dynamicSrc is set, append to end of internal links
-                const linkAddress =
-                  isInternalTop && dynamicSrc && dynamicSrc !== ''
-                    ? `${this_link.uri}?dmc=${dynamicSrc}`
-                    : this_link.uri || '';
+                const linkAddress = appendDynamicSrc(this_link.uri || '');
                 const linkLabel = this_link.label || '';
                 const isExpanded = activeSubmenu === linkLabel;
                 const isTopLevelActive = this_link.id === currentTopLevelItemId;
@@ -205,12 +217,15 @@ const Header = ({ dynamicSrc }: Props) => {
                           const isInternalSecondary =
                             this_item.uri !== this_item.url;
                           // If dynamicSrc is set, append to end of internal links
-                          const subItemLink =
-                            isInternalSecondary &&
-                            dynamicSrc &&
-                            dynamicSrc !== ''
-                              ? `${this_item.uri}?dmc=${dynamicSrc}`
-                              : this_item.uri || '';
+                          const subItemLink = appendDynamicSrc(
+                            this_item.uri || ''
+                          );
+                          // const subItemLink =
+                          //   isInternalSecondary &&
+                          //   dynamicSrc &&
+                          //   dynamicSrc !== ''
+                          //     ? `${this_item.uri}?dmc=${dynamicSrc}`
+                          //     : this_item.uri || '';
                           const subItemLabel = this_item.label || '';
                           const isSecondLevelActive =
                             this_item.id === currentSecondLevelItemId;
