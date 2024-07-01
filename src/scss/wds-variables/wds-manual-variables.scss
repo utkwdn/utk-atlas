@@ -1,0 +1,52 @@
+:root {
+  --wp--preset--font-size--small: clamp(
+    1.125rem,
+    1.125rem + ((1vw - 0.2rem) * 1),
+    1.125rem
+  );
+  --wp--preset--font-size--medium: clamp(
+    1.25rem,
+    1.25rem + ((1vw - 0.2rem) * 0.814),
+    1.85rem
+  );
+  --wp--preset--font-size--large: clamp(
+    1.51375rem,
+    1.514rem + ((1vw - 0.2rem) * 1.357),
+    2.515rem
+  );
+  --wp--preset--font-size--x-large: clamp(
+    2.05875rem,
+    2.059rem + ((1vw - 0.2rem) * 1.561),
+    3.21rem
+  );
+  --wp--preset--font-size--x-small: clamp(
+    1rem,
+    1rem + ((1vw - 0.2rem) * 1),
+    1rem
+  );
+  --wp--preset--font-size--normal: clamp(
+    1.25rem,
+    1.25rem + ((1vw - 0.2rem) * 1),
+    1.25rem
+  );
+  --wp--preset--font-size--xx-large: clamp(
+    2.8rem,
+    2.8rem + ((1vw - 0.2rem) * 2.513),
+    4.653rem
+  );
+  --wp--preset--font-family--primary: 'Montserrat', 'Helvetica Neue', Helvetica,
+    Arial, system-ui, -apple-system, sans-serif;
+  --wp--preset--font-family--monospace: monospace;
+  --wp--preset--spacing--20: 0.44rem;
+  --wp--preset--spacing--30: 0.67rem;
+  --wp--preset--spacing--40: 1rem;
+  --wp--preset--spacing--50: 1.5rem;
+  --wp--preset--spacing--60: 2.25rem;
+  --wp--preset--spacing--70: 3.38rem;
+  --wp--preset--spacing--80: 5.06rem;
+  --wp--preset--spacing--x-small: 20px;
+  --wp--preset--spacing--small: clamp(30px, 4vw, 40px);
+  --wp--preset--spacing--medium: clamp(40px, 6vw, 60px);
+  --wp--preset--spacing--large: clamp(50px, 8vw, 80px);
+  --wp--preset--spacing--x-large: clamp(60px, 10vw, 100px);
+}

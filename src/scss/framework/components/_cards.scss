@@ -279,6 +279,13 @@ used on utk.edu home specifically */
       margin-top: 0;
     }
   }
+  &.align-bottom-mobile {
+    @media screen and (max-width: 800px) {
+      bottom: 0;
+      align-self: flex-end;
+      margin-bottom: -1.5rem !important; //counters bs-gutter
+    }
+  }
 }
 
 .full-width-card {

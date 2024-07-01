@@ -3,13 +3,30 @@
 // import theme.json global stylesheet from WDS 1.1.2
 
 // @import './wds/build/frost';
-// @import '/globalStylesheet.css';
+// @import '/globalStylesheet.scss'; // this has to be a scss file to be able to pull in the css variables for use farther down. Turning off for now, this breaks a lot.
 
 // Flattened styles from exported WDS 1.1.2
 // @import './wds/theme/screen';
 
 // @import "variables";
 // @import "typography";
+
+// :root {
+//   // defining wordpress variables set in theme.json
+//   --wp--preset--color--gray: #cccccc;
+//   --wp--preset--color--white: #ffffff;
+//   --wp--custom--color--river: #1a73c5;
+//   --wp--custom--color--hover: #0d47a1;
+//   --wp--custom--color--cool-smokey: rgba(49, 62, 72, 0.92);
+
+//   --wp--preset--spacing-60: 2.25rem;
+//   --wp--preset--spacing-80: 2.25rem;
+
+//   --wp--style--root--padding-top: 0.66em;
+//   --wp--style--root--padding-right: 1.33em;
+//   --wp--style--root--padding-bottom: 0.66em;
+//   --wp--style--root--padding-left: 1.33em;
+// }
 
 // Configuration
 @import './node_modules/bootstrap/scss/functions';
@@ -20,6 +37,7 @@
 @import './node_modules/bootstrap/scss/mixins';
 @import './node_modules/bootstrap/scss/utilities';
 
+@import './wds-variables/wds-manual-variables.scss';
 // Shared with WDS 1.1.2
 
 //Layout & components
@@ -128,6 +146,7 @@
 @import './framework/styles/frame';
 @import './framework/styles/gutenberg';
 @import './framework/styles/highlight_boxes';
+@import './framework/styles/icons';
 @import './framework/styles/images';
 @import './framework/styles/logos';
 @import './framework/styles/modals';
@@ -186,7 +205,7 @@
 // @import './wds/build/components/accordion.scss';
 // @import './wds/build/components/button.scss';
 // @import './wds/build/components/cards.scss'; // not utilized in WDS 1.1.2
-// @import './wds/build/components/cover.scss';
+@import './wds/build/components/cover.scss';
 // @import './wds/build/components/fancy_link.scss';
 // @import './wds/build/components/gallery_two_up.scss';
 // @import './wds/build/components/gallery.scss'; // not utilized in WDS 1.1.2
@@ -195,7 +214,7 @@
 // @import './wds/build/components/jump_links.scss';
 // @import './wds/build/components/media_text.scss';
 // @import './wds/build/components/news.scss';
-// @import './wds/build/components/quotes.scss';
+@import './wds/build/components/quotes.scss';
 // @import './wds/build/components/separator.scss';
 // @import './wds/build/components/sliders.scss'; // not utilized in WDS 1.1.2
 // @import './wds/build/components/strip.scss'; // not utilized in WDS 1.1.2
