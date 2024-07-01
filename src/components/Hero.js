@@ -253,9 +253,9 @@ const Hero = () => {
             </h2>
 
             {/* BEGIN DYNAMIC CONTENT */}
-            {dynamicSrc === 'visit-campus' ? (
+            {dynamicSrc === 'awareness' ? (
               <>
-                {/* 'visit-campus' content */}
+                {/* 'awareness' content */}
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
                     Get a free sticker when you request info!
@@ -515,7 +515,7 @@ const Hero = () => {
         {/* end hero202112A */}
       </div>
       {/* end hero202112Container */}
-      <div className="container">
+      {/* <div className="container">
         <ul className="nav nav-fill internal-links py-4 row">
           <li className="nav-item col-md-4">
             <a className="btn btn-internal" href="#academics">
@@ -533,7 +533,7 @@ const Hero = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
       {}
     </>
   );
