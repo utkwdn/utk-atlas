@@ -1108,3 +1108,25 @@ p.theme {
 .whiteOpacity {
   background-color: RGBA(255, 255, 255, 0.9) !important;
 }
+
+.force-column-break-1330 {
+  @media screen and (max-width: 1330px) {
+    display: flex;
+    flex-direction: column;
+    // max-width: 80vw;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+
+    .video-column,
+    .media-column {
+      flex-basis: 100% !important;
+      text-align: left !important;
+
+      &.is-layout-flow {
+        > .alignright {
+          float: left !important;
+        }
+      }
+    }
+  }
+}
