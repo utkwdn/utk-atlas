@@ -271,12 +271,12 @@ const Hero = () => {
                   />
                 </div>
                 {/* Start of Q4 November 1st Push */}
-                <a
+                {/* <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
                   Why apply by November 1?
-                </a>
+                </a> */}
                 <div
                   className="modal show"
                   style={{ display: 'block', position: 'initial' }}
