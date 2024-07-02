@@ -455,16 +455,16 @@ const Hero = () => {
             <div className="heroSquareB layoutB">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.webp"
+                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
-                  alt="group of students gather on campus in a public green space"
+                  src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                  alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
                 />
               </picture>
             </div>
