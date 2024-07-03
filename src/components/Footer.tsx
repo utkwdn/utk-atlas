@@ -5,13 +5,30 @@ import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
 import { FooterToolsQuery } from '../__generated__/graphql';
 
-// const Footer: FaustTemplate<FooterToolsQuery> = (props) => {
-function Footer(): JSX.Element {
+interface Props {
+  dynamicSrc?: string;
+}
+function Footer({ dynamicSrc }: Props): JSX.Element {
   const queryResults = useQuery(Footer.query);
   const footerQueryData: FooterToolsQuery | undefined = queryResults.data;
 
   const tools = footerQueryData?.toolsItems?.nodes || [];
   const links = footerQueryData?.linksItems?.nodes || [];
+
+  const appendDynamicSrc = (linkAddress: string) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
 
   return (
     <footer id="colophon" className="site-footer  mt-auto">
@@ -26,7 +43,8 @@ function Footer(): JSX.Element {
                     <ul id="list-unstyled" className="list-unstyled">
                       {tools.flatMap((tool) => {
                         const label = tool?.label;
-                        const url = tool?.url;
+                        const url = appendDynamicSrc(tool?.url || '');
+
                         if (label && url) {
                           return (
                             <li key={`${label}$-menu`}>
@@ -52,7 +70,7 @@ function Footer(): JSX.Element {
                     <ul className="list-unstyled">
                       {links.flatMap((link) => {
                         const label = link?.label;
-                        const url = link?.url;
+                        const url = appendDynamicSrc(link?.url || '');
                         if (label && url) {
                           return (
                             <li key={`${label}$-menu`}>
@@ -181,7 +199,7 @@ function Footer(): JSX.Element {
                   ADA
                 </a>
                 <Link
-                  href="/about/privacy/"
+                  href={appendDynamicSrc('/about/privacy/')}
                   className="text-white me-3 footer-links"
                 >
                   Privacy

@@ -14,6 +14,21 @@ const Hero = () => {
 
   const [dynamicSrc, setDynamicSrc] = useState('');
 
+  const appendDynamicSrc = (linkAddress) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
+
   useEffect(() => {
     // Check if url param 'dmc' is set and save to dynamicSrc if so
     const searchParams = new URLSearchParams(document.location.search);
@@ -301,7 +316,9 @@ const Hero = () => {
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
-                            href="https://www.utk.edu/admissions"
+                            href={appendDynamicSrc(
+                              'https://www.utk.edu/admissions'
+                            )}
                             className="hero-cat"
                           >
                             Apply today
@@ -333,7 +350,10 @@ const Hero = () => {
                   </p> */}
 
                   <p className="fancyLink stack-links">
-                    <a href="https://utk.edu/requestinfo" className="hero-cat">
+                    <a
+                      href={appendDynamicSrc('https://utk.edu/requestinfo')}
+                      className="hero-cat"
+                    >
                       Request more info
                     </a>
                   </p>
