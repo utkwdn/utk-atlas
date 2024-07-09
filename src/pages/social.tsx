@@ -7,10 +7,28 @@ import { getNextStaticProps } from '@faustwp/core';
 import styles from 'scss/pages/social-hub.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 
 function Social() {
+  const [dynamicSrc, setDynamicSrc] = useState<string>('');
+
   const { data } = useQuery(Social.query);
   const socialUnits = data?.socialUnits?.nodes;
+
+  const appendDynamicSrc = () => {
+    const appendString =
+      dynamicSrc && dynamicSrc !== '' ? `?dmc=${dynamicSrc}` : '';
+    return appendString;
+  };
+
+  useEffect(() => {
+    // Check if url param 'dmc' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('dmc');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
 
   return (
     <Layout>
@@ -28,7 +46,7 @@ function Social() {
           <div className="wp-block-button is-style-outline">
             <Link
               className="wp-block-button__link wp-element-button"
-              href="/hashtags"
+              href={`/hashtags${appendDynamicSrc()}`}
             >
               Hashtag Guide
             </Link>
@@ -36,7 +54,7 @@ function Social() {
           <div className="wp-block-button is-style-outline">
             <Link
               className="wp-block-button__link wp-element-button"
-              href="/emojis"
+              href={`/emojis${appendDynamicSrc()}`}
             >
               Emojis
             </Link>

@@ -57,7 +57,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
 
   return (
     <>
-      <Header />
+      <Header dynamicSrc={dynamicSrc} />
 
       <Head>
         <title>{seoTitle}</title>
@@ -83,7 +83,7 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
         </div>
       </main>
 
-      <Footer />
+      <Footer dynamicSrc={dynamicSrc} />
 
       {/* Slate Form Modal */}
       {slateFormInfo.length > 0 ? (
