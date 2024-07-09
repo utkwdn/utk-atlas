@@ -65,6 +65,7 @@ function Programs() {
   const [dataUpdated, setDataUpdated] = useState('[date]');
   const filtersRef = useRef<null | HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [dynamicSrc, setDynamicSrc] = useState<string>('');
 
   const scrollToFilters = () => {
     if (filtersRef.current) {
@@ -92,13 +93,35 @@ function Programs() {
     if (_filters[filterType] !== value) {
       _filters[filterType] = value;
       setFilters({ ..._filters });
-    }
 
-    updateUrl();
+      // updateUrl();
+    }
   };
 
   const handleSelectChange = (filterType: string, value: string) => {
     handleFilterChange(filterType, value);
+    updateUrl();
+    scrollToFilters();
+  };
+
+  const handleSearchChange = (value: string) => {
+    handleFilterChange('search', value);
+    updateUrl();
+  };
+
+  const handleSwitchChange = () => {
+    const newSwitchValue = filters.online === '' ? 'true' : '';
+
+    handleFilterChange('online', newSwitchValue);
+    updateUrl();
+    scrollToFilters();
+  };
+
+  const handleSearchSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    handleFilterChange('search', filters.search);
+    updateUrl();
     scrollToFilters();
   };
 
@@ -136,20 +159,6 @@ function Programs() {
     });
 
     window.history.replaceState('', '', `/academics/programs${queryString}`);
-  };
-
-  const handleSwitchChange = () => {
-    const newSwitchValue = filters.online === '' ? 'true' : '';
-
-    handleFilterChange('online', newSwitchValue);
-    scrollToFilters();
-  };
-
-  const handleSearchSubmit = (e: FormEvent) => {
-    e.preventDefault();
-
-    handleFilterChange('search', filters.search);
-    scrollToFilters();
   };
 
   // Create URL friendly string for URL params and select boxes
@@ -306,6 +315,12 @@ function Programs() {
     return concentrationArray;
   };
 
+  const appendDynamicSrc = () => {
+    const appendString =
+      dynamicSrc && dynamicSrc !== '' ? `?dmc=${dynamicSrc}` : '';
+    return appendString;
+  };
+
   useEffect(() => {
     // Convert any URL params into filters
     if (router.query.slug && router.query.slug.length > 1) {
@@ -419,6 +434,16 @@ function Programs() {
       setIsLoading(false);
     }
   }, [programs, filters]);
+
+  useEffect(() => {
+    // Check if url param 'dmc' is set and save to dynamicSrc if so
+    const searchParams = new URLSearchParams(document.location.search);
+    const srcParam = searchParams.get('dmc');
+    if (srcParam) {
+      setDynamicSrc(srcParam);
+    }
+  }, []);
+
   return (
     <Layout>
       <Head>
@@ -445,7 +470,10 @@ function Programs() {
             </p>
             <div className="fancyLinkGroup ch-md is-layout-flow">
               <p className="fancyLink stack-links">
-                <a href="https://utk.edu/requestinfo" className="hero-cat">
+                <a
+                  href={`https://utk.edu/requestinfo${appendDynamicSrc()}`}
+                  className="hero-cat"
+                >
                   Request info
                 </a>
               </p>
@@ -469,7 +497,7 @@ function Programs() {
               className={styles['alpha-form']}
             >
               <TextField
-                onChange={(e) => handleFilterChange('search', e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 type="search"
                 label="Find a program"
                 value={filters.search}

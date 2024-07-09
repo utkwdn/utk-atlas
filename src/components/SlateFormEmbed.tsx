@@ -1,50 +1,50 @@
 import { memo, useEffect, useRef } from 'react';
 
-const TARGET_STRINGS = ['cdn.technolutions.net'];
+// const TARGET_STRINGS = ['cdn.technolutions.net'];
 
-type ScriptOrLink = HTMLScriptElement | HTMLLinkElement;
+// type ScriptOrLink = HTMLScriptElement | HTMLLinkElement;
 
-const assetsByScriptSrc = new Map<string, ScriptOrLink[]>();
+// const assetsByScriptSrc = new Map<string, ScriptOrLink[]>();
 
-const addRelatedAssetsIfNeeded = (script: HTMLScriptElement) => {
-  const assets = assetsByScriptSrc.get(script.src);
-  if (!assets) return;
+// const addRelatedAssetsIfNeeded = (script: HTMLScriptElement) => {
+//   const assets = assetsByScriptSrc.get(script.src);
+//   if (!assets) return;
 
-  assets.forEach((asset) => {
-    if (document.head.contains(asset)) return;
-    document.head.appendChild(asset);
-  });
-};
+//   assets.forEach((asset) => {
+//     if (document.head.contains(asset)) return;
+//     document.head.appendChild(asset);
+//   });
+// };
 
-const removeRelatedAssets = (script: HTMLScriptElement) => {
-  if (!assetsByScriptSrc.has(script.src)) {
-    const assets: ScriptOrLink[] = [];
+// const removeRelatedAssets = (script: HTMLScriptElement) => {
+//   if (!assetsByScriptSrc.has(script.src)) {
+//     const assets: ScriptOrLink[] = [];
 
-    const allNextSiblings: ChildNode[] = [];
-    let sibling: ChildNode | null = script;
-    while ((sibling = sibling.nextSibling)) {
-      allNextSiblings.push(sibling);
-    }
+//     const allNextSiblings: ChildNode[] = [];
+//     let sibling: ChildNode | null = script;
+//     while ((sibling = sibling.nextSibling)) {
+//       allNextSiblings.push(sibling);
+//     }
 
-    allNextSiblings.forEach((sibling) => {
-      if (sibling instanceof HTMLScriptElement) {
-        if (TARGET_STRINGS.some((s) => sibling.src.includes(s))) {
-          return void assets.push(sibling);
-        }
-      } else if (sibling instanceof HTMLLinkElement) {
-        if (TARGET_STRINGS.some((s) => sibling.href.includes(s))) {
-          return void assets.push(sibling);
-        }
-      }
-    });
+//     allNextSiblings.forEach((sibling) => {
+//       if (sibling instanceof HTMLScriptElement) {
+//         if (TARGET_STRINGS.some((s) => sibling.src.includes(s))) {
+//           return void assets.push(sibling);
+//         }
+//       } else if (sibling instanceof HTMLLinkElement) {
+//         if (TARGET_STRINGS.some((s) => sibling.href.includes(s))) {
+//           return void assets.push(sibling);
+//         }
+//       }
+//     });
 
-    assetsByScriptSrc.set(script.src, assets);
-  }
+//     assetsByScriptSrc.set(script.src, assets);
+//   }
 
-  (assetsByScriptSrc.get(script.src) || []).forEach((asset) => {
-    asset.remove();
-  });
-};
+//   (assetsByScriptSrc.get(script.src) || []).forEach((asset) => {
+//     asset.remove();
+//   });
+// };
 
 interface Props {
   id: string;
@@ -81,10 +81,10 @@ const SlateFormEmbed = memo(({ id, scriptSrc }: Props) => {
     if (document.head.contains(script)) return;
 
     document.head.appendChild(script);
-    addRelatedAssetsIfNeeded(script);
+    // addRelatedAssetsIfNeeded(script);
 
     return () => {
-      removeRelatedAssets(script);
+      // removeRelatedAssets(script);
       script.remove();
     };
   }, [id, scriptSrc]);

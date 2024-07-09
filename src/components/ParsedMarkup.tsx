@@ -149,6 +149,23 @@ const toReactNode = ({
     }
   };
 
+  const appendDynamicSrc = (url: string) => {
+    const anchor = url.includes('#')
+      ? `#${url.split('#')[1].split('?')[0]}`
+      : '';
+    const params = url.includes('?')
+      ? `&${url.split('?')[1].split('#')[0]}`
+      : '';
+
+    // Only append params if dynamicSrc is set and link doesn't already include dynamic params
+    if (dynamicSrc && dynamicSrc !== '' && !url.includes('?dmc=')) {
+      const baseUrl = url.split('#')[0].split('?')[0];
+      return `${baseUrl}?dmc=${dynamicSrc}${params}${anchor}`;
+    } else {
+      return url;
+    }
+  };
+
   const parserConfig: HTMLReactParserOptions = {
     replace(domNode) {
       if (isComment(domNode)) {
@@ -171,7 +188,7 @@ const toReactNode = ({
         }
 
         if (trimmedCommentValue.includes('ACADEMICS-PROGRAMS-SEARCH')) {
-          return <AcademicsProgramSearch />;
+          return <AcademicsProgramSearch dynamicSrc={dynamicSrc || ''} />;
         }
       }
 
@@ -185,7 +202,15 @@ const toReactNode = ({
           const { href: rawHref, 'data-internal-link': dataInternalLink } =
             attribs;
 
-          if (rawHref && dataInternalLink === 'true') {
+          if (
+            rawHref &&
+            (rawHref?.startsWith('https://www.utk.edu') ||
+              rawHref?.startsWith('https://utk.edu') ||
+              rawHref?.startsWith('/'))
+          ) {
+            // console.log(attribs);
+
+            // if (rawHref && dataInternalLink === 'true') {
             /** Root-relative path. */
             let href: string | undefined;
 
@@ -195,10 +220,13 @@ const toReactNode = ({
               rawHref.startsWith('//')
             ) {
               // `rawHref` *should* come in as an absolute path, so this code should be executed
-              href = `/${rawHref.split('/').slice(3).join('/')}`;
+              href = `/${appendDynamicSrc(rawHref)
+                .split('/')
+                .slice(3)
+                .join('/')}`;
             } else if (rawHref.startsWith('/')) {
               // in case `rawHref` arrives as a root-relative path already (it shouldn't)
-              href = rawHref;
+              href = appendDynamicSrc(rawHref);
             } else {
               // otherwise, do nothing (though we can come back and add other conditions if needed)
               return;

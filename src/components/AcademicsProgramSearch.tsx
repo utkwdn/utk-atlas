@@ -6,49 +6,30 @@ import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-function AosPrograms(): JSX.Element {
+interface Props {
+  dynamicSrc?: string;
+}
+function AosPrograms({ dynamicSrc }: Props): JSX.Element {
+  const [dmc, setDmc] = useState('');
+  const [searchValue, setSearchValue] = useState('');
+
   const baseUrl = '/academics/programs';
   const anchor = '#filters';
-
-  const [searchValue, setSearchValue] = useState('');
-  const [undergradLink, setUndergradLink] = useState(
-    `${baseUrl}/degree-type/undergraduate${anchor}`
-  );
-  const [gradLink, setGradLink] = useState(
-    `${baseUrl}/degree-type/graduate${anchor}`
-  );
-  const [onlineLink, setOnlineLink] = useState(
-    `${baseUrl}/online/true${anchor}`
-  );
-  const [certificateLink, setCertificateLink] = useState(
-    `${baseUrl}/degree-type/certificate${anchor}`
-  );
-
+  const searchString = searchValue === '' ? '' : `/search/${searchValue}`;
   const router = useRouter();
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     router
-      .push(`${baseUrl}/search/${searchValue}${anchor}`)
+      .push(`${baseUrl}/search/${searchValue}${dmc}${anchor}`)
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    // Add search query to sub-search links
-    if (searchValue !== '') {
-      setUndergradLink(
-        `${baseUrl}/degree-type/undergraduate/search/${searchValue}${anchor}`
-      );
-      setGradLink(
-        `${baseUrl}/degree-type/graduate/search/${searchValue}${anchor}`
-      );
-      setOnlineLink(`${baseUrl}/online/true/search/${searchValue}${anchor}`);
-      setCertificateLink(
-        `${baseUrl}/degree-type/certificate/search/${searchValue}${anchor}`
-      );
+    if (typeof dynamicSrc === 'string' && dynamicSrc !== '') {
+      setDmc(`?dmc=${dynamicSrc}`);
     }
-  }, [searchValue]);
+  }, [dynamicSrc]);
 
   return (
     <div>
@@ -73,19 +54,33 @@ function AosPrograms(): JSX.Element {
       <div>
         <ul className={styles.linkList}>
           <li>
-            <Link href={undergradLink}>Undergraduate</Link>
+            <Link
+              href={`${baseUrl}/degree-type/undergraduate${searchString}${dmc}${anchor}`}
+            >
+              Undergraduate
+            </Link>
           </li>
           <li>
-            <Link href={gradLink}>Graduate</Link>
+            <Link
+              href={`${baseUrl}/degree-type/graduate${searchString}${dmc}${anchor}`}
+            >
+              Graduate
+            </Link>
           </li>
           <li>
-            <Link href={onlineLink}>Online</Link>
+            <Link href={`${baseUrl}/online/true${searchString}${dmc}${anchor}`}>
+              Online
+            </Link>
           </li>
           <li>
-            <Link href={certificateLink}>Certificate</Link>
+            <Link
+              href={`${baseUrl}/degree-type/certificate${searchString}${dmc}${anchor}`}
+            >
+              Certificate
+            </Link>
           </li>
           <li>
-            <Link href={`${baseUrl}${anchor}`}>All programs</Link>
+            <Link href={`${baseUrl}${dmc}${anchor}`}>All programs</Link>
           </li>
         </ul>
       </div>

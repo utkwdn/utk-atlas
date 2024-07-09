@@ -14,6 +14,21 @@ const Hero = () => {
 
   const [dynamicSrc, setDynamicSrc] = useState('');
 
+  const appendDynamicSrc = (linkAddress) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
+
   useEffect(() => {
     // Check if url param 'dmc' is set and save to dynamicSrc if so
     const searchParams = new URLSearchParams(document.location.search);
@@ -253,9 +268,9 @@ const Hero = () => {
             </h2>
 
             {/* BEGIN DYNAMIC CONTENT */}
-            {dynamicSrc === 'visit-campus' ? (
+            {dynamicSrc === 'awareness' ? (
               <>
-                {/* 'visit-campus' content */}
+                {/* 'awareness' content */}
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
                     Get a free sticker when you request info!
@@ -271,12 +286,12 @@ const Hero = () => {
                   />
                 </div>
                 {/* Start of Q4 November 1st Push */}
-                <a
+                {/* <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
                   Why apply by November 1?
-                </a>
+                </a> */}
                 <div
                   className="modal show"
                   style={{ display: 'block', position: 'initial' }}
@@ -301,7 +316,9 @@ const Hero = () => {
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
-                            href="https://www.utk.edu/admissions"
+                            href={appendDynamicSrc(
+                              'https://www.utk.edu/admissions'
+                            )}
                             className="hero-cat"
                           >
                             Apply today
@@ -333,7 +350,10 @@ const Hero = () => {
                   </p> */}
 
                   <p className="fancyLink stack-links">
-                    <a href="https://utk.edu/requestinfo" className="hero-cat">
+                    <a
+                      href={appendDynamicSrc('https://utk.edu/requestinfo')}
+                      className="hero-cat"
+                    >
                       Request more info
                     </a>
                   </p>
@@ -455,16 +475,16 @@ const Hero = () => {
             <div className="heroSquareB layoutB">
               <picture>
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.webp"
+                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
+                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
                   type="image/jpeg"
                 />
                 <img
-                  src="//images.utk.edu/images/www/hero20230801/students-on-campus-01.jpg"
-                  alt="group of students gather on campus in a public green space"
+                  src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                  alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
                 />
               </picture>
             </div>
@@ -515,7 +535,7 @@ const Hero = () => {
         {/* end hero202112A */}
       </div>
       {/* end hero202112Container */}
-      <div className="container">
+      {/* <div className="container">
         <ul className="nav nav-fill internal-links py-4 row">
           <li className="nav-item col-md-4">
             <a className="btn btn-internal" href="#academics">
@@ -533,7 +553,7 @@ const Hero = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
       {}
     </>
   );

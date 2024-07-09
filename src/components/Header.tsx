@@ -7,7 +7,10 @@ import { MainNavQuery } from '../__generated__/graphql';
 import UniversalHeader from './UniversalHeader';
 import { useRouter } from 'next/router';
 
-const Header = () => {
+interface Props {
+  dynamicSrc?: string;
+}
+const Header = ({ dynamicSrc }: Props) => {
   const [alertDisplay, setAlertDisplay] = useState('none');
   const [alertDescription, setAlertDescription] = useState('');
   const [alertDate, setAlertDate] = useState('');
@@ -84,6 +87,21 @@ const Header = () => {
       });
   }
 
+  const appendDynamicSrc = (linkAddress: string) => {
+    const isInternal =
+      linkAddress &&
+      (linkAddress.startsWith('https://www.utk.edu') ||
+        linkAddress.startsWith('https://utk.edu') ||
+        linkAddress.startsWith('/'));
+    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
+
+    if (isInternal && dynamicSrcIsSet) {
+      return linkAddress + `?dmc=${dynamicSrc}`;
+    } else {
+      return linkAddress;
+    }
+  };
+
   useEffect(() => {
     fetchAlert();
   }, []);
@@ -93,6 +111,7 @@ const Header = () => {
       <header className="site-header">
         <UniversalHeader
           links={links}
+          dynamicSrc={dynamicSrc || ''}
           currentTopLevelItemId={currentTopLevelItemId}
           currentSecondLevelItemId={currentSecondLevelItemId}
         />
@@ -110,11 +129,13 @@ const Header = () => {
                 const subItems = this_link.childItems?.nodes;
                 const subItemCount = subItems?.length || 0;
                 const hasSubItems = subItemCount > 0;
-                const linkAddress = this_link.uri || '';
+                const isInternalTop = this_link.uri !== this_link.url;
+                // If dynamicSrc is set, append to end of internal links
+                const linkAddress = appendDynamicSrc(this_link.uri || '');
                 const linkLabel = this_link.label || '';
                 const isExpanded = activeSubmenu === linkLabel;
                 const isTopLevelActive = this_link.id === currentTopLevelItemId;
-                const isInternalTop = this_link.uri !== this_link.url;
+
                 return hasSubItems ? (
                   <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
                     <button
@@ -193,12 +214,22 @@ const Header = () => {
                           )}
                         </li>
                         {subItems?.map((this_item) => {
-                          const subItemLink = this_item.uri || '';
+                          const isInternalSecondary =
+                            this_item.uri !== this_item.url;
+                          // If dynamicSrc is set, append to end of internal links
+                          const subItemLink = appendDynamicSrc(
+                            this_item.uri || ''
+                          );
+                          // const subItemLink =
+                          //   isInternalSecondary &&
+                          //   dynamicSrc &&
+                          //   dynamicSrc !== ''
+                          //     ? `${this_item.uri}?dmc=${dynamicSrc}`
+                          //     : this_item.uri || '';
                           const subItemLabel = this_item.label || '';
                           const isSecondLevelActive =
                             this_item.id === currentSecondLevelItemId;
-                          const isInternalSecondary =
-                            this_item.uri !== this_item.url;
+
                           return (
                             <li className=" dropdown" key={this_item.id}>
                               {isInternalSecondary ? (
