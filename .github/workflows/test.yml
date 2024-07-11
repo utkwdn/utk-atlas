@@ -1,8 +1,9 @@
-on: push
+on: [push]
 
 jobs:
-  lost-pixel-update:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -10,16 +11,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 18.x
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci
 
       - name: Build Next app
-        env:
-          NEXT_PUBLIC_WORDPRESS_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_URL }}
-          PRIMARY_DOMAIN: ${{ secrets.PRIMARY_DOMAIN }}
-          FAUST_SECRET_KEY: ${{ secrets.FAUST_SECRET_KEY }}
         run: npm run build
 
       - name: Run Next app
@@ -27,16 +25,3 @@ jobs:
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v3.17.0
-        env:
-          LOST_PIXEL_MODE: update
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
-        with:
-          token: ${{ secrets.VISUAL_REGRESSION_TESTING }}
-          commit-message: update lost-pixel baselines
-          delete-branch: true
-          branch: 'lost-pixel-update/${{ github.ref_name }}'
-          title: 'Lost Pixel update - ${{ github.ref_name }}'
-          body: Automated baseline update PR created by Lost Pixel
