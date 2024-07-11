@@ -4,8 +4,8 @@ import { CustomProjectConfig } from 'lost-pixel';
 
 export const config: CustomProjectConfig = {
   pageShots: {
-    pages: [{ path: '/app', name: 'app' }],
-    baseUrl: 'http://172.17.0.1:3000',
+    pages: [{ path: '/', name: 'home' }],
+    baseUrl: 'https://hxljyarhr1dyv4e035bh75d33.js.wpenginepowered.com/',
   },
   generateOnly: true,
   failOnDifference: true,
