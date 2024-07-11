@@ -264,7 +264,7 @@ const Hero = () => {
                 Welcome to
               </span>
               <br />
-              Rocky Top
+              Rocky Top!
             </h2>
 
             {/* BEGIN DYNAMIC CONTENT */}
