@@ -1130,3 +1130,8 @@ p.theme {
     }
   }
 }
+
+// Remove top margin from tabs when inside a group
+.tab-content {
+  margin-block-start: 0 !important;
+}
