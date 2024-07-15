@@ -188,20 +188,41 @@ const Hero = () => {
           <div className="heroHolderA layoutA ">
             <div className="angleBracketDown "></div>
             <div className="heroSquareA ">
-              <picture>
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
-                  type="image/webp"
-                />
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                  alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
           </div>
 
@@ -439,32 +460,65 @@ const Hero = () => {
           {/* Begin Layout B Items*/}
           <div className="riverAerialHolder layoutB test">
             <div className="riverAerial">
-              <picture>
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                  type="image/jpeg"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                  alt="sunset over the Tennessee River that surrounds campus"
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
+                    alt="Knoxville skyline as seen from the University of Tennessee campus"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+                    alt="sunset over the Tennessee River that surrounds campus"
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
             <div className="angleBracketUp"></div>
           </div>
@@ -473,20 +527,41 @@ const Hero = () => {
           <div className="heroHolderB layoutB">
             <div className="angleBracketDown angleSpaceMatchB softAppearItem"></div>
             <div className="heroSquareB layoutB">
-              <picture>
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                  alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.jpg"
+                    alt="A professor works with students in the Lee Han Lab"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
           </div>
           <div className="heroRainHolderB layoutB ">
