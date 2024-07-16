@@ -103,22 +103,35 @@ const UniversalHeader = ({
     await router.push(appendDynamicSrc(`/search/${encodedQuery}`));
   };
 
-  const linkItems = () => {
+  const linkItems = (isMobile = false) => {
     return (
       <>
         <li>
-          <Link href={appendDynamicSrc('/requestinfo')}>Request Info</Link>
+          <Link
+            href={appendDynamicSrc('/requestinfo')}
+            tabIndex={isMobile ? -1 : 0}
+          >
+            Request Info
+          </Link>
         </li>
         <li>
-          <Link href={appendDynamicSrc('/visit')}>Visit</Link>
+          <Link href={appendDynamicSrc('/visit')} tabIndex={isMobile ? -1 : 0}>
+            Visit
+          </Link>
         </li>
         <li>
-          <Link href={appendDynamicSrc('/admissions')}>Apply</Link>
+          <Link
+            href={appendDynamicSrc('/admissions')}
+            tabIndex={isMobile ? -1 : 0}
+          >
+            Apply
+          </Link>
         </li>
         {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
         <li>
           <a
             href="https://give.utk.edu/campaigns/42950/donations/new"
+            tabIndex={isMobile ? -1 : 0}
             //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
             // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
           >
@@ -326,7 +339,6 @@ const UniversalHeader = ({
             ? 'main-menu-wrapper offcanvas offcanvas-end show'
             : 'main-menu-wrapper offcanvas offcanvas-end hiding'
         }
-        tabIndex={-1}
         id="mobileMainNav"
         data-max-breakpoint="600"
         aria-modal="true"
@@ -336,6 +348,7 @@ const UniversalHeader = ({
           <button
             type="button"
             className="btn-close"
+            tabIndex={-1}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
             onClick={() => handleHideMobileNav()}
@@ -346,7 +359,7 @@ const UniversalHeader = ({
         <div className="main-menu offcanvas-body">
           <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--mobile">
             <menu id="utility-nav-menu--mobile" className="utk-nav-menu">
-              {linkItems()}
+              {linkItems(true)}
             </menu>
           </div>
           <form
@@ -365,6 +378,7 @@ const UniversalHeader = ({
                 className="form-control"
                 title="Search this site"
                 placeholder="Search"
+                tabIndex={-1}
                 name="s"
                 id="site-search-field-offcanvas"
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -372,6 +386,7 @@ const UniversalHeader = ({
               <button
                 type="submit"
                 className="btn btn-utlink"
+                tabIndex={-1}
                 style={{ background: '#4b4b4b', width: 'auto' }}
               >
                 <svg
@@ -421,6 +436,7 @@ const UniversalHeader = ({
                     <li className=" collapsible-menu-item" key={this_link.id}>
                       <button
                         data-bs-toggle="collapse"
+                        tabIndex={-1}
                         data-bs-target="#mobile-nav-menu-submenu-apply"
                         aria-expanded={isExpanded ? 'true' : 'false'}
                         aria-controls="mobile-nav-menu-submenu-apply"
@@ -477,7 +493,7 @@ const UniversalHeader = ({
                                 </span>
                               </Link>
                             ) : (
-                              <a href={linkAddress}>
+                              <a href={linkAddress} tabIndex={-1}>
                                 <span className="bold-holder">
                                   <span
                                     className="real-title"
@@ -565,7 +581,7 @@ const UniversalHeader = ({
                   ) : (
                     <li className=" collapsible-menu-item" key={this_link.id}>
                       {isInternalTop ? (
-                        <Link href={linkAddress}>
+                        <Link href={linkAddress} tabIndex={-1}>
                           <span className="bold-holder">
                             <span
                               className="real-title"
@@ -587,7 +603,7 @@ const UniversalHeader = ({
                           </span>
                         </Link>
                       ) : (
-                        <a href={linkAddress}>
+                        <a href={linkAddress} tabIndex={-1}>
                           <span className="bold-holder">
                             <span
                               className="real-title"
