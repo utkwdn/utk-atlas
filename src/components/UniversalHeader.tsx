@@ -103,29 +103,31 @@ const UniversalHeader = ({
     await router.push(appendDynamicSrc(`/search/${encodedQuery}`));
   };
 
-  const linkItems = (
-    <>
-      <li>
-        <Link href={appendDynamicSrc('/requestinfo')}>Request Info</Link>
-      </li>
-      <li>
-        <Link href={appendDynamicSrc('/visit')}>Visit</Link>
-      </li>
-      <li>
-        <Link href={appendDynamicSrc('/admissions')}>Apply</Link>
-      </li>
-      {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
-      <li>
-        <a
-          href="https://give.utk.edu/campaigns/42950/donations/new"
-          //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
-          // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
-        >
-          Give
-        </a>
-      </li>
-    </>
-  );
+  const linkItems = () => {
+    return (
+      <>
+        <li>
+          <Link href={appendDynamicSrc('/requestinfo')}>Request Info</Link>
+        </li>
+        <li>
+          <Link href={appendDynamicSrc('/visit')}>Visit</Link>
+        </li>
+        <li>
+          <Link href={appendDynamicSrc('/admissions')}>Apply</Link>
+        </li>
+        {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
+        <li>
+          <a
+            href="https://give.utk.edu/campaigns/42950/donations/new"
+            //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
+            // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
+          >
+            Give
+          </a>
+        </li>
+      </>
+    );
+  };
 
   return (
     <>
@@ -142,7 +144,7 @@ const UniversalHeader = ({
           <div className="universal-header__utility-nav">
             <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--large">
               <menu id="utility-nav-menu--large" className="utk-nav-menu">
-                {linkItems}
+                {linkItems()}
               </menu>{' '}
             </div>
             <div className="search-button-wrapper">
@@ -344,7 +346,7 @@ const UniversalHeader = ({
         <div className="main-menu offcanvas-body">
           <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--mobile">
             <menu id="utility-nav-menu--mobile" className="utk-nav-menu">
-              {linkItems}
+              {linkItems()}
             </menu>
           </div>
           <form
