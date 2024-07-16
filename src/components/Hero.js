@@ -308,11 +308,11 @@ const Hero = () => {
                 </div>
                 {/* Start of Q4 November 1st Push */}
                 {/* <a
-                  onClick={handleShow}
-                  className="subLink pointer-event-visible  cursor-pointer"
-                >
-                  Why apply by November 1?
-                </a> */}
+                onClick={handleShow}
+                className="subLink pointer-event-visible  cursor-pointer"
+              >
+                Why apply by November 1?
+              </a> */}
                 <div
                   className="modal show"
                   style={{ display: 'block', position: 'initial' }}
@@ -350,6 +350,24 @@ const Hero = () => {
                   </Modal>
                 </div>
                 {/* End of Q4 November 1st Push */}
+              </>
+            ) : dynamicSrc === 'meet' ? (
+              <>
+                {/* 'meet' content */}
+                <div className="slate-squeeze mb-3">
+                  <p style={{ maxWidth: 'none' }}>
+                    Get a free sticker when you request info!
+                  </p>
+                  <SlateFormEmbed
+                    id="d9a5c913-3050-4fed-9a75-04aee3bdbed7"
+                    scriptSrc={
+                      `https://govols.utk.edu/register/?id=d9a5c913-3050-4fed-9a75-04aee3bdbed7&output=embed&div=form_d9a5c913-3050-4fed-9a75-04aee3bdbed7` +
+                      (location.search.length > 1
+                        ? '&' + location.search.substring(1)
+                        : '')
+                    }
+                  />
+                </div>
               </>
             ) : (
               <>
@@ -425,6 +443,7 @@ const Hero = () => {
                 {/* End of Q4 November 1st Push */}
               </>
             )}
+
             {/* Confirm Enrollment Link */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
             <a
