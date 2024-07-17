@@ -137,7 +137,8 @@ const Header = ({ dynamicSrc }: Props) => {
                 const isTopLevelActive = this_link.id === currentTopLevelItemId;
 
                 return hasSubItems ? (
-                  <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                  // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                  <li key={this_link.id}>
                     <button
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
