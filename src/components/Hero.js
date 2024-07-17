@@ -485,22 +485,22 @@ const Hero = () => {
                 <picture>
                   <source
                     media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.webp"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.webp"
                     type="image/webp"
                   />
                   <source
                     media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.jpg"
                     type="image/jpeg"
                   />
                   <source
                     media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-02.webp"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.webp"
                     type="image/webp"
                   />
                   <source
                     media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-02.jpg"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.jpg"
                     type="image/jpeg"
                   />
                   <img
