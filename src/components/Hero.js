@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect, useState } from 'react';
 import SlateFormEmbed from './SlateFormEmbed';
 import Modal from 'react-bootstrap/Modal';
+import style from 'scss/components/HeroCTA.module.scss';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
@@ -280,18 +281,17 @@ const Hero = () => {
 
           {/* Begin CTA */}
           <div className="ctaHolder">
-            <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-              <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                Welcome to
-              </span>
-              <br />
-              Rocky Top
-            </h2>
-
             {/* BEGIN DYNAMIC CONTENT */}
             {dynamicSrc === 'awareness' ? (
               <>
                 {/* 'awareness' content */}
+                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  Rocky Top
+                </h2>
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
                     Get a free sticker when you request info!
@@ -354,9 +354,23 @@ const Hero = () => {
             ) : dynamicSrc === 'meet' ? (
               <>
                 {/* 'meet' content */}
+                {/* <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0"> */}
+                <h2
+                  className={`${style['meet-cta']} text-uppercase display-3 mt-md-3 mt-lg-0`}
+                >
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  the University of Tennessee
+                </h2>
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
-                    Get a free sticker when you request info!
+                    This place is home to the Volunteers: people who use their
+                    talent, creativity, and knowledge to shape a better future.
+                  </p>
+                  <p style={{ maxWidth: 'none' }}>
+                    Tell us about yourself for a free sticker!
                   </p>
                   <SlateFormEmbed
                     id="d9a5c913-3050-4fed-9a75-04aee3bdbed7"
@@ -372,6 +386,13 @@ const Hero = () => {
             ) : (
               <>
                 {/* Default content */}
+                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  Rocky Top
+                </h2>
                 <div className="fancyLinkGroup ch-md is-layout-flow">
                   {/* <p className="fancyLink stack-links">
                     <a href="https://www.utk.edu/visit" className="hero-cat">
