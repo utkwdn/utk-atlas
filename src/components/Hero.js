@@ -362,12 +362,12 @@ const Hero = () => {
                     Welcome to
                   </span>
                   <br />
-                  the University of Tennessee
+                  Rocky Top
                 </h2>
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
-                    This place is home to the Volunteers: people who use their
-                    talent, creativity, and knowledge to shape a better future.
+                    UT is home to the Volunteers: people who use their talent,
+                    creativity, and knowledge to shape a better future.
                   </p>
                   <p style={{ maxWidth: 'none' }}>
                     Tell us about yourself for a free sticker!
