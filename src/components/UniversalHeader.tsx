@@ -106,24 +106,17 @@ const UniversalHeader = ({
   const linkItems = (
     <>
       <li>
-        <Link className="uni-nav-item" href={appendDynamicSrc('/requestinfo')}>
-          Request Info
-        </Link>
+        <Link href={appendDynamicSrc('/requestinfo')}>Request Info</Link>
       </li>
       <li>
-        <Link className="uni-nav-item" href={appendDynamicSrc('/visit')}>
-          Visit
-        </Link>
+        <Link href={appendDynamicSrc('/visit')}>Visit</Link>
       </li>
       <li>
-        <Link className="uni-nav-item" href={appendDynamicSrc('/admissions')}>
-          Apply
-        </Link>
+        <Link href={appendDynamicSrc('/admissions')}>Apply</Link>
       </li>
       {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
       <li>
         <a
-          className="uni-nav-item"
           href="https://give.utk.edu/campaigns/42950/donations/new"
           //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
           // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
@@ -429,11 +422,7 @@ const UniversalHeader = ({
                         data-bs-target="#mobile-nav-menu-submenu-apply"
                         aria-expanded={isExpanded ? 'true' : 'false'}
                         aria-controls="mobile-nav-menu-submenu-apply"
-                        className={
-                          isExpanded
-                            ? 'main-nvigation'
-                            : 'collapsed main-nvigation'
-                        }
+                        className={isExpanded ? '' : 'collapsed'}
                         onClick={() =>
                           setActiveSubmenu(isExpanded ? '' : linkLabel)
                         }
@@ -465,10 +454,7 @@ const UniversalHeader = ({
                         <ul style={{ paddingLeft: 'unset' }}>
                           <li className=" collapsible-menu-item">
                             {isInternalTop ? (
-                              <Link
-                                href={linkAddress}
-                                className="main-sub-navigation"
-                              >
+                              <Link href={linkAddress}>
                                 <span className="bold-holder">
                                   <span
                                     className="real-title"
@@ -489,10 +475,7 @@ const UniversalHeader = ({
                                 </span>
                               </Link>
                             ) : (
-                              <a
-                                href={linkAddress}
-                                className="main-sub-navigation"
-                              >
+                              <a href={linkAddress}>
                                 <span className="bold-holder">
                                   <span
                                     className="real-title"
@@ -529,10 +512,7 @@ const UniversalHeader = ({
                                 key={this_item.id}
                               >
                                 {isInternalSecondary ? (
-                                  <Link
-                                    href={subItemLink}
-                                    className="main-sub-navigation"
-                                  >
+                                  <Link href={subItemLink}>
                                     <span className="bold-holder">
                                       <span
                                         className="real-title"
@@ -553,10 +533,7 @@ const UniversalHeader = ({
                                     </span>
                                   </Link>
                                 ) : (
-                                  <a
-                                    href={subItemLink}
-                                    className="main-sub-navigation"
-                                  >
+                                  <a href={subItemLink}>
                                     <span className="bold-holder">
                                       <span
                                         className="real-title"
@@ -586,7 +563,7 @@ const UniversalHeader = ({
                   ) : (
                     <li className=" collapsible-menu-item" key={this_link.id}>
                       {isInternalTop ? (
-                        <Link href={linkAddress} className="main-nvigation">
+                        <Link href={linkAddress}>
                           <span className="bold-holder">
                             <span
                               className="real-title"
@@ -608,7 +585,7 @@ const UniversalHeader = ({
                           </span>
                         </Link>
                       ) : (
-                        <a href={linkAddress} className="main-nvigation">
+                        <a href={linkAddress}>
                           <span className="bold-holder">
                             <span
                               className="real-title"
