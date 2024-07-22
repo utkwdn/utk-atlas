@@ -145,7 +145,9 @@ const Header = ({ dynamicSrc }: Props) => {
                       aria-expanded={isExpanded ? 'true' : 'false'}
                       aria-current={isTopLevelActive ? 'page' : 'false'}
                       className={
-                        isExpanded ? 'dropdown-toggle' : 'dropdown-toggle show'
+                        isExpanded
+                          ? 'dropdown-toggle main-navigation'
+                          : 'dropdown-toggle show main-navigation'
                       }
                       onClick={() =>
                         setActiveSubmenu(isExpanded ? '' : linkLabel)
@@ -171,6 +173,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           {isInternalTop ? (
                             <Link
                               href={linkAddress}
+                              className="main-sub-navigation"
                               aria-current={
                                 isTopLevelActive &&
                                 currentSecondLevelItemId === null
@@ -193,6 +196,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           ) : (
                             <a
                               href={linkAddress}
+                              className="main-sub-navigation"
                               aria-current={
                                 isTopLevelActive &&
                                 currentSecondLevelItemId === null
@@ -236,6 +240,7 @@ const Header = ({ dynamicSrc }: Props) => {
                               {isInternalSecondary ? (
                                 <Link
                                   href={subItemLink}
+                                  className="main-sub-navigation"
                                   aria-current={
                                     isSecondLevelActive ? 'page' : 'false'
                                   }
@@ -255,6 +260,7 @@ const Header = ({ dynamicSrc }: Props) => {
                               ) : (
                                 <a
                                   href={subItemLink}
+                                  className="main-sub-navigation"
                                   aria-current={
                                     isSecondLevelActive ? 'page' : 'false'
                                   }
@@ -284,6 +290,7 @@ const Header = ({ dynamicSrc }: Props) => {
                       <Link
                         href={linkAddress}
                         aria-current={isTopLevelActive ? 'page' : 'false'}
+                        className="main-navigation"
                       >
                         <span className="bold-holder">
                           <span className="real-title">{linkLabel}</span>
@@ -296,6 +303,7 @@ const Header = ({ dynamicSrc }: Props) => {
                       <a
                         href={linkAddress}
                         aria-current={isTopLevelActive ? 'page' : 'false'}
+                        className="main-navigation"
                       >
                         <span className="bold-holder">
                           <span className="real-title">{linkLabel}</span>
