@@ -572,16 +572,16 @@ const Hero = () => {
                 // 'meet' content
                 <picture>
                   <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.webp"
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.webp"
                     type="image/webp"
                   />
                   <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.jpg"
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
                     type="image/jpeg"
                   />
                   <img
-                    src="//images.utk.edu/images/www/hero20240715/hero-image-lee-han-lab-02.jpg"
-                    alt="A professor works with students in the Lee Han Lab"
+                    src="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
+                    alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
                   />
                 </picture>
               ) : (
