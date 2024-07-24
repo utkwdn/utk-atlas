@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <Header dynamicSrc={dynamicSrc} />
-      <main>{children}</main>
+      <main id="skip-link-target">{children}</main>
       <Footer dynamicSrc={dynamicSrc} />
     </>
   );
