@@ -1,4 +1,4 @@
-// import styles from 'scss/components/Header.module.scss';
+import styles from 'scss/components/SkipLink.module.scss';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { gql } from '../__generated__';
@@ -108,6 +108,10 @@ const Header = ({ dynamicSrc }: Props) => {
 
   return (
     <>
+      <a className={styles.skipLink} href="#skip-link-target">
+        Skip to content
+      </a>
+
       <header className="site-header">
         <UniversalHeader
           links={links}

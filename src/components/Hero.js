@@ -184,7 +184,7 @@ const Hero = () => {
     <>
       {/* <Head></Head> */}
 
-      <div className="hero202112Container">
+      <div className="hero202112Container" id="skip-link-target">
         <div className="hero202112A ">
           <div className="heroHolderA layoutA ">
             <div className="angleBracketDown "></div>
