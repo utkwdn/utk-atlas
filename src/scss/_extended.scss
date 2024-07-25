@@ -1138,3 +1138,13 @@ p.theme {
 .tab-content {
   margin-block-start: 0 !important;
 }
+
+// Bold slate form confirmation text on home hero
+.ctaHolder {
+  .slate-squeeze {
+    p {
+      font-weight: normal;
+    }
+    font-weight: bold;
+  }
+}
