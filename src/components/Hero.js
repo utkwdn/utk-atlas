@@ -370,7 +370,7 @@ const Hero = () => {
                     creativity, and knowledge to shape a better future.
                   </p>
                   <p style={{ maxWidth: 'none' }}>
-                    Tell us about yourself for a free sticker!
+                    Tell us about yourself and get a free sticker!
                   </p>
                   <SlateFormEmbed
                     id="d9a5c913-3050-4fed-9a75-04aee3bdbed7"
