@@ -216,6 +216,7 @@ const Hero = () => {
                   <Image
                     src={meetGlowsticks}
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                    placeholder="blur"
                   />
                 </picture>
               ) : (
@@ -236,6 +237,7 @@ const Hero = () => {
                   <Image
                     src={meldMachine}
                     alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
+                    placeholder="blur"
                   />
                 </picture>
               )}
@@ -499,7 +501,7 @@ const Hero = () => {
           <div className="heroRainHolderTripleA layoutA ">
             <picture>
               <source media="(min-width:828px)" srcSet={tripleRain} />
-              <Image src={tripleRain} alt="" />
+              <Image src={tripleRain} alt="" placeholder="blur" />
             </picture>
           </div>
           <div className="orangeBarHolderA layoutA ">
@@ -596,6 +598,7 @@ const Hero = () => {
                   <Image
                     src={smokeyCrowdsurfing}
                     alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
+                    placeholder="blur"
                   />
                 </picture>
               ) : (
@@ -616,6 +619,7 @@ const Hero = () => {
                   <Image
                     src={defaultGlowsticks}
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                    placeholder="blur"
                   />
                 </picture>
               )}
