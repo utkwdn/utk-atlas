@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import SlateFormEmbed from './SlateFormEmbed';
 import Modal from 'react-bootstrap/Modal';
 import style from 'scss/components/HeroCTA.module.scss';
+import Image from 'next/image';
+import meetGlowsticks from '/public/images/hero/hero-2024-q2-02.jpg';
+import meldMachine from '/public/images/hero/hero-2024-q2-01.jpg';
+import smokeyCrowdsurfing from '/public/images/hero/hero-image-smokey-crowdsurfing.jpg';
+import defaultGlowsticks from '/public/images/hero/hero-image-glow-sticks-b2-02.jpg';
+import singleRain from '/public/images/hero/rain-single-01.svg';
+import doubleRain from '/public/images/hero/rain-double-01.svg';
+import tripleRain from '/public/images/hero/rain-triple-01.svg';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
@@ -193,7 +201,7 @@ const Hero = () => {
               {dynamicSrc === 'meet' ? (
                 // 'meet' content
                 <picture>
-                  <source
+                  {/* <source
                     srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.webp"
                     type="image/webp"
                   />
@@ -204,12 +212,16 @@ const Hero = () => {
                   <img
                     src="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  /> */}
+                  <Image
+                    src={meetGlowsticks}
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
                   />
                 </picture>
               ) : (
                 // default content
                 <picture>
-                  <source
+                  {/* <source
                     srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
                     type="image/webp"
                   />
@@ -219,6 +231,10 @@ const Hero = () => {
                   />
                   <img
                     src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
+                  /> */}
+                  <Image
+                    src={meldMachine}
                     alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
                   />
                 </picture>
@@ -482,14 +498,8 @@ const Hero = () => {
 
           <div className="heroRainHolderTripleA layoutA ">
             <picture>
-              <source
-                media="(min-width:828px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-              />
-              <img
-                src="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-                alt=""
-              />
+              <source media="(min-width:828px)" srcSet={tripleRain} />
+              <Image src={tripleRain} alt="" />
             </picture>
           </div>
           <div className="orangeBarHolderA layoutA ">
@@ -571,7 +581,7 @@ const Hero = () => {
               {dynamicSrc === 'meet' ? (
                 // 'meet' content
                 <picture>
-                  <source
+                  {/* <source
                     srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.webp"
                     type="image/webp"
                   />
@@ -582,12 +592,16 @@ const Hero = () => {
                   <img
                     src="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
                     alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
+                  /> */}
+                  <Image
+                    src={smokeyCrowdsurfing}
+                    alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
                   />
                 </picture>
               ) : (
                 // default content
                 <picture>
-                  <source
+                  {/* <source
                     srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
                     type="image/webp"
                   />
@@ -598,6 +612,10 @@ const Hero = () => {
                   <img
                     src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  /> */}
+                  <Image
+                    src={defaultGlowsticks}
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
                   />
                 </picture>
               )}
@@ -605,10 +623,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="heroRainHolderB layoutB ">
-            <img
-              src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
-              alt=""
-            />
+            <Image src={doubleRain} alt="" />
           </div>
           <div className="heroRectangleHolderB layoutB ">
             <div className="heroRectangleB layoutB">
