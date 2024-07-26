@@ -12,6 +12,7 @@ import defaultGlowsticks from '/public/images/hero/hero-image-glow-sticks-b2-02.
 import singleRain from '/public/images/hero/rain-single-01.svg';
 import doubleRain from '/public/images/hero/rain-double-01.svg';
 import tripleRain from '/public/images/hero/rain-triple-01.svg';
+import heroPlaceholder from '/public/images/hero/hero-placeholder.png';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
@@ -44,6 +45,8 @@ const Hero = () => {
     const srcParam = searchParams.get('dmc');
     if (srcParam) {
       setDynamicSrc(srcParam);
+    } else if (dynamicSrc === '') {
+      setDynamicSrc('none');
     }
   }, []);
 
@@ -216,10 +219,10 @@ const Hero = () => {
                   <Image
                     src={meetGlowsticks}
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                    placeholder="blur"
+                    priority
                   />
                 </picture>
-              ) : (
+              ) : dynamicSrc === 'none' ? (
                 // default content
                 <picture>
                   {/* <source
@@ -237,8 +240,24 @@ const Hero = () => {
                   <Image
                     src={meldMachine}
                     alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
-                    placeholder="blur"
+                    priority
                   />
+                </picture>
+              ) : (
+                <picture>
+                  {/* <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
+                  /> */}
+                  <Image src={heroPlaceholder} alt="placeholder" priority />
                 </picture>
               )}
               {/* End Dynamic Meet Content */}
@@ -401,7 +420,7 @@ const Hero = () => {
                   />
                 </div>
               </>
-            ) : (
+            ) : dynamicSrc === 'none' ? (
               <>
                 {/* Default content */}
                 <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
@@ -481,6 +500,8 @@ const Hero = () => {
                 </div> */}
                 {/* End of Q4 November 1st Push */}
               </>
+            ) : (
+              <></>
             )}
 
             {/* Confirm Enrollment Link */}
@@ -501,7 +522,7 @@ const Hero = () => {
           <div className="heroRainHolderTripleA layoutA ">
             <picture>
               <source media="(min-width:828px)" srcSet={tripleRain} />
-              <Image src={tripleRain} alt="" placeholder="blur" />
+              <Image src={tripleRain} alt="" />
             </picture>
           </div>
           <div className="orangeBarHolderA layoutA ">
@@ -598,10 +619,9 @@ const Hero = () => {
                   <Image
                     src={smokeyCrowdsurfing}
                     alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
-                    placeholder="blur"
                   />
                 </picture>
-              ) : (
+              ) : dynamicSrc === 'none' ? (
                 // default content
                 <picture>
                   {/* <source
@@ -619,9 +639,10 @@ const Hero = () => {
                   <Image
                     src={defaultGlowsticks}
                     alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                    placeholder="blur"
                   />
                 </picture>
+              ) : (
+                <></>
               )}
               {/* End Dynamic Meet Content */}
             </div>
