@@ -1,4 +1,4 @@
-// import styles from 'scss/components/Header.module.scss';
+import styles from 'scss/components/SkipLink.module.scss';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { gql } from '../__generated__';
@@ -108,6 +108,10 @@ const Header = ({ dynamicSrc }: Props) => {
 
   return (
     <>
+      <a className={styles.skipLink} href="#skip-link-target">
+        Skip to content
+      </a>
+
       <header className="site-header">
         <UniversalHeader
           links={links}
@@ -137,14 +141,17 @@ const Header = ({ dynamicSrc }: Props) => {
                 const isTopLevelActive = this_link.id === currentTopLevelItemId;
 
                 return hasSubItems ? (
-                  <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                  // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                  <li key={this_link.id}>
                     <button
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
                       aria-expanded={isExpanded ? 'true' : 'false'}
                       aria-current={isTopLevelActive ? 'page' : 'false'}
                       className={
-                        isExpanded ? 'dropdown-toggle' : 'dropdown-toggle show'
+                        isExpanded
+                          ? 'dropdown-toggle main-navigation'
+                          : 'dropdown-toggle show main-navigation'
                       }
                       onClick={() =>
                         setActiveSubmenu(isExpanded ? '' : linkLabel)
@@ -170,6 +177,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           {isInternalTop ? (
                             <Link
                               href={linkAddress}
+                              className="main-sub-navigation"
                               aria-current={
                                 isTopLevelActive &&
                                 currentSecondLevelItemId === null
@@ -192,6 +200,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           ) : (
                             <a
                               href={linkAddress}
+                              className="main-sub-navigation"
                               aria-current={
                                 isTopLevelActive &&
                                 currentSecondLevelItemId === null
@@ -235,6 +244,7 @@ const Header = ({ dynamicSrc }: Props) => {
                               {isInternalSecondary ? (
                                 <Link
                                   href={subItemLink}
+                                  className="main-sub-navigation"
                                   aria-current={
                                     isSecondLevelActive ? 'page' : 'false'
                                   }
@@ -254,6 +264,7 @@ const Header = ({ dynamicSrc }: Props) => {
                               ) : (
                                 <a
                                   href={subItemLink}
+                                  className="main-sub-navigation"
                                   aria-current={
                                     isSecondLevelActive ? 'page' : 'false'
                                   }
@@ -283,6 +294,7 @@ const Header = ({ dynamicSrc }: Props) => {
                       <Link
                         href={linkAddress}
                         aria-current={isTopLevelActive ? 'page' : 'false'}
+                        className="main-navigation"
                       >
                         <span className="bold-holder">
                           <span className="real-title">{linkLabel}</span>
@@ -295,6 +307,7 @@ const Header = ({ dynamicSrc }: Props) => {
                       <a
                         href={linkAddress}
                         aria-current={isTopLevelActive ? 'page' : 'false'}
+                        className="main-navigation"
                       >
                         <span className="bold-holder">
                           <span className="real-title">{linkLabel}</span>
