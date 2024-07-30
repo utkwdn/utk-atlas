@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect, useState } from 'react';
 import SlateFormEmbed from './SlateFormEmbed';
 import Modal from 'react-bootstrap/Modal';
+import style from 'scss/components/HeroCTA.module.scss';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
@@ -183,25 +184,46 @@ const Hero = () => {
     <>
       {/* <Head></Head> */}
 
-      <div className="hero202112Container">
+      <div className="hero202112Container" id="skip-link-target">
         <div className="hero202112A ">
           <div className="heroHolderA layoutA ">
             <div className="angleBracketDown "></div>
             <div className="heroSquareA ">
-              <picture>
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
-                  type="image/webp"
-                />
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                  alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
+                    alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
           </div>
 
@@ -259,18 +281,17 @@ const Hero = () => {
 
           {/* Begin CTA */}
           <div className="ctaHolder">
-            <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-              <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                Welcome to
-              </span>
-              <br />
-              Rocky Top
-            </h2>
-
             {/* BEGIN DYNAMIC CONTENT */}
             {dynamicSrc === 'awareness' ? (
               <>
                 {/* 'awareness' content */}
+                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  Rocky Top
+                </h2>
                 <div className="slate-squeeze mb-3">
                   <p style={{ maxWidth: 'none' }}>
                     Get a free sticker when you request info!
@@ -287,11 +308,11 @@ const Hero = () => {
                 </div>
                 {/* Start of Q4 November 1st Push */}
                 {/* <a
-                  onClick={handleShow}
-                  className="subLink pointer-event-visible  cursor-pointer"
-                >
-                  Why apply by November 1?
-                </a> */}
+                onClick={handleShow}
+                className="subLink pointer-event-visible  cursor-pointer"
+              >
+                Why apply by November 1?
+              </a> */}
                 <div
                   className="modal show"
                   style={{ display: 'block', position: 'initial' }}
@@ -330,9 +351,48 @@ const Hero = () => {
                 </div>
                 {/* End of Q4 November 1st Push */}
               </>
+            ) : dynamicSrc === 'meet' ? (
+              <>
+                {/* 'meet' content */}
+                {/* <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0"> */}
+                <h2
+                  className={`${style['meet-cta']} text-uppercase display-3 mt-md-3 mt-lg-0`}
+                >
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  Rocky Top
+                </h2>
+                <div className="slate-squeeze mb-3">
+                  <p style={{ maxWidth: 'none' }}>
+                    UT is home to the Volunteers: people who use their talent,
+                    creativity, and knowledge to shape a better future.
+                  </p>
+                  <p style={{ maxWidth: 'none' }}>
+                    Tell us about yourself and get a free sticker!
+                  </p>
+                  <SlateFormEmbed
+                    id="d9a5c913-3050-4fed-9a75-04aee3bdbed7"
+                    scriptSrc={
+                      `https://govols.utk.edu/register/?id=d9a5c913-3050-4fed-9a75-04aee3bdbed7&output=embed&div=form_d9a5c913-3050-4fed-9a75-04aee3bdbed7` +
+                      (location.search.length > 1
+                        ? '&' + location.search.substring(1)
+                        : '')
+                    }
+                  />
+                </div>
+              </>
             ) : (
               <>
                 {/* Default content */}
+                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
+                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
+                    Welcome to
+                  </span>
+                  <br />
+                  Rocky Top
+                </h2>
                 <div className="fancyLinkGroup ch-md is-layout-flow">
                   {/* <p className="fancyLink stack-links">
                     <a href="https://www.utk.edu/visit" className="hero-cat">
@@ -404,6 +464,7 @@ const Hero = () => {
                 {/* End of Q4 November 1st Push */}
               </>
             )}
+
             {/* Confirm Enrollment Link */}
             {/* <h3 className="subCta">Admitted to UT?</h3>
             <a
@@ -439,32 +500,65 @@ const Hero = () => {
           {/* Begin Layout B Items*/}
           <div className="riverAerialHolder layoutB test">
             <div className="riverAerial">
-              <picture>
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                  type="image/jpeg"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                  alt="sunset over the Tennessee River that surrounds campus"
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
+                    alt="Knoxville skyline as seen from the University of Tennessee campus"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(min-width:768px)"
+                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+                    alt="sunset over the Tennessee River that surrounds campus"
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
             <div className="angleBracketUp"></div>
           </div>
@@ -473,20 +567,41 @@ const Hero = () => {
           <div className="heroHolderB layoutB">
             <div className="angleBracketDown angleSpaceMatchB softAppearItem"></div>
             <div className="heroSquareB layoutB">
-              <picture>
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                  alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                />
-              </picture>
+              {/* Begin Dynamic Meet Content */}
+              {dynamicSrc === 'meet' ? (
+                // 'meet' content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
+                    alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
+                  />
+                </picture>
+              ) : (
+                // default content
+                <picture>
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
+                  />
+                </picture>
+              )}
+              {/* End Dynamic Meet Content */}
             </div>
           </div>
           <div className="heroRainHolderB layoutB ">

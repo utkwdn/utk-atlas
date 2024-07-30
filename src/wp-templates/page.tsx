@@ -70,7 +70,10 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
         ''
       )}
 
-      <main className={'content content-single ' + (pageSlug || '')}>
+      <main
+        className={'content content-single ' + (pageSlug || '')}
+        id="skip-link-target"
+      >
         <div className="container-xxl pt-5">
           <div>
             <ParsedMarkup
