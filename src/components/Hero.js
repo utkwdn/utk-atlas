@@ -301,8 +301,16 @@ const Hero = () => {
                   </a>
                 </p>
                 <div className="slate-squeeze mb-3">
+                  <p className="fancyLink stack-links">
+                    <a
+                      href="https://www.utk.edu/admissions"
+                      className="hero-cat"
+                    >
+                      Apply today
+                    </a>
+                  </p>
                   <p style={{ maxWidth: 'none' }}>
-                    There's something for everyone at UT. We can't wait for you
+                    There’s something for everyone at UT. We can’t wait for you
                     to call our campus home sweet home! Get a free sticker when
                     you request info!
                   </p>
