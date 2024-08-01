@@ -292,6 +292,14 @@ const Hero = () => {
                   <br />
                   Rocky Top
                 </h2>
+                <p className="fancyLink stack-links">
+                  <a
+                    href={appendDynamicSrc('https://www.utk.edu/admissions')}
+                    className="hero-cat"
+                  >
+                    Apply today
+                  </a>
+                </p>
                 <div className="slate-squeeze mb-3">
                   <p className="fancyLink stack-links">
                     <a
