@@ -17,6 +17,10 @@ interface FlatProgram {
 }
 
 interface Props {
+  commentString: string;
+}
+
+interface AosData {
   aos: string;
 }
 
@@ -27,7 +31,7 @@ interface Filters {
 }
 
 // const Footer: FaustTemplate<FooterToolsQuery> = (props) => {
-function AosPrograms({ aos }: Props): JSX.Element {
+function AosPrograms({ commentString }: Props): JSX.Element {
   const [programsArray, setProgramsArray] = useState([
     {
       title: '',
@@ -54,6 +58,16 @@ function AosPrograms({ aos }: Props): JSX.Element {
     handleFilterChange('search', filters.search);
   };
 
+  let aos;
+  const hasData = commentString.match(/\{(.*?)\}/);
+
+  if (hasData) {
+    const aosObject = JSON.parse(hasData[0]) as AosData;
+    aos = aosObject.aos;
+  } else {
+    aos = '';
+  }
+
   const queryResults = useQuery(AosPrograms.query, {
     variables: { aosName: aos },
   });
@@ -61,9 +75,9 @@ function AosPrograms({ aos }: Props): JSX.Element {
   const programsQueryData: GetAosProgramsQuery | undefined = queryResults.data;
 
   useEffect(() => {
-    if (programsQueryData?.areasOfStudy?.nodes[0].programs?.nodes) {
+    if (programsQueryData?.areasOfStudy?.nodes[0]?.programs?.nodes) {
       let flatPrograms =
-        programsQueryData?.areasOfStudy?.nodes[0].programs?.nodes?.map(
+        programsQueryData?.areasOfStudy?.nodes[0]?.programs?.nodes?.map(
           (program) => {
             const degreeString =
               program.degrees?.nodes
@@ -103,15 +117,15 @@ function AosPrograms({ aos }: Props): JSX.Element {
       }
 
       setProgramsArray(flatPrograms);
-      console.log(programsArray);
+      // console.log(programsArray);
     }
   }, [programsQueryData, filters]);
 
   return (
     <div>
-      <section className={styles.searchContainer}>
+      {/* <section className={styles.searchContainer}>
         Programs of Study in this area
-      </section>
+      </section> */}
       <section className={styles.searchContainer}>
         <form
           onSubmit={(e) => handleSearchSubmit(e)}

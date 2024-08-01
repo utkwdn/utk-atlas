@@ -15,6 +15,7 @@ import YoutubeCarousel from './YoutubeCarousel';
 import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import AcademicsProgramSearch from './AcademicsProgramSearch';
+import AosPrograms from '../components/AosPrograms';
 import { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
@@ -189,6 +190,10 @@ const toReactNode = ({
 
         if (trimmedCommentValue.includes('ACADEMICS-PROGRAMS-SEARCH')) {
           return <AcademicsProgramSearch dynamicSrc={dynamicSrc || ''} />;
+        }
+
+        if (trimmedCommentValue.includes('AOS-PROGRAMS')) {
+          return <AosPrograms commentString={trimmedCommentValue} />;
         }
       }
 

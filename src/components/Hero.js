@@ -292,9 +292,20 @@ const Hero = () => {
                   <br />
                   Rocky Top
                 </h2>
+
                 <div className="slate-squeeze mb-3">
+                  <p className="fancyLink stack-links">
+                    <a
+                      href="https://www.utk.edu/admissions"
+                      className="hero-cat"
+                    >
+                      Apply today
+                    </a>
+                  </p>
                   <p style={{ maxWidth: 'none' }}>
-                    Get a free sticker when you request info!
+                    There’s something for everyone at UT. We can’t wait for you
+                    to call our campus home sweet home! Get a free sticker when
+                    you request info!
                   </p>
                   <SlateFormEmbed
                     id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
@@ -400,14 +411,14 @@ const Hero = () => {
                     </a>
                   </p> */}
 
-                  {/* <p className="fancyLink stack-links">
+                  <p className="fancyLink stack-links">
                     <a
                       href="https://www.utk.edu/admissions"
                       className="hero-cat"
                     >
                       Apply today
                     </a>
-                  </p> */}
+                  </p>
 
                   <p className="fancyLink stack-links">
                     <a
@@ -419,8 +430,8 @@ const Hero = () => {
                   </p>
                 </div>
                 <p>
-                  Unrivaled experiences. Hands-on learning. Caring professors.
-                  UT is the place for you.
+                  There’s something for everyone at UT. We can’t wait for you to
+                  call our campus home sweet home!
                 </p>
 
                 {/* Why Apply Format */}
