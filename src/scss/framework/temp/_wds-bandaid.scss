@@ -283,3 +283,15 @@ blockquote.utkwds-quote cite .title {
   margin-bottom: var(--wp--preset--spacing--large);
   margin-top: var(--wp--preset--spacing--large);
 }
+
+.wp-block-list li,
+ol li:where(:not([class*='block'])),
+ul li:where(:not([class*='block'])) {
+  margin-left: 30px;
+}
+
+.is-style-no-disc li,
+.no-disc li {
+  list-style-type: none;
+  margin-left: 0;
+}
