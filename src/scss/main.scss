@@ -192,8 +192,9 @@
 // @import './wds/build/screen.scss';
 
 // import block styles
-// @import './wds/build/blocks/accordion/style.scss';
-// @import './wds/build/blocks/accordion-panel/style.scss';
+@import './wds/build/blocks/accordion/style.scss';
+@import './wds/build/blocks/accordion-panel/style.scss';
+
 // @import './wds/build/blocks/breadcrumbs/style.scss';
 @import './wds/build/blocks/nav-menu/style.scss';
 @import './wds/build/blocks/site-header/style.scss';
@@ -202,7 +203,7 @@
 // @import './wds/build/blocks/test-block/style.scss';
 
 // import component styles
-// @import './wds/build/components/accordion.scss';
+@import './wds/build/components/accordion.scss';
 // @import './wds/build/components/button.scss';
 // @import './wds/build/components/cards.scss'; // not utilized in WDS 1.1.2
 @import './wds/build/components/cover.scss';
@@ -240,6 +241,7 @@
 @import '_extended';
 
 @import './special/forms';
+@import './special/content';
 
 // .visually-hidden-focusable {
 //   background-color: aqua;

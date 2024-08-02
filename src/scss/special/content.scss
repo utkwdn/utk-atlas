@@ -1,0 +1,16 @@
+.column-exploration {
+  background-color: #f5f5f5;
+}
+
+.list-flow-orange {
+  li {
+    margin-right: 0.5rem;
+
+    display: inline-block;
+    &:after {
+      content: '|';
+      color: #ff8200;
+      margin-left: 0.5rem;
+    }
+  }
+}

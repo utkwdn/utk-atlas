@@ -283,3 +283,14 @@ blockquote.utkwds-quote cite .title {
   margin-bottom: var(--wp--preset--spacing--large);
   margin-top: var(--wp--preset--spacing--large);
 }
+
+.is-style-no-disc li,
+.no-disc li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+ul li {
+  // adding spacing so long lines don't blend into the list
+  margin: 0 0 0.8rem 0;
+}
