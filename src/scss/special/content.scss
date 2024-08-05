@@ -3,10 +3,13 @@
 }
 
 .list-flow-orange {
+  margin-left: 0;
+  padding-left: 0;
   li {
     margin-right: 0.5rem;
-
     display: inline-block;
+
+    margin-left: 0;
     &:after {
       content: '|';
       color: #ff8200;
