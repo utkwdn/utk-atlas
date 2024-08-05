@@ -295,3 +295,8 @@ ul li:where(:not([class*='block'])) {
   list-style-type: none;
   margin-left: 0;
 }
+
+ul li {
+  // adding spacing so long lines don't blend into the list
+  margin: 0 0 0.8rem 0;
+}
