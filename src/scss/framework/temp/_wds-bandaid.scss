@@ -300,3 +300,10 @@ ul li {
   // adding spacing so long lines don't blend into the list
   margin: 0 0 0.8rem 0;
 }
+
+// WDS card overrides
+.invisible-card-white .utkwds-subject {
+  // applied to column holding empty cards to keep formatting of a single small card when only one card is available instead of changing proportions to fill space
+  border-top: 0 !important;
+  background-color: #fff !important;
+}
