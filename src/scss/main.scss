@@ -205,7 +205,8 @@
 // import component styles
 @import './wds/build/components/accordion.scss';
 // @import './wds/build/components/button.scss';
-// @import './wds/build/components/cards.scss'; // not utilized in WDS 1.1.2
+// @import './wds/build/components/cards.scss';
+@import './wds/build/components/cards-partial.scss'; // pulling pieces of the cards styling in from v1.2
 @import './wds/build/components/cover.scss';
 // @import './wds/build/components/fancy_link.scss';
 // @import './wds/build/components/gallery_two_up.scss';

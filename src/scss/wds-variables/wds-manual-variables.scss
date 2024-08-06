@@ -1,4 +1,13 @@
 :root {
+  --wp--preset--color--orange: #ff8200;
+  --wp--preset--color--smokey: #4b4b4b;
+  --wp--preset--color--light: #f6f6f6;
+  --wp--preset--color--gray2: #e0e0e0;
+  --wp--preset--color--white: #ffffff;
+  --wp--custom--color--river: #1a73c5;
+  --wp--custom--color--hover: #0d47a1;
+  --wp--custom--color--coolSmokey: rgba(49, 62, 72, 0.92);
+
   --wp--preset--font-size--small: clamp(
     1.125rem,
     1.125rem + ((1vw - 0.2rem) * 1),
