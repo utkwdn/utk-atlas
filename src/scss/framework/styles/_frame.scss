@@ -90,6 +90,7 @@
         height: calc(100% - 2rem);
         // bottom: -$container-padding-x;
         left: 1rem !important;
+        left: 0.75rem !important;
         border-left: 0 !important;
         right: -$container-padding-x;
         margin-left: 41%;
@@ -140,14 +141,17 @@
     content: ' ';
     width: 60%;
     height: calc(100% - 2rem);
-    bottom: -$container-padding-x;
-    left: -$container-padding-x;
+    // bottom: -$container-padding-x;
+    // left: -$container-padding-x;
+    bottom: -1.25rem; // fixes offset white of frame
+    left: -1.25rem; // fixes offset white of frame
     // border-top: 0.6rem solid #FF8200;
     //border-left: 1.5rem solid #FF8200;
     //border-bottom: 1.5rem solid #FF8200;
     //background: $utorange;
     border-left: 1.25rem solid $utorange;
     border-bottom: 1.25rem solid $utorange;
+
     z-index: -1;
     @include media-breakpoint-up(md) {
       bottom: -1.25rem;
