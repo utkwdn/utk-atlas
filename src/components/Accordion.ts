@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 // pulled from WDS theme 1.2 src/blocks/accordion.ts
 

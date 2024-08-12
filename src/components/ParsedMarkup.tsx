@@ -16,6 +16,7 @@ import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import AcademicsProgramSearch from './AcademicsProgramSearch';
 import AosPrograms from '../components/AosPrograms';
+import AccordionComponent from '../components/AccordionComponent';
 import { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
@@ -534,6 +535,15 @@ const toReactNode = ({
           //     />
           //   );
           // }
+
+          // Accordion
+          if (
+            outerDivClasses &&
+            /\butk-wds-accordion-wrapper\b/g.test(outerDivClasses)
+          ) {
+            // console.log(typeof domNode);
+            return <AccordionComponent content={domNode} />;
+          }
 
           // Dynamic Content - If div has class of 'dynamic-content' return child element based on dynamicKey (from URL param)
           if (outerDivClasses && /\bdynamic-content\b/g.test(outerDivClasses)) {
