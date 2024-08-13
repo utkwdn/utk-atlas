@@ -33,5 +33,7 @@
 }
 
 .longform-content-container {
-  max-width: 900px;
+  max-width: 900px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
