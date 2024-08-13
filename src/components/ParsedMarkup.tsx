@@ -189,7 +189,12 @@ const toReactNode = ({
         }
 
         if (trimmedCommentValue.includes('ACADEMICS-PROGRAMS-SEARCH')) {
-          return <AcademicsProgramSearch dynamicSrc={dynamicSrc || ''} />;
+          return (
+            <AcademicsProgramSearch
+              dynamicSrc={dynamicSrc || ''}
+              commentString={trimmedCommentValue}
+            />
+          );
         }
 
         if (trimmedCommentValue.includes('AOS-PROGRAMS')) {
