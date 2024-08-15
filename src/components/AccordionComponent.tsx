@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react';
 import styles from 'scss/components/Accordion.module.scss';
 
-type IntroProps = {
+type AccordionProps = {
   // title: string;
   // theme: string;
   // intro: object;
   // imagesrc: string;
   // alt: string;
-  content: {
-    attribs: any;
-    children: any;
-    name: any;
-  };
+  content: {};
 };
 
 /** Intro component created to be able to easily swap out the main intro chunk of content for a page.
@@ -22,8 +18,15 @@ type IntroProps = {
  * (eventually envision {intro} using other swappable or nested components to add flexibility of content type used in this space – but these need to be identified and created. TBD)
  */
 
-const Accordion: React.FunctionComponent<IntroProps> = ({ content }) => {
-  console.log(content.attribs);
+const Accordion: React.FunctionComponent<AccordionProps> = ({ content }) => {
+  for (const [key, value] of Object.entries(content)) {
+    if (typeof value === 'string') {
+      console.log(`string: ${value}`);
+    } else {
+      console.log(value);
+    }
+  }
+  // console.log(content);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const toggleAccordion = (accordionId: number) => {
@@ -120,7 +123,7 @@ const Accordion: React.FunctionComponent<IntroProps> = ({ content }) => {
             <section
               data-accordion-section="true"
               id={`accordion-section-${2}`}
-              className="aria-hidden:hidden overflow-hidden pointer-events-none [&amp;.is-open]:pointer-events-auto is-open"
+              className={`${styles.accordionSection} aria-hidden:hidden overflow-hidden pointer-events-none [&amp;.is-open]:pointer-events-auto`}
               aria-hidden="true"
               style={{
                 height: '0px',

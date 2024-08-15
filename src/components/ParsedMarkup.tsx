@@ -16,7 +16,8 @@ import SlateFormReplace from './SlateFormReplace';
 import SlateModalTabs from './SlateModalTabs';
 import AcademicsProgramSearch from './AcademicsProgramSearch';
 import AosPrograms from '../components/AosPrograms';
-import AccordionComponent from '../components/AccordionComponent';
+// import AccordionComponent from '../components/AccordionComponent';
+import AccordionPanel from '../components/AccordionPanel';
 import { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
@@ -539,10 +540,11 @@ const toReactNode = ({
           // Accordion
           if (
             outerDivClasses &&
-            /\butk-wds-accordion-wrapper\b/g.test(outerDivClasses)
+            /\bwp-block-utk-wds-accordion-panel\b/g.test(outerDivClasses)
           ) {
-            // console.log(typeof domNode);
-            return <AccordionComponent content={domNode} />;
+            const parsedChildren = domToReact(domNode.children, parserConfig);
+            // return <AccordionComponent content={parsedChildren} />;
+            return <AccordionPanel />;
           }
 
           // Dynamic Content - If div has class of 'dynamic-content' return child element based on dynamicKey (from URL param)
