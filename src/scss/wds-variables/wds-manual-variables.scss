@@ -38,11 +38,19 @@
     1.25rem + ((1vw - 0.2rem) * 1),
     1.25rem
   );
+  // --wp--preset--font-size--xx-large: clamp(
+  //   2.8rem,
+  //   2.8rem + ((1vw - 0.2rem) * 2.513),
+  //   4.653rem
+  // );
+
+  // changing size of H1 so long words don't fall off screen
   --wp--preset--font-size--xx-large: clamp(
-    2.8rem,
-    2.8rem + ((1vw - 0.2rem) * 2.513),
+    2.4rem,
+    2.4rem + ((1vw - 0.2rem) * 2.513),
     4.653rem
   );
+
   --wp--preset--font-family--primary: 'Montserrat', 'Helvetica Neue', Helvetica,
     Arial, system-ui, -apple-system, sans-serif;
   --wp--preset--font-family--monospace: monospace;
