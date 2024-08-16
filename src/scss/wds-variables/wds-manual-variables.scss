@@ -7,6 +7,7 @@
   --wp--custom--color--river: #1a73c5;
   --wp--custom--color--hover: #0d47a1;
   --wp--custom--color--coolSmokey: rgba(49, 62, 72, 0.92);
+  --wp--preset--color--gray-2: #e0e0e0;
 
   --wp--preset--font-size--small: clamp(
     1.125rem,
@@ -66,4 +67,6 @@
   --wp--preset--spacing--medium: clamp(40px, 6vw, 60px);
   --wp--preset--spacing--large: clamp(50px, 8vw, 80px);
   --wp--preset--spacing--x-large: clamp(60px, 10vw, 100px);
+
+  --wp--style--global--content-size: 960px;
 }
