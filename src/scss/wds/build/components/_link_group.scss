@@ -1,0 +1,73 @@
+// removed is-style- from all classes pulled from WDS 1.2
+
+.utkwds-link-group {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding-block-start: var(--wp--preset--spacing--x-small);
+    padding-block-end: var(--wp--preset--spacing--x-small);
+    border-bottom: 1px solid var(--wp--preset--color--gray-2);
+    display: flex;
+    gap: 8px;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  li:before {
+    // content: url('./assets/svg/rocky-top-carrot-02.svg');
+    content: url('//images.utk.edu/wds/rocky-top-carrot-02.svg');
+    margin-right: 0.5rem;
+    transition: all 0.2s ease-out;
+  }
+
+  li:hover:before {
+    margin-right: 0.2rem;
+    margin-left: 0.3rem;
+  }
+}
+
+.utkwds-link-group-2up {
+  columns: 2;
+  column-gap: var(--wp--preset--spacing--medium);
+}
+
+.utkwds-link-group-3up {
+  columns: 3;
+  column-gap: var(--wp--preset--spacing--medium);
+}
+
+@media screen and (max-width: 960px) {
+  .utkwds-link-group-2up {
+    columns: 1;
+  }
+
+  .utkwds-link-group-3up {
+    columns: 1;
+  }
+}
+
+.utkwds-single-link {
+  display: flex;
+  gap: 8px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.utkwds-single-link:before {
+  //   content: url('./assets/svg/rocky-top-carrot-02.svg');
+  content: url('//images.utk.edu/wds/rocky-top-carrot-02.svg');
+  margin-right: 0.5rem;
+  transition: all 0.2s ease-out;
+}
+
+.utkwds-single-link:hover:before {
+  margin-right: 0.2rem;
+  margin-left: 0.3rem;
+}
