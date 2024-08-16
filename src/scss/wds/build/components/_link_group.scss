@@ -4,7 +4,8 @@
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 1.25em;
+    margin: 0 auto !important;
   }
 
   li {
@@ -21,7 +22,7 @@
 
   li:before {
     // content: url('./assets/svg/rocky-top-carrot-02.svg');
-    content: url('//images.utk.edu/wds/rocky-top-carrot-02.svg');
+    content: url('/images/wds/rocky-top-carrot-02.svg');
     margin-right: 0.5rem;
     transition: all 0.2s ease-out;
   }
@@ -62,7 +63,7 @@
 
 .utkwds-single-link:before {
   //   content: url('./assets/svg/rocky-top-carrot-02.svg');
-  content: url('//images.utk.edu/wds/rocky-top-carrot-02.svg');
+  content: url('/images/wds/rocky-top-carrot-02.svg');
   margin-right: 0.5rem;
   transition: all 0.2s ease-out;
 }
