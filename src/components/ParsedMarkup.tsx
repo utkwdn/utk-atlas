@@ -28,6 +28,9 @@ const isElement = (domNode: DOMNode): domNode is DOMHandlerElement =>
 const isComment = (domNode: DOMNode): domNode is DOMHandlerComment =>
   domNode.type === 'comment';
 
+const isText = (domNode: DOMNode): domNode is DOMHandlerComment =>
+  domNode.type === 'text';
+
 interface FormInfoInnerObject {
   tabTitle: string;
   formId: string;
@@ -38,6 +41,8 @@ interface FormInfoObject {
   modalTitle: string;
   formInfo: FormInfoInnerObject[];
 }
+
+// type TextElement = Element & {data: string;}
 
 const toReactNode = ({
   content,
@@ -542,9 +547,41 @@ const toReactNode = ({
             outerDivClasses &&
             /\bwp-block-utk-wds-accordion-panel\b/g.test(outerDivClasses)
           ) {
-            const parsedChildren = domToReact(domNode.children, parserConfig);
-            // return <AccordionComponent content={parsedChildren} />;
-            return <AccordionPanel />;
+            const accordionHeading = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) &&
+                child.attribs['data-accordion-heading'] === 'true'
+            );
+            const accordionHeadingDiv = accordionHeading?.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) && child.name === 'div'
+            );
+            const accordionHeadingText = accordionHeadingDiv?.children.find(
+              (child): child is DOMHandlerElement => isText(child)
+            );
+            const accordionSection = domNode.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) &&
+                child.attribs['data-accordion-section'] === 'true'
+            );
+            const accordionBody = accordionSection?.children.find(
+              (child): child is DOMHandlerElement =>
+                isElement(child) &&
+                child.attribs.class === 'utk-wds-accordion__panel-body'
+            );
+            if (accordionBody && accordionHeadingText) {
+              const accordiingHeadingTextString = domToReact(
+                [accordionHeadingText],
+                parserConfig
+              );
+              return (
+                <AccordionPanel
+                  accordionHeading={accordiingHeadingTextString as string}
+                >
+                  {domToReact([accordionBody], parserConfig)}
+                </AccordionPanel>
+              );
+            }
           }
 
           // Dynamic Content - If div has class of 'dynamic-content' return child element based on dynamicKey (from URL param)
