@@ -1,8 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 type AccordionProps = {
   accordionHeading: string;
 };
+interface KeyboardEvent {
+  keyCode: number;
+}
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({
   accordionHeading,
@@ -14,15 +17,27 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
 
   const toggleAccordion = () => {
     const newState = isExpanded ? false : true;
-
     const newScrollHeight = isExpanded
       ? 0
       : (sectionRef.current?.scrollHeight as number);
-    console.log(newScrollHeight);
 
     setIsExpanded(newState);
     setScrollHeight(newScrollHeight);
   };
+
+  const handleKeyPress = (event: KeyboardEvent) => {
+    if (event.keyCode === 13) {
+      toggleAccordion();
+    }
+  };
+
+  useEffect(() => {
+    // Remove tab index for links inside collapsed accordion
+    const accordionLinks = sectionRef.current?.getElementsByTagName('a') || [];
+    for (let j = 0; j < accordionLinks.length; j++) {
+      accordionLinks[j].tabIndex = isExpanded ? 0 : -1;
+    }
+  }, [isExpanded]);
 
   return (
     <div className="wp-block-utk-wds-accordion-panel">
@@ -30,6 +45,8 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
         className="utk-wds-accordion__heading"
         data-accordion-heading="true"
         onClick={toggleAccordion}
+        onKeyDown={(event) => handleKeyPress(event)}
+        tabIndex={0}
       >
         <div aria-expanded={isExpanded ? 'true' : 'false'}>
           {accordionHeading}
@@ -44,6 +61,7 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
         }}
         ref={sectionRef}
       >
+        {/* Insert accordion body content */}
         {children}
       </section>
     </div>
