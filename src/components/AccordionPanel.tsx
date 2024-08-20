@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 type AccordionProps = {
   accordionHeading: string;
+  AccordionHeadingLevel: keyof JSX.IntrinsicElements;
 };
 interface KeyboardEvent {
   keyCode: number;
@@ -9,6 +10,7 @@ interface KeyboardEvent {
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({
   accordionHeading,
+  AccordionHeadingLevel,
   children,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -41,7 +43,8 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
 
   return (
     <div className="wp-block-utk-wds-accordion-panel">
-      <h2
+      {/* Determine whether to use h2, h3 or h4 based on wordpress selection */}
+      <AccordionHeadingLevel
         className="utk-wds-accordion__heading"
         data-accordion-heading="true"
         onClick={toggleAccordion}
@@ -51,7 +54,8 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
         <div aria-expanded={isExpanded ? 'true' : 'false'}>
           {accordionHeading}
         </div>
-      </h2>
+      </AccordionHeadingLevel>
+
       <section
         data-accordion-section="true"
         aria-hidden={isExpanded ? 'false' : 'true'}
