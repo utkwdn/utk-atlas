@@ -557,6 +557,8 @@ const toReactNode = ({
                 isElement(child) &&
                 child.attribs['data-accordion-heading'] === 'true'
             );
+            const accordionHeadingLevel = accordionHeading?.name;
+
             const accordionHeadingDiv = accordionHeading?.children.find(
               (child): child is DOMHandlerElement =>
                 isElement(child) && child.name === 'div'
@@ -582,6 +584,9 @@ const toReactNode = ({
               return (
                 <AccordionPanel
                   accordionHeading={accordiingHeadingTextString as string}
+                  AccordionHeadingLevel={
+                    accordionHeadingLevel as keyof JSX.IntrinsicElements
+                  }
                 >
                   {domToReact([accordionBody], parserConfig)}
                 </AccordionPanel>
