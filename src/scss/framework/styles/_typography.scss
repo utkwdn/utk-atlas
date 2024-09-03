@@ -102,7 +102,8 @@ p {
   padding: 0;
 }
 
-h1.area {
+h1.area,
+p.area {
   font-size: clamp(1.51375rem, 6.2175vw, 2.9rem);
   font-weight: $font-weight-normal;
   font-style: italic;
@@ -112,6 +113,7 @@ h1.area {
   text-transform: uppercase;
   // line-height: calc($headings-line-height * 0.2);
   margin-bottom: calc($spacer * 0.6);
+  line-height: $headings-line-height;
 
   &:before {
     content: '';
