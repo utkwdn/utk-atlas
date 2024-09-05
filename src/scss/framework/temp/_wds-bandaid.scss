@@ -1,3 +1,9 @@
+// canceling out bootsrap reboot – which isn't used in .wds-padding-fix
+ol,
+ul {
+  padding-left: 0;
+}
+
 // After uploaded WDS 1.1.2 to dev, there were a few spacing issues. These temporarily fix those until we have time to go through and fix everything.
 
 .card-body {
