@@ -8,9 +8,15 @@ import Link from 'next/link';
 
 interface Props {
   dynamicSrc?: string;
+  commentString: string;
 }
-function AosPrograms({ dynamicSrc }: Props): JSX.Element {
+interface AosData {
+  aos: string;
+}
+
+function AosPrograms({ dynamicSrc, commentString }: Props): JSX.Element {
   const [dmc, setDmc] = useState('');
+  const [aos, setAos] = useState('');
   const [searchValue, setSearchValue] = useState('');
 
   const baseUrl = '/academics/programs';
@@ -21,7 +27,7 @@ function AosPrograms({ dynamicSrc }: Props): JSX.Element {
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
     router
-      .push(`${baseUrl}/search/${searchValue}${dmc}${anchor}`)
+      .push(`${baseUrl}/search/${searchValue}${dmc}${aos}${anchor}`)
       .catch((error) => console.log(error));
   };
 
@@ -29,7 +35,16 @@ function AosPrograms({ dynamicSrc }: Props): JSX.Element {
     if (typeof dynamicSrc === 'string' && dynamicSrc !== '') {
       setDmc(`?dmc=${dynamicSrc}`);
     }
-  }, [dynamicSrc]);
+
+    let areaOfStudy;
+    const hasData = commentString.match(/\{(.*?)\}/);
+
+    if (hasData) {
+      const aosObject = JSON.parse(hasData[0]) as AosData;
+      areaOfStudy = aosObject.aos;
+      setAos(`/area-of-study/${areaOfStudy}`);
+    }
+  }, [dynamicSrc, commentString]);
 
   return (
     <div>
@@ -55,32 +70,34 @@ function AosPrograms({ dynamicSrc }: Props): JSX.Element {
         <ul className={styles.linkList}>
           <li>
             <Link
-              href={`${baseUrl}/degree-type/undergraduate${searchString}${dmc}${anchor}`}
+              href={`${baseUrl}/degree-type/undergraduate${searchString}${dmc}${aos}${anchor}`}
             >
               Undergraduate
             </Link>
           </li>
           <li>
             <Link
-              href={`${baseUrl}/degree-type/graduate${searchString}${dmc}${anchor}`}
+              href={`${baseUrl}/degree-type/graduate${searchString}${dmc}${aos}${anchor}`}
             >
               Graduate
             </Link>
           </li>
           <li>
-            <Link href={`${baseUrl}/online/true${searchString}${dmc}${anchor}`}>
+            <Link
+              href={`${baseUrl}/online/true${searchString}${dmc}${aos}${anchor}`}
+            >
               Online
             </Link>
           </li>
           <li>
             <Link
-              href={`${baseUrl}/degree-type/certificate${searchString}${dmc}${anchor}`}
+              href={`${baseUrl}/degree-type/certificate${searchString}${dmc}${aos}${anchor}`}
             >
               Certificate
             </Link>
           </li>
           <li>
-            <Link href={`${baseUrl}${dmc}${anchor}`}>All programs</Link>
+            <Link href={`${baseUrl}${dmc}${aos}${anchor}`}>All programs</Link>
           </li>
         </ul>
       </div>

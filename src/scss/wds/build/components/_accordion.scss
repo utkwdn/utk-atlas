@@ -1,5 +1,6 @@
+// pulled from source v1.2 source files scss/componenets
 .utk-wds-accordion-wrapper {
-  --utk-accordion--panel-heading-text: var(--wp--custom--color--river);
+  --utk-accordion--panel-heading-text: #1a73c5;
 
   &[data-color-scheme='medium'] {
     --utk-accordion--panel-heading-background-hover: white;

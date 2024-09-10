@@ -25,11 +25,13 @@ Working on logically integrating this into the framework */
   margin: 0 auto;
 }
 .container-fluid {
-  padding: 0 calc($spacer * 1);
+  // padding: 0 calc($spacer * 1);
+  padding: 0 1.25em;
   // fixes random white margins caused by gutters on the left side at narrow widths
   // padding-left: calc(var(--bs-gutter-x, 0.75rem) / 2); /* this started causing small white vertical line on right. Removing for now */
   @media screen and (min-width: 800px) {
-    padding: 0 calc($spacer * 2);
+    // padding: 0 calc($spacer * 2);
+    padding: 0 1.5em;
   }
   @media screen and (min-width: 1600px) {
     //recalculated at wider screens to fix spacing that was appearing on right
@@ -854,9 +856,10 @@ body.academics {
 }
 
 .page-title-group {
-  width: 84vw;
+  // width: 84vw;
   // border: 2px solid purple;
-  margin: 0 8vw 2rem 8vw;
+  // margin: 0 8vw 2rem 8vw;
+  margin-bottom: 2rem;
   padding: 0;
   @media screen and (min-width: 1200px) {
     // width: 40vw;
@@ -866,14 +869,17 @@ body.academics {
 
     // flex-grow: 1;
     margin: 0 0 4rem 2vw;
+    margin: 0 0 4rem 1.5rem;
+    margin: 0 0 4rem 0;
   }
 }
 
 .intro-img-group {
   // flex-basis: 50vw;
   display: flex;
-  width: 84vw;
+  // width: 84vw;
   margin: 0 8vw 2rem 8vw;
+  margin: 0 0 2rem 0;
   // border: 1px solid green;
 
   @media screen and (min-width: 1200px) {
@@ -893,7 +899,8 @@ body.academics {
   .img {
     flex-shrink: 1;
     flex-grow: 1;
-    max-width: 803px;
+    // max-width: 803px;
+    border: 1px solid pink;
   }
 }
 
@@ -987,7 +994,8 @@ hr.oa-thick-bar {
   margin-block-start: 0;
 }
 
-p.theme {
+p.theme,
+h1.theme {
   // font-size: 4.7rem;
   // font-weight: 600;
   // line-height: 4.6rem;
