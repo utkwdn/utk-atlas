@@ -30,6 +30,9 @@ $menu-max-width: 1500;
 .utk-nav-menu {
   --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
   --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
+  li {
+    margin-top: 0;
+  }
 }
 
 .site-header {

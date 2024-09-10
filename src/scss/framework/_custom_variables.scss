@@ -366,14 +366,21 @@ $line-height-base: 1.5 !default;
 // MIN size calc based on 1.66 divisor of max multiplier (based on min size being 2.8rem) Scale is manipulated at h4, h5, h6 to make sure size is never smaller than 1rem.
 // VAL determined by 1.36 scale:  H1 VAL / 1.36 = H2 VAL (based on 11.5vw starting point)
 // MAX size determined by 1.36 scale divided by $font-size-base (base h1 is 4.653rem)
-
-$h1-font-size: clamp((calc($font-size-base * 2.24)), 11.5vw, (calc($font-size-base * 3.7224))); //max size is 4.653rem min-size 2.8rem
-$h2-font-size: clamp((calc($font-size-base * 1.647)), 8.4558vw, (calc($font-size-base * 2.7368))); // max size is 3.421rem
-$h3-font-size: clamp((calc($font-size-base * 1.211)), 6.2175vw, (calc($font-size-base * 2.012))); // max size is 2.515rem
-$h4-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
-$h5-font-size: clamp((calc($font-size-base * .9)), 3.362vw, (calc($font-size-base *  1.088))); // max size is  1.36rem
-$h6-font-size: clamp((calc($font-size-base * .8)), 2.661vw, (calc($font-size-base *  0.8))); // max size is  1rem
+// $h1-font-size: clamp((calc($font-size-base * 2.24)), 11.5vw, (calc($font-size-base * 3.7224))); //max size is 4.653rem min-size 2.8rem
+// $h2-font-size: clamp((calc($font-size-base * 1.647)), 8.4558vw, (calc($font-size-base * 2.7368))); // max size is 3.421rem
+// $h3-font-size: clamp((calc($font-size-base * 1.211)), 6.2175vw, (calc($font-size-base * 2.012))); // max size is 2.515rem
+// $h4-font-size: clamp((calc($font-size-base * 1)), 4.572vw, (calc($font-size-base *  1.48))); // max size is  1.85rem
+// $h5-font-size: clamp((calc($font-size-base * .9)), 3.362vw, (calc($font-size-base *  1.088))); // max size is  1.36rem
+// $h6-font-size: clamp((calc($font-size-base * .8)), 2.661vw, (calc($font-size-base *  0.8))); // max size is  1rem
 $p-font-size: clamp((calc($font-size-base * .9)), 3.362vw, (calc($font-size-base))); // max size is  1rem
+
+// pulling in WDS 1.2 values
+$h1-font-size: var(--wp--preset--font-size--xx-large);
+$h2-font-size: var(--wp--preset--font-size--x-large);
+$h3-font-size: var(--wp--preset--font-size--large);
+$h4-font-size: var(--wp--preset--font-size--medium);
+$h5-font-size: var(--wp--preset--font-size--small);
+$h6-font-size: var(--wp--preset--font-size--x-small);
 
 
 $headings-margin-bottom: calc($spacer / 2) !default;
@@ -453,8 +460,10 @@ $paragraph-margin-bottom: 1rem !default;
 // if we change this width here – both places get updated! 
 // var(--wp--style--global--content-size)
 $global-layout-content: 1500px;
+// $global-layout-content: 900px;
 // var(--wp--style--global--wide-size)
-$gloabl-layout-wide: 80vw;
+// $global-layout-wide: 80vw;
+$global-layout-wide:1500px;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -480,7 +489,8 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1520px,
+  // xxl: 1520px,
+  xxl:1500px,
 ) !default;
 // scss-docs-end container-max-widths
 

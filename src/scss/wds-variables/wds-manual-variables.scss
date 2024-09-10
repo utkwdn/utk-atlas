@@ -1,4 +1,14 @@
 :root {
+  --wp--preset--color--orange: #ff8200;
+  --wp--preset--color--smokey: #4b4b4b;
+  --wp--preset--color--light: #f6f6f6;
+  --wp--preset--color--gray2: #e0e0e0;
+  --wp--preset--color--white: #ffffff;
+  --wp--custom--color--river: #1a73c5;
+  --wp--custom--color--hover: #0d47a1;
+  --wp--custom--color--coolSmokey: rgba(49, 62, 72, 0.92);
+  --wp--preset--color--gray-2: #e0e0e0;
+
   --wp--preset--font-size--small: clamp(
     1.125rem,
     1.125rem + ((1vw - 0.2rem) * 1),
@@ -29,11 +39,19 @@
     1.25rem + ((1vw - 0.2rem) * 1),
     1.25rem
   );
+  // --wp--preset--font-size--xx-large: clamp(
+  //   2.8rem,
+  //   2.8rem + ((1vw - 0.2rem) * 2.513),
+  //   4.653rem
+  // );
+
+  // changing size of H1 so long words don't fall off screen
   --wp--preset--font-size--xx-large: clamp(
-    2.8rem,
-    2.8rem + ((1vw - 0.2rem) * 2.513),
+    2.4rem,
+    2.4rem + ((1vw - 0.2rem) * 2.513),
     4.653rem
   );
+
   --wp--preset--font-family--primary: 'Montserrat', 'Helvetica Neue', Helvetica,
     Arial, system-ui, -apple-system, sans-serif;
   --wp--preset--font-family--monospace: monospace;
@@ -49,4 +67,6 @@
   --wp--preset--spacing--medium: clamp(40px, 6vw, 60px);
   --wp--preset--spacing--large: clamp(50px, 8vw, 80px);
   --wp--preset--spacing--x-large: clamp(60px, 10vw, 100px);
+
+  --wp--style--global--content-size: 960px;
 }

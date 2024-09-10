@@ -363,7 +363,7 @@ const UniversalHeader = ({
             Close
           </button>
         </div>
-        <div className="main-menu offcanvas-body">
+        <div className="main-menu offcanvas-body" tabIndex={-1}>
           <div className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper  utility-nav-menu--mobile">
             <menu id="utility-nav-menu--mobile" className="utk-nav-menu">
               {linkItems(true)}

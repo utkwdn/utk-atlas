@@ -143,7 +143,7 @@ body {
 
   .is-layout-constrained > .alignwide {
     // max-width: var(--wp--style--global--wide-size);
-    max-width: $gloabl-layout-wide;
+    max-width: $global-layout-wide;
   }
   .is-layout-flex {
     display: flex;

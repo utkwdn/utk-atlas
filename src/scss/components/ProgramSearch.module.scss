@@ -14,6 +14,7 @@
   align-items: stretch;
   position: relative;
   width: 100%;
+  background-color: var(--wp--preset--color--white);
 
   & fieldset {
     // overwrites MUI radius rules
@@ -51,6 +52,7 @@
   flex-wrap: wrap;
   // margin: 1rem 0;
   padding: 1rem 1.4rem 1rem 1.4rem;
+  // padding: 0 1.4rem 1rem 1.4rem;
   // font-size: 0.875rem;
   display: flex;
   flex-direction: row;
