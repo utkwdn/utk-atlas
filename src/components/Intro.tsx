@@ -1,10 +1,12 @@
 import styles from 'scss/components/Intro.module.scss';
+import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 
 type IntroProps = {
   title: string;
   theme: string;
   intro: object;
-  imagesrc: string;
+  imagesrc: StaticImageData;
   alt: string;
 };
 
@@ -34,7 +36,7 @@ const Intro: React.FunctionComponent<IntroProps> = ({
         <div className={styles.intro}>{intro}</div>
       </div>
       <div className={[styles['intro-img-group'], 'framed'].join(' ')}>
-        <img src={imagesrc} alt={alt} />
+        <Image src={imagesrc} alt={alt} />
       </div>
     </section>
   );
