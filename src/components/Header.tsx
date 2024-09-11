@@ -34,6 +34,92 @@ const Header = ({ dynamicSrc }: Props) => {
 
   const links = navQueryData?.menuItems?.nodes || [];
 
+  {
+    /* render placeholder nav while fetching WP nav items to reduce layout shift */
+  }
+  const placeholderNav = () => {
+    return (
+      <>
+        <li>
+          <button
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+            aria-current="false"
+            className="dropdown-toggle show main-navigation"
+          >
+            <span className="bold-holder">
+              <span className="real-title">About</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                About
+              </span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+            aria-current="false"
+            className="dropdown-toggle show main-navigation"
+          >
+            <span className="bold-holder">
+              <span className="real-title">Academics and Programs</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                Academics and Programs
+              </span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+            aria-current="false"
+            className="dropdown-toggle show main-navigation"
+          >
+            <span className="bold-holder">
+              <span className="real-title">Admissions and Aid</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                Admissions and Aid
+              </span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <a
+            aria-current="false"
+            className="main-navigation"
+            href="/campus-life"
+          >
+            <span className="bold-holder">
+              <span className="real-title">Campus Life</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                Campus Life
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://research.utk.edu"
+            aria-current="false"
+            className="main-navigation"
+          >
+            <span className="bold-holder">
+              <span className="real-title">Research</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                Research
+              </span>
+            </span>
+          </a>
+        </li>
+      </>
+    );
+  };
+
   /*
     I *think* these conditional data-selections are okay, because we get all
     the `link.uri` properties in `primaryNavItems` unconditionally.
@@ -127,199 +213,207 @@ const Header = ({ dynamicSrc }: Props) => {
           className="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper main-nav--large"
         >
           <menu id="" className="utk-nav-menu">
-            {links
-              ?.filter((link) => link.parentId === null)
-              ?.map((this_link) => {
-                const subItems = this_link.childItems?.nodes;
-                const subItemCount = subItems?.length || 0;
-                const hasSubItems = subItemCount > 0;
-                const isInternalTop = this_link.uri !== this_link.url;
-                // If dynamicSrc is set, append to end of internal links
-                const linkAddress = appendDynamicSrc(this_link.uri || '');
-                const linkLabel = this_link.label || '';
-                const isExpanded = activeSubmenu === linkLabel;
-                const isTopLevelActive = this_link.id === currentTopLevelItemId;
+            {/* render placeholder nav while fetching WP nav items to reduce layout shift */}
+            {links.length > 0 ? (
+              <>
+                {links
+                  ?.filter((link) => link.parentId === null)
+                  ?.map((this_link) => {
+                    const subItems = this_link.childItems?.nodes;
+                    const subItemCount = subItems?.length || 0;
+                    const hasSubItems = subItemCount > 0;
+                    const isInternalTop = this_link.uri !== this_link.url;
+                    // If dynamicSrc is set, append to end of internal links
+                    const linkAddress = appendDynamicSrc(this_link.uri || '');
+                    const linkLabel = this_link.label || '';
+                    const isExpanded = activeSubmenu === linkLabel;
+                    const isTopLevelActive =
+                      this_link.id === currentTopLevelItemId;
 
-                return hasSubItems ? (
-                  // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
-                  <li key={this_link.id}>
-                    <button
-                      data-bs-toggle="dropdown"
-                      data-bs-display="static"
-                      aria-expanded={isExpanded ? 'true' : 'false'}
-                      aria-current={isTopLevelActive ? 'page' : 'false'}
-                      className={
-                        isExpanded
-                          ? 'dropdown-toggle main-navigation'
-                          : 'dropdown-toggle show main-navigation'
-                      }
-                      onClick={() =>
-                        setActiveSubmenu(isExpanded ? '' : linkLabel)
-                      }
-                    >
-                      <span className="bold-holder">
-                        <span className="real-title">{linkLabel}</span>
-                        <span className="bold-wrapper" aria-hidden="true">
-                          {linkLabel}
-                        </span>
-                      </span>
-                    </button>
-                    <div
-                      id={linkLabel}
-                      className="dropdown-menu"
-                      style={{
-                        visibility: isExpanded ? 'visible' : 'hidden',
-                        opacity: isExpanded ? 1 : 0,
-                      }}
-                    >
-                      <ul style={{ paddingLeft: 0, marginBottom: 0 }}>
-                        <li className=" dropdown">
-                          {isInternalTop ? (
-                            <Link
-                              href={linkAddress}
-                              className="main-sub-navigation"
-                              aria-current={
-                                isTopLevelActive &&
-                                currentSecondLevelItemId === null
-                                  ? 'page'
-                                  : 'false'
-                              }
-                            >
-                              <span className="bold-holder">
-                                <span className="real-title">
-                                  {linkLabel} Overview
-                                </span>
-                                <span
-                                  className="bold-wrapper"
-                                  aria-hidden="true"
-                                >
-                                  {linkLabel} Overview
-                                </span>
-                              </span>
-                            </Link>
-                          ) : (
-                            <a
-                              href={linkAddress}
-                              className="main-sub-navigation"
-                              aria-current={
-                                isTopLevelActive &&
-                                currentSecondLevelItemId === null
-                                  ? 'page'
-                                  : 'false'
-                              }
-                            >
-                              <span className="bold-holder">
-                                <span className="real-title">
-                                  {linkLabel} Overview
-                                </span>
-                                <span
-                                  className="bold-wrapper"
-                                  aria-hidden="true"
-                                >
-                                  {linkLabel} Overview
-                                </span>
-                              </span>
-                            </a>
-                          )}
-                        </li>
-                        {subItems?.map((this_item) => {
-                          const isInternalSecondary =
-                            this_item.uri !== this_item.url;
-                          // If dynamicSrc is set, append to end of internal links
-                          const subItemLink = appendDynamicSrc(
-                            this_item.uri || ''
-                          );
-                          // const subItemLink =
-                          //   isInternalSecondary &&
-                          //   dynamicSrc &&
-                          //   dynamicSrc !== ''
-                          //     ? `${this_item.uri}?dmc=${dynamicSrc}`
-                          //     : this_item.uri || '';
-                          const subItemLabel = this_item.label || '';
-                          const isSecondLevelActive =
-                            this_item.id === currentSecondLevelItemId;
-
-                          return (
-                            <li className=" dropdown" key={this_item.id}>
-                              {isInternalSecondary ? (
+                    return hasSubItems ? (
+                      // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
+                      <li key={this_link.id}>
+                        <button
+                          data-bs-toggle="dropdown"
+                          data-bs-display="static"
+                          aria-expanded={isExpanded ? 'true' : 'false'}
+                          aria-current={isTopLevelActive ? 'page' : 'false'}
+                          className={
+                            isExpanded
+                              ? 'dropdown-toggle main-navigation'
+                              : 'dropdown-toggle show main-navigation'
+                          }
+                          onClick={() =>
+                            setActiveSubmenu(isExpanded ? '' : linkLabel)
+                          }
+                        >
+                          <span className="bold-holder">
+                            <span className="real-title">{linkLabel}</span>
+                            <span className="bold-wrapper" aria-hidden="true">
+                              {linkLabel}
+                            </span>
+                          </span>
+                        </button>
+                        <div
+                          id={linkLabel}
+                          className="dropdown-menu"
+                          style={{
+                            visibility: isExpanded ? 'visible' : 'hidden',
+                            opacity: isExpanded ? 1 : 0,
+                          }}
+                        >
+                          <ul style={{ paddingLeft: 0, marginBottom: 0 }}>
+                            <li className=" dropdown">
+                              {isInternalTop ? (
                                 <Link
-                                  href={subItemLink}
+                                  href={linkAddress}
                                   className="main-sub-navigation"
                                   aria-current={
-                                    isSecondLevelActive ? 'page' : 'false'
+                                    isTopLevelActive &&
+                                    currentSecondLevelItemId === null
+                                      ? 'page'
+                                      : 'false'
                                   }
                                 >
                                   <span className="bold-holder">
                                     <span className="real-title">
-                                      {subItemLabel}
+                                      {linkLabel} Overview
                                     </span>
                                     <span
                                       className="bold-wrapper"
                                       aria-hidden="true"
                                     >
-                                      {subItemLabel}
+                                      {linkLabel} Overview
                                     </span>
                                   </span>
                                 </Link>
                               ) : (
                                 <a
-                                  href={subItemLink}
+                                  href={linkAddress}
                                   className="main-sub-navigation"
                                   aria-current={
-                                    isSecondLevelActive ? 'page' : 'false'
+                                    isTopLevelActive &&
+                                    currentSecondLevelItemId === null
+                                      ? 'page'
+                                      : 'false'
                                   }
                                 >
                                   <span className="bold-holder">
                                     <span className="real-title">
-                                      {subItemLabel}
+                                      {linkLabel} Overview
                                     </span>
                                     <span
                                       className="bold-wrapper"
                                       aria-hidden="true"
                                     >
-                                      {subItemLabel}
+                                      {linkLabel} Overview
                                     </span>
                                   </span>
                                 </a>
                               )}
                             </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </li>
-                ) : (
-                  <li key={this_link.id}>
-                    {isInternalTop ? (
-                      <Link
-                        href={linkAddress}
-                        aria-current={isTopLevelActive ? 'page' : 'false'}
-                        className="main-navigation"
-                      >
-                        <span className="bold-holder">
-                          <span className="real-title">{linkLabel}</span>
-                          <span className="bold-wrapper" aria-hidden="true">
-                            {linkLabel}
-                          </span>
-                        </span>
-                      </Link>
+                            {subItems?.map((this_item) => {
+                              const isInternalSecondary =
+                                this_item.uri !== this_item.url;
+                              // If dynamicSrc is set, append to end of internal links
+                              const subItemLink = appendDynamicSrc(
+                                this_item.uri || ''
+                              );
+                              // const subItemLink =
+                              //   isInternalSecondary &&
+                              //   dynamicSrc &&
+                              //   dynamicSrc !== ''
+                              //     ? `${this_item.uri}?dmc=${dynamicSrc}`
+                              //     : this_item.uri || '';
+                              const subItemLabel = this_item.label || '';
+                              const isSecondLevelActive =
+                                this_item.id === currentSecondLevelItemId;
+
+                              return (
+                                <li className=" dropdown" key={this_item.id}>
+                                  {isInternalSecondary ? (
+                                    <Link
+                                      href={subItemLink}
+                                      className="main-sub-navigation"
+                                      aria-current={
+                                        isSecondLevelActive ? 'page' : 'false'
+                                      }
+                                    >
+                                      <span className="bold-holder">
+                                        <span className="real-title">
+                                          {subItemLabel}
+                                        </span>
+                                        <span
+                                          className="bold-wrapper"
+                                          aria-hidden="true"
+                                        >
+                                          {subItemLabel}
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  ) : (
+                                    <a
+                                      href={subItemLink}
+                                      className="main-sub-navigation"
+                                      aria-current={
+                                        isSecondLevelActive ? 'page' : 'false'
+                                      }
+                                    >
+                                      <span className="bold-holder">
+                                        <span className="real-title">
+                                          {subItemLabel}
+                                        </span>
+                                        <span
+                                          className="bold-wrapper"
+                                          aria-hidden="true"
+                                        >
+                                          {subItemLabel}
+                                        </span>
+                                      </span>
+                                    </a>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      </li>
                     ) : (
-                      <a
-                        href={linkAddress}
-                        aria-current={isTopLevelActive ? 'page' : 'false'}
-                        className="main-navigation"
-                      >
-                        <span className="bold-holder">
-                          <span className="real-title">{linkLabel}</span>
-                          <span className="bold-wrapper" aria-hidden="true">
-                            {linkLabel}
-                          </span>
-                        </span>
-                      </a>
-                    )}
-                  </li>
-                );
-              })}
+                      <li key={this_link.id}>
+                        {isInternalTop ? (
+                          <Link
+                            href={linkAddress}
+                            aria-current={isTopLevelActive ? 'page' : 'false'}
+                            className="main-navigation"
+                          >
+                            <span className="bold-holder">
+                              <span className="real-title">{linkLabel}</span>
+                              <span className="bold-wrapper" aria-hidden="true">
+                                {linkLabel}
+                              </span>
+                            </span>
+                          </Link>
+                        ) : (
+                          <a
+                            href={linkAddress}
+                            aria-current={isTopLevelActive ? 'page' : 'false'}
+                            className="main-navigation"
+                          >
+                            <span className="bold-holder">
+                              <span className="real-title">{linkLabel}</span>
+                              <span className="bold-wrapper" aria-hidden="true">
+                                {linkLabel}
+                              </span>
+                            </span>
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
+              </>
+            ) : (
+              placeholderNav()
+            )}
           </menu>
         </div>
       </header>
