@@ -30,6 +30,11 @@ export type AToZ = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & 
    * @deprecated Deprecated in favor of the databaseId field
    */
   aToZId: Scalars['Int']['output'];
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<AToZToAToZConnection>;
   /** @deprecated Deprecated in favor of using Next.js pages */
   conditionalTags?: Maybe<ConditionalTags>;
   /** Connection between the ContentNode type and the ContentType type */
@@ -80,6 +85,11 @@ export type AToZ = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & 
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<AToZToParentConnectionEdge>;
   /** The password for the a_to_z object. */
   password?: Maybe<Scalars['String']['output']>;
   /** Connection between the AToZ type and the AToZ type */
@@ -113,6 +123,15 @@ export type AToZaToZCategoriesArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<AToZToAToZCategoryConnectionWhereArgs>;
+};
+
+
+/** The AToZ type */
+export type AToZAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -597,6 +616,59 @@ export type AToZToAToZCategoryConnectionWhereArgs = {
 };
 
 /** Connection between the AToZ type and the AToZ type */
+export type AToZToAToZConnection = AToZConnection & Connection & {
+  __typename?: 'AToZToAToZConnection';
+  /** Edges for the AToZToAToZConnection connection */
+  edges: Array<AToZToAToZConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<AToZ>;
+  /** Information about pagination in a connection. */
+  pageInfo: AToZToAToZConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type AToZToAToZConnectionEdge = AToZConnectionEdge & Edge & {
+  __typename?: 'AToZToAToZConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: AToZ;
+};
+
+/** Page Info on the &quot;AToZToAToZConnection&quot; */
+export type AToZToAToZConnectionPageInfo = AToZConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'AToZToAToZConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the AToZ type and the AToZ type */
+export type AToZToParentConnectionEdge = AToZConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'AToZToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: AToZ;
+};
+
+/** Connection between the AToZ type and the AToZ type */
 export type AToZToPreviewConnectionEdge = AToZConnectionEdge & Edge & OneToOneConnection & {
   __typename?: 'AToZToPreviewConnectionEdge';
   /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
@@ -740,6 +812,11 @@ export type AcalogProgram = BlockEditorContentNode & ContentNode & DatabaseIdent
    * @deprecated Deprecated in favor of the databaseId field
    */
   acalogProgramId: Scalars['Int']['output'];
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<AcalogProgramToAcalogProgramConnection>;
   /** Gutenberg blocks */
   blocks?: Maybe<Array<Block>>;
   /** Gutenberg blocks as json string */
@@ -802,6 +879,11 @@ export type AcalogProgram = BlockEditorContentNode & ContentNode & DatabaseIdent
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<AcalogProgramToParentConnectionEdge>;
   /** The password for the acalog_program object. */
   password?: Maybe<Scalars['String']['output']>;
   /** Connection between the AcalogProgram type and the AcalogProgram type */
@@ -827,6 +909,15 @@ export type AcalogProgram = BlockEditorContentNode & ContentNode & DatabaseIdent
   title?: Maybe<Scalars['String']['output']>;
   /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The AcalogProgram type */
+export type AcalogProgramAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -902,6 +993,59 @@ export enum AcalogProgramIdType {
   /** Identify a resource by the URI. */
   Uri = 'URI'
 }
+
+/** Connection between the AcalogProgram type and the AcalogProgram type */
+export type AcalogProgramToAcalogProgramConnection = AcalogProgramConnection & Connection & {
+  __typename?: 'AcalogProgramToAcalogProgramConnection';
+  /** Edges for the AcalogProgramToAcalogProgramConnection connection */
+  edges: Array<AcalogProgramToAcalogProgramConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<AcalogProgram>;
+  /** Information about pagination in a connection. */
+  pageInfo: AcalogProgramToAcalogProgramConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type AcalogProgramToAcalogProgramConnectionEdge = AcalogProgramConnectionEdge & Edge & {
+  __typename?: 'AcalogProgramToAcalogProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: AcalogProgram;
+};
+
+/** Page Info on the &quot;AcalogProgramToAcalogProgramConnection&quot; */
+export type AcalogProgramToAcalogProgramConnectionPageInfo = AcalogProgramConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'AcalogProgramToAcalogProgramConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the AcalogProgram type and the AcalogProgram type */
+export type AcalogProgramToParentConnectionEdge = AcalogProgramConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'AcalogProgramToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: AcalogProgram;
+};
 
 /** Connection between the AcalogProgram type and the AcalogProgram type */
 export type AcalogProgramToPreviewConnectionEdge = AcalogProgramConnectionEdge & Edge & OneToOneConnection & {
@@ -1393,6 +1537,11 @@ export type BlockEditorContentNodeConnectionWhereArgs = {
 /** The BlockEditorPreview type */
 export type BlockEditorPreview = ContentNode & DatabaseIdentifier & Node & NodeWithAuthor & NodeWithContentEditor & NodeWithTemplate & NodeWithTitle & UniformResourceIdentifiable & {
   __typename?: 'BlockEditorPreview';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<BlockEditorPreviewToBlockEditorPreviewConnection>;
   /** Connection between the NodeWithAuthor type and the User type */
   author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
   /** The database identifier of the author of the node */
@@ -1459,6 +1608,11 @@ export type BlockEditorPreview = ContentNode & DatabaseIdentifier & Node & NodeW
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<BlockEditorPreviewToParentConnectionEdge>;
   /** The password for the wgg_preview object. */
   password?: Maybe<Scalars['String']['output']>;
   /**
@@ -1486,6 +1640,15 @@ export type BlockEditorPreview = ContentNode & DatabaseIdentifier & Node & NodeW
   title?: Maybe<Scalars['String']['output']>;
   /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The BlockEditorPreview type */
+export type BlockEditorPreviewAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -1561,6 +1724,59 @@ export enum BlockEditorPreviewIdType {
   /** Identify a resource by the URI. */
   Uri = 'URI'
 }
+
+/** Connection between the BlockEditorPreview type and the BlockEditorPreview type */
+export type BlockEditorPreviewToBlockEditorPreviewConnection = BlockEditorPreviewConnection & Connection & {
+  __typename?: 'BlockEditorPreviewToBlockEditorPreviewConnection';
+  /** Edges for the BlockEditorPreviewToBlockEditorPreviewConnection connection */
+  edges: Array<BlockEditorPreviewToBlockEditorPreviewConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<BlockEditorPreview>;
+  /** Information about pagination in a connection. */
+  pageInfo: BlockEditorPreviewToBlockEditorPreviewConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type BlockEditorPreviewToBlockEditorPreviewConnectionEdge = BlockEditorPreviewConnectionEdge & Edge & {
+  __typename?: 'BlockEditorPreviewToBlockEditorPreviewConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: BlockEditorPreview;
+};
+
+/** Page Info on the &quot;BlockEditorPreviewToBlockEditorPreviewConnection&quot; */
+export type BlockEditorPreviewToBlockEditorPreviewConnectionPageInfo = BlockEditorPreviewConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'BlockEditorPreviewToBlockEditorPreviewConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the BlockEditorPreview type and the BlockEditorPreview type */
+export type BlockEditorPreviewToParentConnectionEdge = BlockEditorPreviewConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'BlockEditorPreviewToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: BlockEditorPreview;
+};
 
 /** Connection between the BlockEditorPreview type and the BlockEditorPreview type */
 export type BlockEditorPreviewToPreviewConnectionEdge = BlockEditorPreviewConnectionEdge & Edge & OneToOneConnection & {
@@ -3605,7 +3821,7 @@ export type CoreBlock = Block & {
 
 export type CoreBlockAttributes = {
   __typename?: 'CoreBlockAttributes';
-  content?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  content: Scalars['BlockAttributesObject']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   ref?: Maybe<Scalars['Float']['output']>;
@@ -3615,7 +3831,7 @@ export type CoreBlockAttributesUnion = CoreBlockAttributes | CoreBlockDeprecated
 
 export type CoreBlockDeprecatedV1Attributes = {
   __typename?: 'CoreBlockDeprecatedV1Attributes';
-  content?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  content: Scalars['BlockAttributesObject']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   ref?: Maybe<Scalars['Float']['output']>;
@@ -3623,7 +3839,7 @@ export type CoreBlockDeprecatedV1Attributes = {
 
 export type CoreBlockDeprecatedV2Attributes = {
   __typename?: 'CoreBlockDeprecatedV2Attributes';
-  content?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  content: Scalars['BlockAttributesObject']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   ref?: Maybe<Scalars['Float']['output']>;
@@ -6804,7 +7020,7 @@ export type CoreListBlockAttributes = {
   values: Scalars['String']['output'];
 };
 
-export type CoreListBlockAttributesUnion = CoreListBlockAttributes | CoreListBlockDeprecatedV1Attributes | CoreListBlockDeprecatedV2Attributes | CoreListBlockDeprecatedV3Attributes;
+export type CoreListBlockAttributesUnion = CoreListBlockAttributes | CoreListBlockDeprecatedV1Attributes | CoreListBlockDeprecatedV2Attributes | CoreListBlockDeprecatedV3Attributes | CoreListBlockDeprecatedV4Attributes;
 
 export type CoreListBlockDeprecatedV1Attributes = {
   __typename?: 'CoreListBlockDeprecatedV1Attributes';
@@ -6848,6 +7064,26 @@ export type CoreListBlockDeprecatedV2Attributes = {
 
 export type CoreListBlockDeprecatedV3Attributes = {
   __typename?: 'CoreListBlockDeprecatedV3Attributes';
+  anchor?: Maybe<Scalars['String']['output']>;
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  fontFamily?: Maybe<Scalars['String']['output']>;
+  fontSize?: Maybe<Scalars['String']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  ordered: Scalars['Boolean']['output'];
+  placeholder?: Maybe<Scalars['String']['output']>;
+  reversed?: Maybe<Scalars['Boolean']['output']>;
+  start?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<Scalars['String']['output']>;
+  values: Scalars['String']['output'];
+};
+
+export type CoreListBlockDeprecatedV4Attributes = {
+  __typename?: 'CoreListBlockDeprecatedV4Attributes';
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -6994,6 +7230,7 @@ export type CoreMediaTextBlockAttributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7029,6 +7266,7 @@ export type CoreMediaTextBlockDeprecatedV1Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7062,6 +7300,7 @@ export type CoreMediaTextBlockDeprecatedV2Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7095,6 +7334,7 @@ export type CoreMediaTextBlockDeprecatedV3Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7128,6 +7368,7 @@ export type CoreMediaTextBlockDeprecatedV4Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7161,6 +7402,7 @@ export type CoreMediaTextBlockDeprecatedV5Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7194,6 +7436,7 @@ export type CoreMediaTextBlockDeprecatedV6Attributes = {
   rel?: Maybe<Scalars['String']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
+  useFeaturedImage: Scalars['Boolean']['output'];
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
@@ -7258,7 +7501,7 @@ export type CoreMoreBlock = Block & {
 
 export type CoreMoreBlockAttributes = {
   __typename?: 'CoreMoreBlockAttributes';
-  customText?: Maybe<Scalars['String']['output']>;
+  customText: Scalars['String']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   noTeaser: Scalars['Boolean']['output'];
@@ -9060,7 +9303,6 @@ export type CoreQuoteBlock = Block & {
 
 export type CoreQuoteBlockAttributes = {
   __typename?: 'CoreQuoteBlockAttributes';
-  align?: Maybe<Scalars['String']['output']>;
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -9071,15 +9313,15 @@ export type CoreQuoteBlockAttributes = {
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   value: Scalars['String']['output'];
 };
 
-export type CoreQuoteBlockAttributesUnion = CoreQuoteBlockAttributes | CoreQuoteBlockDeprecatedV1Attributes | CoreQuoteBlockDeprecatedV2Attributes | CoreQuoteBlockDeprecatedV3Attributes | CoreQuoteBlockDeprecatedV4Attributes;
+export type CoreQuoteBlockAttributesUnion = CoreQuoteBlockAttributes | CoreQuoteBlockDeprecatedV1Attributes | CoreQuoteBlockDeprecatedV2Attributes | CoreQuoteBlockDeprecatedV3Attributes | CoreQuoteBlockDeprecatedV4Attributes | CoreQuoteBlockDeprecatedV5Attributes;
 
 export type CoreQuoteBlockDeprecatedV1Attributes = {
   __typename?: 'CoreQuoteBlockDeprecatedV1Attributes';
-  align?: Maybe<Scalars['String']['output']>;
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -9090,13 +9332,13 @@ export type CoreQuoteBlockDeprecatedV1Attributes = {
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   value: Scalars['String']['output'];
 };
 
 export type CoreQuoteBlockDeprecatedV2Attributes = {
   __typename?: 'CoreQuoteBlockDeprecatedV2Attributes';
-  align?: Maybe<Scalars['String']['output']>;
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -9107,13 +9349,13 @@ export type CoreQuoteBlockDeprecatedV2Attributes = {
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   value: Scalars['String']['output'];
 };
 
 export type CoreQuoteBlockDeprecatedV3Attributes = {
   __typename?: 'CoreQuoteBlockDeprecatedV3Attributes';
-  align?: Maybe<Scalars['String']['output']>;
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -9124,13 +9366,13 @@ export type CoreQuoteBlockDeprecatedV3Attributes = {
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   value: Scalars['String']['output'];
 };
 
 export type CoreQuoteBlockDeprecatedV4Attributes = {
   __typename?: 'CoreQuoteBlockDeprecatedV4Attributes';
-  align?: Maybe<Scalars['String']['output']>;
   anchor?: Maybe<Scalars['String']['output']>;
   backgroundColor?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
@@ -9141,6 +9383,24 @@ export type CoreQuoteBlockDeprecatedV4Attributes = {
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
+  value: Scalars['String']['output'];
+};
+
+export type CoreQuoteBlockDeprecatedV5Attributes = {
+  __typename?: 'CoreQuoteBlockDeprecatedV5Attributes';
+  anchor?: Maybe<Scalars['String']['output']>;
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  fontFamily?: Maybe<Scalars['String']['output']>;
+  fontSize?: Maybe<Scalars['String']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textAlign?: Maybe<Scalars['String']['output']>;
   textColor?: Maybe<Scalars['String']['output']>;
   value: Scalars['String']['output'];
 };
@@ -9435,6 +9695,7 @@ export type CoreSiteTaglineBlockAttributes = {
   fontFamily?: Maybe<Scalars['String']['output']>;
   fontSize?: Maybe<Scalars['String']['output']>;
   gradient?: Maybe<Scalars['String']['output']>;
+  level: Scalars['Float']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
@@ -9452,6 +9713,7 @@ export type CoreSiteTaglineBlockDeprecatedV1Attributes = {
   fontFamily?: Maybe<Scalars['String']['output']>;
   fontSize?: Maybe<Scalars['String']['output']>;
   gradient?: Maybe<Scalars['String']['output']>;
+  level: Scalars['Float']['output'];
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
@@ -9767,7 +10029,7 @@ export type CoreTableBlockAttributesHeadCells = {
   tag: Scalars['String']['output'];
 };
 
-export type CoreTableBlockAttributesUnion = CoreTableBlockAttributes | CoreTableBlockDeprecatedV1Attributes | CoreTableBlockDeprecatedV2Attributes | CoreTableBlockDeprecatedV3Attributes;
+export type CoreTableBlockAttributesUnion = CoreTableBlockAttributes | CoreTableBlockDeprecatedV1Attributes | CoreTableBlockDeprecatedV2Attributes | CoreTableBlockDeprecatedV3Attributes | CoreTableBlockDeprecatedV4Attributes;
 
 export type CoreTableBlockDeprecatedV1Attributes = {
   __typename?: 'CoreTableBlockDeprecatedV1Attributes';
@@ -9948,6 +10210,68 @@ export type CoreTableBlockDeprecatedV3AttributesHead = {
 
 export type CoreTableBlockDeprecatedV3AttributesHeadCells = {
   __typename?: 'CoreTableBlockDeprecatedV3AttributesHeadCells';
+  align?: Maybe<Scalars['String']['output']>;
+  colspan?: Maybe<Scalars['String']['output']>;
+  rowspan?: Maybe<Scalars['String']['output']>;
+  scope?: Maybe<Scalars['String']['output']>;
+  tag: Scalars['String']['output'];
+};
+
+export type CoreTableBlockDeprecatedV4Attributes = {
+  __typename?: 'CoreTableBlockDeprecatedV4Attributes';
+  align?: Maybe<Scalars['String']['output']>;
+  anchor?: Maybe<Scalars['String']['output']>;
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  body: Array<Maybe<CoreTableBlockDeprecatedV4AttributesBody>>;
+  borderColor?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  fontFamily?: Maybe<Scalars['String']['output']>;
+  fontSize?: Maybe<Scalars['String']['output']>;
+  foot: Array<Maybe<CoreTableBlockDeprecatedV4AttributesFoot>>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  hasFixedLayout: Scalars['Boolean']['output'];
+  head: Array<Maybe<CoreTableBlockDeprecatedV4AttributesHead>>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  textColor?: Maybe<Scalars['String']['output']>;
+};
+
+export type CoreTableBlockDeprecatedV4AttributesBody = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesBody';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV4AttributesBodyCells>>;
+};
+
+export type CoreTableBlockDeprecatedV4AttributesBodyCells = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesBodyCells';
+  align?: Maybe<Scalars['String']['output']>;
+  colspan?: Maybe<Scalars['String']['output']>;
+  rowspan?: Maybe<Scalars['String']['output']>;
+  scope?: Maybe<Scalars['String']['output']>;
+  tag: Scalars['String']['output'];
+};
+
+export type CoreTableBlockDeprecatedV4AttributesFoot = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesFoot';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV4AttributesFootCells>>;
+};
+
+export type CoreTableBlockDeprecatedV4AttributesFootCells = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesFootCells';
+  align?: Maybe<Scalars['String']['output']>;
+  colspan?: Maybe<Scalars['String']['output']>;
+  rowspan?: Maybe<Scalars['String']['output']>;
+  scope?: Maybe<Scalars['String']['output']>;
+  tag: Scalars['String']['output'];
+};
+
+export type CoreTableBlockDeprecatedV4AttributesHead = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesHead';
+  cells: Array<Maybe<CoreTableBlockDeprecatedV4AttributesHeadCells>>;
+};
+
+export type CoreTableBlockDeprecatedV4AttributesHeadCells = {
+  __typename?: 'CoreTableBlockDeprecatedV4AttributesHeadCells';
   align?: Maybe<Scalars['String']['output']>;
   colspan?: Maybe<Scalars['String']['output']>;
   rowspan?: Maybe<Scalars['String']['output']>;
@@ -10755,6 +11079,8 @@ export type CreateReusableBlockInput = {
   content?: InputMaybe<Scalars['String']['input']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
   date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
   /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
   menuOrder?: InputMaybe<Scalars['Int']['input']>;
   /** The password used to protect the content of the object */
@@ -13247,8 +13573,12 @@ export type MenuItemToMenuItemLinkableConnectionEdge = Edge & MenuItemLinkableCo
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
+  /** Put the menu in the footer location */
+  Footer = 'FOOTER',
   /** Put the menu in the links location */
   Links = 'LINKS',
+  /** Put the menu in the main location */
+  Main = 'MAIN',
   /** Put the menu in the primary location */
   Primary = 'PRIMARY',
   /** Put the menu in the tools location */
@@ -14073,6 +14403,11 @@ export enum PluginStatusEnum {
 /** The post type */
 export type Post = BlockEditorContentNode & ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
   __typename?: 'Post';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<PostToPostConnection>;
   /** Connection between the NodeWithAuthor type and the User type */
   author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
   /** The database identifier of the author of the node */
@@ -14155,6 +14490,11 @@ export type Post = BlockEditorContentNode & ContentNode & DatabaseIdentifier & M
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<PostToParentConnectionEdge>;
   /** The password for the post object. */
   password?: Maybe<Scalars['String']['output']>;
   /** Whether the pings are open or closed for this particular post. */
@@ -14201,6 +14541,15 @@ export type Post = BlockEditorContentNode & ContentNode & DatabaseIdentifier & M
   toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The post type */
+export type PostAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -14989,6 +15338,59 @@ export type PostToCommentConnectionWhereArgs = {
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+/** Connection between the Post type and the post type */
+export type PostToParentConnectionEdge = Edge & OneToOneConnection & PostConnectionEdge & {
+  __typename?: 'PostToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Post;
+};
+
+/** Connection between the Post type and the post type */
+export type PostToPostConnection = Connection & PostConnection & {
+  __typename?: 'PostToPostConnection';
+  /** Edges for the PostToPostConnection connection */
+  edges: Array<PostToPostConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Post>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostToPostConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostToPostConnectionEdge = Edge & PostConnectionEdge & {
+  __typename?: 'PostToPostConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Post;
+};
+
+/** Page Info on the &quot;PostToPostConnection&quot; */
+export type PostToPostConnectionPageInfo = PageInfo & PostConnectionPageInfo & WpPageInfo & {
+  __typename?: 'PostToPostConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
 /** Connection between the Post type and the postFormat type */
 export type PostToPostFormatConnection = Connection & PostFormatConnection & {
   __typename?: 'PostToPostFormatConnection';
@@ -15445,6 +15847,11 @@ export type Previewable = {
 /** The Program type */
 export type Program = BlockEditorContentNode & ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithContentEditor & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & UniformResourceIdentifiable & {
   __typename?: 'Program';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<ProgramToProgramConnection>;
   /** Connection between the Program type and the AreaOfStudy type */
   areasOfStudy?: Maybe<ProgramToAreaOfStudyConnection>;
   /** Gutenberg blocks */
@@ -15515,6 +15922,11 @@ export type Program = BlockEditorContentNode & ContentNode & DatabaseIdentifier 
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<ProgramToParentConnectionEdge>;
   /** The password for the program object. */
   password?: Maybe<Scalars['String']['output']>;
   /** Connection between the Program type and the Program type */
@@ -15549,6 +15961,15 @@ export type Program = BlockEditorContentNode & ContentNode & DatabaseIdentifier 
   title?: Maybe<Scalars['String']['output']>;
   /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The Program type */
+export type ProgramAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -16088,12 +16509,65 @@ export type ProgramToMajorConnectionWhereArgs = {
 };
 
 /** Connection between the Program type and the Program type */
+export type ProgramToParentConnectionEdge = Edge & OneToOneConnection & ProgramConnectionEdge & {
+  __typename?: 'ProgramToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Program;
+};
+
+/** Connection between the Program type and the Program type */
 export type ProgramToPreviewConnectionEdge = Edge & OneToOneConnection & ProgramConnectionEdge & {
   __typename?: 'ProgramToPreviewConnectionEdge';
   /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
   cursor?: Maybe<Scalars['String']['output']>;
   /** The node of the connection, without the edges */
   node: Program;
+};
+
+/** Connection between the Program type and the Program type */
+export type ProgramToProgramConnection = Connection & ProgramConnection & {
+  __typename?: 'ProgramToProgramConnection';
+  /** Edges for the ProgramToProgramConnection connection */
+  edges: Array<ProgramToProgramConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Program>;
+  /** Information about pagination in a connection. */
+  pageInfo: ProgramToProgramConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type ProgramToProgramConnectionEdge = Edge & ProgramConnectionEdge & {
+  __typename?: 'ProgramToProgramConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Program;
+};
+
+/** Page Info on the &quot;ProgramToProgramConnection&quot; */
+export type ProgramToProgramConnectionPageInfo = PageInfo & ProgramConnectionPageInfo & WpPageInfo & {
+  __typename?: 'ProgramToProgramConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** Connection between the Program type and the TermNode type */
@@ -16296,8 +16770,13 @@ export type RestoreCommentPayload = {
 };
 
 /** The ReusableBlock type */
-export type ReusableBlock = BlockEditorContentNode & ContentNode & DatabaseIdentifier & Node & NodeWithContentEditor & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & UniformResourceIdentifiable & {
+export type ReusableBlock = BlockEditorContentNode & ContentNode & DatabaseIdentifier & Node & NodeWithContentEditor & NodeWithExcerpt & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & UniformResourceIdentifiable & {
   __typename?: 'ReusableBlock';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<ReusableBlockToReusableBlockConnection>;
   /** Gutenberg blocks */
   blocks?: Maybe<Array<Block>>;
   /** Gutenberg blocks as json string */
@@ -16326,6 +16805,8 @@ export type ReusableBlock = BlockEditorContentNode & ContentNode & DatabaseIdent
   enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
   /** Connection between the ContentNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
   /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   guid?: Maybe<Scalars['String']['output']>;
   /** Whether the wp_block object is password protected. */
@@ -16356,6 +16837,11 @@ export type ReusableBlock = BlockEditorContentNode & ContentNode & DatabaseIdent
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<ReusableBlockToParentConnectionEdge>;
   /** The password for the wp_block object. */
   password?: Maybe<Scalars['String']['output']>;
   /**
@@ -16401,6 +16887,15 @@ export type ReusableBlock = BlockEditorContentNode & ContentNode & DatabaseIdent
 
 
 /** The ReusableBlock type */
+export type ReusableBlockAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The ReusableBlock type */
 export type ReusableBlockContentArgs = {
   format?: InputMaybe<PostObjectFieldFormatEnum>;
 };
@@ -16421,6 +16916,12 @@ export type ReusableBlockEnqueuedStylesheetsArgs = {
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The ReusableBlock type */
+export type ReusableBlockExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
 };
 
 
@@ -16496,6 +16997,18 @@ export enum ReusableBlockIdType {
 }
 
 /** Connection between the ReusableBlock type and the ReusableBlock type */
+export type ReusableBlockToParentConnectionEdge = Edge & OneToOneConnection & ReusableBlockConnectionEdge & {
+  __typename?: 'ReusableBlockToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: ReusableBlock;
+};
+
+/** Connection between the ReusableBlock type and the ReusableBlock type */
 export type ReusableBlockToPreviewConnectionEdge = Edge & OneToOneConnection & ReusableBlockConnectionEdge & {
   __typename?: 'ReusableBlockToPreviewConnectionEdge';
   /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
@@ -16505,6 +17018,47 @@ export type ReusableBlockToPreviewConnectionEdge = Edge & OneToOneConnection & R
    * @deprecated The &quot;ReusableBlock&quot; Type is not publicly queryable and does not support previews. This field will be removed in the future.
    */
   node: ReusableBlock;
+};
+
+/** Connection between the ReusableBlock type and the ReusableBlock type */
+export type ReusableBlockToReusableBlockConnection = Connection & ReusableBlockConnection & {
+  __typename?: 'ReusableBlockToReusableBlockConnection';
+  /** Edges for the ReusableBlockToReusableBlockConnection connection */
+  edges: Array<ReusableBlockToReusableBlockConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<ReusableBlock>;
+  /** Information about pagination in a connection. */
+  pageInfo: ReusableBlockToReusableBlockConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type ReusableBlockToReusableBlockConnectionEdge = Edge & ReusableBlockConnectionEdge & {
+  __typename?: 'ReusableBlockToReusableBlockConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: ReusableBlock;
+};
+
+/** Page Info on the &quot;ReusableBlockToReusableBlockConnection&quot; */
+export type ReusableBlockToReusableBlockConnectionPageInfo = PageInfo & ReusableBlockConnectionPageInfo & WpPageInfo & {
+  __typename?: 'ReusableBlockToReusableBlockConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** Connection between the ReusableBlock type and the ReusableBlock type */
@@ -20376,6 +20930,11 @@ export type Settings = {
 /** The SocialUnit type */
 export type SocialUnit = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithTemplate & NodeWithTitle & Previewable & UniformResourceIdentifiable & {
   __typename?: 'SocialUnit';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<SocialUnitToSocialUnitConnection>;
   /** @deprecated Deprecated in favor of using Next.js pages */
   conditionalTags?: Maybe<ConditionalTags>;
   /** Connection between the ContentNode type and the ContentType type */
@@ -20426,6 +20985,11 @@ export type SocialUnit = ContentNode & DatabaseIdentifier & MenuItemLinkable & N
   modified?: Maybe<Scalars['String']['output']>;
   /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<SocialUnitToParentConnectionEdge>;
   /** The password for the social-unit object. */
   password?: Maybe<Scalars['String']['output']>;
   /** Connection between the SocialUnit type and the SocialUnit type */
@@ -20454,6 +21018,15 @@ export type SocialUnit = ContentNode & DatabaseIdentifier & MenuItemLinkable & N
   title?: Maybe<Scalars['String']['output']>;
   /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The SocialUnit type */
+export type SocialUnitAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -20525,12 +21098,65 @@ export enum SocialUnitIdType {
 }
 
 /** Connection between the SocialUnit type and the SocialUnit type */
+export type SocialUnitToParentConnectionEdge = Edge & OneToOneConnection & SocialUnitConnectionEdge & {
+  __typename?: 'SocialUnitToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: SocialUnit;
+};
+
+/** Connection between the SocialUnit type and the SocialUnit type */
 export type SocialUnitToPreviewConnectionEdge = Edge & OneToOneConnection & SocialUnitConnectionEdge & {
   __typename?: 'SocialUnitToPreviewConnectionEdge';
   /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
   cursor?: Maybe<Scalars['String']['output']>;
   /** The node of the connection, without the edges */
   node: SocialUnit;
+};
+
+/** Connection between the SocialUnit type and the SocialUnit type */
+export type SocialUnitToSocialUnitConnection = Connection & SocialUnitConnection & {
+  __typename?: 'SocialUnitToSocialUnitConnection';
+  /** Edges for the SocialUnitToSocialUnitConnection connection */
+  edges: Array<SocialUnitToSocialUnitConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<SocialUnit>;
+  /** Information about pagination in a connection. */
+  pageInfo: SocialUnitToSocialUnitConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type SocialUnitToSocialUnitConnectionEdge = Edge & SocialUnitConnectionEdge & {
+  __typename?: 'SocialUnitToSocialUnitConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: SocialUnit;
+};
+
+/** Page Info on the &quot;SocialUnitToSocialUnitConnection&quot; */
+export type SocialUnitToSocialUnitConnectionPageInfo = PageInfo & SocialUnitConnectionPageInfo & WpPageInfo & {
+  __typename?: 'SocialUnitToSocialUnitConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** Field Group */
@@ -21104,22 +21730,22 @@ export type Template_Blank = ContentTemplate & {
 };
 
 /** The template assigned to the node */
-export type Template_Nobreadcrumbs = ContentTemplate & {
-  __typename?: 'Template_Nobreadcrumbs';
+export type Template_NoBreadcrumbs = ContentTemplate & {
+  __typename?: 'Template_NoBreadcrumbs';
   /** The name of the template */
   templateName?: Maybe<Scalars['String']['output']>;
 };
 
 /** The template assigned to the node */
-export type Template_Notitle = ContentTemplate & {
-  __typename?: 'Template_Notitle';
+export type Template_NoTitle = ContentTemplate & {
+  __typename?: 'Template_NoTitle';
   /** The name of the template */
   templateName?: Maybe<Scalars['String']['output']>;
 };
 
 /** The template assigned to the node */
-export type Template_Notitleorbreadcrumbs = ContentTemplate & {
-  __typename?: 'Template_Notitleorbreadcrumbs';
+export type Template_NoTitleNoBreadcrumbs = ContentTemplate & {
+  __typename?: 'Template_NoTitleNoBreadcrumbs';
   /** The name of the template */
   templateName?: Maybe<Scalars['String']['output']>;
 };
@@ -21902,6 +22528,8 @@ export type UpdateReusableBlockInput = {
   content?: InputMaybe<Scalars['String']['input']>;
   /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
   date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
   /** The ID of the ReusableBlock object */
   id: Scalars['ID']['input'];
   /** Override the edit lock when another user is editing the post */
@@ -23044,40 +23672,6 @@ export enum UsersConnectionSearchColumnEnum {
   Url = 'URL'
 }
 
-/** utk-wds/accordion block */
-export type UtkWdsAccordionBlock = Block & {
-  __typename?: 'UtkWdsAccordionBlock';
-  attributes?: Maybe<UtkWdsAccordionBlockAttributes>;
-  /** Block attributes, JSON encoded */
-  attributesJSON?: Maybe<Scalars['String']['output']>;
-  /** Server side rendered content. */
-  dynamicContent?: Maybe<Scalars['String']['output']>;
-  /** Gutenberg blocks */
-  innerBlocks?: Maybe<Array<Block>>;
-  /** Is block rendered server side. */
-  isDynamic: Scalars['Boolean']['output'];
-  /** Name of the block. */
-  name: Scalars['String']['output'];
-  order: Scalars['Int']['output'];
-  /** Original HTML content. */
-  originalContent?: Maybe<Scalars['String']['output']>;
-  /** Parent post. */
-  parentNode: Node;
-  /** Parent post id. */
-  parentNodeDatabaseId: Scalars['Int']['output'];
-  /** Original HTML content with inner blocks. */
-  saveContent?: Maybe<Scalars['String']['output']>;
-};
-
-export type UtkWdsAccordionBlockAttributes = {
-  __typename?: 'UtkWdsAccordionBlockAttributes';
-  className?: Maybe<Scalars['String']['output']>;
-  colorScheme: Scalars['String']['output'];
-  headingLevel: Scalars['String']['output'];
-  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-};
-
 /** utk-wds/accordion-panel block */
 export type UtkWdsAccordionPanelBlock = Block & {
   __typename?: 'UtkWdsAccordionPanelBlock';
@@ -23144,6 +23738,153 @@ export type UtkWdsBreadcrumbsBlockAttributes = {
   links?: Maybe<Scalars['BlockAttributesArray']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** utk-wds/icon-block block */
+export type UtkWdsIconBlock = Block & {
+  __typename?: 'UtkWdsIconBlock';
+  attributes?: Maybe<UtkWdsIconBlockAttributesUnion>;
+  /** Block attributes, JSON encoded */
+  attributesJSON?: Maybe<Scalars['String']['output']>;
+  /** Server side rendered content. */
+  dynamicContent?: Maybe<Scalars['String']['output']>;
+  /** Gutenberg blocks */
+  innerBlocks?: Maybe<Array<Block>>;
+  /** Is block rendered server side. */
+  isDynamic: Scalars['Boolean']['output'];
+  /** Name of the block. */
+  name: Scalars['String']['output'];
+  order: Scalars['Int']['output'];
+  /** Original HTML content. */
+  originalContent?: Maybe<Scalars['String']['output']>;
+  /** Parent post. */
+  parentNode: Node;
+  /** Parent post id. */
+  parentNodeDatabaseId: Scalars['Int']['output'];
+  /** Original HTML content with inner blocks. */
+  saveContent?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkWdsIconBlockAttributes = {
+  __typename?: 'UtkWdsIconBlockAttributes';
+  className?: Maybe<Scalars['String']['output']>;
+  customGradient?: Maybe<Scalars['String']['output']>;
+  customIconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  customIconColor?: Maybe<Scalars['String']['output']>;
+  flipHorizontal?: Maybe<Scalars['Boolean']['output']>;
+  flipVertical?: Maybe<Scalars['Boolean']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  hasNoIconFill?: Maybe<Scalars['Boolean']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  icon: Scalars['String']['output'];
+  iconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  iconBackgroundColorValue?: Maybe<Scalars['String']['output']>;
+  iconColor?: Maybe<Scalars['String']['output']>;
+  iconColorValue?: Maybe<Scalars['String']['output']>;
+  iconName?: Maybe<Scalars['String']['output']>;
+  itemsJustification?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkRel?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  linkUrl?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  percentWidth?: Maybe<Scalars['Float']['output']>;
+  rotate?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkWdsIconBlockAttributesUnion = UtkWdsIconBlockAttributes | UtkWdsIconBlockDeprecatedV1Attributes | UtkWdsIconBlockDeprecatedV2Attributes | UtkWdsIconBlockDeprecatedV3Attributes;
+
+export type UtkWdsIconBlockDeprecatedV1Attributes = {
+  __typename?: 'UtkWdsIconBlockDeprecatedV1Attributes';
+  className?: Maybe<Scalars['String']['output']>;
+  customGradient?: Maybe<Scalars['String']['output']>;
+  customIconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  customIconColor?: Maybe<Scalars['String']['output']>;
+  flipHorizontal?: Maybe<Scalars['Boolean']['output']>;
+  flipVertical?: Maybe<Scalars['Boolean']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  hasNoIconFill?: Maybe<Scalars['Boolean']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  icon: Scalars['String']['output'];
+  iconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  iconBackgroundColorValue?: Maybe<Scalars['String']['output']>;
+  iconColor?: Maybe<Scalars['String']['output']>;
+  iconColorValue?: Maybe<Scalars['String']['output']>;
+  iconName?: Maybe<Scalars['String']['output']>;
+  itemsJustification?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkRel?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  linkUrl?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  percentWidth?: Maybe<Scalars['Float']['output']>;
+  rotate?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkWdsIconBlockDeprecatedV2Attributes = {
+  __typename?: 'UtkWdsIconBlockDeprecatedV2Attributes';
+  className?: Maybe<Scalars['String']['output']>;
+  customGradient?: Maybe<Scalars['String']['output']>;
+  customIconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  customIconColor?: Maybe<Scalars['String']['output']>;
+  flipHorizontal?: Maybe<Scalars['Boolean']['output']>;
+  flipVertical?: Maybe<Scalars['Boolean']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  hasNoIconFill?: Maybe<Scalars['Boolean']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  icon: Scalars['String']['output'];
+  iconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  iconBackgroundColorValue?: Maybe<Scalars['String']['output']>;
+  iconColor?: Maybe<Scalars['String']['output']>;
+  iconColorValue?: Maybe<Scalars['String']['output']>;
+  iconName?: Maybe<Scalars['String']['output']>;
+  itemsJustification?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkRel?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  linkUrl?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  percentWidth?: Maybe<Scalars['Float']['output']>;
+  rotate?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkWdsIconBlockDeprecatedV3Attributes = {
+  __typename?: 'UtkWdsIconBlockDeprecatedV3Attributes';
+  className?: Maybe<Scalars['String']['output']>;
+  customGradient?: Maybe<Scalars['String']['output']>;
+  customIconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  customIconColor?: Maybe<Scalars['String']['output']>;
+  flipHorizontal?: Maybe<Scalars['Boolean']['output']>;
+  flipVertical?: Maybe<Scalars['Boolean']['output']>;
+  gradient?: Maybe<Scalars['String']['output']>;
+  hasNoIconFill?: Maybe<Scalars['Boolean']['output']>;
+  height?: Maybe<Scalars['String']['output']>;
+  icon: Scalars['String']['output'];
+  iconBackgroundColor?: Maybe<Scalars['String']['output']>;
+  iconBackgroundColorValue?: Maybe<Scalars['String']['output']>;
+  iconColor?: Maybe<Scalars['String']['output']>;
+  iconColorValue?: Maybe<Scalars['String']['output']>;
+  iconName?: Maybe<Scalars['String']['output']>;
+  itemsJustification?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkRel?: Maybe<Scalars['String']['output']>;
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  linkUrl?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  percentWidth?: Maybe<Scalars['Float']['output']>;
+  rotate?: Maybe<Scalars['Float']['output']>;
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
 };
 
 /** utk-wds/nav-menu block */
@@ -23253,44 +23994,6 @@ export type UtkWdsSiteHeaderBlockAttributes = {
   utilityMenuName?: Maybe<Scalars['String']['output']>;
 };
 
-/** utk-wds/tab block */
-export type UtkWdsTabBlock = Block & {
-  __typename?: 'UtkWdsTabBlock';
-  attributes?: Maybe<UtkWdsTabBlockAttributes>;
-  /** Block attributes, JSON encoded */
-  attributesJSON?: Maybe<Scalars['String']['output']>;
-  /** Server side rendered content. */
-  dynamicContent?: Maybe<Scalars['String']['output']>;
-  /** Gutenberg blocks */
-  innerBlocks?: Maybe<Array<Block>>;
-  /** Is block rendered server side. */
-  isDynamic: Scalars['Boolean']['output'];
-  /** Name of the block. */
-  name: Scalars['String']['output'];
-  order: Scalars['Int']['output'];
-  /** Original HTML content. */
-  originalContent?: Maybe<Scalars['String']['output']>;
-  /** Parent post. */
-  parentNode: Node;
-  /** Parent post id. */
-  parentNodeDatabaseId: Scalars['Int']['output'];
-  /** Original HTML content with inner blocks. */
-  saveContent?: Maybe<Scalars['String']['output']>;
-};
-
-export type UtkWdsTabBlockAttributes = {
-  __typename?: 'UtkWdsTabBlockAttributes';
-  className?: Maybe<Scalars['String']['output']>;
-  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  panelTitle?: Maybe<Scalars['String']['output']>;
-  tabActive: Scalars['String']['output'];
-  tabName: Scalars['String']['output'];
-  tabPlaceholder: Scalars['String']['output'];
-  tabShow: Scalars['String']['output'];
-  tabSlug: Scalars['String']['output'];
-};
-
 /** utk-wds/tab-group block */
 export type UtkWdsTabGroupBlock = Block & {
   __typename?: 'UtkWdsTabGroupBlock';
@@ -23323,6 +24026,39 @@ export type UtkWdsTabGroupBlockAttributes = {
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
   tabId: Scalars['String']['output'];
   tabNames: Scalars['BlockAttributesArray']['output'];
+};
+
+/** utkwds/accordion block */
+export type UtkwdsAccordionBlock = Block & {
+  __typename?: 'UtkwdsAccordionBlock';
+  attributes?: Maybe<UtkwdsAccordionBlockAttributes>;
+  /** Block attributes, JSON encoded */
+  attributesJSON?: Maybe<Scalars['String']['output']>;
+  /** Server side rendered content. */
+  dynamicContent?: Maybe<Scalars['String']['output']>;
+  /** Gutenberg blocks */
+  innerBlocks?: Maybe<Array<Block>>;
+  /** Is block rendered server side. */
+  isDynamic: Scalars['Boolean']['output'];
+  /** Name of the block. */
+  name: Scalars['String']['output'];
+  order: Scalars['Int']['output'];
+  /** Original HTML content. */
+  originalContent?: Maybe<Scalars['String']['output']>;
+  /** Parent post. */
+  parentNode: Node;
+  /** Parent post id. */
+  parentNodeDatabaseId: Scalars['Int']['output'];
+  /** Original HTML content with inner blocks. */
+  saveContent?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkwdsAccordionBlockAttributes = {
+  __typename?: 'UtkwdsAccordionBlockAttributes';
+  accordionID: Scalars['String']['output'];
+  className?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** utkwds/accordion-fold block */
@@ -23648,6 +24384,39 @@ export type UtkwdsPhonesBlockAttributes = {
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
+/** utkwds/secondary-navigation block */
+export type UtkwdsSecondaryNavigationBlock = Block & {
+  __typename?: 'UtkwdsSecondaryNavigationBlock';
+  attributes?: Maybe<UtkwdsSecondaryNavigationBlockAttributes>;
+  /** Block attributes, JSON encoded */
+  attributesJSON?: Maybe<Scalars['String']['output']>;
+  /** Server side rendered content. */
+  dynamicContent?: Maybe<Scalars['String']['output']>;
+  /** Gutenberg blocks */
+  innerBlocks?: Maybe<Array<Block>>;
+  /** Is block rendered server side. */
+  isDynamic: Scalars['Boolean']['output'];
+  /** Name of the block. */
+  name: Scalars['String']['output'];
+  order: Scalars['Int']['output'];
+  /** Original HTML content. */
+  originalContent?: Maybe<Scalars['String']['output']>;
+  /** Parent post. */
+  parentNode: Node;
+  /** Parent post id. */
+  parentNodeDatabaseId: Scalars['Int']['output'];
+  /** Original HTML content with inner blocks. */
+  saveContent?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkwdsSecondaryNavigationBlockAttributes = {
+  __typename?: 'UtkwdsSecondaryNavigationBlockAttributes';
+  anchor?: Maybe<Scalars['String']['output']>;
+  className?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
 /** utkwds/socials block */
 export type UtkwdsSocialsBlock = Block & {
   __typename?: 'UtkwdsSocialsBlock';
@@ -23678,6 +24447,43 @@ export type UtkwdsSocialsBlockAttributes = {
   className?: Maybe<Scalars['String']['output']>;
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** utkwds/tab block */
+export type UtkwdsTabBlock = Block & {
+  __typename?: 'UtkwdsTabBlock';
+  attributes?: Maybe<UtkwdsTabBlockAttributes>;
+  /** Block attributes, JSON encoded */
+  attributesJSON?: Maybe<Scalars['String']['output']>;
+  /** Server side rendered content. */
+  dynamicContent?: Maybe<Scalars['String']['output']>;
+  /** Gutenberg blocks */
+  innerBlocks?: Maybe<Array<Block>>;
+  /** Is block rendered server side. */
+  isDynamic: Scalars['Boolean']['output'];
+  /** Name of the block. */
+  name: Scalars['String']['output'];
+  order: Scalars['Int']['output'];
+  /** Original HTML content. */
+  originalContent?: Maybe<Scalars['String']['output']>;
+  /** Parent post. */
+  parentNode: Node;
+  /** Parent post id. */
+  parentNodeDatabaseId: Scalars['Int']['output'];
+  /** Original HTML content with inner blocks. */
+  saveContent?: Maybe<Scalars['String']['output']>;
+};
+
+export type UtkwdsTabBlockAttributes = {
+  __typename?: 'UtkwdsTabBlockAttributes';
+  className?: Maybe<Scalars['String']['output']>;
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  tabActive: Scalars['String']['output'];
+  tabName: Scalars['String']['output'];
+  tabPlaceholder: Scalars['String']['output'];
+  tabShow: Scalars['String']['output'];
+  tabSlug: Scalars['String']['output'];
 };
 
 /** utkwds/tabs block */
@@ -23955,7 +24761,7 @@ export type GetPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Page', title?: string | null, slug?: string | null, content?: string | null, template?: { __typename?: 'DefaultTemplate', templateName?: string | null } | { __typename?: 'Template_Blank', templateName?: string | null } | { __typename?: 'Template_Nobreadcrumbs', templateName?: string | null } | { __typename?: 'Template_Notitle', templateName?: string | null } | { __typename?: 'Template_Notitleorbreadcrumbs', templateName?: string | null } | null, featuredImage?: { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge', node: { __typename?: 'MediaItem', sourceUrl?: string | null } } | null, seo?: { __typename?: 'PostTypeSEO', title?: string | null, fullHead?: string | null } | null } | null, generalSettings?: { __typename?: 'GeneralSettings', title?: string | null } | null };
+export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Page', title?: string | null, slug?: string | null, content?: string | null, template?: { __typename?: 'DefaultTemplate', templateName?: string | null } | { __typename?: 'Template_Blank', templateName?: string | null } | { __typename?: 'Template_NoBreadcrumbs', templateName?: string | null } | { __typename?: 'Template_NoTitle', templateName?: string | null } | { __typename?: 'Template_NoTitleNoBreadcrumbs', templateName?: string | null } | null, featuredImage?: { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge', node: { __typename?: 'MediaItem', sourceUrl?: string | null } } | null, seo?: { __typename?: 'PostTypeSEO', title?: string | null, fullHead?: string | null } | null } | null, generalSettings?: { __typename?: 'GeneralSettings', title?: string | null } | null };
 
 export type GetPostQueryVariables = Exact<{
   databaseId: Scalars['ID']['input'];
