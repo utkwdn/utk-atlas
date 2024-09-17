@@ -64,10 +64,10 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
         {parse(yoastString)}
       </Head>
 
-      {templateName !== 'No-title' ? (
-        <PageTitle title={pageTitle} bgImage={bgImageUrl} />
-      ) : (
+      {templateName.includes('No Title') ? (
         ''
+      ) : (
+        <PageTitle title={pageTitle} bgImage={bgImageUrl} />
       )}
 
       <main
