@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
 import { FooterToolsQuery } from '../__generated__/graphql';
+import Image from 'next/image';
+import footerLogo from '/public/images/chrome/logo-horizontal-left-white.svg';
 
 interface Props {
   dynamicSrc?: string;
@@ -157,8 +159,8 @@ function Footer({ dynamicSrc }: Props): JSX.Element {
 
             <div className="utk-identifier col-12 col-md-5 col-lg-4 ms-lg-auto mt-md-n5 p-4">
               <Link href="/" className="mb-4 d-block">
-                <img
-                  src="/images/chrome/logo-horizontal-left-white.svg"
+                <Image
+                  src={footerLogo as string}
                   alt="University of Tennessee, Knoxville"
                 />
               </Link>
