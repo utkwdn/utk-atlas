@@ -69,4 +69,16 @@
   --wp--preset--spacing--x-large: clamp(60px, 10vw, 100px);
 
   --wp--style--global--content-size: 960px;
+
+  --wp--custom--font-weight--light: 300;
+  --wp--custom--font-weight--regular: 400;
+  --wp--custom--font-weight--medium: 700;
+  --wp--custom--font-weight--bold: 800;
+  --wp--custom--font-weight--black: 900;
+
+  --wp--custom--line-height--body: 1.5;
+  --wp--custom--line-height--heading: 1.1;
+  --wp--custom--line-height--medium: 1.5;
+  --wp--custom--line-height--large: 1.9;
+  --wp--custom--line-height--one: 1;
 }
