@@ -302,11 +302,22 @@ const Hero = () => {
                       Apply today
                     </a>
                   </p>
+
                   <p style={{ maxWidth: 'none' }}>
                     There’s something for everyone at UT. We can’t wait for you
                     to call our campus home sweet home! Get a free sticker when
                     you request info!
                   </p>
+                  {/* Start of Q4 November 1st Push */}
+                  <p>
+                    <a
+                      onClick={handleShow}
+                      className="subLink pointer-event-visible  cursor-pointer"
+                    >
+                      Why apply by November 1?
+                    </a>
+                  </p>
+
                   <SlateFormEmbed
                     id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
                     scriptSrc={
