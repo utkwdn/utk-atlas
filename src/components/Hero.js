@@ -435,6 +435,49 @@ const Hero = () => {
                 </p>
 
                 {/* Why Apply Format */}
+                {/* Start of Q4 November 1st Push */}
+                <a
+                  onClick={handleShow}
+                  className="subLink pointer-event-visible  cursor-pointer"
+                >
+                  Why apply by November 1?
+                </a>
+                <div
+                  className="modal show"
+                  style={{ display: 'block', position: 'initial' }}
+                >
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Body>
+                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <p>
+                        There&apos;s never been a better time to be a Volunteer!
+                        Apply by November 1 to be fully considered for the most
+                        scholarship dollars, the new{' '}
+                        <a href="https://admissions.utk.edu/guaranteed-admission/">
+                          guaranteed admissions program
+                        </a>
+                        , and University Honors.
+                      </p>
+                      <p>
+                        The regular admission application deadline is December
+                        15.
+                      </p>
+                      <div className="fancyLinkGroup ch-md is-layout-flow">
+                        <p className="fancyLink stack-links">
+                          <a
+                            href={appendDynamicSrc(
+                              'https://www.utk.edu/admissions'
+                            )}
+                            className="hero-cat"
+                          >
+                            Apply today
+                          </a>
+                        </p>
+                      </div>
+                    </Modal.Body>
+                  </Modal>
+                </div>
                 {/* <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
