@@ -314,7 +314,7 @@ const Hero = () => {
                       onClick={handleShow}
                       className="subLink pointer-event-visible  cursor-pointer"
                     >
-                      Why apply by November 1?
+                      Why should you apply by November 1?
                     </a>
                   </p>
 
@@ -346,7 +346,7 @@ const Hero = () => {
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new{' '}
+                        scholarship dollars, the{' '}
                         <a href="https://admissions.utk.edu/guaranteed-admission/">
                           guaranteed admissions program
                         </a>
@@ -451,7 +451,7 @@ const Hero = () => {
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
-                  Why apply by November 1?
+                  Why should you apply by November 1?
                 </a>
                 <div
                   className="modal show"
@@ -464,7 +464,7 @@ const Hero = () => {
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new{' '}
+                        scholarship dollars, the{' '}
                         <a href="https://admissions.utk.edu/guaranteed-admission/">
                           guaranteed admissions program
                         </a>
@@ -472,7 +472,7 @@ const Hero = () => {
                       </p>
                       <p>
                         The regular admission application deadline is December
-                        15.
+                        16.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
