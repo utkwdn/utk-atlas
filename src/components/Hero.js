@@ -354,7 +354,7 @@ const Hero = () => {
                       </p>
                       <p>
                         The regular admission application deadline is December
-                        15.
+                        16.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
