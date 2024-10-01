@@ -15,6 +15,7 @@ import Intro from '../../../components/Intro';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import InputAdornment from '@mui/material/InputAdornment';
+import programsHero from '/public/images/programs-hero.jpg';
 
 interface Program {
   major: string;
@@ -480,9 +481,7 @@ function Programs() {
             </div>
           </div>
         }
-        imagesrc={
-          'https://content.cms.utk.edu/wp-content/uploads/2024/03/hero-programs-shake-table-01.jpg'
-        }
+        imagesrc={programsHero}
         alt={
           'A professor and student install a structure on a 6 degrees-of-freedom shake table, which simulates an earthquake.'
         }
