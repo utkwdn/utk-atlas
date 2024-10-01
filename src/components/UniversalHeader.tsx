@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, FormEvent, useRef } from 'react';
 import style from 'scss/components/Header.module.scss';
+import Image from 'next/image';
+import headerLogo from '/public/images/chrome/logo-horizontal-left-smokey.svg';
 
 interface Props {
   links: {
@@ -155,9 +157,10 @@ const UniversalHeader = ({
         <div className="universal-header__inner">
           <div className="universal-header__logo">
             <Link href={appendDynamicSrc('/')}>
-              <img
-                src="/images/chrome/logo-horizontal-left-smokey.svg"
+              <Image
+                src={headerLogo as string}
                 alt="University of Tennessee, Knoxville"
+                priority={true}
               />
             </Link>
           </div>

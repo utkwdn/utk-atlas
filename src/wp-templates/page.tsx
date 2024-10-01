@@ -46,7 +46,6 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
   };
 
   useEffect(() => {
-    // console.log('non-working version');
     // Check if url param 'dmc' is set and save to dynamicSrc if so
     const searchParams = new URLSearchParams(document.location.search);
     const srcParam = searchParams.get('dmc');
@@ -64,10 +63,10 @@ const Page: FaustTemplate<GetPageQuery> = (props) => {
         {parse(yoastString)}
       </Head>
 
-      {templateName !== 'No-title' ? (
-        <PageTitle title={pageTitle} bgImage={bgImageUrl} />
-      ) : (
+      {templateName.includes('No Title') ? (
         ''
+      ) : (
+        <PageTitle title={pageTitle} bgImage={bgImageUrl} />
       )}
 
       <main

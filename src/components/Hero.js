@@ -302,11 +302,22 @@ const Hero = () => {
                       Apply today
                     </a>
                   </p>
+
                   <p style={{ maxWidth: 'none' }}>
                     There’s something for everyone at UT. We can’t wait for you
                     to call our campus home sweet home! Get a free sticker when
                     you request info!
                   </p>
+                  {/* Start of Q4 November 1st Push */}
+                  <p>
+                    <a
+                      onClick={handleShow}
+                      className="subLink pointer-event-visible  cursor-pointer"
+                    >
+                      Why should you apply by November 1?
+                    </a>
+                  </p>
+
                   <SlateFormEmbed
                     id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
                     scriptSrc={
@@ -335,7 +346,7 @@ const Hero = () => {
                       <p>
                         There&apos;s never been a better time to be a Volunteer!
                         Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the new{' '}
+                        scholarship dollars, the{' '}
                         <a href="https://admissions.utk.edu/guaranteed-admission/">
                           guaranteed admissions program
                         </a>
@@ -343,7 +354,7 @@ const Hero = () => {
                       </p>
                       <p>
                         The regular admission application deadline is December
-                        15.
+                        16.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
@@ -435,6 +446,49 @@ const Hero = () => {
                 </p>
 
                 {/* Why Apply Format */}
+                {/* Start of Q4 November 1st Push */}
+                <a
+                  onClick={handleShow}
+                  className="subLink pointer-event-visible  cursor-pointer"
+                >
+                  Why should you apply by November 1?
+                </a>
+                <div
+                  className="modal show"
+                  style={{ display: 'block', position: 'initial' }}
+                >
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Body>
+                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <p>
+                        There&apos;s never been a better time to be a Volunteer!
+                        Apply by November 1 to be fully considered for the most
+                        scholarship dollars, the{' '}
+                        <a href="https://admissions.utk.edu/guaranteed-admission/">
+                          guaranteed admissions program
+                        </a>
+                        , and University Honors.
+                      </p>
+                      <p>
+                        The regular admission application deadline is December
+                        16.
+                      </p>
+                      <div className="fancyLinkGroup ch-md is-layout-flow">
+                        <p className="fancyLink stack-links">
+                          <a
+                            href={appendDynamicSrc(
+                              'https://www.utk.edu/admissions'
+                            )}
+                            className="hero-cat"
+                          >
+                            Apply today
+                          </a>
+                        </p>
+                      </div>
+                    </Modal.Body>
+                  </Modal>
+                </div>
                 {/* <a
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
