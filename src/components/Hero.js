@@ -1,6 +1,9 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import doubleRainSvg from '/public/images/home-hero/rain-double-01.svg';
+import tripleRainSvg from '/public/images/home-hero/rain-triple-01.svg';
 import LayoutASquareImage from './hero-parts/LayoutASquareImage';
 import LayoutAVerticalImage from './hero-parts/LayoutAVerticalImage';
 import CTA from './hero-parts/CTA';
@@ -181,16 +184,13 @@ const Hero = () => {
             <picture>
               <source
                 media="(max-width:767px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
+                srcSet="/images/home-hero/rain-double-01.svg"
               />
               <source
                 media="(min-width:768px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-single-01.svg"
+                srcSet="/images/home-hero/rain-single-01.svg"
               />
-              <img
-                src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
-                alt=""
-              />
+              <Image src={doubleRainSvg} alt="Double Rain Texture" />
             </picture>
           </div>
 
@@ -206,12 +206,9 @@ const Hero = () => {
             <picture>
               <source
                 media="(min-width:828px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
+                srcSet="/images/home-hero/rain-triple-01.svg"
               />
-              <img
-                src="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-                alt=""
-              />
+              <Image src={tripleRainSvg} alt="Triple Rain Texture" />
             </picture>
           </div>
           <div className="orangeBarHolderA layoutA ">
@@ -226,10 +223,7 @@ const Hero = () => {
           <LayoutBSquareImage dynamicSrc={dynamicSrc} />
 
           <div className="heroRainHolderB layoutB ">
-            <img
-              src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
-              alt=""
-            />
+            <Image src={doubleRainSvg} alt="Double Rain Texture" />
           </div>
 
           {/* Layout B Vertical Image */}

@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
+import defaultImageJpg from '/public/images/home-hero/LayoutB-Square-Default.jpg';
+import meetImageJpg from '/public/images/home-hero/LayoutB-Square-Meet.jpg';
 
 interface Props {
   dynamicSrc: string;
@@ -14,15 +17,15 @@ function LayoutBImageOne({ dynamicSrc }: Props): JSX.Element {
           // 'meet' content
           <picture>
             <source
-              srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.webp"
+              srcSet="/images/home-hero/LayoutB-Square-Meet.webp"
               type="image/webp"
             />
             <source
-              srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
+              srcSet="/images/home-hero/LayoutB-Square-Meet.jpg"
               type="image/jpeg"
             />
-            <img
-              src="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
+            <Image
+              src={meetImageJpg}
               alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
             />
           </picture>
@@ -30,15 +33,15 @@ function LayoutBImageOne({ dynamicSrc }: Props): JSX.Element {
           // default content
           <picture>
             <source
-              srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
+              srcSet="/images/home-hero/LayoutB-Square-Default.webp"
               type="image/webp"
             />
             <source
-              srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+              srcSet="/images/home-hero/LayoutB-Square-Default.jpg"
               type="image/jpeg"
             />
-            <img
-              src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
+            <Image
+              src={defaultImageJpg}
               alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
             />
           </picture>

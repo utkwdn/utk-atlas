@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import defaultImageJpg from '/public/images/home-hero/LayoutB-Vertical-Mobile.jpg';
 
 interface Props {
   dynamicSrc: string;
@@ -11,26 +13,26 @@ function LayoutBImageOne({ dynamicSrc }: Props): JSX.Element {
         <picture>
           <source
             media="(max-width:767px)"
-            srcSet="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.webp"
+            srcSet="/images/home-hero/LayoutB-Vertical-Mobile.webp"
             type="image/webp"
           />
           <source
             media="(max-width:767px)"
-            srcSet="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.jpg"
+            srcSet="/images/home-hero/LayoutB-Vertical-Mobile.jpg"
             type="image/jpeg"
           />
           <source
             media="(min-width:768px)"
-            srcSet="//images.utk.edu/images/www/hero202203/cheer-students-b1.webp"
+            srcSet="/images/home-hero/LayoutB-Vertical-Desktop.webp"
             type="image/webp"
           />
           <source
             media="(min-width:768px)"
-            srcSet="//images.utk.edu/images/www/hero202203/cheer-students-b1.jpg"
+            srcSet="/images/home-hero/LayoutB-Vertical-Desktop.jpg"
             type="image/jpeg"
           />
-          <img
-            src="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.jpg"
+          <Image
+            src={defaultImageJpg}
             alt="cheerleaders rush the field during a packed home game"
           />
         </picture>

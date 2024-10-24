@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
+import defaultImageJpg from '/public/images/home-hero/LayoutB-Horizontal-Mobile-Default.jpg';
+import meetImageJpg from '/public/images/home-hero/LayoutB-Horizontal-Mobile-Meet.jpg';
 
 interface Props {
   dynamicSrc: string;
@@ -14,26 +17,26 @@ function LayoutBImageOne({ dynamicSrc }: Props): JSX.Element {
           <picture>
             <source
               media="(max-width:767px)"
-              srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.webp"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Mobile-Meet.webp"
               type="image/webp"
             />
             <source
               media="(max-width:767px)"
-              srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.jpg"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Mobile-Meet.jpg"
               type="image/jpeg"
             />
             <source
               media="(min-width:768px)"
-              srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.webp"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Desktop-Meet.webp"
               type="image/webp"
             />
             <source
               media="(min-width:768px)"
-              srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.jpg"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Desktop-Meet.jpg"
               type="image/jpeg"
             />
-            <img
-              src="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
+            <Image
+              src={meetImageJpg}
               alt="Knoxville skyline as seen from the University of Tennessee campus"
             />
           </picture>
@@ -42,26 +45,26 @@ function LayoutBImageOne({ dynamicSrc }: Props): JSX.Element {
           <picture>
             <source
               media="(max-width:767px)"
-              srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Mobile-Default.webp"
               type="image/webp"
             />
             <source
               media="(max-width:767px)"
-              srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Mobile-Default.jpg"
               type="image/jpeg"
             />
             <source
               media="(min-width:768px)"
-              srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Desktop-Default.webp"
               type="image/webp"
             />
             <source
               media="(min-width:768px)"
-              srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
+              srcSet="/images/home-hero/LayoutB-Horizontal-Desktop-Default.jpg"
               type="image/jpeg"
             />
-            <img
-              src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
+            <Image
+              src={defaultImageJpg}
               alt="sunset over the Tennessee River that surrounds campus"
             />
           </picture>
