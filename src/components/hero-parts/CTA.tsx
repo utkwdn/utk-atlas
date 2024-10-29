@@ -28,6 +28,48 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
     }
   };
 
+  const whyApply = () => {
+    return (
+      <>
+        <p>
+          <a
+            onClick={handleShow}
+            className="subLink pointer-event-visible  cursor-pointer"
+          >
+            Why apply by December 16?
+          </a>
+        </p>
+        <div
+          className="modal show"
+          style={{ display: 'block', position: 'initial' }}
+        >
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton></Modal.Header>
+            <Modal.Body>
+              <h3 className="mt-0">Fall Deadline</h3>
+              <p>
+                If you&apos;re a high school senior who would like to be a Vol
+                in fall 2025, apply by December 16.
+              </p>
+              <p>
+                You&apos;ll be automatically considered for institutional
+                scholarships if you submit your application by this date.
+              </p>
+
+              <div className="fancyLinkGroup ch-md is-layout-flow">
+                <p className="fancyLink stack-links">
+                  <a href="https://www.utk.edu/admissions" className="hero-cat">
+                    Apply today
+                  </a>
+                </p>
+              </div>
+            </Modal.Body>
+          </Modal>
+        </div>
+      </>
+    );
+  };
+
   return (
     <div className="ctaHolder">
       {/* BEGIN DYNAMIC CONTENT */}
@@ -53,6 +95,10 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               you to call our campus home sweet home! Get a free sticker when
               you request info!
             </p>
+
+            {/* Why Apply Link & Modal */}
+            {whyApply()}
+
             <SlateFormEmbed
               id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
               scriptSrc={
@@ -63,47 +109,6 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               }
             />
           </div>
-          {/* Start of Q4 November 1st Push */}
-          {/* <a
-                onClick={handleShow}
-                className="subLink pointer-event-visible  cursor-pointer"
-              >
-                Why apply by November 1?
-              </a> */}
-          <div
-            className="modal show"
-            style={{ display: 'block', position: 'initial' }}
-          >
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton></Modal.Header>
-              <Modal.Body>
-                <h3 className="mt-0">Take early action by November 1</h3>
-                <p>
-                  There&apos;s never been a better time to be a Volunteer! Apply
-                  by November 1 to be fully considered for the most scholarship
-                  dollars, the new{' '}
-                  <a href="https://admissions.utk.edu/guaranteed-admission/">
-                    guaranteed admissions program
-                  </a>
-                  , and University Honors.
-                </p>
-                <p>
-                  The regular admission application deadline is December 15.
-                </p>
-                <div className="fancyLinkGroup ch-md is-layout-flow">
-                  <p className="fancyLink stack-links">
-                    <a
-                      href={appendDynamicSrc('https://www.utk.edu/admissions')}
-                      className="hero-cat"
-                    >
-                      Apply today
-                    </a>
-                  </p>
-                </div>
-              </Modal.Body>
-            </Modal>
-          </div>
-          {/* End of Q4 November 1st Push */}
         </>
       ) : dynamicSrc === 'meet' ? (
         <>
@@ -174,44 +179,8 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             you to call our campus home sweet home!
           </p>
 
-          {/* Why Apply Format */}
-          <a
-            onClick={handleShow}
-            className="subLink pointer-event-visible  cursor-pointer"
-          >
-            Why apply by December 16?
-          </a>
-          <div
-            className="modal show"
-            style={{ display: 'block', position: 'initial' }}
-          >
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton></Modal.Header>
-              <Modal.Body>
-                <h3 className="mt-0">Fall Deadline</h3>
-                <p>
-                  If you&apos;re a high school senior who would like to be a Vol
-                  in fall 2025, apply by December 16.
-                </p>
-                <p>
-                  You&apos;ll be automatically considered for institutional
-                  scholarships if you submit your application by this date.
-                </p>
-
-                <div className="fancyLinkGroup ch-md is-layout-flow">
-                  <p className="fancyLink stack-links">
-                    <a
-                      href="https://www.utk.edu/admissions"
-                      className="hero-cat"
-                    >
-                      Apply today
-                    </a>
-                  </p>
-                </div>
-              </Modal.Body>
-            </Modal>
-          </div>
-          {/* End Why Apply */}
+          {/* Why Apply Link & Modal */}
+          {whyApply()}
         </>
       )}
 
