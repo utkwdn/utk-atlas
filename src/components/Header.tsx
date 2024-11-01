@@ -191,8 +191,6 @@ const Header = ({ dynamicSrc }: Props) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      console.log(target.className);
-
       if (!target.classList.contains('real-title')) {
         setActiveSubmenu(''); // Close submenu if click is outside the nav menu
       }
@@ -262,6 +260,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           onClick={() =>
                             setActiveSubmenu(isExpanded ? '' : linkLabel)
                           }
+                          onFocus={() => setActiveSubmenu('')}
                         >
                           <span className="bold-holder">
                             <span className="real-title">{linkLabel}</span>
@@ -401,6 +400,7 @@ const Header = ({ dynamicSrc }: Props) => {
                             href={linkAddress}
                             aria-current={isTopLevelActive ? 'page' : 'false'}
                             className="main-navigation"
+                            onFocus={() => setActiveSubmenu('')}
                           >
                             <span className="bold-holder">
                               <span className="real-title">{linkLabel}</span>
