@@ -1,5 +1,5 @@
 import styles from 'scss/components/SkipLink.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
@@ -189,6 +189,22 @@ const Header = ({ dynamicSrc }: Props) => {
   };
 
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      console.log(target.className);
+
+      if (!target.classList.contains('real-title')) {
+        setActiveSubmenu(''); // Close submenu if click is outside the nav menu
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchAlert();
   }, []);
 
@@ -232,7 +248,7 @@ const Header = ({ dynamicSrc }: Props) => {
 
                     return hasSubItems ? (
                       // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
-                      <li key={this_link.id}>
+                      <li key={this_link.id} id={this_link.id}>
                         <button
                           data-bs-toggle="dropdown"
                           data-bs-display="static"
