@@ -295,18 +295,15 @@ const Hero = () => {
 
                 <div className="slate-squeeze mb-3">
                   <p className="fancyLink stack-links">
-                    <a
-                      href="https://www.utk.edu/admissions"
-                      className="hero-cat"
-                    >
+                    <a href="https://admissions.utk.edu/" className="hero-cat">
                       Apply today
                     </a>
                   </p>
 
                   <p style={{ maxWidth: 'none' }}>
-                    There’s something for everyone at UT. We can’t wait for you
-                    to call our campus home sweet home! Get a free sticker when
-                    you request info!
+                    There&apos;s something for everyone at UT. We can&apos;t
+                    wait for you to call our campus home sweet home! Get a free
+                    sticker when you request info!
                   </p>
                   {/* Start of Q4 November 1st Push */}
                   <p>
@@ -314,7 +311,7 @@ const Hero = () => {
                       onClick={handleShow}
                       className="subLink pointer-event-visible  cursor-pointer"
                     >
-                      Why should you apply by November 1?
+                      Learn more about the December 16 application deadline
                     </a>
                   </p>
 
@@ -342,25 +339,18 @@ const Hero = () => {
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton></Modal.Header>
                     <Modal.Body>
-                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <h3 className="mt-0">Fall Deadline</h3>
                       <p>
-                        There&apos;s never been a better time to be a Volunteer!
-                        Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the{' '}
-                        <a href="https://admissions.utk.edu/guaranteed-admission/">
-                          guaranteed admissions program
-                        </a>
-                        , and University Honors.
-                      </p>
-                      <p>
-                        The regular admission application deadline is December
-                        16.
+                        If you&apos;re a high school senior who would like to be
+                        a Vol in fall 2025, the application deadline is December
+                        16. When you apply, you&apos;ll be automatically
+                        considered for institutional scholarships.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
                             href={appendDynamicSrc(
-                              'https://www.utk.edu/admissions'
+                              'https://admissions.utk.edu/'
                             )}
                             className="hero-cat"
                           >
@@ -423,10 +413,7 @@ const Hero = () => {
                   </p> */}
 
                   <p className="fancyLink stack-links">
-                    <a
-                      href="https://www.utk.edu/admissions"
-                      className="hero-cat"
-                    >
+                    <a href="https://admissions.utk.edu/" className="hero-cat">
                       Apply today
                     </a>
                   </p>
@@ -441,8 +428,8 @@ const Hero = () => {
                   </p>
                 </div>
                 <p>
-                  There’s something for everyone at UT. We can’t wait for you to
-                  call our campus home sweet home!
+                  There&apos;s something for everyone at UT. We can&apos;t wait
+                  for you to call our campus home sweet home!
                 </p>
 
                 {/* Why Apply Format */}
@@ -451,7 +438,7 @@ const Hero = () => {
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
-                  Why should you apply by November 1?
+                  Learn more about the December 16 application deadline
                 </a>
                 <div
                   className="modal show"
@@ -460,25 +447,18 @@ const Hero = () => {
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton></Modal.Header>
                     <Modal.Body>
-                      <h3 className="mt-0">Take early action by November 1</h3>
+                      <h3 className="mt-0">Fall Deadline</h3>
                       <p>
-                        There&apos;s never been a better time to be a Volunteer!
-                        Apply by November 1 to be fully considered for the most
-                        scholarship dollars, the{' '}
-                        <a href="https://admissions.utk.edu/guaranteed-admission/">
-                          guaranteed admissions program
-                        </a>
-                        , and University Honors.
-                      </p>
-                      <p>
-                        The regular admission application deadline is December
-                        16.
+                        If you&apos;re a high school senior who would like to be
+                        a Vol in fall 2025, the application deadline is December
+                        16. When you apply, you&apos;ll be automatically
+                        considered for institutional scholarships.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
                             href={appendDynamicSrc(
-                              'https://www.utk.edu/admissions'
+                              'https://admissions.utk.edu/'
                             )}
                             className="hero-cat"
                           >
@@ -504,11 +484,11 @@ const Hero = () => {
                     <Modal.Body>
                       <h3 className="mt-0">Fall Deadline</h3>
                       <p>
-                        If you’re a high school senior who would like to be a
+                        If you&apos;re a high school senior who would like to be a
                         Vol in fall 2024, apply by December 15.
                       </p>
                       <p>
-                        You’ll be automatically considered for institutional
+                        You&apos;ll be automatically considered for institutional
                         scholarships if you submit your application by this
                         date.
                       </p>
