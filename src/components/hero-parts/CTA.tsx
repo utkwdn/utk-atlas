@@ -36,7 +36,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             onClick={handleShow}
             className="subLink pointer-event-visible  cursor-pointer"
           >
-            Why apply by December 16?
+            Learn more about the December 16 application deadline
           </a>
         </p>
         <div
@@ -49,16 +49,16 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               <h3 className="mt-0">Fall Deadline</h3>
               <p>
                 If you&apos;re a high school senior who would like to be a Vol
-                in fall 2025, apply by December 16.
+                in fall 2025, the application deadline is December 16. When you
+                apply, you&apos;ll be automatically considered for institutional
+                scholarships.
               </p>
-              <p>
-                You&apos;ll be automatically considered for institutional
-                scholarships if you submit your application by this date.
-              </p>
-
               <div className="fancyLinkGroup ch-md is-layout-flow">
                 <p className="fancyLink stack-links">
-                  <a href="https://www.utk.edu/admissions" className="hero-cat">
+                  <a
+                    href={appendDynamicSrc('https://admissions.utk.edu/')}
+                    className="hero-cat"
+                  >
                     Apply today
                   </a>
                 </p>
@@ -86,7 +86,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
 
           <div className="slate-squeeze mb-3">
             <p className="fancyLink stack-links">
-              <a href="https://www.utk.edu/admissions" className="hero-cat">
+              <a href="https://admissions.utk.edu" className="hero-cat">
                 Apply today
               </a>
             </p>
@@ -160,7 +160,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
                   </p> */}
 
             <p className="fancyLink stack-links">
-              <a href="https://www.utk.edu/admissions" className="hero-cat">
+              <a href="https://admissions.utk.edu" className="hero-cat">
                 Apply today
               </a>
             </p>
