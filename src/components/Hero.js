@@ -295,10 +295,7 @@ const Hero = () => {
 
                 <div className="slate-squeeze mb-3">
                   <p className="fancyLink stack-links">
-                    <a
-                      href="https://www.utk.edu/admissions"
-                      className="hero-cat"
-                    >
+                    <a href="https://admissions.utk.edu/" className="hero-cat">
                       Apply today
                     </a>
                   </p>
@@ -314,7 +311,7 @@ const Hero = () => {
                       onClick={handleShow}
                       className="subLink pointer-event-visible  cursor-pointer"
                     >
-                      Why apply by December 16?
+                      Learn more about the December 16 application deadline
                     </a>
                   </p>
 
@@ -345,18 +342,15 @@ const Hero = () => {
                       <h3 className="mt-0">Fall Deadline</h3>
                       <p>
                         If you&apos;re a high school senior who would like to be
-                        a Vol in fall 2025, apply by December 16.
-                      </p>
-                      <p>
-                        You&apos;ll be automatically considered for
-                        institutional scholarships if you submit your
-                        application by this date.
+                        a Vol in fall 2025, the application deadline is December
+                        16. When you apply, you&apos;ll be automatically
+                        considered for institutional scholarships.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
                             href={appendDynamicSrc(
-                              'https://www.utk.edu/admissions'
+                              'https://admissions.utk.edu/'
                             )}
                             className="hero-cat"
                           >
@@ -419,10 +413,7 @@ const Hero = () => {
                   </p> */}
 
                   <p className="fancyLink stack-links">
-                    <a
-                      href="https://www.utk.edu/admissions"
-                      className="hero-cat"
-                    >
+                    <a href="https://admissions.utk.edu/" className="hero-cat">
                       Apply today
                     </a>
                   </p>
@@ -447,7 +438,7 @@ const Hero = () => {
                   onClick={handleShow}
                   className="subLink pointer-event-visible  cursor-pointer"
                 >
-                  Why apply by December 16?
+                  Learn more about the December 16 application deadline
                 </a>
                 <div
                   className="modal show"
@@ -459,18 +450,15 @@ const Hero = () => {
                       <h3 className="mt-0">Fall Deadline</h3>
                       <p>
                         If you&apos;re a high school senior who would like to be
-                        a Vol in fall 2025, apply by December 16.
-                      </p>
-                      <p>
-                        You&apos;ll be automatically considered for
-                        institutional scholarships if you submit your
-                        application by this date.
+                        a Vol in fall 2025, the application deadline is December
+                        16. When you apply, you&apos;ll be automatically
+                        considered for institutional scholarships.
                       </p>
                       <div className="fancyLinkGroup ch-md is-layout-flow">
                         <p className="fancyLink stack-links">
                           <a
                             href={appendDynamicSrc(
-                              'https://www.utk.edu/admissions'
+                              'https://admissions.utk.edu/'
                             )}
                             className="hero-cat"
                           >
