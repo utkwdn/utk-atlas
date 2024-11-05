@@ -191,7 +191,10 @@ const Header = ({ dynamicSrc }: Props) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.classList.contains('real-title')) {
+      if (
+        !target.classList.contains('real-title') &&
+        !target.classList.contains('main-navigation')
+      ) {
         setActiveSubmenu(''); // Close submenu if click is outside the nav menu
       }
     };
@@ -246,7 +249,7 @@ const Header = ({ dynamicSrc }: Props) => {
 
                     return hasSubItems ? (
                       // <li key={this_link.id} onBlur={() => setActiveSubmenu('')}>
-                      <li key={this_link.id} id={this_link.id}>
+                      <li key={this_link.id}>
                         <button
                           data-bs-toggle="dropdown"
                           data-bs-display="static"
