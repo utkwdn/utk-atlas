@@ -138,11 +138,10 @@ const UniversalHeader = ({
         {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
         <li>
           <a
-            href="https://give.utk.edu/campaigns/42950/donations/new"
+            // href="https://give.utk.edu/campaigns/42950/donations/new" // Default Link
+            href="https://give.utk.edu/campaigns/51061/donations/new?a=8570688" // BOG Link
             tabIndex={isMobile ? -1 : 0}
             className="uni-nav-item"
-            //imodules link href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=3204&cid=4841&src=giveto"
-            // big orange give href="https://securelb.imodules.com/s/1341/utaa/form/19/form.aspx?sid=1341&gid=2&pgid=20602&cid=41138&appealcode=KD240001&src=webutk"
           >
             Give
           </a>
