@@ -1,5 +1,5 @@
 import styles from 'scss/components/SkipLink.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { gql } from '../__generated__';
 import { useQuery } from '@apollo/client';
@@ -189,6 +189,23 @@ const Header = ({ dynamicSrc }: Props) => {
   };
 
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        !target.classList.contains('real-title') &&
+        !target.classList.contains('main-navigation')
+      ) {
+        setActiveSubmenu(''); // Close submenu if click is outside the nav menu
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchAlert();
   }, []);
 
@@ -246,6 +263,7 @@ const Header = ({ dynamicSrc }: Props) => {
                           onClick={() =>
                             setActiveSubmenu(isExpanded ? '' : linkLabel)
                           }
+                          onFocus={() => setActiveSubmenu('')}
                         >
                           <span className="bold-holder">
                             <span className="real-title">{linkLabel}</span>
@@ -385,6 +403,7 @@ const Header = ({ dynamicSrc }: Props) => {
                             href={linkAddress}
                             aria-current={isTopLevelActive ? 'page' : 'false'}
                             className="main-navigation"
+                            onFocus={() => setActiveSubmenu('')}
                           >
                             <span className="bold-holder">
                               <span className="real-title">{linkLabel}</span>

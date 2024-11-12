@@ -1,34 +1,21 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect, useState } from 'react';
-import SlateFormEmbed from './SlateFormEmbed';
-import Modal from 'react-bootstrap/Modal';
-import style from 'scss/components/HeroCTA.module.scss';
+import Image from 'next/image';
+import doubleRainSvg from '/public/images/home-hero/rain-double-01.svg';
+import tripleRainSvg from '/public/images/home-hero/rain-triple-01.svg';
+import LayoutASquareImage from './hero-parts/LayoutASquareImage';
+import LayoutAVerticalImage from './hero-parts/LayoutAVerticalImage';
+import CTA from './hero-parts/CTA';
+import LayoutBHorizontalImage from './hero-parts/LayoutBHorizontalImage';
+import LayoutBSquareImage from './hero-parts/LayoutBSquareImage';
+import LayoutBVerticalImage from './hero-parts/LayoutBVerticalImage';
 
 // create a joiner to use for classNames
 const cx = (...classNames) => classNames.join(' ');
 
 const Hero = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const [dynamicSrc, setDynamicSrc] = useState('');
-
-  const appendDynamicSrc = (linkAddress) => {
-    const isInternal =
-      linkAddress &&
-      (linkAddress.startsWith('https://www.utk.edu') ||
-        linkAddress.startsWith('https://utk.edu') ||
-        linkAddress.startsWith('/'));
-    const dynamicSrcIsSet = typeof dynamicSrc === 'string' && dynamicSrc !== '';
-
-    if (isInternal && dynamicSrcIsSet) {
-      return linkAddress + `?dmc=${dynamicSrc}`;
-    } else {
-      return linkAddress;
-    }
-  };
 
   useEffect(() => {
     // Check if url param 'dmc' is set and save to dynamicSrc if so
@@ -188,353 +175,40 @@ const Hero = () => {
         <div className="hero202112A ">
           <div className="heroHolderA layoutA ">
             <div className="angleBracketDown "></div>
-            <div className="heroSquareA ">
-              {/* Begin Dynamic Meet Content */}
-              {dynamicSrc === 'meet' ? (
-                // 'meet' content
-                <picture>
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero20240715/hero-2024-q2-01.jpg"
-                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                  />
-                </picture>
-              ) : (
-                // default content
-                <picture>
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero20240320/hero-2024-q2-01.jpg"
-                    alt="A professor works with students on the MELD Machine inside the Machine Tool Research Center in the Dougherty Engineering Building."
-                  />
-                </picture>
-              )}
-              {/* End Dynamic Meet Content */}
-            </div>
+
+            {/* Layout A Square Image */}
+            <LayoutASquareImage dynamicSrc={dynamicSrc} />
           </div>
 
           <div className="heroRainHolderA layoutA ">
             <picture>
               <source
                 media="(max-width:767px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
+                srcSet="/images/home-hero/rain-double-01.svg"
               />
               <source
                 media="(min-width:768px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-single-01.svg"
+                srcSet="/images/home-hero/rain-single-01.svg"
               />
-              <img
-                src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
-                alt=""
-              />
+              <Image src={doubleRainSvg} alt="Double Rain Texture" />
             </picture>
           </div>
 
-          <div className="heroRectangleHolderA layoutA ">
-            <div className="heroRectangleA ">
-              <picture>
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.jpg"
-                  type="image/jpeg"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202112/aerial-crosswalk-02.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero202112/aerial-crosswalk-mobile-02.jpg"
-                  alt="students walk through the middle of campus"
-                />
-              </picture>
-            </div>
-            {/* end .heroRectangleA*/}
-          </div>
-          {/* end .heroRectangleHolderA */}
+          {/* Layout A Vertical Image */}
+          <LayoutAVerticalImage dynamicSrc={dynamicSrc} />
 
           <div className="dotSquareHolder"></div>
 
-          {/* Begin CTA */}
-          <div className="ctaHolder">
-            {/* BEGIN DYNAMIC CONTENT */}
-            {dynamicSrc === 'awareness' ? (
-              <>
-                {/* 'awareness' content */}
-                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                    Welcome to
-                  </span>
-                  <br />
-                  Rocky Top
-                </h2>
-
-                <div className="slate-squeeze mb-3">
-                  <p className="fancyLink stack-links">
-                    <a href="https://admissions.utk.edu/" className="hero-cat">
-                      Apply today
-                    </a>
-                  </p>
-
-                  <p style={{ maxWidth: 'none' }}>
-                    There&apos;s something for everyone at UT. We can&apos;t
-                    wait for you to call our campus home sweet home! Get a free
-                    sticker when you request info!
-                  </p>
-                  {/* Start of Q4 November 1st Push */}
-                  <p>
-                    <a
-                      onClick={handleShow}
-                      className="subLink pointer-event-visible  cursor-pointer"
-                    >
-                      Learn more about the December 16 application deadline
-                    </a>
-                  </p>
-
-                  <SlateFormEmbed
-                    id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
-                    scriptSrc={
-                      `https://govols.utk.edu/register/?id=3efe2258-fe6c-4e5e-a198-faf90c1a3634&output=embed&div=form_3efe2258-fe6c-4e5e-a198-faf90c1a3634` +
-                      (location.search.length > 1
-                        ? '&' + location.search.substring(1)
-                        : '')
-                    }
-                  />
-                </div>
-                {/* Start of Q4 November 1st Push */}
-                {/* <a
-                onClick={handleShow}
-                className="subLink pointer-event-visible  cursor-pointer"
-              >
-                Why apply by November 1?
-              </a> */}
-                <div
-                  className="modal show"
-                  style={{ display: 'block', position: 'initial' }}
-                >
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
-                    <Modal.Body>
-                      <h3 className="mt-0">Fall Deadline</h3>
-                      <p>
-                        If you&apos;re a high school senior who would like to be
-                        a Vol in fall 2025, the application deadline is December
-                        16. When you apply, you&apos;ll be automatically
-                        considered for institutional scholarships.
-                      </p>
-                      <div className="fancyLinkGroup ch-md is-layout-flow">
-                        <p className="fancyLink stack-links">
-                          <a
-                            href={appendDynamicSrc(
-                              'https://admissions.utk.edu/'
-                            )}
-                            className="hero-cat"
-                          >
-                            Apply today
-                          </a>
-                        </p>
-                      </div>
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {/* End of Q4 November 1st Push */}
-              </>
-            ) : dynamicSrc === 'meet' ? (
-              <>
-                {/* 'meet' content */}
-                {/* <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0"> */}
-                <h2
-                  className={`${style['meet-cta']} text-uppercase display-3 mt-md-3 mt-lg-0`}
-                >
-                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                    Welcome to
-                  </span>
-                  <br />
-                  Rocky Top
-                </h2>
-                <div className="slate-squeeze mb-3">
-                  <p style={{ maxWidth: 'none' }}>
-                    UT is home to the Volunteers: people who use their talent,
-                    creativity, and knowledge to shape a better future.
-                  </p>
-                  <p style={{ maxWidth: 'none' }}>
-                    Tell us about yourself and get a free sticker!
-                  </p>
-                  <SlateFormEmbed
-                    id="d9a5c913-3050-4fed-9a75-04aee3bdbed7"
-                    scriptSrc={
-                      `https://govols.utk.edu/register/?id=d9a5c913-3050-4fed-9a75-04aee3bdbed7&output=embed&div=form_d9a5c913-3050-4fed-9a75-04aee3bdbed7` +
-                      (location.search.length > 1
-                        ? '&' + location.search.substring(1)
-                        : '')
-                    }
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                {/* Default content */}
-                <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
-                  <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-                    Welcome to
-                  </span>
-                  <br />
-                  Rocky Top
-                </h2>
-                <div className="fancyLinkGroup ch-md is-layout-flow">
-                  {/* <p className="fancyLink stack-links">
-                    <a href="https://www.utk.edu/visit" className="hero-cat">
-                      Schedule a visit
-                    </a>
-                  </p> */}
-
-                  <p className="fancyLink stack-links">
-                    <a href="https://admissions.utk.edu/" className="hero-cat">
-                      Apply today
-                    </a>
-                  </p>
-
-                  <p className="fancyLink stack-links">
-                    <a
-                      href={appendDynamicSrc('https://utk.edu/requestinfo')}
-                      className="hero-cat"
-                    >
-                      Request more info
-                    </a>
-                  </p>
-                </div>
-                <p>
-                  There&apos;s something for everyone at UT. We can&apos;t wait
-                  for you to call our campus home sweet home!
-                </p>
-
-                {/* Why Apply Format */}
-                {/* Start of Q4 November 1st Push */}
-                <a
-                  onClick={handleShow}
-                  className="subLink pointer-event-visible  cursor-pointer"
-                >
-                  Learn more about the December 16 application deadline
-                </a>
-                <div
-                  className="modal show"
-                  style={{ display: 'block', position: 'initial' }}
-                >
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
-                    <Modal.Body>
-                      <h3 className="mt-0">Fall Deadline</h3>
-                      <p>
-                        If you&apos;re a high school senior who would like to be
-                        a Vol in fall 2025, the application deadline is December
-                        16. When you apply, you&apos;ll be automatically
-                        considered for institutional scholarships.
-                      </p>
-                      <div className="fancyLinkGroup ch-md is-layout-flow">
-                        <p className="fancyLink stack-links">
-                          <a
-                            href={appendDynamicSrc(
-                              'https://admissions.utk.edu/'
-                            )}
-                            className="hero-cat"
-                          >
-                            Apply today
-                          </a>
-                        </p>
-                      </div>
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {/* <a
-                  onClick={handleShow}
-                  className="subLink pointer-event-visible  cursor-pointer"
-                >
-                  Why apply by December 15?
-                </a>
-                <div
-                  className="modal show"
-                  style={{ display: 'block', position: 'initial' }}
-                >
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
-                    <Modal.Body>
-                      <h3 className="mt-0">Fall Deadline</h3>
-                      <p>
-                        If you&apos;re a high school senior who would like to be a
-                        Vol in fall 2024, apply by December 15.
-                      </p>
-                      <p>
-                        You&apos;ll be automatically considered for institutional
-                        scholarships if you submit your application by this
-                        date.
-                      </p>
-
-                      <div className="fancyLinkGroup ch-md is-layout-flow">
-                        <p className="fancyLink stack-links">
-                          <a
-                            href="https://www.utk.edu/admissions"
-                            className="hero-cat"
-                          >
-                            Apply today
-                          </a>
-                        </p>
-                      </div>
-                    </Modal.Body>
-                  </Modal>
-                </div> */}
-                {/* End of Q4 November 1st Push */}
-              </>
-            )}
-
-            {/* Confirm Enrollment Link */}
-            {/* <h3 className="subCta">Admitted to UT?</h3>
-            <a
-              href="https://admissions.utk.edu/confirm/"
-              className="subLink  pointer-event-visible"
-              // orange underline
-              // className="subLink text-decoration-none link-underline  pointer-event-visible"
-            >
-              Confirm enrollment now
-            </a> */}
-            {/* End Confirm Enrollment Link */}
-          </div>
-
-          {/* End CTA */}
+          {/* CTA */}
+          <CTA dynamicSrc={dynamicSrc} />
 
           <div className="heroRainHolderTripleA layoutA ">
             <picture>
               <source
                 media="(min-width:828px)"
-                srcSet="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
+                srcSet="/images/home-hero/rain-triple-01.svg"
               />
-              <img
-                src="//images.utk.edu/images/www/hero202112/rain-triple-01.svg"
-                alt=""
-              />
+              <Image src={tripleRainSvg} alt="Triple Rain Texture" />
             </picture>
           </div>
           <div className="orangeBarHolderA layoutA ">
@@ -542,151 +216,19 @@ const Hero = () => {
             <div className="orangeBarChunkA"></div>
           </div>
 
-          {/* Begin Layout B Items*/}
-          <div className="riverAerialHolder layoutB test">
-            <div className="riverAerial">
-              {/* Begin Dynamic Meet Content */}
-              {dynamicSrc === 'meet' ? (
-                // 'meet' content
-                <picture>
-                  <source
-                    media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-01.jpg"
-                    type="image/jpeg"
-                  />
-                  <source
-                    media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero20240715/skyline-blue-01.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero20240715/skyline-blue-mobile-02.jpg"
-                    alt="Knoxville skyline as seen from the University of Tennessee campus"
-                  />
-                </picture>
-              ) : (
-                // default content
-                <picture>
-                  <source
-                    media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    media="(max-width:767px)"
-                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                    type="image/jpeg"
-                  />
-                  <source
-                    media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    media="(min-width:768px)"
-                    srcSet="//images.utk.edu/images/www/hero202112/river-aerial-02.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero202112/river-aerial-mobile-02.jpg"
-                    alt="sunset over the Tennessee River that surrounds campus"
-                  />
-                </picture>
-              )}
-              {/* End Dynamic Meet Content */}
-            </div>
-            <div className="angleBracketUp"></div>
+          {/* Layout B Horizontal Image */}
+          <LayoutBHorizontalImage dynamicSrc={dynamicSrc} />
+
+          {/* Layout B Square Image */}
+          <LayoutBSquareImage dynamicSrc={dynamicSrc} />
+
+          <div className="heroRainHolderB layoutB ">
+            <Image src={doubleRainSvg} alt="Double Rain Texture" />
           </div>
 
-          {/* Begin Layout B Items*/}
-          <div className="heroHolderB layoutB">
-            <div className="angleBracketDown angleSpaceMatchB softAppearItem"></div>
-            <div className="heroSquareB layoutB">
-              {/* Begin Dynamic Meet Content */}
-              {dynamicSrc === 'meet' ? (
-                // 'meet' content
-                <picture>
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero20240715/hero-image-smokey-crowdsurfing.jpg"
-                    alt="The Smokey mascot crowdsurfs through a sea of smiling fans"
-                  />
-                </picture>
-              ) : (
-                // default content
-                <picture>
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcSet="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="//images.utk.edu/images/www/hero20240602/hero-image-glow-sticks-b2-02.jpg"
-                    alt="a smiling student holding large glow sticks in the middle of a sea of orange jams to a concert"
-                  />
-                </picture>
-              )}
-              {/* End Dynamic Meet Content */}
-            </div>
-          </div>
-          <div className="heroRainHolderB layoutB ">
-            <img
-              src="//images.utk.edu/images/www/hero202112/rain-double-01.svg"
-              alt=""
-            />
-          </div>
-          <div className="heroRectangleHolderB layoutB ">
-            <div className="heroRectangleB layoutB">
-              <picture>
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width:767px)"
-                  srcSet="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.jpg"
-                  type="image/jpeg"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202203/cheer-students-b1.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width:768px)"
-                  srcSet="//images.utk.edu/images/www/hero202203/cheer-students-b1.jpg"
-                  type="image/jpeg"
-                />
-                <img
-                  src="//images.utk.edu/images/www/hero202203/cheer-students-mobile-b1.jpg"
-                  alt="cheerleaders rush the field during a packed home game"
-                />
-              </picture>
-            </div>
-            {/* end .heroRectangleB*/}
-          </div>
-          {/* end .heroRectangleHolderB */}
+          {/* Layout B Vertical Image */}
+          <LayoutBVerticalImage dynamicSrc={dynamicSrc} />
+
           <div className="orangeBarHolderB layoutB ">
             <div className="orangeBarChunkB layoutB "></div>
             <div className="ginghamChunkB layoutB"></div>
@@ -695,6 +237,7 @@ const Hero = () => {
         {/* end hero202112A */}
       </div>
       {/* end hero202112Container */}
+
       {/* <div className="container">
         <ul className="nav nav-fill internal-links py-4 row">
           <li className="nav-item col-md-4">
