@@ -377,7 +377,13 @@ function Programs() {
             college: program.colleges?.nodes[0].name || '',
             collegeSlug: slugify(program.colleges?.nodes[0].name || ''),
             areaOfStudy: program.areasOfStudy?.nodes[0].name || '',
-            areaSlug: slugify(program.areasOfStudy?.nodes[0].name || ''),
+            areaSlugOne: slugify(program.areasOfStudy?.nodes[0].name || ''),
+            areaSlugTwo: program.areasOfStudy?.nodes[1]
+              ? slugify(program.areasOfStudy?.nodes[1].name || '')
+              : '',
+            areaSlugThree: program.areasOfStudy?.nodes[2]
+              ? slugify(program.areasOfStudy?.nodes[2].name || '')
+              : '',
             degrees: degreeString,
             degreeTypes: degreeType,
             programLink: program.programDetailsFields?.url || '#',
@@ -390,7 +396,12 @@ function Programs() {
 
       // Apply any Search filters
       if (filters.search !== '') {
-        flatPrograms = matchSorter(flatPrograms, filters.search, {
+        // if search term ends in 's' remove 's'
+        // i.e. 'communications' will also return 'communication'
+        const searchTerm = filters.search.endsWith('s')
+          ? filters.search.slice(0, -1)
+          : filters.search;
+        flatPrograms = matchSorter(flatPrograms, searchTerm, {
           keys: ['major', 'concentration', 'college', 'areaOfStudy', 'degrees'],
           threshold: matchSorter.rankings.ACRONYM,
         });
@@ -398,7 +409,7 @@ function Programs() {
       // Apply any Area of Study filters
       if (filters['area-of-study'] !== '') {
         flatPrograms = matchSorter(flatPrograms, filters['area-of-study'], {
-          keys: ['areaSlug'],
+          keys: ['areaSlugOne', 'areaSlugTwo', 'areaSlugThree'],
           threshold: matchSorter.rankings.EQUAL,
         });
       }
