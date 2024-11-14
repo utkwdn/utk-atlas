@@ -138,8 +138,8 @@ const UniversalHeader = ({
         {/* Using <a> instead of <Link> for external link to prevent CORS issues with redirects */}
         <li>
           <a
-            // href="https://give.utk.edu/campaigns/42950/donations/new" // Default Link
-            href="https://give.utk.edu/campaigns/51061/donations/new?a=8570688" // BOG Link
+            href="https://give.utk.edu/campaigns/42950/donations/new" // Default Link
+            // href="https://give.utk.edu/campaigns/51061/donations/new?a=8570688" // BOG Link
             tabIndex={isMobile ? -1 : 0}
             className="uni-nav-item"
           >
