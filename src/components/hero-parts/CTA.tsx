@@ -31,7 +31,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
   const whyApply = () => {
     return (
       <>
-        <p>
+        {/* <p>
           <a
             onClick={handleShow}
             className="subLink pointer-event-visible  cursor-pointer"
@@ -65,7 +65,19 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               </div>
             </Modal.Body>
           </Modal>
-        </div>
+        </div> */}
+
+        {/* Confirm Enrollment Link */}
+        <h3 className="subCta">Admitted to UT?</h3>
+        <a
+          href="https://admissions.utk.edu/confirm/"
+          className="subLink  pointer-event-visible"
+          // orange underline
+          // className="subLink text-decoration-none link-underline  pointer-event-visible"
+        >
+          Confirm enrollment now
+        </a>
+        {/* End Confirm Enrollment Link */}
       </>
     );
   };
@@ -97,7 +109,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             </p>
 
             {/* Why Apply Link & Modal */}
-            {whyApply()}
+            {/* {whyApply()} */}
 
             <SlateFormEmbed
               id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
@@ -183,18 +195,6 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
           {whyApply()}
         </>
       )}
-
-      {/* Confirm Enrollment Link */}
-      {/* <h3 className="subCta">Admitted to UT?</h3>
-            <a
-              href="https://admissions.utk.edu/confirm/"
-              className="subLink  pointer-event-visible"
-              // orange underline
-              // className="subLink text-decoration-none link-underline  pointer-event-visible"
-            >
-              Confirm enrollment now
-            </a> */}
-      {/* End Confirm Enrollment Link */}
     </div>
   );
 }
