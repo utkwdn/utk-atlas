@@ -159,19 +159,19 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
           {/* Default content */}
           <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
             <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-              Welcome to
+              Find Your Place On
             </span>
             <br />
             Rocky Top
           </h2>
           <div className="fancyLinkGroup ch-md is-layout-flow">
-            {/* <p className="fancyLink stack-links">
-                    <a href="https://www.utk.edu/visit" className="hero-cat">
-                      Schedule a visit
-                    </a>
-                  </p> */}
-
             <p className="fancyLink stack-links">
+              <a href="https://www.utk.edu/visit" className="hero-cat">
+                Schedule a visit
+              </a>
+            </p>
+
+            {/* <p className="fancyLink stack-links">
               <a href="https://admissions.utk.edu" className="hero-cat">
                 Apply today
               </a>
@@ -184,12 +184,16 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               >
                 Request more info
               </a>
-            </p>
+            </p> */}
           </div>
           <p>
+            This is where you'll make discoveries, memories, and lifelong
+            connections. Visit campus and picture your life as a volunteer.
+          </p>
+          {/* <p>
             There&apos;s something for everyone at UT. We can&apos;t wait for
             you to call our campus home sweet home!
-          </p>
+          </p> */}
 
           {/* Why Apply Link & Modal */}
           {whyApply()}
