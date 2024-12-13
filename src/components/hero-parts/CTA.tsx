@@ -187,7 +187,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             </p> */}
           </div>
           <p>
-            This is where you'll make discoveries, memories, and lifelong
+            This is where you&apos;ll make discoveries, memories, and lifelong
             connections. Visit campus and picture your life as a volunteer.
           </p>
           {/* <p>
