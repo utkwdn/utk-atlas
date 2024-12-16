@@ -166,6 +166,14 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
           </h2>
           <div className="fancyLinkGroup ch-md is-layout-flow">
             <p className="fancyLink stack-links">
+              <a
+                href={appendDynamicSrc('https://utk.edu/requestinfo')}
+                className="hero-cat"
+              >
+                Request more info
+              </a>
+            </p>
+            <p className="fancyLink stack-links">
               <a href="https://www.utk.edu/visit" className="hero-cat">
                 Schedule a visit
               </a>
@@ -174,15 +182,6 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             {/* <p className="fancyLink stack-links">
               <a href="https://admissions.utk.edu" className="hero-cat">
                 Apply today
-              </a>
-            </p>
-
-            <p className="fancyLink stack-links">
-              <a
-                href={appendDynamicSrc('https://utk.edu/requestinfo')}
-                className="hero-cat"
-              >
-                Request more info
               </a>
             </p> */}
           </div>
