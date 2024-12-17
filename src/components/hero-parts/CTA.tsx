@@ -31,7 +31,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
   const whyApply = () => {
     return (
       <>
-        <p>
+        {/* <p>
           <a
             onClick={handleShow}
             className="subLink pointer-event-visible  cursor-pointer"
@@ -65,7 +65,19 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
               </div>
             </Modal.Body>
           </Modal>
-        </div>
+        </div> */}
+
+        {/* Confirm Enrollment Link */}
+        <h3 className="subCta">Admitted to UT?</h3>
+        <a
+          href="https://admissions.utk.edu/confirm/"
+          className="subLink  pointer-event-visible"
+          // orange underline
+          // className="subLink text-decoration-none link-underline  pointer-event-visible"
+        >
+          Confirm enrollment now
+        </a>
+        {/* End Confirm Enrollment Link */}
       </>
     );
   };
@@ -97,7 +109,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
             </p>
 
             {/* Why Apply Link & Modal */}
-            {whyApply()}
+            {/* {whyApply()} */}
 
             <SlateFormEmbed
               id="3efe2258-fe6c-4e5e-a198-faf90c1a3634"
@@ -147,24 +159,12 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
           {/* Default content */}
           <h2 className="text-uppercase display-3 mt-md-3 mt-lg-0">
             <span className="text-condensed text-letterspaced fst-italic fs-2 italic-leading">
-              Welcome to
+              Find Your Place On
             </span>
             <br />
             Rocky Top
           </h2>
           <div className="fancyLinkGroup ch-md is-layout-flow">
-            {/* <p className="fancyLink stack-links">
-                    <a href="https://www.utk.edu/visit" className="hero-cat">
-                      Schedule a visit
-                    </a>
-                  </p> */}
-
-            <p className="fancyLink stack-links">
-              <a href="https://admissions.utk.edu" className="hero-cat">
-                Apply today
-              </a>
-            </p>
-
             <p className="fancyLink stack-links">
               <a
                 href={appendDynamicSrc('https://utk.edu/requestinfo')}
@@ -173,28 +173,31 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
                 Request more info
               </a>
             </p>
+            <p className="fancyLink stack-links">
+              <a href="https://www.utk.edu/visit" className="hero-cat">
+                Schedule a visit
+              </a>
+            </p>
+
+            {/* <p className="fancyLink stack-links">
+              <a href="https://admissions.utk.edu" className="hero-cat">
+                Apply today
+              </a>
+            </p> */}
           </div>
           <p>
+            This is where you&apos;ll make discoveries, memories, and lifelong
+            connections. Visit campus and picture your life as a volunteer.
+          </p>
+          {/* <p>
             There&apos;s something for everyone at UT. We can&apos;t wait for
             you to call our campus home sweet home!
-          </p>
+          </p> */}
 
           {/* Why Apply Link & Modal */}
           {whyApply()}
         </>
       )}
-
-      {/* Confirm Enrollment Link */}
-      {/* <h3 className="subCta">Admitted to UT?</h3>
-            <a
-              href="https://admissions.utk.edu/confirm/"
-              className="subLink  pointer-event-visible"
-              // orange underline
-              // className="subLink text-decoration-none link-underline  pointer-event-visible"
-            >
-              Confirm enrollment now
-            </a> */}
-      {/* End Confirm Enrollment Link */}
     </div>
   );
 }

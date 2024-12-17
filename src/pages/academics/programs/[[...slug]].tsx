@@ -471,7 +471,7 @@ function Programs() {
         <link rel="canonical" href="https://www.utk.edu/academics/programs" />
       </Head>
       <Intro
-        title={'Programs and degrees'}
+        title={'Programs & degrees'}
         theme={'Prepare for your future'}
         intro={
           <div>

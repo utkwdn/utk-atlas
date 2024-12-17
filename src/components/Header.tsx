@@ -65,9 +65,9 @@ const Header = ({ dynamicSrc }: Props) => {
             className="dropdown-toggle show main-navigation"
           >
             <span className="bold-holder">
-              <span className="real-title">Academics and Programs</span>
+              <span className="real-title">Academics</span>
               <span className="bold-wrapper" aria-hidden="true">
-                Academics and Programs
+                Academics
               </span>
             </span>
           </button>
@@ -81,9 +81,9 @@ const Header = ({ dynamicSrc }: Props) => {
             className="dropdown-toggle show main-navigation"
           >
             <span className="bold-holder">
-              <span className="real-title">Admissions and Aid</span>
+              <span className="real-title">Admissions &amp; Aid</span>
               <span className="bold-wrapper" aria-hidden="true">
-                Admissions and Aid
+                Admissions &amp; Aid
               </span>
             </span>
           </button>
