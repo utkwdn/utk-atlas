@@ -443,6 +443,7 @@ function Programs() {
 
       // Organize by major/degree then update state
       setActiveItems(combineConcentrations(flatPrograms));
+      console.log(flatPrograms);
       setIsLoading(false);
     }
   }, [programs, filters]);

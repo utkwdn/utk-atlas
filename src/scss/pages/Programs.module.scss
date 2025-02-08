@@ -621,3 +621,40 @@ h2.programLabel {
   max-width: 1520px;
   margin: 0 auto;
 }
+
+.programsTable {
+  width: 100%;
+
+  thead {
+    border-bottom: 2px solid #b7b7b7;
+  }
+  td,
+  th {
+    padding: 25px 20px;
+    vertical-align: top;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #ddd;
+      padding: 25px 0;
+      &:nth-child(odd) {
+        background-color: #f6f6f6; // Light gray for odd rows
+      }
+
+      &:nth-child(even) {
+        background-color: #fff; // Slightly darker gray for even rows
+      }
+
+      p {
+        font-weight: bold;
+      }
+      li {
+        list-style-type: none;
+        // margin-top: 0 !important;
+      }
+    }
+  }
+  .tableColumnOne {
+  }
+}
