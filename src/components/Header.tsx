@@ -49,22 +49,6 @@ const Header = ({ dynamicSrc }: Props) => {
             className="dropdown-toggle show main-navigation"
           >
             <span className="bold-holder">
-              <span className="real-title">About</span>
-              <span className="bold-wrapper" aria-hidden="true">
-                About
-              </span>
-            </span>
-          </button>
-        </li>
-        <li>
-          <button
-            data-bs-toggle="dropdown"
-            data-bs-display="static"
-            aria-expanded="false"
-            aria-current="false"
-            className="dropdown-toggle show main-navigation"
-          >
-            <span className="bold-holder">
               <span className="real-title">Academics</span>
               <span className="bold-wrapper" aria-hidden="true">
                 Academics
@@ -115,6 +99,22 @@ const Header = ({ dynamicSrc }: Props) => {
               </span>
             </span>
           </a>
+        </li>
+        <li>
+          <button
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+            aria-current="false"
+            className="dropdown-toggle show main-navigation"
+          >
+            <span className="bold-holder">
+              <span className="real-title">About</span>
+              <span className="bold-wrapper" aria-hidden="true">
+                About
+              </span>
+            </span>
+          </button>
         </li>
       </>
     );
