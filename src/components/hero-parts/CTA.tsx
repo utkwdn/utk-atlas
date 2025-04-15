@@ -195,7 +195,7 @@ function CTA({ dynamicSrc }: Props): JSX.Element {
           </p> */}
 
           {/* Why Apply Link & Modal */}
-          {whyApply()}
+          {/* {whyApply()} */}
         </>
       )}
     </div>
