@@ -4,7 +4,7 @@ import SlateFormEmbed from './SlateFormEmbed';
 import { useEffect, useState } from 'react';
 
 const UNDERGRAD_ID = '03b73a18-fab9-4d73-bb2b-38eb3372937b';
-const GRAD_ID = '99443a39-fc22-40a9-a28f-d81171bbbf48';
+const GRAD_ID = '2ea8ddc2-3032-4b0a-8150-ecb5f2dcbb9e';
 
 const RequestInfoTabs = () => {
   const [isHydrated, setIsHydrated] = useState(false);
